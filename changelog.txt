@@ -1,0 +1,67 @@
+11/08/2016
+Bot updated [Changes]:
+-ADDED salt command so far it only shows image of tilith who will cause me a lot of salt if I don't get her
+-ADDED chancetilith command to calculate chance of pulling tilith based on # of 10+1 pulls and regular pulls you have using binomial expansion
+-TODO change chancetilith command to chance command and calculate chances of getting certain popular units in upcoming banners
+-ADDED units command now will show the details of the unit similar to RainBot(edited)
+
+11/10/2016
+Bot Updated[Changelog]:
+-ADDED -!salty command
+-ADDED more stuff to the salt command
+-REMOVED summon simulator...(edited)
+hiddendoom45 - Yesterday at 7:02 PM
+Bot Updated [Changelog]:
+-ADDED improved salt command, now generates some random really bad phrases that'll induce salt
+-ADDED -!salt lightning cause someone here got one
+-ADDED some back end things for various things
+-ADDED a mod command (certain doom)
+-REMOVED summon simulator...
+
+11/16/2016
+Bot Updated [Changelog]:
+-ADDED -!waifu command (now the bot will finally see some use)
+-ADDED some things in the background that'll hopefully allow for unitskill command
+-REMOVED something...
+-REMOVED summon simulator...
+
+11/19/2016
+Bot Updated [Changelog]:
+-ADDED -!unitabilities command(may be changed to unitskill in the future so it's easier to type in) get the magic and special abilities of a unit
+-ADDED -!lore command gets the lore of a unit
+-ADDED -!equipment get the armours and weapons a unit can equip
+-CHANGED -!unitart command can now get art for different rarities
+-REMOVED summon simulator...
+
+11/30/2016
+Bot Updates[Changelog]:
+-ADDED various override commands and override command functionalities
+-ADDED !log, !savelog override commands
+-CHANGED improved disable command to print out bot ids
+-CHANGED various bug fixes etc
+-ADDED auto restart system, and sleep mod command
+-ADDED ability to change prefix, modprefix and join message
+-CHANGED a bunch of things with save system, server custom settings now online, more things capable
+-ADDED emojis to various commands, most unit based commands and unitart command
+
+12/02/2016
+Bot Updates[Changelog]:
+-ADDED awaken command
+-ADDED toggle command
+-ADDED botmod command
+
+12/09/2016
+Bot Updated[Changelog]:
+-CHANGED something regarding certain doom
+-CHANGED various bug fixes etc
+-ADDED auto restart system, and sleep mod command
+-ADDED ability to change prefix, modprefix and join message
+-ADDED emojis to various commands, most unit based commands and unitart command
+-ADDED awaken command
+-ADDED toggle command(for mods, though currently toggles have no effect)
+-ADDED maintenance command, cause GUMI(this took a lot longer than it should've(over 1 hour) to do)
+-FIXED any command searching for a unit is no longer case sensitive(edited)
+
+Additional Changes pre-Github
+-ADDED Classes in util.units for to parse unit info from reddit
+-ADDED associated commands for unit info, skills, awakening mats for units on reddit
