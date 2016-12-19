@@ -1,0 +1,66 @@
+package commands;
+
+import java.io.IOException;
+
+import global.Main;
+import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.Lib;
+import util.unit.RedditOverview;
+import util.unit.RedditUnit;
+
+public class RUnits extends RedditSelection {
+	@Override
+	public boolean called(String[] args, MessageReceivedEvent event) {
+		Main.log("status", "Searched for unit "+(args.length>0?args[0]:"")+" by "+event.getAuthorName()+(event.isPrivate()?" on "+event.getGuild():""));
+		return super.called(args,event);
+	}
+	public void sendUnitData(RedditUnit info,MessageReceivedEvent event){
+		String out="";
+		out+="```"+info.title+"\t";
+		out+="Rarity:"+info.baseR+"-"+info.maxR+"\t";
+		out+=info.TrustDetails+"\n";
+		for(int i=0;i<info.stats.length;i++){
+			out+="\n"+info.stats[i].rarity+"★";
+			out+="HP:"+Lib.pad(info.stats[i].HP.substring(info.stats[i].HP.indexOf("/")+2), 8);
+			out+="MP:"+Lib.pad(info.stats[i].MP.substring(info.stats[i].MP.indexOf("/")+2), 8);
+			out+="ATK:"+Lib.pad(info.stats[i].ATK.substring(info.stats[i].ATK.indexOf("/")+2), 8);
+			out+="DEF:"+Lib.pad(info.stats[i].DEF.substring(info.stats[i].DEF.indexOf("/")+2), 8);
+			out+="MAG:"+Lib.pad(info.stats[i].MAG.substring(info.stats[i].MAG.indexOf("/")+2), 8);
+			out+="SPR:"+Lib.pad(info.stats[i].SPR.substring(info.stats[i].SPR.indexOf("/")+2), 8);
+		}
+		out+="```\n";
+		Lib.sendMessage(event, out);
+	}
+	@Override
+	public void onePossible(RedditOverview Ounit, MessageReceivedEvent event) throws IOException {
+		sendUnitData(new RedditUnit(Ounit.getData(0).unitUrl),event);
+	}
+
+	@Override
+	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
+		onePossible(Ounit,event);
+
+	}
+
+	@Override
+	public void manyPossible(RedditOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
+		sendUnitData(new RedditUnit(Ounit.getData(selection).unitUrl),event);
+	}
+
+	@Override
+	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
+			throws IOException {
+		manyPossible(Ounit,selection,event);
+	}
+
+	@Override
+	public void help(MessageReceivedEvent event) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void executed(boolean sucess, MessageReceivedEvent event) {
+	}
+
+}

@@ -1,0 +1,50 @@
+package commands.mod;
+
+import java.util.ArrayList;
+
+import commands.Command;
+import global.Main;
+import global.record.Log;
+import global.record.Settings;
+import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.Lib;
+import util.Select;
+import util.Selection;
+import util.Selector;
+
+public class Disable implements Command,Selection{
+
+	@Override
+	public boolean called(String[] args, MessageReceivedEvent event) {
+		Log.log("System", "Bot attempted to be shut down by "+event.getAuthorName()+" on "+event.getGuild());
+		return true;
+	}
+
+	@Override
+	public void action(String[] args, MessageReceivedEvent event) {
+		Select s=new Select(new ArrayList<String>(), Settings.ID, this, Settings.ID+"");
+		Selector.setSelection(s, event);
+	}
+	@Override
+	public void help(MessageReceivedEvent event) {
+		Lib.sendMessage(event, "Shuts down the bot if it's malfunctioning");
+		
+	}
+	@Override
+	public void executed(boolean sucess, MessageReceivedEvent event) {
+	}
+	@Override
+	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
+		if(chosen.selectedText.equals(""+Settings.ID)){
+			Main.shutdown();
+			Log.save();
+			System.exit(0);
+		}
+	}
+
+	@Override
+	public int getInputType() {
+		return Selector.NullType;
+	}
+
+}

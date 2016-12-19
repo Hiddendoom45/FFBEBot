@@ -1,0 +1,60 @@
+package commands;
+
+import java.io.IOException;
+
+import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.Lib;
+import util.unit.RedditOverview;
+import util.unit.RedditUnit;
+
+public class RAwaken extends RedditSelection {
+	private void sendAwakening(RedditUnit info,int rarity,MessageReceivedEvent event){
+		String s=":pencil:Awakening mats for "+info.title+"\n";
+		if(rarity==0){
+			for(int i=0;i<info.awakening.length;i++){
+				s+=info.awakening[i]+"\n";
+			}
+		}
+		else{
+			s+=info.awakening[rarity-info.baseR];
+		}
+		Lib.sendMessage(event, s);
+	}
+	@Override
+	public void onePossible(RedditOverview Ounit, MessageReceivedEvent event) throws IOException {
+		sendAwakening(new RedditUnit(Ounit.getData(0).unitUrl),0,event);
+
+	}
+
+	@Override
+	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
+		sendAwakening(new RedditUnit(Ounit.getData(0).unitUrl),rarity,event);
+
+	}
+
+	@Override
+	public void manyPossible(RedditOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
+		sendAwakening(new RedditUnit(Ounit.getData(selection).unitUrl),0,event);
+
+	}
+
+	@Override
+	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
+			throws IOException {
+		sendAwakening(new RedditUnit(Ounit.getData(selection).unitUrl),rarity,event);
+
+	}
+
+	@Override
+	public void help(MessageReceivedEvent event) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void executed(boolean sucess, MessageReceivedEvent event) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
