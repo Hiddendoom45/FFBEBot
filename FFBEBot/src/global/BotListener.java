@@ -2,7 +2,9 @@ package global;
 
 import global.record.Log;
 import global.record.SaveSystem;
+import global.record.Settings;
 import net.dv8tion.jda.events.ReadyEvent;
+import net.dv8tion.jda.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.hooks.ListenerAdapter;
@@ -39,6 +41,12 @@ public class BotListener extends ListenerAdapter{
 	@Override
 	public void onReady(ReadyEvent event){
 		Main.log("status","logged in as: "+event.getJDA().getSelfInfo().getUsername());
+	}
+	@Override
+	public void onGuildJoin(GuildJoinEvent event) {
+		if(SaveSystem.getGuild(event.getGuild().getId())==null){
+			SaveSystem.setSetting(new Settings(event.getGuild().getId()));
+		}
 	}
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {

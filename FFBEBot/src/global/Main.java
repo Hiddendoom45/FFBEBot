@@ -74,9 +74,11 @@ public class Main {
 		commands.put("rskill", new RSkill());
 		commands.put("lore", new Lore());
 		commands.put("equipment", new Equipment());
+		commands.put("requipment", new REquipment());
 		commands.put("awaken", new Awaken());
+		commands.put("rawaken", new RAwaken());
 		commands.put("maintenance", new Maintenance());
-		commands.put("runits", new RUnits());
+		
 		//ditto with mod commands(separate maps due to special checks)
 		modCommands.put("disable", new Disable());
 		modCommands.put("prefix", new Prefix());

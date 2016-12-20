@@ -41,11 +41,16 @@ public class SaveSystem {
 		file.endReader();
 	}
 	public static Settings getGuild(String id){
+		try{
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();
 		Elements guild=file.parseToElements(new Attribute("id",id)).get(0);
 		file.endReader();
 		return new Settings(guild);
+		}
+		catch(Exception e){
+			return null;
+		}
 	}
 	public static String getSetting(String id,String tag){
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));

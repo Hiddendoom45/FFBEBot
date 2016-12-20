@@ -61,7 +61,6 @@ public class RedditUnit {
 					refIndex=refIndex+refImg(e.attr("href")).length()+2;
 				}
 				awakening[i]=awk;
-				System.out.println(awakening[i]);
 			}
 			Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats")).getElementsByTag("tbody").first();
 			this.stats=new UnitStats[stats.children().size()];
@@ -125,9 +124,9 @@ public class RedditUnit {
 		refImg.put("#Z/Icons/e40/", "Hat");
 		refImg.put("#Z/Icons/e41/", "Helm");
 		refImg.put("#Z/Icons/e50/", "Clothes");
-		refImg.put("#Z/Icons/e50/", "Light Armour");
+		refImg.put("#Z/Icons/e51/", "Light Armour");
 		refImg.put("#Z/Icons/e52/", "Heavy Armour");
-		refImg.put("#Z/Icons/e52/", "Robe");
+		refImg.put("#Z/Icons/e53/", "Robe");
 		refImg.put("#Z/Icons/e60/", "Accessory");
 		refImg.put("#B/Icons/290010000/", "Beast Meat");
 		refImg.put("#B/Icons/290010100/", "Pearl of Wisdom");
