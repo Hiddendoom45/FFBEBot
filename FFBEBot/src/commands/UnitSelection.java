@@ -51,7 +51,7 @@ public abstract class UnitSelection implements Command, Selection {
 							onePossible(Ounits,rare,event);
 						}
 						else{
-							Lib.sendMessage(event, "Unit does not have this rarity");
+							onePossible(Ounits,event);
 						}
 					}
 				}
@@ -89,7 +89,7 @@ public abstract class UnitSelection implements Command, Selection {
 					manyPossible(saved.get(chosen.ID),chosen.selected,rare,event);
 				}
 				else{
-					Lib.sendMessage(event, "ERROR occured, likely future unit selected");
+					manyPossible(saved.get(chosen.ID),chosen.selected,event);
 				}
 			}
 			saved.remove(chosen.ID);

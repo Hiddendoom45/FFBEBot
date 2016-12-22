@@ -30,7 +30,14 @@ public class Selector {
 			}
 			else{
 				selfPrune(select,event);
-				select.messageID=Lib.sendMessage(event, "Incorrect option use `exit` to exit menu\n"+select.msg).getId();
+				if(select.tries>=3){
+					selections.remove(key(event));
+					Lib.sendMessageFormated(event, "%userMention% Exited selection menu due to 3 incorrect responses");
+				}
+				else{
+					select.tries++;
+					select.messageID=Lib.sendMessage(event, "Incorrect option use `exit` to exit menu\n"+select.msg).getId();
+				}
 			}
 			return true;
 		} 

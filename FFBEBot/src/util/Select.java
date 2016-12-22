@@ -41,6 +41,7 @@ public class Select {
 	 */
 	public String[] additionalData;//use to hold additional information
 	public String selectedText;
+	public int tries=1;
 	public Select(ArrayList<String> options,long ID,Selection source,String msg){
 		this.options=options;
 		this.ID=ID;
