@@ -65,7 +65,6 @@ public class RedditUnit {
 			Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats")).getElementsByTag("tbody").first();
 			this.stats=new UnitStats[stats.children().size()];
 			for(int i=0;i<stats.children().size();i++){
-				System.out.println("statset");
 				this.stats[i]=new UnitStats(stats.child(i));
 			}
 			Element equip=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipments"));

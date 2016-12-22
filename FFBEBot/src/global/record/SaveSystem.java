@@ -4,6 +4,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 import XML.Attribute;
 import XML.XMLStAXFile;
 import XML.Elements;
@@ -13,6 +16,7 @@ import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 public class SaveSystem {
+	public static Document redditO;
 	public static void setup(){
 		if(!new File(Settings.dataSource).exists()){
 			List<Guild> guilds=Main.jda.getGuilds();
@@ -29,6 +33,17 @@ public class SaveSystem {
 			file.endWriter();
 		}
 		load();
+		preloadReddit();
+	}
+	public static void preloadReddit(){
+		try{
+			while(true){
+				redditO = Jsoup.connect("https://www.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(30000).get();
+				if(!(redditO==null))break;
+			}
+		}
+		catch(Exception e){Log.logError(e);}
+		Log.log("System", "Reddit Overview Loaded");
 	}
 	public static void load(){
 		Settings.guilds.clear();

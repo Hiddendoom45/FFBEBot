@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import global.record.Log;
+import global.record.SaveSystem;
 import global.record.Settings;
 
 /**
@@ -31,15 +32,16 @@ public class Restarter {
 	 * @param time time till disconnect
 	 */
 	public static void sleep(int time){
-		Log.log("system", "Bot is sleeping for "+Restarter.sleep+" secounds");
 		Runnable sleeper=Restarter.getSleeper();
 		Settings.executor.schedule(sleeper, time, TimeUnit.SECONDS);
 	}
 	public static Runnable getSleeper(){
 		return new Runnable(){
 			public void run(){
+				Log.log("system", "Bot is sleeping for "+Restarter.sleep+" secounds");
 				Main.shutdown();
 				try {
+					Restarter.SleepActivity();
 					TimeUnit.SECONDS.sleep(sleep);
 					Main.startup();
 				} catch (Exception e) {
@@ -48,6 +50,9 @@ public class Restarter {
 
 			}
 		};
+	}
+	public static void SleepActivity(){
+		SaveSystem.preloadReddit();
 	}
 }
 

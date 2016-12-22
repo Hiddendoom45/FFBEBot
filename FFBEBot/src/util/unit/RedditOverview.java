@@ -2,12 +2,11 @@ package util.unit;
 
 import java.util.ArrayList;
 
-import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import global.record.Settings;
+import global.record.SaveSystem;
 import util.Lib;
 
 public class RedditOverview {
@@ -16,10 +15,7 @@ public class RedditOverview {
 	public RedditOverview(String unitName){
 		Document doc = null;
 		try{
-			while(true){
-				doc = Jsoup.connect("https://www.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(30000).get();
-				if(!(doc==null))break;
-			}
+			doc=SaveSystem.redditO;
 			Element data=doc.getElementsByClass("wiki").get(0);
 			Elements units=data.getElementsByTag("tbody").get(0).getElementsByTag("tr");
 			for(Element u:units){
