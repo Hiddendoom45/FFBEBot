@@ -36,13 +36,13 @@ public class SaveSystem {
 		preloadReddit();
 	}
 	public static void preloadReddit(){
-		try{
-			while(true){
-				redditO = Jsoup.connect("https://www.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(30000).get();
+		for(int i=0;i<10;i++){
+			try{
+				redditO = Jsoup.connect("https://www.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(60000).get();
 				if(!(redditO==null))break;
 			}
+			catch(Exception e){Log.logError(e);}
 		}
-		catch(Exception e){Log.logError(e);}
 		Log.log("System", "Reddit Overview Loaded");
 	}
 	public static void load(){

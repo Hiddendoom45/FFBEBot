@@ -29,24 +29,36 @@ public abstract class UnitSelection implements Command, Selection {
 			help(event);
 		}
 		else{
+			int rarity=0;
+			String name="";
+			for(int i=0;i<args.length;i++){
+				if(i==(args.length-1)&&Lib.isNumber(args[i])){
+					rarity=Integer.parseInt(args[i]);
+				}
+				else{
+					if(!name.equals("")){
+						name+=" ";
+					}
+					name+=args[i];
+				}
+			}
 			try{
-				UnitOverview Ounits=new UnitOverview(args[0]);//get all units matching name
+				UnitOverview Ounits=new UnitOverview(name);//get all units matching name
 				ArrayList<String> possible=Ounits.getNames();//get the array of those uits
 				if(possible.size()>1){
 					long ID=System.currentTimeMillis();//assuming that no 2 commands will occur simultaneously
 					saved.put(ID, Ounits);//keep track of the Ounits used to find all the units(essentially the options)
 					Select select=new Select(possible, ID, this, possible);//fin
-					select.additionalData=new String[]{(args.length>1?args[1]:"null")};
+					select.additionalData=new String[]{(rarity!=0?""+rarity:"null")};
 					Selector.setSelection(select, event);
 				}
 				else if(possible.size()>0){
-					if(args.length==1||!Lib.isNumber(args[1])){
+					if(rarity==0){
 						onePossible(Ounits,event);
 					}
 					else{
-						
 						UnitInfo info=new UnitInfo(Ounits.getData(0).unitUrl);
-						int rare=Integer.parseInt(args[1]);
+						int rare=rarity;
 						if(rare<=info.maxRarity&&rare>=info.minRarity){
 							onePossible(Ounits,rare,event);
 						}

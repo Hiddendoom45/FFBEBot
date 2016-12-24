@@ -56,6 +56,7 @@ public class Main {
 	 * everything that needs to be done when the JVM starts up
 	 */
 	public static void setup(){
+		jda.getAccountManager().setGame("the Loading Game...");
 		//put commands in map
 		commands.put("ping", new Ping());
 		commands.put("units", new Units());
@@ -95,6 +96,7 @@ public class Main {
 		SaveSystem.setup();
 		Restarter.setup();
 		RedditUnit.buildRefImg();
+		jda.getAccountManager().setGame("Offline...| -!help");
 	}
 	public static void handleCommand(CommandParser.CommandContainer cmd){
 		System.out.println(cmd.invoke);
