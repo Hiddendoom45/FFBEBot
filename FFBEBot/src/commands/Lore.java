@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.UnitInfo;
@@ -11,8 +12,9 @@ public class Lore extends UnitSelection{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-		
+		String s=SaveSystem.getPrefix(event)+"lore [unit][rarity]\n"
+				+ "\tGets lore of unit at rarity(if specified)";
+		Lib.sendMessage(event, s);
 	}
 
 	@Override

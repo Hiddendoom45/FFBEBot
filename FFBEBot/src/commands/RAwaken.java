@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
@@ -47,7 +48,10 @@ public class RAwaken extends RedditSelection {
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
+		String s=SaveSystem.getPrefix(event)+"rawaken [unit] [rarity]\n"
+				+ "gets the awaken! mats for a unit\n"
+				+ "if specified the mats needed to awaken to next rarity at [rarity]";
+		Lib.sendMessage(event, s);
 
 	}
 

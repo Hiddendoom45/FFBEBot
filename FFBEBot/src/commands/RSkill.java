@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
@@ -57,7 +58,9 @@ public class RSkill extends RedditSelection{
 	}
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
+		String s=SaveSystem.getPrefix(event)+"rskill [unit]\n"
+				+ "\tGets the skills for specified unit";
+		Lib.sendMessage(event, s);
 		
 	}
 

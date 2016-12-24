@@ -1,7 +1,9 @@
 package commands;
 
 import global.Main;
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.Lib;
 
 public class Ping implements Command{
 	public Ping(){
@@ -21,7 +23,10 @@ public class Ping implements Command{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		event.getChannel().sendMessage("get bot to say pong");
+		String s=SaveSystem.getPrefix(event)+"ping\n"
+				+ "\tget the bot to say PONG\n"
+				+ "\tto test the bot's response speed";
+		Lib.sendMessage(event, s);
 	}
 
 	@Override

@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
@@ -48,7 +49,9 @@ public class REquipment extends RedditSelection {
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
+		String s=SaveSystem.getPrefix(event)+"requipment [unit]\n"
+				+ "\tGet what equipment a unit can equip";
+		Lib.sendMessage(event, s);
 
 	}
 

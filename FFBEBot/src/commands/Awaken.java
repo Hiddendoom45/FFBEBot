@@ -45,7 +45,8 @@ public class Awaken extends UnitSelection {
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s=SaveSystem.getPrefix(event)+"awaken [unit] [rarity]\n"
-				+ "gets the awaken! mats for a unit";
+				+ "gets the awaken! mats for a unit\n"
+				+ "if specified the mats needed to awaken to next rarity at [rarity]";
 		Lib.sendMessage(event, s);
 		
 	}

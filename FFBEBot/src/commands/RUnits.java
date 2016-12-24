@@ -3,6 +3,7 @@ package commands;
 import java.io.IOException;
 
 import global.Main;
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
@@ -55,8 +56,9 @@ public class RUnits extends RedditSelection {
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-
+		String s=SaveSystem.getPrefix(event)+"runits [unitname]\n"
+				+ "\tdisplay information about specific unit";
+		Lib.sendMessage(event, s);
 	}
 
 	@Override

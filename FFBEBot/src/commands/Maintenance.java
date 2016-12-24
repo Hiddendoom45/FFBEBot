@@ -6,7 +6,9 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 
 import global.record.Log;
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.Lib;
 
 public class Maintenance implements Command {
 
@@ -29,7 +31,9 @@ public class Maintenance implements Command {
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
+		String s=SaveSystem.getPrefix(event)+"maintenance\n"
+				+ "\tclassic gumi maintenances";
+		Lib.sendMessage(event, s);
 
 	}
 

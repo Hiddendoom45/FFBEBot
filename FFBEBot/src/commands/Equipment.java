@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.UnitInfo;
@@ -55,7 +56,8 @@ public class Equipment extends UnitSelection{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s="equipment [unit]\n\tGet what equipment a unit can equip";
+		String s=SaveSystem.getPrefix(event)+"equipment [unit]\n"
+				+ "\tGet what equipment a unit can equip";
 		Lib.sendMessage(event, s);
 	}
 

@@ -50,11 +50,9 @@ public class Units extends UnitSelection implements Command,Selection {
 	}
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String msg=SaveSystem.getPrefix(event)+"units\n"
-				+ "\tlink to exvicus unit list page\n"
-				+ SaveSystem.getPrefix(event)+"units [unitname]\n"
-				+ "\tdisplay information about specific unin";
-		Lib.sendMessage(event, msg);
+		String s=SaveSystem.getPrefix(event)+"units [unitname]\n"
+				+ "\tdisplay information about specific unit";
+		Lib.sendMessage(event, s);
 	}
 
 	@Override

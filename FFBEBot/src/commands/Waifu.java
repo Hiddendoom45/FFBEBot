@@ -2,6 +2,7 @@ package commands;
 
 import Lib.Waifus;
 import global.record.Log;
+import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.rng.RandomLibs;
@@ -27,7 +28,9 @@ public class Waifu implements Command{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		Lib.sendMessage(event, "Look for a waifu");
+		String s=SaveSystem.getPrefix(event)+"waifu\n"
+				+ "\tlook for a waifu";
+		Lib.sendMessage(event, s);
 	}
 
 	@Override
