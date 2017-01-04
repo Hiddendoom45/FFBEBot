@@ -10,7 +10,7 @@ import util.rng.RandomLibs;
 public class Salt implements Command {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "Sent salt to "+event.getAuthorName()+(event.isPrivate()?" on "+event.getGuild():""));
+		Log.log("status", "Sent salt to "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
 		event.getChannel().sendTyping();
 		return true;
 	}

@@ -7,7 +7,7 @@ import util.Lib;
 public class Chance implements Command{
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "gave chance of "+(args.length>0?args[0]:"")+" by "+event.getAuthorName()+(event.isPrivate()?"on "+event.getGuild():""));
+		Log.log("status", "gave chance of "+(args.length>0?args[0]:"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
 		event.getChannel().sendTyping();
 		return true;
 	}

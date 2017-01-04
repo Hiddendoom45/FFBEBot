@@ -11,7 +11,7 @@ public class Waifu implements Command{
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "Searching for a Waifu for "+event.getAuthorName()+(event.isPrivate()?" on "+event.getGuild().getName():""));;
+		Log.log("status", "Searching for a Waifu for "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));;
 		event.getChannel().sendTyping();
 		return true;
 	}

@@ -112,7 +112,7 @@ public class SaveSystem {
 	}
 	public static String getPrefix(MessageReceivedEvent event){
 		if(event.isPrivate()){
-			return Settings.join;
+			return Settings.prefix;
 		}
 		else{
 			return getPrefix(event.getGuild());
