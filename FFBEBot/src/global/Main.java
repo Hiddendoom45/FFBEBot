@@ -52,6 +52,12 @@ public class Main {
 		jda.shutdown(false);
 		Log.log("status", "bot shutdown");
 	}
+	public static void quit(){
+		jda.shutdown(true);
+		Log.log("status", "Bot Quit");
+		Log.save();
+		System.exit(1);
+	}
 	/**
 	 * everything that needs to be done when the JVM starts up
 	 */
@@ -91,6 +97,7 @@ public class Main {
 		overrides.put("log", new ViewLog());
 		overrides.put("logsave", new SaveLog());
 		overrides.put("botmod", new BotMod());
+		overrides.put("update", new Update());
 		//setup/build various things
 		Log.setup();
 		SaveSystem.setup();

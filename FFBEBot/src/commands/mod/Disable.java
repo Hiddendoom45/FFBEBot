@@ -36,9 +36,7 @@ public class Disable implements Command,Selection{
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		if(chosen.selectedText.equals(""+Settings.ID)){
-			Main.shutdown();
-			Log.save();
-			System.exit(0);
+			Main.quit();
 		}
 	}
 

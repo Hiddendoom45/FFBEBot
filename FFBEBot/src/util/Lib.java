@@ -25,7 +25,7 @@ public class Lib {
 				+ SaveSystem.getPrefix(event)+"awaken [unit][rarity]"
 				+ "\t`find awakening mats for a unit`\n"
 				+"\n for all above commands, add r to beginning to use data from reddit i.e. `"
-				+SaveSystem.getModPrefix(event)+"runits` to get unit data from reddit\n"
+				+ SaveSystem.getPrefix(event)+"runits` to get unit data from reddit\n"
 				+ SaveSystem.getPrefix(event)+"ping"
 				+ "\t`ping command to see how fast bot response is`\n"
 				+ SaveSystem.getPrefix(event)+"unitart [unit][rarity]"
