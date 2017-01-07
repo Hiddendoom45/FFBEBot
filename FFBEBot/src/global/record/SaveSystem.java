@@ -1,6 +1,11 @@
 package global.record;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -156,35 +161,41 @@ public class SaveSystem {
 		}
 	}
 	public static String[] getOverrides() {
-		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
-		file.readXMLFile();
-		String[] overrides = null;
-		try{
-			overrides=file.parseToElements("override").get(0).getText().split(",");
-		}catch(Exception e){};
+		String input="";
+		try {
+			BufferedReader in=new BufferedReader(new FileReader(new File(Settings.overrideSource)));
+			while(in.ready()){
+				input+=in.readLine()+",";
+			}
+			in.close();
+		} catch (IOException e) {
+			Log.logError(e);
+		}
+		input=input.substring(0, input.length()-1);
+		String[] overrides=input.split(",");
 		return overrides;
 	}
 	public static void removeOverride(String overide){
-		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
-		file.readXMLFile();
-		Elements doc=file.parseDocToElements();
-		file.endReader();
-		String[] overrides=SaveSystem.getOverrides();
-		String out="";
-		for(String s:overrides){
-			if(!s.equals(overide)){
-				out+=s+",";
+		String input="";
+		try {
+			BufferedReader in=new BufferedReader(new FileReader(new File(Settings.overrideSource)));
+			while(in.ready()){
+				String current=in.readLine();
+				if(!current.equals(overide)){
+					input+=current+"\n";
+				}
 			}
+			in.close();
+		} catch (IOException e) {
+			Log.logError(e);
 		}
-		out=out.substring(0, out.length()>=1?out.length()-1:0);
-		for(int i=0;i<doc.getChilds().size();i++){
-			if(doc.getChilds().get(i).getTagName().equals("override")){
-				doc.getChilds().get(i).setText(out);
-			}
+		input=input.substring(0, input.length()-1);
+		try{
+			BufferedWriter out=new BufferedWriter(new FileWriter(new File(Settings.overrideSource)));
+			out.write(input);
+			out.close();
+		}catch(Exception e){
+			
 		}
-		file.writeXMLFile();
-		file.startWriter();
-		file.writeElement(doc);
-		file.endWriter();
 	}
 }

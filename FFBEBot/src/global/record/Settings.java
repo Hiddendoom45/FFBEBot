@@ -21,6 +21,7 @@ public class Settings {
 	public static final String ExvicusURL="https://exviuswiki.com/";
 	public static final String saveSource="FFBEBotLog";//for the log
 	public static final String dataSource="FFBEBotData";//for the guild based data
+	public static final String overrideSource="override";
 	public static final String join="User: %userMention% has joined %guildName%";
 	public static final String overridePrefix="!";
 	public static final String overrideArg="-";
