@@ -14,6 +14,7 @@ import util.Lib;
 
 public class RedditUnit {
 	private static HashMap<String,String> refImg=new HashMap<String,String>();
+	public String URL;
 	public String title;
 	public String JobTribe;
 	public String TrustDetails;
@@ -34,6 +35,7 @@ public class RedditUnit {
 				doc = Jsoup.connect(page).userAgent(Settings.UA).timeout(30000).get();
 				if(!(doc==null))break;
 			}
+			URL=page;
 			Element content=doc.getElementsByClass("wiki-page-content").first().getElementsByClass("wiki").first();
 			title=content.getElementsByTag("h2").first().text();
 			JobTribe=content.getElementsByTag("ul").get(2).child(0).text();

@@ -30,6 +30,7 @@ public class RUnits extends RedditSelection {
 			out+="SPR:"+Lib.pad(info.stats[i].SPR.substring(info.stats[i].SPR.indexOf("/")+2), 8);
 		}
 		out+="```\n";
+		out+=info.URL;
 		Lib.sendMessage(event, out);
 	}
 	@Override

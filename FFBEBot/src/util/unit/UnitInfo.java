@@ -12,6 +12,7 @@ import global.record.Settings;
 import util.Lib;
 
 public class UnitInfo {
+	public String URL;
 	public String loreOverview;
 	public String unitName;
 	public String imgOverviewURL;
@@ -40,6 +41,7 @@ public class UnitInfo {
 				doc = Jsoup.connect(page).userAgent(Settings.UA).timeout(10000).get();
 				if(!(doc==null))break;
 			}
+			URL=page;
 			Element content=doc.getElementById("mw-content-text");
 			loreOverview=content.getElementsByTag("p").first().text();
 			Element unitInfo=content.getElementsByTag("tbody").first();

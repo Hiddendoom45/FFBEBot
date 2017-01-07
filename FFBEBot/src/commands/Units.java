@@ -19,7 +19,7 @@ public class Units extends UnitSelection implements Command,Selection {
 	public void sendUnitData(UnitInfo info,MessageReceivedEvent event){
 		String out="";
 		out+="```"+info.unitName+"\t";
-		out+="Rarity:"+info.minRarity+" - "+info.maxRarity+"\t";
+		out+="Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t";
 		out+="Role:"+info.role+"\t";
 		out+="TM:"+info.trustName;
 		for(int i=0;i<info.stats.stats.length;i++){
@@ -32,6 +32,7 @@ public class Units extends UnitSelection implements Command,Selection {
 			out+="SPR:"+Lib.pad(info.stats.stats[i].SPR, 6);
 		}
 		out+="```\n";
+		out+=info.URL;
 		out+=info.imgOverviewURL;
 		Lib.sendMessage(event, out);
 	}
