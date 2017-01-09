@@ -18,21 +18,21 @@ public class Units extends UnitSelection implements Command,Selection {
 	}
 	public void sendUnitData(UnitInfo info,MessageReceivedEvent event){
 		String out="";
-		out+="```"+info.unitName+"\t";
+		out+="__**"+info.unitName+"**__\t";
 		out+="Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t";
 		out+="Role:"+info.role+"\t";
-		out+="TM:"+info.trustName;
+		out+="TM:"+info.trustName+"\n__Stats__";
 		for(int i=0;i<info.stats.stats.length;i++){
 			out+="\n"+addStars(info.stats.stats[i].rarity);
-			out+="HP:"+Lib.pad(info.stats.stats[i].HP, 6);
-			out+="MP:"+Lib.pad(info.stats.stats[i].MP, 6);
-			out+="ATK:"+Lib.pad(info.stats.stats[i].ATK, 6);
-			out+="DEF:"+Lib.pad(info.stats.stats[i].DEF, 6);
-			out+="MAG:"+Lib.pad(info.stats.stats[i].MAG, 6);
-			out+="SPR:"+Lib.pad(info.stats.stats[i].SPR, 6);
+			out+="**HP**:"+Lib.pad(info.stats.stats[i].HP, 6);
+			out+="**MP**:"+Lib.pad(info.stats.stats[i].MP, 6);
+			out+="**ATK**:"+Lib.pad(info.stats.stats[i].ATK, 6);
+			out+="**DEF**:"+Lib.pad(info.stats.stats[i].DEF, 6);
+			out+="**MAG**:"+Lib.pad(info.stats.stats[i].MAG, 6);
+			out+="**SPR**:"+Lib.pad(info.stats.stats[i].SPR, 6);
 		}
-		out+="```\n";
-		out+=info.URL;
+		out+="\n:link:";
+		out+=info.URL+"\n:art:";
 		out+=info.imgOverviewURL;
 		Lib.sendMessage(event, out);
 	}
@@ -41,7 +41,7 @@ public class Units extends UnitSelection implements Command,Selection {
 		String out="";
 		for(char c:letter){
 			if(Character.isDigit(c)){
-				out+=c+"*";
+				out+=c+"★";
 			}
 			else{
 				out+=c;

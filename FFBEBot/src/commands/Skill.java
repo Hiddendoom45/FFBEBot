@@ -25,22 +25,22 @@ public class Skill extends UnitSelection {
 
 	private void sendAbilities(UnitInfo info, MessageReceivedEvent event){
 		String s=":pencil: Skills for:"+info.unitName;
-		s+="\n```";
+		s+="\n";
 		if(!(info.Magic==null)){
-			s+="Magic: [Rarity unlocked|Level unlocked]";
+			s+="__Magic__: [Rarity unlocked|Level unlocked]";
 			for(int i=0;i<info.Magic.abilities.length;i++){
-				s+="\n"+Lib.pad("["+info.Magic.abilities[i].rarity+"|"+info.Magic.abilities[i].level+"]",7)
-				+" "+info.Magic.abilities[i].name+"|"+info.Magic.abilities[i].effect+" MP:"+info.Magic.abilities[i].MP;
+				s+="\n"+Lib.pad("[**"+info.Magic.abilities[i].rarity+"|"+info.Magic.abilities[i].level+"**]",7)
+				+" *"+info.Magic.abilities[i].name+"* | "+info.Magic.abilities[i].effect+" MP:**"+info.Magic.abilities[i].MP+"**";
 			}
 		}
 		if(!(info.Special==null)){
-			s+="\n\nSpecial [Rarity unlocked|Level unlocked]";
+			s+="\n\n__Special__: [Rarity unlocked|Level unlocked]";
 			for(int i=0;i<info.Special.abilities.length;i++){
-				s+="\n"+Lib.pad("["+info.Special.abilities[i].rarity+"|"+info.Special.abilities[i].level+"]",7)
-				+" "+info.Special.abilities[i].name+"|"+info.Special.abilities[i].effect+" MP:"+info.Special.abilities[i].MP;
+				s+="\n"+Lib.pad("[**"+info.Special.abilities[i].rarity+"|"+info.Special.abilities[i].level+"**]",7)
+				+" *"+info.Special.abilities[i].name+"* | "+info.Special.abilities[i].effect+" MP:**"+info.Special.abilities[i].MP+"**";
 			}
 		}
-		s+="```";
+		s+="";
 		Lib.sendMessage(event, s);
 		
 	}

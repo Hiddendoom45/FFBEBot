@@ -63,7 +63,7 @@ public enum Waifus {
 	Soleil("Soleil","https://exviuswiki.com/images/3/33/Unit-Soleil-6.png"),
 	Shine("Shine","https://exviuswiki.com/images/3/30/Unit-Shine-6.png"),
 	Marie("Marie","https://exviuswiki.com/images/7/79/Unit-Marie-6.png"),
-	Ulrika("Ulrika","https://exviuswiki.com/images/d/dd/Unit-Ulrika-5.png"),
+	Ulrica("Ulrikca","https://exviuswiki.com/images/1/14/Unit-Ulrica-5.png"),
 	Eileen("Eileen","https://exviuswiki.com/images/2/2a/Unit-Eileen-6.png"),
 	Rem("Rem","https://exviuswiki.com/images/b/b6/Unit-Rem-6.png"),
 	Jean("Jean","https://exviuswiki.com/images/9/91/Unit-Jean-5.png"),

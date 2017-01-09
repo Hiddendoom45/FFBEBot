@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Arrays;
+
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
@@ -189,4 +191,9 @@ public class Lib {
 		}
 		return false;
 	}
+	public static <T> T[] concat(T[] first, T[] second) {
+		  T[] result = Arrays.copyOf(first, first.length + second.length);
+		  System.arraycopy(second, 0, result, first.length, second.length);
+		  return result;
+		}
 }

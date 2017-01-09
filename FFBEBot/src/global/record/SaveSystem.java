@@ -189,7 +189,9 @@ public class SaveSystem {
 		} catch (IOException e) {
 			Log.logError(e);
 		}
-		input=input.substring(0, input.length()-1);
+		if(input.length()>1){
+			input=input.substring(0, input.length()-1);
+		}
 		try{
 			BufferedWriter out=new BufferedWriter(new FileWriter(new File(Settings.overrideSource)));
 			out.write(input);

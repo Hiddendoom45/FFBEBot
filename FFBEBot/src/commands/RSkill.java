@@ -12,22 +12,22 @@ public class RSkill extends RedditSelection{
 	
 	private void sendAbilities(RedditUnit info, MessageReceivedEvent event){
 		String s=":pencil: Skills for:"+info.title;
-		s+="\n```";
+		s+="\n";
 		if(!(info.magic==null)){
-			s+="Magic: [Rarity unlocked|Level unlocked]";
+			s+="__Magic__: [Rarity unlocked|Level unlocked]";
 			for(int i=0;i<info.magic.length;i++){
-				s+="\n"+Lib.pad("["+(info.magic[i].minRare==0?info.baseR:info.magic[i].minRare)+"|"+info.magic[i].level+"]",7)
-				+" "+info.magic[i].jpName+"|"+info.magic[i].effect+" MP:"+info.magic[i].MP;
+				s+="\n"+Lib.pad("[**"+(info.magic[i].minRare==0?info.baseR:info.magic[i].minRare)+"|"+info.magic[i].level+"**]",7)
+				+" *"+info.magic[i].jpName+"* | "+info.magic[i].effect+" MP:**"+info.magic[i].MP+"**";
 			}
 		}
 		if(!(info.special==null)){
-			s+="\n\nSpecial [Rarity unlocked|Level unlocked]";
+			s+="\n\n__Special__: [Rarity unlocked|Level unlocked]";
 			for(int i=0;i<info.special.length;i++){
-				s+="\n"+Lib.pad("["+(info.special[i].minRare==0?info.baseR:info.special[i].minRare)+"|"+info.special[i].level+"]",7)
-				+" "+info.special[i].jpName+"|"+info.special[i].effect+" MP:"+info.special[i].MP;
+				s+="\n"+Lib.pad("[**"+(info.special[i].minRare==0?info.baseR:info.special[i].minRare)+"|"+info.special[i].level+"**]",7)
+				+" *"+info.special[i].jpName+"* | "+info.special[i].effect+" MP:**"+info.special[i].MP+"**";
 			}
 		}
-		s+="```";
+		s+="";
 		Lib.sendMessage(event, s);
 		
 	}
