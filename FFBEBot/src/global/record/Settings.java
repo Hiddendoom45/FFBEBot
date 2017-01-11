@@ -14,7 +14,7 @@ import XML.Elements;
  *
  */
 public class Settings {
-	public static final String token=Secrets.token;
+	public static final String token=Secrets.testToken;
 	public static final String prefix="-!";
 	public static final String modPrefix="~!";
 	public static final String UA="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36";
@@ -35,7 +35,7 @@ public class Settings {
 	public String joinMsg="";
 	public String joinPM="";
 	public String id="";
-	public String[] modded;
+	public String[] modded=new String[]{};
 	public boolean tJoinMsg=true;
 	public boolean tJoinPM=false;
 	//in preparation for custom messages for each server

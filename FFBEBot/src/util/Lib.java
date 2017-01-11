@@ -183,6 +183,38 @@ public class Lib {
 		}
 		return Integer.parseInt(i);
 	}
+	public static int[] extractNumbers(String s){
+		System.out.println(s);
+		String i="";
+		boolean number=false;
+		for(char c:s.trim().toCharArray()){
+			if(number){
+				if(Character.isDigit(c)){
+					i+=c;
+				}
+				else{
+					i+=",";
+					number=false;
+				}
+			}
+			else{
+				if(Character.isDigit(c)){
+					i+=c;
+					number=true;
+				}
+			}
+		}
+		System.out.println(i);
+		if(i.endsWith(",")){
+			i=i.substring(0, i.length()-1);
+		}
+		String[] nums=i.split(",");
+		int[] ints=new int[nums.length];
+		for(int d=0;d<nums.length;d++){
+			ints[d]=Integer.parseInt(nums[d]);
+		}
+		return ints;
+	}
 	public static boolean contains(Object obj,Object[] os){
 		for(Object o:os){
 			if(o.equals(obj)){

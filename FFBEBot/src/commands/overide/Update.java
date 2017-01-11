@@ -47,6 +47,7 @@ public class Update implements OverrideCommand {
 						//p=Runtime.getRuntime().exec("sleep 60 && rename "+location+"FFBEBots.jar "+location+"FFBEBot.jar && java -jar FFBEBot.jar");
 						p=Runtime.getRuntime().exec("java -jar FFBEBot.jar");
 					}
+					Files.delete(new File("FFBEBots.jar").toPath());
 					Main.quit();
 					return;
 				} catch (IOException e) {

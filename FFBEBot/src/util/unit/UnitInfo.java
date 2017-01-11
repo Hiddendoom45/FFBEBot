@@ -92,19 +92,23 @@ public class UnitInfo {
 			for(int i=0;i<awakening.length;i++){
 				awakening[i]="";
 				for(int c=0;c<Lib.getTDCount(awaken, 1);c++){
-					awakening[i]+=Lib.getCell(1+i, c, awaken).text()+"| ";
+					if(c==0){
+						awakening[i]+=Lib.extractNumber(Lib.getCell(1+i, c, awaken).text())+"| ";
+					}
+					else{
+						awakening[i]+=Lib.getCell(1+i, c, awaken).text()+"| ";
+					}
 				}
 				awakening[i]=awakening[i].substring(0, awakening[i].length()-2);
 			}
 		}catch(Exception e){
 			Log.logError(e);
-			throw new IOException();
 		}
 	}
 	public void parseRarities(String text){
-		String[] rarity=text.split("-"); 
-		minRarity=Integer.parseInt(rarity[0].trim());
-		maxRarity=Integer.parseInt(rarity[1].trim());
+		int[] rarity=Lib.extractNumbers(text) ;
+		minRarity=rarity[0];
+		maxRarity=rarity[1];
 	}
 	public void parseWeapons(Element weapons){
 		this.weapons=new String[weapons.children().size()];
@@ -138,7 +142,7 @@ public class UnitInfo {
 			public String DC;
 			public String growth;
 			public statSet(Element row){
-				rarity=row.child(0).text();
+				rarity=""+Lib.extractNumber(row.child(0).text());;
 				HP=row.child(1).text();
 				MP=row.child(2).text();
 				ATK=row.child(3).text();
@@ -168,7 +172,7 @@ public class UnitInfo {
 			public String effect;
 			public String MP;
 			public ability(Element row){
-				rarity=row.child(0).text();
+				rarity=""+Lib.extractNumber(row.child(0).text());
 				level=row.child(1).text();
 				aIconURL=row.child(2).absUrl("src");
 				name=row.child(3).text();
