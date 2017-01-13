@@ -67,7 +67,7 @@ public class Log {
 	public static void logError(Exception e){
 		String s=e.toString();
 		for(StackTraceElement er:e.getStackTrace()){
-			s+="\n\tat"+er.toString();
+			s+="\n\tat "+er.toString();
 		}
 		e.printStackTrace();
 		log("ERROR",s);

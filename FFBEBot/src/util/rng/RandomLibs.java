@@ -16,7 +16,7 @@ public class RandomLibs {
 		Random rand=new Random();
 		return options[rand.nextInt(options.length)];
 	}
-	public static Object SelectRandom(Object[] options){
+	public static <T> T SelectRandom(T[] options){
 		Random rand=new Random();
 		return options[rand.nextInt(options.length)];
 	}

@@ -170,6 +170,7 @@ public class UnitInfo {
 			public String name;
 			public String link;
 			public String effect;
+			public String hits;
 			public String MP;
 			public ability(Element row){
 				rarity=""+Lib.extractNumber(row.child(0).text());
@@ -178,7 +179,8 @@ public class UnitInfo {
 				name=row.child(3).text();
 				link=row.child(3).absUrl("href");
 				effect=row.child(4).text();
-				MP=row.child(5).text();
+				hits=row.child(5).text();
+				MP=row.child(6).text();
 			}
 		}
 	}

@@ -165,12 +165,33 @@ public enum Unit {
 		}
 		return rare;
 	}
+	public int getRarityIndex(int rarity){
+		if(hasRarity(rarity)){
+			return rarity-base;
+		}
+		return -1;
+	}
+	public int getUpgradeIndex(int rarity,Awakening[] awakening){
+		if(hasUpgrade(rarity,awakening)){
+			return rarity-base-url.length;
+		}
+		return -1;
+	}
 	public String getUpgrade(int rarity,int upgrade){
 		String rare="";
 		if(hasUpgrade(rarity,upgrade)){
 			rare=upgradeurl[rarity-base-url.length];
 		}
 		return rare;
+	}
+	public boolean hasUpgrade(int rarity,Awakening[] awakening){
+		for(Awakening a:awakening)
+		for(int i=0;i<a.units.length;i++){
+			if(a.units[i].equals(this)){
+				hasUpgrade(rarity,a.rarityAwakened[i]);
+			}
+		}
+		return false;
 	}
 	public static void main(String[] args){
 	}

@@ -33,19 +33,19 @@ public class Update implements OverrideCommand {
 		for(Attachment a:atts){
 			if(a.getFileName().endsWith(".jar")){
 				try {
+					if(new File("FFBEBots.jar").exists()){
+						Files.delete(new File("FFBEBots.jar").toPath());
+					}
 					a.download(new File("FFBEBots.jar"));
 					@SuppressWarnings("unused")
 					Process p;
-					String location=new File("s").getAbsolutePath();
-					location=location.substring(0,location.length()-1);
-					System.out.println(location);
-					Files.move(new File("FFBEBots.jar").toPath(), new File("FFBEBot.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
 					if(System.getProperty("os.name").equals("Mac OS X")){
-					 p = Runtime.getRuntime().exec("java -jar FFBEBot.jar");
+						Files.move(new File("FFBEBots.jar").toPath(), new File("FFBEBot.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
+						p = Runtime.getRuntime().exec("java -jar FFBEBot.jar");
 					}
 					else{
 						//p=Runtime.getRuntime().exec("sleep 60 && rename "+location+"FFBEBots.jar "+location+"FFBEBot.jar && java -jar FFBEBot.jar");
-						p=Runtime.getRuntime().exec("java -jar FFBEBot.jar");
+						p=Runtime.getRuntime().exec("java -jar IHateWindows.jar");
 					}
 					Files.delete(new File("FFBEBots.jar").toPath());
 					Main.quit();

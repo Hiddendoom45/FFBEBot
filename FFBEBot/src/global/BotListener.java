@@ -3,7 +3,6 @@ package global;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.entities.impl.MessageImpl;
 import net.dv8tion.jda.events.ReadyEvent;
 import net.dv8tion.jda.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
