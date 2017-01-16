@@ -25,20 +25,12 @@ public class Lore extends UnitSelection{
 	public void sendLore(UnitInfo info,MessageReceivedEvent event,int rarity){
 		Lib.sendMessage(event, ":pencil:Lore of:"+info.unitName+" at "+rarity+":star:\n"+info.lore[rarity-info.minRarity]);
 	}
-	@Override
-	public void onePossible(UnitOverview Ounit, MessageReceivedEvent event) throws IOException {
-		sendLore(new UnitInfo(Ounit.getData(0).unitUrl),event,Integer.parseInt(Ounit.getData(0).maxR.trim()));
-	}
 
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
 		sendLore(new UnitInfo(Ounit.getData(0).unitUrl),event,rarity);
 	}
 
-	@Override
-	public void manyPossible(UnitOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendLore(new UnitInfo(Ounit.getData(selection).unitUrl),event,Integer.parseInt(Ounit.getData(selection).maxR.trim()));
-	}
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)

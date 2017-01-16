@@ -18,7 +18,7 @@ public class Ping implements Command{
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		event.getChannel().sendMessage("pong");
+		event.getChannel().sendMessage("pongy");
 	}
 
 	@Override

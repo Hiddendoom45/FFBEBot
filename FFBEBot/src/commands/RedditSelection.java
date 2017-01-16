@@ -53,7 +53,7 @@ public abstract class RedditSelection implements Command, Selection {
 				}
 				else if(possible.size()>0){
 					if(rarity==0){
-						onePossible(Ounits,event);
+						onePossible(Ounits,0,event);
 					}
 					else{
 						
@@ -63,7 +63,7 @@ public abstract class RedditSelection implements Command, Selection {
 							onePossible(Ounits,rare,event);
 						}
 						else{
-							onePossible(Ounits,event);
+							onePossible(Ounits,0,event);
 						}
 					}
 				}
@@ -78,9 +78,7 @@ public abstract class RedditSelection implements Command, Selection {
 
 		}
 	}
-	public abstract void onePossible(RedditOverview Ounit,MessageReceivedEvent event) throws IOException;
 	public abstract void onePossible(RedditOverview Ounit, int rarity,MessageReceivedEvent event) throws IOException;
-	public abstract void manyPossible(RedditOverview Ounit, int selection,MessageReceivedEvent event) throws IOException;
 	public abstract void manyPossible(RedditOverview Ounit, int selection, int rarity,MessageReceivedEvent event) throws IOException;
 	@Override
 	public abstract void help(MessageReceivedEvent event);
@@ -92,7 +90,7 @@ public abstract class RedditSelection implements Command, Selection {
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		try{
 			if(chosen.additionalData[0].equals("null")){
-				manyPossible(saved.get(chosen.ID),chosen.selected,event);
+				manyPossible(saved.get(chosen.ID),0,chosen.selected,event);
 			}
 			else{
 				RedditUnit info=new RedditUnit(saved.get(chosen.ID).getData(chosen.selected).unitUrl);
@@ -101,7 +99,7 @@ public abstract class RedditSelection implements Command, Selection {
 					manyPossible(saved.get(chosen.ID),chosen.selected,rare,event);
 				}
 				else{
-					manyPossible(saved.get(chosen.ID),chosen.selected,event);
+					manyPossible(saved.get(chosen.ID),0,chosen.selected,event);
 				}
 			}
 			saved.remove(chosen.ID);

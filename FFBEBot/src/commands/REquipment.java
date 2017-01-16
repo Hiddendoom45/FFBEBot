@@ -22,28 +22,17 @@ public class REquipment extends RedditSelection {
 		Lib.sendMessage(event, s);
 		
 	}
-	@Override
-	public void onePossible(RedditOverview Ounit, MessageReceivedEvent event) throws IOException {
-		sendEquipment(new RedditUnit(Ounit.getData(0).unitUrl),event);
-
-	}
 
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		onePossible(Ounit,event);
-
-	}
-
-	@Override
-	public void manyPossible(RedditOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendEquipment(new RedditUnit(Ounit.getData(selection).unitUrl),event);
+		sendEquipment(new RedditUnit(Ounit.getData(0).unitUrl),event);
 
 	}
 
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		manyPossible(Ounit,selection,event);
+		sendEquipment(new RedditUnit(Ounit.getData(selection).unitUrl),event);
 
 	}
 

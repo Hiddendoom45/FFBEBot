@@ -34,25 +34,14 @@ public class RUnits extends RedditSelection {
 		Lib.sendMessage(event, out);
 	}
 	@Override
-	public void onePossible(RedditOverview Ounit, MessageReceivedEvent event) throws IOException {
-		sendUnitData(new RedditUnit(Ounit.getData(0).unitUrl),event);
-	}
-
-	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		onePossible(Ounit,event);
+		sendUnitData(new RedditUnit(Ounit.getData(0).unitUrl),event);
 
 	}
-
-	@Override
-	public void manyPossible(RedditOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendUnitData(new RedditUnit(Ounit.getData(selection).unitUrl),event);
-	}
-
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		manyPossible(Ounit,selection,event);
+		sendUnitData(new RedditUnit(Ounit.getData(selection).unitUrl),event);
 	}
 
 	@Override

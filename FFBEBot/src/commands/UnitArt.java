@@ -46,11 +46,6 @@ public class UnitArt extends UnitSelection implements Command,Selection  {
 		// TODO Auto-generated method stub
 	}
 
-	@Override
-	public void onePossible(UnitOverview Ounit, MessageReceivedEvent event) throws IOException {
-		sendImage(Ounit,0,event,0);
-		
-	}
 
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
@@ -58,11 +53,6 @@ public class UnitArt extends UnitSelection implements Command,Selection  {
 		
 	}
 
-	@Override
-	public void manyPossible(UnitOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendImage(Ounit,0,event,selection);
-		
-	}
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)

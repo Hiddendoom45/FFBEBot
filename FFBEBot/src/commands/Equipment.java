@@ -32,25 +32,16 @@ public class Equipment extends UnitSelection{
 		Lib.sendMessage(event, s);
 		
 	}
-	@Override
-	public void onePossible(UnitOverview Ounit, MessageReceivedEvent event) throws IOException {
-		sendEquipment(new UnitInfo(Ounit.getData(0).unitUrl),event);
-	}
 
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		onePossible(Ounit,event);
-	}
-
-	@Override
-	public void manyPossible(UnitOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendEquipment(new UnitInfo(Ounit.getData(selection).unitUrl),event);
+		sendEquipment(new UnitInfo(Ounit.getData(0).unitUrl),event);
 	}
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		manyPossible(Ounit,selection,event);
+		sendEquipment(new UnitInfo(Ounit.getData(selection).unitUrl),event);
 		
 	}
 

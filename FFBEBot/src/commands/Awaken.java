@@ -21,20 +21,12 @@ public class Awaken extends UnitSelection {
 		}
 		Lib.sendMessage(event, s);
 	}
-	@Override
-	public void onePossible(UnitOverview Ounit, MessageReceivedEvent event) throws IOException {
-		sendAwakening(new UnitInfo(Ounit.getData(0).unitUrl),0,event);
-	}
 
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
 		sendAwakening(new UnitInfo(Ounit.getData(0).unitUrl),rarity,event);
 	}
 
-	@Override
-	public void manyPossible(UnitOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendAwakening(new UnitInfo(Ounit.getData(selection).unitUrl),0,event);
-	}
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)

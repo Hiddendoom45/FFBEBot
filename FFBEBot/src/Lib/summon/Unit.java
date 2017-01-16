@@ -1,7 +1,7 @@
 package Lib.summon;
 
 import java.util.ArrayList;
-
+import util.Lib;
 public enum Unit {
 	Vivi("Vivi",new String[]{"https://exviuswiki.com/images/0/0f/Unit-Vivi-3.png","https://exviuswiki.com/images/d/d3/Unit-Vivi-4.png"},3),
 	Penelo("Penelo",new String[]{"https://exviuswiki.com/images/6/6f/Unit-Penelo-3.png","https://exviuswiki.com/images/5/5a/Unit-Penelo-4.png"},3),
@@ -195,9 +195,8 @@ public enum Unit {
 	}
 	public static void main(String[] args){
 	}
-	public static Unit[] commons(){
+	public static Unit[] commons1(){
 		return new Unit[]{
-				Vivi,
 				Penelo,
 				Sabin,
 				Shadow,
@@ -214,7 +213,79 @@ public enum Unit {
 				Bedile
 		};
 	}
-	
+	public static Unit[] commons2(){
+		return Lib.concat(commons1(), new Unit[]{
+			Vivi,
+			Lani
+		});
+	}
+	public static Unit[] currentPool(){
+		
+		return Lib.concat(Unit.commons1(),new Unit[]{
+				Garland,
+				Exdeath,
+				Kuja,
+				CoD,
+				Cecil,
+				Terra,
+				Bartz,
+				Firion,
+				Zidane,
+				Vaan,
+				Duane,
+				Cerius,
+				Roselia,
+				Medius,
+				Miyuki,
+				Russel,
+				Golbez,
+				Galuf,
+				Xiao,
+				Artemios,
+				Locke,
+				Leo,
+				Gilbert,
+				Celes,
+				Kefka,
+				Rakshasa,
+				Chizuru,
+				Hayate,
+				WoL,
+				Tellah,
+				Lenna,
+				Amarant,
+				Garnet,
+				Freya,
+				Charlotte,
+				Ludmille,
+				Lightning,
+				Deltia,
+				Alma,
+				Gaffgarion,
+				Ramza,
+				Arigas,
+				Mustadio,
+				Rosa,
+				DKC,
+				Edge,
+				Arc,
+				Ingus,
+				Refia,
+				Luneth,
+				Faris,
+				Greg,
+				Snow,
+				Vanille,
+				Sazh,
+				Hope,
+				Fang,
+				Mercedes,
+				Noctis,
+				Elle,
+				Luka,
+				DFina
+		});
+	}
 	public static Unit[] base3(Unit[] pool){
 		ArrayList<Unit> base3=new ArrayList<Unit>();
 		for(Unit u:pool){

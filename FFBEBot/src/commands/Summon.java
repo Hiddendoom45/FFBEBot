@@ -13,6 +13,8 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
+import org.json.JSONObject;
+
 import Lib.summon.SummonedUnit;
 import global.record.Log;
 import global.record.SaveSystem;
@@ -34,8 +36,11 @@ public class Summon implements Command {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		if(args.length>0&&Lib.isNumber(args[0])){
-			
-			sendImage(event, Pull.pull(Integer.parseInt(args[0])));
+			int num=Integer.parseInt(args[0]);
+			if(num>25){
+				num=25;
+			}
+			sendImage(event, Pull.pull(num));
 		}
 		else{
 			Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
@@ -77,9 +82,9 @@ public class Summon implements Command {
 			connection.setRequestProperty("User-Agent",Settings.UA);
 			small = ImageIO.read(connection.getInputStream());
 			System.out.println(small.getWidth()+","+small.getHeight());
-			int sx=(width/2-(small.getWidth()));
-			int sy=(height-small.getHeight()*2)-24;
-			BufferedImage stand;
+			int sx=(width/2-(small.getWidth()));//shift to centre unit
+			int sy=(height-small.getHeight()*2)-24;//shift to make unit stand on stand
+			BufferedImage stand;//stand determined by rarity of unit
 			if(s.rarity==3){
 				stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/3star.png"));
 			}
@@ -89,7 +94,7 @@ public class Summon implements Command {
 			else if(s.rarity==5){
 				stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/5star.png"));
 			}
-			else{
+			else{//error case
 				stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/none.png"));
 			}
 			BufferedImage back=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/BG.png"));

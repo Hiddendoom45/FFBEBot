@@ -14,21 +14,22 @@ public class Pull {
 	private static int pool4=1899;
 	private static int pool5=99;
 	public static ArrayList<SummonedUnit> pull(int times){
+		Banner banner=Banner.Current;
 		Random rand=new Random();
 		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
 		for(int i=0;i<times;i++){
 			int rarity=rand.nextInt(99);
 			//5*
 			if(rarity==0){
-				units.add(new SummonedUnit(pull(Banner.Current,5,pool5,50).getRarity(5),"",5));
+				units.add(new SummonedUnit(pull(banner,5,pool5,50).getRarity(5),"",5));
 			}
 			//3*
 			else if(rarity>19){
-				units.add(new SummonedUnit(pull(Banner.Current,3,pool3,100).getRarity(3),"",3));
+				units.add(new SummonedUnit(pull(banner,3,pool3,100).getRarity(3),"",3));
 			}
 			//4*
 			else{
-				units.add(new SummonedUnit(pull(Banner.Current,4,pool4,25).getRarity(4),"",4));
+				units.add(new SummonedUnit(pull(banner,4,pool4,25).getRarity(4),"",4));
 			}
 		}
 		return units;

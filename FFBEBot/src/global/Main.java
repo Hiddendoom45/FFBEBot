@@ -32,6 +32,7 @@ public class Main {
 		try{
 			Main.startup();
 			Main.setup();
+			System.out.println(jda.getGuilds());
 		}catch(Exception e){
 			Log.logError(e);
 			Log.save();

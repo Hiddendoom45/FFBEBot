@@ -21,21 +21,10 @@ public class RAwaken extends RedditSelection {
 		}
 		Lib.sendMessage(event, s);
 	}
-	@Override
-	public void onePossible(RedditOverview Ounit, MessageReceivedEvent event) throws IOException {
-		sendAwakening(new RedditUnit(Ounit.getData(0).unitUrl),0,event);
-
-	}
 
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
 		sendAwakening(new RedditUnit(Ounit.getData(0).unitUrl),rarity,event);
-
-	}
-
-	@Override
-	public void manyPossible(RedditOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendAwakening(new RedditUnit(Ounit.getData(selection).unitUrl),0,event);
 
 	}
 

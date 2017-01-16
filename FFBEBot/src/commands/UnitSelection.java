@@ -12,10 +12,15 @@ import util.Selection;
 import util.Selector;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
-
+/**
+ * Command used for the selection of a specific unit to find information about the unit
+ * @author Allen
+ *
+ */
 public abstract class UnitSelection implements Command, Selection {
 	protected UnitSelection(){
 	}
+	//used to keep track of current selections going on
 	private HashMap<Long,UnitOverview> saved=new HashMap<Long,UnitOverview>();
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
@@ -31,6 +36,7 @@ public abstract class UnitSelection implements Command, Selection {
 		else{
 			int rarity=0;
 			String name="";
+			//extract name, including spaces, numbers=rarity
 			for(int i=0;i<args.length;i++){
 				if(i==(args.length-1)&&Lib.isNumber(args[i])){
 					rarity=Integer.parseInt(args[i]);
@@ -45,16 +51,16 @@ public abstract class UnitSelection implements Command, Selection {
 			try{
 				UnitOverview Ounits=new UnitOverview(name);//get all units matching name
 				ArrayList<String> possible=Ounits.getNames();//get the array of those uits
-				if(possible.size()>1){
+				if(possible.size()>1){//if more than 1 possible unit
 					long ID=System.currentTimeMillis();//assuming that no 2 commands will occur simultaneously
 					saved.put(ID, Ounits);//keep track of the Ounits used to find all the units(essentially the options)
 					Select select=new Select(possible, ID, this, possible);//fin
 					select.additionalData=new String[]{(rarity!=0?""+rarity:"null")};
 					Selector.setSelection(select, event);
 				}
-				else if(possible.size()>0){
+				else if(possible.size()>0){//if only 1 possible unit, send data, as appropriate
 					if(rarity==0){
-						onePossible(Ounits,event);
+						onePossible(Ounits,0,event);
 					}
 					else{
 						UnitInfo info=new UnitInfo(Ounits.getData(0).unitUrl);
@@ -63,7 +69,7 @@ public abstract class UnitSelection implements Command, Selection {
 							onePossible(Ounits,rare,event);
 						}
 						else{
-							onePossible(Ounits,event);
+							onePossible(Ounits,0,event);
 						}
 					}
 				}
@@ -78,9 +84,7 @@ public abstract class UnitSelection implements Command, Selection {
 
 		}
 	}
-	public abstract void onePossible(UnitOverview Ounit,MessageReceivedEvent event) throws IOException;
 	public abstract void onePossible(UnitOverview Ounit, int rarity,MessageReceivedEvent event) throws IOException;
-	public abstract void manyPossible(UnitOverview Ounit, int selection,MessageReceivedEvent event) throws IOException;
 	public abstract void manyPossible(UnitOverview Ounit, int selection, int rarity,MessageReceivedEvent event) throws IOException;
 	@Override
 	public abstract void help(MessageReceivedEvent event);
@@ -92,7 +96,7 @@ public abstract class UnitSelection implements Command, Selection {
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		try{
 			if(chosen.additionalData[0].equals("null")){
-				manyPossible(saved.get(chosen.ID),chosen.selected,event);
+				manyPossible(saved.get(chosen.ID),0,chosen.selected,event);
 			}
 			else{
 				UnitInfo info=new UnitInfo(saved.get(chosen.ID).getData(chosen.selected).unitUrl);
@@ -101,7 +105,7 @@ public abstract class UnitSelection implements Command, Selection {
 					manyPossible(saved.get(chosen.ID),chosen.selected,rare,event);
 				}
 				else{
-					manyPossible(saved.get(chosen.ID),chosen.selected,event);
+					manyPossible(saved.get(chosen.ID),0,chosen.selected,event);
 				}
 			}
 			saved.remove(chosen.ID);

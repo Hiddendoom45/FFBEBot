@@ -31,7 +31,7 @@ public class Update implements OverrideCommand {
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		List<Attachment> atts=event.getMessage().getAttachments();
 		for(Attachment a:atts){
-			if(a.getFileName().endsWith(".jar")){
+			//if(a.getFileName().endsWith(".jar")){
 				try {
 					if(new File("FFBEBots.jar").exists()){
 						Files.delete(new File("FFBEBots.jar").toPath());
@@ -47,14 +47,12 @@ public class Update implements OverrideCommand {
 						//p=Runtime.getRuntime().exec("sleep 60 && rename "+location+"FFBEBots.jar "+location+"FFBEBot.jar && java -jar FFBEBot.jar");
 						p=Runtime.getRuntime().exec("java -jar IHateWindows.jar");
 					}
-					Files.delete(new File("FFBEBots.jar").toPath());
 					Main.quit();
 					return;
 				} catch (IOException e) {
 					Log.logError(e);
 				}
-				
-			}
+			//}
 		}
 	}
 

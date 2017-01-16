@@ -59,22 +59,13 @@ public class Units extends UnitSelection implements Command,Selection {
 	@Override
 	public void executed(boolean sucess, MessageReceivedEvent event) {
 	}
-
 	@Override
-	public void onePossible(UnitOverview Ounit, MessageReceivedEvent event) throws IOException {
+	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
 		sendUnitData(new UnitInfo(Ounit.getData(0).unitUrl),event);
 	}
 	@Override
-	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		onePossible(Ounit,event);
-	}
-	@Override
-	public void manyPossible(UnitOverview Ounit, int selection, MessageReceivedEvent event) throws IOException {
-		sendUnitData(new UnitInfo(Ounit.getData(selection).unitUrl),event);
-	}
-	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event) throws IOException {
-		manyPossible(Ounit,selection,event);
+		sendUnitData(new UnitInfo(Ounit.getData(selection).unitUrl),event);
 	}
 
 }
