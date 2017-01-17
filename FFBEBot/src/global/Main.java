@@ -32,7 +32,6 @@ public class Main {
 		try{
 			Main.startup();
 			Main.setup();
-			System.out.println(jda.getGuilds());
 		}catch(Exception e){
 			Log.logError(e);
 			Log.save();
@@ -63,7 +62,7 @@ public class Main {
 	 * everything that needs to be done when the JVM starts up
 	 */
 	public static void setup(){
-		jda.getAccountManager().setGame("the Loading Game...");
+		//jda.getAccountManager().setGame("the Loading Game...");
 		//put commands in map
 		commands.put("ping", new Ping());
 		commands.put("units", new Units());
@@ -99,6 +98,7 @@ public class Main {
 		overrides.put("logsave", new SaveLog());
 		overrides.put("botmod", new BotMod());
 		overrides.put("update", new Update());
+		overrides.put("reload", new Reload());
 		//setup/build various things
 		Log.setup();
 		SaveSystem.setup();

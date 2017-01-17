@@ -2,42 +2,64 @@ package util.unit;
 
 import java.util.ArrayList;
 
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import global.record.SaveSystem;
+import com.google.gson.Gson;
+
+import global.record.Log;
+import global.record.Settings;
 import util.Lib;
 
 public class RedditOverview {
 	public ArrayList<String> possible=new ArrayList<String>();
-	public ArrayList<Element> possibleData=new ArrayList<Element>();
+	public ArrayList<unitData> possibleData=new ArrayList<unitData>();
 	public RedditOverview(String unitName){
+		try{
+			for(unitData u:new Gson().fromJson(Settings.redditO,unitData[].class)){
+				if(u.name.toLowerCase().contains(unitName.toLowerCase())){
+					this.possible.add(u.name);
+					this.possibleData.add(u);
+				}
+				}
+			
+		}catch(Exception e){
+			Log.logError(e);
+		}
+	}
+	public static unitData[] preloadReddit(){
+		unitData[] udata = null;
 		Document doc = null;
 		try{
-			doc=SaveSystem.redditO;
+			for(int i=0;i<10;i++){
+				try{
+					doc = Jsoup.connect("https://www.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(60000).get();
+					if(!(doc==null))break;
+				}
+				catch(Exception e){Log.logError(e);}
+			}
 			Element data=doc.getElementsByClass("wiki").get(0);
 			Elements units=data.getElementsByTag("tbody").get(0).getElementsByTag("tr");
+			udata=new unitData[units.size()];
+			int i=0;
 			for(Element u:units){
-				Element unit=Lib.getNestedItem(new Elements(u), 2, "td").first();
-				if(!(unit==null)){
-					if(unit.text().toLowerCase().contains(unitName.toLowerCase())){
-						this.possible.add(unit.text());
-						possibleData.add(u);
-					}
-				}
+				udata[i]=new unitData(u);
+				i++;
 			}
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		return udata;
 	}
 	public ArrayList<String> getNames(){
 		return possible;
 	}
 	public unitData getData(int selection){
-		return new unitData(possibleData.get(selection));
+		return possibleData.get(selection);
 	}
-	public class unitData{
+	public static class unitData{
 		public String unitUrl;
 		public String name;
 		public String JPname;

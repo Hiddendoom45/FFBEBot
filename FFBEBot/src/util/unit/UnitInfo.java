@@ -108,7 +108,11 @@ public class UnitInfo {
 	public void parseRarities(String text){
 		int[] rarity=Lib.extractNumbers(text) ;
 		minRarity=rarity[0];
+		try{
 		maxRarity=rarity[1];
+		}catch(ArrayIndexOutOfBoundsException e){
+			maxRarity=minRarity;
+		}
 	}
 	public void parseWeapons(Element weapons){
 		this.weapons=new String[weapons.children().size()];

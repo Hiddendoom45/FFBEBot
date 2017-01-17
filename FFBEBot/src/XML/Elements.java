@@ -59,7 +59,12 @@ public class Elements {
 		return text;
 	}
 	public Elements setText(String text) {
-		this.text = text;
+		if(text==null){
+			this.text="";
+		}
+		else{
+			this.text = text;
+		}
 		return this;
 	}
 	public ArrayList<Attribute> getAttributes() {

@@ -48,6 +48,11 @@ public class Salty implements Command, Selection {
 				ArrayList<String> possible =new ArrayList<String>();//possible image links
 				ArrayList<String> name=new ArrayList<String>();//names for the image links
 				Elements first=doc.getElementsByTag("tbody");//get tables
+				while(true){
+					doc = Jsoup.connect("https://exviuswiki.com/Unreleased_Unit_List").userAgent(Settings.UA).timeout(10000).get();
+					if(!(doc==null))break;
+				}
+				first.addAll(doc.getElementsByTag("tbody"));//get tables
 				Elements units = Lib.getNested(first, "tr");//get rows
 				for(Element unit:units){
 					if(unit.getElementsByTag("td").size()>0){//if has data in rows

@@ -27,7 +27,6 @@ public abstract class UnitSelection implements Command, Selection {
 		event.getChannel().sendTyping();
 		return true;
 	}
-
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		if(args.length==0){//default message returns the help message

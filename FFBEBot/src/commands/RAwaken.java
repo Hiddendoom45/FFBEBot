@@ -24,14 +24,14 @@ public class RAwaken extends RedditSelection {
 
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendAwakening(new RedditUnit(Ounit.getData(0).unitUrl),rarity,event);
+		sendAwakening(SaveSystem.getRedditUnit(Ounit.getData(0).name),rarity,event);
 
 	}
 
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendAwakening(new RedditUnit(Ounit.getData(selection).unitUrl),rarity,event);
+		sendAwakening(SaveSystem.getRedditUnit(Ounit.getData(selection).name),rarity,event);
 
 	}
 

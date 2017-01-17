@@ -9,8 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import XML.Attribute;
 import XML.XMLStAXFile;
@@ -19,9 +20,12 @@ import global.Main;
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.unit.RedditOverview;
+import util.unit.RedditUnit;
+import util.unit.UnitInfo;
+import util.unit.UnitOverview;
 
 public class SaveSystem {
-	public static Document redditO;
 	public static void setup(){
 		if(!new File(Settings.dataSource).exists()){
 			List<Guild> guilds=Main.jda.getGuilds();
@@ -29,26 +33,75 @@ public class SaveSystem {
 			for(Guild g:guilds){
 				root.add(new Settings(g.getId()).parseToElements());
 			}
-			Elements override=new Elements("override");
-			root.add(override);
+			preloadExvicus();
+			preloadReddit();
 			XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 			file.writeXMLFile();
 			file.startWriter();
 			file.writeElement(root);
 			file.endWriter();
+			preloadExvicus();
+			preloadReddit();
+			writeData();
 		}
 		load();
-		preloadReddit();
 	}
 	public static void preloadReddit(){
-		for(int i=0;i<10;i++){
+		Gson overviews=new Gson();
+		RedditOverview.unitData[] overview=RedditOverview.preloadReddit();
+		Settings.redditO=overviews.toJson(overview);
+		JsonObject units=new JsonObject();
+		for(RedditOverview.unitData u:overview){
 			try{
-				redditO = Jsoup.connect("https://www.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(60000).get();
-				if(!(redditO==null))break;
+			units.add(u.name, overviews.toJsonTree(new RedditUnit(u.unitUrl)));
+			}catch(Exception e){
+				Log.logError(e);
+				units.add(u.name,  overviews.toJsonTree(getRedditUnit(u.name)));
 			}
-			catch(Exception e){Log.logError(e);}
+			System.out.println("preloaded "+u.name);
 		}
+		Settings.redditUnits=overviews.toJson(units);
 		Log.log("System", "Reddit Overview Loaded");
+	}
+	public static RedditUnit getRedditUnit(String name){
+		return new Gson().fromJson(new JsonParser().parse(Settings.redditUnits).getAsJsonObject().get(name),RedditUnit.class);
+	}
+	public static void preloadExvicus(){
+		Gson overviews=new Gson();
+		UnitOverview.unitData[] overview=UnitOverview.preload();
+		Settings.exvicusO=overviews.toJson(overview);
+		JsonObject units=new JsonObject();
+		for(UnitOverview.unitData u:overview){
+			try{
+				units.add(u.name,overviews.toJsonTree(new UnitInfo(u.unitUrl)));
+			}catch(Exception e){
+				Log.logError(e);
+				units.add(u.name, overviews.toJsonTree(getExvicusUnit(u.name)));
+			}
+			System.out.println("preloaded "+u.name);
+		}
+		Settings.exvicusUnits=overviews.toJson(units);
+		Log.log("System", "Exvicus Overview loaded");
+	}
+	public static UnitInfo getExvicusUnit(String name){
+		return new Gson().fromJson(new JsonParser().parse(Settings.exvicusUnits).getAsJsonObject().get(name),UnitInfo.class);
+	}
+	public static void writeData(){
+		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
+		file.readXMLFile();
+		Elements doc=file.parseDocToElements();
+		file.endReader();
+		for(int i=0;i<doc.getChilds().size();i++){
+			if(doc.getChilds().get(i).getTagName().equals("preload")){
+				doc.getChilds().remove(i);
+			}
+		}
+		doc.add(Settings.parseDataToElements());
+		file.writeXMLFile();
+		file.startWriter();
+		file.writeElement(doc);
+		file.endWriter();
+		file.endReader();
 	}
 	public static void load(){
 		Settings.guilds.clear();
@@ -58,6 +111,9 @@ public class SaveSystem {
 		for(Elements e:guilds){
 			Settings.guilds.put(e.getAttribute("id").getValue(), new Settings(e));
 		}
+		file.resetReader();
+		Elements preload=file.parseToElements("preload").get(0);
+		Settings.setData(preload);
 		file.endReader();
 	}
 	public static Settings getGuild(String id){

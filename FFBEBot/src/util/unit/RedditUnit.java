@@ -199,7 +199,7 @@ public class RedditUnit {
 			name=row.child(2).text();
 			effect=row.child(3).text();
 			element=row.child(4).text();
-			value=Integer.parseInt(row.child(5).text());
+			//value=Integer.parseInt(row.child(5).text());
 		}
 	}
 	public class UnitAbility{

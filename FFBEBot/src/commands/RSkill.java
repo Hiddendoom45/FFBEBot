@@ -33,13 +33,13 @@ public class RSkill extends RedditSelection{
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendAbilities(new RedditUnit(Ounit.getData(0).unitUrl),event);
+		sendAbilities(SaveSystem.getRedditUnit(Ounit.getData(0).name),event);
 		
 	}
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendAbilities(new RedditUnit(Ounit.getData(selection).unitUrl),event);
+		sendAbilities(SaveSystem.getRedditUnit(Ounit.getData(selection).name),event);
 		
 	}
 	@Override

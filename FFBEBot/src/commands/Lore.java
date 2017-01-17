@@ -28,14 +28,14 @@ public class Lore extends UnitSelection{
 
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendLore(new UnitInfo(Ounit.getData(0).unitUrl),event,rarity);
+		sendLore(SaveSystem.getExvicusUnit(Ounit.getData(0).name),event,rarity);
 	}
 
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendLore(new UnitInfo(Ounit.getData(selection).unitUrl),event,rarity);
+		sendLore(SaveSystem.getExvicusUnit(Ounit.getData(selection).name),event,rarity);
 		
 	}
 }

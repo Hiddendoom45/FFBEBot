@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import org.json.JSONObject;
-
 import Lib.summon.SummonedUnit;
 import global.record.Log;
 import global.record.SaveSystem;

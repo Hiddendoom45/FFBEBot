@@ -184,7 +184,6 @@ public class Lib {
 		return Integer.parseInt(i);
 	}
 	public static int[] extractNumbers(String s){
-		System.out.println(s);
 		String i="";
 		boolean number=false;
 		for(char c:s.trim().toCharArray()){
@@ -204,7 +203,6 @@ public class Lib {
 				}
 			}
 		}
-		System.out.println(i);
 		if(i.endsWith(",")){
 			i=i.substring(0, i.length()-1);
 		}

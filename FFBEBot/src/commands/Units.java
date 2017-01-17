@@ -61,11 +61,11 @@ public class Units extends UnitSelection implements Command,Selection {
 	}
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendUnitData(new UnitInfo(Ounit.getData(0).unitUrl),event);
+		sendUnitData(SaveSystem.getExvicusUnit(Ounit.getData(0).name),event);
 	}
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event) throws IOException {
-		sendUnitData(new UnitInfo(Ounit.getData(selection).unitUrl),event);
+		sendUnitData(SaveSystem.getExvicusUnit(Ounit.getData(selection).name),event);
 	}
 
 }
