@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 import Lib.summon.SummonedUnit;
+import Lib.summon.banner.Banner;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
@@ -38,7 +39,8 @@ public class Summon implements Command {
 			public void run(){
 				if(args.length>0&&Lib.isNumber(args[0])){
 					int num=Integer.parseInt(args[0]);
-					sendImage(event, Pull.pull(num));
+					Banner pullBanner=Banner.Current;
+					sendImage(event, Pull.pull(num,pullBanner),pullBanner);
 				}
 				else{
 					Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
@@ -60,7 +62,7 @@ public class Summon implements Command {
 		// TODO Auto-generated method stub
 		
 	}
-	public void sendImage(MessageReceivedEvent event, ArrayList<SummonedUnit> units){
+	public void sendImage(MessageReceivedEvent event, ArrayList<SummonedUnit> units,Banner banner){
 		try {
 			//setup the size of the base image
 			int columns=5;
@@ -115,7 +117,6 @@ public class Summon implements Command {
 					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/none.png"));
 				}
 				
-				
 				BufferedImage back=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/BG.png"));//draw background
 				if(size.width==0&&size.height%(height*5)==0){
 					g.drawImage(back,size.width,size.height,width*columns,height*columns,null);
@@ -142,7 +143,7 @@ public class Summon implements Command {
 				count.setI(index);
 				index++;
 			}
-			if(units.size()>250){
+			if(units.size()>100){
 				base=compress(base);
 			}
 			g.dispose();
@@ -152,7 +153,7 @@ public class Summon implements Command {
 			} catch (InterruptedException e) {}
 			ImageIO.write(base, "PNG", new File("summons.png"));
 			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
-					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the rare summon banner")).build());
+					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+"rare summon banner")).build());
 			Settings.upload.release();
 			Files.delete(new File("summons.png").toPath());
 			count.terminate();

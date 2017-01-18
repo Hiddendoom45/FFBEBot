@@ -133,12 +133,10 @@ public class SaveSystem {
 				new File("units/"+u.name).mkdir();
 				try{
 				URL input=new URL(url);
-				System.out.println(url);
 				HttpURLConnection connection = (HttpURLConnection) input.openConnection();
 				connection.setRequestProperty("User-Agent",Settings.UA);
 				BufferedImage image=ImageIO.read(connection.getInputStream());
 				ImageIO.write(image, "PNG",new File("units/"+u.name+"/"+i+".png"));
-				System.out.println("units/"+u.name+"/"+i+".png");
 				}catch(Exception e){
 					Log.logError(e);
 				}
@@ -151,7 +149,6 @@ public class SaveSystem {
 				HttpURLConnection connection = (HttpURLConnection) input.openConnection();
 				connection.setRequestProperty("User-Agent",Settings.UA);
 				ImageIO.write(ImageIO.read(connection.getInputStream()), "PNG",new File("units/"+u.name+"/"+i+".png"));
-				System.out.println("units/"+u.name+"/"+i+".png");
 				}catch(Exception e){
 					Log.logError(e);
 				}

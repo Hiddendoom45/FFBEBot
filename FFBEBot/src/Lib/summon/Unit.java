@@ -116,7 +116,11 @@ public enum Unit {
 	Noctis("Noctis",new String[]{"https://exviuswiki.com/images/c/c3/Unit-Noctis-5.png","https://exviuswiki.com/images/a/ab/Unit-Noctis-6.png"},5),
 	Elle("Elle",new String[]{"https://exviuswiki.com/images/4/43/Unit-Elle-3.png","https://exviuswiki.com/images/c/c1/Unit-Elle-4.png","https://exviuswiki.com/images/4/4f/Unit-Elle-5.png"},3),
 	Luka("Luka",new String[]{"https://exviuswiki.com/images/3/3e/Unit-Luka-4.png","https://exviuswiki.com/images/7/77/Unit-Luka-5.png","https://exviuswiki.com/images/7/75/Unit-Luka-6.png"},4),
-	DFina("Dark Fina",new String[]{"https://exviuswiki.com/images/1/1d/Unit-Dark_Fina-5.png","https://exviuswiki.com/images/9/92/Unit-Dark_Fina-6.png"},5);
+	DFina("Dark Fina",new String[]{"https://exviuswiki.com/images/1/1d/Unit-Dark_Fina-5.png","https://exviuswiki.com/images/9/92/Unit-Dark_Fina-6.png"},5),
+	Trey("Trey", new String[]{"https://exviuswiki.com/images/6/6a/Unit-Trey-3.png","https://exviuswiki.com/images/4/49/Unit-Trey-4.png","https://exviuswiki.com/images/3/3a/Unit-Trey-5.png"},3),
+	Jack("Jack",new String[]{"https://exviuswiki.com/images/1/1b/Unit-Jack-3.png","https://exviuswiki.com/images/b/ba/Unit-Jack-4.png","https://exviuswiki.com/images/0/0e/Unit-Jack-5.png"},3),
+	Seven("Seven",new String[]{"https://exviuswiki.com/images/9/99/Unit-Seven-4.png","https://exviuswiki.com/images/6/6c/Unit-Seven-5.png","https://exviuswiki.com/images/7/72/Unit-Seven-6.png"},4),
+	Ace("Ace",new String[]{"https://exviuswiki.com/images/3/32/Unit-Ace-5.png","https://exviuswiki.com/images/2/2b/Unit-Ace-6.png"},5);
 	
 	
 	
@@ -285,7 +289,11 @@ public enum Unit {
 				Noctis,
 				Elle,
 				Luka,
-				DFina
+				DFina,
+				Trey,
+				Jack,
+				Seven,
+				Ace
 		});
 	}
 	public static Unit[] base3(Unit[] pool){

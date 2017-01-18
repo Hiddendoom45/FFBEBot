@@ -13,8 +13,7 @@ public class Pull {
 	private static int pool3=7999;
 	private static int pool4=1899;
 	private static int pool5=99;
-	public static ArrayList<SummonedUnit> pull(int times){
-		Banner banner=Banner.Current;
+	public static ArrayList<SummonedUnit> pull(int times,Banner banner){
 		Random rand=new Random();
 		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
 		for(int i=0;i<times;i++){

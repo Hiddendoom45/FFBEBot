@@ -12,9 +12,9 @@ public enum Waifus {
 	Chizuru("Chizuru","https://exviuswiki.com//images/4/45/Unit-Chizuru-5.png"),
 	Fina("Fina","https://exviuswiki.com//images/5/5a/Unit-Fina-5.png"),
 	VLCFina("White Witch Fina","https://exviuswiki.com//images/0/07/Unit-White_Witch_Fina-6.png"),
-	MajinFina("Majin Fina","https://exviuswiki.com//images/9/92/Unit-Dark_Fina-6.png"),
-	SumFina("Summer Fina","https://exviuswiki.com//images/f/fa/Unit-Summer_Fina-6.png"),
-	SumMajinFina("Summer Majin Fina","https://exviuswiki.com//images/d/dc/Unit-Summer_Dark_Fina-6.png"),
+	MajinFina("Majin Fina","https://exviuswiki.com/images/9/92/Unit-Dark_Fina-6.png"),
+	SumFina("Beach Time Fina","https://exviuswiki.com/images/4/46/Unit-Beach_Time_Fina-6.png"),
+	SumMajinFina("Sea Breeze Dark Fina","https://exviuswiki.com/images/2/28/Unit-Seabreeze_Dark_Fina-6.png"),
 	Lid("Lid","https://exviuswiki.com//images/4/49/Unit-Lid-5.png"),
 	SumLid("Summer Lid","https://exviuswiki.com//images/e/e5/Unit-Summer_Lid-5.png"),
 	BCLid("Black Cat Lid","https://exviuswiki.com//images/1/1c/Unit-Black_Cat_Lid-5.png"),
@@ -64,7 +64,7 @@ public enum Waifus {
 	Shine("Shine","https://exviuswiki.com/images/3/30/Unit-Shine-6.png"),
 	Marie("Marie","https://exviuswiki.com/images/7/79/Unit-Marie-6.png"),
 	Ulrica("Ulrikca","https://exviuswiki.com/images/1/14/Unit-Ulrica-5.png"),
-	Eileen("Eileen","https://exviuswiki.com/images/2/2a/Unit-Eileen-6.png"),
+	Eileen("Aileen","https://exviuswiki.com/images/4/49/Unit-Aileen-6.png"),
 	Rem("Rem","https://exviuswiki.com/images/b/b6/Unit-Rem-6.png"),
 	Jean("Jean","https://exviuswiki.com/images/9/91/Unit-Jean-5.png"),
 	Grace("Grace","https://exviuswiki.com/images/8/8c/Unit-Grace-6.png"),
@@ -87,7 +87,16 @@ public enum Waifus {
 	Maxell("Creator Maxell","https://exviuswiki.com/images/7/7f/Unit-Maxwell-6.png"),
 	Minfila("Minfila","https://exviuswiki.com/images/6/60/Unit-Minfilia-6.png"),
 	YShtola("Y'shtola","https://exviuswiki.com/images/2/27/Unit-Y%27shtola-6.png"),
-	Mog("Mog:confused: ","https://exviuswiki.com/images/d/d9/Unit-Mog-6.png");
+	Mog("Mog:confused: ","https://exviuswiki.com/images/d/d9/Unit-Mog-6.png"),
+	Shantotto("Shantotto","https://exviuswiki.com/images/4/43/Unit-Shantotto-5.png"),
+	Crowe("Crowe","https://exviuswiki.com/images/4/44/Unit-Crowe-6.png"),
+	Lorraine("Lorraine","https://exviuswiki.com/images/5/59/Unit-Lorraine-6.png"),
+	Ayaka("Ayaka","https://exviuswiki.com/images/f/f1/Unit-Ayaka-6.png"),
+	Sylvia("Sylvia","https://exviuswiki.com/images/f/f6/Unit-Sylvia-6.png"),
+	Yuri("Yuri","https://exviuswiki.com/images/4/4e/Unit-Yuri-5.png"),
+	HuntFina("Hunter Fina","https://exviuswiki.com/images/7/75/Unit-Hunter_Fina-6.png"),
+	HuntLid("Hunter Lid","https://exviuswiki.com/images/3/37/Unit-Hunter_Lid-5.png"),
+	HuntSakura("Hunter Sakura","https://exviuswiki.com/images/d/da/Unit-Hunter_Sakura-6.png");
 	
 	public String name;
 	public String url;
