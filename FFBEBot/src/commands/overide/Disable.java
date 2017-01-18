@@ -1,8 +1,8 @@
-package commands.mod;
+package commands.overide;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-import commands.Command;
 import global.Main;
 import global.record.Log;
 import global.record.Settings;
@@ -12,16 +12,17 @@ import util.Select;
 import util.Selection;
 import util.Selector;
 
-public class Disable implements Command,Selection{
+public class Disable implements OverrideCommand,Selection{
+
 
 	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
+	public boolean called(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		Log.log("System", "Bot attempted to be shut down by "+event.getAuthorName()+" on "+event.getGuild());
 		return true;
 	}
 
 	@Override
-	public void action(String[] args, MessageReceivedEvent event) {
+	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		Select s=new Select(new ArrayList<String>(), Settings.ID, this, Settings.ID+"");
 		Selector.setSelection(s, event);
 	}

@@ -16,6 +16,7 @@ import Lib.summon.SummonedUnit;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
+import net.dv8tion.jda.MessageBuilder;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
@@ -26,25 +27,25 @@ public class Summon implements Command {
 	private static int height=200;
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("FORBIDDEN", "Summon wrath evoked by "+event.getAuthorName());
+		Log.log("FORBIDDEN", "Summon wrath evoked by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
 		event.getChannel().sendTyping();
 		return true;
 	}
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		if(args.length>0&&Lib.isNumber(args[0])){
-			int num=Integer.parseInt(args[0]);
-			if(num>500){
-				num=500;
+		Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else
+			public void run(){
+				if(args.length>0&&Lib.isNumber(args[0])){
+					int num=Integer.parseInt(args[0]);
+					sendImage(event, Pull.pull(num));
+				}
+				else{
+					Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
+							+ "\n\tsummons [amount] units from the rare summon pool");
+				}
 			}
-			sendImage(event, Pull.pull(num));
-		}
-		else{
-			Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
-					+ "\n\tsummons [amount] units from the rare summon pool");
-		}
-		
+		});
 	}
 
 	@Override
@@ -119,10 +120,11 @@ public class Summon implements Command {
 					g.drawImage(back,size.width,size.height,width*columns,height*columns,null);
 				}
 				
-				
-				BufferedImage star=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/raritystar.png"));
+				//draw stuff
 				g.drawImage(stand, size.width, size.height+32,null);
 				g.drawImage(small, sx+size.width, sy+size.height,(small.getWidth()*2),(small.getHeight()*2), null);
+				//star stuffs
+				BufferedImage star=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/raritystar.png"));
 				int starSize=20;//square size of stars
 				for(int i=0;i<s.rarity;i++){//draw the stars, one by one, centered
 					int ry=size.height+height-starSize;//stars at very bottom of rectangle
@@ -144,8 +146,13 @@ public class Summon implements Command {
 			}
 			g.dispose();
 			count.setMessage("Uploading...");
+			try {
+				Settings.upload.acquire();
+			} catch (InterruptedException e) {}
 			ImageIO.write(base, "PNG", new File("summons.png"));
-			event.getChannel().sendFile(new File("summons.png"),null );
+			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
+					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the rare summon banner")).build());
+			Settings.upload.release();
 			Files.delete(new File("summons.png").toPath());
 			count.terminate();
 		} catch (IOException e) {

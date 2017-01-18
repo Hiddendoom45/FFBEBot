@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 
+import global.record.Log;
 import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.unit.UnitInfo;
@@ -21,7 +22,11 @@ public class Awaken extends UnitSelection {
 		}
 		Lib.sendMessage(event, s);
 	}
-
+	@Override 
+	public boolean called(String[] args, MessageReceivedEvent event) {
+		Log.log("Status", "Awakening mats "+(args.length>0?"for "+Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
+		return super.called(args, event);
+	}
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
 		sendAwakening(SaveSystem.getExvicusUnit(Ounit.getData(0).name),rarity,event);

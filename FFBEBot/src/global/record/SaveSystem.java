@@ -169,8 +169,12 @@ public class SaveSystem {
 			Settings.guilds.put(e.getAttribute("id").getValue(), new Settings(e));
 		}
 		file.resetReader();
+		try{
 		Elements preload=file.parseToElements("preload").get(0);
 		Settings.setData(preload);
+		}catch(Exception e){
+			Log.logError(e);
+		}
 		file.endReader();
 	}
 	public static Settings getGuild(String id){

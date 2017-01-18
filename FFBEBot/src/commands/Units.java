@@ -13,7 +13,7 @@ import util.unit.UnitOverview;
 public class Units extends UnitSelection implements Command,Selection {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Searched for unit "+(args.length>0?args[0]:"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
+		Main.log("status", "Searched for unit "+(args.length>0?Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
 		return super.called(args,event);
 	}
 	public void sendUnitData(UnitInfo info,MessageReceivedEvent event){

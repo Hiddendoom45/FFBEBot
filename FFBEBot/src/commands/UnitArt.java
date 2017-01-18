@@ -14,7 +14,7 @@ import util.unit.UnitOverview;
 public class UnitArt extends UnitSelection implements Command,Selection  {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", event.getAuthorName()+" asked for unit art of "+(args.length>0?args[0]:"")+(event.isPrivate()?" on "+event.getGuild():""));
+		Main.log("status", event.getAuthorName()+" asked for unit art of "+(args.length>0?Lib.extract(args):"")+(event.isPrivate()?" on "+event.getGuild():""));
 		event.getChannel().sendTyping();
 		return super.called(args, event);
 	}

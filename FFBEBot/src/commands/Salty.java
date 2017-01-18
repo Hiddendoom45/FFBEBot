@@ -28,7 +28,7 @@ import util.Selector;
 public class Salty implements Command, Selection {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "Salty image of "+(args.length>0?args[0]:"")+" sent to "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
+		Log.log("status", "Salty image of "+(args.length>0?Lib.extract(args):"")+" sent to "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
 		event.getChannel().sendTyping();
 		return true;
 	}
@@ -126,9 +126,12 @@ public class Salty implements Command, Selection {
 	    Graphics g = combined.getGraphics();
 	    g.drawImage(large, 0, 0, null);
 	    g.drawImage(small, (large.getWidth()/2)-(small.getWidth()/2)-20, (large.getHeight()/2)-(small.getHeight()/2)+10, null);
-
+	    try {
+			Settings.upload.acquire();
+		} catch (InterruptedException e) {}
 	    ImageIO.write(combined, "PNG", new File("twoInOne.png"));
 	    event.getChannel().sendFile(new File("twoInOne.png"),null );
+	    Settings.upload.release();
 	    Files.delete(new File("twoInOne.png").toPath());
 	}
 

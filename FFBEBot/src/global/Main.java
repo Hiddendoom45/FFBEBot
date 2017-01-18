@@ -71,7 +71,7 @@ public class Main {
 		commands.put("runits", new RUnits());
 		commands.put("runit", new RUnits());
 		commands.put("unitart", new UnitArt());
-		commands.put("salt", new Salt());
+		//commands.put("salt", new Salt());//removed due to it not really being good, to be improved
 		commands.put("chancetilith", new Chance());
 		commands.put("summon", new Summon());
 		commands.put("salty", new Salty());
@@ -88,13 +88,13 @@ public class Main {
 		commands.put("maintenance", new Maintenance());
 		
 		//ditto with mod commands(separate maps due to special checks)
-		modCommands.put("disable", new Disable());
 		modCommands.put("prefix", new Prefix());
 		modCommands.put("modprefix", new ModPrefix());
 		modCommands.put("join", new Join());
 		modCommands.put("sleep", new Sleep());
 		modCommands.put("toggle", new Toggle());
 		//ditto with override commands
+		overrides.put("disable", new Disable());
 		overrides.put("log", new ViewLog());
 		overrides.put("logsave", new SaveLog());
 		overrides.put("botmod", new BotMod());

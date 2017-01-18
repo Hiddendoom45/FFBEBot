@@ -2,6 +2,7 @@ package commands;
 
 import java.io.IOException;
 
+import global.Main;
 import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
@@ -16,7 +17,11 @@ public class Lore extends UnitSelection{
 				+ "\tGets lore of unit at rarity(if specified)";
 		Lib.sendMessage(event, s);
 	}
-
+	@Override
+	public boolean called(String[] args, MessageReceivedEvent event) {
+		Main.log("status", "Searched for lore "+(args.length>0?"of "+Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
+		return super.called(args,event);
+	}
 	@Override
 	public void executed(boolean sucess, MessageReceivedEvent event) {
 		// TODO Auto-generated method stub

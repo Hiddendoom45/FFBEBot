@@ -7,6 +7,7 @@ import java.nio.file.StandardCopyOption;
 
 import global.record.Log;
 import global.record.SaveSystem;
+import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 
@@ -23,9 +24,12 @@ public class Maintenance implements Command {
 	public void action(String[] args, MessageReceivedEvent event) {
 		try {
 			Files.copy(getClass().getResourceAsStream("/Lib/GUMI.jpg"), new File("tempGumi.jpg").toPath(),StandardCopyOption.REPLACE_EXISTING);
-		
-		event.getChannel().sendFile(new File("tempGumi.jpg"),null);
-		Files.delete(new File("tempGumi.jpg").toPath());
+			try {
+				Settings.upload.acquire();
+			} catch (InterruptedException e) {}
+			event.getChannel().sendFile(new File("tempGumi.jpg"),null);
+			Settings.upload.release();
+			Files.delete(new File("tempGumi.jpg").toPath());
 		} catch (IOException e) {Log.logError(e);}
 	}
 
