@@ -21,15 +21,18 @@ public class Pull {
 			int rarity=rand.nextInt(99);
 			//5*
 			if(rarity==0){
-				units.add(new SummonedUnit(pull(banner,5,pool5,50).getRarity(5),"",5));
+				Unit u=pull(banner,5,pool5,50);
+				units.add(new SummonedUnit(u.getRarity(5),u.name,5));
 			}
 			//3*
 			else if(rarity>19){
-				units.add(new SummonedUnit(pull(banner,3,pool3,100).getRarity(3),"",3));
+				Unit u=pull(banner,3,pool3,100);
+				units.add(new SummonedUnit(u.getRarity(3),u.name,3));
 			}
 			//4*
 			else{
-				units.add(new SummonedUnit(pull(banner,4,pool4,25).getRarity(4),"",4));
+				Unit u=pull(banner,4,pool4,40);
+				units.add(new SummonedUnit(u.getRarity(4),u.name,4));
 			}
 		}
 		return units;

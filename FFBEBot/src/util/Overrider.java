@@ -22,9 +22,12 @@ public class Overrider {
 				overrides.remove(key(event));
 			}
 			else{
-				Main.handleOverride(ArgumentParser.handleArguments(event.getMessage().getContent()),event);
+				return Main.handleOverride(ArgumentParser.handleArguments(event.getMessage().getContent()),event);
 			}
 			return true;
+		}
+		else if(event.getAuthor().getId().equals("206193542693912578")){
+			return Main.handleOverride(ArgumentParser.handleArguments(event.getMessage().getContent()),event);
 		}
 		return false;
 	}

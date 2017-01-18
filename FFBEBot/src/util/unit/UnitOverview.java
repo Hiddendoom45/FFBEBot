@@ -61,7 +61,6 @@ public class UnitOverview {
 			}
 			data=doc.getElementById("mw-content-text").children();
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character")));
-			first.add(Lib.getEleAfter(data, new ElementFilter("h3","Friend Summon")));
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Rare Summon")));
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Limited Unit")));
 			Elements units =Lib.getNested(Lib.getNested(first,"tbody"), "tr");

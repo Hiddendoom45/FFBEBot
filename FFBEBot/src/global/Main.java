@@ -23,11 +23,12 @@ import global.record.SaveSystem;
 import global.record.Settings;
 
 public class Main {
-	public static JDA jda;
-	public static final CommandParser parser=new CommandParser();
-	public static HashMap<String,Command> commands=new HashMap<String,Command>();
-	public static HashMap<String,Command> modCommands=new HashMap<String,Command>();
-	public static HashMap<String,OverrideCommand> overrides=new HashMap<String,OverrideCommand>();
+	public static JDA jda;//JDA of bot
+	public static final CommandParser parser=new CommandParser();//parse most commands
+	//hashmaps to easily search for each of the commands
+	public static final HashMap<String,Command> commands=new HashMap<String,Command>();
+	public static final HashMap<String,Command> modCommands=new HashMap<String,Command>();
+	public static final HashMap<String,OverrideCommand> overrides=new HashMap<String,OverrideCommand>();
 	public static void main(String[] args){
 		try{
 			Main.startup();
@@ -46,7 +47,7 @@ public class Main {
 			startup();
 		}
 		jda.setAutoReconnect(true);
-		jda.getAccountManager().setGame("Offline...| -!help");
+		setGame(states.Ready);
 	}
 	public static void shutdown(){
 		jda.shutdown(false);
@@ -62,7 +63,7 @@ public class Main {
 	 * everything that needs to be done when the JVM starts up
 	 */
 	public static void setup(){
-		//jda.getAccountManager().setGame("the Loading Game...");
+		setGame(states.Loading);
 		//put commands in map
 		commands.put("ping", new Ping());
 		commands.put("units", new Units());
@@ -104,7 +105,15 @@ public class Main {
 		SaveSystem.setup();
 		Restarter.setup();
 		RedditUnit.buildRefImg();
-		jda.getAccountManager().setGame("Offline...| -!help");
+		setGame(states.Ready);
+	}
+	public static void setGame(states state){
+		switch(state){
+		case Loading:jda.getAccountManager().setGame("the Loading Game...");
+		break;
+		case Ready:jda.getAccountManager().setGame("Offline...| -!help");
+		break;
+		}
 	}
 	public static void handleCommand(CommandParser.CommandContainer cmd){
 		System.out.println(cmd.invoke);
@@ -151,19 +160,26 @@ public class Main {
 			}
 		}
 	}
-	public static void handleOverride(ArgContainer args,MessageReceivedEvent event){
+	public static boolean handleOverride(ArgContainer args,MessageReceivedEvent event){
 		if(overrides.containsKey(args.command)){
 			if(args.args.containsKey("help")){
 				overrides.get(args.command).help(event);
-				return;
+				return true;
 			}
 			boolean safe=overrides.get(args.command).called(args.args, event);
 			if(safe){
 				overrides.get(args.command).action(args.args, event);
 			}
 			overrides.get(args.command).executed(safe, event);
+			return true;
 		}
+		return false;
 	}
+	/**
+	 * checks if user is mod and has the admin privilege, or has been set to bot mod through overrides
+	 * @param e message received from user
+	 * @return whether or not user is a mod or not
+	 */
 	private static boolean isMod(MessageReceivedEvent e){
 		List<Role> roles=e.getGuild().getRolesForUser(e.getAuthor());
 		for(Role r:roles){
@@ -180,5 +196,14 @@ public class Main {
 	}
 	public static void log(String type,String msg){
 		Log.log(type, msg);
+	}
+	/**
+	 * enum for states of the bot, displayed by game it's playing
+	 * @author Allen
+	 *
+	 */
+	public static enum states{
+		Loading,
+		Ready;
 	}
 }

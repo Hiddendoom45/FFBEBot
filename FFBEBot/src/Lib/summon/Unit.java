@@ -123,7 +123,7 @@ public enum Unit {
 	public String name;
 	public String[] url;
 	public int base;
-	public String[] upgradeurl;
+	public String[] upgradeurl=new String[]{};
 	Unit(String name, String[] url,int base){
 		this.name=name;
 		this.url=url;

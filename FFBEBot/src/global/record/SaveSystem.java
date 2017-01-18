@@ -1,18 +1,24 @@
 package global.record;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import Lib.summon.Unit;
 import XML.Attribute;
 import XML.XMLStAXFile;
 import XML.Elements;
@@ -20,6 +26,7 @@ import global.Main;
 import net.dv8tion.jda.entities.Guild;
 import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.Counter;
 import util.unit.RedditOverview;
 import util.unit.RedditUnit;
 import util.unit.UnitInfo;
@@ -33,24 +40,27 @@ public class SaveSystem {
 			for(Guild g:guilds){
 				root.add(new Settings(g.getId()).parseToElements());
 			}
-			preloadExvicus();
-			preloadReddit();
 			XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 			file.writeXMLFile();
 			file.startWriter();
 			file.writeElement(root);
 			file.endWriter();
-			preloadExvicus();
-			preloadReddit();
+			preloadSummons(null);
+			preloadExvicus(null);
+			preloadReddit(null);
 			writeData();
 		}
 		load();
 	}
-	public static void preloadReddit(){
+	public static void preloadReddit(Counter count){
+		
 		Gson overviews=new Gson();
 		RedditOverview.unitData[] overview=RedditOverview.preloadReddit();
 		Settings.redditO=overviews.toJson(overview);
 		JsonObject units=new JsonObject();
+		int index=0;
+		if(!(count==null)){count.setMessage("Loading Reddit Units...(%count%/"+overview.length+")");}
+		
 		for(RedditOverview.unitData u:overview){
 			try{
 			units.add(u.name, overviews.toJsonTree(new RedditUnit(u.unitUrl)));
@@ -59,18 +69,25 @@ public class SaveSystem {
 				units.add(u.name,  overviews.toJsonTree(getRedditUnit(u.name)));
 			}
 			System.out.println("preloaded "+u.name);
+			index++;
+			if(!(count==null)){count.setI(index);}
 		}
+		
+		if(!(count==null)){count.terminate();}
 		Settings.redditUnits=overviews.toJson(units);
 		Log.log("System", "Reddit Overview Loaded");
 	}
 	public static RedditUnit getRedditUnit(String name){
 		return new Gson().fromJson(new JsonParser().parse(Settings.redditUnits).getAsJsonObject().get(name),RedditUnit.class);
 	}
-	public static void preloadExvicus(){
+	public static void preloadExvicus(Counter count){
 		Gson overviews=new Gson();
 		UnitOverview.unitData[] overview=UnitOverview.preload();
 		Settings.exvicusO=overviews.toJson(overview);
 		JsonObject units=new JsonObject();
+		int index=0;
+		if(!(count==null)){count.setMessage("Loading Reddit Units...(%count%/"+overview.length+")");}
+		
 		for(UnitOverview.unitData u:overview){
 			try{
 				units.add(u.name,overviews.toJsonTree(new UnitInfo(u.unitUrl)));
@@ -79,7 +96,10 @@ public class SaveSystem {
 				units.add(u.name, overviews.toJsonTree(getExvicusUnit(u.name)));
 			}
 			System.out.println("preloaded "+u.name);
+			index++;
+			if(!(count==null)){count.setI(index);}
 		}
+		if(!(count==null)){count.terminate();}
 		Settings.exvicusUnits=overviews.toJson(units);
 		Log.log("System", "Exvicus Overview loaded");
 	}
@@ -102,6 +122,43 @@ public class SaveSystem {
 		file.writeElement(doc);
 		file.endWriter();
 		file.endReader();
+	}
+	public static void preloadSummons(Counter count){
+		int index=0;
+		if(!(count==null)){count.setMessage("Loading Summoned Units...(%count%/"+Unit.values().length+")");}
+		new File("units").mkdir();
+		for(Unit u:Unit.values()){
+			int i=u.base;
+			for(String url:u.url){
+				new File("units/"+u.name).mkdir();
+				try{
+				URL input=new URL(url);
+				System.out.println(url);
+				HttpURLConnection connection = (HttpURLConnection) input.openConnection();
+				connection.setRequestProperty("User-Agent",Settings.UA);
+				BufferedImage image=ImageIO.read(connection.getInputStream());
+				ImageIO.write(image, "PNG",new File("units/"+u.name+"/"+i+".png"));
+				System.out.println("units/"+u.name+"/"+i+".png");
+				}catch(Exception e){
+					Log.logError(e);
+				}
+				i++;
+			}
+			for(String url:u.upgradeurl){
+				try{
+				URL input=new URL(url);
+				HttpURLConnection connection = (HttpURLConnection) input.openConnection();
+				connection.setRequestProperty("User-Agent",Settings.UA);
+				ImageIO.write(ImageIO.read(connection.getInputStream()), ".png",new File("units/"+u.name+"/"+i+".png"));
+				}catch(Exception e){
+					Log.logError(e);
+				}
+				i++;
+			}
+			if(!(count==null)){count.setI(index);}
+			index++;
+		}
+		if(!(count==null)){count.terminate();}
 	}
 	public static void load(){
 		Settings.guilds.clear();

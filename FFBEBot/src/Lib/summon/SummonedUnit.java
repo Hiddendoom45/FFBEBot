@@ -1,5 +1,7 @@
 package Lib.summon;
 
+import java.io.File;
+
 public class SummonedUnit {
 	public String url;
 	public String name;
@@ -8,5 +10,8 @@ public class SummonedUnit {
 		this.url=url;
 		this.name=name;
 		this.rarity=rarity;
+	}
+	public File getImageLocation(){
+		return new File("units/"+name+"/"+rarity+".png");
 	}
 }

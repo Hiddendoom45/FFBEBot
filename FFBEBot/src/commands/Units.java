@@ -31,7 +31,7 @@ public class Units extends UnitSelection implements Command,Selection {
 			out+="**MAG**:"+Lib.pad(info.stats.stats[i].MAG, 6);
 			out+="**SPR**:"+Lib.pad(info.stats.stats[i].SPR, 6);
 		}
-		out+="\n:link:";
+		out+="\nlink to wiki::link:";
 		out+=info.URL+"\n:art:";
 		out+=info.imgOverviewURL;
 		Lib.sendMessage(event, out);

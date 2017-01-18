@@ -90,7 +90,7 @@ public abstract class RedditSelection implements Command, Selection {
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		try{
 			if(chosen.additionalData[0].equals("null")){
-				manyPossible(saved.get(chosen.ID),0,chosen.selected,event);
+				manyPossible(saved.get(chosen.ID),chosen.selected,0,event);
 			}
 			else{
 				RedditUnit info=new RedditUnit(saved.get(chosen.ID).getData(chosen.selected).unitUrl);
@@ -99,7 +99,7 @@ public abstract class RedditSelection implements Command, Selection {
 					manyPossible(saved.get(chosen.ID),chosen.selected,rare,event);
 				}
 				else{
-					manyPossible(saved.get(chosen.ID),0,chosen.selected,event);
+					manyPossible(saved.get(chosen.ID),chosen.selected,0,event);
 				}
 			}
 			saved.remove(chosen.ID);

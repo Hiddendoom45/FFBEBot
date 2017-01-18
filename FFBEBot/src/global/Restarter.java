@@ -4,7 +4,6 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import global.record.Log;
-import global.record.SaveSystem;
 import global.record.Settings;
 
 /**
@@ -18,8 +17,8 @@ public class Restarter {
 		Runnable check=new Runnable(){//potential restart(50/50 chance every hour)
 			public void run(){
 				Random rand=new Random();
-				if(rand.nextInt(2)==0){
-					int sleep=rand.nextInt(3600);
+				if(rand.nextInt(10)==0){
+					int sleep=rand.nextInt(14400);
 					Restarter.sleep(sleep);
 					Restarter.sleep=rand.nextInt(100)+10;
 				}
@@ -52,7 +51,6 @@ public class Restarter {
 		};
 	}
 	public static void SleepActivity(){
-		SaveSystem.preloadReddit();
 	}
 }
 
