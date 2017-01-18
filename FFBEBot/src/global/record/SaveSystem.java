@@ -86,7 +86,7 @@ public class SaveSystem {
 		Settings.exvicusO=overviews.toJson(overview);
 		JsonObject units=new JsonObject();
 		int index=0;
-		if(!(count==null)){count.setMessage("Loading Reddit Units...(%count%/"+overview.length+")");}
+		if(!(count==null)){count.setMessage("Loading Exvicus Units...(%count%/"+overview.length+")");}
 		
 		for(UnitOverview.unitData u:overview){
 			try{
@@ -144,19 +144,21 @@ public class SaveSystem {
 				}
 				i++;
 			}
+
 			for(String url:u.upgradeurl){
 				try{
 				URL input=new URL(url);
 				HttpURLConnection connection = (HttpURLConnection) input.openConnection();
 				connection.setRequestProperty("User-Agent",Settings.UA);
-				ImageIO.write(ImageIO.read(connection.getInputStream()), ".png",new File("units/"+u.name+"/"+i+".png"));
+				ImageIO.write(ImageIO.read(connection.getInputStream()), "PNG",new File("units/"+u.name+"/"+i+".png"));
+				System.out.println("units/"+u.name+"/"+i+".png");
 				}catch(Exception e){
 					Log.logError(e);
 				}
 				i++;
 			}
-			if(!(count==null)){count.setI(index);}
 			index++;
+			if(!(count==null)){count.setI(index);}
 		}
 		if(!(count==null)){count.terminate();}
 	}

@@ -90,6 +90,7 @@ public class Summon implements Command {
 					small=ImageIO.read(s.getImageLocation());
 				}
 				else{
+					System.out.println(s.url+" "+s.name+" "+s.rarity);
 					URL url=new URL(s.url);//get image stuffs
 					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 					connection.setRequestProperty("User-Agent",Settings.UA);//to bypass https

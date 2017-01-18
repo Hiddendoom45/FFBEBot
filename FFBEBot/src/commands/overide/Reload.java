@@ -30,10 +30,12 @@ public class Reload implements OverrideCommand {
 					SaveSystem.preloadReddit(count);
 				}
 				if(args.containsKey("e")){
+					trigger=true;
 					Main.setGame(states.Loading);
 					SaveSystem.preloadExvicus(count);
 				}
 				if(args.containsKey("img")){
+					trigger=true;
 					Main.setGame(states.Loading);
 					SaveSystem.preloadSummons(count);
 				}

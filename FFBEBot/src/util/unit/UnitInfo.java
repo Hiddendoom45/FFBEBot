@@ -179,9 +179,9 @@ public class UnitInfo {
 			public ability(Element row){
 				rarity=""+Lib.extractNumber(row.child(0).text());
 				level=row.child(1).text();
-				aIconURL=row.child(2).absUrl("src");
+				aIconURL=row.child(2).getElementsByTag("img").first().absUrl("src");
 				name=row.child(3).text();
-				link=row.child(3).absUrl("href");
+				link=row.child(3).getElementsByTag("a").first().absUrl("href");
 				effect=row.child(4).text();
 				hits=row.child(5).text();
 				MP=row.child(6).text();
