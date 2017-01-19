@@ -159,18 +159,30 @@ public class SaveSystem {
 		}
 		if(!(count==null)){count.terminate();}
 	}
+	/**
+	 * Loads saved data from file
+	 */
 	public static void load(){
 		Settings.guilds.clear();
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();
+		try{
 		ArrayList<Elements> guilds=file.parseToElements("guild");
 		for(Elements e:guilds){
+			try{
 			Settings.guilds.put(e.getAttribute("id").getValue(), new Settings(e));
+			}catch(Exception e1){
+				Log.logError(e1);
+			}
+		}
+		}catch(Exception e){
+			Log.log("ERROR", "error loading guilds");
+			Log.logError(e);
 		}
 		file.resetReader();
 		try{
-		Elements preload=file.parseToElements("preload").get(0);
-		Settings.setData(preload);
+			Elements preload=file.parseToElements("preload").get(0);
+			Settings.setData(preload);
 		}catch(Exception e){
 			Log.logError(e);
 		}

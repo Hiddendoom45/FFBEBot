@@ -114,7 +114,7 @@ public class Summon implements Command {
 					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/4star.png"));
 				}
 				else if(s.rarity==5){
-					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/5star.png"));
+					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/6star.png"));
 				}
 				else{//error case
 					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/none.png"));

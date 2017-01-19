@@ -38,12 +38,11 @@ public class Settings {
 	
 	public String guildPrefix="";
 	public String guildModPrefix="";
-	public String defaultSite="";
 	public String joinMsg="";
 	public String joinPM="";
 	public String id="";
 	public String[] modded=new String[]{};
-	public boolean tJoinMsg=true;
+	public boolean tJoinMsg=false;
 	public boolean tJoinPM=false;
 	//in preparation for custom messages for each server
 	public Settings(String id){
@@ -51,14 +50,19 @@ public class Settings {
 	}
 	public Settings(Elements root){
 		id=root.getAttribute("id").getValue();
-		joinMsg=getSetting(root,"join");
-		guildPrefix=getSetting(root,"prefix");
-		guildModPrefix=getSetting(root,"modPrefix");
-		defaultSite=getSetting(root,"defaultSite");
+		joinMsg=getString(root,"join");
+		guildPrefix=getString(root,"prefix");
+		guildModPrefix=getString(root,"modPrefix");
 		modded=textArray(root,"modded");
-		tJoinMsg=getBooleanSetting(true,root,"tJoin");
+		tJoinMsg=getBooleanSetting(false,root,"tJoin");
 		tJoinPM=getBooleanSetting(false,root,"tJoinPM");
 	}
+	/**
+	 * A wrapper for getting an array for an element easily, assuming the arrays is text separated by ','
+	 * @param ele element to search for array
+	 * @param setting name of the element whose text is the array
+	 * @return
+	 */
 	private String[] textArray(Elements ele,String setting){
 		String[] out=new String[ele.getChilds(setting).size()];
 		int i=0;
@@ -68,23 +72,37 @@ public class Settings {
 		}
 		return out;
 	}
-	private String getSetting(Elements set,String setting){
+	/**
+	 * A wrapper to get String value for element without crashing process if it doesn't exist
+	 * @param root Element you want to search for the element
+	 * @param tagname name of element you want to get
+	 * @return
+	 */
+	private static String getString(Elements root,String tagname){
 		try{
-			return set.getChilds(setting).get(0).getText();
+			return root.getChilds(tagname).get(0).getText();
 		}
 		catch(IndexOutOfBoundsException e){
+			Log.logError(e);
 			return "";
 		}
 	}
-	public boolean getBooleanSetting(boolean normal,Elements ele,String setting){
-		if(ele.getChilds(setting).size()<=0){
+	/**
+	 * A wrapper to get the boolean value for an element without crashing process if it doesn't exist
+	 * @param normal default value if boolean value is not found
+	 * @param ele Element you want to search for the element
+	 * @param tagname name of element you want to get
+	 * @return
+	 */
+	public boolean getBooleanSetting(boolean normal,Elements ele,String tagname){
+		if(ele.getChilds(tagname).size()<=0){
 			return normal;
 		}
 		if(normal){
-			return ele.getChilds(setting).get(0).getText().equals("false")?false:true;
+			return ele.getChilds(tagname).get(0).getText().equals("false")?false:true;
 		}
 		else{
-			return ele.getChilds(setting).get(0).getText().equals("true")?true:false;
+			return ele.getChilds(tagname).get(0).getText().equals("true")?true:false;
 		}
 	}
 	public Settings addModded(String id){
@@ -139,10 +157,6 @@ public class Settings {
 			root.add(mod);
 		}
 		
-		Elements dSite=new Elements("defaultSite");
-		dSite.setText(defaultSite);
-		settings.add(dSite);
-		
 		Elements toggle=new Elements("toggle");
 		root.add(toggle);
 		
@@ -155,11 +169,10 @@ public class Settings {
 		return root;
 	}
 	public static void setData(Elements preload){
-		Settings.redditO=preload.getChilds("redditOverview").get(0).getText();
-		Settings.redditUnits=preload.getChilds("redditUnits").get(0).getText();
-		Settings.exvicusO=preload.getChilds("exvicusOverview").get(0).getText();
-		Settings.exvicusUnits=preload.getChilds("exvicusUnits").get(0).getText();
-		
+		Settings.redditO=getString(preload,"redditOverview");
+		Settings.redditUnits=getString(preload,"redditUnits");
+		Settings.exvicusO=getString(preload,"exvicusOverview");
+		Settings.exvicusUnits=getString(preload,"exvicusUnits");
 	}
 	public static Elements parseDataToElements(){
 		Elements root=new Elements("preload");

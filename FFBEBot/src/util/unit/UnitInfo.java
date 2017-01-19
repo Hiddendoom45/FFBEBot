@@ -37,9 +37,12 @@ public class UnitInfo {
 	public UnitInfo(String page)throws IOException{
 		try{
 			Document doc=null;
-			while(true){
-				doc = Jsoup.connect(page).userAgent(Settings.UA).timeout(10000).get();
-				if(!(doc==null))break;
+			for(int i=0;i<4;i++){
+				try{
+					doc = Jsoup.connect(page).userAgent(Settings.UA).timeout(60000).get();
+					if(!(doc==null))break;
+				}
+				catch(Exception e){Log.logError(e);}
 			}
 			URL=page;
 			Element content=doc.getElementById("mw-content-text");
