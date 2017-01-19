@@ -26,7 +26,7 @@ public class Counter implements Runnable{
 	public void run() {
 		synchronized(this){
 			while(!end){
-				event.getTextChannel().getMessageById(messageID).updateMessage(message.replace("%count%", ""+i));
+				event.getChannel().getMessageById(messageID).updateMessage(message.replace("%count%", ""+i));
 			try {
 				wait(1000);
 			} catch (InterruptedException e) {Log.logError(e);}

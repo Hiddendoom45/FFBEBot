@@ -31,9 +31,12 @@ public class RedditUnit {
 	public RedditUnit(String page){
 		try{
 			Document doc=null;
-			while(true){
-				doc = Jsoup.connect(page).userAgent(Settings.UA).timeout(30000).get();
-				if(!(doc==null))break;
+			for(int i=0;i<10;i++){
+				try{
+					doc = Jsoup.connect(page).userAgent(Settings.UA).timeout(60000).get();
+					if(!(doc==null))break;
+				}
+				catch(Exception e){Log.logError(e);}
 			}
 			URL=page;
 			Element content=doc.getElementsByClass("wiki-page-content").first().getElementsByClass("wiki").first();

@@ -28,7 +28,7 @@ public class Settings {
 	public static final String overrideArg="-";
 	public static final long ID=System.currentTimeMillis();//ID for the bot based on when it was started
 	public static final Semaphore upload=new Semaphore(1);//used to prevent bot from uploading 2 things at once, so that it won't end up deleteing one of the images
-	public static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(5);//used for various threaded activities
+	public static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(10);//used for various threaded activities
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access
 
 	public static String redditO;

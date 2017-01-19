@@ -39,6 +39,9 @@ public class Summon implements Command {
 			public void run(){
 				if(args.length>0&&Lib.isNumber(args[0])){
 					int num=Integer.parseInt(args[0]);
+					if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
+						num=1800;
+					}
 					Banner pullBanner=Banner.Current;
 					sendImage(event, Pull.pull(num,pullBanner),pullBanner);
 				}
@@ -153,7 +156,7 @@ public class Summon implements Command {
 			} catch (InterruptedException e) {}
 			ImageIO.write(base, "PNG", new File("summons.png"));
 			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
-					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+"rare summon banner")).build());
+					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+" rare summon banner")).build());
 			Settings.upload.release();
 			Files.delete(new File("summons.png").toPath());
 			count.terminate();
