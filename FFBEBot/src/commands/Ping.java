@@ -1,10 +1,16 @@
 package commands;
 
+import java.time.OffsetDateTime;
+
 import global.Main;
 import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
-
+/**
+ * Basic command that gets the amount of time it takes for bot to receive message and prepare a response, error of time to send message
+ * @author Allen
+ *
+ */
 public class Ping implements Command{
 	public Ping(){
 		
@@ -18,7 +24,20 @@ public class Ping implements Command{
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		event.getChannel().sendMessage("pong");
+		int messageTime=event.getMessage().getTime().getNano()/1000000;
+		int currentTime=OffsetDateTime.now().getNano()/1000000;
+		int messageS=event.getMessage().getTime().getSecond();
+		int currentS=OffsetDateTime.now().getSecond();
+		int responseS=currentS-messageS;
+		int response;
+		System.out.println(currentS+" "+messageS+" "+messageTime+" "+currentTime);
+		if(responseS==0){
+			response=currentTime-messageTime;
+		}
+		else{
+			response=currentTime+1000-messageTime+(1000*(responseS-1));
+		}
+		event.getChannel().sendMessage("pong - response in "+response+" ms");
 	}
 
 	@Override

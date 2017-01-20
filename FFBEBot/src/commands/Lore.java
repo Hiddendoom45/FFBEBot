@@ -13,8 +13,10 @@ public class Lore extends UnitSelection{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s=SaveSystem.getPrefix(event)+"lore [unit][rarity]\n"
-				+ "\tGets lore of unit at rarity(if specified)";
+		String s=SaveSystem.getPrefix(event)+"lore [unitname][rarity]\n"
+				+ "\tGets lore of a unit\n"
+				+ "\t[unitname] unit to get lore for(doesn't have to be the full name)\n"
+				+ "\t[rarity] gets lore for specified rarity, otherwise the general lore";
 		Lib.sendMessage(event, s);
 	}
 	@Override
@@ -27,6 +29,8 @@ public class Lore extends UnitSelection{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 	public void sendLore(UnitInfo info,MessageReceivedEvent event,int rarity){
 		Lib.sendMessage(event, ":pencil:Lore of:"+info.unitName+" at "+rarity+":star:\n"+info.lore[rarity-info.minRarity]);
 	}

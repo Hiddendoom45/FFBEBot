@@ -37,7 +37,8 @@ public class UnitArt extends UnitSelection implements Command,Selection  {
 	public void help(MessageReceivedEvent event) {
 		String msg=SaveSystem.getPrefix(event)+"unitart [unitname] [unitrarity]\n"
 				+ "\tDisplay image of unit\n"
-				+ "\tIf rarity specified will display specific rarity, otherwise max rarity";
+				+ "\t[unitname] unit you want the art of(doesn't have to be the full name)\n"
+				+ "\t[unitrarity] rarity you want the art for";
 		Lib.sendMessage(event, msg);
 	}
 

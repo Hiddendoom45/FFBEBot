@@ -52,7 +52,8 @@ public class Units extends UnitSelection implements Command,Selection {
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s=SaveSystem.getPrefix(event)+"units [unitname]\n"
-				+ "\tdisplay information about specific unit";
+				+ "\tdisplay general information about a unit\n"
+				+ "\t[unitname] unit to get info for(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
 	}
 

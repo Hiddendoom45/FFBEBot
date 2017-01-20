@@ -52,8 +52,9 @@ public class Equipment extends UnitSelection{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s=SaveSystem.getPrefix(event)+"equipment [unit]\n"
-				+ "\tGet what equipment a unit can equip";
+		String s=SaveSystem.getPrefix(event)+"equipment [unitname]\n"
+				+ "\tgets the equipment a unit can equip\n"
+				+ "\t[unitname] unit to get the equipment for(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
 	}
 

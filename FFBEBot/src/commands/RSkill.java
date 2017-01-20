@@ -50,8 +50,9 @@ public class RSkill extends RedditSelection{
 	}
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s=SaveSystem.getPrefix(event)+"rskill [unit]\n"
-				+ "\tGets the skills for specified unit";
+		String s=SaveSystem.getPrefix(event)+"rskill [unitname]\n"
+				+ "\tGets the skills for unit\n"
+				+ "\t[unitname] unit to get the skills for(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
 		
 	}

@@ -85,8 +85,9 @@ public class Salty implements Command, Selection {
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s=SaveSystem.getPrefix(event)+"salty [unit]"
-				+ "creates a salty image of the specified unit";
+		String s=SaveSystem.getPrefix(event)+"salty [unitname]"
+				+ "creates a salty"
+				+ "[unitname] unit you're salty about(has to be a GL unit)(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
 	}
 
