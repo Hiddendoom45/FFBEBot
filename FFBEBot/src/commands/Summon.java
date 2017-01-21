@@ -51,6 +51,7 @@ public class Summon implements Command {
 				}
 			}
 		});
+		System.out.println(Settings.executor);
 	}
 
 	@Override
@@ -154,10 +155,16 @@ public class Summon implements Command {
 			try {
 				Settings.upload.acquire();
 			} catch (InterruptedException e) {}
+			try{
 			ImageIO.write(base, "PNG", new File("summons.png"));
 			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
 					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+" rare summon banner")).build());
-			Settings.upload.release();
+			}catch(Exception e){
+				Log.logError(e);
+			}
+			finally{
+				Settings.upload.release();
+			}
 			Files.delete(new File("summons.png").toPath());
 			count.terminate();
 		} catch (IOException e) {
