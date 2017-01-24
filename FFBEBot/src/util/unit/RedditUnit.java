@@ -14,20 +14,20 @@ import util.Lib;
 
 public class RedditUnit {
 	private static HashMap<String,String> refImg=new HashMap<String,String>();
-	public String URL;
-	public String title;
-	public String JobTribe;
-	public String TrustDetails;
-	public String[] growth;
-	public int baseR;
-	public int maxR;
-	public String[] awakening;
-	public String[] slots;
-	public UnitStats[] stats;
-	public String equipment;
-	public UnitLB[] LB;
-	public UnitAbility[] magic;
-	public UnitAbility[] special;
+	public String URL="";
+	public String title="";
+	public String JobTribe="";
+	public String TrustDetails="";
+	public String[] growth=new String[]{};
+	public int baseR=0;
+	public int maxR=0;
+	public String[] awakening=new String[]{};
+	public String[] slots=new String[]{};
+	public UnitStats[] stats=new UnitStats[]{};
+	public String equipment="";
+	public UnitLB[] LB=new UnitLB[]{};
+	public UnitAbility[] magic=new UnitAbility[]{};
+	public UnitAbility[] special=new UnitAbility[]{};
 	public RedditUnit(String page){
 		try{
 			Document doc=null;

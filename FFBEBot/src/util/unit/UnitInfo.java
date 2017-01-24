@@ -12,28 +12,28 @@ import global.record.Settings;
 import util.Lib;
 
 public class UnitInfo {
-	public String URL;
-	public String loreOverview;
-	public String unitName;
-	public String imgOverviewURL;
-	public int minRarity;
-	public int maxRarity;
-	public String job;
-	public String role;
-	public String origin;
-	public String gender;
+	public String URL="";
+	public String loreOverview="";
+	public String unitName="";
+	public String imgOverviewURL="";
+	public int minRarity=0;
+	public int maxRarity=0;
+	public String job="";
+	public String role="";
+	public String origin="";
+	public String gender="";
 	public String race;
-	public int[] No;
-	public String trustName;
-	public String trustLink;
+	public int[] No=new int[]{};
+	public String trustName="";
+	public String trustLink="";
 	public unitStats stats;
-	public String[] weapons;
-	public String[] armours;
+	public String[] weapons=new String[]{};
+	public String[] armours=new String[]{};
 	public unitAbilities Special;
 	public unitAbilities Magic;
-	public String[] sprites;
-	public String[] lore;
-	public String[] awakening;
+	public String[] sprites=new String[]{};
+	public String[] lore=new String[]{};
+	public String[] awakening=new String[]{};
 	public UnitInfo(String page)throws IOException{
 		try{
 			Document doc=null;
@@ -45,6 +45,7 @@ public class UnitInfo {
 				catch(org.jsoup.HttpStatusException e1){
 					if(i==3){
 						Log.log("ERROR", "page doesn't exist:"+page);
+						return;
 					}
 				}
 				catch(Exception e){Log.logError(e);}
