@@ -72,10 +72,10 @@ public class Log {
 				break;
 			}
 			s+="\n\tat "+er.toString();
+			i++;
 		}
 		e.printStackTrace();
 		log("ERROR",s);
-		e.printStackTrace();
 	}
 	public static void logError(Exception e){
 		logShortError(e,e.getStackTrace().length);
