@@ -64,14 +64,21 @@ public class Log {
 			e.printStackTrace();
 		}
 	}
-	public static void logError(Exception e){
+	public static void logShortError(Exception e,int lines){
 		String s=e.toString();
+		int i=0;
 		for(StackTraceElement er:e.getStackTrace()){
+			if(i==lines){
+				break;
+			}
 			s+="\n\tat "+er.toString();
 		}
 		e.printStackTrace();
 		log("ERROR",s);
 		e.printStackTrace();
+	}
+	public static void logError(Exception e){
+		logShortError(e,e.getStackTrace().length);
 	}
 	public static String getLog(int length){
 		String out="";

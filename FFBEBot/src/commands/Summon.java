@@ -51,7 +51,6 @@ public class Summon implements Command {
 				}
 			}
 		});
-		System.out.println(Settings.executor);
 	}
 
 	@Override

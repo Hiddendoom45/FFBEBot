@@ -42,11 +42,22 @@ public class UnitInfo {
 					doc = Jsoup.connect(page).userAgent(Settings.UA).timeout(60000).get();
 					if(!(doc==null))break;
 				}
+				catch(org.jsoup.HttpStatusException e1){
+					if(i==3){
+						Log.log("ERROR", "page doesn't exist:"+page);
+					}
+				}
 				catch(Exception e){Log.logError(e);}
 			}
 			URL=page;
 			Element content=doc.getElementById("mw-content-text");
+			try{
 			loreOverview=content.getElementsByTag("p").first().text();
+			}catch(Exception e){
+				Log.log("ERROR", "overview lore retrieval failed");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element unitInfo=content.getElementsByTag("tbody").first();
 			unitName=Lib.getHeader(0, unitInfo).text();
 			imgOverviewURL=Lib.getCell(1, 0, unitInfo).child(0).absUrl("src");
@@ -67,29 +78,64 @@ public class UnitInfo {
 			}
 			trustName=Lib.getCell(9, 0, unitInfo).text();
 			trustLink=Lib.getCell(9, 0, unitInfo).absUrl("href");
+			}catch(Exception e){
+				Log.log("ERROR", "Error parsing overview box");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats")).getElementsByTag("tbody").first();
 			this.stats=new unitStats(stats);
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing stats");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element equipment=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipment"));
 			parseWeapons(Lib.getCell(1, 0, equipment));
 			parseArmours(Lib.getCell(3, 0, equipment));
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing equipment");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element special=Lib.getEleAfter(content.children(), new ElementFilter("h3","Special"));
 			if(!(special==null)){
 				Special=new unitAbilities(special.getElementsByTag("tbody").first());
 			}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing special abilities");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic"));
 			if(!(magic==null)){
 				Magic=new unitAbilities(magic.getElementsByTag("tbody").first());
 			}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing magic abilities");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element sprites=Lib.getEleAfter(content.children(), new ElementFilter("h2","Sprites")).getElementsByTag("tbody").first();
 			this.sprites=new String[sprites.children().first().children().size()];
 			for(int i=0;i<sprites.children().first().children().size();i++){
 				this.sprites[i]=sprites.child(1).child(i).child(0).child(0).absUrl("src");
 			}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing sprites");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element lore=Lib.getEleAfter(content.children(), new ElementFilter("h2","Background Story")).getElementsByTag("tbody").first();
 			this.lore=new String[lore.children().size()];
 			for(int i=0;i<lore.children().size();i++){
 				this.lore[i]=Lib.getCell(i, 0, lore).text();
 			}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing lore");
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening"));
 			awakening=new String[maxRarity-minRarity];
 			for(int i=0;i<awakening.length;i++){
@@ -103,6 +149,10 @@ public class UnitInfo {
 					}
 				}
 				awakening[i]=awakening[i].substring(0, awakening[i].length()-2);
+			}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing awakening mats");
+				Log.logShortError(e, 5);
 			}
 		}catch(Exception e){
 			Log.logError(e);

@@ -100,6 +100,7 @@ public class Main {
 		overrides.put("botmod", new BotMod());
 		overrides.put("update", new Update());
 		overrides.put("reload", new Reload());
+		overrides.put("thread", new Threading());
 		//setup/build various things
 		Log.setup();
 		SaveSystem.setup();
