@@ -1,9 +1,12 @@
 package commands;
 
 import java.time.OffsetDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import global.Main;
 import global.record.SaveSystem;
+import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 /**
@@ -12,32 +15,47 @@ import util.Lib;
  *
  */
 public class Ping implements Command{
+	private ArrayList<Integer> pingValues=new ArrayList<Integer>();
 	public Ping(){
 		
 	}
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Pinged with "+event.getAuthorName()+" on "+event.getGuild().getName());
+		Main.log("status", "Pinged with "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
 		event.getChannel().sendTyping();
 		return true;
 	}
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		int messageTime=event.getMessage().getTime().getNano()/1000000;
-		int currentTime=OffsetDateTime.now().getNano()/1000000;
-		int messageS=event.getMessage().getTime().getSecond();
-		int currentS=OffsetDateTime.now().getSecond();
-		int responseS=currentS-messageS;
+		
+		OffsetDateTime message=event.getMessage().getTime();
+		OffsetDateTime now=OffsetDateTime.now();
+		int messageTime=message.getNano()/1000000;//mili message
+		int currentTime=now.getNano()/1000000;//mili current
+		long messageS=message.toEpochSecond();//sec message
+		long currentS=now.toEpochSecond();//sec current
+		int responseS;//delta sec
+		responseS=(int) Math.abs(currentS-messageS);//diff in sec
+		if(OffsetDateTime.timeLineOrder().compare(message, now)==1){//invert signage based on which one's less
+			responseS=responseS*-1;
+		}
 		int response;
-		System.out.println(currentS+" "+messageS+" "+messageTime+" "+currentTime);
+		//System.out.println(nH+" "+mH+" "+currentS+" "+messageS+" "+currentTime+" "+messageTime);
 		if(responseS==0){
 			response=currentTime-messageTime;
 		}
 		else{
-			response=currentTime+1000-messageTime+(1000*(responseS-1));
+			response=currentTime-messageTime+(1000*(responseS));
 		}
-		event.getChannel().sendMessage("pong - response in "+response+" ms");
+		pingValues.add(response);
+		System.out.println(response);
+		if(Settings.useAveragePing){
+			Lib.sendMessage(event, "pong - difference from average response "+(int)(response-calculateAverage(pingValues))+"ms");
+		}
+		else{
+			event.getChannel().sendMessage("pong - response in "+response+" ms");
+		}
 	}
 
 	@Override
@@ -52,6 +70,15 @@ public class Ping implements Command{
 	public void executed(boolean sucess, MessageReceivedEvent event) {
 		return;
 	}
-	
+	private double calculateAverage(List <Integer> marks) {
+		  Integer sum = 0;
+		  if(!marks.isEmpty()) {
+		    for (Integer mark : marks) {
+		        sum += mark;
+		    }
+		    return sum.doubleValue() / marks.size();
+		  }
+		  return sum;
+		}
 
 }

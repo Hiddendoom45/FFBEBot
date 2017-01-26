@@ -5,6 +5,7 @@ import net.dv8tion.jda.JDABuilder;
 import net.dv8tion.jda.Permission;
 import net.dv8tion.jda.entities.Role;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.CounterPool;
 import util.Lib;
 import util.unit.RedditUnit;
 
@@ -101,10 +102,13 @@ public class Main {
 		overrides.put("update", new Update());
 		overrides.put("reload", new Reload());
 		overrides.put("thread", new Threading());
+		overrides.put("logupload", new LogUpload());
+		overrides.put("pingtoggle", new PingToggle());
 		//setup/build various things
 		Log.setup();
 		SaveSystem.setup();
 		Restarter.setup();
+		CounterPool.getPool().setup();
 		RedditUnit.buildRefImg();
 		setGame(states.Ready);
 	}

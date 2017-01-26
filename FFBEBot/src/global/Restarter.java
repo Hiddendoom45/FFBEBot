@@ -14,13 +14,13 @@ import global.record.Settings;
 public class Restarter {
 	public static int sleep=60;
 	public static void setup(){
-		Runnable check=new Runnable(){//potential restart(50/50 chance every hour)
+		Runnable check=new Runnable(){//potential restart(1/10 chance every hour)
 			public void run(){
 				Random rand=new Random();
 				if(rand.nextInt(10)==0){
-					int sleep=rand.nextInt(14400);
+					int sleep=rand.nextInt(14400);//time during hour to start sleep
 					Restarter.sleep(sleep);
-					Restarter.sleep=rand.nextInt(100)+10;
+					Restarter.sleep=rand.nextInt(100)+10;//amount of time to sleep for
 				}
 			}
 		};

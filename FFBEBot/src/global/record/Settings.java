@@ -35,6 +35,7 @@ public class Settings {
 	public static String redditUnits;
 	public static String exvicusO;
 	public static String exvicusUnits;
+	public static boolean useAveragePing=true;
 	
 	public String guildPrefix="";
 	public String guildModPrefix="";

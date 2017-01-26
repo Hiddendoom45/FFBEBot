@@ -1,7 +1,5 @@
 package util;
 
-import global.record.Log;
-import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
 /**
@@ -10,7 +8,7 @@ import util.Lib;
  * @author Allen
  *
  */
-public class Counter implements Runnable{
+public class Counter{
 	private String messageID;
 	private String message;
 	private MessageReceivedEvent event;
@@ -20,22 +18,24 @@ public class Counter implements Runnable{
 		this.message=message;
 		this.event=event;
 		messageID=Lib.sendMessage(event, message.replace("%count%", ""+i)).getId();
-		Settings.executor.execute(this);
+		CounterPool.getPool().add(this);
 	}
-	@Override
-	public void run() {
+	public Counter count() {
 		synchronized(this){
-			while(!end){
+			if(!end){
 				event.getChannel().getMessageById(messageID).updateMessage(message.replace("%count%", ""+i));
-			try {
-				wait(1000);
-			} catch (InterruptedException e) {Log.logError(e);}
 			}
-			event.getChannel().deleteMessageById(messageID);
+			else{
+				event.getChannel().deleteMessageById(messageID);
+			}
 		}
+		return this;
 	}
 	public synchronized void terminate(){
 		end=true;
+	}
+	public synchronized boolean hasTerminated(){
+		return end;
 	}
 	public synchronized void setMessage(String message){
 		this.message=message;
