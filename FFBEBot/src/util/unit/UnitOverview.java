@@ -41,28 +41,28 @@ public class UnitOverview {
 		try{
 			for(int i=0;i<10;i++){
 				try{
-					doc = Jsoup.connect("https://exviuswiki.com/Unit_List").userAgent(Settings.UA).timeout(60000).get();
+					doc = Jsoup.connect(Settings.ExvicusURL+"Unit_List").followRedirects(true).userAgent(Settings.UA).timeout(60000).get();
 					if(!(doc==null))break;
 				}
 				catch(Exception e){Log.logError(e);}
 			}
 			Elements data=doc.getElementById("mw-content-text").children();
 			Elements first=new Elements();
-			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character")));
-			first.add(Lib.getEleAfter(data, new ElementFilter("h3","Friend Summon")));
-			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Rare Summon")));
-			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Limited Unit")));
+			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character[edit | edit source]")));
+			first.add(Lib.getEleAfter(data, new ElementFilter("h3","Friend Summon[edit | edit source]")));
+			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Rare Summon[edit | edit source]")));
+			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Limited Unit[edit | edit source]")));
 			for(int i=0;i<10;i++){
 				try{
-					doc = Jsoup.connect("https://exviuswiki.com/Unreleased_Unit_List").userAgent(Settings.UA).timeout(60000).get();
+					doc = Jsoup.connect(Settings.ExvicusURL+"Unreleased_Unit_List").followRedirects(true).userAgent(Settings.UA).timeout(60000).get();
 					if(!(doc==null))break;
 				}
 				catch(Exception e){Log.logError(e);}
 			}
 			data=doc.getElementById("mw-content-text").children();
-			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character")));
-			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Rare Summon")));
-			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Limited Unit")));
+			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character[edit | edit source]")));
+			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Rare Summon[edit | edit source]")));
+			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Limited Unit[edit | edit source]")));
 			Elements units =Lib.getNested(Lib.getNested(first,"tbody"), "tr");
 			Elements remove = new Elements();
 			for(Element u:units){

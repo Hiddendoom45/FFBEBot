@@ -17,15 +17,15 @@ public class ViewLog implements OverrideCommand{
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		String s="";
 		if(!(args.get("l")==null)&&Lib.isNumber(args.get("l")[0])){
-			//if(!(args.get("s")==null)&&Lib.isNumber(args.get("s")[0])){
-				//s=Log.getLog(Integer.parseInt(args.get("l")[0]),Integer.parseInt(args.get("s")[0]));
-			//}
-			//else{
-				s=Log.getLog(Integer.parseInt(args.get("l")[0]));
-			//}
+			if(!(args.get("s")==null)&&Lib.isNumber(args.get("s")[0])){
+				s=Log.getLog(Integer.parseInt(args.get("l")[0]),Integer.parseInt(args.get("s")[0]));
+			}
+			else{
+				s=Log.getLog(Integer.parseInt(args.get("l")[0]),0);
+			}
 		}
 		else{
-			s=Log.getLog(20);
+			s=Log.getLog(20,0);
 		}
 		Lib.sendMessage(event, s);
 	}

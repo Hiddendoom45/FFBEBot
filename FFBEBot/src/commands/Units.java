@@ -68,5 +68,4 @@ public class Units extends UnitSelection implements Command,Selection {
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event) throws IOException {
 		sendUnitData(SaveSystem.getExvicusUnit(Ounit.getData(selection).name),event);
 	}
-
 }

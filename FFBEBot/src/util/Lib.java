@@ -74,6 +74,9 @@ public class Lib {
 	}
 	public static Elements getNested(Elements element, String tag){
 		Elements ele=new Elements();
+		if(element==null){
+			return new Elements();
+		}
 		for(Element eles:element){
 			ele.addAll(eles.getElementsByTag(tag));
 		}

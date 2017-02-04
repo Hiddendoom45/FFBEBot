@@ -10,7 +10,11 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
-
+/**
+ * Class that records and logs everything
+ * @author Allen
+ *
+ */
 public class Log {
 	private static ArrayList<String> log=new ArrayList<String>();
 	private static boolean setup=false;
@@ -80,21 +84,23 @@ public class Log {
 	public static void logError(Exception e){
 		logShortError(e,e.getStackTrace().length);
 	}
-	public static String getLog(int length){
+	public static String getLog(int length,int start){
 		String out="";
 		try {
 			lock.acquire();
-			for(int i=length<log.size()?log.size()-length:0;i<log.size();i++){
-				out+=log.get(i)+"\n";
+			for(int i=length+start<log.size()?log.size()-length-start:0;i<log.size();i++){
+				if(i<log.size()-start){
+					out+=log.get(i)+"\n";
+				}
 			}
 			lock.release();
-			if(length>log.size()){
-				out=getSavedLog(length-log.size())+out;
+			if(length+start>log.size()){
+				out=getSavedLog((start>log.size()?length:length-(log.size()-start)),(start>log.size()?start-log.size():0))+out;
 			}
 		} catch (InterruptedException e) {}
 		return out;
 	}
-	public static String getSavedLog(int length){
+	public static String getSavedLog(int length,int start){
 		String existing="";
 		try{
 			if(new File(Settings.saveSource).exists()){
@@ -106,8 +112,10 @@ public class Log {
 			}
 			String out="";
 			String[] logs=existing.split("\n");
-			for(int i=logs.length>length?logs.length-length:0;i<logs.length;i++){
-				out+=logs[i]+"\n";
+			for(int i=logs.length>length+start?logs.length-length-start:0;i<logs.length;i++){
+				if(i<logs.length-start){
+					out+=logs[i]+"\n";
+				}
 			}
 			return out;
 		}catch(Exception e){

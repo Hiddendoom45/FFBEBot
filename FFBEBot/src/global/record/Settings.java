@@ -19,7 +19,8 @@ public class Settings {
 	public static final String prefix="-!";
 	public static final String modPrefix="~!";
 	public static final String UA="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36";
-	public static final String ExvicusURL="https://exviuswiki.com/";
+	public static final String ExvicusURL="http://exvius.gamepedia.com/";
+	public static final String ExvicusIMGURL="https://hydra-media.cursecdn.com/exvius.gamepedia.com/";
 	public static final String saveSource="FFBEBotLog";//for the log
 	public static final String dataSource="FFBEBotData";//for the guild based data
 	public static final String overrideSource="override";

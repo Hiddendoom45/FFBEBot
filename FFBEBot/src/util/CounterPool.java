@@ -53,7 +53,6 @@ public class CounterPool implements Runnable {
 				//add the ones in the list
 				synchronized(this){
 					if(!toAdd.isEmpty()){
-						System.out.println("add");
 						for(Counter c:toAdd){
 							counters.put(num, c);
 							current.add(num);

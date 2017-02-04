@@ -55,7 +55,7 @@ public class UnitInfo {
 			try{
 			loreOverview=content.getElementsByTag("p").first().text();
 			}catch(Exception e){
-				Log.log("ERROR", "overview lore retrieval failed");
+				Log.log("ERROR", "overview lore retrieval failed for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -80,64 +80,64 @@ public class UnitInfo {
 			trustName=Lib.getCell(9, 0, unitInfo).text();
 			trustLink=Lib.getCell(9, 0, unitInfo).absUrl("href");
 			}catch(Exception e){
-				Log.log("ERROR", "Error parsing overview box");
+				Log.log("ERROR", "Error parsing overview box for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats")).getElementsByTag("tbody").first();
+			Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats [edit | edit source]")).getElementsByTag("tbody").first();
 			this.stats=new unitStats(stats);
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing stats");
+				Log.log("ERROR", "error parsing stats for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element equipment=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipment"));
+			Element equipment=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipment[edit | edit source]"));
 			parseWeapons(Lib.getCell(1, 0, equipment));
 			parseArmours(Lib.getCell(3, 0, equipment));
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing equipment");
+				Log.log("ERROR", "error parsing equipment for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element special=Lib.getEleAfter(content.children(), new ElementFilter("h3","Special"));
+			Element special=Lib.getEleAfter(content.children(), new ElementFilter("h3","Special[edit | edit source]"));
 			if(!(special==null)){
 				Special=new unitAbilities(special.getElementsByTag("tbody").first());
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing special abilities");
+				Log.log("ERROR", "error parsing special abilities for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic"));
+			Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic[edit | edit source]"));
 			if(!(magic==null)){
 				Magic=new unitAbilities(magic.getElementsByTag("tbody").first());
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing magic abilities");
+				Log.log("ERROR", "error parsing magic abilities for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element sprites=Lib.getEleAfter(content.children(), new ElementFilter("h2","Sprites")).getElementsByTag("tbody").first();
+			Element sprites=Lib.getEleAfter(content.children(), new ElementFilter("h2","Sprites[edit | edit source]")).getElementsByTag("tbody").first();
 			this.sprites=new String[sprites.children().first().children().size()];
 			for(int i=0;i<sprites.children().first().children().size();i++){
 				this.sprites[i]=sprites.child(1).child(i).child(0).child(0).absUrl("src");
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing sprites");
+				Log.log("ERROR", "error parsing sprites for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element lore=Lib.getEleAfter(content.children(), new ElementFilter("h2","Background Story")).getElementsByTag("tbody").first();
+			Element lore=Lib.getEleAfter(content.children(), new ElementFilter("h2","Background Story[edit | edit source]")).getElementsByTag("tbody").first();
 			this.lore=new String[lore.children().size()];
 			for(int i=0;i<lore.children().size();i++){
 				this.lore[i]=Lib.getCell(i, 0, lore).text();
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing lore");
+				Log.log("ERROR", "error parsing lore for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening"));
+			Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening[edit | edit source]"));
 			awakening=new String[maxRarity-minRarity];
 			for(int i=0;i<awakening.length;i++){
 				awakening[i]="";
@@ -152,7 +152,7 @@ public class UnitInfo {
 				awakening[i]=awakening[i].substring(0, awakening[i].length()-2);
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing awakening mats");
+				Log.log("ERROR", "error parsing awakening mats for page:" +page);
 				Log.logShortError(e, 5);
 			}
 		}catch(Exception e){
