@@ -9,7 +9,7 @@ import org.jsoup.select.Elements;
 
 import com.google.gson.Gson;
 
-import Lib.ElementFilter;
+import Library.ElementFilter;
 import global.record.Data;
 import global.record.Log;
 import global.record.Settings;

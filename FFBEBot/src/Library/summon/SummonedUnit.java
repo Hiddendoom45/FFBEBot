@@ -1,4 +1,4 @@
-package Lib.summon;
+package Library.summon;
 
 import java.io.File;
 

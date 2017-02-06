@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import util.Lib;
 
 public class PingToggle implements OverrideCommand{
 
@@ -20,7 +21,8 @@ public class PingToggle implements OverrideCommand{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
+		String s="";
+		Lib.sendMessage(event, s);
 		
 	}
 

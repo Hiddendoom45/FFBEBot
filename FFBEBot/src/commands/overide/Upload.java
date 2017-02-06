@@ -3,18 +3,26 @@ package commands.overide;
 import java.io.File;
 import java.util.HashMap;
 
+import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
-public class LogUpload implements OverrideCommand {
+public class Upload extends OverrideGenerics implements OverrideCommand {
 
 	@Override
 	public boolean called(HashMap<String, String[]> args, MessageReceivedEvent event) {
-		return true;
+		return ownerValidate(event);
 	}
 
 	@Override
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
-		event.getChannel().sendFile(new File("FFBEBotLog"), null);
-
+		if(args.containsKey("d")||args.containsKey("data")){
+			event.getChannel().sendFile(new File(Settings.dataSource), null);
+		}
+		if(args.containsKey("log")||args.containsKey("l")){
+			event.getChannel().sendFile(new File("FFBEBotLog"), null);
+		}
+		if(args.containsKey("override")||args.containsKey("overrides")){
+			event.getChannel().sendFile(new File("overrides"),null);
+		}
 	}
 
 	@Override

@@ -7,6 +7,7 @@ import net.dv8tion.jda.entities.Role;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.CounterPool;
 import util.Lib;
+import util.rng.RandomLibs;
 import util.unit.RedditUnit;
 
 import java.util.HashMap;
@@ -48,7 +49,8 @@ public class Main {
 			startup();
 		}
 		jda.setAutoReconnect(true);
-		setGame(states.Ready);
+		setGame(states.randomReady());
+		System.out.println(states.randomReady());
 	}
 	public static void shutdown(){
 		jda.shutdown(false);
@@ -87,6 +89,7 @@ public class Main {
 		commands.put("awaken", new Awaken());
 		commands.put("rawaken", new RAwaken());
 		commands.put("maintenance", new Maintenance());
+		commands.put("invite", new Invite());
 		
 		//ditto with mod commands(separate maps due to special checks)
 		modCommands.put("prefix", new Prefix());
@@ -102,23 +105,29 @@ public class Main {
 		overrides.put("update", new Update());
 		overrides.put("reload", new Reload());
 		overrides.put("thread", new Threading());
-		overrides.put("logupload", new LogUpload());
+		overrides.put("upload", new Upload());
 		overrides.put("pingtoggle", new PingToggle());
+		overrides.put("download", new Download());
 		//setup/build various things
 		Log.setup();
 		SaveSystem.setup();
 		Restarter.setup();
 		CounterPool.getPool().setup();
 		RedditUnit.buildRefImg();
-		setGame(states.Ready);
+		setGame(states.randomReady());
 	}
 	public static void setGame(states state){
+		String game="";
 		switch(state){
-		case Loading:jda.getAccountManager().setGame("the Loading Game...");
+		case Loading:game="the Loading Game...";
 		break;
-		case Ready:jda.getAccountManager().setGame("Offline...| -!help");
+		case Ready1:game=" with RNG|-!help";
 		break;
+		case Ready2:game="*praying to RNGesus|-!help";
+		break;
+		case Ready3:game="Offline?...|-!help";
 		}
+		jda.getAccountManager().setGame(game);
 	}
 	public static void handleCommand(CommandParser.CommandContainer cmd){
 		System.out.println(cmd.invoke);
@@ -209,6 +218,13 @@ public class Main {
 	 */
 	public static enum states{
 		Loading,
-		Ready;
+		Ready1,
+		Ready2,
+		Ready3;
+		public static int rand;
+		public static states randomReady(){
+			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2});
+			return s;
+		}
 	}
 }

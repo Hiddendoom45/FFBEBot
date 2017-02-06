@@ -1,6 +1,6 @@
-package Lib.summon.banner;
-import Lib.summon.Awakening;
-import Lib.summon.Unit;
+package Library.summon.banner;
+import Library.summon.Awakening;
+import Library.summon.Unit;
 import util.Lib;
 public enum Banner {
 	Release("Release",new Unit[]{},new int[][]{},Lib.concat(new Unit[]{Unit.Rakshasa,Unit.Xiao,Unit.Exdeath,Unit.Bartz,Unit.Firion,Unit.Cecil,Unit.Garland,Unit.Miyuki,Unit.Vaan,Unit.CoD,Unit.Roselia,Unit.Cerius,Unit.Medius},Unit.commons1()),new Awakening[]{},BannerType.ReleaseType),

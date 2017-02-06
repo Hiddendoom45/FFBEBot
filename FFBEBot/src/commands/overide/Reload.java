@@ -51,7 +51,7 @@ public class Reload implements OverrideCommand {
 					SaveSystem.preloadSummons(count);
 				}
 				SaveSystem.writeData();//write data to file
-				Main.setGame(states.Ready);//set state to ready again
+				Main.setGame(states.randomReady());//set state to ready again
 				Lib.sendMessage(event, "Data reloaded");
 			}
 		});

@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +18,7 @@ import java.util.concurrent.TimeUnit;
  *
  */
 public class Log {
+	public static final String LogSource="FFBEBotLog";
 	private static ArrayList<String> log=new ArrayList<String>();
 	private static boolean setup=false;
 	private static Semaphore lock=new Semaphore(1);
@@ -49,12 +52,50 @@ public class Log {
 			}
 			out.append(new SimpleDateFormat("[MM-dd HH:mm:ss]").format(new Date())+"[Log]log saved");
 			log.clear();
-			lock.release();
 			out.close();
 		}
 		catch(Exception e){
-			e.printStackTrace();
+			Log.logError(e);
 		}
+		finally{
+			lock.release();
+		}
+	}
+	/**
+	 * archives the log file for future reference so that it isn't referenced again 
+	 */
+	public static void archive(){
+		save();
+		log.clear();
+		String name=Log.LogSource+"Final-"+new SimpleDateFormat("[yyyy-MM-dd-HH]").format(new Date());//Name based on time
+		try{
+			lock.acquire();
+			new File(Log.LogSource).renameTo(new File(name));
+		}
+		catch(Exception e){
+			logError(e);
+		}
+		finally{
+			lock.release();
+		}
+	}
+	/**
+	 * competely clears and deletes the log
+	 */
+	public static void clear(){
+		log.clear();
+		try {
+			lock.acquire();
+			Files.delete(new File(LogSource).toPath());
+		} catch (InterruptedException | IOException e) {
+			//although log is cleared, this will cause message to be outputted to console and for viewing cause log isn't cleared
+			log("ERROR", "error clearing log");
+			logError(e);
+		}
+		finally{
+			lock.release();
+		}
+		
 	}
 	public static void log(String type, String msg){
 		try{

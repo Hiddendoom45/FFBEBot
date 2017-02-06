@@ -3,10 +3,10 @@ package util.rng.summon;
 import java.util.ArrayList;
 import java.util.Random;
 
-import Lib.summon.Awakening;
-import Lib.summon.SummonedUnit;
-import Lib.summon.Unit;
-import Lib.summon.banner.Banner;
+import Library.summon.Awakening;
+import Library.summon.SummonedUnit;
+import Library.summon.Unit;
+import Library.summon.banner.Banner;
 import util.rng.RandomLibs;
 
 public class Pull {

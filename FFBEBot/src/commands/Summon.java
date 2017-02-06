@@ -12,8 +12,8 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import Lib.summon.SummonedUnit;
-import Lib.summon.banner.Banner;
+import Library.summon.SummonedUnit;
+import Library.summon.banner.Banner;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;

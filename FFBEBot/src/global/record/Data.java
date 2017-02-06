@@ -1,5 +1,8 @@
 package global.record;
 
+
+
+import XML.Attribute;
 import XML.Elements;
 
 /**
@@ -13,7 +16,24 @@ public class Data {
 	public static String exvicusO;
 	public static String exvicusUnits;
 	
+	private String id;
 	
+	
+	public Data(String id){
+		this.id=id;
+	}
+	public Data(Elements e){
+		
+	}
+	public String getID(){
+		return id;
+	}
+	public Elements parseToElements(){
+		Elements root=new Elements("user");
+		root.getAttributes().add(new Attribute("id",id));
+		
+		return root;
+	}
 	/**
 	 * A wrapper for getting an array for an element easily, assuming the arrays is text separated by ','
 	 * @param ele element to search for array
@@ -64,6 +84,8 @@ public class Data {
 		}
 	}
 	
+	
+	//static stuff in relation to preload stuff
 	public static void setData(Elements preload){
 		redditO=getString(preload,"redditOverview");
 		redditUnits=getString(preload,"redditUnits");

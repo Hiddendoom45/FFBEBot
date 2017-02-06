@@ -6,7 +6,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import Lib.ElementFilter;
+import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;

@@ -1,6 +1,6 @@
 package commands;
 
-import Lib.SaltItems;
+import Library.SaltItems;
 import global.record.Log;
 import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;

@@ -1,4 +1,4 @@
-package Lib;
+package Library;
 
 import global.record.Settings;
 /**

@@ -1,4 +1,4 @@
-package Lib.summon.banner;
+package Library.summon.banner;
 
 public enum BannerType {
 	ReleaseType(true,false),//state of the summons at game release

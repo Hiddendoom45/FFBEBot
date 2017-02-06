@@ -12,7 +12,7 @@ import global.record.Log;
 import net.dv8tion.jda.entities.Message.Attachment;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
-public class Update implements OverrideCommand {
+public class Update extends OverrideGenerics implements OverrideCommand {
 
 	@Override
 	public boolean called(HashMap<String, String[]> args, MessageReceivedEvent event) {
@@ -20,7 +20,7 @@ public class Update implements OverrideCommand {
 			List<Attachment> atts=event.getMessage().getAttachments();
 			for(Attachment a:atts){
 				if(a.getFileName().endsWith(".jar")){
-					return true;
+					return ownerValidate(event);
 				}
 			}
 		}

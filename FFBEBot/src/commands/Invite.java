@@ -9,7 +9,7 @@ public class Invite implements Command {
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Sent invite to "+event.getAuthorName()+" on "+event.getGuild().getName());
+		Main.log("status", "Sent invite to "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
 		return true;
 	}
 

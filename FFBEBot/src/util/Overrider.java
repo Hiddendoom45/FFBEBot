@@ -5,6 +5,7 @@ import java.util.HashMap;
 import global.ArgumentParser;
 import global.Main;
 import global.record.SaveSystem;
+import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
 public class Overrider {
@@ -26,7 +27,7 @@ public class Overrider {
 			}
 			return true;
 		}
-		else if(event.getAuthor().getId().equals("206193542693912578")){
+		else if(event.getAuthor().getId().equals(Settings.ownerID)){
 			return Main.handleOverride(ArgumentParser.handleArguments(event.getMessage().getContent()),event);
 		}
 		return false;

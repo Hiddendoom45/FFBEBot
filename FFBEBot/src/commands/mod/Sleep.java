@@ -32,7 +32,6 @@ public class Sleep implements Command{
 	}
 	@Override
 	public void executed(boolean sucess, MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
 		
 	}
 

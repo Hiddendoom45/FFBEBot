@@ -1,6 +1,6 @@
 package commands;
 
-import Lib.Waifus;
+import Library.Waifus;
 import global.record.Log;
 import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
