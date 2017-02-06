@@ -16,6 +16,11 @@ import net.dv8tion.jda.events.message.MessageReceivedEvent;
  *
  */
 public class Lib {
+	//methods sending data
+	/**
+	 * message data for help menu
+	 * @param event
+	 */
 	public static void printHelp(MessageReceivedEvent event){
 		String msg="__***Help List***__\n"
 				+ "Use "+SaveSystem.getPrefix(event)+"help [command] to get more info on a specific command, i.e.: "+SaveSystem.getPrefix(event)+"help ping\n\n"
@@ -34,6 +39,10 @@ public class Lib {
 				+ "To view mod commands, use "+SaveSystem.getModPrefix(event)+"help";
 		Lib.sendMessage(event, msg);
 	}
+	/**
+	 * message data for mod help menu
+	 * @param event
+	 */
 	public static void printModHelp(MessageReceivedEvent event){
 		String msg="Mod Help List\n"
 				+ SaveSystem.getModPrefix(event)+"join [MSG]"
@@ -46,25 +55,78 @@ public class Lib {
 				+ "\t`toggles various toggleable server options`";
 		Lib.sendMessage(event, msg);
 	}
+	/**
+	 * Formats the message <br/>
+	 * Special formatting <br/> 
+	 * %userMention% mentions the user that sent the message <br/>
+	 * %userName% prints name of user that sent the message <br/>
+	 * %selfMention% mentions the bot
+	 * @param event message received
+	 * @param msg message to send in response
+	 * @return message that was sent
+	 */
 	public static Message sendMessageFormated(MessageReceivedEvent event,String msg){
 		return event.getChannel().sendMessage(Lib.FormatMessage(event,msg));
 	}
+	/**
+	 * generic send message, will have wrappers to fix some issues and errors in relation to sending messages
+	 * @param event message received
+	 * @param msg message to send someone
+	 * @return message that was sent
+	 */
 	public static Message sendMessage(MessageReceivedEvent event,String msg){
 		return event.getChannel().sendMessage(msg);
 	}
+	/**
+	 * Formats the message <br/>
+	 * Special formatting <br/> 
+	 * %userMention% mentions the user that sent the message <br/>
+	 * %userName% prints name of user that sent the message <br/>
+	 * %selfMention% mentions the bot
+	 * @param event message received
+	 * @param msg message to send in response
+	 * @return string of formatted message to send
+	 */
 	public static String FormatMessage(MessageReceivedEvent event,String msg){
 		return msg.replace("%userMention%", event.getAuthor().getAsMention()).
 				replace("%userName%", event.getAuthorName()).
 				replace("%selfMention%", event.getJDA().getSelfInfo().getAsMention());
 	}
+	/**
+	 * Formats and send message for guild member joining <br/>
+	 * Special formatting<br/>
+	 * %userMention% mentions the user that joined<br/>
+	 * %userName% prints name of the user<br/>
+	 * %guildName% prints name of the server
+	 * @param event user join event
+	 * @param msg message to send in response
+	 * @return message sent
+	 */
 	public static Message sendMessageFormated(GuildMemberJoinEvent event,String msg){
 		return event.getGuild().getPublicChannel().sendMessage(Lib.FormatMessage(event,msg));
 	}
+	/**
+	 * Formats and send message for guild member joining <br/>
+	 * Special formatting<br/>
+	 * %userMention% mentions the user that joined<br/>
+	 * %userName% prints name of the user<br/>
+	 * %guildName% prints name of the server
+	 * event user join event
+	 * @param msg message to send in response
+	 * @return string of formatted message to send
+	 */
 	public static String FormatMessage(GuildMemberJoinEvent event,String msg){
 		return msg.replace("%userMention%", event.getUser().getAsMention()).
 		replace("%userName%", event.getUser().getUsername()).
 		replace("%guildName%",event.getGuild().getName());
 	}
+	//stuff for handling elements in a web page
+	/**
+	 * Gets elements within an element based on tag name
+	 * @param element elements to get nestled element
+	 * @param tags list of tags to get the nestled element for, going right to left, i.e. ["first","second"] gets &lt;second/&gt; in &lt;first&gt;&lt;second/&gt;&lt;/first&gt; 
+	 * @return list of elements that match the parameters
+	 */
 	public static Elements getNestedDeep(Elements element,String[] tags){
 		Elements ele=element;
 		for(String s:tags){
@@ -72,6 +134,12 @@ public class Lib {
 		}
 		return ele;
 	}
+	/**
+	 * Gets elements within an element based on tagname
+	 * @param element elements to get nestled element
+	 * @param tag tag to get within the main element
+	 * @return list of elements that match the parameters
+	 */
 	public static Elements getNested(Elements element, String tag){
 		Elements ele=new Elements();
 		if(element==null){
@@ -82,6 +150,14 @@ public class Lib {
 		}
 		return ele;
 	}
+	/**
+	 * 
+	 * Gets elements within an element based on tagname
+	 * @param element elements to get nestled element
+	 * @param index index of the element in the list of elements that match parameter for each specific element in given list
+	 * @param tag tag to get within the main element
+	 * @return list of elements that match the parameters
+	 */
 	public static Elements getNestedItem(Elements element,int index,String tag){
 		Elements ele=new Elements();
 		for(Element eles:element){
@@ -91,6 +167,12 @@ public class Lib {
 		}
 		return ele;
 	}
+	/**
+	 * Gets elements after what matches element filter
+	 * @param elements element list for which you want get the element after for
+	 * @param after filter containing parameters for the element
+	 * @return elements after any element matching element filter
+	 */
 	public static Elements getElesAfter(Elements elements, ElementFilter after){
 		Elements afters=new Elements();
 		boolean found=false;
@@ -107,6 +189,12 @@ public class Lib {
 		}
 		return afters;
 	}
+	/**
+	 * Gets elements after what matches element filter
+	 * @param elements element list for which you want get the element after for
+	 * @param after filter containing parameters for the element
+	 * @return elements after any element matching element filter
+	 */
 	public static Element getEleAfter(Elements elements,ElementFilter after){
 		Elements e=getElesAfter(elements,after);
 		if(e.size()>0){
@@ -115,21 +203,50 @@ public class Lib {
 		return null;
 		
 	}
+	/**
+	 * gets table rows in a table
+	 * @param table table element &lt;tbody&gt;
+	 * @return number of rows, does not include &lt;thead&gt;
+	 */
 	public static int getTRCount(Element table){
 		Elements tr=table.getElementsByTag("tr");
 		return tr.size();
 	}
+	/**
+	 * Gets columns in the row
+	 * @param table table element &lt;tbody&gt;
+	 * @param row row #
+	 * @return number of columns
+	 */
 	public static int getTDCount(Element table,int row){
 		Elements td=table.getElementsByTag("tr").get(row).getElementsByTag("td");
 		return td.size();
 	}
+	/**
+	 * gets a specific cell in a table
+	 * @param row row #
+	 * @param col column #
+	 * @param table table element &lt;tbody&gt;
+	 * @return element representing the specific cell
+	 */
 	public static Element getCell(int row, int col,Element table){
 		return table.getElementsByTag("tr").get(row).getElementsByTag("td").size()>0? 
 				table.getElementsByTag("tr").get(row).getElementsByTag("td").get(col):null;
 	}
+	/**
+	 * get specific row
+	 * @param row row #
+	 * @param table table element &lt;tbody&gt;
+	 * @return element representing the specific header row
+	 */
 	public static Element getHeader(int row, Element table){
 		return table.getElementsByTag("tr").get(row).getElementsByTag("th").get(0);
 	}
+	/**
+	 * gets link in element
+	 * @param ele element to get link from
+	 * @return String
+	 */
 	public static String getLink(Element ele){
 		Elements links = ele.getElementsByTag("a");
 		for (Element link : links) {
@@ -137,6 +254,13 @@ public class Lib {
 		}
 		return "";
 	}
+	//random utilities
+	/**
+	 * makes sure that string is at least x length, padding it w/ spaces
+	 * @param s string to pad
+	 * @param pad minimum length of string
+	 * @return padded string
+	 */
 	public static String pad(String s, int pad){
 		for(int i=s.length();i<pad;i++){
 			s=s+" ";
@@ -170,17 +294,27 @@ public class Lib {
 		}
 		return Integer.parseInt(i);
 	}
+	/**
+	 * gets numbers(integers) from string
+	 * @param s string to get numbers from
+	 * @return array of all the numbers in the string
+	 */
 	public static int[] extractNumbers(String s){
 		String i="";
-		boolean number=false;
+		boolean number=false;//if currently indexing a number
+		boolean dot=false;//decimal place
 		for(char c:s.trim().toCharArray()){
 			if(number){
-				if(Character.isDigit(c)){
+				if(Character.isDigit(c)||dot?false:c=='.'){
+					if(c=='.'){
+						dot=true;
+					}
 					i+=c;
 				}
 				else{
 					i+=",";
 					number=false;
+					dot=false;
 				}
 			}
 			else{
@@ -200,6 +334,12 @@ public class Lib {
 		}
 		return ints;
 	}
+	/**
+	 * if x array contains obj
+	 * @param obj object if it contains
+	 * @param os array of objects
+	 * @return if os contains obj
+	 */
 	public static boolean contains(Object obj,Object[] os){
 		for(Object o:os){
 			if(o.equals(obj)){
@@ -208,6 +348,11 @@ public class Lib {
 		}
 		return false;
 	}
+	/**
+	 * converts a string array to 
+	 * @param args
+	 * @return
+	 */
 	public static String extract(String[] args){
 		String out="";
 		for(String s:args){

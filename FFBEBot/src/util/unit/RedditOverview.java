@@ -9,6 +9,7 @@ import org.jsoup.select.Elements;
 
 import com.google.gson.Gson;
 
+import global.record.Data;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
@@ -18,7 +19,7 @@ public class RedditOverview {
 	public ArrayList<unitData> possibleData=new ArrayList<unitData>();
 	public RedditOverview(String unitName){
 		try{
-			for(unitData u:new Gson().fromJson(Settings.redditO,unitData[].class)){
+			for(unitData u:new Gson().fromJson(Data.redditO,unitData[].class)){
 				if(u.name.toLowerCase().contains(unitName.toLowerCase())){
 					this.possible.add(u.name);
 					this.possibleData.add(u);

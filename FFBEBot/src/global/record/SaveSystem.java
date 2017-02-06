@@ -31,7 +31,11 @@ import util.unit.RedditOverview;
 import util.unit.RedditUnit;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
-
+/**
+ * Class containing all the static methods relating to saving/loading data for the bot
+ * @author Allen
+ *
+ */
 public class SaveSystem {
 	public static void setup(){
 		if(!new File(Settings.dataSource).exists()){
@@ -56,7 +60,7 @@ public class SaveSystem {
 		
 		Gson overviews=new Gson();
 		RedditOverview.unitData[] overview=RedditOverview.preloadReddit();
-		Settings.redditO=overviews.toJson(overview);
+		Data.redditO=overviews.toJson(overview);
 		JsonObject units=new JsonObject();
 		int index=0;
 		if(!(count==null)){count.setMessage("Loading Reddit Units...(%count%/"+overview.length+")");}
@@ -74,16 +78,16 @@ public class SaveSystem {
 		}
 		
 		if(!(count==null)){count.terminate();}
-		Settings.redditUnits=overviews.toJson(units);
+		Data.redditUnits=overviews.toJson(units);
 		Log.log("System", "Reddit Overview Loaded");
 	}
 	public static RedditUnit getRedditUnit(String name){
-		return new Gson().fromJson(new JsonParser().parse(Settings.redditUnits).getAsJsonObject().get(name),RedditUnit.class);
+		return new Gson().fromJson(new JsonParser().parse(Data.redditUnits).getAsJsonObject().get(name),RedditUnit.class);
 	}
 	public static void preloadExvicus(Counter count){
 		Gson overviews=new Gson();
 		UnitOverview.unitData[] overview=UnitOverview.preload();
-		Settings.exvicusO=overviews.toJson(overview);
+		Data.exvicusO=overviews.toJson(overview);
 		JsonObject units=new JsonObject();
 		int index=0;
 		if(!(count==null)){count.setMessage("Loading Exvicus Units...(%count%/"+overview.length+")");}
@@ -100,11 +104,11 @@ public class SaveSystem {
 			if(!(count==null)){count.setI(index);}
 		}
 		if(!(count==null)){count.terminate();}
-		Settings.exvicusUnits=overviews.toJson(units);
+		Data.exvicusUnits=overviews.toJson(units);
 		Log.log("System", "Exvicus Overview loaded");
 	}
 	public static UnitInfo getExvicusUnit(String name){
-		return new Gson().fromJson(new JsonParser().parse(Settings.exvicusUnits).getAsJsonObject().get(name),UnitInfo.class);
+		return new Gson().fromJson(new JsonParser().parse(Data.exvicusUnits).getAsJsonObject().get(name),UnitInfo.class);
 	}
 	public static void writeData(){
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
@@ -116,7 +120,7 @@ public class SaveSystem {
 				doc.getChilds().remove(i);
 			}
 		}
-		doc.add(Settings.parseDataToElements());
+		doc.add(Data.parseDataToElements());
 		file.writeXMLFile();
 		file.startWriter();
 		file.writeElement(doc);
@@ -172,19 +176,19 @@ public class SaveSystem {
 			try{
 			Settings.guilds.put(e.getAttribute("id").getValue(), new Settings(e));
 			}catch(Exception e1){
+				Log.log("ERROR", "error putting guild(likely missing id attribute)"+e);
 				Log.logError(e1);
 			}
 		}
 		}catch(Exception e){
 			Log.log("ERROR", "error loading guilds");
-			Log.logError(e);
 		}
 		file.resetReader();
 		try{
 			Elements preload=file.parseToElements("preload").get(0);
-			Settings.setData(preload);
+			Data.setData(preload);
 		}catch(Exception e){
-			Log.logError(e);
+			Log.log("ERROR", "error loading preload data");
 		}
 		file.endReader();
 	}

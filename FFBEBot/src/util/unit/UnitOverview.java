@@ -10,6 +10,7 @@ import org.jsoup.select.Elements;
 import com.google.gson.Gson;
 
 import Lib.ElementFilter;
+import global.record.Data;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
@@ -19,7 +20,7 @@ public class UnitOverview {
 	public ArrayList<unitData> possibleData=new ArrayList<unitData>();
 	public UnitOverview(String unitName){
 		try{
-			for(unitData u:new Gson().fromJson(Settings.exvicusO,unitData[].class)){
+			for(unitData u:new Gson().fromJson(Data.exvicusO,unitData[].class)){
 				if(u.name.toLowerCase().contains(unitName.toLowerCase())){
 					this.possible.add(u.name);
 					this.possibleData.add(u);

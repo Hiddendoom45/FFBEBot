@@ -237,8 +237,13 @@ public class UnitInfo {
 				name=row.child(3).text();
 				link=row.child(3).getElementsByTag("a").first().absUrl("href");
 				effect=row.child(4).text();
+				if(row.childNodes().size()>6){
 				hits=row.child(5).text();
 				MP=row.child(6).text();
+				}
+				else{
+					MP=row.child(5).text();
+				}
 			}
 		}
 	}

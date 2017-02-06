@@ -32,10 +32,7 @@ public class Settings {
 	public static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(10);//used for various threaded activities
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access
 
-	public static String redditO;
-	public static String redditUnits;
-	public static String exvicusO;
-	public static String exvicusUnits;
+	
 	public static boolean useAveragePing=true;
 	
 	public String guildPrefix="";
@@ -96,7 +93,7 @@ public class Settings {
 	 * @param tagname name of element you want to get
 	 * @return
 	 */
-	public boolean getBooleanSetting(boolean normal,Elements ele,String tagname){
+	private boolean getBooleanSetting(boolean normal,Elements ele,String tagname){
 		if(ele.getChilds(tagname).size()<=0){
 			return normal;
 		}
@@ -170,28 +167,5 @@ public class Settings {
 		
 		return root;
 	}
-	public static void setData(Elements preload){
-		Settings.redditO=getString(preload,"redditOverview");
-		Settings.redditUnits=getString(preload,"redditUnits");
-		Settings.exvicusO=getString(preload,"exvicusOverview");
-		Settings.exvicusUnits=getString(preload,"exvicusUnits");
-	}
-	public static Elements parseDataToElements(){
-		Elements root=new Elements("preload");
-		Elements current;
-		
-		current=new Elements("redditOverview").setText(Settings.redditO);
-		root.add(current);
-		
-		current=new Elements("redditUnits").setText(Settings.redditUnits);
-		root.add(current);
-		
-		current=new Elements("exvicusOverview").setText(Settings.exvicusO);
-		root.add(current);
-		
-		current=new Elements("exvicusUnits").setText(Settings.exvicusUnits);
-		root.add(current);
-		
-		return root;
-	}
+	
 }
