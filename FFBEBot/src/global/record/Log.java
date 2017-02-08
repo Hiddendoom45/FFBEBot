@@ -68,6 +68,16 @@ public class Log {
 		save();
 		log.clear();
 		String name=Log.LogSource+"Final-"+new SimpleDateFormat("[yyyy-MM-dd-HH]").format(new Date());//Name based on time
+		int i=0;
+		while(new File(name).exists()){
+			i++;
+			if(i==0){
+				name=name+i;
+			}
+			else{
+				name=name.subSequence(0, name.length()-1)+""+i;
+			}
+		}
 		try{
 			lock.acquire();
 			new File(Log.LogSource).renameTo(new File(name));

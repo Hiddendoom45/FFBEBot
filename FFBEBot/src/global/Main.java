@@ -108,6 +108,8 @@ public class Main {
 		overrides.put("upload", new Upload());
 		overrides.put("pingtoggle", new PingToggle());
 		overrides.put("download", new Download());
+		overrides.put("logclear", new ClearLog());
+		overrides.put("gamechange", new ChangeGame());
 		//setup/build various things
 		Log.setup();
 		SaveSystem.setup();
@@ -223,7 +225,7 @@ public class Main {
 		Ready3;
 		public static int rand;
 		public static states randomReady(){
-			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2});
+			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2,Ready3});
 			return s;
 		}
 	}
