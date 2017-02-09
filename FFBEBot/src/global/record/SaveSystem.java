@@ -37,6 +37,9 @@ import util.unit.UnitOverview;
  *
  */
 public class SaveSystem {
+	/**
+	 * loads basic data
+	 */
 	public static void setup(){
 		if(!new File(Settings.dataSource).exists()){
 			List<Guild> guilds=Main.jda.getGuilds();
@@ -56,6 +59,10 @@ public class SaveSystem {
 		}
 		load();
 	}
+	/**
+	 * preloads reddit data
+	 * @param count counter used to count progress
+	 */
 	public static void preloadReddit(Counter count){
 		
 		Gson overviews=new Gson();

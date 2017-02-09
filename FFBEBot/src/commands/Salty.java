@@ -8,14 +8,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import javax.imageio.ImageIO;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-
+import Library.summon.Unit;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
@@ -24,8 +21,11 @@ import util.Lib;
 import util.Select;
 import util.Selection;
 import util.Selector;
+import util.unit.UnitOverview;
 
 public class Salty implements Command, Selection {
+	//used to keep track of current selections going on
+	private HashMap<Long,UnitOverview> saved=new HashMap<Long,UnitOverview>();
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		Log.log("status", "Salty image of "+(args.length>0?Lib.extract(args):"")+" sent to "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
@@ -35,58 +35,35 @@ public class Salty implements Command, Selection {
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		if(args.length==0){
-			Lib.sendMessage(event, "https://exviuswiki.com/Unit_List");
-		}
-		else{
-			Document doc = null;
-			try{
-				while(true){
-					doc = Jsoup.connect("https://exviuswiki.com/Unit_List").userAgent(Settings.UA).timeout(10000).get();
-					if(!(doc==null))break;
-				}
-				ArrayList<String> possible =new ArrayList<String>();//possible image links
-				ArrayList<String> name=new ArrayList<String>();//names for the image links
-				Elements first=doc.getElementsByTag("tbody");//get tables
-				while(true){
-					doc = Jsoup.connect("https://exviuswiki.com/Unreleased_Unit_List").userAgent(Settings.UA).timeout(10000).get();
-					if(!(doc==null))break;
-				}
-				first.addAll(doc.getElementsByTag("tbody"));//get tables
-				Elements units = Lib.getNested(first, "tr");//get rows
-				for(Element unit:units){
-					if(unit.getElementsByTag("td").size()>0){//if has data in rows
-						Elements eunit=new Elements();
-						eunit.add(unit);
-						Element eName=Lib.getNestedItem(eunit, 1, "td").first();//get second cell, unit name
-						if(eName.text().toLowerCase().contains(args.length>0?args[0].toLowerCase():"null")){
-							Element eSource=Lib.getNestedItem(eunit, 0, "td").first();//get image source
-							possible.add(eSource.getElementsByAttribute("src").get(0).attr("src").replace(" ", "_"));
-							name.add(eName.text());
-						}
-					}
-				}
-				if(possible.size()>1){
-					Select select=new Select(possible, 0, this, name);
-					Selector.setSelection(select, event);
-				}
-				else if(possible.size()>0){
-					sendImage(event, Settings.ExvicusURL+possible.get(0).replace(" ", "_"));
-				}
-				else{
-					Lib.sendMessage(event, "Unit not found");
-				}
+		try{
+			UnitOverview overview=new UnitOverview(args.length>0?args[0].toLowerCase():"null");
+			ArrayList<String> possible =new ArrayList<String>();//possible image links
+			ArrayList<String> name=new ArrayList<String>();//names for the image links
+			possible=overview.getNames();
+			name=overview.possible;
+			if(possible.size()>1){
+				long ID=System.currentTimeMillis();
+				saved.put(ID, overview);
+				Select select=new Select(possible, 0, this, name);
+				select.ID=ID;
+				Selector.setSelection(select, event);
 			}
-			catch(Exception e){
-				e.printStackTrace();
-			};
+			else if(possible.size()>0){
+				sendImage(event, overview.getData(0).imgUrl);
+			}
+			else{
+				Lib.sendMessage(event, "Unit not found");
+			}
 		}
+		catch(Exception e){
+			Log.logError(e);
+		};
 	}
 
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s=SaveSystem.getPrefix(event)+"salty [unitname]"
-				+ "creates a salty"
+				+ "creates a salty image"
 				+ "[unitname] unit you're salty about(has to be a GL unit)(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
 	}
@@ -99,7 +76,7 @@ public class Salty implements Command, Selection {
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		try{
 			Log.log("status", "salty image of "+chosen.names.get(chosen.selected)+" sent");
-			sendImage(event, Settings.ExvicusURL+chosen.options.get(chosen.selected).replace(" ", "_"));
+			sendImage(event, saved.get(chosen.ID).getData(chosen.selected).imgUrl);
 		}catch(Exception e){
 			Log.logError(e);
 		}
@@ -111,12 +88,33 @@ public class Salty implements Command, Selection {
 	public static void sendImage(MessageReceivedEvent event,String imgurl)throws IOException{
 		BufferedImage large=null;
 	    large = ImageIO.read(new URL("https://pbs.twimg.com/profile_images/671501876265803776/-M6ppcKt.jpg").openStream());
-
+	    
 	    BufferedImage small=null;
-	    URL url=new URL(imgurl);
-	    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-	    connection.setRequestProperty("User-Agent",Settings.UA);
-	    small = ImageIO.read(connection.getInputStream());
+	    boolean found=false;
+	    try{
+	    for(Unit u:Unit.values()){
+	    	if(u.upgradeurl.length==0){
+	    		if(u.url[u.url.length-1].equals(imgurl)){
+	    			small=ImageIO.read(new File("units/"+u.name+"/"+(u.baseRarity()+u.url.length)));
+	    			found=true;
+	    		}
+	    	}
+	    	else{
+	    		if(u.upgradeurl[u.upgradeurl.length-1].equals(imgurl)){
+	    			small=ImageIO.read(new File("units/"+u.name+"/"+(u.baseRarity()+u.upgradeurl.length)));
+	    			found=true;
+	    		}
+	    	}
+	    }
+	    }catch(Exception e){
+	    	Log.log("ERROR", "unable to read unit image from data for "+imgurl);
+	    }
+	    if(!found){
+	    	URL url=new URL(imgurl);
+	    	HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+	    	connection.setRequestProperty("User-Agent",Settings.UA);
+	    	small = ImageIO.read(connection.getInputStream());
+	    }
 
 	    int w = Math.max(large.getWidth(), small.getWidth());
 	    int h = Math.max(large.getHeight(), small.getHeight());
@@ -130,10 +128,10 @@ public class Salty implements Command, Selection {
 	    try {
 			Settings.upload.acquire();
 		} catch (InterruptedException e) {}
-	    ImageIO.write(combined, "PNG", new File("twoInOne.png"));
-	    event.getChannel().sendFile(new File("twoInOne.png"),null );
+	    ImageIO.write(combined, "PNG", new File("salty.png"));
+	    event.getChannel().sendFile(new File("salty.png"),null );
 	    Settings.upload.release();
-	    Files.delete(new File("twoInOne.png").toPath());
+	    Files.delete(new File("salty.png").toPath());
 	}
 
 }

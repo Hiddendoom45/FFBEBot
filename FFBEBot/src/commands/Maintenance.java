@@ -23,7 +23,7 @@ public class Maintenance implements Command {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		try {
-			Files.copy(getClass().getResourceAsStream("/Lib/GUMI.jpg"), new File("tempGumi.jpg").toPath(),StandardCopyOption.REPLACE_EXISTING);
+			Files.copy(getClass().getResourceAsStream("/Library/GUMI.jpg"), new File("tempGumi.jpg").toPath(),StandardCopyOption.REPLACE_EXISTING);
 			try {
 				Settings.upload.acquire();
 			} catch (InterruptedException e) {}

@@ -37,6 +37,7 @@ public class Summon implements Command {
 	public void action(String[] args, MessageReceivedEvent event) {
 		Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else
 			public void run(){
+				try{
 				if(args.length>0&&Lib.isNumber(args[0])){
 					int num=Integer.parseInt(args[0]);
 					if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
@@ -48,6 +49,9 @@ public class Summon implements Command {
 				else{
 					Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
 							+ "\n\tsummons [amount] units from the rare summon pool");
+				}
+				}catch(Exception e){
+					Log.logError(e);
 				}
 			}
 		});

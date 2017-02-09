@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import global.Main;
 import global.Main.states;
+import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
 import util.Counter;
@@ -22,6 +23,7 @@ public class Reload implements OverrideCommand {
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		Settings.executor.execute(new Runnable(){
 			public void run(){
+				try{
 				boolean trigger=false;//if any of the arguments are triggered
 				if(args.containsKey("r")){
 					Counter count=new Counter("Setting up preloader...",event);
@@ -53,6 +55,10 @@ public class Reload implements OverrideCommand {
 				SaveSystem.writeData();//write data to file
 				Main.setGame(states.randomReady());//set state to ready again
 				Lib.sendMessage(event, "Data reloaded");
+				}
+				catch(Exception e){//log error as cause it's in a separate thread it's not caught by the overall handler
+					Log.logError(e);
+				}
 			}
 		});
 			
