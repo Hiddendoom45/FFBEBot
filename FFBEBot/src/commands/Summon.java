@@ -88,7 +88,6 @@ public class Summon implements Command {
 			Dimension size=new Dimension(0,0);//used to determine position of rectangle bounding unit(top/right corner position)
 			Graphics g=base.getGraphics();// graphics used for everything
 			for(SummonedUnit s:units){
-				
 				//Load image for the unit, small is the unit image variable
 				BufferedImage small=null;
 				if(s.getImageLocation().exists()){//use preloaded image if available
@@ -103,33 +102,30 @@ public class Summon implements Command {
 				}
 				//System.out.println(small.getWidth()+","+small.getHeight());//Keeping it here if I need to check max sizes of images
 				
-				
 				int sx=(width/2-(small.getWidth()));//shift to centre unit
 				int sy=(height-small.getHeight()*2)-24;//shift to make unit stand on stand
 				BufferedImage stand;//stand determined by rarity of unit
 				if(s.rarity==3){
-					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/3star.png"));
+					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/3star.png"));
 				}
 				else if(s.rarity==4){
-					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/4star.png"));
+					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/4star.png"));
 				}
 				else if(s.rarity==5){
-					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/6star.png"));
+					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/6star.png"));
 				}
 				else{//error case
-					stand=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/none.png"));
+					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/none.png"));
 				}
-				
-				BufferedImage back=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/BG.png"));//draw background
+				BufferedImage back=ImageIO.read(getClass().getResourceAsStream("/Library/summon/BG.png"));//draw background
 				if(size.width==0&&size.height%(height*5)==0){
 					g.drawImage(back,size.width,size.height,width*columns,height*columns,null);
 				}
-				
 				//draw stuff
 				g.drawImage(stand, size.width, size.height+32,null);
 				g.drawImage(small, sx+size.width, sy+size.height,(small.getWidth()*2),(small.getHeight()*2), null);
 				//star stuffs
-				BufferedImage star=ImageIO.read(getClass().getResourceAsStream("/Lib/summon/raritystar.png"));
+				BufferedImage star=ImageIO.read(getClass().getResourceAsStream("/Library/summon/raritystar.png"));
 				int starSize=20;//square size of stars
 				for(int i=0;i<s.rarity;i++){//draw the stars, one by one, centered
 					int ry=size.height+height-starSize;//stars at very bottom of rectangle
@@ -153,7 +149,9 @@ public class Summon implements Command {
 			count.setMessage("Uploading...");
 			try {
 				Settings.upload.acquire();
-			} catch (InterruptedException e) {}
+			} catch (InterruptedException e) {
+				Log.logError(e);
+			}
 			try{
 			ImageIO.write(base, "PNG", new File("summons.png"));
 			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
@@ -169,6 +167,7 @@ public class Summon implements Command {
 		} catch (IOException e) {
 			Log.logError(e);
 		}
+		System.out.println("done");
 	}
 	private BufferedImage compress(BufferedImage compress){
 		BufferedImage base=new BufferedImage(compress.getWidth()/2, compress.getHeight()/2, BufferedImage.TYPE_INT_ARGB);

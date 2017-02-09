@@ -125,7 +125,6 @@ public class SaveSystem {
 		file.startWriter();
 		file.writeElement(doc);
 		file.endWriter();
-		file.endReader();
 	}
 	public static void preloadSummons(Counter count){
 		int index=0;

@@ -12,6 +12,7 @@ public class ChangeGame extends OverrideGenerics implements OverrideCommand{
 		for(Main.states s:Main.states.values()){//if one of the states is in the arguments, change it to that
 			if(args.containsKey(s.toString())){
 				Main.setGame(s);
+				System.out.println("state set to"+s);
 				return;
 			}
 		}

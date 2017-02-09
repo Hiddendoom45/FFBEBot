@@ -16,13 +16,14 @@ public class Data {
 	public static String exvicusO;
 	public static String exvicusUnits;
 	
-	private String id;
+	private String id;//userID
 	
 	
 	public Data(String id){
 		this.id=id;
 	}
-	public Data(Elements e){
+	public Data(Elements root){
+		id=root.getAttribute(id).getValue();
 		
 	}
 	public String getID(){
@@ -40,6 +41,7 @@ public class Data {
 	 * @param setting name of the element whose text is the array
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private String[] textArray(Elements ele,String setting){
 		String[] out=new String[ele.getChilds(setting).size()];
 		int i=0;
@@ -72,6 +74,7 @@ public class Data {
 	 * @param tagname name of element you want to get
 	 * @return
 	 */
+	@SuppressWarnings("unused")
 	private boolean getBooleanSetting(boolean normal,Elements ele,String tagname){
 		if(ele.getChilds(tagname).size()<=0){
 			return normal;
