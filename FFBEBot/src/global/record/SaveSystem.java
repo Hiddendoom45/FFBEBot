@@ -52,6 +52,12 @@ public class SaveSystem {
 			file.startWriter();
 			file.writeElement(root);
 			file.endWriter();
+		}
+		if(!new File(Settings.preloadData).exists()){
+			XMLStAXFile file=new XMLStAXFile(new File(Settings.preloadData));
+			file.writeXMLFile();
+			file.startWriter();
+			file.endWriter();
 			preloadSummons(null);
 			preloadExvicus(null);
 			preloadReddit(null);
@@ -118,14 +124,18 @@ public class SaveSystem {
 		return new Gson().fromJson(new JsonParser().parse(Data.exvicusUnits).getAsJsonObject().get(name),UnitInfo.class);
 	}
 	public static void writeData(){
-		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
+		XMLStAXFile file=new XMLStAXFile(new File(Settings.preloadData));
 		file.readXMLFile();
 		Elements doc=file.parseDocToElements();
 		file.endReader();
+		try{
 		for(int i=0;i<doc.getChilds().size();i++){
 			if(doc.getChilds().get(i).getTagName().equals("preload")){
 				doc.getChilds().remove(i);
 			}
+		}
+		}catch(Exception e){
+			Log.log("ERRRO", "no elements to remove for preload");
 		}
 		doc.add(Data.parseDataToElements());
 		if(!file.writeXMLFile())Log.log("XMLERR", "something went wrong with starting to write new file");
@@ -190,6 +200,16 @@ public class SaveSystem {
 			Log.log("ERROR", "error loading guilds");
 		}
 		file.resetReader();
+		ArrayList<Elements> users=file.parseToElements("user");
+		for(Elements e:users){
+			try{
+				Data.users.put(e.getAttribute("id").getValue(), new Data(e));
+			}catch(Exception e2){
+				Log.log("ERROR", "error putting user(likely missing id attribute)"+e);
+				Log.logError(e2);
+			}
+		}
+		file.readNewXMLFile(new File(Settings.preloadData));
 		try{
 			Elements preload=file.parseToElements("preload").get(0);
 			Data.setData(preload);
@@ -197,6 +217,37 @@ public class SaveSystem {
 			Log.log("ERROR", "error loading preload data");
 		}
 		file.endReader();
+	}
+	public static Data getUser(String id){
+		if(Data.users.containsKey(id)){
+			return Data.users.get(id);
+		}
+		else{
+			return new Data(id);
+		}
+	}
+	public static void setUser(Data user){
+		Data.users.put(user.id, user);
+	}
+	public static void pushUserData(){
+		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
+		file.readXMLFile();
+		Elements doc=file.parseDocToElements();
+		file.endReader();
+		for(int i=0;i<doc.getChilds().size();i++){
+			if(doc.getChilds().get(i).getTagName().equals("user")){
+				if(Data.users.containsKey(doc.getChilds().get(i).getAttribute("id").getValue())){
+					doc.getChilds().remove(i);
+				}
+			}
+		}
+		for(String key:Data.users.keySet()){
+			doc.getChilds().add(Data.users.get(key).parseToElements());
+		}
+		file.writeXMLFile();
+		file.startWriter();
+		file.writeElement(doc);
+		file.endWriter();
 	}
 	public static Settings getGuild(String id){
 		try{

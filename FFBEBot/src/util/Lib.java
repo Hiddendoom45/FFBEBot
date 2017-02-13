@@ -117,7 +117,9 @@ public class Lib {
 	 * Special formatting <br/> 
 	 * %userMention% mentions the user that sent the message <br/>
 	 * %userName% prints name of user that sent the message <br/>
-	 * %selfMention% mentions the bot
+	 * %selfMention% mentions the bot<br/>
+	 * %mentionMention% mentions the first mentioned user in message<br/>
+	 * %mentionName% name of the first mentioned user in the message<br/>
 	 * @param event message received
 	 * @param msg message to send in response
 	 * @return string of formatted message to send
@@ -125,7 +127,9 @@ public class Lib {
 	public static String FormatMessage(MessageReceivedEvent event,String msg){
 		return msg.replace("%userMention%", event.getAuthor().getAsMention()).
 				replace("%userName%", event.getAuthorName()).
-				replace("%selfMention%", event.getJDA().getSelfInfo().getAsMention());
+				replace("%selfMention%", event.getJDA().getSelfInfo().getAsMention()).
+				replace("%mentionMention%", event.getMessage().getMentionedUsers().size()>0?event.getMessage().getMentionedUsers().get(0).getAsMention():event.getAuthor().getAsMention()).
+				replace("%mentionName%",event.getMessage().getMentionedUsers().size()>0?event.getMessage().getMentionedUsers().get(0).getUsername():event.getAuthor().getUsername());
 	}
 	/**
 	 * Formats and send message for guild member joining <br/>
@@ -288,6 +292,85 @@ public class Lib {
 			return link.attr("abs:href");
 		}
 		return "";
+	}
+	//reading stuff for custom XML class
+	/**
+	 * A wrapper for getting an array for an element easily, assuming the arrays is text separated by ','
+	 * @param ele element to search for array
+	 * @param tagname name of the element whose text is the array
+	 * @return
+	 */
+	public static String[] textArray(XML.Elements ele,String tagname){
+		String[] out=new String[ele.getChilds(tagname).size()];
+		int i=0;
+		for(XML.Elements e:ele.getChilds(tagname)){
+			out[i]=e.getText();
+			i++;
+		}
+		return out;
+	}
+	/**
+	 * A wrapper to get String value for element without crashing process if it doesn't exist
+	 * @param root Element you want to search for the element
+	 * @param tagname name of element you want to get
+	 * @return
+	 */
+	public static String getString(XML.Elements root,String tagname){
+		try{
+			return root.getChilds(tagname).get(0).getText();
+		}
+		catch(IndexOutOfBoundsException e){
+			Log.logError(e);
+			return "";
+		}
+	}
+	/**
+	 * A wrapper to get the boolean value for an element without crashing process if it doesn't exist
+	 * @param normal default value if boolean value is not found
+	 * @param ele Element you want to search for the element
+	 * @param tagname name of element you want to get
+	 * @return
+	 */
+	public static boolean getBooleanSetting(boolean normal,XML.Elements ele,String tagname){
+		if(ele.getChilds(tagname).size()<=0){
+			return normal;
+		}
+		if(normal){
+			return ele.getChilds(tagname).get(0).getText().equals("false")?false:true;
+		}
+		else{
+			return ele.getChilds(tagname).get(0).getText().equals("true")?true:false;
+		}
+	}
+	/**
+	 * A wrapper to get int value for element without crashing process if it doesn't exist
+	 * @param ele element within which you want to search for
+	 * @param tagname name of element
+	 * @return number -1 if invalid
+	 */
+	public static int getNumber(XML.Elements ele, String tagname){
+		try{
+			return Integer.parseInt(ele.getChilds(tagname).get(0).getText());
+		}catch(Exception e){
+			Log.log("ERROR", "Invalid for element"+tagname);
+			Log.logShortError(e, 5);
+		}
+		return -1;
+	}
+	/**
+	 * A wrapper to get long value for element without crashing process if it doesn't exist
+	 * @param ele element within which you want to search for
+	 * @param tagname name of element
+	 * @return number -1 if invalid
+	 */
+	public static long getLong(XML.Elements ele, String tagname){
+		try{
+			return Long.parseLong(ele.getChilds(tagname).get(0).getText());
+		}catch(Exception e){
+			Log.log("ERROR", "Invalid for element"+tagname);
+			Log.logShortError(e, 5);
+		}
+		return -1L;
 	}
 	//random utilities
 	/**

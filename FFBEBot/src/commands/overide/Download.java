@@ -44,6 +44,9 @@ public class Download extends OverrideGenerics implements OverrideCommand{
 		if(attach.contains("overrides")){
 			return true;
 		}
+		if(attach.contains(Settings.preloadData)){
+			return true;
+		}
 		return false;
 	}
 	@Override

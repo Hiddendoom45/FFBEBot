@@ -23,6 +23,7 @@ public class Settings {
 	public static final String ExvicusIMGURL="https://hydra-media.cursecdn.com/exvius.gamepedia.com/";
 	public static final String saveSource="FFBEBotLog";//for the log
 	public static final String dataSource="FFBEBotData";//for the guild based data
+	public static final String preloadData="FFBEBotPreload";
 	public static final String overrideSource="override";
 	public static final String join="User: %userMention% has joined %guildName%";
 	public static final String overridePrefix="!";
@@ -50,61 +51,14 @@ public class Settings {
 	}
 	public Settings(Elements root){
 		id=root.getAttribute("id").getValue();
-		joinMsg=getString(root,"join");
-		guildPrefix=getString(root,"prefix");
-		guildModPrefix=getString(root,"modPrefix");
-		modded=textArray(root,"modded");
-		tJoinMsg=getBooleanSetting(false,root,"tJoin");
-		tJoinPM=getBooleanSetting(false,root,"tJoinPM");
+		joinMsg=Lib.getString(root,"join");
+		guildPrefix=Lib.getString(root,"prefix");
+		guildModPrefix=Lib.getString(root,"modPrefix");
+		modded=Lib.textArray(root,"modded");
+		tJoinMsg=Lib.getBooleanSetting(false,root,"tJoin");
+		tJoinPM=Lib.getBooleanSetting(false,root,"tJoinPM");
 	}
-	/**
-	 * A wrapper for getting an array for an element easily, assuming the arrays is text separated by ','
-	 * @param ele element to search for array
-	 * @param setting name of the element whose text is the array
-	 * @return
-	 */
-	private String[] textArray(Elements ele,String setting){
-		String[] out=new String[ele.getChilds(setting).size()];
-		int i=0;
-		for(Elements e:ele.getChilds(setting)){
-			out[i]=e.getText();
-			i++;
-		}
-		return out;
-	}
-	/**
-	 * A wrapper to get String value for element without crashing process if it doesn't exist
-	 * @param root Element you want to search for the element
-	 * @param tagname name of element you want to get
-	 * @return
-	 */
-	private static String getString(Elements root,String tagname){
-		try{
-			return root.getChilds(tagname).get(0).getText();
-		}
-		catch(IndexOutOfBoundsException e){
-			Log.logError(e);
-			return "";
-		}
-	}
-	/**
-	 * A wrapper to get the boolean value for an element without crashing process if it doesn't exist
-	 * @param normal default value if boolean value is not found
-	 * @param ele Element you want to search for the element
-	 * @param tagname name of element you want to get
-	 * @return
-	 */
-	private boolean getBooleanSetting(boolean normal,Elements ele,String tagname){
-		if(ele.getChilds(tagname).size()<=0){
-			return normal;
-		}
-		if(normal){
-			return ele.getChilds(tagname).get(0).getText().equals("false")?false:true;
-		}
-		else{
-			return ele.getChilds(tagname).get(0).getText().equals("true")?true:false;
-		}
-	}
+	
 	public Settings addModded(String id){
 		if(!Lib.contains(id, modded)){
 			String[] newMod=new String[modded.length+1];

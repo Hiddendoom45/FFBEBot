@@ -91,7 +91,8 @@ public class Main {
 		commands.put("rawaken", new RAwaken());
 		commands.put("maintenance", new Maintenance());
 		commands.put("invite", new Invite());
-		
+		commands.put("dailies", new Dailies());
+		commands.put("lapis", new Lapis());
 		//ditto with mod commands(separate maps due to special checks)
 		modCommands.put("prefix", new Prefix());
 		modCommands.put("modprefix", new ModPrefix());
@@ -113,11 +114,11 @@ public class Main {
 		overrides.put("gamechange", new ChangeGame());
 		//setup/build various things
 		Log.setup();//
-		SaveSystem.setup();//loads all the data
 		Restarter.setup();//starts the threads the queue the bot restarting
 		CounterPool.getPool().setup();//starts the thread for the counter pool
 		RedditUnit.buildRefImg();//builds hashmap for image icons
 		SpamControl.setSpams();//sets the data for custom spam types
+		SaveSystem.setup();//loads all the data
 		setGame(states.randomReady());//sets the game for a random state
 		
 	}

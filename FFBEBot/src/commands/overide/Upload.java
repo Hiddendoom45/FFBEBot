@@ -23,6 +23,9 @@ public class Upload extends OverrideGenerics implements OverrideCommand {
 		if(args.containsKey("override")||args.containsKey("overrides")){
 			event.getChannel().sendFile(new File("overrides"),null);
 		}
+		if(args.containsKey("p")||args.containsKey("preload")){
+			event.getChannel().sendFile(new File(Settings.preloadData), null);
+		}
 	}
 
 	@Override

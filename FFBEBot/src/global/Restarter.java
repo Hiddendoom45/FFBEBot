@@ -4,6 +4,7 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import global.record.Log;
+import global.record.SaveSystem;
 import global.record.Settings;
 
 /**
@@ -51,6 +52,7 @@ public class Restarter {
 		};
 	}
 	public static void SleepActivity(){
+		SaveSystem.pushUserData();
 	}
 }
 

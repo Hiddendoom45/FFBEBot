@@ -136,7 +136,7 @@ public class Summon implements Command {
 					int rx=size.width+((width-(s.rarity*starSize))/2+(starSize*i));//star location determined by # and how many in total centres it
 					g.drawImage(star,rx,ry,starSize,starSize,null);//draw the star
 				}
-
+				//deprecated code to draw stars
 				//String rare="";
 				//for(int i=0;i<s.rarity;i++){
 				//	rare+="★";
