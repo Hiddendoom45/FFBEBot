@@ -1,8 +1,11 @@
 package commands.overide;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.util.HashMap;
 
+import global.record.Log;
 import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
@@ -22,18 +25,23 @@ public class Download extends OverrideGenerics implements OverrideCommand{
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		String attach=event.getMessage().getAttachments().get(0).getFileName();
 		if(valid(attach)){
-			event.getMessage().getAttachments().get(0).download(new File(attach));
+			try {
+				Files.delete(new File(attach.substring(attach.indexOf(".")+1)).toPath());
+			} catch (IOException e) {
+				Log.logError(e);
+			}
+			event.getMessage().getAttachments().get(0).download(new File(attach.substring(attach.indexOf(".")+1)));
 		}
 
 	}
 	private boolean valid(String attach){
-		if(attach.equals("FFBEBotLog")){
+		if(attach.contains("FFBEBotLog")){
 			return true;
 		}
-		if(attach.equals(Settings.dataSource)){
+		if(attach.contains(Settings.dataSource)){
 			return true;
 		}
-		if(attach.equals("overrides")){
+		if(attach.contains("overrides")){
 			return true;
 		}
 		return false;

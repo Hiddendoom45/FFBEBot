@@ -36,23 +36,23 @@ public class Log {
 	}
 	public static void save(){
 		try{
-			String existing="";
+			BufferedWriter out=new BufferedWriter(new FileWriter(new File(Settings.saveSource+"write")));
 			if(new File(Settings.saveSource).exists()){
 				BufferedReader in=new BufferedReader(new FileReader(new File(Settings.saveSource)));
+				
+				lock.acquire();
 				while(in.ready()){
-					existing+=in.readLine()+"\n";
+					out.write(in.readLine()+"\n");
 				}
 				in.close();
 			}
-			BufferedWriter out=new BufferedWriter(new FileWriter(new File(Settings.saveSource)));
-			lock.acquire();
-			out.write(existing);
 			for(String s:log){
 				out.append(s+"\n");
 			}
 			out.append(new SimpleDateFormat("[MM-dd HH:mm:ss]").format(new Date())+"[Log]log saved");
 			log.clear();
 			out.close();
+			new File(Settings.saveSource+"write").renameTo(new File(Settings.saveSource));
 		}
 		catch(Exception e){
 			Log.logError(e);

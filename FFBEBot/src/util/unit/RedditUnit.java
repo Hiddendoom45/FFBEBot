@@ -45,7 +45,7 @@ public class RedditUnit {
 			JobTribe=content.getElementsByTag("ul").get(2).child(0).text();
 			TrustDetails=content.getElementsByTag("ul").get(2).child(1).text();
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing basic info");
+				Log.log("ERROR", "error parsing basic info for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -61,7 +61,7 @@ public class RedditUnit {
 				}
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing exp growths/rarities");
+				Log.log("ERROR", "error parsing exp growths/rarities for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -79,7 +79,7 @@ public class RedditUnit {
 				awakening[i]=awk;
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing awakening mats");
+				Log.log("ERROR", "error parsing awakening mats for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -89,7 +89,7 @@ public class RedditUnit {
 				this.stats[i]=new UnitStats(stats.child(i));
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing stats");
+				Log.log("ERROR", "error parsing stats for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -100,7 +100,7 @@ public class RedditUnit {
 			}
 			equipment=equipment.substring(0, equipment.length()-1);
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing equipments");
+				Log.log("ERROR", "error parsing equipments for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -110,7 +110,7 @@ public class RedditUnit {
 				slots[i]=slot.child(i).text();
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing materia slots");
+				Log.log("ERROR", "error parsing materia slots for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -120,7 +120,7 @@ public class RedditUnit {
 				LB[i]=new UnitLB(LBs.child(i));
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing LBs");
+				Log.log("ERROR", "error parsing LBs for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -130,7 +130,7 @@ public class RedditUnit {
 				this.magic[i]=new UnitAbility(magic.child(i));
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing magic abilities");
+				Log.log("ERROR", "error parsing magic abilities for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
@@ -140,7 +140,7 @@ public class RedditUnit {
 				special[i]=new UnitAbility(specials.child(i));
 			}
 			}catch(Exception e){
-				Log.log("ERROR", "error parsing special abilites");
+				Log.log("ERROR", "error parsing special abilites for page "+page);
 				Log.logShortError(e, 5);
 			}
 		}catch(Exception e){

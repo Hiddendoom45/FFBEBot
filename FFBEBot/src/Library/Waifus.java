@@ -107,8 +107,6 @@ public enum Waifus {
 	Ling("Ling","6/65/Unit-Ling-6.png"),
 	Ariana("Ariana","6/60/Unit-Dangerous_Ariana-6.png");
 	
-	
-	
 	public String name;
 	public String url;
 	Waifus(String name, String url){

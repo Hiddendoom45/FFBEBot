@@ -376,7 +376,7 @@ public class XMLStAXFile {
 			writer.writeEndDocument();
 			writer.flush();
 			writer.close();
-			new File(file.getAbsoluteFile()+"write").renameTo(file);
+			new File(file+"write").renameTo(file);
 		} catch (XMLStreamException e) {return false;}
 		return true;
 	}

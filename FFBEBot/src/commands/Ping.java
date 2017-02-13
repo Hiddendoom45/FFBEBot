@@ -9,21 +9,19 @@ import global.record.SaveSystem;
 import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Lib;
+import util.SpamControl;
 /**
  * Basic command that gets the amount of time it takes for bot to receive message and prepare a response, error of time to send message
  * @author Allen
  *
  */
-public class Ping implements Command{
+public class Ping extends CommandGenerics implements Command{
 	private ArrayList<Integer> pingValues=new ArrayList<Integer>();
-	public Ping(){
-		
-	}
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		Main.log("status", "Pinged with "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
 		event.getChannel().sendTyping();
-		return true;
+		return SpamControl.isSpam(event, "ping");
 	}
 
 	@Override
@@ -54,21 +52,15 @@ public class Ping implements Command{
 			Lib.sendMessage(event, "pong - difference from average response "+(int)(response-calculateAverage(pingValues))+"ms");
 		}
 		else{
-			event.getChannel().sendMessage("pong - response in "+response+" ms");
+			Lib.sendMessage(event,"pong - response in "+response+" ms");
 		}
 	}
-
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s=SaveSystem.getPrefix(event)+"ping\n"
 				+ "\tget the bot to say PONG\n"
 				+ "\tto test the bot's response speed";
 		Lib.sendMessage(event, s);
-	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-		return;
 	}
 	private double calculateAverage(List <Integer> marks) {
 		  Integer sum = 0;

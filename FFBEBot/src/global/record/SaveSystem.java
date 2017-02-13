@@ -128,10 +128,10 @@ public class SaveSystem {
 			}
 		}
 		doc.add(Data.parseDataToElements());
-		file.writeXMLFile();
-		file.startWriter();
-		file.writeElement(doc);
-		file.endWriter();
+		if(!file.writeXMLFile())Log.log("XMLERR", "something went wrong with starting to write new file");
+		if(!file.startWriter())Log.log("XMLERR", "something went wrong with starting the XML writer");
+		if(!file.writeElement(doc))Log.log("XMLERR", "something went wrong wtih writing the document");		
+		if(!file.endWriter())Log.log("XMLERR", "something went wrong with closing the XML writer");
 	}
 	public static void preloadSummons(Counter count){
 		int index=0;
@@ -207,7 +207,7 @@ public class SaveSystem {
 		return new Settings(guild);
 		}
 		catch(Exception e){
-			return null;
+			return new Settings(id);
 		}
 	}
 	public static String getSetting(String id,String tag){

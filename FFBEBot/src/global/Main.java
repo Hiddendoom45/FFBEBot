@@ -7,6 +7,7 @@ import net.dv8tion.jda.entities.Role;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.CounterPool;
 import util.Lib;
+import util.SpamControl;
 import util.rng.RandomLibs;
 import util.unit.RedditUnit;
 
@@ -111,23 +112,34 @@ public class Main {
 		overrides.put("logclear", new ClearLog());
 		overrides.put("gamechange", new ChangeGame());
 		//setup/build various things
-		Log.setup();
-		SaveSystem.setup();
-		Restarter.setup();
-		CounterPool.getPool().setup();
-		RedditUnit.buildRefImg();
-		setGame(states.randomReady());
+		Log.setup();//
+		SaveSystem.setup();//loads all the data
+		Restarter.setup();//starts the threads the queue the bot restarting
+		CounterPool.getPool().setup();//starts the thread for the counter pool
+		RedditUnit.buildRefImg();//builds hashmap for image icons
+		SpamControl.setSpams();//sets the data for custom spam types
+		setGame(states.randomReady());//sets the game for a random state
+		
 	}
 	public static void setGame(states state){
 		String game="";
 		switch(state){
-		case Loading:game="the Loading Game...";
+		case Loading:game=" the Loading Game...";
+		break;
+		case Maintenance:game=" undergoing maintenance";
+		break;
+		case Dead:game=" dead...";
 		break;
 		case Ready1:game=" with RNG|-!help";
 		break;
 		case Ready2:game="*praying to RNGesus|-!help";
 		break;
-		case Ready3:game="Offline?...|-!help";
+		case Ready3:game=" Offline?...|-!help";
+		break;
+		case Ready4:game=" FFBE |-!help";
+		break;
+		case Ready5:game=" with a salty summoner|-!help";
+		break;
 		}
 		jda.getAccountManager().setGame(game);
 	}
@@ -220,12 +232,16 @@ public class Main {
 	 */
 	public static enum states{
 		Loading,
+		Maintenance,
+		Dead,
 		Ready1,
 		Ready2,
-		Ready3;
+		Ready3,
+		Ready4,
+		Ready5;
 		public static int rand;
 		public static states randomReady(){
-			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2,Ready3});
+			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2,Ready3,Ready4,Ready5});
 			return s;
 		}
 	}

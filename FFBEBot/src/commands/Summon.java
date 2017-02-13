@@ -21,6 +21,7 @@ import net.dv8tion.jda.MessageBuilder;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
+import util.SpamControl;
 import util.rng.summon.Pull;
 
 public class Summon implements Command {
@@ -30,9 +31,8 @@ public class Summon implements Command {
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		Log.log("FORBIDDEN", "Summon wrath evoked by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
 		event.getChannel().sendTyping();
-		return true;
+		return SpamControl.isSpam(event,"summon");
 	}
-
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else

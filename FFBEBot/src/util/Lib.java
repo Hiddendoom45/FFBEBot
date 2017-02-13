@@ -1,12 +1,15 @@
 package util;
 
 import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
 
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import Library.ElementFilter;
+import global.record.Log;
 import global.record.SaveSystem;
+import global.record.Settings;
 import net.dv8tion.jda.entities.Message;
 import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
@@ -39,6 +42,7 @@ public class Lib {
 				+ "To view mod commands, use "+SaveSystem.getModPrefix(event)+"help";
 		Lib.sendMessage(event, msg);
 	}
+	
 	/**
 	 * message data for mod help menu
 	 * @param event
@@ -56,6 +60,27 @@ public class Lib {
 		Lib.sendMessage(event, msg);
 	}
 	/**
+	 * Sends a message which will be deleted after a period of time
+	 * @param event message recieved
+	 * @param msg message to send in response
+	 * @param timeout time in seconds after which the message will be deleted
+	 */
+	public static void sendTempMessage(MessageReceivedEvent event, String msg,long timeout){
+		Settings.executor.execute(new Runnable(){
+			public void run(){
+				try {
+					String id=sendMessageFormated(event, msg).getId();
+					TimeUnit.SECONDS.sleep(timeout);
+					event.getChannel().deleteMessageById(id);
+				} catch (Exception e) {
+					Log.log("ERROR", "error sending delayed message");
+					Log.logShortError(e, 5);
+				}
+				
+			}
+		});
+	}
+	/**
 	 * Formats the message <br/>
 	 * Special formatting <br/> 
 	 * %userMention% mentions the user that sent the message <br/>
@@ -66,7 +91,7 @@ public class Lib {
 	 * @return message that was sent
 	 */
 	public static Message sendMessageFormated(MessageReceivedEvent event,String msg){
-		return event.getChannel().sendMessage(Lib.FormatMessage(event,msg));
+		return Lib.sendMessage(event,Lib.FormatMessage(event,msg));
 	}
 	/**
 	 * generic send message, will have wrappers to fix some issues and errors in relation to sending messages
@@ -75,7 +100,17 @@ public class Lib {
 	 * @return message that was sent
 	 */
 	public static Message sendMessage(MessageReceivedEvent event,String msg){
-		return event.getChannel().sendMessage(msg);
+		try{
+			//if(!SpamControl.isSpam(event, "global")&&!event.isPrivate()&&!msg.contains("too many messages, please wait")) return null;//disabled to avoid a bunch of pain
+			return event.getChannel().sendMessage(msg);
+		}catch(net.dv8tion.jda.exceptions.RateLimitedException e){
+			try {
+				TimeUnit.MILLISECONDS.sleep(extractNumber(e.getMessage()));
+				return sendMessage(event,msg);
+			} catch (InterruptedException e1) {}
+		}
+		//it really shouldn't really go this far should return from spam check or from the delayed task, if it does retry
+		return sendMessage(event,msg);
 	}
 	/**
 	 * Formats the message <br/>

@@ -57,6 +57,7 @@ public class Reload implements OverrideCommand {
 				Lib.sendMessage(event, "Data reloaded");
 				}
 				catch(Exception e){//log error as cause it's in a separate thread it's not caught by the overall handler
+					Log.log("ERROR", "error occured when reloading");
 					Log.logError(e);
 				}
 			}
