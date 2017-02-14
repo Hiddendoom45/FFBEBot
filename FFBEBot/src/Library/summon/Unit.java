@@ -217,17 +217,19 @@ public enum Unit {
 		return rare;
 	}
 	public boolean hasUpgrade(int rarity,Awakening[] awakening){
-		for(Awakening a:awakening){
-			for(int i=0;i<a.units.length;i++){
-				if(a.units[i].name.equals(name)){
-					return hasUpgrade(rarity,a.rarityAwakened[i]);
+		if(!(awakening==null)){
+			for(Awakening a:awakening){
+				for(int i=0;i<a.units.length;i++){
+					if(a.units[i].name.equals(name)){
+						return hasUpgrade(rarity,a.rarityAwakened[i]);
+					}
 				}
 			}
 		}
 		return false;
 	}
 	public static void main(String[] args){
-		System.out.println(Kain.upgradeurl[0]);
+		System.out.println(Chizuru.getRarityIndex(4));
 	}
 	public static Unit[] commons1(){
 		return new Unit[]{

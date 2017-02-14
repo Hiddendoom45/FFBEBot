@@ -36,23 +36,28 @@ public class Salty implements Command, Selection {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		try{
-			UnitOverview overview=new UnitOverview(args.length>0?args[0].toLowerCase():"null");
-			ArrayList<String> possible =new ArrayList<String>();//possible image links
-			ArrayList<String> name=new ArrayList<String>();//names for the image links
-			possible=overview.getNames();
-			name=overview.possible;
-			if(possible.size()>1){
-				long ID=System.currentTimeMillis();
-				saved.put(ID, overview);
-				Select select=new Select(possible, 0, this, name);
-				select.ID=ID;
-				Selector.setSelection(select, event);
-			}
-			else if(possible.size()>0){
-				sendImage(event, overview.getData(0).imgUrl);
+			if(args.length>0){
+				UnitOverview overview=new UnitOverview(args.length>0?args[0].toLowerCase():"null");
+				ArrayList<String> possible =new ArrayList<String>();//possible image links
+				ArrayList<String> name=new ArrayList<String>();//names for the image links
+				possible=overview.getNames();
+				name=overview.possible;
+				if(possible.size()>1){
+					long ID=System.currentTimeMillis();
+					saved.put(ID, overview);
+					Select select=new Select(possible, 0, this, name);
+					select.ID=ID;
+					Selector.setSelection(select, event);
+				}
+				else if(possible.size()>0){
+					sendImage(event, overview.getData(0).imgUrl);
+				}
+				else{
+					Lib.sendMessage(event, "Unit not found");
+				}
 			}
 			else{
-				Lib.sendMessage(event, "Unit not found");
+				help(event);
 			}
 		}
 		catch(Exception e){

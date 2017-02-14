@@ -43,7 +43,7 @@ public class Summon implements Command {
 					if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
 						num=1800;
 					}
-					Banner pullBanner=Banner.Current;
+					Banner pullBanner=Banner.Halloween;
 					sendImage(event, Pull.pull(num,pullBanner),pullBanner);
 				}
 				else{

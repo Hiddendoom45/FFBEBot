@@ -25,6 +25,7 @@ public class Data {
 	public String id;//userID
 	public int lapis=0;//lapis user has
 	public long dailyTime;
+	public long dailyPullTime;
 	public ArrayList<PullUnit> units=new ArrayList<PullUnit>();//stores units pulled in order of when they were pulled
 	
 	
@@ -35,6 +36,7 @@ public class Data {
 		id=root.getAttribute("id").getValue();//this should always be there, so no error checking
 		lapis=Lib.getNumber(root,"lapis")==-1?0:Lib.getNumber(root,"lapis");
 		dailyTime=Lib.getLong(root, "dailyTime")==-1?0:Lib.getLong(root, "dailyTime");
+		dailyPullTime=Lib.getLong(root, "dailyPullTime")==-1?0:Lib.getLong(root, "dailyPullTime");
 	}
 	public boolean dailyReady(){
 		if(dailyTime+86400000>System.currentTimeMillis()){
@@ -54,6 +56,8 @@ public class Data {
 		current=new Elements("lapis",""+lapis);
 		currency.add(current);
 		current=new Elements("dailyTime",""+dailyTime);
+		currency.add(current);
+		current=new Elements("dailyPullTime",""+dailyPullTime);
 		currency.add(current);
 		root.add(currency);
 		

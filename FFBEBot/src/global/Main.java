@@ -92,7 +92,10 @@ public class Main {
 		commands.put("maintenance", new Maintenance());
 		commands.put("invite", new Invite());
 		commands.put("dailies", new Dailies());
+		commands.put("daily", new Dailies());
 		commands.put("lapis", new Lapis());
+		commands.put("salt", new Lapis());
+		commands.put("give", new Give());
 		//ditto with mod commands(separate maps due to special checks)
 		modCommands.put("prefix", new Prefix());
 		modCommands.put("modprefix", new ModPrefix());
