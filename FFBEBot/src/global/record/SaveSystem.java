@@ -229,6 +229,9 @@ public class SaveSystem {
 	public static void setUser(Data user){
 		Data.users.put(user.id, user);
 	}
+	/**
+	 * Unlike guilds user data is saved locally until this is called, wherein it is written to the data file
+	 */
 	public static void pushUserData(){
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();

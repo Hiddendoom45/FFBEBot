@@ -13,7 +13,7 @@ import util.Selection;
 import util.Selector;
 import util.Lib;
 
-public class Toggle implements Command,Selection {
+public class Toggle implements Command, Selection {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		return true;
@@ -21,9 +21,7 @@ public class Toggle implements Command,Selection {
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		System.out.println("action performed");
-		String msg="Options to Toggle:[Current setting]\n"+Select.parse(this, getNames(event.getGuild().getId()));
-		Select sel=new Select(getNames(event.getGuild().getId()), 0, this, msg);
+		Select sel=new Select(getNames(event.getGuild().getId()), 0, this, getNames(event.getGuild().getId()),"Options to Toggle:[Current setting]:");
 		Selector.setSelection(sel, event);
 	}
 

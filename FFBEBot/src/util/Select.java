@@ -49,11 +49,14 @@ public class Select {
 		this.msg=msg;
 	}
 	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names){
-		this(options,ID,source, parse(source, names));
+		this(options,ID,source,names,"Please select one of the following(type one of the following numbers):");
+	}
+	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names,String msgHead){
+		this(options,ID,source, parse(source, names,msgHead));
 		this.names=names;
 	}
-	public static String parse(Selection source,ArrayList<String> names){
-		String msg="Please select one of the following:";
+	public static String parse(Selection source,ArrayList<String> names,String msgHead){
+		String msg=msgHead;//stuff to put before listin the names
 		int i=0;
 		for(String name:names){
 			msg+="\n"+i+":"+name;

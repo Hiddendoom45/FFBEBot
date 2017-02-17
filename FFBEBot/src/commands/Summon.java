@@ -43,7 +43,7 @@ public class Summon implements Command {
 					if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
 						num=1800;
 					}
-					Banner pullBanner=Banner.Halloween;
+					Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
 					sendImage(event, Pull.pull(num,pullBanner),pullBanner);
 				}
 				else{
@@ -68,6 +68,14 @@ public class Summon implements Command {
 	public void executed(boolean sucess, MessageReceivedEvent event) {
 		// TODO Auto-generated method stub
 		
+	}
+	private Banner getBanner(String s){
+		for(Banner b:Banner.values()){
+			if(s.equals(b.name)||s.equals(b.toString())){
+				return b;
+			}
+		}
+		return Banner.Current;
 	}
 	public void sendImage(MessageReceivedEvent event, ArrayList<SummonedUnit> units,Banner banner){
 		try {

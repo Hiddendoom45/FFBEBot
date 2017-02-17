@@ -96,6 +96,9 @@ public class Main {
 		commands.put("lapis", new Lapis());
 		commands.put("salt", new Lapis());
 		commands.put("give", new Give());
+		commands.put("banner", new Banners());
+		commands.put("banner", new Banners());
+		commands.put("bannerlist", new Banners());
 		//ditto with mod commands(separate maps due to special checks)
 		modCommands.put("prefix", new Prefix());
 		modCommands.put("modprefix", new ModPrefix());
@@ -115,6 +118,7 @@ public class Main {
 		overrides.put("download", new Download());
 		overrides.put("logclear", new ClearLog());
 		overrides.put("gamechange", new ChangeGame());
+		overrides.put("award", new Award());
 		//setup/build various things
 		Log.setup();//
 		Restarter.setup();//starts the threads the queue the bot restarting

@@ -1,6 +1,7 @@
 package util;
 
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -40,6 +41,7 @@ public class Spam {
 						else{//else record it
 							spams[i]=new SpamItem(timeout);
 							recorded=true;
+							trigger=true;
 						}
 					}
 					if(!(spams[i]==null)&&tillDone>spams[i].tillDone()){
@@ -54,6 +56,7 @@ public class Spam {
 					}
 				}
 			}
+			System.out.println(Arrays.toString(spams));
 			items.put(type, spams);
 		}
 		else{

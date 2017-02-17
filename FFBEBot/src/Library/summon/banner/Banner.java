@@ -20,7 +20,6 @@ public enum Banner {
 	BF("Brave Frontier",new Unit[]{Unit.Tilith,Unit.Seria,Unit.Karl},new int[][]{{330,3},{330,3},{330,3}},Lib.concat(FF3.pool,FF3.featured),FF3.include,BannerType.Base5),
 	DD("Dark Destroyers",new Unit[]{Unit.DKC,Unit.Gaffgarion,Unit.CoD,Unit.Garland,Unit.Duane},new int[][]{{50},{570,3},{640,68,5},{640,68,5},{640,68,5}},BF.pool,BF.include,BannerType.Base5),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.FFXIIIAjusted);
-	
 	public String name;
 	public Unit[] featured;
 	public Unit[] pool;
@@ -75,4 +74,5 @@ public enum Banner {
 		}
 		return false;
 	}
+	
 }

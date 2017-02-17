@@ -16,9 +16,9 @@ public class SpamControl {
 	private static HashMap<MessageReceivedEvent, Long> spamData=new HashMap<MessageReceivedEvent,Long>();//times and when spam messages have been sent
 	private static final int spamPersistance=20;
 	public static boolean isSpam(MessageReceivedEvent event,String type){
-		String key=getTypeData(type)[0]==0?key1(event):key2(event);
-		int defaultSize=getTypeData(type)[1];
-		int timeout=getTypeData(type)[2];
+		String key=getTypeData(type)[0]==0?key1(event):key2(event);//determine if it's global or channel locked spam controlling
+		int defaultSize=getTypeData(type)[1];//size of max entries before trigger
+		int timeout=getTypeData(type)[2];//timeout for each entry to exit controller
 		if(spammers.containsKey(key)){//if tracked in the current instance
 			SpamData spam= spammers.get(key).isSpam(type,defaultSize,timeout);
 			if(!spam.isSpam){
@@ -38,7 +38,7 @@ public class SpamControl {
 	}
 	public static void setSpams(){
 		//type(0==local,1==global),limit, timeout
-		typeData.put("summon", new int[]{0,2,300000});
+		typeData.put("summon", new int[]{0,2,30000});
 		typeData.put("units", new int[]{0,4,60000});
 	}
 	private static void sendSpamMessage(MessageReceivedEvent event,String type,SpamData spam){

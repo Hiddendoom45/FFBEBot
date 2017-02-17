@@ -5,11 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
+
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
 import XML.Elements;
+import global.record.Log;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
@@ -19,6 +23,9 @@ import javax.xml.stream.XMLStreamConstants;
 public class XMLStAXFile {
 	private XMLStreamReader reader;
 	private XMLStreamWriter writer;
+	//variables held so they can be closed later on
+	private FileWriter write;
+	private FileReader read;
 	private File file;
 	private int wIndent=0;
 	/**
@@ -46,7 +53,8 @@ public class XMLStAXFile {
 		XMLInputFactory factory = XMLInputFactory.newInstance();
 		XMLStreamReader eventReader;
 		try {
-			eventReader = factory.createXMLStreamReader(new FileReader(file));
+			read=new FileReader(file);
+			eventReader = factory.createXMLStreamReader(read);
 		} catch (FileNotFoundException | XMLStreamException e) {return false;}
 		this.reader=eventReader;
 		this.file=file;
@@ -61,7 +69,8 @@ public class XMLStAXFile {
 		XMLInputFactory factory = XMLInputFactory.newInstance();
 		XMLStreamReader eventReader;
 		try {
-			eventReader = factory.createXMLStreamReader(new FileReader(file));
+			read=new FileReader(file);
+			eventReader = factory.createXMLStreamReader(read);
 		} catch (FileNotFoundException | XMLStreamException e) {return false;}
 		this.reader=eventReader;
 		return true;
@@ -77,7 +86,8 @@ public class XMLStAXFile {
 		XMLOutputFactory xof =  XMLOutputFactory.newInstance();
 		XMLStreamWriter writer = null;
 		try {
-			writer = xof.createXMLStreamWriter(new FileWriter(file+"write"));
+			write=new FileWriter(file+"write");
+			writer = xof.createXMLStreamWriter(write);
 		} catch (XMLStreamException | IOException e) {return false;}
 		this.writer=writer;
 		return true;
@@ -92,7 +102,8 @@ public class XMLStAXFile {
 		XMLOutputFactory xof =  XMLOutputFactory.newInstance();
 		XMLStreamWriter writer = null;
 		try {
-			writer = xof.createXMLStreamWriter(new FileWriter(file+"write"));
+			write=new FileWriter(file+"write");
+			writer = xof.createXMLStreamWriter(write);
 		} catch (XMLStreamException | IOException e) {return false;}
 		this.writer=writer;
 		return true;
@@ -348,8 +359,9 @@ public class XMLStAXFile {
 	public boolean endReader(){
 		try {
 			reader.close();
+			read.close();
 			return true;
-		} catch (XMLStreamException e) {
+		} catch (XMLStreamException | IOException e) {
 			return false;
 		}
 	}
@@ -376,8 +388,13 @@ public class XMLStAXFile {
 			writer.writeEndDocument();
 			writer.flush();
 			writer.close();
+			write.close();
+			TimeUnit.SECONDS.sleep(30);
+			if(file.exists()){
+				Files.delete(file.toPath());
+			}
 			new File(file+"write").renameTo(file);
-		} catch (XMLStreamException e) {return false;}
+		} catch (XMLStreamException | IOException | InterruptedException e) {Log.logError(e);}
 		return true;
 	}
 	/**
