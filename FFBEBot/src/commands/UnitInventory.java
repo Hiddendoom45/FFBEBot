@@ -8,12 +8,11 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import Library.summon.SummonedUnit;
-import Library.summon.banner.Banner;
+import Library.pulls.PullUnit;
+import global.record.Data;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
@@ -21,94 +20,59 @@ import net.dv8tion.jda.MessageBuilder;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
-import util.SpamControl;
-import util.rng.summon.Pull;
 
-public class Summon implements Command {
+public class UnitInventory extends CommandGenerics implements Command{
 	private static int width=160;
 	private static int height=200;
 	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("FORBIDDEN", "Summon wrath evoked by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		event.getChannel().sendTyping();
-		if(args.length>0&&Lib.isNumber(args[0])){
-		return SpamControl.isSpam(event,"summon");
+	public void action(String[] args, MessageReceivedEvent event) {
+		Data user=SaveSystem.getUser(event.getAuthor().getId());
+		if(user.units.size()>0){
+			sendImage(event);
 		}
 		else{
-			help(event);
-			return false;
+			Lib.sendMessage(event, "You have no units in your inventory");
 		}
-	}
-	@Override
-	public void action(String[] args, MessageReceivedEvent event) {
-		Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else
-			public void run(){
-				try{
-					int num=Integer.parseInt(args[0]);
-					if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
-						num=1800;
-					}
-					Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
-					sendImage(event, Pull.pull(num,pullBanner),pullBanner);
-				}
-				catch(Exception e){
-					Log.logError(e);
-				}
-			}
-		});
+		
 	}
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
-				+ "\n\tsummons [amount] units from the rare summon pool");
-		
+		String s="unitinventory\n"
+				+ "\tshows the units you have";
+		Lib.sendMessage(event, s);
 	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-	private Banner getBanner(String s){
-		for(Banner b:Banner.values()){
-			if(s.toLowerCase().equals(b.name.toLowerCase())||s.toLowerCase().equals(b.toString().toLowerCase())){
-				return b;
-			}
-		}
-		return Settings.DefaultBanner;
-	}
-	public void sendImage(MessageReceivedEvent event, ArrayList<SummonedUnit> units,Banner banner){
+	public void sendImage(MessageReceivedEvent event){
+		Data user=SaveSystem.getUser(event.getAuthor().getId());
 		try {
 			//setup the size of the base image
 			int columns=5;
-			if(units.size()>25){
-				columns=(int) Math.sqrt(units.size()-1)+1;
+			if(user.units.size()>25){
+				columns=(int) Math.sqrt(user.units.size()-1)+1;
 			}
 			int w;
-			if(units.size()<columns){
-				w=units.size()*width;
+			if(user.units.size()<columns){
+				w=user.units.size()*width;
 			}
 			else {
 				w=width*columns;
 			}
-			int h=height*(((units.size()-1)/columns)+1);
+			int h=height*(((user.units.size()-1)/columns)+1);
 			
 			//setup main variables
 			int index=0;
-			Counter count=new Counter("Summoning Units...(%count%/"+units.size()+")",event);
+			Counter count=new Counter("Finding Units...(%count%/"+user.units.size()+")",event);
 			BufferedImage base=new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
 			Dimension size=new Dimension(0,0);//used to determine position of rectangle bounding unit(top/right corner position)
 			Graphics g=base.getGraphics();// graphics used for everything
-			for(SummonedUnit s:units){
+			for(PullUnit s:user.units){
 				//Load image for the unit, small is the unit image variable
 				BufferedImage small=null;
-				if(s.getImageLocation().exists()){//use preloaded image if available
-					small=ImageIO.read(s.getImageLocation());
+				if(s.unit.getImageLocation(s.rare).exists()){//use preloaded image if available
+					small=ImageIO.read(s.unit.getImageLocation(s.rare));
 				}
 				else{
-					System.out.println(s.url+" "+s.name+" "+s.rarity);
-					URL url=new URL(s.url);//get image stuffs
+					URL url=new URL(s.unit.getRarity(s.rare));//get image stuffs
 					HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 					connection.setRequestProperty("User-Agent",Settings.UA);//to bypass https
 					small = ImageIO.read(connection.getInputStream());
@@ -118,14 +82,14 @@ public class Summon implements Command {
 				int sx=(width/2-(small.getWidth()));//shift to centre unit
 				int sy=(height-small.getHeight()*2)-24;//shift to make unit stand on stand
 				BufferedImage stand;//stand determined by rarity of unit
-				if(s.rarity==3){
+				if(s.rare==3){
 					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/3star.png"));
 				}
-				else if(s.rarity==4){
+				else if(s.rare==4){
 					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/4star.png"));
 				}
-				else if(s.rarity==5){
-					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/6star.png"));
+				else if(s.rare==5){
+					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/5star.png"));
 				}
 				else{//error case
 					stand=ImageIO.read(getClass().getResourceAsStream("/Library/summon/none.png"));
@@ -140,9 +104,9 @@ public class Summon implements Command {
 				//star stuffs
 				BufferedImage star=ImageIO.read(getClass().getResourceAsStream("/Library/summon/raritystar.png"));
 				int starSize=20;//square size of stars
-				for(int i=0;i<s.rarity;i++){//draw the stars, one by one, centered
+				for(int i=0;i<s.rare;i++){//draw the stars, one by one, centered
 					int ry=size.height+height-starSize;//stars at very bottom of rectangle
-					int rx=size.width+((width-(s.rarity*starSize))/2+(starSize*i));//star location determined by # and how many in total centres it
+					int rx=size.width+((width-(s.rare*starSize))/2+(starSize*i));//star location determined by # and how many in total centres it
 					g.drawImage(star,rx,ry,starSize,starSize,null);//draw the star
 				}
 				//deprecated code to draw stars
@@ -155,7 +119,7 @@ public class Summon implements Command {
 				count.setI(index);
 				index++;
 			}
-			if(units.size()>100){
+			if(user.units.size()>100){
 				base=compress(base);
 			}
 			g.dispose();
@@ -168,7 +132,7 @@ public class Summon implements Command {
 			try{
 			ImageIO.write(base, "PNG", new File("summons.png"));
 			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
-					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+" rare summon banner")).build());
+					Lib.FormatMessage(event, "%userMention% has the following units")).build());
 			}catch(Exception e){
 				Log.logError(e);
 			}

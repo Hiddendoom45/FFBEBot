@@ -56,11 +56,16 @@ public class Select {
 		this.names=names;
 	}
 	public static String parse(Selection source,ArrayList<String> names,String msgHead){
-		String msg=msgHead;//stuff to put before listin the names
-		int i=0;
-		for(String name:names){
-			msg+="\n"+i+":"+name;
-			i++;
+		String msg=msgHead;//stuff to put before list in the names
+		if(source.getInputType()==Selector.NumType){
+			int i=0;
+			for(String name:names){
+				msg+="\n"+i+":"+name;
+				i++;
+			}
+		}
+		else if(source.getInputType()==Selector.YNType){
+			msg+="\nY/yes\nN/no";
 		}
 		return msg;
 	}

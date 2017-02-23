@@ -19,7 +19,7 @@ public enum Banner {
 	FF3("FF3",new Unit[]{Unit.Luneth,Unit.Refia,Unit.Ingus,Unit.Arc},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Halloween.pool,Halloween.include,BannerType.Base5),
 	BF("Brave Frontier",new Unit[]{Unit.Tilith,Unit.Seria,Unit.Karl},new int[][]{{330,3},{330,3},{330,3}},Lib.concat(FF3.pool,FF3.featured),FF3.include,BannerType.Base5),
 	DD("Dark Destroyers",new Unit[]{Unit.DKC,Unit.Gaffgarion,Unit.CoD,Unit.Garland,Unit.Duane},new int[][]{{50},{570,3},{640,68,5},{640,68,5},{640,68,5}},BF.pool,BF.include,BannerType.Base5),
-	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.FFXIIIAjusted);
+	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
 	public Unit[] pool;
@@ -61,13 +61,13 @@ public enum Banner {
 			pool=Lib.concat(pool, Unit.commons2());
 		}
 	}
-	public static Banner[] commonBanners(){
-		return new Banner[]{Banner.Release,
-				Banner.Chiz,
-				Banner.Locke};
+	public static Banner[] LEBanners(){
+		return new Banner[]{Banner.Halloween,
+				Banner.BF
+				};
 	}
-	public static boolean commonBanner(Banner banner){
-		for(Banner b:commonBanners()){
+	public static boolean LEBanner(Banner banner){
+		for(Banner b:LEBanners()){
 			if(b.equals(banner)){
 				return true;
 			}

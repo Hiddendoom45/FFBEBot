@@ -23,6 +23,7 @@ import commands.overide.*;
 import global.ArgumentParser.ArgContainer;
 import global.record.Log;
 import global.record.SaveSystem;
+import global.record.Secrets;
 import global.record.Settings;
 
 public class Main {
@@ -99,6 +100,8 @@ public class Main {
 		commands.put("banner", new Banners());
 		commands.put("banner", new Banners());
 		commands.put("bannerlist", new Banners());
+		commands.put("pull", new Pull());
+		commands.put("unitinventory", new UnitInventory());
 		//ditto with mod commands(separate maps due to special checks)
 		modCommands.put("prefix", new Prefix());
 		modCommands.put("modprefix", new ModPrefix());
@@ -119,6 +122,9 @@ public class Main {
 		overrides.put("logclear", new ClearLog());
 		overrides.put("gamechange", new ChangeGame());
 		overrides.put("award", new Award());
+		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
+			overrides.put("test", new Test());
+		}
 		//setup/build various things
 		Log.setup();//
 		Restarter.setup();//starts the threads the queue the bot restarting

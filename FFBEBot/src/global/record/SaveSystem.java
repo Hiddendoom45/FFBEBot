@@ -127,6 +127,9 @@ public class SaveSystem {
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.preloadData));
 		file.readXMLFile();
 		Elements doc=file.parseDocToElements();
+		if(doc==null){
+			doc=new Elements("root");
+		}
 		file.endReader();
 		try{
 		for(int i=0;i<doc.getChilds().size();i++){
@@ -135,7 +138,7 @@ public class SaveSystem {
 			}
 		}
 		}catch(Exception e){
-			Log.log("ERRRO", "no elements to remove for preload");
+			Log.log("ERRROR", "no elements to remove for preload");
 		}
 		doc.add(Data.parseDataToElements());
 		if(!file.writeXMLFile())Log.log("XMLERR", "something went wrong with starting to write new file");
@@ -218,6 +221,11 @@ public class SaveSystem {
 		}
 		file.endReader();
 	}
+	/**
+	 * Get the locally saved user data
+	 * @param id id of the user
+	 * @return Data object representing user data
+	 */
 	public static Data getUser(String id){
 		if(Data.users.containsKey(id)){
 			return Data.users.get(id);
@@ -226,21 +234,30 @@ public class SaveSystem {
 			return new Data(id);
 		}
 	}
+	/**
+	 * Set the user data to local save
+	 * @param user user data to save locally
+	 */
 	public static void setUser(Data user){
 		Data.users.put(user.id, user);
+		pushUserData();
 	}
 	/**
 	 * Unlike guilds user data is saved locally until this is called, wherein it is written to the data file
+	 * This is due to the nature that guilds are more likely to be called more often
 	 */
 	public static void pushUserData(){
+		System.out.println(Data.users);
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();
 		Elements doc=file.parseDocToElements();
 		file.endReader();
 		for(int i=0;i<doc.getChilds().size();i++){
 			if(doc.getChilds().get(i).getTagName().equals("user")){
+				System.out.println(doc.getChilds().get(i).getAttribute("id").getValue()+" "+Data.users.containsKey(doc.getChilds().get(i).getAttribute("id").getValue()));
 				if(Data.users.containsKey(doc.getChilds().get(i).getAttribute("id").getValue())){
 					doc.getChilds().remove(i);
+					i--;
 				}
 			}
 		}
@@ -281,6 +298,7 @@ public class SaveSystem {
 			if(doc.getChilds().get(i).getTagName().equals("guild")){
 				if(doc.getChilds().get(i).getAttribute("id").getValue().equals(guild.id)){
 					doc.getChilds().remove(i);
+					i--;//decrement due to something being removed
 				}
 			}
 		}
@@ -367,6 +385,10 @@ public class SaveSystem {
 		String[] overrides=input.split(",");
 		return overrides;
 	}
+	/**
+	 * remove an override string so that it cannot be used again
+	 * @param overide override string to remove
+	 */
 	public static void removeOverride(String overide){
 		String input="";
 		try {

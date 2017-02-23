@@ -21,17 +21,17 @@ public class Pull {
 			//5*
 			if(rarity==0){
 				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
-				units.add(new SummonedUnit(u.getRarity(5),u.name,5));
+				units.add(new SummonedUnit(u.getRarity(5),u.name,5,u));
 			}
 			//3*
 			else if(rarity>19){
 				Unit u=pull(banner,3,pool3,banner.type.baseRareChances[0]);
-				units.add(new SummonedUnit(u.getRarity(3),u.name,3));
+				units.add(new SummonedUnit(u.getRarity(3),u.name,3,u));
 			}
 			//4*
 			else{
 				Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
-				units.add(new SummonedUnit(u.getRarity(4),u.name,4));
+				units.add(new SummonedUnit(u.getRarity(4),u.name,4,u));
 			}
 		}
 		return units;

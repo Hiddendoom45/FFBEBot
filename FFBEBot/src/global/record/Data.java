@@ -80,7 +80,7 @@ public class Data {
 	public static Elements parseDataToElements(){
 		Elements root=new Elements("preload");
 		Elements current;
-		
+		System.out.println(redditO);
 		current=new Elements("redditOverview").setText(redditO);
 		root.add(current);
 		

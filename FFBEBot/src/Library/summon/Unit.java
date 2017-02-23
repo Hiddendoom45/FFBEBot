@@ -1,5 +1,6 @@
 package Library.summon;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import global.record.Settings;
@@ -177,6 +178,9 @@ public enum Unit {
 	public int baseRarity() {
 		return base;
 	}
+	public String toString(){
+		return name;
+	}
 	public boolean hasRarity(int rarity){
 		if(rarity>=base&&rarity<base+url.length){
 			return true;
@@ -228,8 +232,11 @@ public enum Unit {
 		}
 		return false;
 	}
+	public File getImageLocation(int rarity){
+		return new File("units/"+name+"/"+rarity+".png");
+	}
 	public static void main(String[] args){
-		System.out.println(Chizuru.getRarityIndex(4));
+		System.out.println(Unit.valueOf("WoL"));
 	}
 	public static Unit[] commons1(){
 		return new Unit[]{

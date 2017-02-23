@@ -13,6 +13,7 @@ public class Selector {
 	public final static int NumType=0;//default
 	public final static int AlphaType=1;//A=0 etc, afterwards AA, AB etc
 	public final static int NullType=2;//doesn't matter what is entered, will return regardless, no fixed input necessary
+	public final static int YNType=3;//if it's a yes/no question
 	private static final HashMap<Integer,Select> selections=new HashMap<Integer,Select>();//all the currently ongoing selection events
 	/**
 	 * check if a selection event is going on
@@ -90,6 +91,15 @@ public class Selector {
 		else if(SelectionType==2){//null selection
 			return true;
 		}
+		else if(SelectionType==3){
+			String message=event.getMessage().getContent();
+			if(message.toLowerCase().equals("y")||message.toLowerCase().equals("yes")||message.toLowerCase().equals("n")||message.toLowerCase().equals("no")){
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
 		else{
 			return false;
 		}
@@ -115,6 +125,17 @@ public class Selector {
 					chosen+=(letters[i]-64)*(Math.pow(26, (letters.length-i-1)));
 				}
 				return chosen-1;
+			}
+		}
+		else if(SelectionType==3){
+			if(selection.toLowerCase().equals("y")||selection.toLowerCase().equals("yes")){
+				return 0;
+			}
+			else if(selection.toLowerCase().equals("n")||selection.toLowerCase().equals("no")){
+				return 1;
+			}
+			else{
+				return -1;
 			}
 		}
 		else if(SelectionType==-1){//null nothing chosen, index is nothing

@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
@@ -389,12 +388,12 @@ public class XMLStAXFile {
 			writer.flush();
 			writer.close();
 			write.close();
-			TimeUnit.SECONDS.sleep(30);
+			//TimeUnit.SECONDS.sleep(30);//to determine if sleep is needed for windows
 			if(file.exists()){
 				Files.delete(file.toPath());
 			}
 			new File(file+"write").renameTo(file);
-		} catch (XMLStreamException | IOException | InterruptedException e) {Log.logError(e);}
+		} catch (XMLStreamException | IOException e) {Log.logError(e);}
 		return true;
 	}
 	/**
