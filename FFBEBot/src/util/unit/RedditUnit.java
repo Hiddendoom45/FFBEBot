@@ -28,6 +28,8 @@ public class RedditUnit {
 	public UnitLB[] LB=new UnitLB[]{};
 	public UnitAbility[] magic=new UnitAbility[]{};
 	public UnitAbility[] special=new UnitAbility[]{};
+	public UnitEnhancements[] enhance=new UnitEnhancements[]{};
+	public UnitSpark[] sparks=new UnitSpark[]{};
 	public RedditUnit(String page){
 		try{
 			Document doc=null;
@@ -41,108 +43,137 @@ public class RedditUnit {
 			URL=page;
 			Element content=doc.getElementsByClass("wiki-page-content").first().getElementsByClass("wiki").first();
 			try{
-			title=content.getElementsByTag("h2").first().text();
-			JobTribe=content.getElementsByTag("ul").get(2).child(0).text();
-			TrustDetails=content.getElementsByTag("ul").get(2).child(1).text();
+				title=content.getElementsByTag("h2").first().text();
+				JobTribe=content.getElementsByTag("ul").get(2).child(0).text();
+				TrustDetails=content.getElementsByTag("ul").get(2).child(1).text();
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing basic info for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element growths=Lib.getEleAfter(content.children(), new ElementFilter("h3","Growth Pattern"));
-			growth=new String[growths.children().size()];
-			for(int i=0;i<growths.children().size();i++){
-				growth[i]=growths.child(i).text();
-				if(i==0){
-					baseR=Integer.parseInt(growths.child(i).text().substring(1, 2));
+				Element growths=Lib.getEleAfter(content.children(), new ElementFilter("h3","Growth Pattern"));
+				growth=new String[growths.children().size()];
+				for(int i=0;i<growths.children().size();i++){
+					growth[i]=growths.child(i).text();
+					if(i==0){
+						baseR=Integer.parseInt(growths.child(i).text().substring(1, 2));
+					}
+					else if(i==growths.children().size()-1){
+						maxR=Integer.parseInt(growths.child(i).text().substring(1, 2));;
+					}
 				}
-				else if(i==growths.children().size()-1){
-					maxR=Integer.parseInt(growths.child(i).text().substring(1, 2));;
-				}
-			}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing exp growths/rarities for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element awakenings=Lib.getEleAfter(content.children(), new ElementFilter("h3","Evolution"));
-			awakening=new String[awakenings.children().size()];
-			for(int i=0;i<awakenings.children().size();i++){
-				String awk=awakenings.child(i).text();
-				Elements imgs=awakenings.child(i).getElementsByTag("a");
-				int refIndex=0;
-				for(Element e:imgs){
-					refIndex=awk.indexOf("|", refIndex+1);
-					awk=new StringBuilder(awk).insert(refIndex+1, " "+refImg(e.attr("href"))+":").toString();
-					refIndex=refIndex+refImg(e.attr("href")).length()+2;
+				Element awakenings=Lib.getEleAfter(content.children(), new ElementFilter("h3","Evolution"));
+				awakening=new String[awakenings.children().size()];
+				for(int i=0;i<awakenings.children().size();i++){
+					String awk=awakenings.child(i).text();
+					Elements imgs=awakenings.child(i).getElementsByTag("a");
+					int refIndex=0;
+					for(Element e:imgs){
+						refIndex=awk.indexOf("|", refIndex+1);
+						awk=new StringBuilder(awk).insert(refIndex+1, " "+refImg(e.attr("href"))+":").toString();
+						refIndex=refIndex+refImg(e.attr("href")).length()+2;
+					}
+					awakening[i]=awk;
 				}
-				awakening[i]=awk;
-			}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing awakening mats for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats")).getElementsByTag("tbody").first();
-			this.stats=new UnitStats[stats.children().size()];
-			for(int i=0;i<stats.children().size();i++){
-				this.stats[i]=new UnitStats(stats.child(i));
-			}
+				Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats")).getElementsByTag("tbody").first();
+				this.stats=new UnitStats[stats.children().size()];
+				for(int i=0;i<stats.children().size();i++){
+					this.stats[i]=new UnitStats(stats.child(i));
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing stats for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element equip=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipments"));
-			equipment="";
-			for(Element ele:equip.children()){
-				equipment+=refImg(ele.attr("href"))+",";
-			}
-			equipment=equipment.substring(0, equipment.length()-1);
+				Element equip=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipments"));
+				equipment="";
+				for(Element ele:equip.children()){
+					equipment+=refImg(ele.attr("href"))+",";
+				}
+				equipment=equipment.substring(0, equipment.length()-1);
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing equipments for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element slot=Lib.getEleAfter(content.children(), new ElementFilter("h3","Materia Slots"));
-			slots=new String[slot.children().size()];
-			for(int i=0;i<slot.children().size();i++){
-				slots[i]=slot.child(i).text();
-			}
+				Element slot=Lib.getEleAfter(content.children(), new ElementFilter("h3","Materia Slots"));
+				slots=new String[slot.children().size()];
+				for(int i=0;i<slot.children().size();i++){
+					slots[i]=slot.child(i).text();
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing materia slots for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element LBs=Lib.getEleAfter(content.children(), new ElementFilter("h3","Limit Burst")).getElementsByTag("tbody").first();
-			LB=new UnitLB[LBs.children().size()];
-			for(int i=0;i<LBs.children().size();i++){
-				LB[i]=new UnitLB(LBs.child(i));
-			}
+				Element LBs=Lib.getEleAfter(content.children(), new ElementFilter("h3","Limit Burst")).getElementsByTag("tbody").first();
+				LB=new UnitLB[LBs.children().size()];
+				for(int i=0;i<LBs.children().size();i++){
+					LB[i]=new UnitLB(LBs.child(i));
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing LBs for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic Spells")).getElementsByTag("tbody").first();
-			this.magic=new UnitAbility[magic.children().size()];
-			for(int i=0;i<magic.children().size();i++){
-				this.magic[i]=new UnitAbility(magic.child(i));
-			}
+				Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic Spells")).getElementsByTag("tbody").first();
+				this.magic=new UnitAbility[magic.children().size()];
+				for(int i=0;i<magic.children().size();i++){
+					this.magic[i]=new UnitAbility(magic.child(i));
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing magic abilities for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element specials=Lib.getEleAfter(content.children(), new ElementFilter("h3","Abilities")).getElementsByTag("tbody").first();
-			special=new UnitAbility[specials.children().size()];
-			for(int i=0;i<specials.children().size();i++){
-				special[i]=new UnitAbility(specials.child(i));
-			}
+				Element specials=Lib.getEleAfter(content.children(), new ElementFilter("h3","Abilities")).getElementsByTag("tbody").first();
+				special=new UnitAbility[specials.children().size()];
+				for(int i=0;i<specials.children().size();i++){
+					special[i]=new UnitAbility(specials.child(i));
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing special abilites for page "+page);
 				Log.logShortError(e, 5);
 			}
+			try{
+				Elements en=Lib.getEleAfter(content.children(), new ElementFilter("h3","Enhancements")).getElementsByTag("tbody");
+
+				if(!(en==null)){
+					Element enhancements=en.first();
+					enhance=new UnitEnhancements[enhancements.children().size()];
+					for(int i=0;i<enhancements.children().size();i++){
+						enhance[i]=new UnitEnhancements(enhancements.child(i));
+					}
+				}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing enhancements for page "+page);
+				Log.logShortError(e, 5);
+			}
+			try{
+				Element sparks=Lib.getEleAfter(content.children(), new ElementFilter("h3","閃き"));
+				if(!(sparks==null)){
+					Elements sp=sparks.getElementsByTag("tbody");
+					sparks=sp.first();
+					this.sparks=new UnitSpark[sparks.children().size()];
+					for(int i=0;i<sparks.children().size();i++){
+						this.sparks[i]=new UnitSpark(sparks.child(i));
+					}
+				}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing sparks for page "+page);
+				Log.logShortError(e, 5);
+			}
+
 		}catch(Exception e){
 			Log.logError(e);
 		}
@@ -219,9 +250,9 @@ public class RedditUnit {
 		public String DEF;
 		public String MAG;
 		public String SPR;
-		public int hits;
-		public int DC;
-		
+		public String hits;
+		public String DC;
+
 		public UnitStats(Element row){
 			rarity=Lib.extractNumber(row.child(0).text());
 			HP=row.child(1).text();
@@ -230,8 +261,8 @@ public class RedditUnit {
 			DEF=row.child(4).text();
 			MAG=row.child(5).text();
 			SPR=row.child(6).text();
-			hits=Integer.parseInt(row.child(7).text());
-			DC=Integer.parseInt(row.child(8).text());
+			hits=row.child(7).text();
+			DC=row.child(8).text();
 		}
 	}
 	public class UnitLB{
@@ -266,6 +297,36 @@ public class RedditUnit {
 			MP=Lib.isNumber(row.child(5).text())?Integer.parseInt(row.child(5).text()):0;
 			level=Integer.parseInt(row.child(6).text());
 			minRare=Integer.parseInt(row.child(7).text());
+		}
+	}
+	public class UnitEnhancements{
+		public String jpName;
+		public String enName;
+		public String effect;
+		public String MP;
+		public String gil;
+		public String Mats;
+		public UnitEnhancements(Element row){
+			jpName=row.child(1).text();
+			enName=row.child(2).text();
+			effect=row.child(3).text();
+			MP=row.child(4).text();
+			gil=row.child(5).text();
+			Mats=row.child(6).text();
+		}
+	}
+	public class UnitSpark{
+		public String name;
+		public String S2;
+		public String S3;
+		public String effect;
+		public String MP;
+		public UnitSpark(Element row){
+			name=row.child(0).text();
+			S2=row.child(1).text();
+			S3=row.child(2).text();
+			effect=row.child(3).text();
+			MP=row.child(4).text();
 		}
 	}
 }

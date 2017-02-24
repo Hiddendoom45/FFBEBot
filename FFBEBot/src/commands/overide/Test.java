@@ -3,7 +3,6 @@ package commands.overide;
 import java.util.HashMap;
 
 import global.record.Data;
-import global.record.SaveSystem;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 /**
  * to test something easily
