@@ -124,6 +124,13 @@ public enum Unit {
 	Jack("Jack",new String[]{"/1/1b/Unit-Jack-3.png","/b/ba/Unit-Jack-4.png","/0/0e/Unit-Jack-5.png"},3),
 	Seven("Seven",new String[]{"/9/99/Unit-Seven-4.png","/6/6c/Unit-Seven-5.png","/7/72/Unit-Seven-6.png"},4),
 	Ace("Ace",new String[]{"/3/32/Unit-Ace-5.png","/2/2b/Unit-Ace-6.png"},5),
+	Marie("Marie",new String[]{"/1/13/Unit-Marie-5.png","/7/79/Unit-Marie-6.png"},6),
+	Guy("Guy",new String[]{"/d/d3/Unit-Guy-3.png","/d/d6/Unit-Guy-4.png","/3/3b/Unit-Guy-5.png"},3),
+	Leon("Leon",new String[]{"/2/29/Unit-Leon-4.png","/a/ab/Unit-Leon-5.png"},4),
+	Emperor("Emperor",new String[]{"/e/e9/Unit-Emperor-5.png","/e/eb/Unit-Emperor-6.png"},5),
+	Olive("Olive",new String[]{"/7/7a/Unit-Olive-5.png","/8/88/Unit-Olive-6.png"},5),
+	Shine("Shine",new String[]{"/8/80/Unit-Shine-4.png","/b/b6/Unit-Shine-5.png","/3/30/Unit-Shine-6.png"},4),
+	Shera("Shera",new String[]{"/a/ae/Unit-Shera-3.png","/9/9d/Unit-Shera-4.png","/5/57/Unit-Shera-5.png"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
@@ -142,7 +149,9 @@ public enum Unit {
 	Yun("Yun",new String[]{"d/d6/Unit-Yun-5.png","c/c6/Unit-Yun-6.png"},5),
 	Popoi("Popoi",new String[]{"6/6d/Unit-Popoi-3.png","e/eb/Unit-Popoi-4.png","8/80/Unit-Popoi-5.png"},3),
 	Primm("Primm",new String[]{"4/42/Unit-Primm-4.png","9/99/Unit-Primm-5.png","d/d9/Unit-Primm-6.png"},4),
-	Randi("Randi",new String[]{"9/9a/Unit-Randi-5.png","3/33/Unit-Randi-6.png"},5);
+	Randi("Randi",new String[]{"9/9a/Unit-Randi-5.png","3/33/Unit-Randi-6.png"},5),
+	CLuna("Cupid Luna",new String[]{"/8/81/Unit-Cupid_Luna-3.png","/c/c9/Unit-Cupid_Luna-4.png","/f/f8/Unit-Cupid_Luna-5.png?"},3),
+	CArtemois("Cupid Artemois",new String[]{"/9/98/Unit-Cupid_Artemios-4.png","/5/5b/Unit-Cupid_Artemios-5.png","/f/f0/Unit-Cupid_Artemios-6.png"},4);
 	
 	
 	
@@ -330,7 +339,14 @@ public enum Unit {
 				Trey,
 				Jack,
 				Seven,
-				Ace
+				Ace,
+				Marie,
+				Guy,
+				Leon,
+				Emperor,
+				Olive,
+				Shine,
+				Shera
 		});
 	}
 	public static Unit[] base3(Unit[] pool){

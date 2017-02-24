@@ -35,6 +35,9 @@ public class UnitInfo {
 	public String[] lore=new String[]{};
 	public String[] awakening=new String[]{};
 	public UnitInfo(String page)throws IOException{
+		if(page.contains("redlink")){//to avoid all the error recording for nonexistant pages, due to wiki using new page creation, logs all sorts of errors that are irrelvent
+			return;
+		}
 		try{
 			Document doc=null;
 			for(int i=0;i<4;i++){
