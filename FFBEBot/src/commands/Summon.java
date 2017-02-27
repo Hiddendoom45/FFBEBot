@@ -49,7 +49,12 @@ public class Summon implements Command {
 						num=1800;
 					}
 					Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
-					sendImage(event, Pull.pull(num,pullBanner),pullBanner);
+					if(num==11){
+						sendImage(event, Pull.pull11(pullBanner),pullBanner);
+					}
+					else{
+						sendImage(event, Pull.pull(num,pullBanner),pullBanner);
+					}
 				}
 				catch(Exception e){
 					Log.logError(e);
