@@ -154,6 +154,8 @@ public class Main {
 		break;
 		case Ready5:game=" with a salty summoner|-!help";
 		break;
+		case Ready6:game=" in the salt mines|-!help";
+		break;
 		}
 		jda.getAccountManager().setGame(game);
 	}
@@ -252,10 +254,11 @@ public class Main {
 		Ready2,
 		Ready3,
 		Ready4,
-		Ready5;
+		Ready5,
+		Ready6;
 		public static int rand;
 		public static states randomReady(){
-			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2,Ready3,Ready4,Ready5});
+			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2,Ready3,Ready4,Ready5,Ready6});
 			return s;
 		}
 	}

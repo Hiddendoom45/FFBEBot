@@ -1,6 +1,7 @@
 package util;
 
 import java.util.Arrays;
+import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
 import org.jsoup.nodes.Element;
@@ -101,6 +102,16 @@ public class Lib {
 	 */
 	public static Message sendMessage(MessageReceivedEvent event,String msg){
 		try{
+			if(msg.length()>2000){
+				Vector<String> toSend=splitMessage(msg);
+				for(String s:toSend){
+					sendPrivate(event,s);
+				}
+				if(!event.isPrivate()){
+					sendMessage(event,"Message was too long. Check your DMs for response");
+				}
+				return null;
+			}
 			//if(!SpamControl.isSpam(event, "global")&&!event.isPrivate()&&!msg.contains("too many messages, please wait")) return null;//disabled to avoid a bunch of pain
 			return event.getChannel().sendMessage(msg);
 		}catch(net.dv8tion.jda.exceptions.RateLimitedException e){
@@ -111,6 +122,48 @@ public class Lib {
 		}
 		//it really shouldn't really go this far should return from spam check or from the delayed task, if it does retry
 		return sendMessage(event,msg);
+	}
+	public static Message sendPrivate(MessageReceivedEvent event, String msg){
+		try{
+			return event.getAuthor().getPrivateChannel().sendMessage(msg);
+		}catch(net.dv8tion.jda.exceptions.RateLimitedException e){
+			try {
+				TimeUnit.MILLISECONDS.sleep(extractNumber(e.getMessage()));
+				return sendPrivate(event,msg);
+			} catch (InterruptedException e1) {}
+		}
+		return sendPrivate(event,msg);
+	}
+	private static Vector<String> splitMessage(String msg){
+		Vector<String> splitMsg=new Vector<String>();
+		String[] lines=msg.split("\n");
+		int length=0;
+		String prep="";
+		for(String s:lines){
+			if(s.length()>2000){
+				if(!prep.equals("")){
+					splitMsg.add(prep);
+					prep="";
+					length=0;
+				}
+				splitMsg.add(s.substring(0, 2000));
+				splitMsg.addAll(splitMessage(s.substring(2000)));
+			}
+			else{
+				if(s.length()+length<2000){
+					prep+="\n"+s;
+					length+=s.length();
+				}
+				else{
+					splitMsg.add(prep);
+					prep=s;
+					length=s.length();
+					
+				}
+			}
+		}
+		splitMsg.add(prep);
+		return splitMsg;
 	}
 	/**
 	 * Formats the message <br/>
