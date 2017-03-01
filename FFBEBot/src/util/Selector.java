@@ -67,7 +67,6 @@ public class Selector {
 	public static void setSelection(Select selection,MessageReceivedEvent event){
 		selection.messageID=Lib.sendMessage(event,selection.msg).getId();
 		selections.put(key(event), selection);
-		
 	}
 	/**
 	 * if input is valid selection
@@ -94,6 +93,7 @@ public class Selector {
 		else if(SelectionType==3){
 			String message=event.getMessage().getContent();
 			if(message.toLowerCase().equals("y")||message.toLowerCase().equals("yes")||message.toLowerCase().equals("n")||message.toLowerCase().equals("no")){
+				System.out.println("valid pull");
 				return true;
 			}
 			else{
@@ -111,11 +111,11 @@ public class Selector {
 	 * @return index of selection
 	 */
 	private static int Selection(int SelectionType,String selection){
-		if(SelectionType==0){//number, just parse it
+		if(SelectionType==Selector.NumType){//number, just parse it
 			return Integer.parseInt(selection);
 		}
 		else if(SelectionType==1){//letters convert to numbers
-			if(selection.length()==1){
+			if(selection.length()==Selector.AlphaType){
 				return selection.toUpperCase().toCharArray()[0]-65;
 			}
 			else{
@@ -127,7 +127,7 @@ public class Selector {
 				return chosen-1;
 			}
 		}
-		else if(SelectionType==3){
+		else if(SelectionType==Selector.YNType){
 			if(selection.toLowerCase().equals("y")||selection.toLowerCase().equals("yes")){
 				return 0;
 			}

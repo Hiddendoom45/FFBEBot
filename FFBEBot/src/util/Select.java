@@ -54,6 +54,11 @@ public class Select {
 	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names,String msgHead){
 		this(options,ID,source, parse(source, names,msgHead));
 		this.names=names;
+		//to avoid selector from not validating due to nonexistant index
+		if(source.getInputType()==Selector.YNType){
+			options.add("");
+			options.add("");
+		}
 	}
 	public static String parse(Selection source,ArrayList<String> names,String msgHead){
 		String msg=msgHead;//stuff to put before list in the names

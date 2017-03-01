@@ -240,21 +240,19 @@ public class SaveSystem {
 	 */
 	public static void setUser(Data user){
 		Data.users.put(user.id, user);
-		pushUserData();
+		//pushUserData();
 	}
 	/**
 	 * Unlike guilds user data is saved locally until this is called, wherein it is written to the data file
 	 * This is due to the nature that guilds are more likely to be called more often
 	 */
 	public static void pushUserData(){
-		System.out.println(Data.users);
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();
 		Elements doc=file.parseDocToElements();
 		file.endReader();
 		for(int i=0;i<doc.getChilds().size();i++){
 			if(doc.getChilds().get(i).getTagName().equals("user")){
-				System.out.println(doc.getChilds().get(i).getAttribute("id").getValue()+" "+Data.users.containsKey(doc.getChilds().get(i).getAttribute("id").getValue()));
 				if(Data.users.containsKey(doc.getChilds().get(i).getAttribute("id").getValue())){
 					doc.getChilds().remove(i);
 					i--;

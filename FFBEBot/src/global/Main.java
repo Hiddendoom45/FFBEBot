@@ -95,7 +95,6 @@ public class Main {
 		commands.put("dailies", new Dailies());
 		commands.put("daily", new Dailies());
 		commands.put("lapis", new Lapis());
-		commands.put("salt", new Lapis());
 		commands.put("give", new Give());
 		commands.put("banner", new Banners());
 		commands.put("banner", new Banners());

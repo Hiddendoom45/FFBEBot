@@ -61,8 +61,8 @@ public class Pull extends CommandGenerics implements Command,Selection {
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s="pull [amount] [banner]\n"
-				+ "\tpulls the amount of units specified, units will go into unit inventory"
-				+ "\t[amount] amount of units to pull(500 lapis per summon(1000 for non current LE banners))"
+				+ "\tpulls the amount of units specified, units will go into unit inventory\n"
+				+ "\t[amount] amount of units to pull(500 lapis per summon(1000 for non current LE banners))\n"
 				+ "\t[banner] banner to pull from, if not specified will pull from most recent banner";
 		Lib.sendMessage(event, s);
 	}
