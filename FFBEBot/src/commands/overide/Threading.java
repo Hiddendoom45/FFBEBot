@@ -1,18 +1,15 @@
 package commands.overide;
 
 import java.util.HashMap;
+
+import util.CounterPool;
 import util.Lib;
 import global.Restarter;
 import global.record.Settings;
 import net.dv8tion.jda.events.message.MessageReceivedEvent;
 
-public class Threading implements OverrideCommand{
-
-	@Override
-	public boolean called(HashMap<String, String[]> args, MessageReceivedEvent event) {
-		return true;
-	}
-
+public class Threading extends OverrideGenerics implements OverrideCommand{
+	
 	@Override
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		boolean trigger=false;
@@ -29,6 +26,10 @@ public class Threading implements OverrideCommand{
 			String s="Sleeper restarted";
 			Lib.sendMessage(event, s);
 		}
+		if(args.containsKey("cp")){//counterpool
+			trigger=true;
+			CounterPool.getPool().setup();
+		}
 		//if no valid arguments
 		if(!trigger){
 			String s=Settings.executor.toString();
@@ -38,12 +39,6 @@ public class Threading implements OverrideCommand{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
 		// TODO Auto-generated method stub
 		
 	}

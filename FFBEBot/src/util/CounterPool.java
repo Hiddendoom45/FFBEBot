@@ -3,6 +3,7 @@ package util;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import global.record.Log;
 import global.record.Settings;
 /**
  * An attempt to execute all counters all in one thread, method of execution is based in part on the FRC
@@ -39,9 +40,13 @@ public class CounterPool implements Runnable {
 				//execute current ones
 				if(!counters.isEmpty()){
 					for(Integer i:current){
-						Counter c=counters.get(i).count();
-						if(c.hasTerminated()){
-							toRemove.add(i);
+						try{
+							Counter c=counters.get(i).count();
+							if(c.hasTerminated()){
+								toRemove.add(i);
+							}
+						}catch(Exception e){
+							Log.logError(e);
 						}
 					}
 				}
@@ -72,7 +77,7 @@ public class CounterPool implements Runnable {
 				}
 			}
 		}catch(Exception e){
-			e.printStackTrace();
+			Log.logError(e);
 		}
 	}
 	private static void increment(){
