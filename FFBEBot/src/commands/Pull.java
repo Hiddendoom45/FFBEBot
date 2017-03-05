@@ -50,7 +50,7 @@ public class Pull extends CommandGenerics implements Command,Selection {
 	 * @param s string value to check the banner for
 	 * @return
 	 */
-	private Banner getBanner(String s){
+	public Banner getBanner(String s){
 		for(Banner b:Banner.values()){
 			if(s.toLowerCase().equals(b.name.toLowerCase())||s.toLowerCase().equals(b.toString().toLowerCase())){
 				return b;

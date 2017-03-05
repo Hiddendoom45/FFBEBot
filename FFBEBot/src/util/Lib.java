@@ -82,11 +82,14 @@ public class Lib {
 		});
 	}
 	/**
+	 * 
 	 * Formats the message <br/>
 	 * Special formatting <br/> 
 	 * %userMention% mentions the user that sent the message <br/>
 	 * %userName% prints name of user that sent the message <br/>
-	 * %selfMention% mentions the bot
+	 * %selfMention% mentions the bot<br/>
+	 * %mentionMention% mentions the first mentioned user in message<br/>
+	 * %mentionName% name of the first mentioned user in the message<br/>
 	 * @param event message received
 	 * @param msg message to send in response
 	 * @return message that was sent

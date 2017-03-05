@@ -1,6 +1,9 @@
 package Library.summon;
 
 import java.io.File;
+
+import Library.summon.UnitSpecific.UnitsException;
+import global.record.Log;
 /**
  * contains basic data for unit that is summoned, url, rarity, name are variables for convenience only
  * @author Allen
@@ -23,5 +26,13 @@ public class SummonedUnit {
 	 */
 	public File getImageLocation(){
 		return new File("units/"+name+"/"+rarity+".png");
+	}
+	public UnitSpecific toSpecific(){
+		try {
+			return new UnitSpecific(unit,rarity);
+		} catch (UnitsException e) {
+			Log.logShortError(e, 5);
+			return null;
+		}
 	}
 }

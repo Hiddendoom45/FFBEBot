@@ -37,6 +37,10 @@ public class Data {
 		lapis=Lib.getNumber(root,"lapis")==-1?0:Lib.getNumber(root,"lapis");
 		dailyTime=Lib.getLong(root, "dailyTime")==-1?0:Lib.getLong(root, "dailyTime");
 		dailyPullTime=Lib.getLong(root, "dailyPullTime")==-1?0:Lib.getLong(root, "dailyPullTime");
+		ArrayList<Elements> units=root.getChilds("Unit");
+		for(Elements e:units){
+			this.units.add(new PullUnit(e));
+		}
 	}
 	public boolean dailyReady(){
 		if(dailyTime+86400000>System.currentTimeMillis()){

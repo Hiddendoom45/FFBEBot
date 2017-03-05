@@ -16,7 +16,7 @@ public class Lapis extends CommandGenerics implements Command {
 		else{
 			user=SaveSystem.getUser(event.getAuthor().getId());
 		}
-		Lib.sendMessageFormated(event, "%mentionMention% has "+user.lapis+" lapis");
+		Lib.sendMessageFormated(event, "%mentionName% has "+user.lapis+" lapis");
 	}
 	
 	@Override

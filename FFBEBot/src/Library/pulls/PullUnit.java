@@ -1,8 +1,11 @@
 package Library.pulls;
 
 import Library.summon.Unit;
+import Library.summon.UnitSpecific;
+import Library.summon.UnitSpecific.UnitsException;
 import XML.Attribute;
 import XML.Elements;
+import global.record.Log;
 import util.Lib;
 
 public class PullUnit {
@@ -16,7 +19,7 @@ public class PullUnit {
 	public PullUnit(Elements root){
 		String name=root.getAttribute("name").getValue();
 		for(Unit u:Unit.values()){
-			if(u.name==name){
+			if(u.name.equals(name)){
 				unit=u;
 				break;
 			}
@@ -33,5 +36,13 @@ public class PullUnit {
 		root.add(info);
 		
 		return root;
+	}
+	public UnitSpecific toSpecific(){
+		try {
+			return new UnitSpecific(unit,rare);
+		} catch (UnitsException e) {
+			Log.logError(e);
+			return null;
+		}
 	}
 }

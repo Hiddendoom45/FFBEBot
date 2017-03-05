@@ -8,10 +8,10 @@ import java.io.File;
  *
  */
 public class UnitSpecific {
-	String imgUrl;
-	int rarity;
-	int base;
-	String name;
+	public String imgUrl;
+	public int rarity;
+	public int base;
+	public String name;
 	public UnitSpecific(Unit unit, int rarity) throws UnitsException{
 		if(unit==null){
 			throw new UnitsException("unit value is null");
@@ -45,7 +45,7 @@ public class UnitSpecific {
 	 * @author Allen
 	 *
 	 */
-	class UnitsException extends Exception{
+	public class UnitsException extends Exception{
 		public UnitsException(String string) {
 			super(string);
 		}
@@ -54,5 +54,8 @@ public class UnitSpecific {
 		 */
 		private static final long serialVersionUID = -2826538255464720836L;
 		
+	}
+	public String toString(){
+		return name+": at rarity:"+rarity;
 	}
 }
