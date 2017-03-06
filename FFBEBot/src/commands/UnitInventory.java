@@ -55,11 +55,11 @@ public class UnitInventory extends CommandGenerics implements Command{
 				factor=1;
 			}
 			BufferedImage build;
-			if(user.units.size()>25){
+			if(user.units.size()<25){
 				build=new SummonImageBuilder(factor).addUnit(us).build(event, null);
 			}
 			else{
-				build=new SummonImageBuilder(factor).buildColumnsDynamically().addUnit(us).build(event, null);
+				build=new SummonImageBuilder(factor).buildColumnsDynamically().addUnit(us).build(event, count);
 			}
 
 			count.setMessage("Uploading...");

@@ -109,7 +109,6 @@ public class SummonImageBuilder {
 			else {
 				width=w*columns;//else based on colum size
 			}
-			System.out.println(columns+" "+units.size()+units);
 			int height=h*(((units.size()-1)/columns)+1);
 			
 			//setup main variables
@@ -179,7 +178,9 @@ public class SummonImageBuilder {
 				//}
 				//g.drawString(rare, size.w, size.h+h-5);
 				increment(size,columns);
-				count.setI(index);
+				if(!(count==null)){
+					count.setI(index);
+				}
 				index++;
 			}
 			g.dispose();

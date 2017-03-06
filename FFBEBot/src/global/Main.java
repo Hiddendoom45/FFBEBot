@@ -101,6 +101,8 @@ public class Main {
 		commands.put("bannerlist", new Banners());
 		commands.put("pull", new Pull());
 		commands.put("unitinventory", new UnitInventory());
+		commands.put("dailypull", new DailyPull());
+		commands.put("11pull", new ElevenPull());
 		//ditto with mod commands(separate maps due to special checks)
 		modCommands.put("prefix", new Prefix());
 		modCommands.put("modprefix", new ModPrefix());

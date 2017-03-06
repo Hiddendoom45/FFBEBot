@@ -85,8 +85,18 @@ public class Summon implements Command {
 			us.add(u.toSpecific());
 		}
 		Counter count=new Counter("Summoning Units...(%count%/"+units.size()+")",event);
-		BufferedImage build=new SummonImageBuilder(0.5).buildColumnsDynamically()
-				.basePlate(3, "/Library/summon/6star.png").addUnit(us).build(event, count);
+		double factor=1;
+		if(us.size()>100){
+			factor=0.5;
+		}
+		BufferedImage build;
+		if(us.size()>25){
+			build=new SummonImageBuilder(factor).basePlate(3, "/Library/summon/6star.png").addUnit(us).build(event, count);
+		}
+		else{
+			build=new SummonImageBuilder(factor).buildColumnsDynamically()
+					.basePlate(3, "/Library/summon/6star.png").addUnit(us).build(event, count);
+		}
 		try{
 			count.setMessage("Uploading...");
 			ImageIO.write(build, "PNG", new File("summons.png"));

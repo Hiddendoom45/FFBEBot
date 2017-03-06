@@ -36,6 +36,13 @@ public class Pull {
 		}
 		return units;
 	}
+	public static ArrayList<SummonedUnit> pull11(int times, Banner banner){
+		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
+		for(int i=0;i<times;i++){
+			units.addAll(pull11(banner));
+		}
+		return units;
+	}
 	public static ArrayList<SummonedUnit> pull11(Banner banner){
 		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>(11);
 		Random rand=new Random();

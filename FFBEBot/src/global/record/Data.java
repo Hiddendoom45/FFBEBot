@@ -50,6 +50,14 @@ public class Data {
 			return true;
 		}
 	}
+	public boolean dailyPullReady(){
+		if(dailyPullTime+86400000>System.currentTimeMillis()){
+			return false;
+		}
+		else{
+			return true;
+		}
+	}
 	public Elements parseToElements(){
 		Elements root=new Elements("user");
 		root.getAttributes().add(new Attribute("id",id));
