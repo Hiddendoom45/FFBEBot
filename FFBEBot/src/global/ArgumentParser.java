@@ -22,7 +22,7 @@ public class ArgumentParser {
 				values="";
 			}
 			else if(s.startsWith(Settings.overridePrefix)){
-				command=s.substring(1);
+				command=s.substring(Settings.overridePrefix.length());
 			}
 			else{
 				values+=s+",";
