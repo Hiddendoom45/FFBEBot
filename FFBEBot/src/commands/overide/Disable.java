@@ -29,7 +29,6 @@ public class Disable implements OverrideCommand,Selection{
 	@Override
 	public void help(MessageReceivedEvent event) {
 		Lib.sendMessage(event, "Shuts down the bot if it's malfunctioning");
-		
 	}
 	@Override
 	public void executed(boolean sucess, MessageReceivedEvent event) {

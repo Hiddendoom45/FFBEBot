@@ -38,8 +38,8 @@ public class Selector {
 				select.selected=Selection(select.source.getInputType(),event.getMessage().getContent());//create new selected to return
 				select.selectedText=event.getMessage().getContent();//set text of selected
 				selfPrune(select,event);//delete messages in relation to selection
+				selections.remove(key(event));//remove event //before triggering main command so selections can be chained
 				select.source.selectionChosen(select, event);//return to main command that selection has been chosen
-				selections.remove(key(event));//remove event
 			}
 			//if not send message that they selected the wrong one
 			else{

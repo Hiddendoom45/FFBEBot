@@ -90,7 +90,7 @@ public class Summon implements Command {
 			factor=0.5;
 		}
 		BufferedImage build;
-		if(us.size()>25){
+		if(us.size()<25){
 			build=new SummonImageBuilder(factor).basePlate(3, "/Library/summon/6star.png").addUnit(us).build(event, count);
 		}
 		else{

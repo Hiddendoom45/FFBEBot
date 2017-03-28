@@ -523,6 +523,18 @@ public class Lib {
 		return false;
 	}
 	/**
+	 * Adds up all the numbers in array
+	 * @param numbers int array to add all the numbers for
+	 * @return
+	 */
+	public static int Summation(int[] numbers){
+		int sum=0;
+		for(int i:numbers){
+			sum+=i;
+		}
+		return sum;
+	}
+	/**
 	 * converts a string array to 
 	 * @param args
 	 * @return

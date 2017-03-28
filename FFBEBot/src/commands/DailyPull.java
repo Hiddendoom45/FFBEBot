@@ -21,7 +21,7 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		Data user=SaveSystem.getUser(event.getAuthor().getId());
-		if(user.dailyPullReady()){
+		if(user.dailyPullReady()&&user.lapis>=250){
 			ArrayList<String> possible=new ArrayList<String>();//string of options, useless more or less
 			String msgHead="A you sure you want to do a daily pull from the "+DailyBanner+" banner?";
 			Select select=new Select(possible,System.currentTimeMillis(),this,possible,msgHead);//none of this is really even used..., why did I make the select interface this way?...
