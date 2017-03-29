@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import javax.imageio.ImageIO;
 
@@ -233,6 +234,17 @@ public class SaveSystem {
 		else{
 			return new Data(id);
 		}
+	}
+	/**
+	 * Gets all users which are recorded by bot(called at least once in any method) i.e. lapis
+	 * @return vector of all users the bot is tracking
+	 */
+	public static Vector<Data> getRegisteredUsers(){
+		Vector<Data> users=new Vector<Data>();
+		for(String key:Data.users.keySet()){
+			users.add(Data.users.get(key));
+		}
+		return users;
 	}
 	/**
 	 * Set the user data to local save
