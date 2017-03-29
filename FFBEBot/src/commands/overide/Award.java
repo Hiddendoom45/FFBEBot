@@ -15,14 +15,14 @@ public class Award extends OverrideGenerics implements OverrideCommand {
 		if(args.containsKey("lapis")&&Lib.isNumber(args.get("lapis")[0])){
 			if(event.getMessage().getMentionedUsers().size()>0){
 				Data user=SaveSystem.getUser(event.getMessage().getMentionedUsers().get(0).getId());
-				int lapis=Integer.parseInt(args.get("lapis")[0]);
+				int lapis=Integer.parseInt(args.get("lapis")[0].trim());
 				user.lapis+=lapis;
 				SaveSystem.setUser(user);
 				Lib.sendMessage(event, lapis+" lapis given to "+event.getMessage().getMentionedUsers().get(0).getUsername());
 			}
 			else if(args.containsKey("all")){
 				Vector<Data> users=SaveSystem.getRegisteredUsers();
-				int lapis=Integer.parseInt(args.get("lapis")[0]);
+				int lapis=Integer.parseInt(args.get("lapis")[0].trim());
 				for(int i=0;i<users.size();i++){
 					users.get(i).lapis+=lapis;
 					SaveSystem.setUser(users.get(i));

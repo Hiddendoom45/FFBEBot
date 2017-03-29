@@ -447,12 +447,23 @@ public class Lib {
 	 * @return if s is all numbers or not
 	 */
 	public static boolean isNumber(String s){
+		boolean negativeStartFlag=true;
+		boolean dotFlag=true;
 		for(char c:s.trim().toCharArray()){
 			if(!Character.isDigit(c)){
-				return false;
+				if(!(c=='-'&&negativeStartFlag||c=='.'&&dotFlag)){
+					return false;
+				}
+				if(c=='.'&&dotFlag){
+					dotFlag=false;
+				}
 			}
+			negativeStartFlag=false;
 		}
+		if(s.length()>0){
 		return true;
+		}
+		else return false;
 	}
 	/**
 	 * gets only number chars from a string
