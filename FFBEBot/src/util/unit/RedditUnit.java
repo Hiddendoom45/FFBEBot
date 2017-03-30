@@ -292,9 +292,9 @@ public class RedditUnit {
 		public UnitAbility(Element row){
 			jpName=row.child(1).text();
 			enName=row.child(2).text();
-			effect=row.child(3).text();
-			jpDecscription=row.child(4).text();
-			MP=Lib.isNumber(row.child(5).text())?Integer.parseInt(row.child(5).text()):0;
+			effect=row.child(4).text();
+			jpDecscription=row.child(5).text();
+			MP=Lib.isNumber(row.child(3).text())?Integer.parseInt(row.child(3).text()):0;
 			level=Integer.parseInt(row.child(6).text());
 			minRare=Integer.parseInt(row.child(7).text());
 		}

@@ -477,6 +477,9 @@ public class Lib {
 				i+=c;
 			}
 		}
+		if(i.equals("")){
+			i="-1";
+		}
 		return Integer.parseInt(i);
 	}
 	/**
