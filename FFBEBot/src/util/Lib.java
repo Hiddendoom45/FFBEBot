@@ -155,17 +155,20 @@ public class Lib {
 			else{
 				if(s.length()+length<2000){
 					prep+="\n"+s;
-					length+=s.length();
+					length+=s.length()+1;
 				}
 				else{
 					splitMsg.add(prep);
 					prep=s;
 					length=s.length();
-					
 				}
 			}
 		}
 		splitMsg.add(prep);
+		System.out.println(splitMsg);
+		for(String s:splitMsg){
+			System.out.println(s.length()+" "+s);
+		}
 		return splitMsg;
 	}
 	/**

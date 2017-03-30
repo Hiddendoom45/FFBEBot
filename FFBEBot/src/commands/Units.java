@@ -24,12 +24,12 @@ public class Units extends UnitSelection implements Command,Selection {
 		out+="TM:"+info.trustName+"\n__Stats__";
 		for(int i=0;i<info.stats.stats.length;i++){
 			out+="\n"+addStars(info.stats.stats[i].rarity);
-			out+="**HP**:"+Lib.pad(info.stats.stats[i].HP, 6);
-			out+="**MP**:"+Lib.pad(info.stats.stats[i].MP, 6);
-			out+="**ATK**:"+Lib.pad(info.stats.stats[i].ATK, 6);
-			out+="**DEF**:"+Lib.pad(info.stats.stats[i].DEF, 6);
-			out+="**MAG**:"+Lib.pad(info.stats.stats[i].MAG, 6);
-			out+="**SPR**:"+Lib.pad(info.stats.stats[i].SPR, 6);
+			out+="**HP**:"+Lib.pad(info.stats.stats[i].HP, 6)+Lib.pad("("+info.statIncrease.stats[i].HP+")", 6);
+			out+="**MP**:"+Lib.pad(info.stats.stats[i].MP, 6)+Lib.pad("("+info.statIncrease.stats[i].MP+")", 6);
+			out+="**ATK**:"+Lib.pad(info.stats.stats[i].ATK, 6)+Lib.pad("("+info.statIncrease.stats[i].ATK+")", 6);
+			out+="**DEF**:"+Lib.pad(info.stats.stats[i].DEF, 6)+Lib.pad("("+info.statIncrease.stats[i].DEF+")", 6);
+			out+="**MAG**:"+Lib.pad(info.stats.stats[i].MAG, 6)+Lib.pad("("+info.statIncrease.stats[i].MAG+")", 6);
+			out+="**SPR**:"+Lib.pad(info.stats.stats[i].SPR, 6)+Lib.pad("("+info.statIncrease.stats[i].SPR+")", 6);
 		}
 		out+="\nlink to wiki::link:";
 		out+=info.URL+"\n:art:";

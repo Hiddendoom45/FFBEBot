@@ -28,6 +28,7 @@ public class UnitInfo {
 	public String trustName="";
 	public String trustLink="";
 	public unitStats stats;
+	public unitStatIncrease statIncrease;
 	public String[] weapons=new String[]{};
 	public String[] armours=new String[]{};
 	public unitAbilities Special;
@@ -99,6 +100,14 @@ public class UnitInfo {
 				Log.logShortError(e, 5);
 			}
 			try{
+				Element statIncrease=Lib.getEleAfter(content.children(),new ElementFilter("h3","Maximum Stats Increase [edit | edit source]")).getElementsByTag("tbody").first();
+				this.statIncrease=new unitStatIncrease(statIncrease);
+			}
+			catch(Exception e){
+				Log.log("ERROR", "error parsing stat increases for page:"+page);
+				Log.logShortError(e, 5);
+			}
+			try{
 			Element equipment=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipment[edit | edit source]"));
 			parseWeapons(Lib.getCell(1, 0, equipment));
 			parseArmours(Lib.getCell(3, 0, equipment));
@@ -135,22 +144,25 @@ public class UnitInfo {
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening[edit | edit source]"));
+			Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening Materials[edit | edit source]"));
 			awakening=new String[maxRarity-minRarity];
 			for(int i=0;i<awakening.length;i++){
-				awakening[i]=awaken.getElementsByTag("td").get(i).text();
+				awakening[i]=awaken.getElementsByTag("tbody").first().getElementsByTag("tr").get(1).getElementsByTag("td").get(i).text();
 			}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing awakening mats for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element quote=Lib.getEleAfter(content.children(), new ElementFilter("h3","Quotes[edit | edit source]"));
-				background=new unitQuotes(quote.getElementsByTag("tbody").get(0));
-				fusionQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(1));
-				awakeningQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(2));
-				summonQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(3));
-				TMQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(4));
+				
+				Element quote=Lib.getEleAfter(content.children(), new ElementFilter("h2","Quotes[edit | edit source]"));
+				System.out.println(quote);
+				Log.log("tes", quote.toString());
+				background=new unitQuotes(quote.getElementsByClass("tabbertab").get(0).getElementsByTag("table").first().getElementsByTag("tbody").first());
+				fusionQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(1).getElementsByTag("table").first().getElementsByTag("tbody").first());
+				awakeningQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(2).getElementsByTag("table").first().getElementsByTag("tbody").first());
+				summonQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(3).getElementsByTag("table").first().getElementsByTag("tbody").first());
+				TMQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(4).getElementsByTag("table").first().getElementsByTag("tbody").first());
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing unit quotes for page:"+page);
 				Log.logShortError(e, 5);
@@ -283,14 +295,16 @@ public class UnitInfo {
 			public String condition;
 			public String aIconURL;
 			public String name;
+			public String effect;
 			public String hits;
 			public String MP;
 			public conditional(Element row){
 				condition=row.child(0).text();
 				aIconURL=row.child(1).getElementsByTag("img").first().absUrl("src");
 				name=row.child(2).text();
-				hits=row.child(3).text();
-				MP=row.child(4).text();
+				effect=row.child(3).text();
+				hits=row.child(4).text();
+				MP=row.child(5).text();
 			}
 		}
 		public class ability{
@@ -330,8 +344,8 @@ public class UnitInfo {
 			}
 		}
 		public class quote{
-			String rarity;
-			String quote;
+			public String rarity;
+			public String quote;
 			public quote(Element row){
 				if(row.children().size()>1){
 				rarity=""+Lib.extractNumber(row.child(0).text());
