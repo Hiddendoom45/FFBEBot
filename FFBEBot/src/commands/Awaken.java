@@ -14,10 +14,12 @@ public class Awaken extends UnitSelection {
 		String s=":pencil:Awakening mats for "+info.unitName+"\n";
 		if(rarity==0){
 			for(int i=0;i<info.awakening.length;i++){
+				s+=(info.minRarity+i)+":star::";
 				s+=info.awakening[i]+"\n";
 			}
 		}
 		else{
+			s+=(rarity)+":star::";
 			s+=info.awakening[rarity-info.minRarity];
 		}
 		Lib.sendMessage(event, s);
