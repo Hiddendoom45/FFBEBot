@@ -271,14 +271,14 @@ public class RedditUnit {
 		public String name;
 		public String effect;
 		public String element;
-		public int value;
+		public String value;
 		public UnitLB(Element row){
 			rarity=Lib.extractNumber(row.child(0).text());
 			maxLv=row.child(1).text();
 			name=row.child(2).text();
 			effect=row.child(3).text();
 			element=row.child(4).text();
-			//value=Integer.parseInt(row.child(5).text());
+			value=row.child(5).text();
 		}
 	}
 	public class UnitAbility{

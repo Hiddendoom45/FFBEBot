@@ -32,7 +32,7 @@ public class Lore extends UnitSelection{
 	
 	
 	public void sendLore(UnitInfo info,MessageReceivedEvent event,int rarity){
-		Lib.sendMessage(event, ":pencil:Lore of:"+info.unitName+" at "+rarity+":star:\n"+info.lore[rarity-info.minRarity]);
+		//Lib.sendMessage(event, ":pencil:Lore of:"+info.unitName+" at "+rarity+":star:\n"+info.lore[rarity-info.minRarity]);
 	}
 
 	@Override

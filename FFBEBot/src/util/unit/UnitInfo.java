@@ -33,8 +33,12 @@ public class UnitInfo {
 	public unitAbilities Special;
 	public unitAbilities Magic;
 	public String[] sprites=new String[]{};
-	public String[] lore=new String[]{};
 	public String[] awakening=new String[]{};
+	public unitQuotes background;
+	public unitQuotes fusionQuotes;
+	public unitQuotes awakeningQuotes;
+	public unitQuotes summonQuotes;
+	public unitQuotes TMQuotes;
 	public UnitInfo(String page)throws IOException{
 		if(page.contains("redlink")){//to avoid all the error recording for nonexistant pages, due to wiki using new page creation, logs all sorts of errors that are irrelvent
 			return;
@@ -131,32 +135,24 @@ public class UnitInfo {
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element lore=Lib.getEleAfter(content.children(), new ElementFilter("h2","Background Story[edit | edit source]")).getElementsByTag("tbody").first();
-			this.lore=new String[lore.children().size()];
-			for(int i=0;i<lore.children().size();i++){
-				this.lore[i]=Lib.getCell(i, 0, lore).text();
-			}
-			}catch(Exception e){
-				Log.log("ERROR", "error parsing lore for page:" +page);
-				Log.logShortError(e, 5);
-			}
-			try{
 			Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening[edit | edit source]"));
 			awakening=new String[maxRarity-minRarity];
 			for(int i=0;i<awakening.length;i++){
-				awakening[i]="";
-				for(int c=0;c<Lib.getTDCount(awaken, 1);c++){
-					if(c==0){
-						awakening[i]+=Lib.extractNumber(Lib.getCell(1+i, c, awaken).text())+"| ";
-					}
-					else{
-						awakening[i]+=Lib.getCell(1+i, c, awaken).text()+"| ";
-					}
-				}
-				awakening[i]=awakening[i].substring(0, awakening[i].length()-2);
+				awakening[i]=awaken.getElementsByTag("td").get(i).text();
 			}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing awakening mats for page:" +page);
+				Log.logShortError(e, 5);
+			}
+			try{
+				Element quote=Lib.getEleAfter(content.children(), new ElementFilter("h3","Quotes[edit | edit source]"));
+				background=new unitQuotes(quote.getElementsByTag("tbody").get(0));
+				fusionQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(1));
+				awakeningQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(2));
+				summonQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(3));
+				TMQuotes=new unitQuotes(quote.getElementsByTag("tbody").get(4));
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing unit quotes for page:"+page);
 				Log.logShortError(e, 5);
 			}
 		}catch(Exception e){
@@ -214,6 +210,33 @@ public class UnitInfo {
 				hits=row.child(7).text();
 				DC=row.child(8).text();
 				growth=row.child(9).text();
+			}
+		}
+	}
+	public class unitStatIncrease{
+		public statSet[] stats;
+		public unitStatIncrease(Element statTable){
+			stats=new statSet[statTable.children().size()];
+			for(int i=1;i<statTable.children().size();i++){
+				stats[i-1]=new statSet(statTable.child(i));
+			}
+		}
+		public class statSet{
+			public String rarity;
+			public String HP;
+			public String MP;
+			public String ATK;
+			public String DEF;
+			public String MAG;
+			public String SPR;
+			public statSet(Element row){
+				rarity=""+Lib.extractNumber(row.child(0).text());
+				HP=row.child(1).text();
+				MP=row.child(2).text();
+				ATK=row.child(3).text();
+				DEF=row.child(4).text();
+				MAG=row.child(5).text();
+				SPR=row.child(6).text();
 			}
 		}
 	}
@@ -295,6 +318,28 @@ public class UnitInfo {
 					MP=row.child(5).text();
 				}
 				this.active=active;
+			}
+		}
+	}
+	public class unitQuotes{
+		public quote[] quotes;
+		public unitQuotes (Element quoteTable){
+			quotes=new quote[quoteTable.children().size()];
+			for(int i=0;i<quoteTable.children().size();i++){
+				quotes[i]=new quote(quoteTable.child(i));
+			}
+		}
+		public class quote{
+			String rarity;
+			String quote;
+			public quote(Element row){
+				if(row.children().size()>1){
+				rarity=""+Lib.extractNumber(row.child(0).text());
+				quote=row.child(1).text();
+				}
+				else{
+					quote=row.child(0).text();
+				}
 			}
 		}
 	}
