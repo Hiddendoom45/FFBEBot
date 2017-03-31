@@ -11,6 +11,11 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
+import util.unit.reddit.UnitAbility;
+import util.unit.reddit.UnitEnhancements;
+import util.unit.reddit.UnitLB;
+import util.unit.reddit.UnitSpark;
+import util.unit.reddit.UnitStats;
 
 public class RedditUnit {
 	private static HashMap<String,String> refImg=new HashMap<String,String>();
@@ -242,91 +247,6 @@ public class RedditUnit {
 		refImg.put("#B/Icons/290060300/", "Prismaric Horn");
 		refImg.put("#B/Icons/290060400/", "Calamity Writ");
 	}
-	public class UnitStats{
-		public int rarity;
-		public String HP;
-		public String MP;
-		public String ATK;
-		public String DEF;
-		public String MAG;
-		public String SPR;
-		public String hits;
-		public String DC;
-
-		public UnitStats(Element row){
-			rarity=Lib.extractNumber(row.child(0).text());
-			HP=row.child(1).text();
-			MP=row.child(2).text();
-			ATK=row.child(3).text();
-			DEF=row.child(4).text();
-			MAG=row.child(5).text();
-			SPR=row.child(6).text();
-			hits=row.child(7).text();
-			DC=row.child(8).text();
-		}
-	}
-	public class UnitLB{
-		public int rarity;
-		public String maxLv;
-		public String name;
-		public String effect;
-		public String element;
-		public String value;
-		public UnitLB(Element row){
-			rarity=Lib.extractNumber(row.child(0).text());
-			maxLv=row.child(1).text();
-			name=row.child(2).text();
-			effect=row.child(3).text();
-			element=row.child(4).text();
-			value=row.child(5).text();
-		}
-	}
-	public class UnitAbility{
-		public String jpName;
-		public String enName;
-		public String effect;
-		public String jpDecscription;
-		public int MP;
-		public int level;
-		public int minRare;
-		public UnitAbility(Element row){
-			jpName=row.child(1).text();
-			enName=row.child(2).text();
-			effect=row.child(4).text();
-			jpDecscription=row.child(5).text();
-			MP=Lib.isNumber(row.child(3).text())?Integer.parseInt(row.child(3).text()):0;
-			level=Integer.parseInt(row.child(6).text());
-			minRare=Integer.parseInt(row.child(7).text());
-		}
-	}
-	public class UnitEnhancements{
-		public String jpName;
-		public String enName;
-		public String effect;
-		public String MP;
-		public String gil;
-		public String Mats;
-		public UnitEnhancements(Element row){
-			jpName=row.child(1).text();
-			enName=row.child(2).text();
-			effect=row.child(3).text();
-			MP=row.child(4).text();
-			gil=row.child(5).text();
-			Mats=row.child(6).text();
-		}
-	}
-	public class UnitSpark{
-		public String name;
-		public String S2;
-		public String S3;
-		public String effect;
-		public String MP;
-		public UnitSpark(Element row){
-			name=row.child(0).text();
-			S2=row.child(1).text();
-			S3=row.child(2).text();
-			effect=row.child(3).text();
-			MP=row.child(4).text();
-		}
-	}
+	
+	
 }

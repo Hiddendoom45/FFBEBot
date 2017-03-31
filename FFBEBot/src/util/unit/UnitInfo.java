@@ -1,7 +1,6 @@
 package util.unit;
 
 import java.io.IOException;
-import java.util.Vector;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -11,6 +10,10 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
+import util.unit.exvicus.unitAbilities;
+import util.unit.exvicus.unitQuotes;
+import util.unit.exvicus.unitStatIncrease;
+import util.unit.exvicus.unitStats;
 
 public class UnitInfo {
 	public String URL="";
@@ -190,171 +193,6 @@ public class UnitInfo {
 		this.armours=new String[armours.children().size()];
 		for(int i=0;i<armours.children().size();i++){
 			this.armours[i]=armours.child(i).attr("title");
-		}
-	}
-	public class unitStats{
-		public statSet[] stats;
-		public unitStats(Element statTable){
-			stats=new statSet[statTable.children().size()-1];
-			for(int i=1;i<statTable.children().size();i++){
-				stats[i-1]=new statSet(statTable.child(i));
-			}
-		}
-		public class statSet{
-			public String rarity;
-			public String HP;
-			public String MP;
-			public String ATK;
-			public String DEF;
-			public String MAG;
-			public String SPR;
-			public String hits;
-			public String DC;
-			public String growth;
-			public statSet(Element row){
-				rarity=""+Lib.extractNumber(row.child(0).text());;
-				HP=row.child(1).text();
-				MP=row.child(2).text();
-				ATK=row.child(3).text();
-				DEF=row.child(4).text();
-				MAG=row.child(5).text();
-				SPR=row.child(6).text();
-				hits=row.child(7).text();
-				DC=row.child(8).text();
-				growth=row.child(9).text();
-			}
-		}
-	}
-	public class unitStatIncrease{
-		public statSet[] stats;
-		public unitStatIncrease(Element statTable){
-			stats=new statSet[statTable.children().size()];
-			for(int i=1;i<statTable.children().size();i++){
-				stats[i-1]=new statSet(statTable.child(i));
-			}
-		}
-		public class statSet{
-			public String rarity;
-			public String HP;
-			public String MP;
-			public String ATK;
-			public String DEF;
-			public String MAG;
-			public String SPR;
-			public statSet(Element row){
-				rarity=""+Lib.extractNumber(row.child(0).text());
-				HP=row.child(1).text();
-				MP=row.child(2).text();
-				ATK=row.child(3).text();
-				DEF=row.child(4).text();
-				MAG=row.child(5).text();
-				SPR=row.child(6).text();
-			}
-		}
-	}
-	public class unitAbilities{
-		public ability[] abilities;
-		public conditional[] conditionals;
-		public unitAbilities(Element abilityTable){
-			boolean active = true;
-			boolean conditional =false;
-			Vector<ability> abilities=new Vector<ability>();
-			Vector<conditional> conditionals=new Vector<conditional>();
-			for(int i=1;i<abilityTable.children().size();i++){
-				if(abilityTable.child(i).text().trim().equals("Active")){
-					active=true;
-					conditional=false;
-				}
-				else if(abilityTable.child(i).text().trim().equals("Trait")){
-					active=false;
-					conditional=false;
-				}
-				else if(abilityTable.child(i).text().trim().equals("Conditional")){
-					conditional=true;
-				}
-				else if(!(abilityTable.child(i).getElementsByTag("th").size()>0)){
-					if(conditional){
-						conditionals.add(new conditional(abilityTable.child(i)));
-					}
-					else{
-						abilities.add(new ability(abilityTable.child(i),active));
-					}
-				}
-			}
-			this.abilities=new ability[abilities.size()];
-			for(int i=0;i<abilities.size();i++){
-				this.abilities[i]=abilities.get(i);
-			}
-			this.conditionals=new conditional[conditionals.size()];
-			for(int i=0;i<conditionals.size();i++){
-				this.conditionals[i]=conditionals.get(i);
-			}
-			
-		}
-		public class conditional{
-			public String condition;
-			public String aIconURL;
-			public String name;
-			public String effect;
-			public String hits;
-			public String MP;
-			public conditional(Element row){
-				condition=row.child(0).text();
-				aIconURL=row.child(1).getElementsByTag("img").first().absUrl("src");
-				name=row.child(2).text();
-				effect=row.child(3).text();
-				hits=row.child(4).text();
-				MP=row.child(5).text();
-			}
-		}
-		public class ability{
-			public boolean active;
-			public String rarity;
-			public String level;
-			public String aIconURL;
-			public String name;
-			public String link;
-			public String effect;
-			public String hits;
-			public String MP;
-			public ability(Element row,boolean active){
-				rarity=""+Lib.extractNumber(row.child(0).text());
-				level=row.child(1).text();
-				aIconURL=row.child(2).getElementsByTag("img").first().absUrl("src");
-				name=row.child(3).text();
-				link=row.child(3).getElementsByTag("a").first().absUrl("href");
-				effect=row.child(4).text();
-				if(row.children().size()>6){
-				hits=row.child(5).text();
-				MP=row.child(6).text();
-				}
-				else if(active){
-					MP=row.child(5).text();
-				}
-				this.active=active;
-			}
-		}
-	}
-	public class unitQuotes{
-		public quote[] quotes;
-		public unitQuotes (Element quoteTable){
-			quotes=new quote[quoteTable.children().size()];
-			for(int i=0;i<quoteTable.children().size();i++){
-				quotes[i]=new quote(quoteTable.child(i));
-			}
-		}
-		public class quote{
-			public String rarity;
-			public String quote;
-			public quote(Element row){
-				if(row.children().size()>1){
-				rarity=""+Lib.extractNumber(row.child(0).text());
-				quote=row.child(1).text();
-				}
-				else{
-					quote=row.child(0).text();
-				}
-			}
 		}
 	}
 }
