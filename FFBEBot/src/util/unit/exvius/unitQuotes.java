@@ -1,4 +1,4 @@
-package util.unit.exvicus;
+package util.unit.exvius;
 
 import org.jsoup.nodes.Element;
 

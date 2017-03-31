@@ -10,10 +10,10 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
-import util.unit.exvicus.unitAbilities;
-import util.unit.exvicus.unitQuotes;
-import util.unit.exvicus.unitStatIncrease;
-import util.unit.exvicus.unitStats;
+import util.unit.exvius.unitAbilities;
+import util.unit.exvius.unitQuotes;
+import util.unit.exvius.unitStatIncrease;
+import util.unit.exvius.unitStats;
 
 public class UnitInfo {
 	public String URL="";

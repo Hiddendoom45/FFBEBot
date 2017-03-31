@@ -1,4 +1,4 @@
-package util.unit.exvicus;
+package util.unit.exvius;
 
 import java.util.Vector;
 
@@ -82,7 +82,7 @@ public class unitAbilities{
 			hits=row.child(5).text();
 			MP=row.child(6).text();
 			}
-			else if(active){
+			else if(row.children().size()>5){
 				MP=row.child(5).text();
 			}
 			this.active=active;
