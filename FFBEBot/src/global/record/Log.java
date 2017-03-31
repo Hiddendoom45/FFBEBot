@@ -52,7 +52,11 @@ public class Log {
 			out.append(new SimpleDateFormat("[MM-dd HH:mm:ss]").format(new Date())+"[Log]log saved");
 			log.clear();
 			out.close();
-			new File(Settings.saveSource+"write").renameTo(new File(Settings.saveSource));
+			File file=new File(Settings.saveSource);
+			if(file.exists()){
+				Files.delete(file.toPath());
+			}
+			new File(file.getAbsoluteFile()+"write").renameTo(file);
 		}
 		catch(Exception e){
 			Log.logError(e);
