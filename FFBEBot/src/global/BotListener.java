@@ -50,6 +50,8 @@ public class BotListener extends ListenerAdapter{
 	}
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
-		util.Lib.sendMessageFormated(event, SaveSystem.getJoin(event));
+		if(SaveSystem.getGuild(event.getGuild().getId()).tJoinMsg){
+			util.Lib.sendMessageFormated(event, SaveSystem.getJoin(event));
+		}
 	}
 }

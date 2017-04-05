@@ -54,7 +54,6 @@ public class Toggle implements Command, Selection {
 		try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {Log.logError(e);}
-		SaveSystem.load();
 	}
 	private ArrayList<String> getNames(String id){
 		ArrayList<String> names=new ArrayList<String>();

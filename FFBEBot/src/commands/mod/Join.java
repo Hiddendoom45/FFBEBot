@@ -28,7 +28,6 @@ public class Join implements Command {
 				guild.joinMsg=stringArgs(args);
 				SaveSystem.setSetting(guild);
 				TimeUnit.SECONDS.sleep(1);
-				SaveSystem.load();
 				Lib.sendMessage(event, "Join message changed to:"+stringArgs(args));
 			}
 			else{
