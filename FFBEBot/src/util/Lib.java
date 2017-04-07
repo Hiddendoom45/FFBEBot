@@ -64,6 +64,9 @@ public class Lib {
 				+ "\t`toggles various toggleable server options`";
 		Lib.sendMessage(event, msg);
 	}
+	public static Message editMessage(Message message,String msg){
+		return message.editMessage(msg).complete();
+	}
 	public static Message sendFile(MessageReceivedEvent event, String msg, File file){
 		try {
 			return event.getChannel().sendFile(file, new MessageBuilder().append(msg).build()).complete();

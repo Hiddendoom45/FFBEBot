@@ -1,13 +1,11 @@
 package commands;
 
 import java.time.OffsetDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 import global.Main;
 import global.record.SaveSystem;
-import global.record.Settings;
 import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.SpamControl;
@@ -17,7 +15,6 @@ import util.SpamControl;
  *
  */
 public class Ping extends CommandGenerics implements Command{
-	private ArrayList<Integer> pingValues=new ArrayList<Integer>();
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		Main.log("status", "Pinged with "+event.getAuthor().getName()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild().getName()));
@@ -27,9 +24,10 @@ public class Ping extends CommandGenerics implements Command{
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		
+		Message pingMsg=Lib.sendMessage(event, "ping...");//send precursor message
+		//calculate time it took for response message to be sent and recieved
 		OffsetDateTime message=event.getMessage().getCreationTime();
-		OffsetDateTime now=OffsetDateTime.now();
+		OffsetDateTime now=pingMsg.getCreationTime();
 		int messageTime=message.getNano()/1000000;//mili message
 		int currentTime=now.getNano()/1000000;//mili current
 		long messageS=message.toEpochSecond();//sec message
@@ -47,14 +45,7 @@ public class Ping extends CommandGenerics implements Command{
 		else{
 			response=currentTime-messageTime+(1000*(responseS));
 		}
-		pingValues.add(response);
-		System.out.println(response);
-		if(Settings.useAveragePing){
-			Lib.sendMessage(event, "pong - difference from average response "+(int)(response-calculateAverage(pingValues))+"ms");
-		}
-		else{
-			Lib.sendMessage(event,"pong - response in "+response+" ms");
-		}
+		Lib.editMessage(pingMsg, "ping! - response in "+response+"ms");
 	}
 	@Override
 	public void help(MessageReceivedEvent event) {
@@ -63,15 +54,4 @@ public class Ping extends CommandGenerics implements Command{
 				+ "\tto test the bot's response speed";
 		Lib.sendMessage(event, s);
 	}
-	private double calculateAverage(List <Integer> marks) {
-		  Integer sum = 0;
-		  if(!marks.isEmpty()) {
-		    for (Integer mark : marks) {
-		        sum += mark;
-		    }
-		    return sum.doubleValue() / marks.size();
-		  }
-		  return sum;
-		}
-
 }
