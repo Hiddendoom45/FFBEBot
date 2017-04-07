@@ -1,16 +1,9 @@
 package commands;
 
-import global.record.Log;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
-public class Chance implements Command{
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "gave chance of "+(args.length>0?args[0]:"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		event.getChannel().sendTyping();
-		return true;
-	}
+public class Chance extends CommandGenerics implements Command {
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
@@ -19,12 +12,6 @@ public class Chance implements Command{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
 		// TODO Auto-generated method stub
 		
 	}

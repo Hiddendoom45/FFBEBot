@@ -14,27 +14,13 @@ import Library.summon.banner.Banner;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.MessageBuilder;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
-import util.SpamControl;
 import util.rng.summon.Pull;
 import util.rng.summon.SummonImageBuilder;
 
-public class Summon implements Command {
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("FORBIDDEN", "Summon wrath evoked by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		event.getChannel().sendTyping();
-		if(args.length>0&&Lib.isNumber(args[0])){
-		return SpamControl.isSpam(event,"summon");
-		}
-		else{
-			help(event);
-			return false;
-		}
-	}
+public class Summon extends CommandGenerics implements Command {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else
@@ -100,8 +86,8 @@ public class Summon implements Command {
 		try{
 			count.setMessage("Uploading...");
 			ImageIO.write(build, "PNG", new File("summons.png"));
-			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
-					Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+" rare summon banner")).build());
+			Lib.sendFile(event, Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+" rare summon banner"), 
+					new File("summons.png"));
 		}catch(Exception e){
 			Log.logError(e);
 		}

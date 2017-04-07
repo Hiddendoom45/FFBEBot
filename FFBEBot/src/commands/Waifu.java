@@ -3,19 +3,12 @@ package commands;
 import Library.Waifus;
 import global.record.Log;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.rng.RandomLibs;
 
-public class Waifu implements Command{
-
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "Searching for a Waifu for "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));;
-		event.getChannel().sendTyping();
-		return true;
-	}
-
+public class Waifu extends CommandGenerics implements Command{
+	
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		Object w=RandomLibs.SelectRandom(Waifus.values());
@@ -32,9 +25,4 @@ public class Waifu implements Command{
 				+ "\tlook for a waifu";
 		Lib.sendMessage(event, s);
 	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-	}
-
 }

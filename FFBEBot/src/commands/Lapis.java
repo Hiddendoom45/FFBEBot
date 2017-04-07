@@ -2,7 +2,7 @@ package commands;
 
 import global.record.Data;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
 public class Lapis extends CommandGenerics implements Command {

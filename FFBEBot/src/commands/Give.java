@@ -2,7 +2,7 @@ package commands;
 
 import global.record.Data;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
 public class Give extends CommandGenerics implements Command{
@@ -18,7 +18,7 @@ public class Give extends CommandGenerics implements Command{
 				giver.lapis-=lapis;
 				SaveSystem.setUser(giver);
 				SaveSystem.setUser(reciever);
-				Lib.sendMessage(event, "Sent "+lapis+" to "+event.getMessage().getMentionedUsers().get(0).getUsername());
+				Lib.sendMessage(event, "Sent "+lapis+" to "+event.getMessage().getMentionedUsers().get(0).getName());
 			}
 			else{
 				Lib.sendMessage(event, "You do not have "+lapis+" lapis to send");

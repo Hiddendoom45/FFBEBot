@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import global.record.Log;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.Select;
 import util.Selection;
@@ -17,16 +17,11 @@ import util.unit.UnitOverview;
  * @author Allen
  *
  */
-public abstract class UnitSelection implements Command, Selection {
+public abstract class UnitSelection extends CommandGenerics implements Command, Selection {
 	protected UnitSelection(){
 	}
 	//used to keep track of current selections going on
 	private HashMap<Long,UnitOverview> saved=new HashMap<Long,UnitOverview>();
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		event.getChannel().sendTyping();
-		return true;
-	}
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		if(args.length==0){//default message returns the help message
@@ -87,10 +82,7 @@ public abstract class UnitSelection implements Command, Selection {
 	public abstract void manyPossible(UnitOverview Ounit, int selection, int rarity,MessageReceivedEvent event) throws IOException;
 	@Override
 	public abstract void help(MessageReceivedEvent event);
-
-	@Override
-	public abstract void executed(boolean sucess, MessageReceivedEvent event);
-
+	
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		try{

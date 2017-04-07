@@ -5,16 +5,17 @@ import global.Restarter;
 import global.record.Log;
 import global.record.SaveSystem;
 import util.Lib;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 public class Sleep implements Command{
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		if(event.isPrivate()){
+		if(event.isFromType(ChannelType.PRIVATE)){
 			return false;
 		}
-		Log.log("status", "Bot slept by "+event.getAuthorName()+" on "+event.getGuild().getName());
+		Log.log("status", "Bot slept by "+event.getAuthor().getName()+" on "+event.getGuild().getName());
 		return true;
 	}
 	@Override

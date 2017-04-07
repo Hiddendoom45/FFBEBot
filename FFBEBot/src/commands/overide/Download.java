@@ -7,7 +7,7 @@ import java.util.HashMap;
 
 import global.record.Log;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 /**
  * Downloads the uploaded file to the bot, file is based on the filename used

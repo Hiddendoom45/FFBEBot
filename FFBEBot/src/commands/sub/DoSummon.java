@@ -6,7 +6,7 @@ import java.util.HashMap;
 import Library.summon.banner.Banner;
 import global.Main;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Select;
 import util.Selection;
 import util.Selector;

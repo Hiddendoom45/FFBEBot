@@ -2,9 +2,8 @@ package commands;
 
 import java.io.IOException;
 
-import global.Main;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
 import util.unit.RedditUnit;
@@ -22,11 +21,6 @@ public class REquipment extends RedditSelection {
 		}
 		Lib.sendMessage(event, s);
 		
-	}
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Searched for equipment "+(args.length>0?"for "+Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		return super.called(args,event);
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
@@ -50,10 +44,5 @@ public class REquipment extends RedditSelection {
 
 	}
 
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-
-	}
 
 }

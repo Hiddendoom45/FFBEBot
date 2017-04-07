@@ -2,9 +2,8 @@ package commands;
 
 import java.io.IOException;
 
-import global.Main;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
@@ -34,11 +33,6 @@ public class Equipment extends UnitSelection{
 		
 	}
 	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Searched for equipment "+(args.length>0?"for "+Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		return super.called(args,event);
-	}
-	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
 		sendEquipment(SaveSystem.getExvicusUnit(Ounit.getData(0).name),event);
 	}
@@ -56,12 +50,6 @@ public class Equipment extends UnitSelection{
 				+ "\tgets the equipment a unit can equip\n"
 				+ "\t[unitname] unit to get the equipment for(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
-	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

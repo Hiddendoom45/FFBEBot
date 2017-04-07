@@ -6,17 +6,18 @@ import commands.Command;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
 public class ModPrefix implements Command {
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		if(event.isPrivate()){
+		if(event.isFromType(ChannelType.PRIVATE)){
 			return false;
 		}
-		Log.log("status", "Mod Prefix changed to "+(args.length>0?args[0]:"")+" by "+event.getAuthorName()+" on "+event.getGuild());
+		Log.log("status", "Mod Prefix changed to "+(args.length>0?args[0]:"")+" by "+event.getAuthor().getName()+" on "+event.getGuild());
 		return true;
 	}
 

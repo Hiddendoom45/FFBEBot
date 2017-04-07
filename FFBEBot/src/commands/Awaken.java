@@ -4,7 +4,8 @@ import java.io.IOException;
 
 import global.record.Log;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
 import util.Lib;
@@ -26,7 +27,7 @@ public class Awaken extends UnitSelection {
 	}
 	@Override 
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("Status", "Awakening mats "+(args.length>0?"for "+Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
+		Log.log("Status", "Awakening mats "+(args.length>0?"for "+Lib.extract(args):"")+" by "+event.getAuthor().getName()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild()));
 		return super.called(args, event);
 	}
 	@Override

@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import global.record.Log;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.Select;
 import util.Selection;
@@ -13,7 +13,7 @@ import util.Selector;
 import util.unit.RedditUnit;
 import util.unit.RedditOverview;
 
-public abstract class RedditSelection implements Command, Selection {
+public abstract class RedditSelection extends CommandGenerics implements Command, Selection {
 
 	private HashMap<Long,RedditOverview> saved=new HashMap<Long,RedditOverview>();
 	@Override
@@ -82,10 +82,6 @@ public abstract class RedditSelection implements Command, Selection {
 	public abstract void manyPossible(RedditOverview Ounit, int selection, int rarity,MessageReceivedEvent event) throws IOException;
 	@Override
 	public abstract void help(MessageReceivedEvent event);
-
-	@Override
-	public abstract void executed(boolean sucess, MessageReceivedEvent event);
-
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		try{

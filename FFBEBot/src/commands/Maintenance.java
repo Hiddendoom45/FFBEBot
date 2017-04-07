@@ -8,14 +8,15 @@ import java.nio.file.StandardCopyOption;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
 public class Maintenance implements Command {
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "Maintenance is occuring for "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
+		Log.log("status", "Maintenance is occuring for "+event.getAuthor().getName()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild().getName()));
 		event.getChannel().sendTyping();
 		return true;
 	}

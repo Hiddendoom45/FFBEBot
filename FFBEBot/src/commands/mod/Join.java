@@ -6,17 +6,18 @@ import commands.Command;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
 public class Join implements Command {
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		if(event.isPrivate()){
+		if(event.isFromType(ChannelType.PRIVATE)){
 			return true;
 		}
-		Log.log("status", "join message changed to "+stringArgs(args)+" by "+event.getAuthorName());
+		Log.log("status", "join message changed to "+stringArgs(args)+" by "+event.getAuthor().getName());
 		return true;
 	}
 

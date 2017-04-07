@@ -2,9 +2,8 @@ package commands;
 
 import java.io.IOException;
 
-import global.Main;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
@@ -19,18 +18,6 @@ public class Lore extends UnitSelection{
 				+ "\t[rarity] gets lore for specified rarity, otherwise the general lore";
 		Lib.sendMessage(event, s);
 	}
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Searched for lore "+(args.length>0?"of "+Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		return super.called(args,event);
-	}
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-	
-	
 	public void sendLore(UnitInfo info,MessageReceivedEvent event,int rarity){
 		if(rarity<info.minRarity)rarity=info.maxRarity;
 		Lib.sendMessage(event, ":pencil:Lore of:"+info.unitName+" at "+rarity+":star:\n"+info.background.quotes[rarity-info.minRarity].quote);

@@ -7,7 +7,8 @@ import java.util.List;
 import global.Main;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.SpamControl;
 /**
@@ -19,7 +20,7 @@ public class Ping extends CommandGenerics implements Command{
 	private ArrayList<Integer> pingValues=new ArrayList<Integer>();
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Pinged with "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
+		Main.log("status", "Pinged with "+event.getAuthor().getName()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild().getName()));
 		event.getChannel().sendTyping();
 		return SpamControl.isSpam(event, "ping");
 	}
@@ -27,7 +28,7 @@ public class Ping extends CommandGenerics implements Command{
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		
-		OffsetDateTime message=event.getMessage().getTime();
+		OffsetDateTime message=event.getMessage().getCreationTime();
 		OffsetDateTime now=OffsetDateTime.now();
 		int messageTime=message.getNano()/1000000;//mili message
 		int currentTime=now.getNano()/1000000;//mili current

@@ -1,6 +1,6 @@
 package util;
 
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 /**
  * Class used to count the progress of a command that takes a while i.e. preloading data, summoning units
@@ -23,10 +23,10 @@ public class Counter{
 	public Counter count() {
 		synchronized(this){
 			if(!end){
-				event.getChannel().getMessageById(messageID).updateMessage(message.replace("%count%", ""+i));
+				event.getChannel().getMessageById(messageID).complete().editMessage(message.replace("%count%", ""+i)).submit();
 			}
 			else{
-				event.getChannel().deleteMessageById(messageID);
+				event.getChannel().deleteMessageById(messageID).submit();
 			}
 		}
 		return this;

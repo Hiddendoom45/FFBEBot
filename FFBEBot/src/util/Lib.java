@@ -1,5 +1,7 @@
 package util;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
@@ -11,9 +13,11 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.entities.Message;
-import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.MessageBuilder;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
  * Library of various useful methods that are used all over the place
  * @author Allen
@@ -60,6 +64,14 @@ public class Lib {
 				+ "\t`toggles various toggleable server options`";
 		Lib.sendMessage(event, msg);
 	}
+	public static Message sendFile(MessageReceivedEvent event, String msg, File file){
+		try {
+			return event.getChannel().sendFile(file, new MessageBuilder().append(msg).build()).complete();
+		} catch (IOException e) {
+			Log.logError(e);
+		}
+		return sendFile(event,msg,file);
+	}
 	/**
 	 * Sends a message which will be deleted after a period of time
 	 * @param event message recieved
@@ -67,12 +79,15 @@ public class Lib {
 	 * @param timeout time in seconds after which the message will be deleted
 	 */
 	public static void sendTempMessage(MessageReceivedEvent event, String msg,long timeout){
+		final MessageReceivedEvent FEvent=event;
+		final String FMsg=msg;
+		final long FTimeout=timeout;
 		Settings.executor.execute(new Runnable(){
 			public void run(){
 				try {
-					String id=sendMessageFormated(event, msg).getId();
-					TimeUnit.SECONDS.sleep(timeout);
-					event.getChannel().deleteMessageById(id);
+					String id=sendMessageFormated(FEvent, FMsg).getId();
+					TimeUnit.SECONDS.sleep(FTimeout);
+					FEvent.getChannel().deleteMessageById(id);
 				} catch (Exception e) {
 					Log.log("ERROR", "error sending delayed message");
 					Log.logShortError(e, 5);
@@ -104,38 +119,23 @@ public class Lib {
 	 * @return message that was sent
 	 */
 	public static Message sendMessage(MessageReceivedEvent event,String msg){
-		try{
 			if(msg.length()>2000){
 				Vector<String> toSend=splitMessage(msg);
 				for(String s:toSend){
 					sendPrivate(event,s);
 				}
-				if(!event.isPrivate()){
+				if(!event.isFromType(ChannelType.PRIVATE)){
 					sendMessage(event,"Message was too long. Check your DMs for response");
 				}
 				return null;
 			}
-			//if(!SpamControl.isSpam(event, "global")&&!event.isPrivate()&&!msg.contains("too many messages, please wait")) return null;//disabled to avoid a bunch of pain
-			return event.getChannel().sendMessage(msg);
-		}catch(net.dv8tion.jda.exceptions.RateLimitedException e){
-			try {
-				TimeUnit.MILLISECONDS.sleep(extractNumber(e.getMessage()));
-				return sendMessage(event,msg);
-			} catch (InterruptedException e1) {}
-		}
-		//it really shouldn't really go this far should return from spam check or from the delayed task, if it does retry
-		return sendMessage(event,msg);
+			//if(!SpamControl.isSpam(event, "global")&&!event.isFromType(ChannelType.PRIVATE)&&!msg.contains("too many messages, please wait")) return null;//disabled to avoid a bunch of pain
+			Message message=event.getChannel().sendMessage(msg).complete();
+			return message;
 	}
 	public static Message sendPrivate(MessageReceivedEvent event, String msg){
-		try{
-			return event.getAuthor().getPrivateChannel().sendMessage(msg);
-		}catch(net.dv8tion.jda.exceptions.RateLimitedException e){
-			try {
-				TimeUnit.MILLISECONDS.sleep(extractNumber(e.getMessage()));
-				return sendPrivate(event,msg);
-			} catch (InterruptedException e1) {}
-		}
-		return sendPrivate(event,msg);
+			Message message=event.getAuthor().getPrivateChannel().sendMessage(msg).complete();
+			return message;
 	}
 	private static Vector<String> splitMessage(String msg){
 		Vector<String> splitMsg=new Vector<String>();
@@ -185,10 +185,10 @@ public class Lib {
 	 */
 	public static String FormatMessage(MessageReceivedEvent event,String msg){
 		return msg.replace("%userMention%", event.getAuthor().getAsMention()).
-				replace("%userName%", event.getAuthorName()).
-				replace("%selfMention%", event.getJDA().getSelfInfo().getAsMention()).
+				replace("%userName%", event.getAuthor().getName()).
+				replace("%selfMention%", event.getJDA().getSelfUser().getAsMention()).
 				replace("%mentionMention%", event.getMessage().getMentionedUsers().size()>0?event.getMessage().getMentionedUsers().get(0).getAsMention():event.getAuthor().getAsMention()).
-				replace("%mentionName%",event.getMessage().getMentionedUsers().size()>0?event.getMessage().getMentionedUsers().get(0).getUsername():event.getAuthor().getUsername());
+				replace("%mentionName%",event.getMessage().getMentionedUsers().size()>0?event.getMessage().getMentionedUsers().get(0).getName():event.getAuthor().getName());
 	}
 	/**
 	 * Formats and send message for guild member joining <br/>
@@ -201,7 +201,8 @@ public class Lib {
 	 * @return message sent
 	 */
 	public static Message sendMessageFormated(GuildMemberJoinEvent event,String msg){
-		return event.getGuild().getPublicChannel().sendMessage(Lib.FormatMessage(event,msg));
+		Message message=event.getGuild().getPublicChannel().sendMessage(Lib.FormatMessage(event,msg)).complete();
+		return message; 
 	}
 	/**
 	 * Formats and send message for guild member joining <br/>
@@ -214,8 +215,8 @@ public class Lib {
 	 * @return string of formatted message to send
 	 */
 	public static String FormatMessage(GuildMemberJoinEvent event,String msg){
-		return msg.replace("%userMention%", event.getUser().getAsMention()).
-		replace("%userName%", event.getUser().getUsername()).
+		return msg.replace("%userMention%", event.getMember().getAsMention()).
+		replace("%userName%", event.getMember().getNickname()).
 		replace("%guildName%",event.getGuild().getName());
 	}
 	//stuff for handling elements in a web page

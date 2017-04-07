@@ -6,7 +6,7 @@ import global.ArgumentParser;
 import global.Main;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
  * Class to handle override commands
  * @author Allen
@@ -21,10 +21,10 @@ public class Overrider {
 	 */
 	public static boolean parseOverride(MessageReceivedEvent event){
 		//check if message is one that activates override
-		if(event.getMessage().isMentioned(event.getJDA().getSelfInfo())&&!(isOverride(event.getMessage().getContent())==null)){
+		if(event.getMessage().isMentioned(event.getJDA().getSelfUser())&&!(isOverride(event.getMessage().getContent())==null)){
 			overrides.put(key(event), System.currentTimeMillis());//put it in list
 			SaveSystem.removeOverride(isOverride(event.getMessage().getContent()));//remove the key so it can't be used again
-			Lib.sendMessage(event, "Override command activated for "+event.getAuthorName()+" 5 minutes");//send message
+			Lib.sendMessage(event, "Override command activated for "+event.getAuthor().getName()+" 5 minutes");//send message
 			return true;
 		}
 		//if message is sent and override is activated

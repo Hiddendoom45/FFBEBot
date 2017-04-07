@@ -5,7 +5,7 @@ import java.util.Vector;
 
 import global.record.Data;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
 public class Award extends OverrideGenerics implements OverrideCommand {
@@ -18,7 +18,7 @@ public class Award extends OverrideGenerics implements OverrideCommand {
 				int lapis=Integer.parseInt(args.get("lapis")[0].trim());
 				user.lapis+=lapis;
 				SaveSystem.setUser(user);
-				Lib.sendMessage(event, lapis+" lapis given to "+event.getMessage().getMentionedUsers().get(0).getUsername());
+				Lib.sendMessage(event, lapis+" lapis given to "+event.getMessage().getMentionedUsers().get(0).getName());
 			}
 			else if(args.containsKey("all")){
 				Vector<Data> users=SaveSystem.getRegisteredUsers();

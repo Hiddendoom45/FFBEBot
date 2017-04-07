@@ -1,10 +1,14 @@
 package global;
 
-import net.dv8tion.jda.JDA;
-import net.dv8tion.jda.JDABuilder;
-import net.dv8tion.jda.Permission;
-import net.dv8tion.jda.entities.Role;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.AccountType;
+import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.JDABuilder;
+import net.dv8tion.jda.core.Permission;
+import net.dv8tion.jda.core.entities.Role;
+import net.dv8tion.jda.core.entities.Game.GameType;
+import net.dv8tion.jda.core.entities.impl.GameImpl;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import util.CounterPool;
 import util.Lib;
 import util.SpamControl;
@@ -44,8 +48,8 @@ public class Main {
 	}
 	public static void startup() throws LoginException, IllegalArgumentException, InterruptedException{
 		try{
-		jda = new JDABuilder().addListener(new BotListener()).setBotToken(Settings.token).buildBlocking();
-		}catch(LoginException e){
+		jda = new JDABuilder(AccountType.BOT).addListener(new BotListener()).setToken(Settings.token).buildBlocking();
+		}catch(LoginException | RateLimitedException e){
 			TimeUnit.MINUTES.sleep(5);
 			Log.log("System", "error on login, retrying in 5 minutes");
 			startup();
@@ -158,7 +162,7 @@ public class Main {
 		case Ready6:game=" in the salt mines|-!help";
 		break;
 		}
-		jda.getAccountManager().setGame(game);
+		jda.getPresence().setGame(new GameImpl(game,"null",GameType.DEFAULT));
 	}
 	public static void handleCommand(CommandParser.CommandContainer cmd){
 		System.out.println(cmd.invoke);
@@ -226,7 +230,7 @@ public class Main {
 	 * @return whether or not user is a mod or not
 	 */
 	private static boolean isMod(MessageReceivedEvent e){
-		List<Role> roles=e.getGuild().getRolesForUser(e.getAuthor());
+		List<Role> roles=e.getMember().getRoles();
 		for(Role r:roles){
 			if(r.hasPermission(Permission.ADMINISTRATOR)){
 				return true;

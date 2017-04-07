@@ -4,7 +4,8 @@ import java.io.File;
 import java.util.HashMap;
 
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import util.Lib;
 public class Upload extends OverrideGenerics implements OverrideCommand {
 
 	@Override
@@ -15,16 +16,16 @@ public class Upload extends OverrideGenerics implements OverrideCommand {
 	@Override
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		if(args.containsKey("d")||args.containsKey("data")){
-			event.getChannel().sendFile(new File(Settings.dataSource), null);
+			Lib.sendFile(event, null, new File(Settings.dataSource));
 		}
 		if(args.containsKey("log")||args.containsKey("l")){
-			event.getChannel().sendFile(new File("FFBEBotLog"), null);
+			Lib.sendFile(event, null, new File("FFBEBotLog"));
 		}
 		if(args.containsKey("override")||args.containsKey("overrides")){
-			event.getChannel().sendFile(new File("overrides"),null);
+			Lib.sendFile(event, null, new File("overrides"));
 		}
 		if(args.containsKey("p")||args.containsKey("preload")){
-			event.getChannel().sendFile(new File(Settings.preloadData), null);
+			Lib.sendFile(event, null, new File(Settings.preloadData));
 		}
 	}
 

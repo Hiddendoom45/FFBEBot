@@ -1,7 +1,10 @@
 package commands;
 
+import java.util.Arrays;
+
 import global.record.Log;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
  * Generic class for commands contains some things to make calling commands easier
  * @author Allen
@@ -11,11 +14,11 @@ public abstract class CommandGenerics implements Command {
 
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", this.getClass()+" called by "+event.getAuthorName()+getGuildName(event));
+		Log.log("status", this.getClass()+" called by "+event.getAuthor().getName()+getGuildName(event)+" args "+Arrays.toString(args));
 		return true;
 	}
 	public static String getGuildName(MessageReceivedEvent event){
-		return (event.isPrivate()?"":" on "+event.getGuild());
+		return (event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild());
 	}
 	@Override
 	public abstract void action(String[] args, MessageReceivedEvent event);
@@ -26,7 +29,7 @@ public abstract class CommandGenerics implements Command {
 	@Override
 	public void executed(boolean sucess, MessageReceivedEvent event) {
 		if(!sucess){
-			Log.log("CMDERROR", this.getClass()+" failed when called by "+event.getAuthorName()+getGuildName(event));
+			Log.log("CMDERROR", this.getClass()+" failed when called by "+event.getAuthor().getName()+getGuildName(event));
 		}
 
 	}

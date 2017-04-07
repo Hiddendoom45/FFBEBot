@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 import global.record.Log;
 import util.Lib;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 public class ViewLog implements OverrideCommand{
 

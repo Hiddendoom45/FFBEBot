@@ -1,6 +1,7 @@
 /override
 /FFBEBotData
 /FFBEBotLog
+/.settings
 /.project
 /.DS_Store
 /.classpath
@@ -9,3 +10,4 @@
 /FFBEBotPreload
 /units/
 /FFBEBotLogFinal**
+/target/

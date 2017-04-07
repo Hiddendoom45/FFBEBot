@@ -6,7 +6,7 @@ import java.util.HashMap;
 import global.Main;
 import global.record.Log;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.Select;
 import util.Selection;
@@ -17,7 +17,7 @@ public class Disable implements OverrideCommand,Selection{
 
 	@Override
 	public boolean called(HashMap<String, String[]> args, MessageReceivedEvent event) {
-		Log.log("System", "Bot attempted to be shut down by "+event.getAuthorName()+" on "+event.getGuild());
+		Log.log("System", "Bot attempted to be shut down by "+event.getAuthor().getName()+" on "+event.getGuild());
 		return true;
 	}
 

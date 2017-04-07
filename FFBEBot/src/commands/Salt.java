@@ -1,19 +1,12 @@
 package commands;
 
 import Library.SaltItems;
-import global.record.Log;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.rng.RandomLibs;
 
-public class Salt implements Command {
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "Sent salt to "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		event.getChannel().sendTyping();
-		return true;
-	}
+public class Salt extends CommandGenerics implements Command {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		if(args.length>0){
@@ -41,10 +34,4 @@ public class Salt implements Command {
 				+ "\tshow everyone you're salty about that unit");
 
 	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-	}
-
 }

@@ -4,9 +4,9 @@ import java.util.HashMap;
 
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.entities.Guild;
-import net.dv8tion.jda.entities.User;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.Guild;
+import net.dv8tion.jda.core.entities.User;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 import util.Lib;
 public class BotMod implements OverrideCommand {
@@ -22,7 +22,7 @@ public class BotMod implements OverrideCommand {
 			for(User u:event.getMessage().getMentionedUsers()){
 				if(!u.isBot()){
 					mod(u.getId(),event.getGuild());
-					Lib.sendMessage(event, "Added user "+u.getUsername()+" as a mod of this bot");
+					Lib.sendMessage(event, "Added user "+u.getName()+" as a mod of this bot");
 				}
 			}
 		}
@@ -30,7 +30,7 @@ public class BotMod implements OverrideCommand {
 			for(User u:event.getMessage().getMentionedUsers()){
 				if(!u.isBot()){
 					unMod(u.getId(),event.getGuild());
-					Lib.sendMessage(event, "Removed user "+u.getUsername()+" as a mod of this bot");
+					Lib.sendMessage(event, "Removed user "+u.getName()+" as a mod of this bot");
 				}
 			}
 		}

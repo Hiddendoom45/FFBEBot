@@ -3,7 +3,8 @@ package util;
 import java.util.HashMap;
 
 import global.record.Log;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
  * Class to handle selection events that allow the user to chose one of multiple options
  * @author Allen
@@ -26,7 +27,7 @@ public class Selector {
 			event.getChannel().sendTyping();//notify message recieved
 			selfPrune(selections.get(key(event)),event);//delete messages in relation to selection
 			selections.remove(key(event));//remove event
-			Lib.sendMessage(event, event.getAuthorName()+" exited menu");//send message to update status
+			Lib.sendMessage(event, event.getAuthor().getName()+" exited menu");//send message to update status
 			return true;
 		}
 		//if typical selection event
@@ -164,10 +165,10 @@ public class Selector {
 	 */
 	private static void selfPrune(Select s,MessageReceivedEvent e){
 		try{
-			e.getChannel().getMessageById(s.messageID).deleteMessage();
-			e.getMessage().deleteMessage();
+			e.getChannel().getMessageById(s.messageID).complete().deleteMessage().submit();
+			e.getMessage().deleteMessage().submit();
 		}catch(Exception e1){
-			if(!e.isPrivate()){
+			if(!e.isFromType(ChannelType.PRIVATE)){
 				Log.log("ERROR", "Bot does not have permission to delete messages on "+e.getGuild().getName());
 			}
 		}

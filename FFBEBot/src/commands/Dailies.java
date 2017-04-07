@@ -4,7 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import global.record.Data;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 
 public class Dailies extends CommandGenerics implements Command{

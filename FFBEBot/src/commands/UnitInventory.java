@@ -14,8 +14,7 @@ import global.record.Data;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.MessageBuilder;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
 import util.rng.summon.SummonImageBuilder;
@@ -70,8 +69,8 @@ public class UnitInventory extends CommandGenerics implements Command{
 			}
 			try{
 			ImageIO.write(build, "PNG", new File("summons.png"));
-			event.getChannel().sendFile(new File("summons.png"),new MessageBuilder().appendString(
-					Lib.FormatMessage(event, "%userMention% has the following units")).build());
+			Lib.sendFile(event, Lib.FormatMessage(event, "%userMention% has the following units"),
+					new File("summons.png"));
 			}catch(Exception e){
 				Log.logError(e);
 			}

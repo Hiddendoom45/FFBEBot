@@ -9,8 +9,8 @@ import java.util.List;
 
 import global.Main;
 import global.record.Log;
-import net.dv8tion.jda.entities.Message.Attachment;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.Message.Attachment;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 public class Update extends OverrideGenerics implements OverrideCommand {
 

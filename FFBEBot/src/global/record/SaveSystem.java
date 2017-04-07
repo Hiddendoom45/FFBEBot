@@ -24,9 +24,10 @@ import XML.Attribute;
 import XML.XMLStAXFile;
 import XML.Elements;
 import global.Main;
-import net.dv8tion.jda.entities.Guild;
-import net.dv8tion.jda.events.guild.member.GuildMemberJoinEvent;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.entities.Guild;
+import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.unit.RedditOverview;
 import util.unit.RedditUnit;
@@ -336,7 +337,7 @@ public class SaveSystem {
 		}
 	}
 	public static String getPrefix(MessageReceivedEvent event){
-		if(event.isPrivate()){
+		if(event.isFromType(ChannelType.PRIVATE)){
 			return Settings.prefix;
 		}
 		else{
@@ -359,7 +360,7 @@ public class SaveSystem {
 		
 	}
 	public static String getModPrefix(MessageReceivedEvent event){
-		if(event.isPrivate()){
+		if(event.isFromType(ChannelType.PRIVATE)){
 			return Settings.modPrefix;
 		}
 		else{

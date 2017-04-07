@@ -2,20 +2,14 @@ package commands;
 
 import java.io.IOException;
 
-import global.Main;
 import global.record.SaveSystem;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.Selection;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
 
 public class Units extends UnitSelection implements Command,Selection {
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Main.log("status", "Searched for unit "+(args.length>0?Lib.extract(args):"")+" by "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild()));
-		return super.called(args,event);
-	}
 	public void sendUnitData(UnitInfo info,MessageReceivedEvent event){
 		String out="";
 		out+="__**"+info.unitName+"**__\t";
@@ -55,10 +49,6 @@ public class Units extends UnitSelection implements Command,Selection {
 				+ "\tdisplay general information about a unit\n"
 				+ "\t[unitname] unit to get info for(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
-	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
 	}
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {

@@ -16,23 +16,16 @@ import Library.summon.Unit;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
-import net.dv8tion.jda.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.Select;
 import util.Selection;
 import util.Selector;
 import util.unit.UnitOverview;
 
-public class Salty implements Command, Selection {
+public class Salty extends CommandGenerics implements Command, Selection {
 	//used to keep track of current selections going on
 	private HashMap<Long,UnitOverview> saved=new HashMap<Long,UnitOverview>();
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		Log.log("status", "Salty image of "+(args.length>0?Lib.extract(args):"")+" sent to "+event.getAuthorName()+(event.isPrivate()?"":" on "+event.getGuild().getName()));
-		event.getChannel().sendTyping();
-		return true;
-	}
-
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		try{
@@ -71,11 +64,6 @@ public class Salty implements Command, Selection {
 				+ "creates a salty image"
 				+ "[unitname] unit you're salty about(has to be a GL unit)(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
-	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-
 	}
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
