@@ -75,6 +75,8 @@ public class Main {
 		setGame(states.Loading);
 		//put commands in map
 		commands.put("ping", new Ping());
+		commands.put("info", new Info());
+		commands.put("servers", new Servers());
 		commands.put("units", new Units());
 		commands.put("unit", new Units());
 		commands.put("runits", new RUnits());
