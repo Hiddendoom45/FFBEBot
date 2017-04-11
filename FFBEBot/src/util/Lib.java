@@ -93,7 +93,7 @@ public class Lib {
 				try {
 					String id=sendMessageFormated(FEvent, FMsg).getId();
 					TimeUnit.SECONDS.sleep(FTimeout);
-					FEvent.getChannel().deleteMessageById(id);
+					FEvent.getChannel().deleteMessageById(id).complete();
 				} catch (Exception e) {
 					Log.log("ERROR", "error sending delayed message");
 					Log.logShortError(e, 5);
