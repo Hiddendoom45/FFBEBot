@@ -11,11 +11,7 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
-import util.unit.reddit.UnitAbility;
-import util.unit.reddit.UnitEnhancements;
-import util.unit.reddit.UnitLB;
-import util.unit.reddit.UnitSpark;
-import util.unit.reddit.UnitStats;
+import util.unit.reddit.*;
 
 public class RedditUnit {
 	private static HashMap<String,String> refImg=new HashMap<String,String>();
@@ -33,6 +29,7 @@ public class RedditUnit {
 	public UnitLB[] LB=new UnitLB[]{};
 	public UnitAbility[] magic=new UnitAbility[]{};
 	public UnitAbility[] special=new UnitAbility[]{};
+	public UnitRelated[] relatedSkills=new UnitRelated[]{};
 	public UnitEnhancements[] enhance=new UnitEnhancements[]{};
 	public UnitSpark[] sparks=new UnitSpark[]{};
 	public RedditUnit(String page){
@@ -149,6 +146,15 @@ public class RedditUnit {
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing special abilites for page "+page);
 				Log.logShortError(e, 5);
+			}
+			try{
+				Element related=Lib.getEleAfter(content.children(), new ElementFilter("h3","Related Skills")).getElementsByTag("tbody").first();
+				relatedSkills=new UnitRelated[related.children().size()];
+				for(int i=0;i<related.children().size();i++){
+					relatedSkills[i]=new UnitRelated(related.child(i));
+				}
+			}catch(Exception e){
+				Log.log("ERROR", "error parsing related skills for page "+page);
 			}
 			try{
 				Elements en=Lib.getEleAfter(content.children(), new ElementFilter("h3","Enhancements")).getElementsByTag("tbody");

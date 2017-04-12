@@ -13,7 +13,7 @@ public class RSkill extends RedditSelection{
 	private void sendAbilities(RedditUnit info, MessageReceivedEvent event){
 		String s=":pencil: Skills for:"+info.title;
 		s+="\n";
-		boolean NLTrigger=false;
+		boolean NLTrigger=false;//trigger to determine writing newlines between 
 		if(info.magic.length>0){
 			NLTrigger=true;
 			s+="__Magic__: [Rarity unlocked|Level unlocked] Name|Effect";
@@ -42,6 +42,17 @@ public class RSkill extends RedditSelection{
 			for(int i=0;i<info.enhance.length;i++){
 				s+="\n"+Lib.pad("[**"+info.enhance[i].gil+"**]", 15)
 				+"*"+info.enhance[i].jpName+"*|"+info.enhance[i].effect+" MP:**"+info.enhance[i].MP+"**";
+			}
+		}
+		if(info.relatedSkills.length>0){
+			if(NLTrigger){
+				s+="\n\n";
+			}
+			else NLTrigger=true;
+			s+="__Related Skills__:[Category]";
+			for(int i=0;i<info.relatedSkills.length;i++){
+				s+="\n"+Lib.pad("[**"+info.relatedSkills[i].category+"**]", 12)
+				+"*"+info.relatedSkills[i].jpName+"*|"+info.relatedSkills[i].effect+" MP:**"+info.relatedSkills[i].MP+"**";
 			}
 		}
 		if(info.sparks.length>0){
