@@ -81,6 +81,10 @@ public class Elements {
 		}
 		return null;
 	}
+	public Elements addAttribute(Attribute attribute){
+		this.attributes.add(attribute);
+		return this;
+	}
 	public Elements setAttributes(ArrayList<Attribute> attributes) {
 		this.attributes = attributes;
 		return this;

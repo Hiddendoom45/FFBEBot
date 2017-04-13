@@ -3,40 +3,32 @@ package global;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.entities.Game.GameType;
 import net.dv8tion.jda.core.entities.impl.GameImpl;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
+import util.CmdControl;
 import util.CounterPool;
-import util.Lib;
+import util.Overrider;
 import util.SpamControl;
 import util.rng.RandomLibs;
 import util.unit.RedditUnit;
 
-import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.security.auth.login.LoginException;
 
+import Library.ModuleEnum;
 import commands.*;
 import commands.mod.*;
 import commands.overide.*;
-import global.ArgumentParser.ArgContainer;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Secrets;
 import global.record.Settings;
 
 public class Main {
-	public static JDA jda;//JDA of bot
-	public static final CommandParser parser=new CommandParser();//parse most commands
-	//hashmaps to easily search for each of the commands
-	public static final HashMap<String,Command> commands=new HashMap<String,Command>();
-	public static final HashMap<String,Command> modCommands=new HashMap<String,Command>();
-	public static final HashMap<String,OverrideCommand> overrides=new HashMap<String,OverrideCommand>();
+	public static JDA jda;//JDA of bot 
+	
 	public static void main(String[] args){
 		try{
 			Main.startup();
@@ -74,62 +66,68 @@ public class Main {
 	public static void setup(){
 		setGame(states.Loading);
 		//put commands in map
-		commands.put("ping", new Ping());
-		commands.put("info", new Info());
-		commands.put("servers", new Servers());
-		commands.put("units", new Units());
-		commands.put("unit", new Units());
-		commands.put("runits", new RUnits());
-		commands.put("runit", new RUnits());
-		commands.put("unitart", new UnitArt());
-		//commands.put("salt", new Salt());//removed due to it not really being good, to be improved
-		commands.put("chancetilith", new Chance());
-		commands.put("summon", new Summon());
-		commands.put("salty", new Salty());
-		commands.put("waifu", new Waifu());
-		commands.put("unitskill", new Skill());
-		commands.put("skill", new Skill());
-		commands.put("runitskill", new RSkill());
-		commands.put("rskill", new RSkill());
-		commands.put("lore", new Lore());
-		commands.put("equipment", new Equipment());
-		commands.put("requipment", new REquipment());
-		commands.put("awaken", new Awaken());
-		commands.put("rawaken", new RAwaken());
-		commands.put("maintenance", new Maintenance());
-		commands.put("invite", new Invite());
-		commands.put("dailies", new Dailies());
-		commands.put("daily", new Dailies());
-		commands.put("lapis", new Lapis());
-		commands.put("give", new Give());
-		commands.put("banner", new Banners());
-		commands.put("banner", new Banners());
-		commands.put("bannerlist", new Banners());
-		commands.put("pull", new Pull());
-		commands.put("unitinventory", new UnitInventory());
-		commands.put("dailypull", new DailyPull());
-		commands.put("11pull", new ElevenPull());
+		String Module=ModuleEnum.Core.toString();
+		CmdControl.addCommand("ping", new Ping(),Module);
+		CmdControl.addCommand("info", new Info(),Module);
+		CmdControl.addCommand("servers", new Servers(), Module);
+		CmdControl.addCommand("invite", new Invite(), Module);
+		
+		Module=ModuleEnum.Exvius.toString();
+		CmdControl.addCommand("units", new Units(), Module);
+		CmdControl.addCommand("unit", new Units(), Module);
+		CmdControl.addCommand("unitart", new UnitArt(), Module);
+		CmdControl.addCommand("unitskill", new Skill(), Module);
+		CmdControl.addCommand("skill", new Skill(), Module);
+		CmdControl.addCommand("lore", new Lore(), Module);
+		CmdControl.addCommand("equipment", new Equipment(), Module);
+		CmdControl.addCommand("awaken", new Awaken(), Module);
+		
+		Module=ModuleEnum.Reddit.toString();
+		CmdControl.addCommand("runit", new RUnits(), Module);
+		CmdControl.addCommand("runit", new RUnits(), Module);
+		CmdControl.addCommand("runitskill", new RSkill(), Module);
+		CmdControl.addCommand("rskill", new RSkill(), Module);
+		CmdControl.addCommand("requipment", new REquipment(), Module);
+		CmdControl.addCommand("rawaken", new RAwaken(), Module);
+		
+		Module=ModuleEnum.Salt.toString();
+		CmdControl.addCommand("summmon", new Summon(), Module);
+		CmdControl.addCommand("salty", new Salty(), Module);
+		CmdControl.addCommand("waifu", new Waifu(), Module);
+		CmdControl.addCommand("maintenance", new Maintenance(), Module);
+		
+		Module=ModuleEnum.Simulation.toString();
+		CmdControl.addCommand("dailies", new Dailies(), Module);
+		CmdControl.addCommand("daily", new Dailies(), Module);
+		CmdControl.addCommand("lapis", new Lapis(), Module);
+		CmdControl.addCommand("give", new Give(), Module);
+		CmdControl.addCommand("banner", new Banners(), Module);
+		CmdControl.addCommand("bannerlist", new Banners(), Module);
+		CmdControl.addCommand("pull", new Pull(),Module);
+		CmdControl.addCommand("unitinventory", new UnitInventory(), Module);
+		CmdControl.addCommand("dailypull", new DailyPull(), Module);
+		CmdControl.addCommand("11pull", new ElevenPull(), Module);
+		
 		//ditto with mod commands(separate maps due to special checks)
-		modCommands.put("prefix", new Prefix());
-		modCommands.put("modprefix", new ModPrefix());
-		modCommands.put("join", new Join());
-		modCommands.put("sleep", new Sleep());
-		modCommands.put("toggle", new Toggle());
+		CmdControl.addModCommand("prefix", new Prefix());
+		CmdControl.addModCommand("modprefix", new ModPrefix());
+		CmdControl.addCommand("join", new Join(), Module);
+		CmdControl.addCommand("sleep", new Sleep(), Module);
+		CmdControl.addCommand("toggle", new Toggle(), Module);
 		//ditto with override commands
-		overrides.put("disable", new Disable());
-		overrides.put("log", new ViewLog());
-		overrides.put("logsave", new SaveLog());
-		overrides.put("botmod", new BotMod());
-		overrides.put("reload", new Reload());
-		overrides.put("thread", new Threading());
-		overrides.put("upload", new Upload());
-		overrides.put("pingtoggle", new PingToggle());
-		overrides.put("download", new Download());
-		overrides.put("logclear", new ClearLog());
-		overrides.put("gamechange", new ChangeGame());
-		overrides.put("award", new Award());
+		Overrider.addOverrideCommand("diable", new Disable());
+		Overrider.addOverrideCommand("log", new ViewLog());
+		Overrider.addOverrideCommand("logsave", new SaveLog());
+		Overrider.addOverrideCommand("botmod", new BotMod());
+		Overrider.addOverrideCommand("reload", new Reload());
+		Overrider.addOverrideCommand("thread", new Threading());
+		Overrider.addOverrideCommand("upload", new Upload());
+		Overrider.addOverrideCommand("download", new Download());
+		Overrider.addOverrideCommand("logclear", new ClearLog());
+		Overrider.addOverrideCommand("gamechange", new ChangeGame());
+		Overrider.addOverrideCommand("award", new Award());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
-			overrides.put("test", new Test());
+			Overrider.addOverrideCommand("test", new Test());
 		}
 		//setup/build various things
 		Log.setup();//
@@ -166,86 +164,7 @@ public class Main {
 		break;
 		}
 		jda.getPresence().setGame(new GameImpl(game,"null",GameType.DEFAULT));
-	}
-	public static void handleCommand(CommandParser.CommandContainer cmd){
-		System.out.println(cmd.invoke);
-		if(commands.containsKey(cmd.invoke)&&!cmd.isModCmd){
-			boolean safe=commands.get(cmd.invoke).called(cmd.args, cmd.e);
-			if(safe){
-				commands.get(cmd.invoke).action(cmd.args, cmd.e);
-				commands.get(cmd.invoke).executed(safe, cmd.e);
-			}
-			else{
-				commands.get(cmd.invoke).executed(safe, cmd.e);
-			}
-		}
-		else if(modCommands.containsKey(cmd.invoke)&&cmd.isModCmd){
-			if(!isMod(cmd.e)){
-				Lib.sendMessage(cmd.e, ":no_entry_sign: You are not authorized to use mod commands here");
-				return;
-			}
-			boolean safe=modCommands.get(cmd.invoke).called(cmd.args, cmd.e);
-			if(safe){
-				modCommands.get(cmd.invoke).action(cmd.args, cmd.e);
-				modCommands.get(cmd.invoke).executed(safe, cmd.e);
-			}
-			else{
-				modCommands.get(cmd.invoke).executed(safe, cmd.e);
-			}
-		}
-		else if(cmd.invoke.equals("help")){
-			if(cmd.isModCmd){
-				if(cmd.args.length>0&&modCommands.containsKey(cmd.args[0])){
-					modCommands.get(cmd.args[0]).help(cmd.e);
-				}
-				else{
-					Lib.printModHelp(cmd.e);
-				}
-			}
-			else{
-				if(cmd.args.length>0&&commands.containsKey(cmd.args[0])){
-					commands.get(cmd.args[0]).help(cmd.e);
-				}
-				else{
-					Lib.printHelp(cmd.e);
-				}
-			}
-		}
-	}
-	public static boolean handleOverride(ArgContainer args,MessageReceivedEvent event){
-		if(overrides.containsKey(args.command)){
-			if(args.args.containsKey("help")){
-				overrides.get(args.command).help(event);
-				return true;
-			}
-			boolean safe=overrides.get(args.command).called(args.args, event);
-			if(safe){
-				overrides.get(args.command).action(args.args, event);
-			}
-			overrides.get(args.command).executed(safe, event);
-			return true;
-		}
-		return false;
-	}
-	/**
-	 * checks if user is mod and has the admin privilege, or has been set to bot mod through overrides
-	 * @param e message received from user
-	 * @return whether or not user is a mod or not
-	 */
-	private static boolean isMod(MessageReceivedEvent e){
-		List<Role> roles=e.getMember().getRoles();
-		for(Role r:roles){
-			if(r.hasPermission(Permission.ADMINISTRATOR)){
-				return true;
-			}
-		}
-		for(String s:SaveSystem.getGuild(e.getGuild().getId()).modded){
-			if(e.getAuthor().getId().equals(s)){
-				return true;
-			}
-		}
-		return false;
-	}
+	}	
 	public static void log(String type,String msg){
 		Log.log(type, msg);
 	}

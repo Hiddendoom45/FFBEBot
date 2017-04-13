@@ -35,7 +35,7 @@ public class Lib {
 				+ "__**Modules**__\n"
 				+ "**Core** - `ping` `invite`\n"
 				+ "Core commands for bot\n\n"
-				+ "**Exvicus** - `awaken` `equipment` `lore` `skill` `unitart` `unit`\n"
+				+ "**Exvius** - `awaken` `equipment` `lore` `skill` `unitart` `unit`\n"
 				+ "Commands to extract info from Exvicus wiki(best for GL players)\n\n"
 				+ "**Reddit** - `rawaken` `requipment` `rskill` `runit`\n"
 				+ "Commands to extract info from Reddit wiki(best for JP players or GL players looking for future info)\n\n"
@@ -361,7 +361,7 @@ public class Lib {
 	}
 	//reading stuff for custom XML class
 	/**
-	 * A wrapper for getting an array for an element easily, assuming the arrays is text separated by ','
+	 * A wrapper for getting an array for an element easily
 	 * @param ele element to search for array
 	 * @param tagname name of the element whose text is the array
 	 * @return
@@ -371,6 +371,15 @@ public class Lib {
 		int i=0;
 		for(XML.Elements e:ele.getChilds(tagname)){
 			out[i]=e.getText();
+			i++;
+		}
+		return out;
+	}
+	public static XML.Elements[] elementArray(XML.Elements ele,String tagname){
+		XML.Elements[] out=new XML.Elements[ele.getChilds(tagname).size()];
+		int i=0;
+		for(XML.Elements e:ele.getChilds(tagname)){
+			out[i]=e;
 			i++;
 		}
 		return out;

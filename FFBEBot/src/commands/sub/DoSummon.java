@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import Library.summon.banner.Banner;
-import global.Main;
 import global.record.Settings;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import util.CmdControl;
 import util.Select;
 import util.Selection;
 import util.Selector;
@@ -20,7 +20,7 @@ public class DoSummon implements Selection{
 	HashMap<Long,SummonData> save=new HashMap<Long,SummonData>();
 	public DoSummon(MessageReceivedEvent event,Banner banner,SummonTypes type){
 		if(type==SummonTypes.Elevenpull){
-			Main.commands.get(type.name).action(new String[]{banner.toString()}, event);
+			CmdControl.commandAction(event, type.name, new String[]{banner.toString()});
 			return;
 		}
 		Select select=new Select(new ArrayList<String>(),Settings.ID,this,new ArrayList<String>(),"How many summons do you want to do?");
@@ -30,9 +30,7 @@ public class DoSummon implements Selection{
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		SummonTypes type=save.get(chosen.ID).type;
-		Main.commands.get(type.name).action(
-				new String[]{chosen.selectedText,save.get(chosen.ID).banner.toString()},
-				event);
+		CmdControl.commandAction(event, type.name, new String[]{chosen.selectedText,save.get(chosen.ID).banner.toString()});
 		save.remove(chosen.ID);
 	}
 

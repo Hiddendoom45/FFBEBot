@@ -8,6 +8,7 @@ import net.dv8tion.jda.core.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
+import util.CmdControl;
 import util.Overrider;
 import util.Selector;
 
@@ -17,16 +18,9 @@ public class BotListener extends ListenerAdapter{
 		try{
 			if(Overrider.parseOverride(event))return;//test for override commands
 			if(Selector.parseSelection(event))return;//test for pending selections
-			//test for commands
-			else if(event.getMessage().getContent().startsWith(SaveSystem.getPrefix(event))&&event.getMessage().getAuthor().getId()!=event.getJDA().getSelfUser().getId()){
-				Main.handleCommand(Main.parser.parse(event.getMessage().getContent(), event));
-			}
-			//same for mod commands
-			else if(event.getMessage().getContent().startsWith(SaveSystem.getModPrefix(event))&&event.getMessage().getAuthor().getId()!=event.getJDA().getSelfUser().getId()){
-				Main.handleCommand(Main.parser.parse(event.getMessage().getContent(), event));
-			}
+			if(CmdControl.parseCommands(event))return;//test for commands
 			//base commands that are for prefixes
-			else if(event.getMessage().isMentioned(event.getJDA().getSelfUser())&&!event.getMessage().mentionsEveryone()){
+			if(event.getMessage().isMentioned(event.getJDA().getSelfUser())&&!event.getMessage().mentionsEveryone()){
 				if(event.getMessage().getContent().toLowerCase().contains("modprefix")){
 					util.Lib.sendMessage(event, "mod prefix for server:"+SaveSystem.getModPrefix(event));
 				}
