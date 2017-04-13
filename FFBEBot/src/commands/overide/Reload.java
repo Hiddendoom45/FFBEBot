@@ -35,7 +35,7 @@ public class Reload implements OverrideCommand {
 					Counter count=new Counter("Setting up preloader...",event);
 					trigger=true;
 					Main.setGame(states.Loading);
-					SaveSystem.preloadExvicus(count);
+					SaveSystem.preloadExvius(count);
 				}
 				if(args.containsKey("img")){
 					Counter count=new Counter("Setting up preloader...",event);
@@ -43,12 +43,12 @@ public class Reload implements OverrideCommand {
 					Main.setGame(states.Loading);
 					SaveSystem.preloadSummons(count);
 				}
-				if(!trigger){//reload everything if nothng specified
+				if(!trigger){//reload everything if nothing specified
 					Counter count=new Counter("Setting up preloader...",event);
 					Main.setGame(states.Loading);
 					SaveSystem.preloadReddit(count);
 					count=new Counter("Setting up preloader...",event);
-					SaveSystem.preloadExvicus(count);
+					SaveSystem.preloadExvius(count);
 					count=new Counter("Setting up preloader...",event);
 					SaveSystem.preloadSummons(count);
 				}

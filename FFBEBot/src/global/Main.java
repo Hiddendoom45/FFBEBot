@@ -120,7 +120,6 @@ public class Main {
 		overrides.put("log", new ViewLog());
 		overrides.put("logsave", new SaveLog());
 		overrides.put("botmod", new BotMod());
-		overrides.put("update", new Update());
 		overrides.put("reload", new Reload());
 		overrides.put("thread", new Threading());
 		overrides.put("upload", new Upload());
@@ -150,6 +149,8 @@ public class Main {
 		case Maintenance:game=" undergoing maintenance";
 		break;
 		case Dead:game=" dead...";
+		break;
+		case Update:game=" updates";
 		break;
 		case Ready1:game=" with RNG|-!help";
 		break;
@@ -257,6 +258,7 @@ public class Main {
 		Loading,
 		Maintenance,
 		Dead,
+		Update,
 		Ready1,
 		Ready2,
 		Ready3,

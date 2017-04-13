@@ -1,69 +1,70 @@
 package commands.overide;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
-import java.util.List;
 
 import global.Main;
+import global.Main.states;
 import global.record.Log;
-import net.dv8tion.jda.core.entities.Message.Attachment;
+import global.record.SaveSystem;
+import global.record.Settings;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import util.Counter;
+import util.Lib;
 
 public class Update extends OverrideGenerics implements OverrideCommand {
 
 	@Override
-	public boolean called(HashMap<String, String[]> args, MessageReceivedEvent event) {
-		if(event.getMessage().getAttachments().size()>0){
-			List<Attachment> atts=event.getMessage().getAttachments();
-			for(Attachment a:atts){
-				if(a.getFileName().endsWith(".jar")){
-					return ownerValidate(event);
-				}
-			}
-		}
-		return false;
-	}
-
-	@Override
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
-		List<Attachment> atts=event.getMessage().getAttachments();
-		for(Attachment a:atts){
-			//if(a.getFileName().endsWith(".jar")){
-				try {
-					if(new File("FFBEBots.jar").exists()){
-						Files.delete(new File("FFBEBots.jar").toPath());
+		Settings.executor.execute(new Runnable(){
+			public void run(){
+				try{
+					boolean trigger=false;
+					boolean updated=false;//if anything was updated
+					if(args.containsKey("r")){
+						Counter count=new Counter("Setting up Update...",event);
+						trigger=true;
+						Main.setGame(states.Update);
+						updated=SaveSystem.updateReddit(count)==true?true:updated;
 					}
-					a.download(new File("FFBEBots.jar"));
-					@SuppressWarnings("unused")
-					Process p;
-					if(System.getProperty("os.name").equals("Mac OS X")){
-						Files.move(new File("FFBEBots.jar").toPath(), new File("FFBEBot.jar").toPath(), StandardCopyOption.REPLACE_EXISTING);
-						p = Runtime.getRuntime().exec("java -jar FFBEBot.jar");
+					if(args.containsKey("e")){
+						Counter count=new Counter("Setting up Update...",event);
+						trigger=true;
+						Main.setGame(states.Update);
+						updated=SaveSystem.updateExvius(count)==true?true:updated;
+					}
+					if(args.containsKey("img")){
+						trigger=true;
+						Main.setGame(states.Update);
+						updated=SaveSystem.updateSummons()==true?true:updated;
+					}
+					if(!trigger){
+						Main.setGame(states.Update);
+						Counter count=new Counter("Setting up Update...",event);
+						updated=SaveSystem.updateReddit(count)==true?true:updated;
+						count=new Counter("Setting up Update...",event);
+						updated=SaveSystem.updateExvius(count)==true?true:updated;
+						count.setMessage("Updating Summons...");
+						updated=SaveSystem.updateSummons()==true?true:updated;
+						count.terminate();
+					}
+					
+					Main.setGame(states.randomReady());
+					if(updated){
+						SaveSystem.writeData();
+						Lib.sendMessage(event, "Data Updated");
 					}
 					else{
-						//p=Runtime.getRuntime().exec("sleep 60 && rename "+location+"FFBEBots.jar "+location+"FFBEBot.jar && java -jar FFBEBot.jar");
-						p=Runtime.getRuntime().exec("java -jar IHateWindows.jar");
+						Lib.sendMessage(event, "Everything Already up to Date");
 					}
-					Main.quit();
-					return;
-				} catch (IOException e) {
+					}catch(Exception e){
 					Log.logError(e);
 				}
-			//}
-		}
+			}
+		});
 	}
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
 		// TODO Auto-generated method stub
 
 	}

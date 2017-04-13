@@ -61,7 +61,7 @@ public class SaveSystem {
 			file.startWriter();
 			file.endWriter();
 			preloadSummons(null);
-			preloadExvicus(null);
+			preloadExvius(null);
 			preloadReddit(null);
 			writeData();
 		}
@@ -69,7 +69,7 @@ public class SaveSystem {
 	}
 	/**
 	 * preloads reddit data
-	 * @param count counter used to count progress
+	 * @param count counter to use if triggered manually to count progress
 	 */
 	public static void preloadReddit(Counter count){
 		
@@ -96,23 +96,57 @@ public class SaveSystem {
 		Data.redditUnits=overviews.toJson(units);
 		Log.log("System", "Reddit Overview Loaded");
 	}
-	public static RedditUnit getRedditUnit(String name){
-		return new Gson().fromJson(new JsonParser().parse(Data.redditUnits).getAsJsonObject().get(name),RedditUnit.class);
+	/**
+	 * updates data with any new units
+	 */
+	public static boolean updateReddit(Counter count){
+		Gson overviews=new Gson();
+		RedditOverview.unitData[] overview=RedditOverview.preloadReddit();
+		Data.redditO=overviews.toJson(overview);
+		JsonObject units=new JsonParser().parse(Data.redditUnits).getAsJsonObject();
+		if(overview.length-units.entrySet().size()==0){
+			count.terminate();
+			return false;
+		}
+		if(!(count==null)){count.setMessage("Updating Reddit Units...(%count%/"+(overview.length-units.entrySet().size())+")");}
+		int index=0;
+		for(RedditOverview.unitData u:overview){
+			try{
+				if(units.get(u.name)==null){//only add if it's not a unit that it has had before
+					index++;
+					units.add(u.name, overviews.toJsonTree(new RedditUnit(u.unitUrl)));
+					System.out.println("updated "+u.name);
+					if(!(count==null)){count.setI(index);}
+				}
+			}catch(Exception e){
+				Log.logError(e);
+			}
+		}
+		
+		if(!(count==null)){count.terminate();}
+		Data.redditUnits=overviews.toJson(units);
+		Log.log("System", "Reddit Overview Updated");
+		return true;
 	}
-	public static void preloadExvicus(Counter count){
+	
+	/**
+	 * preloads exvicus units
+	 * @param count counter to use if triggered manually to count progress
+	 */
+	public static void preloadExvius(Counter count){
 		Gson overviews=new Gson();
 		UnitOverview.unitData[] overview=UnitOverview.preload();
 		Data.exvicusO=overviews.toJson(overview);
 		JsonObject units=new JsonObject();
 		int index=0;
-		if(!(count==null)){count.setMessage("Loading Exvicus Units...(%count%/"+overview.length+")");}
+		if(!(count==null)){count.setMessage("Loading Exvius Units...(%count%/"+overview.length+")");}
 		
 		for(UnitOverview.unitData u:overview){
 			try{
 				units.add(u.name,overviews.toJsonTree(new UnitInfo(u.unitUrl)));
 			}catch(Exception e){
 				Log.logError(e);
-				units.add(u.name, overviews.toJsonTree(getExvicusUnit(u.name)));
+				units.add(u.name, overviews.toJsonTree(getExviusUnit(u.name)));
 			}
 			System.out.println("preloaded "+u.name);
 			index++;
@@ -120,34 +154,39 @@ public class SaveSystem {
 		}
 		if(!(count==null)){count.terminate();}
 		Data.exvicusUnits=overviews.toJson(units);
-		Log.log("System", "Exvicus Overview loaded");
+		Log.log("System", "Exvius Overview Loaded");
 	}
-	public static UnitInfo getExvicusUnit(String name){
-		return new Gson().fromJson(new JsonParser().parse(Data.exvicusUnits).getAsJsonObject().get(name),UnitInfo.class);
-	}
-	public static void writeData(){
-		XMLStAXFile file=new XMLStAXFile(new File(Settings.preloadData));
-		file.readXMLFile();
-		Elements doc=file.parseDocToElements();
-		if(doc==null){
-			doc=new Elements("root");
+	public static boolean updateExvius(Counter count){
+		Gson overviews=new Gson();
+		UnitOverview.unitData[] overview=UnitOverview.preload();
+		Data.exvicusO=overviews.toJson(overview);
+		JsonObject units=new JsonParser().parse(Data.exvicusUnits).getAsJsonObject();
+		if(overview.length-units.entrySet().size()==0){
+			count.terminate();
+			return false;
 		}
-		file.endReader();
-		try{
-		for(int i=0;i<doc.getChilds().size();i++){
-			if(doc.getChilds().get(i).getTagName().equals("preload")){
-				doc.getChilds().remove(i);
+		int index=0;
+		if(!(count==null)){count.setMessage("Updating Exvius Units...(%count%/"+(overview.length-units.entrySet().size())+")");}
+		
+		for(UnitOverview.unitData u:overview){
+			try{
+				if(units.get(u.name)==null){
+					units.add(u.name, overviews.toJsonTree(new UnitInfo(u.unitUrl)));
+					if(!(count==null)){count.setI(index);}
+				}
+			}catch(Exception e){
+				Log.logError(e);
 			}
 		}
-		}catch(Exception e){
-			Log.log("ERRROR", "no elements to remove for preload");
-		}
-		doc.add(Data.parseDataToElements());
-		if(!file.writeXMLFile())Log.log("XMLERR", "something went wrong with starting to write new file");
-		if(!file.startWriter())Log.log("XMLERR", "something went wrong with starting the XML writer");
-		if(!file.writeElement(doc))Log.log("XMLERR", "something went wrong wtih writing the document");		
-		if(!file.endWriter())Log.log("XMLERR", "something went wrong with closing the XML writer");
+		if(!(count==null)){count.terminate();}
+		Data.exvicusUnits=overviews.toJson(units);
+		Log.log("System", "Exvius Overview Updated");
+		return true;
 	}
+	/**
+	 * preloads summons
+	 * @param count counter to use if triggered manually to count progress
+	 */
 	public static void preloadSummons(Counter count){
 		int index=0;
 		if(!(count==null)){count.setMessage("Loading Summoned Units...(%count%/"+Unit.values().length+")");}
@@ -167,7 +206,7 @@ public class SaveSystem {
 				}
 				i++;
 			}
-
+	
 			for(String url:u.upgradeurl){
 				try{
 				URL input=new URL(url);
@@ -184,27 +223,92 @@ public class SaveSystem {
 		}
 		if(!(count==null)){count.terminate();}
 	}
+	public static boolean updateSummons(){
+		new File("units").mkdir();
+		if(new File("units").listFiles().length-Unit.values().length==0){
+			return false;
+		}
+		for(Unit u:Unit.values()){
+			if(!new File("units/"+u.name).exists()){
+				int i=u.base;
+				for(String url:u.url){
+					new File("units/"+u.name).mkdir();
+					try{
+						URL input=new URL(url);
+						HttpURLConnection connection = (HttpURLConnection) input.openConnection();
+						connection.setRequestProperty("User-Agent",Settings.UA);
+						BufferedImage image=ImageIO.read(connection.getInputStream());
+						ImageIO.write(image, "PNG",new File("units/"+u.name+"/"+i+".png"));
+					}catch(Exception e){
+						Log.logError(e);
+					}
+					i++;
+				}
+
+				for(String url:u.upgradeurl){
+					try{
+						URL input=new URL(url);
+						HttpURLConnection connection = (HttpURLConnection) input.openConnection();
+						connection.setRequestProperty("User-Agent",Settings.UA);
+						ImageIO.write(ImageIO.read(connection.getInputStream()), "PNG",new File("units/"+u.name+"/"+i+".png"));
+					}catch(Exception e){
+						Log.logError(e);
+					}
+					i++;
+				}
+			}
+		}
+		return true;
+	}
+	/**
+	 * Gets reddit unit from the JSON string
+	 * @param name name of the unit to get
+	 * @return Reddit unit object of the unit
+	 */
+	public static RedditUnit getRedditUnit(String name){
+		return new Gson().fromJson(new JsonParser().parse(Data.redditUnits).getAsJsonObject().get(name),RedditUnit.class);
+	}
+	/**
+	 * Gets exvicus unit from the JSON string
+	 * @param name name of the unit to get
+	 * @return Unit info object of the unit
+	 */
+	public static UnitInfo getExviusUnit(String name){
+		return new Gson().fromJson(new JsonParser().parse(Data.exvicusUnits).getAsJsonObject().get(name),UnitInfo.class);
+	}
+	/**
+	 * Writes preloaded data
+	 */
+	public static void writeData(){
+		XMLStAXFile file=new XMLStAXFile(new File(Settings.preloadData));
+		file.readXMLFile();
+		Elements doc=file.parseDocToElements();
+		if(doc==null){
+			doc=new Elements("root");
+		}
+		file.endReader();
+		try{
+		for(int i=0;i<doc.getChilds().size();i++){
+			if(doc.getChilds().get(i).getTagName().equals("preload")){
+				doc.getChilds().remove(i);
+			}
+		}
+		}catch(Exception e){
+			Log.log("ERROR", "no elements to remove for preload");
+		}
+		doc.add(Data.parseDataToElements());
+		if(!file.writeXMLFile())Log.log("XMLERR", "something went wrong with starting to write new file");
+		if(!file.startWriter())Log.log("XMLERR", "something went wrong with starting the XML writer");
+		if(!file.writeElement(doc))Log.log("XMLERR", "something went wrong wtih writing the document");		
+		if(!file.endWriter())Log.log("XMLERR", "something went wrong with closing the XML writer");
+	}
 	/**
 	 * Loads saved data from file
 	 */
 	public static void load(){
-		Settings.guilds.clear();
+		loadGuilds();
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();
-		try{
-		ArrayList<Elements> guilds=file.parseToElements("guild");
-		for(Elements e:guilds){
-			try{
-			Settings.guilds.put(e.getAttribute("id").getValue(), new Settings(e));
-			}catch(Exception e1){
-				Log.log("ERROR", "error putting guild(likely missing id attribute)"+e);
-				Log.logError(e1);
-			}
-		}
-		}catch(Exception e){
-			Log.log("ERROR", "error loading guilds");
-		}
-		file.resetReader();
 		ArrayList<Elements> users=file.parseToElements("user");
 		for(Elements e:users){
 			try{
@@ -220,6 +324,28 @@ public class SaveSystem {
 			Data.setData(preload);
 		}catch(Exception e){
 			Log.log("ERROR", "error loading preload data");
+		}
+		file.endReader();
+	}
+	/**
+	 * Loads guild info from file
+	 */
+	public static void loadGuilds(){
+		Settings.guilds.clear();
+		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
+		file.readXMLFile();
+		try{
+		ArrayList<Elements> guilds=file.parseToElements("guild");
+		for(Elements e:guilds){
+			try{
+			Settings.guilds.put(e.getAttribute("id").getValue(), new Settings(e));
+			}catch(Exception e1){
+				Log.log("ERROR", "error putting guild(likely missing id attribute)"+e);
+				Log.logError(e1);
+			}
+		}
+		}catch(Exception e){
+			Log.log("ERROR", "error loading guilds");
 		}
 		file.endReader();
 	}

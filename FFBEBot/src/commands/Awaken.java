@@ -32,14 +32,14 @@ public class Awaken extends UnitSelection {
 	}
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendAwakening(SaveSystem.getExvicusUnit(Ounit.getData(0).name),rarity,event);
+		sendAwakening(SaveSystem.getExviusUnit(Ounit.getData(0).name),rarity,event);
 	}
 
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendAwakening(SaveSystem.getExvicusUnit(Ounit.getData(selection).name),rarity,event);
+		sendAwakening(SaveSystem.getExviusUnit(Ounit.getData(selection).name),rarity,event);
 	}
 
 	@Override

@@ -34,13 +34,13 @@ public class Equipment extends UnitSelection{
 	}
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendEquipment(SaveSystem.getExvicusUnit(Ounit.getData(0).name),event);
+		sendEquipment(SaveSystem.getExviusUnit(Ounit.getData(0).name),event);
 	}
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendEquipment(SaveSystem.getExvicusUnit(Ounit.getData(selection).name),event);
+		sendEquipment(SaveSystem.getExviusUnit(Ounit.getData(selection).name),event);
 		
 	}
 
