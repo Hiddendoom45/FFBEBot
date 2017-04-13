@@ -29,6 +29,7 @@ public class ModPrefix implements Command {
 				guild.guildModPrefix=args[0];
 				SaveSystem.setSetting(guild);
 				TimeUnit.SECONDS.sleep(1);
+				SaveSystem.loadGuilds();
 				Lib.sendMessage(event, "Mod Prefix changed to:"+args[0]);
 			}
 			else{

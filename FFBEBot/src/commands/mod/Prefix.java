@@ -28,6 +28,7 @@ public class Prefix implements Command{
 			guild.guildPrefix=args[0];
 			SaveSystem.setSetting(guild);
 			TimeUnit.SECONDS.sleep(1);
+			SaveSystem.loadGuilds();
 			Lib.sendMessage(event, "Prefix changed to:"+args[0]);
 		}
 		else{

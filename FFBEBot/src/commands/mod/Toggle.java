@@ -53,6 +53,7 @@ public class Toggle implements Command, Selection {
 		SaveSystem.setSetting(guild);
 		try {
 			TimeUnit.SECONDS.sleep(1);
+			SaveSystem.loadGuilds();
 		} catch (InterruptedException e) {Log.logError(e);}
 	}
 	private ArrayList<String> getNames(String id){
