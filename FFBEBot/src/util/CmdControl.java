@@ -106,7 +106,7 @@ public class CmdControl {
 	private static boolean isMod(MessageReceivedEvent e){
 		List<Role> roles=e.getMember().getRoles();
 		for(Role r:roles){
-			if(r.hasPermission(Permission.ADMINISTRATOR)){
+			if(r.hasPermission(Permission.ADMINISTRATOR)||r.hasPermission(Permission.MANAGE_SERVER)||r.hasPermission(Permission.MANAGE_CHANNEL)||r.hasPermission(Permission.MESSAGE_MANAGE)){
 				return true;
 			}
 		}
@@ -115,6 +115,7 @@ public class CmdControl {
 				return true;
 			}
 		}
+		if(e.getAuthor().getId().equals(Settings.ownerID))return true;;
 		return false;
 	}
 	private static boolean CommandEnabled(MessageReceivedEvent event, String command){
