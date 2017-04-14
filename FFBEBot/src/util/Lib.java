@@ -411,10 +411,10 @@ public class Lib {
 			return normal;
 		}
 		if(normal){
-			return ele.getChilds(tagname).get(0).getText().equals("false")?false:true;
+			return ele.getChilds(tagname).get(0).getText().trim().equals("false")?false:true;
 		}
 		else{
-			return ele.getChilds(tagname).get(0).getText().equals("true")?true:false;
+			return ele.getChilds(tagname).get(0).getText().trim().equals("true")?true:false;
 		}
 	}
 	/**

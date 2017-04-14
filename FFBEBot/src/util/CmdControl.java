@@ -33,10 +33,10 @@ public class CmdControl {
 				return handleCommand(parser.parse(content, event));
 			}
 		}
-		else if(content.startsWith(SaveSystem.getModPrefix(event))){
+		if(content.startsWith(SaveSystem.getModPrefix(event))){
 			return handleCommand(parser.parse(content, event));
 		}
-		return true;
+		return false;
 	}
 	public static void commandAction(MessageReceivedEvent event, String command, String[] args){
 		if(CommandEnabled(event,command)){
@@ -121,6 +121,7 @@ public class CmdControl {
 		if(event.getChannelType()==ChannelType.PRIVATE)return true;
 		Settings guild=SaveSystem.getGuild(event.getGuild().getId());
 		ModuleController ctrl=guild.disabled.get(modules.get(command));
+		System.out.println(ctrl);
 		if(ctrl==null)return true;
 		return ctrl.enabled(event.getChannel().getId());
 	}

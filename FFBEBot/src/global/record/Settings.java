@@ -59,7 +59,7 @@ public class Settings {
 		modded=Lib.textArray(root,"modded");
 		tJoinMsg=Lib.getBooleanSetting(false,root,"tJoin");
 		tJoinPM=Lib.getBooleanSetting(false,root,"tJoinPM");
-		for(Elements e:Lib.elementArray(root, "disabledModule")){
+		for(Elements e:Lib.elementArray(root, "moduleControl")){
 			disabled.put(e.getAttribute("name").getValue(), new ModuleController(e));
 		}
 	}
@@ -116,7 +116,8 @@ public class Settings {
 			root.add(mod);
 		}
 		
-		for(String s:disabled.keySet()){
+		for(String s:this.disabled.keySet()){
+			System.out.println(disabled);
 			root.add(this.disabled.get(s).parseToElements());
 		}
 		

@@ -111,11 +111,12 @@ public class Main {
 		//ditto with mod commands(separate maps due to special checks)
 		CmdControl.addModCommand("prefix", new Prefix());
 		CmdControl.addModCommand("modprefix", new ModPrefix());
-		CmdControl.addCommand("join", new Join(), Module);
-		CmdControl.addCommand("sleep", new Sleep(), Module);
-		CmdControl.addCommand("toggle", new Toggle(), Module);
+		CmdControl.addModCommand("join", new Join());
+		CmdControl.addModCommand("sleep", new Sleep());
+		CmdControl.addModCommand("toggle", new Toggle());
+		CmdControl.addModCommand("gldisable", new DisableGlobal());
 		//ditto with override commands
-		Overrider.addOverrideCommand("diable", new Disable());
+		Overrider.addOverrideCommand("disable", new Disable());
 		Overrider.addOverrideCommand("log", new ViewLog());
 		Overrider.addOverrideCommand("logsave", new SaveLog());
 		Overrider.addOverrideCommand("botmod", new BotMod());

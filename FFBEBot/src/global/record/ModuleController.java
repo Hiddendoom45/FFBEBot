@@ -14,7 +14,7 @@ import util.Lib;
 public class ModuleController {
 	private String name;
 	private Vector<String> channels=new Vector<String>();
-	private boolean globalDisable;
+	private boolean globalDisable=false;
 	public ModuleController(String moduleName){
 		name=moduleName;
 	}
@@ -42,6 +42,7 @@ public class ModuleController {
 		return this;
 	}
 	public boolean enabled(String channel){
+		System.out.println(globalDisable);
 		if(channels.contains(channel)){
 			return globalDisable;
 		}else{
@@ -56,7 +57,7 @@ public class ModuleController {
 		for(String s:this.channels){
 			text+=","+s;
 		}
-		channels.setText(text.substring(1));
+		if(text.length()>0)channels.setText(text.substring(1));
 		root.add(channels);
 		
 		Elements globalDisable=new Elements("globalDisable").setText(""+this.globalDisable);
