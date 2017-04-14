@@ -7,60 +7,63 @@ import commands.Command;
 import global.record.ModuleController;
 import global.record.SaveSystem;
 import global.record.Settings;
+import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.Select;
 import util.Selection;
 import util.Selector;
 
-public class DisableGlobal extends ModGenerics implements Command,Selection {
+public class Disable extends ModGenerics implements Selection, Command{
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		ArrayList<String> values=new ArrayList<String>();
-		for(ModuleEnum m:ModuleEnum.values()){
-			values.add(m.toString());
+		for(ModuleEnum mod:ModuleEnum.values()){
+			values.add(mod.toString());
 		}
 		ArrayList<String> names=new ArrayList<String>();
 		for(String s:values){
-			names.add(s+"["+(enabled(event.getGuild().getId(),s)?"enabled":"disabled")+"]");
+			names.add(s+"["+(CommandEnabled(event,s)?"enabled":"disabled")+"]");
 		}
-		Select select=new Select(values, System.currentTimeMillis(), this, names, "Select Which Module you want to disable/enable globally [current status]:");
+		Select select=new Select(values, System.currentTimeMillis(), this, names, "Select which module you would like to disable/enable in this channel [current status]:");
 		Selector.setSelection(select, event);
 	}
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s=SaveSystem.getPrefix(event)+"gldisable\n"
-				+ "\tdisable/enable a module across all channels\n"
-				+ "\ta module may be renabled/disabled induvidally in a specific channel using `"+SaveSystem.getModPrefix(event)+"disable`";
+		String s=SaveSystem.getModPrefix(event)+"disable\n"
+				+ "\tdisables a module in the current channel\n"
+				+ "\tto disable a module across all channels use `"+SaveSystem.getModPrefix(event)+"disable`";
 		Lib.sendMessage(event, s);
 	}
 
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		Settings guild=SaveSystem.getGuild(event.getGuild().getId());
-		String module=chosen.options.get(chosen.selected).toString();
+		String module=chosen.options.get(chosen.selected);
 		if(guild.disabled.containsKey(module)){
-			guild.disabled.get(module).toggleGlobalDisable();
+			guild.disabled.get(module).toggle(event.getChannel().getId());
 		}
 		else{
-			guild.disabled.put(module, new ModuleController(module).toggleGlobalDisable());
+			guild.disabled.put(module, new ModuleController(module).toggle(event.getChannel().getId()));
 		}
 		SaveSystem.setSetting(guild);
 		SaveSystem.loadGuilds();
+		
 	}
 
 	@Override
 	public int getInputType() {
 		return 0;
 	}
-	private boolean enabled(String guildID, String module){
-		Settings guild=SaveSystem.getGuild(guildID);
+	private static boolean CommandEnabled(MessageReceivedEvent event, String module){
+		if(event.getChannelType()==ChannelType.PRIVATE)return true;
+		Settings guild=SaveSystem.getGuild(event.getGuild().getId());
 		ModuleController ctrl=guild.disabled.get(module);
 		System.out.println(ctrl);
 		if(ctrl==null)return true;
-		return ctrl.enabledGlobal();
+		return ctrl.enabled(event.getChannel().getId());
 	}
 
 }

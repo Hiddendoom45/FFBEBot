@@ -49,6 +49,9 @@ public class ModuleController {
 			return !globalDisable;
 		}
 	}
+	public boolean enabledGlobal(){
+		return !globalDisable;
+	}
 	public Elements parseToElements(){
 		Elements root=new Elements("moduleControl").addAttribute(new Attribute("name",name));
 

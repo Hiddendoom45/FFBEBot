@@ -114,9 +114,10 @@ public class Main {
 		CmdControl.addModCommand("join", new Join());
 		CmdControl.addModCommand("sleep", new Sleep());
 		CmdControl.addModCommand("toggle", new Toggle());
-		CmdControl.addModCommand("gldisable", new DisableGlobal());
+		CmdControl.addModCommand("glmodules", new DisableGlobal());
+		CmdControl.addModCommand("modules", new commands.mod.Disable());
 		//ditto with override commands
-		Overrider.addOverrideCommand("disable", new Disable());
+		Overrider.addOverrideCommand("disable", new commands.overide.Disable());
 		Overrider.addOverrideCommand("log", new ViewLog());
 		Overrider.addOverrideCommand("logsave", new SaveLog());
 		Overrider.addOverrideCommand("botmod", new BotMod());
