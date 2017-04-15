@@ -7,11 +7,17 @@ import net.dv8tion.jda.core.events.ReadyEvent;
 import net.dv8tion.jda.core.events.guild.GuildJoinEvent;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import util.CmdControl;
 import util.Overrider;
+import util.ReactionController;
 import util.Selector;
-
+/**
+ * Handles all events
+ * @author Allen
+ *
+ */
 public class BotListener extends ListenerAdapter{
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
@@ -34,7 +40,7 @@ public class BotListener extends ListenerAdapter{
 	}
 	@Override
 	public void onReady(ReadyEvent event){
-		Main.log("status","logged in as: "+event.getJDA().getSelfUser().getName());
+		Main.log("status","logged in as: "+event.getJDA().getSelfUser().getName());//get name of bot, for testing and other related purposes
 	}
 	@Override
 	public void onGuildJoin(GuildJoinEvent event) {
@@ -47,5 +53,9 @@ public class BotListener extends ListenerAdapter{
 		if(SaveSystem.getGuild(event.getGuild().getId()).tJoinMsg){
 			util.Lib.sendMessageFormated(event, SaveSystem.getJoin(event));
 		}
+	}
+	@Override
+	public void onMessageReactionAdd(MessageReactionAddEvent event) {
+		if(ReactionController.parseReaction(event))return;
 	}
 }

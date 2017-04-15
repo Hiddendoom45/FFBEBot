@@ -69,10 +69,11 @@ public class Lib {
 	}
 	public static Message sendFile(MessageReceivedEvent event, String msg, File file){
 		try {
-			if(msg.equals("null")){
-				msg=file.getName();
+			Message build=null;
+			if(!msg.equals("null")){
+				build=new MessageBuilder().append(msg).build();
 			}
-			return event.getChannel().sendFile(file, new MessageBuilder().append(msg).build()).complete();
+			return event.getChannel().sendFile(file, build).complete();
 		} catch (IOException e) {
 			Log.logError(e);
 		}
