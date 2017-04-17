@@ -18,8 +18,6 @@ import util.unit.UnitOverview;
  *
  */
 public abstract class UnitSelection extends CommandGenerics implements Command, Selection {
-	protected UnitSelection(){
-	}
 	//used to keep track of current selections going on
 	private HashMap<Long,UnitOverview> saved=new HashMap<Long,UnitOverview>();
 	@Override

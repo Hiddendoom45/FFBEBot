@@ -16,11 +16,6 @@ import util.unit.RedditOverview;
 public abstract class RedditSelection extends CommandGenerics implements Command, Selection {
 
 	private HashMap<Long,RedditOverview> saved=new HashMap<Long,RedditOverview>();
-	@Override
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		event.getChannel().sendTyping();
-		return true;
-	}
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {

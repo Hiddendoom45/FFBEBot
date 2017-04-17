@@ -25,8 +25,8 @@ public class RSkill extends RedditSelection{
 			messageString=en;
 		}
 		Message msg=Lib.sendMessage(event,messageString);
-		msg.addReaction("🇺🇸").complete();
-		msg.addReaction("🇯🇵").complete();
+		msg.addReaction("🇺🇸").queue();
+		msg.addReaction("🇯🇵").queue();
 		SkillReact react=new SkillReact();
 		react.addPanel("🇺🇸", en);
 		react.addPanel("🇯🇵", jp);
@@ -131,7 +131,8 @@ public class RSkill extends RedditSelection{
 	public void help(MessageReceivedEvent event) {
 		String s=SaveSystem.getPrefix(event)+"rskill [unitname]\n"
 				+ "\tGets the skills for unit\n"
-				+ "\t[unitname] unit to get the skills for(doesn't have to be the full name)";
+				+ "\t[unitname] unit to get the skills for(doesn't have to be the full name)"
+				+ "\t[language] `en` if you want the bot to use the translated names for skills(if available)";
 		Lib.sendMessage(event, s);
 		
 	}

@@ -24,7 +24,7 @@ public class Ping extends CommandGenerics implements Command{
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		Message pingMsg=Lib.sendMessage(event, "ping...");//send precursor message
+		Message pingMsg=Lib.sendMessage(event, "pong...");//send precursor message
 		//calculate time it took for response message to be sent and recieved
 		OffsetDateTime message=event.getMessage().getCreationTime();
 		OffsetDateTime now=pingMsg.getCreationTime();
@@ -45,7 +45,7 @@ public class Ping extends CommandGenerics implements Command{
 		else{
 			response=currentTime-messageTime+(1000*(responseS));
 		}
-		Lib.editMessage(pingMsg, "ping! - response in "+response+"ms");
+		Lib.editMessage(pingMsg, "pong! - response in "+response+"ms");
 	}
 	@Override
 	public void help(MessageReceivedEvent event) {

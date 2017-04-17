@@ -15,6 +15,7 @@ public abstract class CommandGenerics implements Command {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		Log.log("status", this.getClass()+" called by "+event.getAuthor().getName()+getGuildName(event)+" args "+Arrays.toString(args));
+		event.getChannel().sendTyping().queue();
 		return true;
 	}
 	public static String getGuildName(MessageReceivedEvent event){

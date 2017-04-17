@@ -33,15 +33,17 @@ public class Lib {
 		String msg="__***Help List***__\n"
 				+ "Use "+SaveSystem.getPrefix(event)+"help [command] to get more info on a specific command, i.e.: "+SaveSystem.getPrefix(event)+"help ping\n\n"
 				+ "__**Modules**__\n"
-				+ "**Core** - `ping` `invite`\n"
+				+ "**Core** - `ping` `invite` `info` `servers`\n"
 				+ "Core commands for bot\n\n"
 				+ "**Exvius** - `awaken` `equipment` `lore` `skill` `unitart` `unit`\n"
 				+ "Commands to extract info from Exvicus wiki(best for GL players)\n\n"
 				+ "**Reddit** - `rawaken` `requipment` `rskill` `runit`\n"
 				+ "Commands to extract info from Reddit wiki(best for JP players or GL players looking for future info)\n\n"
-				+ "**Salt** - `summon` `salty` `waifu`\n"
-				+ "Random commands based on chance\n\n"
-				+ "**WIP** - `whale` `banner` `11pull` `pull` `unitinventory`\n"
+				+ "**Salt** - `summon` `salty` `waifu` `maintenance`\n"
+				+ "Commands that may or may not help in dealing with or evoking salt\n\n"
+				+ "**Simulation** - `dailies` `lapis` `give`  `banner` `pull` `unitinventory` `dailypull` `11pull`\n"
+				+ "Commands that are used to attempt to simulate FFBE to some degree\n\n"
+				+ "**WIP** - `whale` `farmtm` `sell` `evolve`\n"
 				+ "Commands that are work in progress currently unimplemented\n\n"
 				+ "Don't include the example brackets when using commands!\n"
 				+ "To view mod commands, use "+SaveSystem.getModPrefix(event)+"help";
@@ -53,15 +55,15 @@ public class Lib {
 	 * @param event
 	 */
 	public static void printModHelp(MessageReceivedEvent event){
+		String prefix=SaveSystem.getModPrefix(event);
 		String msg="Mod Help List\n"
-				+ SaveSystem.getModPrefix(event)+"join [MSG]"
-				+ "\t`sets a join message for the server, leave blank for no message`\n"
-				+ SaveSystem.getModPrefix(event)+"prefix [prefix]"
-				+ "\t`changes the prefix used for the bot's commands`\n"
-				+ SaveSystem.getModPrefix(event)+"sleep [timeout]"
-				+ "\t`temporariy disable bot`\n"
-				+ SaveSystem.getModPrefix(event)+"toggle"
-				+ "\t`toggles various toggleable server options`";
+				+ "The following commands are to help with control the bot on your server\n"
+				+ prefix+"prefix - changes prefix used for the bo\nt"
+				+ prefix+"modprefix - changes the mod prefix used for the bot\n"
+				+ prefix+"toggle - toggle join messages if you don't already have a bot doing it, by default false\n"
+				+ prefix+"glmodules - disable/enable a module of the bot across the server\n"
+				+ prefix+"modules - disable/enable a modules on a specific channel(where you used it), will override the global setting\n"
+				+ "";
 		Lib.sendMessage(event, msg);
 	}
 	public static Message editMessage(Message message,String msg){
