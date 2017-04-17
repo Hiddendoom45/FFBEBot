@@ -17,8 +17,8 @@ public abstract class ReactionGenerics implements Reaction{
 	public boolean called(MessageReactionAddEvent event, ReactionEmote react) {
 		return triggers.size()>0?triggers.contains(react):true;//if it's one of the reaction triggers, select to avoid not calling if no triggers added
 	}
-
-	public abstract void action(MessageReactionAddEvent event, ReactionEmote react, Message msg);
+	@Override
+	public abstract Message action(MessageReactionAddEvent event, ReactionEmote react, Message msg);
 
 	@Override
 	public void executed(MessageReactionAddEvent event) {
@@ -27,6 +27,8 @@ public abstract class ReactionGenerics implements Reaction{
 	protected void addTrigger(ReactionEmote trigger){
 		triggers.add(trigger);
 	}
-	
+	protected HashSet<ReactionEmote> getTriggers(){
+		return triggers;
+	}
 	public abstract Long getTimeout();
 }

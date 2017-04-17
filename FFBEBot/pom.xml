@@ -24,13 +24,17 @@
             <name>bintray</name>
             <url>http://dl.bintray.com/dv8fromtheworld/maven</url>
         </repository>
+        <repository>
+    <id>jcenter</id>
+    <name>jcenter-bintray</name>
+    <url>http://jcenter.bintray.com</url>
+</repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -110,11 +114,6 @@
     <dependencyManagement>
     	<dependencies>
     		<dependency>
-    			<groupId>net.dv8tion</groupId>
-    			<artifactId>JDA</artifactId>
-    			<version>3.0.BETA2_122</version>
-    		</dependency>
-    		<dependency>
     			<groupId>org.projectlombok</groupId>
     			<artifactId>lombok</artifactId>
     			<version>1.16.8</version>
@@ -138,6 +137,11 @@
     			<groupId>com.mashape.unirest</groupId>
     			<artifactId>unirest-java</artifactId>
     			<version>1.4.9</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>net.dv8tion</groupId>
+    			<artifactId>JDA</artifactId>
+    			<version>3.0.0_157</version>
     		</dependency>
     	</dependencies>
     </dependencyManagement>

@@ -6,6 +6,7 @@ import global.record.Settings;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 import reactions.Reaction;
+import reactions.ReactionGenerics;
 
 /**
  * Handles any reaction events
@@ -26,13 +27,16 @@ public class ReactionController implements Runnable {
 	public static boolean parseReaction(MessageReactionAddEvent event){
 		String ID=event.getMessageId();
 		if(storedReactions.containsKey(ID)){
+			System.out.println("reacted");
 			//same as commands, check if valid, then execute it
 			boolean safe=storedReactions.get(ID).called(event, event.getReaction().getEmote());
-			if(safe){
-				storedReactions.get(ID).action(event, event.getReaction().getEmote(), storedMessages.get(ID));
+			if(safe){//if reaction triggers something
+				Message msg=storedReactions.get(ID).action(event, event.getReaction().getEmote(), storedMessages.get(ID));
+				storedMessages.put(ID, msg);//update the stored message
+				event.getReaction().removeReaction().complete();//remove so it can be retriggered etc
 			}
 			storedReactions.get(ID).executed(event);
-			return safe;
+			return safe;//safe basically determines if trigger
 		}
 		return false;
 	}
@@ -48,6 +52,12 @@ public class ReactionController implements Runnable {
 			Long killTime=System.currentTimeMillis()+reaction.getTimeout();
 			killTimes.put(killTime, msg.getId());
 			getInstance().notify();
+		}
+		/**
+		 * implementing triggers from the generic class
+		 */
+		if(reaction instanceof ReactionGenerics){
+			
 		}
 	}
 	/**
@@ -75,7 +85,7 @@ public class ReactionController implements Runnable {
 					}
 				}
 				try {
-					if(soonest==Long.MAX_VALUE){//nothing in list
+					if(soonest==Long.MAX_VALUE){//nothing in list wait indefinitely until notified
 						this.wait();
 					}
 					else{//wait for the exact amount of time till the next one

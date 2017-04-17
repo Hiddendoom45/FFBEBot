@@ -165,8 +165,8 @@ public class Selector {
 	 */
 	private static void selfPrune(Select s,MessageReceivedEvent e){
 		try{
-			e.getChannel().getMessageById(s.messageID).complete().deleteMessage().submit();
-			e.getMessage().deleteMessage().submit();
+			e.getChannel().getMessageById(s.messageID).complete().delete().complete();
+			e.getMessage().delete().complete();
 		}catch(Exception e1){
 			if(!e.isFromType(ChannelType.PRIVATE)){
 				Log.log("ERROR", "Bot does not have permission to delete messages on "+e.getGuild().getName());
