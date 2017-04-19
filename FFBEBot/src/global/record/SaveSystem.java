@@ -309,10 +309,6 @@ public class SaveSystem {
 	 * Loads saved data from file
 	 */
 	public static void load(){
-		//Download from Drive the files for initial load as they aren't included as a part of the build files
-		DriveManager.download(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
-		DriveManager.download(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
-		DriveManager.download(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
 		loadGuilds();//load guilds
 		//load users
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
@@ -520,11 +516,13 @@ public class SaveSystem {
 	public static String[] getOverrides() {
 		String input="";
 		try {
+			if(new File(Settings.overrideSource).exists()){//to avoid error
 			BufferedReader in=new BufferedReader(new FileReader(new File(Settings.overrideSource)));
 			while(in.ready()){
 				input+=in.readLine()+",";
 			}
 			in.close();
+			}
 		} catch (IOException e) {
 			Log.logError(e);
 		}

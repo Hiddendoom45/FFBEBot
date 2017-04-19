@@ -135,8 +135,8 @@ public class Main {
 			Overrider.addOverrideCommand("test", new Test());
 		}
 		//setup/build various things
-		DriveManager.setup();
-		Log.setup();//
+		DriveManager.setup();//loads drive files and setup the service
+		Log.setup();
 		Restarter.setup();//starts the threads the queue the bot restarting
 		CounterPool.getPool().setup();//starts the thread for the counter pool
 		RedditUnit.buildRefImg();//builds hashmap for image icons

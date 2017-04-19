@@ -24,6 +24,7 @@ import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 
 import global.record.Log;
+import global.record.Settings;
 
 /**
  * Used to manage files on google drive on a basic level, only uploading and downloading atm
@@ -109,6 +110,10 @@ public class DriveManager {
     public static void setup(){
     	try {
 			service = getDriveService();
+			//Download from Drive the files for initial load as they aren't included as a part of the build files
+			DriveManager.download(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
+			DriveManager.download(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+			DriveManager.download(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
 		} catch (IOException e) {
 			Log.logShortError(e, 6);
 		}
@@ -138,6 +143,10 @@ public class DriveManager {
     	OutputStream outputStream = new FileOutputStream(file.getFilePath());
 			service.files().get(id)
 			        .executeMediaAndDownloadTo(outputStream);
+			outputStream.close();
+//			InputStream in=service.files().get(id).executeAsInputStream();//alternative download method
+//			//Files.copy(in, new java.io.File(file.getFilePath()).toPath(),StandardCopyOption.REPLACE_EXISTING );
+//			in.close();
 		} catch (IOException e) {
 			Log.logShortError(e, 5);
 		}

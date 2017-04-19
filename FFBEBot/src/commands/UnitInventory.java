@@ -14,6 +14,7 @@ import global.record.Data;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
+import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
@@ -22,14 +23,22 @@ import util.rng.summon.SummonImageBuilder;
 public class UnitInventory extends CommandGenerics implements Command{
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		Data user=SaveSystem.getUser(event.getAuthor().getId());
-		if(user.units.size()>0){
-			sendImage(event);
+		Data user;
+		User name;
+		if(event.getMessage().getMentionedUsers().size()>0){
+			user=SaveSystem.getUser(event.getMessage().getMentionedUsers().get(0).getId());
+			name=event.getMessage().getMentionedUsers().get(0);
 		}
 		else{
-			Lib.sendMessage(event, "You have no units in your inventory");
+			user=SaveSystem.getUser(event.getAuthor().getId());
+			name=event.getAuthor();
 		}
-
+		if(user.units.size()>0){
+			sendImage(event,name);
+		}
+		else{
+			Lib.sendMessage(event, name.getName()+", you have no units in your inventory");
+		}
 	}
 
 	@Override
@@ -38,8 +47,8 @@ public class UnitInventory extends CommandGenerics implements Command{
 				+ "\tshows the units you have";
 		Lib.sendMessage(event, s);
 	}
-	public void sendImage(MessageReceivedEvent event){
-		Data user=SaveSystem.getUser(event.getAuthor().getId());
+	public void sendImage(MessageReceivedEvent event,User User){
+		Data user=SaveSystem.getUser(User.getId());
 		Counter count=new Counter("Finding Units(%count%/"+user.units.size()+")...",event);
 		ArrayList<UnitSpecific> us=new ArrayList<UnitSpecific>();
 		for(PullUnit u:user.units){
@@ -69,7 +78,7 @@ public class UnitInventory extends CommandGenerics implements Command{
 			}
 			try{
 			ImageIO.write(build, "PNG", new File("summons.png"));
-			Lib.sendFile(event, Lib.FormatMessage(event, "%userMention% has the following units"),
+			Lib.sendFile(event, Lib.FormatMessage(event, User.getName()+" has the following units"),
 					new File("summons.png"));
 			}catch(Exception e){
 				Log.logError(e);
