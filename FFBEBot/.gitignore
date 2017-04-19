@@ -1,13 +1,14 @@
 /override
-/FFBEBotData
-/FFBEBotLog
+/FFBEBotData**
+/FFBEBotLog**
 /.settings
 /.project
 /.DS_Store
 /.classpath
 /units/*
 /bin/
-/FFBEBotPreload
+/FFBEBotPreload**
 /units/
 /FFBEBotLogFinal**
 /target/
+/.credentials/

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 import Library.ModuleEnum;
 import commands.Command;
-import global.record.ModuleController;
 import global.record.SaveSystem;
 import global.record.Settings;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
+import util.ModuleController;
 import util.Select;
 import util.Selection;
 import util.Selector;

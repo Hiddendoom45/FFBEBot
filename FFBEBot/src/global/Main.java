@@ -25,6 +25,7 @@ import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Secrets;
 import global.record.Settings;
+import googleutil.drive.DriveManager;
 
 public class Main {
 	public static JDA jda;//JDA of bot 
@@ -129,10 +130,12 @@ public class Main {
 		Overrider.addOverrideCommand("logclear", new ClearLog());
 		Overrider.addOverrideCommand("gamechange", new ChangeGame());
 		Overrider.addOverrideCommand("award", new Award());
+		Overrider.addOverrideCommand("push", new DrivePush());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
 			Overrider.addOverrideCommand("test", new Test());
 		}
 		//setup/build various things
+		DriveManager.setup();
 		Log.setup();//
 		Restarter.setup();//starts the threads the queue the bot restarting
 		CounterPool.getPool().setup();//starts the thread for the counter pool

@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+
+import googleutil.drive.DataEnum;
+import googleutil.drive.DriveFile;
+import googleutil.drive.DriveManager;
 /**
  * Class that records and logs everything
  * @author Allen
@@ -60,6 +64,7 @@ public class Log {
 		finally{
 			lock.release();
 		}
+		DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
 	}
 	/**
 	 * archives the log file for future reference so that it isn't referenced again 

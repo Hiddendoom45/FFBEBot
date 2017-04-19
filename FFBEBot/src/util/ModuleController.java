@@ -1,10 +1,9 @@
-package global.record;
+package util;
 
 import java.util.Vector;
 
 import XML.Attribute;
 import XML.Elements;
-import util.Lib;
 
 /**
  * used to control whether a module is enabled or disabled per guild

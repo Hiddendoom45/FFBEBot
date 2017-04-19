@@ -6,7 +6,6 @@ import java.util.List;
 import commands.Command;
 import global.CommandParser;
 import global.Main;
-import global.record.ModuleController;
 import global.record.SaveSystem;
 import global.record.Settings;
 import net.dv8tion.jda.core.Permission;

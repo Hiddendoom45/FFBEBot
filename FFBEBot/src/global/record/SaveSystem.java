@@ -24,6 +24,9 @@ import XML.Attribute;
 import XML.XMLStAXFile;
 import XML.Elements;
 import global.Main;
+import googleutil.drive.DataEnum;
+import googleutil.drive.DriveFile;
+import googleutil.drive.DriveManager;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
@@ -306,7 +309,12 @@ public class SaveSystem {
 	 * Loads saved data from file
 	 */
 	public static void load(){
-		loadGuilds();
+		//Download from Drive the files for initial load as they aren't included as a part of the build files
+		DriveManager.download(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
+		DriveManager.download(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+		DriveManager.download(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+		loadGuilds();//load guilds
+		//load users
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();
 		ArrayList<Elements> users=file.parseToElements("user");
@@ -405,6 +413,7 @@ public class SaveSystem {
 		file.startWriter();
 		file.writeElement(doc);
 		file.endWriter();
+		DriveManager.update(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
 	}
 	public static Settings getGuild(String id){
 		try{
@@ -444,6 +453,7 @@ public class SaveSystem {
 		file.startWriter();
 		file.writeElement(doc);
 		file.endWriter();
+		DriveManager.update(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
 	}
 	public static String getJoin(GuildMemberJoinEvent event){
 		return getJoin(event.getGuild());

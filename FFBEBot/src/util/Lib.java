@@ -72,7 +72,7 @@ public class Lib {
 	public static Message sendFile(MessageReceivedEvent event, String msg, File file){
 		try {
 			Message build=null;
-			if(!msg.equals("null")){
+			if(!(msg==null||msg.equals("null"))){
 				build=new MessageBuilder().append(msg).build();
 			}
 			return event.getChannel().sendFile(file, build).complete();

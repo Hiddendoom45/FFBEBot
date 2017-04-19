@@ -2,9 +2,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>HiddenDoom</groupId>
-    <artifactId>SearchBot</artifactId>
+    <artifactId>FFBEBot</artifactId>
     <packaging>jar</packaging>
-    <version>0.0.1</version>
+    <version>1.0.79</version>
     <name>SearchBot</name>
     <url></url>
 
@@ -32,6 +32,7 @@
     </repositories>
 
     <dependencies>
+    
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
@@ -143,6 +144,12 @@
     			<artifactId>JDA</artifactId>
     			<version>3.0.0_157</version>
     		</dependency>
+    		<dependency>
+    <groupId>com.google.apis</groupId>
+    <artifactId>google-api-services-drive</artifactId>
+    <version>v3-rev69-1.22.0</version>
+</dependency>
+    		
     	</dependencies>
     </dependencyManagement>
 </project>
