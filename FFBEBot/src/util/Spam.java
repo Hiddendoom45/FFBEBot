@@ -1,7 +1,6 @@
 package util;
 
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 /**
@@ -56,7 +55,6 @@ public class Spam {
 					}
 				}
 			}
-			System.out.println(Arrays.toString(spams));
 			items.put(type, spams);
 		}
 		else{

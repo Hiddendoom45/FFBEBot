@@ -174,10 +174,6 @@ public class Lib {
 			}
 		}
 		splitMsg.add(prep);
-		System.out.println(splitMsg);
-		for(String s:splitMsg){
-			System.out.println(s.length()+" "+s);
-		}
 		return splitMsg;
 	}
 	/**

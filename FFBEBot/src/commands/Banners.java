@@ -33,7 +33,6 @@ public class Banners extends CommandGenerics implements Command, Selection {
 			sendBannerInfo(event,getBanner(chosen.options.get(chosen.selected)));
 		}
 		else{
-			System.out.println("else triggered");
 			if(chosen.selected>0){
 				if(chosen.selected==4){//exit option
 					Lib.sendMessage(event, "Exited banners menu");

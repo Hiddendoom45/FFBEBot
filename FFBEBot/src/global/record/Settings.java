@@ -117,7 +117,6 @@ public class Settings {
 		}
 		
 		for(String s:this.disabled.keySet()){
-			System.out.println(disabled);
 			root.add(this.disabled.get(s).parseToElements());
 		}
 		
