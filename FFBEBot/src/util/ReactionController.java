@@ -2,6 +2,8 @@ package util;
 
 import java.util.HashMap;
 
+import global.Main;
+import global.record.Log;
 import global.record.Settings;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
@@ -25,20 +27,26 @@ public class ReactionController implements Runnable {
 		return instance;
 	}
 	public static boolean parseReaction(MessageReactionAddEvent event){
-		String ID=event.getMessageId();
-		if(storedReactions.containsKey(ID)){
-			System.out.println("reacted");
-			//same as commands, check if valid, then execute it
-			boolean safe=storedReactions.get(ID).called(event, event.getReaction().getEmote());
-			if(safe){//if reaction triggers something
-				Message msg=storedReactions.get(ID).action(event, event.getReaction().getEmote(), storedMessages.get(ID));
-				storedMessages.put(ID, msg);//update the stored message
-				event.getReaction().removeReaction().complete();//remove so it can be retriggered etc
+		if(!event.getUser().getId().equals(Main.jda.getSelfUser().getId())){// don't trigger if self
+			String ID=event.getMessageId();
+			if(storedReactions.containsKey(ID)){
+				//same as commands, check if valid, then execute it
+				boolean safe=storedReactions.get(ID).called(event, event.getReaction().getEmote());
+				if(safe){//if reaction triggers something
+					Message msg=storedReactions.get(ID).action(event, event.getReaction().getEmote(), storedMessages.get(ID));
+					storedMessages.put(ID, msg);//update the stored message
+					try{
+						event.getReaction().removeReaction(event.getUser()).queue();//remove it so it can be retriggered
+					}catch(net.dv8tion.jda.core.exceptions.PermissionException e){
+						Log.log("MSERR", "no permission to remove emotes");
+					}
+				}
+				storedReactions.get(ID).executed(event);
+				return safe;//safe basically determines if trigger
 			}
-			storedReactions.get(ID).executed(event);
-			return safe;//safe basically determines if trigger
 		}
 		return false;
+		
 	}
 	/**
 	 * 

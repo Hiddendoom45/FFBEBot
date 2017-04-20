@@ -67,6 +67,7 @@ public class Salty extends CommandGenerics implements Command, Selection {
 	}
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
+		System.out.println("3");
 		try{
 			Log.log("status", "salty image of "+chosen.names.get(chosen.selected)+" sent");
 			sendImage(event, saved.get(chosen.ID).getData(chosen.selected).imgUrl);
@@ -81,7 +82,6 @@ public class Salty extends CommandGenerics implements Command, Selection {
 	public static void sendImage(MessageReceivedEvent event,String imgurl)throws IOException{
 		BufferedImage large=null;
 	    large = ImageIO.read(new URL("https://pbs.twimg.com/profile_images/671501876265803776/-M6ppcKt.jpg").openStream());
-	    
 	    BufferedImage small=null;
 	    boolean found=false;
 	    try{
@@ -122,7 +122,7 @@ public class Salty extends CommandGenerics implements Command, Selection {
 			Settings.upload.acquire();
 		} catch (InterruptedException e) {}
 	    ImageIO.write(combined, "PNG", new File("salty.png"));
-	    event.getChannel().sendFile(new File("salty.png"),null );
+	    Lib.sendFile(event, null, new File("salty.png"));
 	    Settings.upload.release();
 	    Files.delete(new File("salty.png").toPath());
 	}

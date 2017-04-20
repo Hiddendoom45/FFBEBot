@@ -135,7 +135,6 @@ public class DriveManager {
 			Log.logShortError(e, 5);
 		}
         Log.log("DRIVE", "updated "+file.getName());
-        System.out.println("updated "+file.getName());
     }
     public static void download(DriveFile file){
     	try {
@@ -151,6 +150,5 @@ public class DriveManager {
 			Log.logShortError(e, 5);
 		}
     	Log.log("DRIVE", "downloaded "+file.getName());
-    	System.out.println("downloaded "+file.getName());
     }
 }

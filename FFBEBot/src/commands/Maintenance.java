@@ -28,7 +28,7 @@ public class Maintenance implements Command {
 			try {
 				Settings.upload.acquire();
 			} catch (InterruptedException e) {}
-			event.getChannel().sendFile(new File("tempGumi.jpg"),null);
+			Lib.sendFile(event, null, new File("tempGumi.jpg"));
 			Settings.upload.release();
 			Files.delete(new File("tempGumi.jpg").toPath());
 		} catch (IOException e) {Log.logError(e);}

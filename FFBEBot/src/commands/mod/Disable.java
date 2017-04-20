@@ -61,7 +61,6 @@ public class Disable extends ModGenerics implements Selection, Command{
 		if(event.getChannelType()==ChannelType.PRIVATE)return true;
 		Settings guild=SaveSystem.getGuild(event.getGuild().getId());
 		ModuleController ctrl=guild.disabled.get(module);
-		System.out.println(ctrl);
 		if(ctrl==null)return true;
 		return ctrl.enabled(event.getChannel().getId());
 	}

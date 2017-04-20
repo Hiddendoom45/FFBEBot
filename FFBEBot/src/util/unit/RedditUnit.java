@@ -206,8 +206,12 @@ public class RedditUnit {
 		refImg.put("#Z/Icons/e6/", "Rod");
 		refImg.put("#Z/Icons/e7/", "Bow");
 		refImg.put("#Z/Icons/e8/", "Axe");
+		refImg.put("#Z/Icons/e9/", "Hammer");
 		refImg.put("#Z/Icons/e10/", "Spear");
+		refImg.put("#Z/Icons/e11/", "Harp");
+		refImg.put("#Z/Icons/e11/", "Whip");
 		refImg.put("#Z/Icons/e13/", "Throwing");
+		refImg.put("#Z/Icons/e14/", "Gun");
 		refImg.put("#Z/Icons/e15/", "Mace");
 		refImg.put("#Z/Icons/e16/", "Fist");
 		refImg.put("#Z/Icons/e30/", "Light Shield");

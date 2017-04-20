@@ -43,8 +43,8 @@ public class Main {
 		try{
 		jda = new JDABuilder(AccountType.BOT).addListener(new BotListener()).setToken(Settings.token).buildBlocking();
 		}catch(LoginException | RateLimitedException e){
-			TimeUnit.MINUTES.sleep(5);
 			Log.log("System", "error on login, retrying in 5 minutes");
+			TimeUnit.MINUTES.sleep(5);
 			startup();
 		}
 		jda.setAutoReconnect(true);
@@ -92,7 +92,7 @@ public class Main {
 		CmdControl.addCommand("rawaken", new RAwaken(), Module);
 		
 		Module=ModuleEnum.Salt.toString();
-		CmdControl.addCommand("summmon", new Summon(), Module);
+		CmdControl.addCommand("summon", new Summon(), Module);
 		CmdControl.addCommand("salty", new Salty(), Module);
 		CmdControl.addCommand("waifu", new Waifu(), Module);
 		CmdControl.addCommand("maintenance", new Maintenance(), Module);

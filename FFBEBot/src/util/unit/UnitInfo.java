@@ -159,8 +159,6 @@ public class UnitInfo {
 			try{
 				
 				Element quote=Lib.getEleAfter(content.children(), new ElementFilter("h2","Quotes[edit | edit source]"));
-				System.out.println(quote);
-				Log.log("tes", quote.toString());
 				background=new unitQuotes(quote.getElementsByClass("tabbertab").get(0).getElementsByTag("table").first().getElementsByTag("tbody").first());
 				fusionQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(1).getElementsByTag("table").first().getElementsByTag("tbody").first());
 				awakeningQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(2).getElementsByTag("table").first().getElementsByTag("tbody").first());

@@ -21,7 +21,7 @@ public class RSkill extends RedditSelection{
 		String jp=getMsgString(info,false);
 		String messageString=jp;//whether to use english or JP version for inital print
 		CommandContainer cmd=CmdControl.parser.parse(event.getMessage().getContent(), event);
-		if(cmd.args[1].contains("en")){//based on secound arg, for purpose of reddit discord channel
+		if(cmd.args.length>1?cmd.args[1].contains("en"):false){//based on secound arg, for purpose of reddit discord channel
 			messageString=en;
 		}
 		Message msg=Lib.sendMessage(event,messageString);

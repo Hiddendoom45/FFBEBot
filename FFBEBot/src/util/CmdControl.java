@@ -6,6 +6,7 @@ import java.util.List;
 import commands.Command;
 import global.CommandParser;
 import global.Main;
+import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
 import net.dv8tion.jda.core.Permission;
@@ -103,17 +104,23 @@ public class CmdControl {
 	 * @return whether or not user is a mod or not
 	 */
 	private static boolean isMod(MessageReceivedEvent e){
-		List<Role> roles=e.getMember().getRoles();
-		for(Role r:roles){
-			if(r.hasPermission(Permission.ADMINISTRATOR)||r.hasPermission(Permission.MANAGE_SERVER)||r.hasPermission(Permission.MANAGE_CHANNEL)||r.hasPermission(Permission.MESSAGE_MANAGE)){
-				return true;
+		try{
+			List<Role> roles=e.getMember().getRoles();
+			for(Role r:roles){
+				if(r.hasPermission(Permission.ADMINISTRATOR)||r.hasPermission(Permission.MANAGE_SERVER)||r.hasPermission(Permission.MANAGE_CHANNEL)||r.hasPermission(Permission.MESSAGE_MANAGE)){
+					return true;
+				}
+			}
+			for(String s:SaveSystem.getGuild(e.getGuild().getId()).modded){
+				if(e.getAuthor().getId().equals(s)){
+					return true;
+				}
 			}
 		}
-		for(String s:SaveSystem.getGuild(e.getGuild().getId()).modded){
-			if(e.getAuthor().getId().equals(s)){
-				return true;
-			}
+		catch(Exception e1){
+			Log.logError(e1);
 		}
+		
 		if(e.getAuthor().getId().equals(Settings.ownerID))return true;;
 		return false;
 	}
@@ -121,7 +128,6 @@ public class CmdControl {
 		if(event.getChannelType()==ChannelType.PRIVATE)return true;
 		Settings guild=SaveSystem.getGuild(event.getGuild().getId());
 		ModuleController ctrl=guild.disabled.get(modules.get(command));
-		System.out.println(ctrl);
 		if(ctrl==null)return true;
 		return ctrl.enabled(event.getChannel().getId());
 	}

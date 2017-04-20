@@ -58,7 +58,6 @@ public class DisableGlobal extends ModGenerics implements Command,Selection {
 	private boolean enabled(String guildID, String module){
 		Settings guild=SaveSystem.getGuild(guildID);
 		ModuleController ctrl=guild.disabled.get(module);
-		System.out.println(ctrl);
 		if(ctrl==null)return true;
 		return ctrl.enabledGlobal();
 	}

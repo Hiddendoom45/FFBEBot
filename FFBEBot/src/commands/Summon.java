@@ -85,6 +85,7 @@ public class Summon extends CommandGenerics implements Command {
 		}
 		try{
 			count.setMessage("Uploading...");
+			Settings.upload.acquire();
 			ImageIO.write(build, "PNG", new File("summons.png"));
 			Lib.sendFile(event, Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+" rare summon banner"), 
 					new File("summons.png"));
