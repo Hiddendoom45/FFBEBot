@@ -6,6 +6,9 @@ import java.util.concurrent.TimeUnit;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
+import googleutil.drive.DataEnum;
+import googleutil.drive.DriveFile;
+import googleutil.drive.DriveManager;
 
 /**
  * restarts the bot periodically to prevent detection as virus?(stupid dad)
@@ -18,7 +21,7 @@ public class Restarter {
 		Runnable check=new Runnable(){//potential restart(1/10 chance every hour)
 			public void run(){
 				Random rand=new Random();
-				if(rand.nextInt(10)==0){
+				if(rand.nextInt(4)==0){
 					int sleep=rand.nextInt(14400);//time during hour to start sleep
 					Restarter.sleep(sleep);
 					Restarter.sleep=rand.nextInt(100)+10;//amount of time to sleep for
@@ -53,6 +56,7 @@ public class Restarter {
 	}
 	public static void SleepActivity(){
 		SaveSystem.pushUserData();
+		DriveManager.download(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
 	}
 }
 

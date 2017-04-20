@@ -25,6 +25,8 @@ import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Secrets;
 import global.record.Settings;
+import googleutil.drive.DataEnum;
+import googleutil.drive.DriveFile;
 import googleutil.drive.DriveManager;
 
 public class Main {
@@ -32,6 +34,17 @@ public class Main {
 	
 	public static void main(String[] args){
 		try{
+			  Runtime.getRuntime().addShutdownHook(new Thread() {
+			        @Override
+			            public void run() {
+			                SaveSystem.pushUserData();
+			                DriveManager.update(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
+			    			DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+			    			Log.save();
+			    			DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+			            }   
+			        }); 
+
 			Main.startup();
 			Main.setup();
 		}catch(Exception e){
@@ -105,7 +118,7 @@ public class Main {
 		CmdControl.addCommand("banner", new Banners(), Module);
 		CmdControl.addCommand("banners", new Banners(), Module);
 		CmdControl.addCommand("bannerlist", new Banners(), Module);
-		CmdControl.addCommand("pull", new Pull(),Module);
+		CmdControl.addCommand("pull", new commands.Pull(),Module);
 		CmdControl.addCommand("unitinventory", new UnitInventory(), Module);
 		CmdControl.addCommand("dailypull", new DailyPull(), Module);
 		CmdControl.addCommand("11pull", new ElevenPull(), Module);
@@ -131,6 +144,7 @@ public class Main {
 		Overrider.addOverrideCommand("gamechange", new ChangeGame());
 		Overrider.addOverrideCommand("award", new Award());
 		Overrider.addOverrideCommand("push", new DrivePush());
+		Overrider.addOverrideCommand("pull", new commands.overide.Pull());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
 			Overrider.addOverrideCommand("test", new Test());
 		}
