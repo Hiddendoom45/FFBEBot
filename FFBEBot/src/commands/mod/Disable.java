@@ -50,7 +50,7 @@ public class Disable extends ModGenerics implements Selection, Command{
 		}
 		SaveSystem.setSetting(guild);
 		SaveSystem.loadGuilds();
-		
+		Lib.sendMessage(event, module+" "+(CommandEnabled(event,module)?"enabled":"disabled")+" on the current channel");
 	}
 
 	@Override

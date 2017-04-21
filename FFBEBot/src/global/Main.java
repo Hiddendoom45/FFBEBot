@@ -142,6 +142,7 @@ public class Main {
 		CmdControl.addModCommand("toggle", new Toggle());
 		CmdControl.addModCommand("glmodules", new DisableGlobal());
 		CmdControl.addModCommand("modules", new commands.mod.Disable());
+		
 		//ditto with override commands
 		Overrider.addOverrideCommand("disable", new commands.overide.Disable());
 		Overrider.addOverrideCommand("log", new ViewLog());
@@ -157,6 +158,7 @@ public class Main {
 		Overrider.addOverrideCommand("update", new Update());
 		Overrider.addOverrideCommand("push", new DrivePush());
 		Overrider.addOverrideCommand("pull", new commands.overide.Pull());
+		Overrider.addOverrideCommand("dbanner", new DefaultBanner());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
 			Overrider.addOverrideCommand("test", new Test());
 		}

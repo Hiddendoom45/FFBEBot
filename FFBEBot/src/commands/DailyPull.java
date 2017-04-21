@@ -57,7 +57,7 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 					try{
 						int num=1;
 						Data user=SaveSystem.getUser(event.getAuthor().getId());
-						Banner pullBanner=Pull.getBanner(chosen.additionalData.length>1?(chosen.additionalData[1]==null?"null":chosen.additionalData[1]):"null");
+						Banner pullBanner=Settings.DefaultBanner;//use current default for dailies to lock it in there
 						int cost=250;
 						if(cost>user.lapis){
 							Lib.sendMessage(event, "You do not have enough lapis to summon "+num+" times");

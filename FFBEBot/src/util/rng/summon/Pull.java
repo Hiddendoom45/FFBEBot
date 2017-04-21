@@ -75,49 +75,63 @@ public class Pull {
 		}
 		return units;
 	}
+	/**
+	 * Pulls a unit from banner
+	 * @param banner banner to pull from
+	 * @param rarity rarity of unit
+	 * @param poolSize the int size of the pool / % of total pool it takes up i.e x/10000
+	 * @param baseChance chance for unit to be the base rarity
+	 * @return unit chosen
+	 */
 	private static Unit pull(Banner banner,int rarity,int poolSize,int baseChance){
-		Unit[] pool;
+		Unit[] pool;//used to construct pool
 		Random rand=new Random();
-		int select=rand.nextInt(99);
+		int select=rand.nextInt(99);//determine if base rarity or not and pull from that pool
 		if(select<baseChance){
 			pool=baseRarity(banner,rarity);
 		}
 		else{
 			pool=hasRarity(banner,rarity);
 		}
-		int next=rand.nextInt(poolSize);
-		int[] featured=new int[banner.featured.length];
+		int next=rand.nextInt(poolSize);//gets chosen int for rarity pool to determine if featured unit or not
+		int[] featured=new int[banner.featured.length];//for featured units at the rarity
 		int i=0;
-		for(Unit u:banner.featured){
-			if(u.hasRarity(rarity)){
+		for(Unit u:banner.featured){//determine for each if 
+			if(u.hasRarity(rarity)){//if it has rarity/upgrade featured at this rarity
 				featured[i]=banner.percent[i][u.getRarityIndex(rarity)];
 			}
 			else if(u.hasUpgrade(rarity, banner.include)){
 				featured[i]=banner.percent[i][u.getUpgradeIndex(rarity, banner.include)];
 			}
-			else{
+			else{//otherwise no chance
 				featured[i]=0;
 			}
 			i++;
 		}
 		i=0;
-		for(int c=0;c<featured.length;c++){
+		for(int c=0;c<featured.length;c++){//determine if number is within range of one of the featured units
 			if(next<featured[c]+i&&next>=i){
 				return banner.featured[c];
 			}
 			i+=featured[c];
 		}
-		return RandomLibs.SelectRandom(pool);
+		return RandomLibs.SelectRandom(pool);//otherwise select a random unit from the pool
 	}
+	/**
+	 * gets units with this rarity in the banner
+	 * @param banner banner to look in
+	 * @param rarity rarity
+	 * @return array of units that have this rarity
+	 */
 	private static Unit[] hasRarity(Banner banner,int rarity){
 		ArrayList<Unit> units=new ArrayList<Unit>();
-		for(Unit u:banner.pool){
+		for(Unit u:banner.getPool()){//gets units in banner pool and does check if it has rarity
 			if(u.hasRarity(rarity)){
-				units.add(u);
+				units.add(u);//if yes add to list
 			}
 		}
 		if(!(banner.include==null)){
-			for(Awakening a:banner.include){
+			for(Awakening a:banner.include){//does the same for upgrades, if the banner has it
 				for(int i=0;i<a.units.length;i++){
 					if(a.units[i].hasUpgrade(rarity, a.rarityAwakened[i])){
 						units.add(a.units[i]);
@@ -127,15 +141,26 @@ public class Pull {
 		}
 		return toArray(units);
 	}
+	/**
+	 * gets units with this rarity as their base rarity
+	 * @param banner banner to look in
+	 * @param rarity rarity
+	 * @return array of units whose base rarity is this rarity
+	 */
 	private static Unit[] baseRarity(Banner banner,int rarity){
 		ArrayList<Unit> units=new ArrayList<Unit>();
-		for(Unit u:banner.pool){
+		for(Unit u:banner.getPool()){//gets units in banner pool and does check if it is this base rarity
 			if(u.base==rarity){
-				units.add(u);
+				units.add(u);//if yes add to list
 			}
 		}
 		return toArray(units);
 	}
+	/**
+	 * conversion from arraylist to array
+	 * @param units arraylist to convert
+	 * @return array of the units
+	 */
 	private static Unit[] toArray(ArrayList<Unit> units){
 		Unit[] unit=new Unit[units.size()];
 		for(int i=0;i<units.size();i++){

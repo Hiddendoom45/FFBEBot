@@ -29,18 +29,19 @@ public enum Banner {
 	FF01("FF type-0 part 1",new Unit[]{Unit.Ace,Unit.Seven,Unit.Jack,Unit.Trey},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(DFina.pool, DFina.featured),DFina.include,BannerType.FFXIIIAjusted),
 	SoM("Secret of Mana",new Unit[]{Unit.Randi,Unit.Primm,Unit.Popoi},new int[][]{{50},{570,3},{1000,200,5}},Lib.concat(FF01.pool,FF01.featured),FF01.include,BannerType.FFXIIIAjusted),
 	Valentine("Valentine Special",new Unit[]{Unit.Maria,Unit.CArtemois,Unit.CLuna},new int[][]{{50},{570,3},{1000,200,5}},SoM.pool,SoM.include,BannerType.FFXIIIAjusted),
-	Olive("Olive Banner",new Unit[]{Unit.Olive,Unit.Shine,Unit.Shera},new int[][]{{50},{570,3},{1000,200,5}},Lib.concat(new Unit[]{Unit.Maria},Valentine.pool),Valentine.include,BannerType.BaseRare),
-	FF02("FF type-0 part 2",new Unit[]{Unit.Queen,Unit.Nine,Unit.Eight,Unit.Clinque},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(Olive.featured,Olive.pool),Olive.include,BannerType.BaseRare),
-	GilgVan("Gilgamesh Vanquishers",new Unit[]{Unit.Ramza,Unit.Snow,Unit.Arigas,Unit.Exdeath,Unit.Bartz}, new int[][]{{50},{570,3},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(FF02.featured,FF02.pool),FF02.include,BannerType.BaseRare),
-	PC2("Second People's Choice",new Unit[]{Unit.Noctis,Unit.Greg,Unit.Refia,Unit.Chizuru,Unit.Cecil,Unit.Zidane},new int[][]{{25},{25},{570,3},{570,3},{1000,200,5},{1000,200,5}},GilgVan.pool,GilgVan.include, BannerType.BaseRare),
-	FFTP2("FF Tactics part 2",new Unit[]{Unit.Cid,Unit.Soleil,Unit.Ovelia,Unit.Lawrence},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},PC2.pool,PC2.include,BannerType.BaseRare),
-	Egg("Egg Seekers",new Unit[]{Unit.Fryevia,Unit.Xon,Unit.Aiden},new int[][]{{50},{570,3},{1000,200,5}},Lib.concat(FFTP2.featured,FFTP2.pool),FFTP2.include,BannerType.BaseRare),
-	AwkWarriors("Awakened Warriors",new Unit[]{Unit.Lightning,Unit.Mercedes,Unit.Seven,Unit.Medius},new int[][]{{50},{570,3},{570,3},{1000,200,5}},Lib.concat(Egg.featured,Egg.pool),Egg.include,BannerType.BaseRare),
-	FFVIP2("FFVI part 2",new Unit[]{Unit.TTerra,Unit.Setzer,Unit.Gau},new int[][]{{50},{570,3},{1000,200,5}},AwkWarriors.pool,AwkWarriors.include,BannerType.BaseRare),
+	//gacha 2.0 change
+	Olive("Olive Banner",new Unit[]{Unit.Olive,Unit.Shine,Unit.Shera},new int[]{50,570,1205},Lib.concat(new Unit[]{Unit.Maria},Valentine.pool),Valentine.include,BannerType.BaseRare),
+	FF02("FF type-0 part 2",new Unit[]{Unit.Queen,Unit.Nine,Unit.Eight,Unit.Clinque},new int[]{50,570,1205,1205},Lib.concat(Olive.featured,Olive.pool),Olive.include,BannerType.BaseRare),
+	GilgVan("Gilgamesh Vanquishers",new Unit[]{Unit.Ramza,Unit.Snow,Unit.Arigas,Unit.Exdeath,Unit.Bartz}, new int[]{50,570,570,1205,1205},Lib.concat(FF02.featured,FF02.pool),FF02.include,BannerType.BaseRare),
+	PC2("Second People's Choice",new Unit[]{Unit.Noctis,Unit.Greg,Unit.Refia,Unit.Chizuru,Unit.Cecil,Unit.Zidane},new int[]{25,25,570,570,1205,1205},GilgVan.pool,GilgVan.include, BannerType.BaseRare),
+	FFTP2("FF Tactics part 2",new Unit[]{Unit.Cid,Unit.Soleil,Unit.Ovelia,Unit.Lawrence},new int[]{50,570,1205,1205},PC2.pool,PC2.include,BannerType.BaseRare),
+	Egg("Egg Seekers",new Unit[]{Unit.Fryevia,Unit.Xon,Unit.Aiden},new int[]{50,570,1205},Lib.concat(FFTP2.featured,FFTP2.pool),FFTP2.include,BannerType.BaseRare),
+	AwkWarriors("Awakened Warriors",new Unit[]{Unit.Lightning,Unit.Mercedes,Unit.Seven,Unit.Medius},new int[]{50,570,570,1205},Lib.concat(Egg.featured,Egg.pool),Egg.include,BannerType.BaseRare),
+	FFVIP2("FFVI part 2",new Unit[]{Unit.TTerra,Unit.Setzer,Unit.Gau},new int[]{50,570,1205},AwkWarriors.pool,AwkWarriors.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
-	public Unit[] pool;
+	private Unit[] pool;
 	public int[][] percent;//percent at each rarity
 	public Awakening[] include;
 	public BannerType type;
@@ -51,7 +52,6 @@ public enum Banner {
 		this.percent=percent;
 		this.include=include;
 		this.type=type;
-		populateCommons();
 	}
 	Banner(String name, Unit[] featured,int[] percent, Unit[] pool,Awakening[] include,BannerType type){
 		this.name=name;
@@ -67,21 +67,22 @@ public enum Banner {
 		this.percent=per;
 		this.include=include;
 		this.type=type;
-		populateCommons();
 	}
-	private void populateCommons(){
+	public Unit[] getPool(){
+		Unit[] pool=this.pool;
 		if(type==BannerType.ReleaseType){
-			for(int i=0;i<5;i++){
-				pool=Lib.concat(pool, Unit.commons1());
-			}
+			pool=Lib.concat(pool, Unit.commons1());
 		}
 		else if(type==BannerType.MoreCommons){
 			pool=Lib.concat(pool, Unit.commons2());
 		}
+		return pool;
 	}
 	public static Banner[] LEBanners(){
 		return new Banner[]{Banner.Halloween,
-				Banner.BF
+				Banner.BF,
+				Banner.Christmas,
+				Banner.SoM
 				};
 	}
 	public static boolean LEBanner(Banner banner){

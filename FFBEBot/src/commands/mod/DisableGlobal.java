@@ -49,6 +49,7 @@ public class DisableGlobal extends ModGenerics implements Command,Selection {
 		}
 		SaveSystem.setSetting(guild);
 		SaveSystem.loadGuilds();
+		Lib.sendMessage(event, module+" "+(enabled(event.getGuild().getId(),module)?"enabled":"disabled")+" on the server");
 	}
 
 	@Override
