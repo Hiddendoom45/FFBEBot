@@ -102,7 +102,19 @@ public enum Waifus {
 	HuntLid("Hunter Lid","3/37/Unit-Hunter_Lid-5.png"),
 	HuntSakura("Hunter Sakura","d/da/Unit-Hunter_Sakura-6.png"),
 	Ling("Ling","6/65/Unit-Ling-6.png"),
-	Ariana("Ariana","6/60/Unit-Dangerous_Ariana-6.png");
+	Ariana("Ariana","6/60/Unit-Dangerous_Ariana-6.png"),
+	Elfreeda("Elfreeda","d/d2/Unit-Elfreeda-6.png"),
+	Chloe("Chloe","4/4e/Unit-Chloe-6.png"),
+	Amy("Amy","a/a2/Unit-Amy-5.png"),
+	Iris("Iris","6/6a/Unit-Iris-5.png"),
+	Shallie("Shallie","5/5a/Unit-Shallie-5.png"),
+	Beatrix("Beatrix","a/ac/Unit-Beatrix-6.png"),
+	Kaede("Kaede","e/e4/Unit-Kaede-6.png"),
+	Otogiri("Otogiri","6/6b/Unit-Otogiri-5.png"),
+	Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
+	Ashterose("Ashterose","5/5f/Unit-Ashterose-6.png"),
+	Fryevia("Fryevia","3/32/Unit-Fryevia-6.png");
+	
 	
 	public String name;
 	public String url;

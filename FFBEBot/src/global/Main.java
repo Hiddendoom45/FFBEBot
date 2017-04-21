@@ -13,6 +13,7 @@ import util.SpamControl;
 import util.rng.RandomLibs;
 import util.unit.RedditUnit;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.security.auth.login.LoginException;
@@ -31,22 +32,31 @@ import googleutil.drive.DriveManager;
 
 public class Main {
 	public static JDA jda;//JDA of bot 
-	
+
 	public static void main(String[] args){
 		try{
-			  Runtime.getRuntime().addShutdownHook(new Thread() {
-			        @Override
-			            public void run() {
-			                SaveSystem.pushUserData();
-			                DriveManager.update(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
-			    			DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
-			    			Log.save();
-			    			DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
-			            }   
-			        }); 
-
+			Runtime.getRuntime().addShutdownHook(new Thread() {//bot shutdown, push and upload data
+				@Override
+				public void run() {
+					System.out.println("shutting down");
+					SaveSystem.pushUserData();
+					DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+					//Log.save();//last as this may take a long time as is not as high of a priority to complete
+					//DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+				}   
+			}); 
 			Main.startup();
 			Main.setup();
+			System.out.println("You're using Eclipse; click in this console and     " +
+					"press ENTER to call System.exit() and run the shutdown routine.");
+			try {
+				System.in.read();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.exit(0);
+
 		}catch(Exception e){
 			Log.logError(e);
 			Log.save();
@@ -108,6 +118,7 @@ public class Main {
 		CmdControl.addCommand("summon", new Summon(), Module);
 		CmdControl.addCommand("salty", new Salty(), Module);
 		CmdControl.addCommand("waifu", new Waifu(), Module);
+		CmdControl.addCommand("husbando", new Husbando(), Module);
 		CmdControl.addCommand("maintenance", new Maintenance(), Module);
 		
 		Module=ModuleEnum.Simulation.toString();
@@ -143,6 +154,7 @@ public class Main {
 		Overrider.addOverrideCommand("logclear", new ClearLog());
 		Overrider.addOverrideCommand("gamechange", new ChangeGame());
 		Overrider.addOverrideCommand("award", new Award());
+		Overrider.addOverrideCommand("update", new Update());
 		Overrider.addOverrideCommand("push", new DrivePush());
 		Overrider.addOverrideCommand("pull", new commands.overide.Pull());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
@@ -150,8 +162,8 @@ public class Main {
 		}
 		//setup/build various things
 		DriveManager.setup();//loads drive files and setup the service
-		Log.setup();
-		Restarter.setup();//starts the threads the queue the bot restarting
+		Log.setup();//start log thread that saves it every 6 hours
+		Restarter.setup();//starts the threads that queue the bot restarting
 		CounterPool.getPool().setup();//starts the thread for the counter pool
 		RedditUnit.buildRefImg();//builds hashmap for image icons
 		SpamControl.setSpams();//sets the data for custom spam types

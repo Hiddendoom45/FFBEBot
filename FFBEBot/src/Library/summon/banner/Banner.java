@@ -3,6 +3,7 @@ import Library.summon.Awakening;
 import Library.summon.Unit;
 import util.Lib;
 public enum Banner {
+	//TODO add proper awakenings to each banner, currently only 1 added
 	Release("Release",new Unit[]{},new int[][]{},Lib.concat(new Unit[]{Unit.Rakshasa,Unit.Xiao,Unit.Exdeath,Unit.Bartz,Unit.Firion,Unit.Cecil,Unit.Garland,Unit.Miyuki,Unit.Vaan,Unit.CoD,Unit.Roselia,Unit.Cerius,Unit.Medius},Unit.commons1()),new Awakening[]{},BannerType.ReleaseType),
 	Chiz("Chiz, Golbez, Kefka",new Unit[]{Unit.Kefka,Unit.Chizuru,Unit.Golbez},new int[][]{{800,375,25},{250,50},{800,375,25}},Release.pool,null,BannerType.ReleaseType),
 	Locke("Locke, Hayate, Artemios",new Unit[]{Unit.Locke,Unit.Hayate,Unit.Artemios},new int[][]{{560,366,33},{560,366,33},{700,366,33}},Lib.concat(Chiz.pool,Chiz.featured),new Awakening[]{},BannerType.ReleaseType),
@@ -19,6 +20,23 @@ public enum Banner {
 	FF3("FF3",new Unit[]{Unit.Luneth,Unit.Refia,Unit.Ingus,Unit.Arc},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Halloween.pool,Halloween.include,BannerType.Base5),
 	BF("Brave Frontier",new Unit[]{Unit.Tilith,Unit.Seria,Unit.Karl},new int[][]{{330,3},{330,3},{330,3}},Lib.concat(FF3.pool,FF3.featured),FF3.include,BannerType.Base5),
 	DD("Dark Destroyers",new Unit[]{Unit.DKC,Unit.Gaffgarion,Unit.CoD,Unit.Garland,Unit.Duane},new int[][]{{50},{570,3},{640,68,5},{640,68,5},{640,68,5}},BF.pool,BF.include,BannerType.Base5),
+	FFV("FFV",new Unit[]{Unit.Greg,Unit.Bartz,Unit.Exdeath,Unit.Faris},new int[][]{{50},{950,160,20},{950,160,20},{950,160,20}},DD.pool,DD.include,BannerType.Base5),
+	FFXIII1("FFXIII part 1",new Unit[]{Unit.Snow,Unit.Vanille,Unit.Sazh},new int[][]{{304,25},{304,25},{2800,19,10}},Lib.concat(FFV.pool, FFV.featured),FFV.include,BannerType.FFXIIIAjusted),
+	FFXIII2("FFXIII part 2",new Unit[]{Unit.Lightning,Unit.Hope,Unit.Fang},new int[][]{{50},{570,3},{2000,150,5}},Lib.concat(FFXIII1.pool, FFXIII1.featured),FFXIII1.include,BannerType.FFXIIIAjusted),
+	Noct("Noctis",new Unit[]{Unit.Noctis,Unit.Mercedes,Unit.Chizuru,Unit.Charlotte},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(new Unit[]{Unit.Hope,Unit.Fang},FFXIII2.pool),FFXIII2.include,BannerType.FFXIIIAjusted),
+	Christmas("Christmas Exclusive",new Unit[]{Unit.WKN,Unit.SRoselia,Unit.Cerius,Unit.Medius},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(new Unit[]{Unit.Mercedes,Unit.Noctis},Noct.pool),Noct.include,BannerType.FFXIIIAjusted),
+	DFina("Dark Fina",new Unit[]{Unit.DFina,Unit.Luka,Unit.Elle},new int[][]{{50},{570,3},{1000,200,5}},Christmas.pool,Christmas.include,BannerType.FFXIIIAjusted),
+	FF01("FF type-0 part 1",new Unit[]{Unit.Ace,Unit.Seven,Unit.Jack,Unit.Trey},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(DFina.pool, DFina.featured),DFina.include,BannerType.FFXIIIAjusted),
+	SoM("Secret of Mana",new Unit[]{Unit.Randi,Unit.Primm,Unit.Popoi},new int[][]{{50},{570,3},{1000,200,5}},Lib.concat(FF01.pool,FF01.featured),FF01.include,BannerType.FFXIIIAjusted),
+	Valentine("Valentine Special",new Unit[]{Unit.Maria,Unit.CArtemois,Unit.CLuna},new int[][]{{50},{570,3},{1000,200,5}},SoM.pool,SoM.include,BannerType.FFXIIIAjusted),
+	Olive("Olive Banner",new Unit[]{Unit.Olive,Unit.Shine,Unit.Shera},new int[][]{{50},{570,3},{1000,200,5}},Lib.concat(new Unit[]{Unit.Maria},Valentine.pool),Valentine.include,BannerType.BaseRare),
+	FF02("FF type-0 part 2",new Unit[]{Unit.Queen,Unit.Nine,Unit.Eight,Unit.Clinque},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(Olive.featured,Olive.pool),Olive.include,BannerType.BaseRare),
+	GilgVan("Gilgamesh Vanquishers",new Unit[]{Unit.Ramza,Unit.Snow,Unit.Arigas,Unit.Exdeath,Unit.Bartz}, new int[][]{{50},{570,3},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(FF02.featured,FF02.pool),FF02.include,BannerType.BaseRare),
+	PC2("Second People's Choice",new Unit[]{Unit.Noctis,Unit.Greg,Unit.Refia,Unit.Chizuru,Unit.Cecil,Unit.Zidane},new int[][]{{25},{25},{570,3},{570,3},{1000,200,5},{1000,200,5}},GilgVan.pool,GilgVan.include, BannerType.BaseRare),
+	FFTP2("FF Tactics part 2",new Unit[]{Unit.Cid,Unit.Soleil,Unit.Ovelia,Unit.Lawrence},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},PC2.pool,PC2.include,BannerType.BaseRare),
+	Egg("Egg Seekers",new Unit[]{Unit.Fryevia,Unit.Xon,Unit.Aiden},new int[][]{{50},{570,3},{1000,200,5}},Lib.concat(FFTP2.featured,FFTP2.pool),FFTP2.include,BannerType.BaseRare),
+	AwkWarriors("Awakened Warriors",new Unit[]{Unit.Lightning,Unit.Mercedes,Unit.Seven,Unit.Medius},new int[][]{{50},{570,3},{570,3},{1000,200,5}},Lib.concat(Egg.featured,Egg.pool),Egg.include,BannerType.BaseRare),
+	FFVIP2("FFVI part 2",new Unit[]{Unit.TTerra,Unit.Setzer,Unit.Gau},new int[][]{{50},{570,3},{1000,200,5}},AwkWarriors.pool,AwkWarriors.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;

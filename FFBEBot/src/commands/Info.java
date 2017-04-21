@@ -29,7 +29,8 @@ public class Info extends CommandGenerics implements Command{
 		fields.add(new Field("Servers", "Serving on "+Main.jda.getGuilds().size()+" servers", true));
 		fields.add(new Field("Channels","Serving on "+Main.jda.getTextChannels().size()+" channels",true));
 		fields.add(new Field("User","Serving "+Main.jda.getUsers().size()+" users",false));
-		fields.add(new Field("Last Launch",""+new SimpleDateFormat("[yyyy-MM-dd-HH]").format(new Date(Settings.ID)),true));
+		fields.add(new Field("Last Launch",""+new SimpleDateFormat("[yyyy-MM-dd-HH:MM]").format(new Date(Settings.ID)),true));
+		fields.add(new Field("Memory",(Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory())/1048576+"MB/"+Runtime.getRuntime().totalMemory()/1048576+"MB",true));
 		embed.setFields(fields);
 		embed.setColor(Color.GREEN);
 		embed.setDescription("general info");

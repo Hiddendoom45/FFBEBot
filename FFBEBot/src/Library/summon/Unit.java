@@ -131,6 +131,20 @@ public enum Unit {
 	Olive("Olive",new String[]{"/7/7a/Unit-Olive-5.png","/8/88/Unit-Olive-6.png"},5),
 	Shine("Shine",new String[]{"/8/80/Unit-Shine-4.png","/b/b6/Unit-Shine-5.png","/3/30/Unit-Shine-6.png"},4),
 	Shera("Shera",new String[]{"/a/ae/Unit-Shera-3.png","/9/9d/Unit-Shera-4.png","/5/57/Unit-Shera-5.png"},3),
+	Queen("Queen",new String[]{"0/08/Unit-Queen-5.png","7/76/Unit-Queen-6.png"},5),
+	Nine("Nine",new String[]{"8/85/Unit-Nine-4.png","c/c9/Unit-Nine-5.png","c/c5/Unit-Nine-6.png"},4),
+	Clinque("Clinque",new String[]{"7/7c/Unit-Cinque-3.png","c/c9/Unit-Cinque-4.png","e/e9/Unit-Cinque-5.png"},3),
+	Eight("Eight",new String[]{"6/66/Unit-Eight-3.png","7/72/Unit-Eight-4.png","6/65/Unit-Eight-5.png"},3),
+	Cid("Thunder God",new String[]{"e/e6/Unit-Orlandeau-5.png","d/df/Unit-Orlandeau-6.png"},5),
+	Soleil("Soleil",new String[]{"c/c0/Unit-Soleil-4.png","1/1b/Unit-Soleil-5.png","3/33/Unit-Soleil-6.png"},4),
+	Ovelia("Ovelia",new String[]{"a/ae/Unit-Ovelia-3.png","6/6f/Unit-Ovelia-4.png","b/b9/Unit-Ovelia-5.png"},3),
+	Lawrence("Lawrence",new String[]{"e/ef/Unit-Lawrence-3.png","4/40/Unit-Lawrence-4.png","b/b8/Unit-Lawrence-5.png"},3),
+	Fryevia("Fryevia",new String[]{"2/25/Unit-Fryevia-5.png","3/32/Unit-Fryevia-6.png"},5),
+	Xon("Xon",new String[]{"d/d0/Unit-Xon-4.png","b/bf/Unit-Xon-5.png","8/88/Unit-Xon-6.png"},4),
+	Aiden("Aiden",new String[]{"7/7f/Unit-Aiden-3.png","5/59/Unit-Aiden-4.png","8/8f/Unit-Aiden-5.png"},3),
+	TTerra("Trance Terra",new String[]{"f/ff/Unit-Trance_Terra-5.png","c/c9/Unit-Trance_Terra-6.png"},5),
+	Setzer("Setzer",new String[]{"8/82/Unit-Setzer-4.png","8/8e/Unit-Setzer-5.png","5/58/Unit-Setzer-6.png"},4),
+	Gau("Gau",new String[]{"a/ae/Unit-Gau-3.png","a/a5/Unit-Gau-4.png","7/72/Unit-Gau-5.png"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
@@ -273,7 +287,7 @@ public enum Unit {
 	}
 	public static Unit[] currentPool(){
 		
-		return Lib.concat(Unit.commons1(),new Unit[]{
+		return Lib.concat(Unit.commons2(),new Unit[]{
 				Garland,
 				Exdeath,
 				Kuja,
@@ -346,7 +360,21 @@ public enum Unit {
 				Emperor,
 				Olive,
 				Shine,
-				Shera
+				Shera,
+				Queen,
+				Nine,
+				Clinque,
+				Eight,
+				Cid,
+				Soleil,
+				Ovelia,
+				Lawrence,
+				Fryevia,
+				Xon,
+				Aiden,
+				TTerra,
+				Setzer,
+				Gau
 		});
 	}
 	public static Unit[] base3(Unit[] pool){

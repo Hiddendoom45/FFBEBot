@@ -22,40 +22,43 @@ public class Selector {
 	 * @return true if there's a selection event going on, or false if not
 	 */
 	public static boolean parseSelection(MessageReceivedEvent event){
-		//if user exits
-		if(event.getMessage().getContent().equals("exit")&&selections.containsKey(key(event))){
-			event.getChannel().sendTyping();//notify message recieved
-			selfPrune(selections.get(key(event)),event);//delete messages in relation to selection
-			selections.remove(key(event));//remove event
-			Lib.sendMessage(event, event.getAuthor().getName()+" exited menu");//send message to update status
-			return true;
-		}
-		//if typical selection event
-		else if(selections.containsKey(key(event))){
-			event.getChannel().sendTyping();//notify message recieved
-			Select select=selections.get(key(event));//select representing the event
-			//check if valid
-			if(valid(select.source.getInputType(),event)&&Selection(select.source.getInputType(),event.getMessage().getContent())<select.options.size()){
-				select.selected=Selection(select.source.getInputType(),event.getMessage().getContent());//create new selected to return
-				select.selectedText=event.getMessage().getContent();//set text of selected
-				selfPrune(select,event);//delete messages in relation to selection
-				selections.remove(key(event));//remove event //before triggering main command so selections can be chained
-				select.source.selectionChosen(select, event);//return to main command that selection has been chosen
+		//overall check for if there is an event
+		if(selections.containsKey(key(event))){
+			//if user exits
+			if(event.getMessage().getContent().equals("exit")){
+				event.getChannel().sendTyping();//notify message recieved
+				selfPrune(selections.get(key(event)),event);//delete messages in relation to selection
+				selections.remove(key(event));//remove event
+				Lib.sendMessage(event, event.getAuthor().getName()+" exited menu");//send message to update status
+				return true;
 			}
-			//if not send message that they selected the wrong one
+			//if typical selection event
 			else{
-				selfPrune(select,event);
-				if(select.tries>=3){//to avoid infinate loops, fails after 3 attempts
-					selections.remove(key(event));
-					Lib.sendMessageFormated(event, "%userMention% Exited selection menu due to 3 incorrect responses");
+				event.getChannel().sendTyping();//notify message recieved
+				Select select=selections.get(key(event));//select representing the event
+				//check if valid
+				if(valid(select.source.getInputType(),event)&&Selection(select.source.getInputType(),event.getMessage().getContent())<select.options.size()){
+					select.selected=Selection(select.source.getInputType(),event.getMessage().getContent());//create new selected to return
+					select.selectedText=event.getMessage().getContent();//set text of selected
+					selfPrune(select,event);//delete messages in relation to selection
+					selections.remove(key(event));//remove event //before triggering main command so selections can be chained
+					select.source.selectionChosen(select, event);//return to main command that selection has been chosen
 				}
+				//if not send message that they selected the wrong one
 				else{
-					select.tries++;
-					select.messageID=Lib.sendMessage(event, "Incorrect option type `exit` to exit menu\n"+select.msg).getId();
+					selfPrune(select,event);
+					if(select.tries>=3){//to avoid infinate loops, fails after 3 attempts
+						selections.remove(key(event));
+						Lib.sendMessageFormated(event, "%userMention% Exited selection menu due to 3 incorrect responses");
+					}
+					else{
+						select.tries++;
+						select.messageID=Lib.sendMessage(event, "Incorrect option type `exit` to exit menu\n"+select.msg).getId();
+					}
 				}
-			}
-			return true;
-		} 
+				return true;
+			} 
+		}
 		else{
 			return false;
 		}
@@ -91,10 +94,9 @@ public class Selector {
 		else if(SelectionType==2){//null selection
 			return true;
 		}
-		else if(SelectionType==3){
+		else if(SelectionType==3){//yes no selection
 			String message=event.getMessage().getContent();
 			if(message.toLowerCase().equals("y")||message.toLowerCase().equals("yes")||message.toLowerCase().equals("n")||message.toLowerCase().equals("no")){
-				System.out.println("valid pull");
 				return true;
 			}
 			else{
@@ -176,6 +178,6 @@ public class Selector {
 	private static int key(MessageReceivedEvent e){
 		return (""+e.getAuthor()+e.getChannel()).hashCode();
 	}
-	
-	
+
+
 }
