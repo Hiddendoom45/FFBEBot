@@ -1,4 +1,5 @@
 package Library.summon.banner;
+
 import Library.summon.Awakening;
 import Library.summon.Unit;
 import util.Lib;
@@ -28,7 +29,7 @@ public enum Banner {
 	DFina("Dark Fina",new Unit[]{Unit.DFina,Unit.Luka,Unit.Elle},new int[][]{{50},{570,3},{1000,200,5}},Christmas.pool,Christmas.include,BannerType.FFXIIIAjusted),
 	FF01("FF type-0 part 1",new Unit[]{Unit.Ace,Unit.Seven,Unit.Jack,Unit.Trey},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(DFina.pool, DFina.featured),DFina.include,BannerType.FFXIIIAjusted),
 	SoM("Secret of Mana",new Unit[]{Unit.Randi,Unit.Primm,Unit.Popoi},new int[][]{{50},{570,3},{1000,200,5}},Lib.concat(FF01.pool,FF01.featured),FF01.include,BannerType.FFXIIIAjusted),
-	Valentine("Valentine Special",new Unit[]{Unit.Maria,Unit.CArtemois,Unit.CLuna},new int[][]{{50},{570,3},{1000,200,5}},SoM.pool,SoM.include,BannerType.FFXIIIAjusted),
+	Valentine("Valentine Special",new Unit[]{Unit.Marie,Unit.CArtemois,Unit.CLuna},new int[][]{{50},{570,3},{1000,200,5}},SoM.pool,SoM.include,BannerType.FFXIIIAjusted),
 	//gacha 2.0 change
 	Olive("Olive Banner",new Unit[]{Unit.Olive,Unit.Shine,Unit.Shera},new int[]{50,570,1205},Lib.concat(new Unit[]{Unit.Maria},Valentine.pool),Valentine.include,BannerType.BaseRare),
 	FF02("FF type-0 part 2",new Unit[]{Unit.Queen,Unit.Nine,Unit.Eight,Unit.Clinque},new int[]{50,570,1205,1205},Lib.concat(Olive.featured,Olive.pool),Olive.include,BannerType.BaseRare),
@@ -58,11 +59,9 @@ public enum Banner {
 		this.featured=featured;
 		this.pool=pool;
 		int[][] per=new int[percent.length][];
-		int i=0;
-		for(int[] p:per){
-			p=new int[featured[i].url.length];
-			p[0]=percent[i];
-			i++;
+		for(int i=0;i<per.length;i++){
+			per[i]=new int[featured[i].url.length];
+			per[i][0]=percent[i];
 		}
 		this.percent=per;
 		this.include=include;
@@ -71,10 +70,14 @@ public enum Banner {
 	public Unit[] getPool(){
 		Unit[] pool=this.pool;
 		if(type==BannerType.ReleaseType){
-			pool=Lib.concat(pool, Unit.commons1());
+			for(int i=1;i*Unit.commons1().length<(pool.length-(i*Unit.commons1().length))*4;i++){
+				pool=Lib.concat(pool, Unit.commons1());
+			}
 		}
 		else if(type==BannerType.MoreCommons){
-			pool=Lib.concat(pool, Unit.commons2());
+			for(int i=1;i*Unit.commons2().length<(pool.length-(i*Unit.commons2().length))*4;i++){
+				pool=Lib.concat(pool, Unit.commons2());
+			}
 		}
 		return pool;
 	}
@@ -82,7 +85,8 @@ public enum Banner {
 		return new Banner[]{Banner.Halloween,
 				Banner.BF,
 				Banner.Christmas,
-				Banner.SoM
+				Banner.SoM,
+				Banner.Valentine
 				};
 	}
 	public static boolean LEBanner(Banner banner){

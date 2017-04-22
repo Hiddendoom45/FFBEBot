@@ -28,9 +28,8 @@ public class Banners extends CommandGenerics implements Command, Selection {
 				listBanners(event,status.index+1);
 			}
 			else if(chosen.options.size()<10&&chosen.selected==1+chosen.options.size()){//exit option
-
+				sendBannerInfo(event,getBanner(chosen.options.get(chosen.selected)));
 			}
-			sendBannerInfo(event,getBanner(chosen.options.get(chosen.selected)));
 		}
 		else{
 			if(chosen.selected>0){
@@ -94,7 +93,7 @@ public class Banners extends CommandGenerics implements Command, Selection {
 			}
 		}
 		if(i>(page+1)*10){//if there were more banners after, trigger adding the next button
-			names.add("next Banner Page "+page+2);
+			names.add("next Banner Page "+(page+2));
 		}
 		else{
 			names.add("exit");

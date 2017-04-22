@@ -13,7 +13,6 @@ import util.SpamControl;
 import util.rng.RandomLibs;
 import util.unit.RedditUnit;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import javax.security.auth.login.LoginException;
@@ -47,15 +46,6 @@ public class Main {
 			}); 
 			Main.startup();
 			Main.setup();
-			System.out.println("You're using Eclipse; click in this console and     " +
-					"press ENTER to call System.exit() and run the shutdown routine.");
-			try {
-				System.in.read();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			System.exit(0);
 
 		}catch(Exception e){
 			Log.logError(e);
