@@ -40,8 +40,8 @@ public class Main {
 					System.out.println("shutting down");
 					SaveSystem.pushUserData();
 					DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
-					//Log.save();//last as this may take a long time as is not as high of a priority to complete
-					//DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+					Log.save();//last as this may take a long time as is not as high of a priority to complete
+					DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
 				}   
 			}); 
 			Main.startup();

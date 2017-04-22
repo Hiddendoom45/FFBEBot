@@ -12,7 +12,6 @@ import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
 import XML.Elements;
-import global.record.Log;
 
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
@@ -393,7 +392,7 @@ public class XMLStAXFile {
 				Files.delete(file.toPath());
 			}
 			new File(file+"write").renameTo(file);
-		} catch (XMLStreamException | IOException e) {Log.logError(e);}
+		} catch (XMLStreamException | IOException e) {}
 		return true;
 	}
 	/**

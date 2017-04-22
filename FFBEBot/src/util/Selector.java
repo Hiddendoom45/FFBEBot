@@ -3,6 +3,7 @@ package util;
 import java.util.HashMap;
 
 import global.record.Log;
+import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
@@ -168,10 +169,13 @@ public class Selector {
 	private static void selfPrune(Select s,MessageReceivedEvent e){
 		try{
 			e.getChannel().getMessageById(s.messageID).complete().delete().queue();
-			e.getMessage().delete().queue();
+			if(e.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_MANAGE)){
+				e.getMessage().delete().queue();
+				Log.log("DELETE", "deleted message "+e.getMessage().getContent());
+			}
 		}catch(Exception e1){
 			if(!e.isFromType(ChannelType.PRIVATE)){
-				Log.log("ERROR", "Bot does not have permission to delete messages on "+e.getGuild().getName());
+				Log.logShortError(e1, 7);
 			}
 		}
 	}
