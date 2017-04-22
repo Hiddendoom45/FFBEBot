@@ -23,26 +23,31 @@ import util.rng.summon.SummonImageBuilder;
 public class Summon extends CommandGenerics implements Command {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else
-			public void run(){
-				try{
-					int num=Integer.parseInt(args[0]);
-					if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
-						num=1800;
+		if(args.length>0&&Lib.isNumber(args[0])){
+			Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else
+				public void run(){
+					try{
+						int num=Integer.parseInt(args[0]);
+						if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
+							num=1800;
+						}
+						Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
+						if(num==11){
+							sendImage(event, Pull.pull11(pullBanner),pullBanner);
+						}
+						else{
+							sendImage(event, Pull.pull(num,pullBanner),pullBanner);
+						}
 					}
-					Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
-					if(num==11){
-						sendImage(event, Pull.pull11(pullBanner),pullBanner);
-					}
-					else{
-						sendImage(event, Pull.pull(num,pullBanner),pullBanner);
+					catch(Exception e){
+						Log.logError(e);
 					}
 				}
-				catch(Exception e){
-					Log.logError(e);
-				}
-			}
-		});
+			});
+		}
+		else{
+			help(event);
+		}
 	}
 
 	@Override

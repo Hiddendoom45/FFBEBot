@@ -60,9 +60,9 @@ public class Salty extends CommandGenerics implements Command, Selection {
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s=SaveSystem.getPrefix(event)+"salty [unitname]"
-				+ "creates a salty image"
-				+ "[unitname] unit you're salty about(has to be a GL unit)(doesn't have to be the full name)";
+		String s=SaveSystem.getPrefix(event)+"salty [unitname]\n"
+				+ "\tcreates a salty image\n"
+				+ "\t[unitname] unit you're salty about(has to be a GL unit)(doesn't have to be the full name)";
 		Lib.sendMessage(event, s);
 	}
 	@Override
