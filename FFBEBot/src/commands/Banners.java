@@ -28,6 +28,9 @@ public class Banners extends CommandGenerics implements Command, Selection {
 				listBanners(event,status.index+1);
 			}
 			else if(chosen.options.size()<10&&chosen.selected==1+chosen.options.size()){//exit option
+				return;
+			}
+			else{
 				sendBannerInfo(event,getBanner(chosen.options.get(chosen.selected)));
 			}
 		}

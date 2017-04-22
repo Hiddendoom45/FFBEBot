@@ -27,8 +27,6 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 			Select select=new Select(possible,System.currentTimeMillis(),this,possible,msgHead);//none of this is really even used..., why did I make the select interface this way?...
 			select.additionalData=args;//arguments, so that it can get # of units and banner to summon from
 			Selector.setSelection(select, event);//pass to selection for yes/no option
-			user.dailyPullTime=System.currentTimeMillis();
-			SaveSystem.setUser(user);
 		}
 		else if(user.lapis<250){
 			Lib.sendMessageFormated(event, "**%userName%** you do not have enough lapis to do a daily pull");
@@ -72,6 +70,8 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 							new Summon().sendImage(event, units,pullBanner);
 							Lib.sendMessage(event, "You have "+user.lapis+" lapis left");
 						}
+						user.dailyPullTime=System.currentTimeMillis();
+						SaveSystem.setUser(user);
 					}
 					catch(Exception e){
 						Log.logError(e);

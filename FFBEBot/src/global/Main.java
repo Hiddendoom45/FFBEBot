@@ -46,7 +46,6 @@ public class Main {
 			}); 
 			Main.startup();
 			Main.setup();
-
 		}catch(Exception e){
 			Log.logError(e);
 			Log.save();
