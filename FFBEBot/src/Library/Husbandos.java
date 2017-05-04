@@ -86,6 +86,8 @@ public enum Husbandos {
 	Aiden("Aiden","8/8f/Unit-Aiden-5.png"),
 	Setzer("Setzer","5/58/Unit-Setzer-6.png"),
 	Gau("Gau","7/72/Unit-Gau-5.png"),
+	Soze("Soze","9/94/Unit-Sozhe-6.png"),
+	Heretic("Heltich","2/2b/Unit-Heltich-5.png"),
 	Thief("Thief","d/de/Unit-Thief-5.png"),
 	DRain("Demon Rain","3/30/Unit-Demon_Rain-6.png"),
 	DLasswell("Dracu Lasswell","c/c3/Unit-Dracu_Lasswell-6.png"),

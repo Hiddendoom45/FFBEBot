@@ -38,7 +38,7 @@ public class SpamControl {
 	}
 	public static void setSpams(){
 		//type(0==local,1==global),limit, timeout
-		typeData.put("summon", new int[]{0,2,30000});
+		typeData.put("summon", new int[]{1,2,60000});
 		typeData.put("units", new int[]{0,4,60000});
 	}
 	private static void sendSpamMessage(MessageReceivedEvent event,String type,SpamData spam){

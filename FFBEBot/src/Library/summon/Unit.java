@@ -145,6 +145,10 @@ public enum Unit {
 	TTerra("Trance Terra",new String[]{"f/ff/Unit-Trance_Terra-5.png","c/c9/Unit-Trance_Terra-6.png"},5),
 	Setzer("Setzer",new String[]{"8/82/Unit-Setzer-4.png","8/8e/Unit-Setzer-5.png","5/58/Unit-Setzer-6.png"},4),
 	Gau("Gau",new String[]{"a/ae/Unit-Gau-3.png","a/a5/Unit-Gau-4.png","7/72/Unit-Gau-5.png"},3),
+	Eileen("Aileen",new String[]{"2/21/Unit-Aileen-5.png","4/49/Unit-Aileen-6.png"},5),
+	Soze("Sohze", new String[]{"e/ee/Unit-Sozhe-4.png","d/d4/Unit-Sozhe-5.png","9/94/Unit-Sozhe-6.png"},4),
+	Heretic("Heltich", new String[]{"3/36/Unit-Heltich-3.png","6/61/Unit-Heltich-4.png","2/2b/Unit-Heltich-5.png"},3),
+	Ulrica("Ulrica",new String[]{"7/72/Unit-Ulrica-3.png","b/b6/Unit-Ulrica-4.png","1/14/Unit-Ulrica-5.png"},3),	
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),

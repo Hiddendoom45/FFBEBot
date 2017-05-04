@@ -159,13 +159,15 @@ public class Log {
 	public static String getSavedLog(int length,int start){
 		String existing="";
 		try{
+			StringBuilder build=new StringBuilder(); 
 			if(new File(Settings.saveSource).exists()){
 				BufferedReader in=new BufferedReader(new FileReader(new File(Settings.saveSource)));
 				while(in.ready()){
-					existing+=in.readLine()+"\n";
+					build.append(in.readLine()+"\n");
 				}
 				in.close();
 			}
+			existing=build.toString();
 			String out="";
 			String[] logs=existing.split("\n");
 			for(int i=logs.length>length+start?logs.length-length-start:0;i<logs.length;i++){

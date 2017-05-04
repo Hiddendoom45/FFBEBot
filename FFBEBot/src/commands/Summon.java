@@ -17,10 +17,18 @@ import global.record.Settings;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
+import util.SpamControl;
 import util.rng.summon.Pull;
 import util.rng.summon.SummonImageBuilder;
 
 public class Summon extends CommandGenerics implements Command {
+	@Override
+	public boolean called(String[] args, MessageReceivedEvent event) {
+		if(super.called(args, event)){
+			
+		}
+		return SpamControl.isSpam(event, "summon");
+	}
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		if(args.length>0&&Lib.isNumber(args[0])){
@@ -28,8 +36,8 @@ public class Summon extends CommandGenerics implements Command {
 				public void run(){
 					try{
 						int num=Integer.parseInt(args[0]);
-						if(num>1800){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap
-							num=1800;
+						if(num>1000){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap//adjusted to lower
+							num=1000;
 						}
 						Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
 						if(num==11){
