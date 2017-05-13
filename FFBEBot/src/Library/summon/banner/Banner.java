@@ -40,6 +40,7 @@ public enum Banner {
 	AwkWarriors("Awakened Warriors",new Unit[]{Unit.Lightning,Unit.Mercedes,Unit.Seven,Unit.Medius},new int[]{50,570,570,1205},Lib.concat(Egg.featured,Egg.pool),Egg.include,BannerType.BaseRare),
 	FFVIP2("FFVI part 2",new Unit[]{Unit.TTerra,Unit.Setzer,Unit.Gau},new int[]{50,570,1205},AwkWarriors.pool,AwkWarriors.include,BannerType.BaseRare),
 	Eileen("Aileen",new Unit[]{Unit.Eileen,Unit.Soze,Unit.Heretic,Unit.Ulrica},new int[]{50,570,1205,1205},Lib.concat(FFVIP2.pool,FFVIP2.featured),FFVIP2.include,BannerType.BaseRare),
+	DragonKill("Dragon Killers",new Unit[]{Unit.Reberta,Unit.Zyrus,Unit.Firion,Unit.Kain},new int[]{50,570,1205,1205},Lib.concat(Eileen.pool,Eileen.featured),Eileen.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;

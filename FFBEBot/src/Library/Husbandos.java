@@ -88,6 +88,8 @@ public enum Husbandos {
 	Gau("Gau","7/72/Unit-Gau-5.png"),
 	Soze("Soze","9/94/Unit-Sozhe-6.png"),
 	Heretic("Heltich","2/2b/Unit-Heltich-5.png"),
+	Zyrus("Zyrus","5/5d/Unit-Zyrus-6.png"),
+	//Limited ones//for organization
 	Thief("Thief","d/de/Unit-Thief-5.png"),
 	DRain("Demon Rain","3/30/Unit-Demon_Rain-6.png"),
 	DLasswell("Dracu Lasswell","c/c3/Unit-Dracu_Lasswell-6.png"),

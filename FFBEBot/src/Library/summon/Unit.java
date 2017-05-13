@@ -148,7 +148,9 @@ public enum Unit {
 	Eileen("Aileen",new String[]{"2/21/Unit-Aileen-5.png","4/49/Unit-Aileen-6.png"},5),
 	Soze("Sohze", new String[]{"e/ee/Unit-Sozhe-4.png","d/d4/Unit-Sozhe-5.png","9/94/Unit-Sozhe-6.png"},4),
 	Heretic("Heltich", new String[]{"3/36/Unit-Heltich-3.png","6/61/Unit-Heltich-4.png","2/2b/Unit-Heltich-5.png"},3),
-	Ulrica("Ulrica",new String[]{"7/72/Unit-Ulrica-3.png","b/b6/Unit-Ulrica-4.png","1/14/Unit-Ulrica-5.png"},3),	
+	Ulrica("Ulrica",new String[]{"7/72/Unit-Ulrica-3.png","b/b6/Unit-Ulrica-4.png","1/14/Unit-Ulrica-5.png"},3),
+	Zyrus("Zyrus",new String[]{"c/cd/Unit-Zyrus-4.png","b/be/Unit-Zyrus-5.png","5/5d/Unit-Zyrus-6.png"},4),
+	Reberta("Reberta",new String[]{"c/c7/Unit-Reberta-5.png","b/b0/Unit-Reberta-6.png"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
@@ -378,7 +380,13 @@ public enum Unit {
 				Aiden,
 				TTerra,
 				Setzer,
-				Gau
+				Gau,
+				Eileen,
+				Soze,
+				Heretic,
+				Ulrica,
+				Zyrus,
+				Reberta
 		});
 	}
 	public static Unit[] base3(Unit[] pool){

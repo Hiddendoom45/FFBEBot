@@ -70,6 +70,7 @@ public enum Waifus {
 	Marie("Marie","7/79/Unit-Marie-6.png"),
 	Ulrica("Ulrikca","1/14/Unit-Ulrica-5.png"),
 	Eileen("Aileen","4/49/Unit-Aileen-6.png"),
+	Reberta("Reberta","b/b0/Unit-Reberta-6.png"),
 	Rem("Rem","b/b6/Unit-Rem-6.png"),
 	Jean("Jean","9/91/Unit-Jean-5.png"),
 	Grace("Grace","8/8c/Unit-Grace-6.png"),
