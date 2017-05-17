@@ -10,8 +10,11 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.Vector;
+import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
@@ -68,6 +71,12 @@ public class SaveSystem {
 			preloadReddit(null);
 			writeData();
 		}
+		setDailyTime();
+		Settings.executor.scheduleWithFixedDelay(new Runnable(){
+			public void run(){
+				setDailyTime();
+			}
+		},Settings.dailyTime+86400000-System.currentTimeMillis(),86400000,TimeUnit.MILLISECONDS);
 		load();
 	}
 	/**
@@ -352,6 +361,19 @@ public class SaveSystem {
 			Log.log("ERROR", "error loading guilds");
 		}
 		file.endReader();
+	}
+	public static void setDailyTime(){
+		Calendar cal=Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+		long Current=System.currentTimeMillis();
+		int hour=cal.get(Calendar.HOUR_OF_DAY);
+		int minute=cal.get(Calendar.MINUTE);
+		int second=cal.get(Calendar.SECOND);
+		int mili=cal.get(Calendar.MILLISECOND);
+		hour-=9;
+		if(hour<0){
+			hour+=24;
+		}
+		Settings.dailyTime=Current-(hour*3600000)-(minute*60000)-(second*1000)-(mili);
 	}
 	/**
 	 * Get the locally saved user data

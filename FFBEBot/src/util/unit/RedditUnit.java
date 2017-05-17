@@ -48,20 +48,24 @@ public class RedditUnit {
 				title=content.getElementsByTag("h2").first().text();
 				JobTribe=content.getElementsByTag("ul").get(2).child(0).text();
 				TrustDetails=content.getElementsByTag("ul").get(2).child(1).text();
+				if(TrustDetails.contains("Tribe")){
+					JobTribe+=content.getElementsByTag("ul").get(2).child(1).text();
+					TrustDetails=content.getElementsByTag("ul").get(2).child(2).text();
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing basic info for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element growths=Lib.getEleAfter(content.children(), new ElementFilter("h3","Growth Pattern"));
-				growth=new String[growths.children().size()];
-				for(int i=0;i<growths.children().size();i++){
-					growth[i]=growths.child(i).text();
+				Element slot=Lib.getEleAfter(content.children(), new ElementFilter("h3","Materia Slots"));
+				slots=new String[slot.children().size()];
+				for(int i=0;i<slot.children().size();i++){
+					slots[i]=slot.child(i).text();
 					if(i==0){
-						baseR=Integer.parseInt(growths.child(i).text().substring(1, 2));
+						baseR=Integer.parseInt(slot.child(i).text().substring(1, 2));
 					}
-					else if(i==growths.children().size()-1){
-						maxR=Integer.parseInt(growths.child(i).text().substring(1, 2));;
+					else if(i==slot.children().size()-1){
+						maxR=Integer.parseInt(slot.child(i).text().substring(1, 2));;
 					}
 				}
 			}catch(Exception e){
@@ -87,10 +91,13 @@ public class RedditUnit {
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats")).getElementsByTag("tbody").first();
-				this.stats=new UnitStats[stats.children().size()];
-				for(int i=0;i<stats.children().size();i++){
-					this.stats[i]=new UnitStats(stats.child(i));
+				Element e=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats"));
+				if(!(e==null)){
+					Element stats=e.getElementsByTag("tbody").first();
+					this.stats=new UnitStats[stats.children().size()];
+					for(int i=0;i<stats.children().size();i++){
+						this.stats[i]=new UnitStats(stats.child(i));
+					}
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing stats for page "+page);
@@ -108,16 +115,6 @@ public class RedditUnit {
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element slot=Lib.getEleAfter(content.children(), new ElementFilter("h3","Materia Slots"));
-				slots=new String[slot.children().size()];
-				for(int i=0;i<slot.children().size();i++){
-					slots[i]=slot.child(i).text();
-				}
-			}catch(Exception e){
-				Log.log("ERROR", "error parsing materia slots for page "+page);
-				Log.logShortError(e, 5);
-			}
-			try{
 				Element LBs=Lib.getEleAfter(content.children(), new ElementFilter("h3","Limit Burst")).getElementsByTag("tbody").first();
 				LB=new UnitLB[LBs.children().size()];
 				for(int i=0;i<LBs.children().size();i++){
@@ -128,42 +125,54 @@ public class RedditUnit {
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic Spells")).getElementsByTag("tbody").first();
-				this.magic=new UnitAbility[magic.children().size()];
-				for(int i=0;i<magic.children().size();i++){
-					this.magic[i]=new UnitAbility(magic.child(i));
+				Element e=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic Spells"));
+				if(!(e==null)){
+					Element magic=e.getElementsByTag("tbody").first();
+					this.magic=new UnitAbility[magic.children().size()];
+					for(int i=0;i<magic.children().size();i++){
+						this.magic[i]=new UnitAbility(magic.child(i));
+					}
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing magic abilities for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element specials=Lib.getEleAfter(content.children(), new ElementFilter("h3","Abilities")).getElementsByTag("tbody").first();
-				special=new UnitAbility[specials.children().size()];
-				for(int i=0;i<specials.children().size();i++){
-					special[i]=new UnitAbility(specials.child(i));
+				Element e=Lib.getEleAfter(content.children(), new ElementFilter("h3","Abilities"));
+				if(!(e==null)){
+					Element specials=e.getElementsByTag("tbody").first();
+					special=new UnitAbility[specials.children().size()];
+					for(int i=0;i<specials.children().size();i++){
+						special[i]=new UnitAbility(specials.child(i));
+					}
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing special abilites for page "+page);
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element related=Lib.getEleAfter(content.children(), new ElementFilter("h3","Related Skills")).getElementsByTag("tbody").first();
-				relatedSkills=new UnitRelated[related.children().size()];
-				for(int i=0;i<related.children().size();i++){
-					relatedSkills[i]=new UnitRelated(related.child(i));
+				Element e=Lib.getEleAfter(content.children(), new ElementFilter("h3","Related Skills"));
+				if(!(e==null)){
+					Element related=e.getElementsByTag("tbody").first();
+					relatedSkills=new UnitRelated[related.children().size()];
+					for(int i=0;i<related.children().size();i++){
+						relatedSkills[i]=new UnitRelated(related.child(i));
+					}
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing related skills for page "+page);
 			}
 			try{
-				Elements en=Lib.getEleAfter(content.children(), new ElementFilter("h3","Enhancements")).getElementsByTag("tbody");
+				Element e=Lib.getEleAfter(content.children(), new ElementFilter("h3","Enhancements"));
+				if(!(e==null)){
+					Elements en=e.getElementsByTag("tbody");
+					if(!(en==null)){
+						Element enhancements=en.first();
+						enhance=new UnitEnhancements[enhancements.children().size()];
+						for(int i=0;i<enhancements.children().size();i++){
+							enhance[i]=new UnitEnhancements(enhancements.child(i));
 
-				if(!(en==null)){
-					Element enhancements=en.first();
-					enhance=new UnitEnhancements[enhancements.children().size()];
-					for(int i=0;i<enhancements.children().size();i++){
-						enhance[i]=new UnitEnhancements(enhancements.child(i));
+						}
 					}
 				}
 			}catch(Exception e){

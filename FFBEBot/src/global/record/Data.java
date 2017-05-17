@@ -43,7 +43,7 @@ public class Data {
 		}
 	}
 	public boolean dailyReady(){
-		if(dailyTime+86400000>System.currentTimeMillis()){
+		if(dailyTime>Settings.dailyTime){
 			return false;
 		}
 		else{
@@ -51,7 +51,7 @@ public class Data {
 		}
 	}
 	public boolean dailyPullReady(){
-		if(dailyPullTime+86400000>System.currentTimeMillis()){
+		if(dailyPullTime>Settings.dailyTime){
 			return false;
 		}
 		else{

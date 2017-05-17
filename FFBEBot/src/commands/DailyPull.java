@@ -32,7 +32,7 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 			Lib.sendMessageFormated(event, "**%userName%** you do not have enough lapis to do a daily pull");
 		}
 		else{
-			long diff=user.dailyPullTime+86400000-System.currentTimeMillis();
+			long diff=Settings.dailyTime+86400000-System.currentTimeMillis();
 			int hours=(int) TimeUnit.MILLISECONDS.toHours(diff)%24;
 			int minutes=(int) TimeUnit.MILLISECONDS.toMinutes(diff)%60;
 			int seconds=(int) TimeUnit.MILLISECONDS.toSeconds(diff)%60;

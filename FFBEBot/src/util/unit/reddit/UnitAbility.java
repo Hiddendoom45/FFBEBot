@@ -13,6 +13,7 @@ public class UnitAbility{
 	public int level;
 	public int minRare;
 	public UnitAbility(Element row){
+		if(row.children().size()>7){
 		jpName=row.child(1).text();
 		enName=row.child(2).text();
 		effect=row.child(4).text();
@@ -20,5 +21,13 @@ public class UnitAbility{
 		MP=Lib.isNumber(row.child(3).text())?Integer.parseInt(row.child(3).text()):0;
 		level=Integer.parseInt(row.child(6).text());
 		minRare=Integer.parseInt(row.child(7).text());
+		}else{
+			jpName=row.child(1).text();
+			enName=row.child(2).text();
+			MP=Lib.isNumber(row.child(3).text())?Integer.parseInt(row.child(3).text()):0;
+			effect=row.child(4).text();
+			level=Integer.parseInt(row.child(5).text());
+			minRare=Integer.parseInt(row.child(6).text());
+		}
 	}
 }

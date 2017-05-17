@@ -301,7 +301,7 @@ public class Lib {
 	 */
 	public static Element getEleAfter(Elements elements,ElementFilter after){
 		Elements e=getElesAfter(elements,after);
-		if(e.size()>0){
+		if(!(e==null)&&e.size()>0){
 			return e.first();
 		}
 		return null;
