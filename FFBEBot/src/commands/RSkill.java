@@ -3,8 +3,10 @@ package commands;
 import java.io.IOException;
 
 import global.CommandParser.CommandContainer;
+import global.record.Log;
 import global.record.SaveSystem;
 import net.dv8tion.jda.core.MessageBuilder;
+import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import reactions.ToggleReaction;
@@ -25,12 +27,16 @@ public class RSkill extends RedditSelection{
 			messageString=en;
 		}
 		Message msg=Lib.sendMessage(event,messageString);
+		try{
 		msg.addReaction("🇺🇸").queue();
 		msg.addReaction("🇯🇵").queue();
 		SkillReact react=new SkillReact();
 		react.addPanel("🇺🇸", en);
 		react.addPanel("🇯🇵", jp);
 		ReactionController.addReaction(msg, react);
+		}catch(net.dv8tion.jda.core.exceptions.PermissionException e){
+			Log.log("REACTERR", "Bot does not have permission to react on "+event.getChannel()+(!event.isFromType(ChannelType.PRIVATE)?" on "+event.getGuild():""));
+		}
 	}
 	private String getMsgString(RedditUnit info, boolean english){
 		String s=":pencil: Skills for:"+info.title;

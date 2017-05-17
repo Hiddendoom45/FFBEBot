@@ -121,7 +121,7 @@ public class CmdControl {
 			Log.logError(e1);
 		}
 		
-		if(e.getAuthor().getId().equals(Settings.ownerID))return true;;
+		if(e.getAuthor().getId().equals(Settings.ownerID))return true;
 		return false;
 	}
 	private static boolean CommandEnabled(MessageReceivedEvent event, String command){
