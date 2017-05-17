@@ -115,10 +115,12 @@ public class RedditUnit {
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element LBs=Lib.getEleAfter(content.children(), new ElementFilter("h3","Limit Burst")).getElementsByTag("tbody").first();
+				Element e=Lib.getEleAfter(content.children(), new ElementFilter("h3","Limit Burst"));
+				Element LBs=e.getElementsByTag("tbody").first();
+				Element head=e.getElementsByTag("thead").first();
 				LB=new UnitLB[LBs.children().size()];
 				for(int i=0;i<LBs.children().size();i++){
-					LB[i]=new UnitLB(LBs.child(i));
+					LB[i]=new UnitLB(LBs.child(i),head.child(0));
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing LBs for page "+page);
