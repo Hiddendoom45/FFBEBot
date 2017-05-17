@@ -2,6 +2,9 @@ package util;
 
 import java.util.ArrayList;
 
+import net.dv8tion.jda.core.MessageBuilder;
+import net.dv8tion.jda.core.entities.Message;
+
 /**
  * object representing the options for a selections 
  * @author Allen
@@ -42,11 +45,15 @@ public class Select {
 	public String[] additionalData;//use to hold additional information
 	public String selectedText;
 	public int tries=1;
+	public Message message;
+	public Message errMessage;
 	public Select(ArrayList<String> options,long ID,Selection source,String msg){
 		this.options=options;
 		this.ID=ID;
 		this.source=source;
 		this.msg=msg;
+		message=new MessageBuilder().append(msg).build();
+		errMessage=new MessageBuilder().append("Incorrect option type `exit` to exit menu\n"+msg).build();
 	}
 	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names){
 		this(options,ID,source,names,"Please select one of the following(type one of the following numbers):");

@@ -37,6 +37,7 @@ public class RSkill extends RedditSelection{
 		}catch(net.dv8tion.jda.core.exceptions.PermissionException e){
 			Log.log("REACTERR", "Bot does not have permission to react on "+event.getChannel()+(!event.isFromType(ChannelType.PRIVATE)?" on "+event.getGuild():""));
 		}
+		catch(NullPointerException e1){}
 	}
 	private String getMsgString(RedditUnit info, boolean english){
 		String s=":pencil: Skills for:"+info.title;

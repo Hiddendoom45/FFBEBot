@@ -128,23 +128,33 @@ public class Lib {
 	 * @return message that was sent
 	 */
 	public static Message sendMessage(MessageReceivedEvent event,String msg){
-			if(msg.length()>2000){
-				Vector<String> toSend=splitMessage(msg);
-				for(String s:toSend){
-					sendPrivate(event,s);
-				}
-				if(!event.isFromType(ChannelType.PRIVATE)){
-					sendMessage(event,"Message was too long. Check your DMs for response");
-				}
-				return null;
+		if(msg.length()>2000){
+			Vector<String> toSend=splitMessage(msg);
+			for(String s:toSend){
+				sendPrivate(event,s);
 			}
-			//if(!SpamControl.isSpam(event, "global")&&!event.isFromType(ChannelType.PRIVATE)&&!msg.contains("too many messages, please wait")) return null;//disabled to avoid a bunch of pain
-			Message message=event.getChannel().sendMessage(msg).complete();
-			return message;
+			if(!event.isFromType(ChannelType.PRIVATE)){
+				sendMessage(event,"Message was too long. Check your DMs for response");
+			}
+			return null;
+		}
+		Message message=event.getChannel().sendMessage(msg).complete();
+		return message;
+}
+	/**
+	 * generic send message, will have wrappers to fix some issues and errors in relation to sending messages
+	 * @param event message received
+	 * @param msg message to send someone
+	 * @return message that was sent
+	 */
+	public static Message sendMessage(MessageReceivedEvent event, Message msg) {
+		Message message=event.getChannel().sendMessage(msg).complete();
+		return message;
 	}
 	public static Message sendPrivate(MessageReceivedEvent event, String msg){
-			Message message=event.getAuthor().getPrivateChannel().sendMessage(msg).complete();
-			return message;
+		event.getAuthor().openPrivateChannel().complete();//open private if it's not open
+		Message message=event.getAuthor().getPrivateChannel().sendMessage(msg).complete();
+		return message;
 	}
 	private static Vector<String> splitMessage(String msg){
 		Vector<String> splitMsg=new Vector<String>();
@@ -583,4 +593,6 @@ public class Lib {
 		  System.arraycopy(second, 0, result, first.length, second.length);
 		  return result;
 		}
+
+	
 }

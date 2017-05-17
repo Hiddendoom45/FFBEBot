@@ -54,7 +54,7 @@ public class Selector {
 					}
 					else{
 						select.tries++;
-						select.messageID=Lib.sendMessage(event, "Incorrect option type `exit` to exit menu\n"+select.msg).getId();
+						select.messageID=Lib.sendMessage(event, select.errMessage).getId();
 					}
 				}
 				return true;
@@ -70,7 +70,7 @@ public class Selector {
 	 * @param event event
 	 */
 	public static void setSelection(Select selection,MessageReceivedEvent event){
-		selection.messageID=Lib.sendMessage(event,selection.msg).getId();
+		selection.messageID=Lib.sendMessage(event,selection.message).getId();
 		selections.put(key(event), selection);
 	}
 	/**
