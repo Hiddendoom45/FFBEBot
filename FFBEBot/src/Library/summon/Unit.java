@@ -151,6 +151,9 @@ public enum Unit {
 	Ulrica("Ulrica",new String[]{"7/72/Unit-Ulrica-3.png","b/b6/Unit-Ulrica-4.png","1/14/Unit-Ulrica-5.png"},3),
 	Zyrus("Zyrus",new String[]{"c/cd/Unit-Zyrus-4.png","b/be/Unit-Zyrus-5.png","5/5d/Unit-Zyrus-6.png"},4),
 	Reberta("Reberta",new String[]{"c/c7/Unit-Reberta-5.png","b/b0/Unit-Reberta-6.png"},5),
+	Sice("Sice",new String[]{"4/42/Unit-Sice-3.png","3/30/Unit-Sice-4.png","6/64/Unit-Sice-5.png"},3),
+	King("King",new String[]{"7/70/Unit-King-4.png","1/13/Unit-King-5.png","e/e5/Unit-King-6.png"},4),
+	Rem("Rem",new String[]{"a/a5/Unit-Rem-5.png","b/b6/Unit-Rem-6.png"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
