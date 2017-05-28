@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 import Library.summon.SummonedUnit;
+import Library.summon.Unit;
 import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
 import global.record.Log;
@@ -42,6 +43,11 @@ public class Summon extends CommandGenerics implements Command {
 						Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
 						if(num==11){
 							sendImage(event, Pull.pull11(pullBanner),pullBanner);
+						}
+						else if(num==0){
+							ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
+							units.add(new SummonedUnit(Unit.Bedile.getRarity(3), Unit.Bedile.name, 3, Unit.Bedile));
+							sendImage(event,units,pullBanner);
 						}
 						else{
 							sendImage(event, Pull.pull(num,pullBanner),pullBanner);
