@@ -158,6 +158,10 @@ public enum Unit {
 	Grace("Grace",new String[]{"2/28/Unit-Grace-4.png","3/38/Unit-Grace-5.png","8/8c/Unit-Grace-6.png"},4),
 	Abel("Abel",new String[]{"8/88/Unit-Abel-3.png","0/0e/Unit-Abel-4.png","3/35/Unit-Abel-5.png"},3),
 	Jean("Jean",new String[]{"b/b4/Unit-Jean-3.png","6/67/Unit-Jean-4.png","9/91/Unit-Jean-5.png"},3),
+	Camille("Camille",new String[]{"3/38/Unit-Camille-3.png","1/17/Unit-Camille-4.png","e/e4/Unit-Camille-5.png"},3),
+	Illus("Illias",new String[]{"4/46/Unit-Ilias-4.png","7/78/Unit-Ilias-5.png","2/2b/Unit-Ilias-6.png"},4),
+	Amelia("Amelia",new String[]{"3/34/Unit-Amelia-4.png","5/5c/Unit-Amelia-5.png","9/9e/Unit-Amelia-6.png"},4),
+	Forren("Fohlen",new String[]{"b/b0/Unit-Fohlen-5.png","f/f3/Unit-Fohlen-6.png"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),

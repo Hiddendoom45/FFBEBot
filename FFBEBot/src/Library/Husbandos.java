@@ -91,6 +91,8 @@ public enum Husbandos {
 	Zyrus("Zyrus","5/5d/Unit-Zyrus-6.png"),
 	Wilhelm("Wilhelm","f/f0/Unit-Wilhelm-6.png"),
 	Abel("Abel","3/35/Unit-Abel-5.png"),
+	Illus("Illias","2/2b/Unit-Ilias-6.png"),
+	Forren("Fohlen","f/f3/Unit-Fohlen-6.png"),
 	//Limited ones//for organization
 	Thief("Thief","d/de/Unit-Thief-5.png"),
 	DRain("Demon Rain","3/30/Unit-Demon_Rain-6.png"),
