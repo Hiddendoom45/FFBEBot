@@ -23,7 +23,11 @@ public class Counter{
 	public Counter count() {
 		synchronized(this){
 			if(!end){
-				event.getChannel().getMessageById(messageID).complete().editMessage(message.replace("%count%", ""+i)).submit();
+				try{
+					event.getChannel().getMessageById(messageID).complete().editMessage(message.replace("%count%", ""+i)).submit();
+				}catch(IllegalStateException e){
+					end=true;
+				}
 			}
 			else{
 				event.getChannel().deleteMessageById(messageID).submit();
