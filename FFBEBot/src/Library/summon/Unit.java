@@ -182,7 +182,8 @@ public enum Unit {
 	Primm("Primm",new String[]{"4/42/Unit-Primm-4.png","9/99/Unit-Primm-5.png","d/d9/Unit-Primm-6.png"},4),
 	Randi("Randi",new String[]{"9/9a/Unit-Randi-5.png","3/33/Unit-Randi-6.png"},5),
 	CLuna("Cupid Luna",new String[]{"/8/81/Unit-Cupid_Luna-3.png","/c/c9/Unit-Cupid_Luna-4.png","/f/f8/Unit-Cupid_Luna-5.png?"},3),
-	CArtemois("Cupid Artemois",new String[]{"/9/98/Unit-Cupid_Artemios-4.png","/5/5b/Unit-Cupid_Artemios-5.png","/f/f0/Unit-Cupid_Artemios-6.png"},4);
+	CArtemois("Cupid Artemois",new String[]{"/9/98/Unit-Cupid_Artemios-4.png","/5/5b/Unit-Cupid_Artemios-5.png","/f/f0/Unit-Cupid_Artemios-6.png"},4),
+	Vargas("Vargas",new String[]{"f/f6/Unit-Vargas-5.png","4/49/Unit-Vargas-6.png"},5);
 	
 	
 	

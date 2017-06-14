@@ -104,6 +104,7 @@ public enum Husbandos {
 	Randi("Randi","3/33/Unit-Randi-6.png"),
 	CArtemios("Cupid Artemios","f/f0/Unit-Cupid_Artemios-6.png"),
 	Thancred("Thancred","8/86/Unit-Thancred-5.png"),
+	Vargas("Vargs","4/49/Unit-Vargas-6.png"),
 	TM("Trust Moogle:stuck_out_tongue:","f/f5/Unit-Trust_Moogle-5.png");
 
 	public String name;
