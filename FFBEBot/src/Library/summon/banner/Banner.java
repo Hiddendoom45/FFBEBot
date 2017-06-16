@@ -44,7 +44,7 @@ public enum Banner {
 	FF03("FF type-0 part 3",new Unit[]{Unit.Rem,Unit.King,Unit.Sice},new int[]{50,570,1205},Lib.concat(new Unit[]{Unit.Reberta,Unit.Zyrus},DragonKill.pool),DragonKill.include,BannerType.BaseRare),
 	Wilhelm("Wilhelm", new Unit[]{Unit.Wilhelm,Unit.Grace,Unit.Jean,Unit.Abel},new int[]{50,570,1205,1205},Lib.concat(FF03.featured,FF03.pool),FF03.include,BannerType.BaseRare),
 	Gathering("The Gathering",new Unit[]{Unit.Forren,Unit.Amelia,Unit.Illus,Unit.Camille},new int[]{50,237,237,2000},Lib.concat(Wilhelm.featured,Wilhelm.pool),Wilhelm.include,BannerType.BaseRare),
-	BF2("Brave Frontier 2",new Unit[]{Unit.Vargas,Unit.Tilith,Unit.Karl,Unit.Seria},new int[]{25,333,333,333},Lib.concat(Gathering.pool,Gathering.featured),Gathering.include,BannerType.BaseRare),
+	BF2("Brave Frontier 2",new Unit[]{Unit.Vargas,Unit.Tilith,Unit.Karl,Unit.Seria},new int[]{25,158,158,158},Lib.concat(Gathering.pool,Gathering.featured),Gathering.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
