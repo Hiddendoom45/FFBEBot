@@ -71,6 +71,7 @@ public class SaveSystem {
 			preloadReddit(null);
 			writeData();
 		}
+		preloadSummons(null);
 		setDailyTime();
 		Settings.executor.scheduleWithFixedDelay(new Runnable(){
 			public void run(){

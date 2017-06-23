@@ -162,6 +162,9 @@ public enum Unit {
 	Illus("Illias",new String[]{"4/46/Unit-Ilias-4.png","7/78/Unit-Ilias-5.png","2/2b/Unit-Ilias-6.png"},4),
 	Amelia("Amelia",new String[]{"3/34/Unit-Amelia-4.png","5/5c/Unit-Amelia-5.png","9/9e/Unit-Amelia-6.png"},4),
 	Forren("Fohlen",new String[]{"b/b0/Unit-Fohlen-5.png","f/f3/Unit-Fohlen-6.png"},5),
+	SLid("Summer Lid",new String[]{"3/3c/Unit-Summer_Lid-3.png","d/dc/Unit-Summer_Lid-4.png","e/e5/Unit-Summer_Lid-5.png"},3),
+	SFina("Beach Time Fina",new String[]{"3/39/Unit-Beach_Time_Fina-4.png","3/37/Unit-Beach_Time_Fina-5.png","4/46/Unit-Beach_Time_Fina-6.png"},4),
+	SMF("Seabreeze Dark Fina",new String[]{"1/19/Unit-Seabreeze_Dark_Fina-5.png","2/28/Unit-Seabreeze_Dark_Fina-6.png"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
