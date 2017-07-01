@@ -1,6 +1,7 @@
 package commands;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import Library.pulls.PullUnit;
@@ -61,13 +62,13 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 							Lib.sendMessage(event, "You do not have enough lapis to summon "+num+" times");
 						}
 						else{
-							ArrayList<SummonedUnit> units=util.rng.summon.Pull.pull(num,pullBanner);
+							List<SummonedUnit> units=util.rng.summon.Pull.pull(num,pullBanner);
 							user.lapis-=cost;
 							for(SummonedUnit u:units){
 								user.units.add(new PullUnit(u.unit,u.rarity));
 							}
 							SaveSystem.setUser(user);
-							new Summon().sendImage(event, units,pullBanner);
+							new Summon().sendImage(event, units,pullBanner.name);
 							Lib.sendMessage(event, "You have "+user.lapis+" lapis left");
 						}
 						user.dailyPullTime=System.currentTimeMillis();

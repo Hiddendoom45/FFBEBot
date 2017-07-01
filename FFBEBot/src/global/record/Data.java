@@ -26,6 +26,8 @@ public class Data {
 	public int lapis=0;//lapis user has
 	public long dailyTime;
 	public long dailyPullTime;
+	public boolean base5guarantee=false;
+	public int SacredCrystal;
 	public ArrayList<PullUnit> units=new ArrayList<PullUnit>();//stores units pulled in order of when they were pulled
 	
 	
@@ -37,6 +39,8 @@ public class Data {
 		lapis=Lib.getNumber(root,"lapis")==-1?0:Lib.getNumber(root,"lapis");
 		dailyTime=Lib.getLong(root, "dailyTime")==-1?0:Lib.getLong(root, "dailyTime");
 		dailyPullTime=Lib.getLong(root, "dailyPullTime")==-1?0:Lib.getLong(root, "dailyPullTime");
+		base5guarantee=Lib.getBooleanSetting(false, root, "base5guarantee");
+		SacredCrystal=Lib.getNumber(root, "SC")==-1?0:Lib.getNumber(root, "SC");
 		ArrayList<Elements> units=root.getChilds("Unit");
 		for(Elements e:units){
 			this.units.add(new PullUnit(e));
@@ -70,6 +74,10 @@ public class Data {
 		current=new Elements("dailyTime",""+dailyTime);
 		currency.add(current);
 		current=new Elements("dailyPullTime",""+dailyPullTime);
+		currency.add(current);
+		current=new Elements("base5guarantee",""+base5guarantee);
+		currency.add(current);
+		current=new Elements("SC",""+SacredCrystal);
 		currency.add(current);
 		root.add(currency);
 		

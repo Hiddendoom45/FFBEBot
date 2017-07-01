@@ -105,6 +105,7 @@ public class Main {
 		
 		Module=ModuleEnum.Salt.toString();
 		CmdControl.addCommand("summon", new Summon(), Module);
+		CmdControl.addCommand("gsummon", new GuaranteeSummon(), Module);
 		CmdControl.addCommand("salty", new Salty(), Module);
 		CmdControl.addCommand("waifu", new Waifu(), Module);
 		CmdControl.addCommand("husbando", new Husbando(), Module);
@@ -119,6 +120,7 @@ public class Main {
 		CmdControl.addCommand("banners", new Banners(), Module);
 		CmdControl.addCommand("bannerlist", new Banners(), Module);
 		CmdControl.addCommand("pull", new commands.Pull(),Module);
+		CmdControl.addCommand("gpull", new GuaranteePull(), Module);
 		CmdControl.addCommand("unitinventory", new UnitInventory(), Module);
 		CmdControl.addCommand("dailypull", new DailyPull(), Module);
 		CmdControl.addCommand("11pull", new ElevenPull(), Module);

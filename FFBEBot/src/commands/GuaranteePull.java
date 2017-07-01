@@ -15,35 +15,32 @@ import util.Lib;
 import util.Select;
 import util.Selection;
 import util.Selector;
-import util.SpamControl;
 
-public class ElevenPull extends CommandGenerics implements Command, Selection {
+public class GuaranteePull extends CommandGenerics implements Command,Selection {
 
-	@Override
-	/**
-	 * default call, logs command using super method, checks to make sure proper elements are available
-	 */
-	public boolean called(String[] args, MessageReceivedEvent event) {
-		super.called(args,event);
-		return SpamControl.isSpam(event, "summon");
-	}
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
+		Data user=SaveSystem.getUser(event.getAuthor().getId());
+		if(user.base5guarantee){
+			String s="%userName%, you have already used your guarantee 5* base summon";
+			Lib.sendMessageFormated(event, s);
+			return;
+		}
 		ArrayList<String> possible=new ArrayList<String>();//string of options, useless more or less
-		String msgHead="A you sure you want do a 10+1 pulls from the "+Pull.getBanner(args.length>0?args[0]:"")+" banner?";
+		String msgHead="A you sure you want do a guarantee 5* 10+1 pull?";
 		Select select=new Select(possible,System.currentTimeMillis(),this,possible,msgHead);//none of this is really even used..., why did I make the select interface this way?...
 		select.additionalData=args;//arguments, so that it can get # of units and banner to summon from
 		Selector.setSelection(select, event);//pass to selection for yes/no option
+
 	}
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		String s="11pull [banner]\n"
-				+ "\tpulls 10+1 units(normal costs 5000 lapis, LE banners cost 10000 lapis), units will go into unit inventory\n"
-				+ "\t[banner] banner to pull from, if not specified will pull from most recent banner";
+		String s=SaveSystem.getPrefix(event)+"5pull\n"
+				+ "\tdoes a 10+1 pull with guarantee 5* on +1(likely limited for events)";
 		Lib.sendMessage(event, s);
-
 	}
+
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
 		if(chosen.selected==0){
@@ -51,25 +48,20 @@ public class ElevenPull extends CommandGenerics implements Command, Selection {
 				public void run(){
 					try{
 						Data user=SaveSystem.getUser(event.getAuthor().getId());
-						Banner pullBanner=Pull.getBanner(chosen.additionalData.length>1?(chosen.additionalData[1]==null?"null":chosen.additionalData[1]):"null");
-						int cost=0;
-						if(Banner.LEBanner(pullBanner)){
-							cost=10000;
-						}
-						else{
-							cost=5000;
-						}
+						int cost=5000;
 						if(cost>user.lapis){
-							Lib.sendMessage(event, "You do not have enough lapis do a 10+1 pulls");
+							Lib.sendMessage(event, "You do not have enough lapis to do the guarantee 5* pull");
 						}
 						else{
-							List<SummonedUnit> units=util.rng.summon.Pull.pull11(1,pullBanner);
+							List<SummonedUnit> units=util.rng.summon.Pull.pull5base(1,Banner.Current);
+							units.addAll(util.rng.summon.Pull.pull(10, Banner.Current));
 							user.lapis-=cost;
 							for(SummonedUnit u:units){
 								user.units.add(new PullUnit(u.unit,u.rarity));
 							}
+							user.base5guarantee=true;
 							SaveSystem.setUser(user);
-							new Summon().sendImage(event, units,pullBanner.name);
+							new Summon().sendImage(event, units,"Guarantee 5*");
 							Lib.sendMessage(event, "You have "+user.lapis+" lapis left");
 						}
 					}
@@ -79,11 +71,12 @@ public class ElevenPull extends CommandGenerics implements Command, Selection {
 				}
 			});
 		}
+		
 	}
 
 	@Override
 	public int getInputType() {
-		return 3;
+		return Selector.YNType;
 	}
 
 }

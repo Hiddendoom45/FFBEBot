@@ -165,6 +165,9 @@ public enum Unit {
 	SLid("Summer Lid",new String[]{"3/3c/Unit-Summer_Lid-3.png","d/dc/Unit-Summer_Lid-4.png","e/e5/Unit-Summer_Lid-5.png"},3),
 	SFina("Beach Time Fina",new String[]{"3/39/Unit-Beach_Time_Fina-4.png","3/37/Unit-Beach_Time_Fina-5.png","4/46/Unit-Beach_Time_Fina-6.png"},4),
 	SMF("Seabreeze Dark Fina",new String[]{"1/19/Unit-Seabreeze_Dark_Fina-5.png","2/28/Unit-Seabreeze_Dark_Fina-6.png"},5),
+	Wakka("Wakka",new String[]{"6/6b/Unit-Wakka-3.png","a/a2/Unit-Wakka-4.png","6/68/Unit-Wakka-5.png"},3),
+	Rikku("Rikku",new String[]{"6/65/Unit-Rikku-4.png","b/b4/Unit-Rikku-5.png","e/ee/Unit-Rikku-6.png"},4),
+	Tidus("Tidus",new String[]{"a/ae/Unit-Tidus-5.png","0/0d/Unit-Tidus-6.png"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
@@ -405,8 +408,33 @@ public enum Unit {
 				Wilhelm,
 				Grace,
 				Abel,
-				Jean
+				Jean,
+				Camille,
+				Illus,
+				Forren,
+				SLid,
+				SFina,
+				SMF,
+				Wakka,
+				Rikku,
+				Tidus
 		});
+	}
+	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool
+	public static Unit[] attackPool(){
+		return new Unit[]{
+				
+		};
+	}
+	public static Unit[] mageTankPool(){
+		return new Unit[]{
+				
+		};
+	}
+	public static Unit[] supportPool(){
+		return new Unit[]{
+				
+		};
 	}
 	public static Unit[] base3(Unit[] pool){
 		ArrayList<Unit> base3=new ArrayList<Unit>();

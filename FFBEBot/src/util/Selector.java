@@ -97,7 +97,7 @@ public class Selector {
 		}
 		else if(SelectionType==3){//yes no selection
 			String message=event.getMessage().getContent();
-			if(message.toLowerCase().equals("y")||message.toLowerCase().equals("yes")||message.toLowerCase().equals("n")||message.toLowerCase().equals("no")){
+			if(message.toLowerCase().contains("y")||message.toLowerCase().contains("n")){
 				return true;
 			}
 			else{
@@ -132,10 +132,10 @@ public class Selector {
 			}
 		}
 		else if(SelectionType==Selector.YNType){
-			if(selection.toLowerCase().equals("y")||selection.toLowerCase().equals("yes")){
+			if(selection.toLowerCase().contains("y")){
 				return 0;
 			}
-			else if(selection.toLowerCase().equals("n")||selection.toLowerCase().equals("no")){
+			else if(selection.toLowerCase().contains("n")){
 				return 1;
 			}
 			else{

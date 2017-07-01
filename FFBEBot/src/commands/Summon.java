@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.imageio.ImageIO;
 
@@ -42,15 +43,15 @@ public class Summon extends CommandGenerics implements Command {
 						}
 						Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
 						if(num==11){
-							sendImage(event, Pull.pull11(pullBanner),pullBanner);
+							sendImage(event, Pull.pull11(pullBanner),pullBanner.name);
 						}
 						else if(num==0){
 							ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
 							units.add(new SummonedUnit(Unit.Bedile.getRarity(3), Unit.Bedile.name, 3, Unit.Bedile));
-							sendImage(event,units,pullBanner);
+							sendImage(event,units,pullBanner.name);
 						}
 						else{
-							sendImage(event, Pull.pull(num,pullBanner),pullBanner);
+							sendImage(event, Pull.pull(num,pullBanner),pullBanner.name);
 						}
 					}
 					catch(Exception e){
@@ -71,11 +72,6 @@ public class Summon extends CommandGenerics implements Command {
 		
 	}
 
-	@Override
-	public void executed(boolean sucess, MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
 	private Banner getBanner(String s){
 		for(Banner b:Banner.values()){
 			if(s.toLowerCase().equals(b.name.toLowerCase())||s.toLowerCase().equals(b.toString().toLowerCase())){
@@ -84,7 +80,7 @@ public class Summon extends CommandGenerics implements Command {
 		}
 		return Settings.DefaultBanner;
 	}
-	public void sendImage(MessageReceivedEvent event, ArrayList<SummonedUnit> units,Banner banner){
+	public void sendImage(MessageReceivedEvent event, List<SummonedUnit> units,String bannerName){
 		ArrayList<UnitSpecific> us=new ArrayList<UnitSpecific>();
 		for(SummonedUnit u:units){
 			us.add(u.toSpecific());
@@ -106,7 +102,7 @@ public class Summon extends CommandGenerics implements Command {
 			count.setMessage("Uploading...");
 			Settings.upload.acquire();
 			ImageIO.write(build, "PNG", new File("summons.png"));
-			Lib.sendFile(event, Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+banner.name+" rare summon banner"), 
+			Lib.sendFile(event, Lib.FormatMessage(event, "%userMention% summoned "+units.size()+" units from the "+bannerName+" rare summon banner"), 
 					new File("summons.png"));
 		}catch(Exception e){
 			Log.logError(e);

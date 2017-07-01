@@ -1,6 +1,7 @@
 package util.rng.summon;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import Library.summon.Awakening;
@@ -13,7 +14,7 @@ public class Pull {
 	private static final int pool3=7999;
 	private static final int pool4=1899;
 	private static final int pool5=99;
-	public static ArrayList<SummonedUnit> pull(int times,Banner banner){
+	public static List<SummonedUnit> pull(int times,Banner banner){
 		Random rand=new Random();
 		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
 		for(int i=0;i<times;i++){
@@ -36,14 +37,14 @@ public class Pull {
 		}
 		return units;
 	}
-	public static ArrayList<SummonedUnit> pull11(int times, Banner banner){
+	public static List<SummonedUnit> pull11(int times, Banner banner){
 		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
 		for(int i=0;i<times;i++){
 			units.addAll(pull11(banner));
 		}
 		return units;
 	}
-	public static ArrayList<SummonedUnit> pull11(Banner banner){
+	public static List<SummonedUnit> pull11(Banner banner){
 		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>(11);
 		Random rand=new Random();
 		int rarity=rand.nextInt(99);
@@ -72,6 +73,14 @@ public class Pull {
 				Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
 				units.add(new SummonedUnit(u.getRarity(4),u.name,4,u));
 			}
+		}
+		return units;
+	}
+	public static List<SummonedUnit> pull5base(int times,Banner banner){
+		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>(11);
+		for(int i=0;i<times;i++){
+			Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+			units.add(new SummonedUnit(u.getRarity(5),u.name,5,u));
 		}
 		return units;
 	}

@@ -46,6 +46,7 @@ public enum Banner {
 	Gathering("The Gathering",new Unit[]{Unit.Forren,Unit.Amelia,Unit.Illus,Unit.Camille},new int[]{50,237,237,2000},Lib.concat(Wilhelm.featured,Wilhelm.pool),Wilhelm.include,BannerType.BaseRare),
 	BF2("Brave Frontier 2",new Unit[]{Unit.Vargas,Unit.Tilith,Unit.Karl,Unit.Seria},new int[]{25,158,158,158},Lib.concat(Gathering.pool,Gathering.featured),Gathering.include,BannerType.BaseRare),
 	Summer("Summer",new Unit[]{Unit.SMF,Unit.SFina,Unit.SLid},new int[]{50,475,2000},BF2.pool,BF2.include, BannerType.BaseRare),
+	FFX2("FFX 2",new Unit[]{Unit.Tidus,Unit.Rikku,Unit.Wakka},new int[]{50,475,20000},Lib.concat(Summer.pool,Summer.featured),Summer.include, BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
@@ -93,7 +94,8 @@ public enum Banner {
 				Banner.BF,
 				Banner.Christmas,
 				Banner.SoM,
-				Banner.Valentine
+				Banner.Valentine,
+				Banner.BF2
 				};
 	}
 	public static boolean LEBanner(Banner banner){
