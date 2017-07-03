@@ -30,6 +30,8 @@ import global.Main;
 import googleutil.drive.DataEnum;
 import googleutil.drive.DriveFile;
 import googleutil.drive.DriveManager;
+import net.dv8tion.jda.core.Permission;
+import net.dv8tion.jda.core.entities.Channel;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
@@ -535,6 +537,18 @@ public class SaveSystem {
 		else{
 			return Settings.modPrefix;
 		}
+	}
+	public static boolean hasPermission(MessageReceivedEvent event,Permission permission){
+		return hasPermission(event.getGuild(),(Channel)event.getChannel(),permission);
+	}
+	public static boolean hasPermission(Guild guild,Channel channel,Permission permission){
+		List<Permission> permissions=guild.getMemberById(Main.jda.getSelfUser().getId()).getPermissions(channel);
+		for(Permission s:permissions){
+			if(s.equals(permission)){
+				return true;
+			}
+		}
+		return false;
 	}
 	public static String[] getOverrides() {
 		String input="";

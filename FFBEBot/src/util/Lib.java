@@ -14,6 +14,7 @@ import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
 import net.dv8tion.jda.core.MessageBuilder;
+import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
@@ -122,6 +123,37 @@ public class Lib {
 		return Lib.sendMessage(event,Lib.FormatMessage(event,msg));
 	}
 	/**
+	 * 
+	 * Adds custom emotes to message <br/>
+	 * %lapis%<br/>
+	 * %SC%<br/>
+	 * @param event message received
+	 * @param msg message to send in response
+	 * @return message that was sent
+	 */
+	public static Message sendMessageEmoted(MessageReceivedEvent event, String msg){
+		return Lib.sendMessage(event, Lib.EmoteMessage(event, msg));
+	}
+	/**
+	 * Formats the message <br/>
+	 * Special formatting <br/> 
+	 * %userMention% mentions the user that sent the message <br/>
+	 * %userName% prints name of user that sent the message <br/>
+	 * %selfMention% mentions the bot<br/>
+	 * %mentionMention% mentions the first mentioned user in message<br/>
+	 * %mentionName% name of the first mentioned user in the message<br/>
+	 * <br/>
+	 * Adds custom emotes to message <br/>
+	 * %lapis%<br/>
+	 * %SC%<br/>
+	 *  @param event message received
+	 * @param msg message to send in response
+	 * @return message that was sent
+	 */
+	public static Message sendMessageWithSpecials(MessageReceivedEvent event, String msg){
+		return Lib.sendMessage(event, Lib.EmoteMessage(event, Lib.FormatMessage(event, msg)));
+	}
+	/**
 	 * generic send message, will have wrappers to fix some issues and errors in relation to sending messages
 	 * @param event message received
 	 * @param msg message to send someone
@@ -204,6 +236,24 @@ public class Lib {
 				replace("%selfMention%", event.getJDA().getSelfUser().getAsMention()).
 				replace("%mentionMention%", event.getMessage().getMentionedUsers().size()>0?event.getMessage().getMentionedUsers().get(0).getAsMention():event.getAuthor().getAsMention()).
 				replace("%mentionName%",event.getMessage().getMentionedUsers().size()>0?event.getMessage().getMentionedUsers().get(0).getName():event.getAuthor().getName());
+	}
+	/**
+	 * Adds custom emotes to message <br/>
+	 * %lapis%<br/>
+	 * %SC%<br/>
+	 * @param event
+	 * @param msg
+	 * @return
+	 */
+	public static String EmoteMessage(MessageReceivedEvent event, String msg){
+		if(SaveSystem.hasPermission(event, Permission.MESSAGE_EXT_EMOJI)){
+		return msg.replace("%lapis%","<:lapis:230415494316949506>")
+				.replace("%sacredCrystal%", "<:SC:330751964088369154>");
+		}
+		else{
+			return msg.replace("%lapis%", "lapis")
+					.replace("%sacredCrystal%", "Sacred Crystal");
+		}
 	}
 	/**
 	 * Formats and send message for guild member joining <br/>
