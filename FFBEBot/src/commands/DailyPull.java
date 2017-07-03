@@ -30,7 +30,7 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 			Selector.setSelection(select, event);//pass to selection for yes/no option
 		}
 		else if(user.lapis<250){
-			Lib.sendMessageFormated(event, "**%userName%** you do not have enough lapis to do a daily pull");
+			Lib.sendMessageWithSpecials(event, "**%userName%** you do not have enough %lapis% to do a daily pull");
 		}
 		else{
 			long diff=Settings.dailyTime+86400000-System.currentTimeMillis();
@@ -59,7 +59,7 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 						Banner pullBanner=Settings.DefaultBanner;//use current default for dailies to lock it in there
 						int cost=250;
 						if(cost>user.lapis){
-							Lib.sendMessage(event, "You do not have enough lapis to summon "+num+" times");
+							Lib.sendMessageEmoted(event, "You do not have enough %lapis% to summon "+num+" times");
 						}
 						else{
 							List<SummonedUnit> units=util.rng.summon.Pull.pull(num,pullBanner);
@@ -69,7 +69,7 @@ public class DailyPull extends CommandGenerics implements Command,Selection {
 							}
 							SaveSystem.setUser(user);
 							new Summon().sendImage(event, units,pullBanner.name);
-							Lib.sendMessage(event, "You have "+user.lapis+" lapis left");
+							Lib.sendMessageEmoted(event, "You have "+user.lapis+" %lapis% left");
 						}
 						user.dailyPullTime=System.currentTimeMillis();
 						SaveSystem.setUser(user);

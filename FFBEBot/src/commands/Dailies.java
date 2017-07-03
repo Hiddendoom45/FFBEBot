@@ -17,14 +17,14 @@ public class Dailies extends CommandGenerics implements Command{
 			user.lapis+=500;
 			user.dailyTime=System.currentTimeMillis();
 			SaveSystem.setUser(user);
-			Lib.sendMessageFormated(event, "**%userName%** you have recieved your daily 500 lapis");
+			Lib.sendMessageWithSpecials(event, "**%userName%** you have recieved your daily 500 %lapis%");
 		}
 		else{
 			long diff=Settings.dailyTime+86400000-System.currentTimeMillis();
 			int hours=(int) TimeUnit.MILLISECONDS.toHours(diff)%24;
 			int minutes=(int) TimeUnit.MILLISECONDS.toMinutes(diff)%60;
 			int seconds=(int) TimeUnit.MILLISECONDS.toSeconds(diff)%60;
-			Lib.sendMessageFormated(event, "**%userName%** your daily lapis refreshes in "+(hours==0?"":hours+" hours ")+(minutes==0?"":minutes+" minutes ")+(seconds==0?"":seconds+" seconds"));
+			Lib.sendMessageWithSpecials(event, "**%userName%** your daily %lapis% refreshes in "+(hours==0?"":hours+" hours ")+(minutes==0?"":minutes+" minutes ")+(seconds==0?"":seconds+" seconds"));
 		}
 		
 	}

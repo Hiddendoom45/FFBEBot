@@ -15,7 +15,9 @@ public class Servers extends CommandGenerics implements Command {
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-		// TODO Auto-generated method stub
+		String s="servers\n"
+				+ "\tdisplays the number of servers the bot is on";
+		Lib.sendMessage(event, s);
 
 	}
 

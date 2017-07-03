@@ -18,10 +18,10 @@ public class Give extends CommandGenerics implements Command{
 				giver.lapis-=lapis;
 				SaveSystem.setUser(giver);
 				SaveSystem.setUser(reciever);
-				Lib.sendMessage(event, "Sent "+lapis+" to "+event.getMessage().getMentionedUsers().get(0).getName());
+				Lib.sendMessageEmoted(event, "Sent "+lapis+" %lapis% to "+event.getMessage().getMentionedUsers().get(0).getName());
 			}
 			else{
-				Lib.sendMessage(event, "You do not have "+lapis+" lapis to send");
+				Lib.sendMessageEmoted(event, "You do not have "+lapis+" %lapis% to send");
 			}
 		}
 		else{
@@ -33,9 +33,9 @@ public class Give extends CommandGenerics implements Command{
 	public void help(MessageReceivedEvent event) {
 		String s="give [lapis] [@user]\n"
 				+ "\t gives lapis to a user\n"
-				+ "\t[lapis] amount of lapis to give\n"
-				+ "\t[@user] user to give the lapis to";
-		Lib.sendMessage(event, s);
+				+ "\t[lapis] amount of %lapis% to give\n"
+				+ "\t[@user] user to give the %lapis% to";
+		Lib.sendMessageEmoted(event, s);
 	}
 	
 }

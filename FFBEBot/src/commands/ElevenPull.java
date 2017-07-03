@@ -39,9 +39,9 @@ public class ElevenPull extends CommandGenerics implements Command, Selection {
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s="11pull [banner]\n"
-				+ "\tpulls 10+1 units(normal costs 5000 lapis, LE banners cost 10000 lapis), units will go into unit inventory\n"
+				+ "\tpulls 10+1 units(normal costs 5000 %lapis%, LE banners cost 10000 %lapis%), units will go into unit inventory\n"
 				+ "\t[banner] banner to pull from, if not specified will pull from most recent banner";
-		Lib.sendMessage(event, s);
+		Lib.sendMessageEmoted(event, s);
 
 	}
 	@Override
@@ -60,7 +60,7 @@ public class ElevenPull extends CommandGenerics implements Command, Selection {
 							cost=5000;
 						}
 						if(cost>user.lapis){
-							Lib.sendMessage(event, "You do not have enough lapis do a 10+1 pulls");
+							Lib.sendMessageEmoted(event, "You do not have enough %lapis% do a 10+1 pulls");
 						}
 						else{
 							List<SummonedUnit> units=util.rng.summon.Pull.pull11(1,pullBanner);
@@ -70,7 +70,7 @@ public class ElevenPull extends CommandGenerics implements Command, Selection {
 							}
 							SaveSystem.setUser(user);
 							new Summon().sendImage(event, units,pullBanner.name);
-							Lib.sendMessage(event, "You have "+user.lapis+" lapis left");
+							Lib.sendMessage(event, "You have "+user.lapis+" %lapis% left");
 						}
 					}
 					catch(Exception e){

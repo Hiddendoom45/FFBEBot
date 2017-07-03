@@ -16,15 +16,15 @@ public class Lapis extends CommandGenerics implements Command {
 		else{
 			user=SaveSystem.getUser(event.getAuthor().getId());
 		}
-		Lib.sendMessageFormated(event, "%mentionName% has "+user.lapis+" lapis");
+		Lib.sendMessageWithSpecials(event, "%userName% has "+user.lapis+" %lapis%");
 	}
 	
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s="lapis [@user]\n"
-				+ "\tgets the amount of lapis you have\n"
-				+ "\t[@user] gets the lapis for this person instead";
-		Lib.sendMessage(event, s);
+				+ "\tgets the amount of %lapis% you have\n"
+				+ "\t[@user] gets the %lapis% for this person instead";
+		Lib.sendMessageEmoted(event, s);
 
 	}
 

@@ -41,7 +41,9 @@ public class Pull extends CommandGenerics implements Command,Selection {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		ArrayList<String> possible=new ArrayList<String>();//string of options, useless more or less
-		String msgHead="A you sure you want to pull "+Integer.parseInt(args[0])+" times from the "+getBanner(args.length>1?args[1]:"")+" banner?";
+		String msgHead="A you sure you want to pull "+Integer.parseInt(args[0])+" times from the "+getBanner(args.length>1?args[1]:"")+" banner for "
+				+(Integer.parseInt(args[0])*(Banner.LEBanner(getBanner(args.length>1?args[1]:"null"))?1000:500))+" lapis?";//logic for cost
+		
 		Select select=new Select(possible,System.currentTimeMillis(),this,possible,msgHead);//none of this is really even used..., why did I make the select interface this way?...
 		select.additionalData=args;//arguments, so that it can get # of units and banner to summon from
 		Selector.setSelection(select, event);//pass to selection for yes/no option

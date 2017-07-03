@@ -27,7 +27,7 @@ public class GuaranteePull extends CommandGenerics implements Command,Selection 
 			return;
 		}
 		ArrayList<String> possible=new ArrayList<String>();//string of options, useless more or less
-		String msgHead="A you sure you want do a guarantee 5* 10+1 pull?";
+		String msgHead="A you sure you want do a guarantee 5* 10+1 pull for 5000 lapis?";
 		Select select=new Select(possible,System.currentTimeMillis(),this,possible,msgHead);//none of this is really even used..., why did I make the select interface this way?...
 		select.additionalData=args;//arguments, so that it can get # of units and banner to summon from
 		Selector.setSelection(select, event);//pass to selection for yes/no option
@@ -50,7 +50,7 @@ public class GuaranteePull extends CommandGenerics implements Command,Selection 
 						Data user=SaveSystem.getUser(event.getAuthor().getId());
 						int cost=5000;
 						if(cost>user.lapis){
-							Lib.sendMessage(event, "You do not have enough lapis to do the guarantee 5* pull");
+							Lib.sendMessageEmoted(event, "You do not have enough %lapis% to do the guarantee 5* pull");
 						}
 						else{
 							List<SummonedUnit> units=util.rng.summon.Pull.pull5base(1,Banner.Current);
@@ -62,7 +62,7 @@ public class GuaranteePull extends CommandGenerics implements Command,Selection 
 							user.base5guarantee=true;
 							SaveSystem.setUser(user);
 							new Summon().sendImage(event, units,"Guarantee 5*");
-							Lib.sendMessage(event, "You have "+user.lapis+" lapis left");
+							Lib.sendMessageEmoted(event, "You have "+user.lapis+" %lapis% left");
 						}
 					}
 					catch(Exception e){

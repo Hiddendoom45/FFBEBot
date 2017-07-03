@@ -40,9 +40,9 @@ public class Lib {
 				+ "Commands to extract info from Exvicus wiki(best for GL players)\n\n"
 				+ "**Reddit** - `rawaken` `requipment` `rskill` `runit`\n"
 				+ "Commands to extract info from Reddit wiki(best for JP players or GL players looking for future info)\n\n"
-				+ "**Salt** - `summon` `salty` `waifu` `maintenance`\n"
+				+ "**Salt** - `summon` `salty` `waifu` `maintenance` `gsummon`\n"
 				+ "Commands that may or may not help in dealing with or evoking salt\n\n"
-				+ "**Simulation** - `dailies` `lapis` `give`  `banner` `pull` `unitinventory` `dailypull` `11pull`\n"
+				+ "**Simulation** - `dailies` `lapis` `give`  `banner` `pull` `unitinventory` `dailypull` `11pull` `gpull`\n"
 				+ "Commands that are used to attempt to simulate FFBE to some degree\n\n"
 				+ "**WIP** - `whale` `farmtm` `sell` `evolve`\n"
 				+ "Commands that are work in progress currently unimplemented\n\n"
@@ -247,7 +247,8 @@ public class Lib {
 	 */
 	public static String EmoteMessage(MessageReceivedEvent event, String msg){
 		if(SaveSystem.hasPermission(event, Permission.MESSAGE_EXT_EMOJI)){
-		return msg.replace("%lapis%","<:lapis:230415494316949506>")
+			
+		return msg.replace("%lapis%","<:lapis:244613579146395649>")
 				.replace("%sacredCrystal%", "<:SC:330751964088369154>");
 		}
 		else{
