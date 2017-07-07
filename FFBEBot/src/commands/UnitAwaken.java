@@ -24,7 +24,8 @@ public class UnitAwaken extends UnitPaging{
 	@Override
 	public void help(MessageReceivedEvent event) {
 		String s="unitawaken\n"
-				+ "awakens the units selected to the next rarity if you have enough %sacredCrystals%";
+				+ "awakens the units selected to the next rarity if you have enough %sacredCrystals%"
+				+ "\t%sacredCrystals% are used to awaken units, 10 from 3>4, 15 from 4>5, 20 from 5>6";
 		Lib.sendMessageEmoted(event, s);
 		
 	}

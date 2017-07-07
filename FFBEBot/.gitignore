@@ -12,3 +12,5 @@
 /FFBEBotLogFinal**
 /target/
 /.credentials/
+/**.png
+/**/.DS_Store
