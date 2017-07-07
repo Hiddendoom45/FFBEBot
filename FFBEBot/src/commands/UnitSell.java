@@ -26,7 +26,7 @@ public class UnitSell extends UnitPaging implements Command {
 		String s="unitsell\n"
 				+ "\tSells the units selected\n"
 				+ "\tbase rarity determines # of sacred crystals given 3★=2,4★=5,5★=25\n"
-				+ "\tsacred crystals are used to awaken units, 10 from 3>4, 15 from 4>5, 20 from 5>6";
+				+ "\tsacred crystals are used to awaken units, e from 3>4, 12 from 4>5, 20 from 5>6";
 		Lib.sendMessage(event, s);
 	}
 

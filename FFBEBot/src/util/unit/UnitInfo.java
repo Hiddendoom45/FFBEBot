@@ -77,10 +77,10 @@ public class UnitInfo {
 			parseRarities(Lib.getCell(2, 0, unitInfo).text());
 			job=Lib.getCell(3, 0, unitInfo).text();
 			role=Lib.getCell(4, 0, unitInfo).text();
-			origin=Lib.getCell(5, 0, unitInfo).text();
-			gender=Lib.getCell(6, 0, unitInfo).text();
-			race=Lib.getCell(7, 0, unitInfo).text();
-			String[] no=Lib.getCell(8, 0, unitInfo).text().split(",");
+			origin=Lib.getCell(8, 0, unitInfo).text();
+			gender=Lib.getCell(9, 0, unitInfo).text();
+			race=Lib.getCell(10, 0, unitInfo).text();
+			String[] no=Lib.getCell(11, 0, unitInfo).text().split(",");
 			No=new int[no.length];
 			for(int i=0;i<no.length;i++){
 				try{
@@ -89,8 +89,8 @@ public class UnitInfo {
 					No[i]=0;
 				}
 			}
-			trustName=Lib.getCell(9, 0, unitInfo).text();
-			trustLink=Lib.getCell(9, 0, unitInfo).absUrl("href");
+			trustName=Lib.getCell(12, 0, unitInfo).text();
+			trustLink=Lib.getCell(12, 0, unitInfo).absUrl("href");
 			}catch(Exception e){
 				Log.log("ERROR", "Error parsing overview box for page:" +page);
 				Log.logShortError(e, 5);

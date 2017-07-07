@@ -252,7 +252,7 @@ public class Lib {
 		if(SaveSystem.hasPermission(event, Permission.MESSAGE_EXT_EMOJI)){
 			
 		return msg.replace("%lapis%","<:lapis:244613579146395649>")
-				.replace("%sacredCrystal%", "<:SC:330751964088369154>");
+				.replace("%sacredCrystal%", "<:Sacred_Crystal:332715887570190336>");
 		}
 		else{
 			return msg.replace("%lapis%", "lapis")
