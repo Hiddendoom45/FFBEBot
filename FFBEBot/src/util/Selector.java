@@ -54,7 +54,12 @@ public class Selector {
 					}
 					else{
 						select.tries++;
-						select.messageID=Lib.sendMessage(event, select.errMessage).getId();
+						if(select.file==null){
+							select.messageID=Lib.sendMessage(event, select.errMessage).getId();
+						}
+						else{
+							select.messageID=Lib.sendFile(event, select.errMessage, select.file).getId();
+						}
 					}
 				}
 				return true;
@@ -70,7 +75,12 @@ public class Selector {
 	 * @param event event
 	 */
 	public static void setSelection(Select selection,MessageReceivedEvent event){
-		selection.messageID=Lib.sendMessage(event,selection.message).getId();
+		if(selection.file==null){
+			selection.messageID=Lib.sendMessage(event,selection.message).getId();
+		}
+		else{
+			selection.messageID=Lib.sendFile(event, selection.message, selection.file).getId();
+		}
 		selections.put(key(event), selection);
 	}
 	/**
@@ -145,7 +155,7 @@ public class Selector {
 		else if(SelectionType==-1){//null nothing chosen, index is nothing
 			return -1;
 		}
-		else return -1;
+		else return -1;//null type, returns -1 by default
 	}
 	/**
 	 * checks if string is all characters

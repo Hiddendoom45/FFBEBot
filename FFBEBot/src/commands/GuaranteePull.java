@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Library.pulls.PullUnit;
-import Library.summon.SummonedUnit;
+import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
 import global.record.Data;
 import global.record.Log;
@@ -53,10 +53,10 @@ public class GuaranteePull extends CommandGenerics implements Command,Selection 
 							Lib.sendMessageEmoted(event, "You do not have enough %lapis% to do the guarantee 5* pull");
 						}
 						else{
-							List<SummonedUnit> units=util.rng.summon.Pull.pull5base(1,Banner.Current);
+							List<UnitSpecific> units=util.rng.summon.Pull.pull5base(1,Banner.Current);
 							units.addAll(util.rng.summon.Pull.pull(10, Banner.Current));
 							user.lapis-=cost;
-							for(SummonedUnit u:units){
+							for(UnitSpecific u:units){
 								user.units.add(new PullUnit(u.unit,u.rarity));
 							}
 							user.base5guarantee=true;

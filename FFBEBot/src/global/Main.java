@@ -38,10 +38,12 @@ public class Main {
 				@Override
 				public void run() {
 					System.out.println("shutting down");
-					SaveSystem.pushUserData();
-					DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
-					Log.save();//last as this may take a long time as is not as high of a priority to complete
-					DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+					if(Settings.token.contentEquals(Secrets.token)){
+						SaveSystem.pushUserData();
+						DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+						Log.save();//last as this may take a long time as is not as high of a priority to complete
+						DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+					}
 				}   
 			}); 
 			Main.startup();
@@ -114,6 +116,8 @@ public class Main {
 		Module=ModuleEnum.Simulation.toString();
 		CmdControl.addCommand("dailies", new Dailies(), Module);
 		CmdControl.addCommand("daily", new Dailies(), Module);
+		CmdControl.addCommand("sc",new SacredCrystal(), Module);
+		CmdControl.addCommand("sacredcrystal", new SacredCrystal(), Module);
 		CmdControl.addCommand("lapis", new Lapis(), Module);
 		CmdControl.addCommand("give", new Give(), Module);
 		CmdControl.addCommand("banner", new Banners(), Module);
@@ -124,6 +128,8 @@ public class Main {
 		CmdControl.addCommand("unitinventory", new UnitInventory(), Module);
 		CmdControl.addCommand("dailypull", new DailyPull(), Module);
 		CmdControl.addCommand("11pull", new ElevenPull(), Module);
+		CmdControl.addCommand("unitsell", new UnitSell(), Module);
+		CmdControl.addCommand("unitawaken", new UnitAwaken(), Module);
 		
 		//ditto with mod commands(separate maps due to special checks)
 		CmdControl.addModCommand("prefix", new Prefix());

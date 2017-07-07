@@ -4,15 +4,26 @@ import java.io.File;
 
 /**
  * The data for a specific rarity of a unit, unit class is for unit info for all rarities
+ * generic of all unit classes
  * @author Allen
  *
  */
 public class UnitSpecific {
+	public Unit unit;
 	public String imgUrl;
 	public int rarity;
 	public int base;
 	public String name;
-	public UnitSpecific(Unit unit, int rarity) throws UnitsException{
+	protected UnitSpecific(){
+		//null for implementing classes
+	}
+	/**
+	 *constructs the superclass, used by implementing classes
+	 * @param unit
+	 * @param rarity
+	 * @throws UnitsException 
+	 */
+	protected void construct(Unit unit,int rarity) throws UnitsException{
 		if(unit==null){
 			throw new UnitsException("unit value is null");
 		}
@@ -31,7 +42,12 @@ public class UnitSpecific {
 		this.rarity=rarity;
 		name=unit.name;
 		base=unit.base;
+		this.unit=unit;
 	}
+	public UnitSpecific(Unit unit, int rarity) throws UnitsException{
+		construct(unit,rarity);
+	}
+	
 	/**
 	 * Get file location that the preloader would've loaded the images to
 	 * @return file location for the unit image if it exists, otherwise null

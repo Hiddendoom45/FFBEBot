@@ -16,16 +16,16 @@ public class Upload extends OverrideGenerics implements OverrideCommand {
 	@Override
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		if(args.containsKey("d")||args.containsKey("data")){
-			Lib.sendFile(event, null, new File(Settings.dataSource));
+			Lib.sendFile(event, "null", new File(Settings.dataSource));
 		}
 		if(args.containsKey("log")||args.containsKey("l")){
-			Lib.sendFile(event, null, new File("FFBEBotLog"));
+			Lib.sendFile(event, "null", new File("FFBEBotLog"));
 		}
 		if(args.containsKey("override")||args.containsKey("overrides")){
-			Lib.sendFile(event, null, new File("overrides"));
+			Lib.sendFile(event, "null", new File("overrides"));
 		}
 		if(args.containsKey("p")||args.containsKey("preload")){
-			Lib.sendFile(event, null, new File(Settings.preloadData));
+			Lib.sendFile(event, "null", new File(Settings.preloadData));
 		}
 	}
 

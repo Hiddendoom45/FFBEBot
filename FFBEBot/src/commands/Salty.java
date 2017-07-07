@@ -122,7 +122,7 @@ public class Salty extends CommandGenerics implements Command, Selection {
 			Settings.upload.acquire();
 		} catch (InterruptedException e) {}
 	    ImageIO.write(combined, "PNG", new File("salty.png"));
-	    Lib.sendFile(event, null, new File("salty.png"));
+	    Lib.sendFile(event, "null", new File("salty.png"));
 	    Settings.upload.release();
 	    Files.delete(new File("salty.png").toPath());
 	}

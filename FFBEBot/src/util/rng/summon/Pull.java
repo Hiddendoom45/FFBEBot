@@ -5,82 +5,95 @@ import java.util.List;
 import java.util.Random;
 
 import Library.summon.Awakening;
-import Library.summon.SummonedUnit;
+import Library.summon.UnitSpecific;
 import Library.summon.Unit;
 import Library.summon.banner.Banner;
+import global.record.Log;
 import util.rng.RandomLibs;
 
 public class Pull {
 	private static final int pool3=7999;
 	private static final int pool4=1899;
 	private static final int pool5=99;
-	public static List<SummonedUnit> pull(int times,Banner banner){
+	public static List<UnitSpecific> pull(int times,Banner banner){
 		Random rand=new Random();
-		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
+		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
 		for(int i=0;i<times;i++){
+			try{
 			int rarity=rand.nextInt(99);
 			//5*
 			if(rarity==0){
 				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
-				units.add(new SummonedUnit(u.getRarity(5),u.name,5,u));
+				units.add(new UnitSpecific(u,5));
 			}
 			//3*
 			else if(rarity>19){
 				Unit u=pull(banner,3,pool3,banner.type.baseRareChances[0]);
-				units.add(new SummonedUnit(u.getRarity(3),u.name,3,u));
+				units.add(new UnitSpecific(u,3));
 			}
 			//4*
 			else{
 				Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
-				units.add(new SummonedUnit(u.getRarity(4),u.name,4,u));
+				units.add(new UnitSpecific(u,4));
+			}
+			}catch(Exception e){
+				Log.logError(e);
 			}
 		}
 		return units;
 	}
-	public static List<SummonedUnit> pull11(int times, Banner banner){
-		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
+	public static List<UnitSpecific> pull11(int times, Banner banner){
+		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
 		for(int i=0;i<times;i++){
 			units.addAll(pull11(banner));
 		}
 		return units;
 	}
-	public static List<SummonedUnit> pull11(Banner banner){
-		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>(11);
+	public static List<UnitSpecific> pull11(Banner banner){
+		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>(11);
 		Random rand=new Random();
 		int rarity=rand.nextInt(99);
-		if(rarity<94){
-			Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
-			units.add(new SummonedUnit(u.getRarity(4),u.name,4,u));
-		}
-		else{
-			Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
-			units.add(new SummonedUnit(u.getRarity(5),u.name,5,u));
-		}
-		for(int i=0;i<10;i++){
-			rarity=rand.nextInt(99);
-			//5*
-			if(rarity==0){
-				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
-				units.add(new SummonedUnit(u.getRarity(5),u.name,5,u));
-			}
-			//3*
-			else if(rarity>19){
-				Unit u=pull(banner,3,pool3,banner.type.baseRareChances[0]);
-				units.add(new SummonedUnit(u.getRarity(3),u.name,3,u));
-			}
-			//4*
-			else{
+		try{
+			if(rarity<94){
 				Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
-				units.add(new SummonedUnit(u.getRarity(4),u.name,4,u));
+				units.add(new UnitSpecific(u,4));
 			}
+			else{
+				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+				units.add(new UnitSpecific(u,5));
+			}
+			for(int i=0;i<10;i++){
+				rarity=rand.nextInt(99);
+				//5*
+				if(rarity==0){
+					Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+					units.add(new UnitSpecific(u,5));
+				}
+				//3*
+				else if(rarity>19){
+					Unit u=pull(banner,3,pool3,banner.type.baseRareChances[0]);
+					units.add(new UnitSpecific(u,3));
+				}
+				//4*
+				else{
+					Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
+					units.add(new UnitSpecific(u,4));
+				}
+			}
+		}catch(Exception e){
+			Log.logError(e);
 		}
 		return units;
 	}
-	public static List<SummonedUnit> pull5base(int times,Banner banner){
-		ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>(11);
+	public static List<UnitSpecific> pull5base(int times,Banner banner){
+		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>(11);
 		for(int i=0;i<times;i++){
+			try{
 			Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
-			units.add(new SummonedUnit(u.getRarity(5),u.name,5,u));
+			units.add(new UnitSpecific(u,5));
+			}catch(Exception e){
+				Log.logError(e);
+			}
 		}
 		return units;
 	}

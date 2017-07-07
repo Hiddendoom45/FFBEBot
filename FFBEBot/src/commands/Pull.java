@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Library.pulls.PullUnit;
-import Library.summon.SummonedUnit;
+import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
 import global.record.Data;
 import global.record.Log;
@@ -93,9 +93,9 @@ public class Pull extends CommandGenerics implements Command,Selection {
 							Lib.sendMessage(event, "You do not have enough lapis to summon "+num+" times");
 						}
 						else{
-							List<SummonedUnit> units=util.rng.summon.Pull.pull(num,pullBanner);
+							List<UnitSpecific> units=util.rng.summon.Pull.pull(num,pullBanner);
 							user.lapis-=cost;
-							for(SummonedUnit u:units){
+							for(UnitSpecific u:units){
 								user.units.add(new PullUnit(u.unit,u.rarity));
 							}
 							SaveSystem.setUser(user);

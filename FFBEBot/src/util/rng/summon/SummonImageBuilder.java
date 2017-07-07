@@ -31,6 +31,7 @@ public class SummonImageBuilder {
 	private String[] basePlates=new String[]{"/Library/summon/none.png","/Library/summon/3star.png","/Library/summon/4star.png","/Library/summon/5star.png","/Library/summon/6star.png"};
 	private ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
 	private boolean dynamicRows=false;
+	private boolean numbered=false;
 	/**
 	 * Creates a new summon image builder with parameters specified
 	 * @param h h of the unit
@@ -61,6 +62,14 @@ public class SummonImageBuilder {
 		return this;
 	}
 	/**
+	 * adds the numbers seen when selecting units to the image
+	 * @return
+	 */
+	public SummonImageBuilder buildWithNumbers(){
+		numbered=true;
+		return this;
+	}
+	/**
 	 * sets the base plate for a specific rarity
 	 * @param index index for rarity 0=none, 1==3star, 2==4star etc
 	 * @param location file location within jar of the image
@@ -83,7 +92,7 @@ public class SummonImageBuilder {
 	 * @param units
 	 * @return
 	 */
-	public SummonImageBuilder addUnit(Collection<UnitSpecific> units){
+	public SummonImageBuilder addUnit(Collection<? extends UnitSpecific> units){
 		for(UnitSpecific u:units){
 			this.units.add(u);
 		}
@@ -170,6 +179,48 @@ public class SummonImageBuilder {
 					int ry=size.height+h-starSize;//stars at very bottom of rectangle
 					int rx=size.width+((w-(s.rarity*starSize))/2+(starSize*i));//star location determined by # and how many in total centres it
 					g.drawImage(star,rx,ry,starSize,starSize,null);//draw the star
+				}
+				//draw numbers
+				if(numbered){
+					//index==num
+					int nx=size.width+(int)(112*factor);
+					int ny=size.height+(int)(132*factor);
+					BufferedImage numback=ImageIO.read(getClass().getResourceAsStream("/Library/summon/unitnumback.png"));
+					BufferedImage fnt=ImageIO.read(getClass().getResourceAsStream("/Library/comnum18.png"));
+					g.drawImage(numback, nx, ny, null);
+					if(index<10){
+						//calculate location of number
+						int nfx=(int) (nx+(17*factor));
+						int nfy=(int)(ny+(8*factor));
+						int nfw=(int) (nfx+(15*factor));
+						int nfh=(int) (nfy+(18*factor));
+						//index of number location in font file
+						int fx=index*15;
+						int fy=0;
+						int fw=15;
+						int fh=18;
+						g.drawImage(fnt, nfx, nfy, nfw, nfh, fx, fy, fx+fw, fy+fh,  null);
+					}
+					else{
+						//calculate location of number, numerics are shift factors
+						int nfx=(int) (nx+(11*factor));
+						int nfy=(int)(ny+(7*factor));
+						int nfw=(int) (nfx+(15*factor));
+						int nfh=(int) (nfy+(18*factor));
+						//index of number location in font file
+						int fx=index/10*15;
+						int fy=0;
+						int fw=15;
+						int fh=18;
+						g.drawImage(fnt,nfx,nfy,nfw,nfh,fx,fy,fx+fw,fy+fh,null);
+						//for second digit
+						//calculate location of number
+						nfx=(int) (nx+(24*factor));
+						nfw=(int) (nfx+(15*factor));
+						fx=index%10*15;
+						g.drawImage(fnt,nfx,nfy,nfw,nfh,fx,fy,fx+fw,fy+fh,null);
+					}
+					
 				}
 				//deprecated code to draw stars
 				//String rare="";

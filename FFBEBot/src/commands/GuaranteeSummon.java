@@ -2,7 +2,7 @@ package commands;
 
 import java.util.List;
 
-import Library.summon.SummonedUnit;
+import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
 import global.record.Log;
 import global.record.Settings;
@@ -22,7 +22,7 @@ public class GuaranteeSummon extends CommandGenerics implements Command {
 		Settings.executor.execute(new Runnable(){//execute in new thread so that long summon commands don't lock everything else
 			public void run(){
 				try{
-					List<SummonedUnit> units=util.rng.summon.Pull.pull5base(1, Banner.Current);
+					List<UnitSpecific> units=util.rng.summon.Pull.pull5base(1, Banner.Current);
 					units.addAll(util.rng.summon.Pull.pull(10, Banner.Current));
 					new Summon().sendImage(event, units,"Guarantee 5*");
 				}catch(Exception e){

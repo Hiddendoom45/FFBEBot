@@ -1,5 +1,6 @@
 package util;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import net.dv8tion.jda.core.MessageBuilder;
@@ -45,28 +46,34 @@ public class Select {
 	public String[] additionalData;//use to hold additional information
 	public String selectedText;
 	public int tries=1;
-	public Message message;
-	public Message errMessage;
-	public Select(ArrayList<String> options,long ID,Selection source,String msg){
+	public File file;//file to send, auto attached to end of messages if non null
+	public Message message;//message sent by default
+	public Message errMessage;//message sent when error is trigered
+	public Select(ArrayList<String> options,long ID,Selection source,String msg,File file){
 		this.options=options;
 		this.ID=ID;
 		this.source=source;
 		this.msg=msg;
+		this.file=file;
 		message=new MessageBuilder().append(msg).build();
 		errMessage=new MessageBuilder().append("Incorrect option type `exit` to exit menu\n"+msg).build();
-	}
-	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names){
-		this(options,ID,source,names,"Please select one of the following(type one of the following numbers):");
-	}
-	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names,String msgHead){
-		this(options,ID,source, parse(source, names,msgHead));
-		this.names=names;
 		//to avoid selector from not validating due to nonexistant index
 		if(source.getInputType()==Selector.YNType){
 			options.add("");
 			options.add("");
 		}
 	}
+	public Select(ArrayList<String> options,long ID,Selection source,String msg){
+		this(options,ID,source,msg, null);
+	}
+	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names){
+		this(options,ID,source,names,"Please select one of the following(type one of the following numbers):");
+	}
+	public Select(ArrayList<String> options, long ID, Selection source,ArrayList<String> names,String msgHead){
+		this(options,ID,source, parse(source, names,msgHead),null);
+		this.names=names;
+	}
+	
 	public static String parse(Selection source,ArrayList<String> names,String msgHead){
 		String msg=msgHead;//stuff to put before list in the names
 		if(source.getInputType()==Selector.NumType){

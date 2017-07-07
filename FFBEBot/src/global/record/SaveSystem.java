@@ -73,7 +73,9 @@ public class SaveSystem {
 			preloadReddit(null);
 			writeData();
 		}
-		preloadSummons(null);
+		if(Settings.token.equals(Secrets.token)){
+			preloadSummons(null);
+		}
 		setDailyTime();
 		Settings.executor.scheduleWithFixedDelay(new Runnable(){
 			public void run(){

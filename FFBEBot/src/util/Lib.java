@@ -70,17 +70,20 @@ public class Lib {
 	public static Message editMessage(Message message,String msg){
 		return message.editMessage(msg).complete();
 	}
-	public static Message sendFile(MessageReceivedEvent event, String msg, File file){
+	public static Message sendFile(MessageReceivedEvent event, Message msg, File file){
 		try {
-			Message build=null;
-			if(!(msg==null||msg.equals("null"))){
-				build=new MessageBuilder().append(msg).build();
-			}
-			return event.getChannel().sendFile(file, build).complete();
+			return event.getChannel().sendFile(file, msg).complete();
 		} catch (IOException e) {
 			Log.logError(e);
 		}
-		return sendFile(event,msg,file);
+		return null;
+	}
+	public static Message sendFile(MessageReceivedEvent event, String msg, File file){
+		Message build=null;
+		if(!(msg==null||msg.equals("null"))){
+			build=new MessageBuilder().append(msg).build();
+		}
+		return sendFile(event,build,file);
 	}
 	/**
 	 * Sends a message which will be deleted after a period of time
@@ -572,7 +575,7 @@ public class Lib {
 		boolean dot=false;//decimal place
 		for(char c:s.trim().toCharArray()){
 			if(number){
-				if(Character.isDigit(c)||dot?false:c=='.'){
+				if(Character.isDigit(c)||(dot?false:c=='.')){
 					if(c=='.'){
 						dot=true;
 					}
@@ -643,7 +646,22 @@ public class Lib {
 		  T[] result = Arrays.copyOf(first, first.length + second.length);
 		  System.arraycopy(second, 0, result, first.length, second.length);
 		  return result;
+	}
+	//synchronization to avoid 2 samename files trying to get newname at the same time
+	/**
+	 * Gets a filename that is not currently used
+	 * @param filename base filename
+	 * @return filename that is not used
+	 */
+	public static synchronized String newFileName(String filename){
+		int num=0;
+		if(new File(filename).exists()){
+			while(new File(filename+num).exists()){
+				num++;
+			}
+			return filename+num;
 		}
-
+		else return filename;
+	}
 	
 }

@@ -9,9 +9,8 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
-import Library.summon.SummonedUnit;
-import Library.summon.Unit;
 import Library.summon.UnitSpecific;
+import Library.summon.Unit;
 import Library.summon.banner.Banner;
 import global.record.Log;
 import global.record.SaveSystem;
@@ -46,8 +45,8 @@ public class Summon extends CommandGenerics implements Command {
 							sendImage(event, Pull.pull11(pullBanner),pullBanner.name);
 						}
 						else if(num==0){
-							ArrayList<SummonedUnit> units=new ArrayList<SummonedUnit>();
-							units.add(new SummonedUnit(Unit.Bedile.getRarity(3), Unit.Bedile.name, 3, Unit.Bedile));
+							ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
+							units.add(new UnitSpecific(Unit.Bedile, 3));
 							sendImage(event,units,pullBanner.name);
 						}
 						else{
@@ -80,23 +79,19 @@ public class Summon extends CommandGenerics implements Command {
 		}
 		return Settings.DefaultBanner;
 	}
-	public void sendImage(MessageReceivedEvent event, List<SummonedUnit> units,String bannerName){
-		ArrayList<UnitSpecific> us=new ArrayList<UnitSpecific>();
-		for(SummonedUnit u:units){
-			us.add(u.toSpecific());
-		}
+	public void sendImage(MessageReceivedEvent event, List<UnitSpecific> units,String bannerName){
 		Counter count=new Counter("Summoning Units...(%count%/"+units.size()+")",event);
 		double factor=1;
-		if(us.size()>100){
+		if(units.size()>100){
 			factor=0.5;
 		}
 		BufferedImage build;
-		if(us.size()<25){
-			build=new SummonImageBuilder(factor).basePlate(3, "/Library/summon/6star.png").addUnit(us).build(event, count);
+		if(units.size()<25){
+			build=new SummonImageBuilder(factor).basePlate(3, "/Library/summon/6star.png").addUnit(units).build(event, count);
 		}
 		else{
 			build=new SummonImageBuilder(factor).buildColumnsDynamically()
-					.basePlate(3, "/Library/summon/6star.png").addUnit(us).build(event, count);
+					.basePlate(3, "/Library/summon/6star.png").addUnit(units).build(event, count);
 		}
 		try{
 			count.setMessage("Uploading...");
