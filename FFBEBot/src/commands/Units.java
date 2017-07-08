@@ -15,7 +15,8 @@ public class Units extends UnitSelection implements Command,Selection {
 		out+="__**"+info.unitName+"**__\t";
 		out+="Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t";
 		out+="Role:"+info.role+"\t";
-		out+="TM:"+info.trustName+"\n__Stats__";
+		out+="TM:"+info.trustName+"="+info.trustDetail;
+		out+="\n__Stats__";
 		for(int i=0;i<info.stats.stats.length;i++){
 			out+="\n"+addStars(info.stats.stats[i].rarity);
 			out+="**HP**:"+Lib.pad(info.stats.stats[i].HP, 6)+Lib.pad("("+info.statIncrease.stats[i].HP+")", 6);

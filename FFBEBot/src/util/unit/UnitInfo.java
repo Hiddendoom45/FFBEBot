@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
 import Library.ElementFilter;
 import global.record.Log;
@@ -30,6 +31,7 @@ public class UnitInfo {
 	public int[] No=new int[]{};
 	public String trustName="";
 	public String trustLink="";
+	public String trustDetail="";
 	public unitStats stats;
 	public unitStatIncrease statIncrease;
 	public String[] weapons=new String[]{};
@@ -90,7 +92,9 @@ public class UnitInfo {
 				}
 			}
 			trustName=Lib.getCell(12, 0, unitInfo).text();
-			trustLink=Lib.getCell(12, 0, unitInfo).absUrl("href");
+			trustLink=Lib.getCell(12, 0, unitInfo).child(0).absUrl("href");
+			Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
+			parseTrust(doc2.getElementById("mw-content-text").children());
 			}catch(Exception e){
 				Log.log("ERROR", "Error parsing overview box for page:" +page);
 				Log.logShortError(e, 5);
@@ -170,6 +174,23 @@ public class UnitInfo {
 			}
 		}catch(Exception e){
 			Log.logError(e);
+		}
+	}
+	public void parseTrust(Elements trustStuff){
+		boolean h2Trig=false;
+		for(Element e:trustStuff){
+			System.out.println(trustDetail);
+			if(h2Trig){
+				if(e.tagName().equals("h2")||e.tagName().equals("h3")){
+					return;
+				}
+				else{
+					trustDetail+=e.text()+" ";
+				}
+			}
+			if(e.tagName().equals("h2")&&e.text().equals("Statistics[edit | edit source]")){
+				h2Trig=true;
+			}
 		}
 	}
 	public void parseRarities(String text){

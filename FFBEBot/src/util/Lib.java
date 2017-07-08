@@ -251,7 +251,7 @@ public class Lib {
 	public static String EmoteMessage(MessageReceivedEvent event, String msg){
 		if(SaveSystem.hasPermission(event, Permission.MESSAGE_EXT_EMOJI)){
 			
-		return msg.replace("%lapis%","<:lapis:244613579146395649>")
+		return msg.replace("%lapis%","<:lapis:230415494316949506>")
 				.replace("%sacredCrystal%", "<:Sacred_Crystal:332715887570190336>");
 		}
 		else{
