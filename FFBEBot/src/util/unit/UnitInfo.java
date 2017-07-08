@@ -179,16 +179,16 @@ public class UnitInfo {
 	public void parseTrust(Elements trustStuff){
 		boolean h2Trig=false;
 		for(Element e:trustStuff){
-			System.out.println(trustDetail);
 			if(h2Trig){
 				if(e.tagName().equals("h2")||e.tagName().equals("h3")){
+					if(trustDetail.endsWith(", "))trustDetail=trustDetail.substring(0, trustDetail.length()-2);
 					return;
 				}
 				else{
-					trustDetail+=e.text()+" ";
+					trustDetail+=e.text()+", ";
 				}
 			}
-			if(e.tagName().equals("h2")&&e.text().equals("Statistics[edit | edit source]")){
+			if(e.tagName().equals("h2")&&(e.text().equals("Statistics[edit | edit source]")||e.text().equals("Statistics"))){
 				h2Trig=true;
 			}
 		}

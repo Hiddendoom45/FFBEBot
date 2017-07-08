@@ -54,11 +54,11 @@ public class unitAbilities{
 		public String MP;
 		public conditional(Element row){
 			condition=row.child(0).text();
-			aIconURL=row.child(1).getElementsByTag("img").first().absUrl("src");
-			name=row.child(2).text();
-			effect=row.child(3).text();
-			hits=row.child(4).text();
-			MP=row.child(5).text();
+			//aIconURL=row.child(1).getElementsByTag("img").first().absUrl("src");
+			name=row.child(1).text();
+			effect=row.child(2).text();
+			hits=row.child(3).text();
+			MP=row.child(4).text();
 		}
 	}
 	public class ability{
@@ -70,7 +70,7 @@ public class unitAbilities{
 		public String link;
 		public String effect;
 		public String hits;
-		public String MP;
+		public String MP="-";
 		public ability(Element row,boolean active){
 			rarity=""+Lib.extractNumber(row.child(0).text());
 			level=row.child(1).text();
