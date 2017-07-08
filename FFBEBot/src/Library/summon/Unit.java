@@ -168,6 +168,9 @@ public enum Unit {
 	Wakka("Wakka",new String[]{"6/6b/Unit-Wakka-3.png","a/a2/Unit-Wakka-4.png","6/68/Unit-Wakka-5.png"},3),
 	Rikku("Rikku",new String[]{"6/65/Unit-Rikku-4.png","b/b4/Unit-Rikku-5.png","e/ee/Unit-Rikku-6.png"},4),
 	Tidus("Tidus",new String[]{"a/ae/Unit-Tidus-5.png","0/0d/Unit-Tidus-6.png"},5),
+	Ashe("Ashe",new String[]{"3/37/Unit-Ashe-4.png","6/65/Unit-Ashe-5.png?","c/c4/Unit-Ashe-6.png"},4),
+	Rasler("Rasler",new String[]{"4/43/Unit-Rasler-4.png","7/7a/Unit-Rasler-5.png","a/a2/Unit-Rasler-6.png"},4),
+	Zargabaath("Zargabaath",new String[]{"b/b9/Unit-Zargabaath-5.png","2/2f/Unit-Zargabaath-6.png"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),

@@ -47,6 +47,7 @@ public enum Banner {
 	BF2("Brave Frontier 2",new Unit[]{Unit.Vargas,Unit.Tilith,Unit.Karl,Unit.Seria},new int[]{25,158,158,158},Lib.concat(Gathering.pool,Gathering.featured),Gathering.include,BannerType.BaseRare),
 	Summer("Summer",new Unit[]{Unit.SMF,Unit.SFina,Unit.SLid},BannerRates.EvenSplit.rate(),BF2.pool,BF2.include, BannerType.BaseRare),
 	FFX("FFX 2",new Unit[]{Unit.Tidus,Unit.Rikku,Unit.Wakka},BannerRates.EvenSplit.rate(),Lib.concat(Summer.pool,Summer.featured),Summer.include, BannerType.BaseRare),
+	FFXII("FFXII",new Unit[]{Unit.Zargabaath,Unit.Rasler,Unit.Ashe,Unit.Vaan},BannerRates.D4.rate(),Lib.concat(FFX.pool, FFX.featured),FFX.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
