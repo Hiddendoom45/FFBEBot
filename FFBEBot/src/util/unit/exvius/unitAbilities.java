@@ -2,7 +2,9 @@ package util.unit.exvius;
 
 import java.util.Vector;
 
+
 import org.jsoup.nodes.Element;
+import org.jsoup.parser.Tag;
 
 import util.Lib;
 
@@ -10,10 +12,12 @@ public class unitAbilities{
 	public ability[] abilities;
 	public conditional[] conditionals;
 	public unitAbilities(Element abilityTable){
+		Element head=new Element(Tag.valueOf("ol"), "test");
 		boolean active = true;
 		boolean conditional =false;
 		Vector<ability> abilities=new Vector<ability>();
 		Vector<conditional> conditionals=new Vector<conditional>();
+		if(abilityTable==null)return;//in case magic==none
 		for(int i=1;i<abilityTable.children().size();i++){
 			if(abilityTable.child(i).text().trim().equals("Active")){
 				active=true;
@@ -28,7 +32,8 @@ public class unitAbilities{
 			}
 			else if(!(abilityTable.child(i).getElementsByTag("th").size()>0)){
 				if(conditional){
-					conditionals.add(new conditional(abilityTable.child(i)));
+					if(abilityTable.child(i).children().size()==5)head=abilityTable.child(i).child(0);
+					conditionals.add(new conditional(abilityTable.child(i),head));
 				}
 				else{
 					abilities.add(new ability(abilityTable.child(i),active));
@@ -52,13 +57,27 @@ public class unitAbilities{
 		public String effect;
 		public String hits;
 		public String MP;
-		public conditional(Element row){
-			condition=row.child(0).text();
-			//aIconURL=row.child(1).getElementsByTag("img").first().absUrl("src");
-			name=row.child(1).text();
-			effect=row.child(2).text();
-			hits=row.child(3).text();
-			MP=row.child(4).text();
+		public conditional(Element row,Element head){
+			if(row.children().size()<4){
+				condition=row.child(0).text();
+				name=row.child(1).text();
+				effect=row.child(2).text();
+			}
+			else if(row.children().size()<5){
+				condition=head.text();
+				name=row.child(0).text();
+				effect=row.child(1).text();
+				hits=row.child(2).text();
+				MP=row.child(3).text();
+			}
+			else{
+				condition=row.child(0).text();
+				//aIconURL=row.child(1).getElementsByTag("img").first().absUrl("src");
+				name=row.child(1).text();
+				effect=row.child(2).text();
+				hits=row.child(3).text();
+				MP=row.child(4).text();
+			}
 		}
 	}
 	public class ability{
