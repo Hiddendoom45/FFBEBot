@@ -47,6 +47,7 @@ public class UnitAwaken extends UnitPaging{
 				return;
 			}
 		}
+		if(user.SacredCrystal>=SC){
 		confirmation=confirmation.replace("%sc%", ""+SC);
 		
 		//for yes/no
@@ -73,6 +74,10 @@ public class UnitAwaken extends UnitPaging{
 				
 				Select select=new Select(new ArrayList<String>(), System.currentTimeMillis(), confirm, confirmation);
 				Selector.setSelection(select, event);
+		}
+		else{
+			Lib.sendMessageEmoted(event, "You do not have enough %sacredCrystal% to awaken those units");
+		}
 		
 	}
 	private int SCAmount(int rarity){

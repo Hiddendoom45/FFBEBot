@@ -16,6 +16,8 @@ import global.record.Settings;
 import net.dv8tion.jda.core.MessageBuilder;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.ChannelType;
+import net.dv8tion.jda.core.entities.Guild;
+import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
@@ -287,6 +289,28 @@ public class Lib {
 		return msg.replace("%userMention%", event.getMember().getAsMention()).
 		replace("%userName%", event.getMember().getNickname()).
 		replace("%guildName%",event.getGuild().getName());
+	}
+	/**
+	 * Looks for a user either based on name string or id
+	 * @param user 
+	 * @param guild
+	 * @return
+	 */
+	public static Member seachUser(String user,Guild guild){
+		try{
+			Long.parseLong(user);//test for nums
+			for(Member m:guild.getMembers()){
+				if(m.getUser().getId().equals(user));
+				return m;
+			}
+		}catch(NumberFormatException e){
+			for(Member m:guild.getMembers()){
+				if(m.getUser().getName().contains(user)||m.getAsMention().contains(user)){
+					return m;
+				}
+			}
+		}
+		return null;
 	}
 	//stuff for handling elements in a web page
 	/**
