@@ -47,6 +47,7 @@ public class UnitOverview {
 				}
 				catch(Exception e){Log.logError(e);}
 			}
+			//generate the rows containing unit data
 			Elements data=doc.getElementById("mw-content-text").children();
 			Elements first=new Elements();
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character[edit | edit source]")));
@@ -65,7 +66,8 @@ public class UnitOverview {
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Rare Summon[edit | edit source]")));
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Limited Unit[edit | edit source]")));
 			Elements units =Lib.getNested(Lib.getNested(first,"tbody"), "tr");
-			Elements remove = new Elements();
+			
+			Elements remove = new Elements();//non unit entries to remove
 			for(Element u:units){
 				if(u.getElementsByTag("td").size()==0){
 					remove.add(u);
@@ -94,16 +96,18 @@ public class UnitOverview {
 		public String baseR;
 		public String maxR;
 		public String trustName;
+		public boolean isNew=false;
 		public unitData(Element row){
 			imgUrl=row.getElementsByAttribute("src").first().attr("abs:src");
 			unitUrl=row.child(1).child(0).absUrl("href");
 			name=row.child(1).text();
+			if(row.child(1).child(0).hasClass("new"))isNew=true;
 			origin=row.child(2).text();
 			if(row.childNodeSize()<5){
-			role=row.child(3).text();
-			baseR=row.child(4).text();
-			maxR=row.child(5).text();
-			trustName=row.child(6).text();
+				role=row.child(3).text();
+				baseR=row.child(4).text();
+				maxR=row.child(5).text();
+				trustName=row.child(6).text();
 			}
 			else{
 				baseR=row.child(3).text();

@@ -159,15 +159,18 @@ public class SaveSystem {
 		if(!(count==null)){count.setMessage("Loading Exvius Units...(%count%/"+overview.length+")");}
 		
 		for(UnitOverview.unitData u:overview){
-			try{
-				units.add(u.name,overviews.toJsonTree(new UnitInfo(u.unitUrl)));
-			}catch(Exception e){
-				Log.logError(e);
-				units.add(u.name, overviews.toJsonTree(getExviusUnit(u.name)));
+			if(!u.isNew){//avoid red text new entries containing nothing
+				try{
+					units.add(u.name,overviews.toJsonTree(new UnitInfo(u.unitUrl)));
+				}catch(Exception e){
+					Log.logError(e);
+					units.add(u.name, overviews.toJsonTree(getExviusUnit(u.name)));
+				}
+				System.out.println("preloaded "+u.name);
 			}
-			System.out.println("preloaded "+u.name);
 			index++;
 			if(!(count==null)){count.setI(index);}
+
 		}
 		if(!(count==null)){count.terminate();}
 		Data.exvicusUnits=overviews.toJson(units);
@@ -187,7 +190,7 @@ public class SaveSystem {
 		
 		for(UnitOverview.unitData u:overview){
 			try{
-				if(units.get(u.name)==null){
+				if(units.get(u.name)==null&&u.isNew==false){//if unit is not in array and is nonNew
 					units.add(u.name, overviews.toJsonTree(new UnitInfo(u.unitUrl)));
 					if(!(count==null)){count.setI(index);}
 				}

@@ -67,41 +67,43 @@ public class UnitInfo {
 			URL=page;
 			Element content=doc.getElementById("mw-content-text");
 			try{
-			loreOverview=content.getElementsByTag("p").first().text();
+				loreOverview=content.getElementsByTag("p").first().text();
 			}catch(Exception e){
 				Log.log("ERROR", "overview lore retrieval failed for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element unitInfo=content.getElementsByTag("tbody").first();
-			unitName=Lib.getHeader(0, unitInfo).text();
-			imgOverviewURL=Lib.getCell(1, 0, unitInfo).child(0).absUrl("src");
-			parseRarities(Lib.getCell(2, 0, unitInfo).text());
-			job=Lib.getCell(3, 0, unitInfo).text();
-			role=Lib.getCell(4, 0, unitInfo).text();
-			origin=Lib.getCell(8, 0, unitInfo).text();
-			gender=Lib.getCell(9, 0, unitInfo).text();
-			race=Lib.getCell(10, 0, unitInfo).text();
-			String[] no=Lib.getCell(11, 0, unitInfo).text().split(",");
-			No=new int[no.length];
-			for(int i=0;i<no.length;i++){
-				try{
-					No[i]=Integer.parseInt(no[i].trim());
-				}catch(NumberFormatException e){
-					No[i]=0;
+				Element unitInfo=content.getElementsByTag("tbody").first();
+				unitName=Lib.getHeader(0, unitInfo).text();
+				imgOverviewURL=Lib.getCell(1, 0, unitInfo).child(0).absUrl("src");
+				parseRarities(Lib.getCell(2, 0, unitInfo).text());
+				job=Lib.getCell(3, 0, unitInfo).text();
+				role=Lib.getCell(4, 0, unitInfo).text();
+				origin=Lib.getCell(8, 0, unitInfo).text();
+				gender=Lib.getCell(9, 0, unitInfo).text();
+				race=Lib.getCell(10, 0, unitInfo).text();
+				String[] no=Lib.getCell(11, 0, unitInfo).text().split(",");
+				No=new int[no.length];
+				for(int i=0;i<no.length;i++){
+					try{
+						No[i]=Integer.parseInt(no[i].trim());
+					}catch(NumberFormatException e){
+						No[i]=0;
+					}
 				}
-			}
-			trustName=Lib.getCell(12, 0, unitInfo).text();
-			trustLink=Lib.getCell(12, 0, unitInfo).child(0).absUrl("href");
-			Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
-			parseTrust(doc2.getElementById("mw-content-text").children());
+				trustName=Lib.getCell(12, 0, unitInfo).text();
+				if(Lib.getCell(12, 0, unitInfo).childNodeSize()>0)
+					trustLink=Lib.getCell(12, 0, unitInfo).child(0).absUrl("href");
+
+				Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
+				parseTrust(doc2.getElementById("mw-content-text").children());
 			}catch(Exception e){
 				Log.log("ERROR", "Error parsing overview box for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats [edit | edit source]")).getElementsByTag("tbody").first();
-			this.stats=new unitStats(stats);
+				Element stats=Lib.getEleAfter(content.children(), new ElementFilter("h3","Stats [edit | edit source]")).getElementsByTag("tbody").first();
+				this.stats=new unitStats(stats);
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing stats for page:" +page);
 				Log.logShortError(e, 5);
@@ -115,53 +117,53 @@ public class UnitInfo {
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element equipment=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipment[edit | edit source]"));
-			parseWeapons(Lib.getCell(1, 0, equipment));
-			parseArmours(Lib.getCell(3, 0, equipment));
+				Element equipment=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipment[edit | edit source]"));
+				parseWeapons(Lib.getCell(1, 0, equipment));
+				parseArmours(Lib.getCell(3, 0, equipment));
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing equipment for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element special=Lib.getEleAfter(content.children(), new ElementFilter("h3","Special[edit | edit source]"));
-			if(!(special==null)){
-				Special=new unitAbilities(special.getElementsByTag("tbody").first());
-			}
+				Element special=Lib.getEleAfter(content.children(), new ElementFilter("h3","Special[edit | edit source]"));
+				if(!(special==null)){
+					Special=new unitAbilities(special.getElementsByTag("tbody").first());
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing special abilities for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic[edit | edit source]"));
-			if(!(magic==null)){
-				Magic=new unitAbilities(magic.getElementsByTag("tbody").first());
-			}
+				Element magic=Lib.getEleAfter(content.children(), new ElementFilter("h3","Magic[edit | edit source]"));
+				if(!(magic==null)){
+					Magic=new unitAbilities(magic.getElementsByTag("tbody").first());
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing magic abilities for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element sprites=Lib.getEleAfter(content.children(), new ElementFilter("h2","Sprites[edit | edit source]")).getElementsByTag("tbody").first();
-			this.sprites=new String[sprites.children().first().children().size()];
-			for(int i=0;i<sprites.children().first().children().size();i++){
-				this.sprites[i]=sprites.child(1).child(i).child(0).child(0).absUrl("src");
-			}
+				Element sprites=Lib.getEleAfter(content.children(), new ElementFilter("h2","Sprites[edit | edit source]")).getElementsByTag("tbody").first();
+				this.sprites=new String[sprites.children().first().children().size()];
+				for(int i=0;i<sprites.children().first().children().size();i++){
+					this.sprites[i]=sprites.child(1).child(i).child(0).child(0).absUrl("src");
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing sprites for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-			Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening Materials[edit | edit source]"));
-			awakening=new String[maxRarity-minRarity];
-			for(int i=0;i<awakening.length;i++){
-				awakening[i]=awaken.getElementsByTag("tbody").first().getElementsByTag("tr").get(1).getElementsByTag("td").get(i).text();
-			}
+				Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening Materials[edit | edit source]"));
+				awakening=new String[maxRarity-minRarity];
+				for(int i=0;i<awakening.length;i++){
+					awakening[i]=awaken.getElementsByTag("tbody").first().getElementsByTag("tr").get(1).getElementsByTag("td").get(i).text();
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing awakening mats for page:" +page);
 				Log.logShortError(e, 5);
 			}
 			try{
-				
+
 				Element quote=Lib.getEleAfter(content.children(), new ElementFilter("h2","Quotes[edit | edit source]"));
 				background=new unitQuotes(quote.getElementsByClass("tabbertab").get(0).getElementsByTag("table").first().getElementsByTag("tbody").first());
 				fusionQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(1).getElementsByTag("table").first().getElementsByTag("tbody").first());
@@ -197,7 +199,7 @@ public class UnitInfo {
 		int[] rarity=Lib.extractNumbers(text) ;
 		minRarity=rarity[0];
 		try{
-		maxRarity=rarity[1];
+			maxRarity=rarity[1];
 		}catch(ArrayIndexOutOfBoundsException e){
 			maxRarity=minRarity;
 		}
