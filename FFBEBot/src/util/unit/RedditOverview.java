@@ -20,7 +20,7 @@ public class RedditOverview {
 	public RedditOverview(String unitName){
 		try{
 			for(unitData u:new Gson().fromJson(Data.redditO,unitData[].class)){
-				if(u.name.toLowerCase().contains(unitName.toLowerCase())){
+				if(u.name.toLowerCase().contains(unitName.toLowerCase())||u.JPname.toLowerCase().contains(unitName.toLowerCase())){
 					this.possible.add(u.name);
 					this.possibleData.add(u);
 				}
