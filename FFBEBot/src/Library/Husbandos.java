@@ -97,6 +97,16 @@ public enum Husbandos {
 	Tidus("Tidus","0/0d/Unit-Tidus-6.png"),
 	Rasler("Rasler","a/a2/Unit-Rasler-6.png"),
 	Zargabaath("Zargabaath","2/2f/Unit-Zargabaath-6.png"),
+	Bran("Bran","0/0b/Unit-Bran-6.png"),
+	Ruggles("Ruggles","9/98/Unit-Ruggles-5.png"),
+	MercRamza("Mercenary Ramza","4/45/Unit-Mercenary_Ramza-6.png"),
+	KDeltia("Knight Deltia","e/eb/Unit-Knight_Delita-6.png"),
+	Orran("Orran","3/3e/Unit-Orran-6.png"),
+	DV("Veritas of the Dark","1/19/Unit-Veritas_of_the_Dark-6.png"),
+	FV("Veritas of the Flame","2/25/Unit-Veritas_of_the_Flame-6.png"),
+	EV("Veritas of the Earth","e/e0/Unit-Veritas_of_the_Earth-6.png"),
+	Time("Timothy", "1/16/Unit-Timothy-5.png"),
+	
 	//Limited ones//for organization
 	Thief("Thief","d/de/Unit-Thief-5.png"),
 	DRain("Demon Rain","3/30/Unit-Demon_Rain-6.png"),

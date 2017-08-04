@@ -171,6 +171,21 @@ public enum Unit {
 	Ashe("Ashe",new String[]{"3/37/Unit-Ashe-4.png","6/65/Unit-Ashe-5.png?","c/c4/Unit-Ashe-6.png"},4),
 	Rasler("Rasler",new String[]{"4/43/Unit-Rasler-4.png","7/7a/Unit-Rasler-5.png","a/a2/Unit-Rasler-6.png"},4),
 	Zargabaath("Zargabaath",new String[]{"b/b9/Unit-Zargabaath-5.png","2/2f/Unit-Zargabaath-6.png"},5),
+	Lunera("Lunera",new String[]{"0/0b/Unit-Lunera-5.png","f/f5/Unit-Lunera-6.png"},5),
+	Bran("Bran",new String[]{"9/95/Unit-Bran-4.png","c/c2/Unit-Bran-5.png","0/0b/Unit-Bran-6.png"},4),
+	Helena("Helena",new String[]{"b/bd/Unit-Helena-4.png","0/0c/Unit-Helena-5.png","5/51/Unit-Helena-6.png"},4),
+	Ruggles("Ruggles",new String[]{"6/6e/Unit-Ruggles-3.png","0/0d/Unit-Ruggles-4.png","9/98/Unit-Ruggles-5.png"},3),
+	MercRamza("Mercenary Ramza",new String[]{"6/61/Unit-Mercenary_Ramza-5.png","4/45/Unit-Mercenary_Ramza-6.png"},5),
+	KDeltia("Knight Deltia",new String[]{"d/df/Unit-Knight_Delita-5.png","e/eb/Unit-Knight_Delita-6.png"},5),
+	Meliadoul("Meliadoul",new String[]{"e/e1/Unit-Meliadoul-4.png","6/6b/Unit-Meliadoul-5.png","d/df/Unit-Meliadoul-6.png"},4),
+	Orran("Orran",new String[]{"b/bc/Unit-Orran-4.png","9/93/Unit-Orran-5.png","3/3e/Unit-Orran-6.png"},4),
+	DV("Veritas of the Dark",new String[]{"7/77/Unit-Veritas_of_the_Dark-5.png9","1/19/Unit-Veritas_of_the_Dark-6.png"},5),
+	FV("Veritas of the Flame",new String[]{"c/c3/Unit-Veritas_of_the_Flame-5.png","2/25/Unit-Veritas_of_the_Flame-6.png"},5),
+	EV("Veritas of the Earth",new String[]{"e/e1/Unit-Veritas_of_the_Earth-4.png","c/c9/Unit-Veritas_of_the_Earth-5.png","e/e0/Unit-Veritas_of_the_Earth-6.png"},4),
+	Victoria("Victoria",new String[]{"7/7a/Unit-Victoria-4.png","8/80/Unit-Victoria-5.png","8/85/Unit-Victoria-6.png"},4),
+	Tim("Timothy",new String[]{"6/6c/Unit-Timothy-3.png","5/5d/Unit-Timothy-4.png","1/16/Unit-Timothy-5.png"},3),
+	
+	
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
@@ -420,7 +435,23 @@ public enum Unit {
 				SMF,
 				Wakka,
 				Rikku,
-				Tidus
+				Tidus,
+				Ashe,
+				Rasler,
+				Zargabaath,
+				Lunera,
+				Bran,
+				Helena,
+				Ruggles,
+				MercRamza,
+				KDeltia,
+				Meliadoul,
+				Orran,
+				DV,
+				FV,
+				EV,
+				Victoria,
+				Tim
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool
