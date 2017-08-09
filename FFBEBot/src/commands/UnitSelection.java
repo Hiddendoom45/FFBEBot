@@ -52,6 +52,7 @@ public abstract class UnitSelection extends CommandGenerics implements Command, 
 					}catch(IllegalStateException e){
 						Lib.sendMessage(event, "Too many units found, please be more specific with the unit name");
 						Log.log("CMDERROR", "msg over 2k");
+						return;
 					}
 					select.additionalData=new String[]{(rarity!=0?""+rarity:"null")};
 					Selector.setSelection(select, event);
