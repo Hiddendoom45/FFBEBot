@@ -10,7 +10,13 @@ public class Give extends CommandGenerics implements Command{
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		if(event.getMessage().getMentionedUsers().size()>0&&args.length>0&&Lib.isNumber(args[0])){
-			int lapis=Integer.parseInt(args[0]);
+			int lapis=0;
+			try{
+				lapis=Integer.parseInt(args[0]);
+			}catch(NumberFormatException e){
+				Lib.sendMessage(event, "Error:NaN");
+				return;
+			}
 			Data reciever=SaveSystem.getUser(event.getMessage().getMentionedUsers().get(0).getId());
 			Data giver=SaveSystem.getUser(event.getAuthor().getId());
 			if(giver.lapis>=lapis){

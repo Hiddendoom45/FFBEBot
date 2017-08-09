@@ -46,7 +46,13 @@ public abstract class UnitSelection extends CommandGenerics implements Command, 
 				if(possible.size()>1){//if more than 1 possible unit
 					long ID=System.currentTimeMillis();//assuming that no 2 commands will occur simultaneously
 					saved.put(ID, Ounits);//keep track of the Ounits used to find all the units(essentially the options)
-					Select select=new Select(possible, ID, this, possible);//fin
+					Select select=null;
+					try{
+					select=new Select(possible, ID, this, possible);//fin
+					}catch(IllegalStateException e){
+						Lib.sendMessage(event, "Too many units found, please be more specific with the unit name");
+						Log.log("CMDERROR", "msg over 2k");
+					}
 					select.additionalData=new String[]{(rarity!=0?""+rarity:"null")};
 					Selector.setSelection(select, event);
 				}

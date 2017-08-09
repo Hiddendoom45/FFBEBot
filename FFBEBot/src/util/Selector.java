@@ -95,7 +95,7 @@ public class Selector {
 				Integer.parseInt(event.getMessage().getContent());
 				return true;
 			}catch(NumberFormatException e){
-				Log.logError(e);
+				Log.log("CMDERROR","NaN:"+event.getMessage().getContent());
 				return false;
 			}
 		}
