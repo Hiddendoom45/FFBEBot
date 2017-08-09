@@ -112,6 +112,7 @@ public class Main {
 		CmdControl.addCommand("waifu", new Waifu(), Module);
 		CmdControl.addCommand("husbando", new Husbando(), Module);
 		CmdControl.addCommand("maintenance", new Maintenance(), Module);
+		CmdControl.addCommand("nier", new Nier(), Module);
 		
 		Module=ModuleEnum.Simulation.toString();
 		CmdControl.addCommand("dailies", new Dailies(), Module);
@@ -124,7 +125,7 @@ public class Main {
 		CmdControl.addCommand("banners", new Banners(), Module);
 		CmdControl.addCommand("bannerlist", new Banners(), Module);
 		CmdControl.addCommand("pull", new commands.Pull(),Module);
-		CmdControl.addCommand("gpull", new GuaranteePull(), Module);
+		//CmdControl.addCommand("gpull", new GuaranteePull(), Module);
 		CmdControl.addCommand("unitinventory", new UnitInventory(), Module);
 		CmdControl.addCommand("dailypull", new DailyPull(), Module);
 		CmdControl.addCommand("11pull", new ElevenPull(), Module);

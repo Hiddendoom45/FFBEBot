@@ -52,6 +52,7 @@ public enum Banner {
 	AwkWarriorsP2("Awakened Warriors Part 2",new Unit[]{Unit.Luneth,Unit.DKC,Unit.Refia,Unit.Rosa,Unit.Cecil,Unit.Exdeath},BannerRates.D3D4D5.rate(),Lib.concat(Promise.pool, Promise.featured),Promise.include,BannerType.BaseRare),
 	FFTP3("FF Tactics part 3",new Unit[]{Unit.MercRamza,Unit.KDeltia,Unit.Orran,Unit.Meliadoul,Unit.Alma},BannerRates.D4D5.rate(),AwkWarriorsP2.pool,AwkWarriors.include,BannerType.BaseRare),
 	Revenge("Time for Revenge(DV)",new Unit[]{Unit.DV,Unit.FV,Unit.EV,Unit.Victoria,Unit.Tim},BannerRates.D4D5.rate(),Lib.concat(FFTP3.pool,new Unit[]{Unit.MercRamza,Unit.KDeltia,Unit.Orran,Unit.Meliadoul}),FFTP3.include,BannerType.BaseRare),
+	Nier("Nier",new Unit[]{Unit.N2B,Unit.A2,Unit.Eve,Unit.N9S,Unit.N21O},BannerRates.D4D5.rate(),Lib.concat(Revenge.pool, Revenge.featured),Revenge.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
