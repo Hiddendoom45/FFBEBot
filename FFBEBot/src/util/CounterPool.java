@@ -45,7 +45,11 @@ public class CounterPool implements Runnable {
 							if(c.hasTerminated()){
 								toRemove.add(i);
 							}
-						}catch(Exception e){
+						}
+						catch(IllegalArgumentException e1){
+							toRemove.add(i);
+						}
+						catch(Exception e){
 							Log.logError(e);
 						}
 					}

@@ -179,7 +179,7 @@ public enum Unit {
 	KDeltia("Knight Deltia",new String[]{"d/df/Unit-Knight_Delita-5.png","e/eb/Unit-Knight_Delita-6.png"},5),
 	Meliadoul("Meliadoul",new String[]{"e/e1/Unit-Meliadoul-4.png","6/6b/Unit-Meliadoul-5.png","d/df/Unit-Meliadoul-6.png"},4),
 	Orran("Orran",new String[]{"b/bc/Unit-Orran-4.png","9/93/Unit-Orran-5.png","3/3e/Unit-Orran-6.png"},4),
-	DV("Veritas of the Dark",new String[]{"7/77/Unit-Veritas_of_the_Dark-5.png9","1/19/Unit-Veritas_of_the_Dark-6.png"},5),
+	DV("Veritas of the Dark",new String[]{"7/77/Unit-Veritas_of_the_Dark-5.png","1/19/Unit-Veritas_of_the_Dark-6.png"},5),
 	FV("Veritas of the Flame",new String[]{"c/c3/Unit-Veritas_of_the_Flame-5.png","2/25/Unit-Veritas_of_the_Flame-6.png"},5),
 	EV("Veritas of the Earth",new String[]{"e/e1/Unit-Veritas_of_the_Earth-4.png","c/c9/Unit-Veritas_of_the_Earth-5.png","e/e0/Unit-Veritas_of_the_Earth-6.png"},4),
 	Victoria("Victoria",new String[]{"7/7a/Unit-Victoria-4.png","8/80/Unit-Victoria-5.png","8/85/Unit-Victoria-6.png"},4),
