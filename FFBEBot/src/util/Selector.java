@@ -25,6 +25,7 @@ public class Selector {
 	public static boolean parseSelection(MessageReceivedEvent event){
 		//overall check for if there is an event
 		if(selections.containsKey(key(event))){
+			Log.log("status", "selectionText:" + event.getMessage().getContent()+" from "+event.getAuthor()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild()));
 			//if user exits
 			if(event.getMessage().getContent().equals("exit")){
 				event.getChannel().sendTyping();//notify message recieved
