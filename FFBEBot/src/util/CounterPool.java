@@ -46,7 +46,7 @@ public class CounterPool implements Runnable {
 								toRemove.add(i);
 							}
 						}
-						catch(IllegalArgumentException e1){
+						catch(IllegalStateException e1){
 							toRemove.add(i);
 						}
 						catch(Exception e){
