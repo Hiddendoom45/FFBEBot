@@ -211,8 +211,8 @@ public enum Unit {
 	N2B("2B",new String[]{"d/dd/Unit-2B-5.png","4/4f/Unit-2B-6.png"},5),
 	N9S("9S",new String[]{"6/6f/Unit-9S-4.png","a/a3/Unit-9S-5.png","8/8a/Unit-9S-6.png"},4),
 	N21O("21O",new String[]{"6/6a/Unit-21O-3.png","f/f6/Unit-21O-4.png","c/c9/Unit-21O-5.png"},3),
-	A2("A2",new String[]{"6/6c/Unit-A2-5.png",""},5),
-	Eve("Eve",new String[]{"9/96/Unit-Eve-4.png","",""},4);
+	A2("A2",new String[]{"6/6c/Unit-A2-5.png","6/62/Unit-A2-6.png"},5),
+	Eve("Eve",new String[]{"9/96/Unit-Eve-4.png","3/34/Unit-Eve-5.png","3/39/Unit-Eve-6.png"},4);
 	
 	
 	

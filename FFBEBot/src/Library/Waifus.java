@@ -114,7 +114,10 @@ public enum Waifus {
 	Otogiri("Otogiri","6/6b/Unit-Otogiri-5.png"),
 	Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	Ashterose("Ashterose","5/5f/Unit-Ashterose-6.png"),
-	Fryevia("Fryevia","3/32/Unit-Fryevia-6.png");
+	Fryevia("Fryevia","3/32/Unit-Fryevia-6.png"),
+	N2B("2B","4/4f/Unit-2B-6.png"),
+	A2("A2","6/62/Unit-A2-6.png"),
+	N21O("21O","c/c9/Unit-21O-5.png");
 	
 	
 	public String name;
