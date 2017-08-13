@@ -46,7 +46,7 @@ public class CounterPool implements Runnable {
 								toRemove.add(i);
 							}
 						}
-						catch(IllegalStateException e1){//requester shutdown, stop counter counting
+						catch(RuntimeException e1){//requester shutdown, stop counter counting
 							toRemove.add(i);
 						}
 						catch(Exception e){

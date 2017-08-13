@@ -73,7 +73,7 @@ public class SaveSystem {
 			preloadReddit(null);
 			writeData();
 		}
-		if(Settings.token.equals(Secrets.token)){
+		if(!new File("units").exists()){
 			preloadSummons(null);
 		}
 		setDailyTime();

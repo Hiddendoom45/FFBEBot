@@ -1,6 +1,5 @@
 package util;
 
-import global.Main;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 /**
@@ -15,7 +14,6 @@ public class Counter{
 	private MessageReceivedEvent event;
 	private int i;
 	private boolean end=false;
-	private int tries=0;
 	public Counter(String message,MessageReceivedEvent event){
 		this.message=message;
 		this.event=event;
@@ -25,17 +23,7 @@ public class Counter{
 	public Counter count() {
 		synchronized(this){
 			if(!end){
-				try{
-					event.getChannel().getMessageById(messageID).complete().editMessage(message.replace("%count%", ""+i)).submit();
-				}catch(IllegalStateException e){
-					if (tries<3){//another attempt at fixing the counter errors
-						Main.jda.getGuildById(event.getGuild().getId()).getTextChannelById(event.getChannel().getId()).getMessageById(messageID).complete().editMessage(message.replace("%count%", ""+i)).submit();
-					tries++;
-					}
-					else{
-						throw e;
-					}
-				}
+				event.getChannel().getMessageById(messageID).complete().editMessage(message.replace("%count%", ""+i)).submit();
 			}
 			else{
 				event.getChannel().deleteMessageById(messageID).submit();

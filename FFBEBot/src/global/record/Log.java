@@ -49,6 +49,9 @@ public class Log {
 				}
 				in.close();
 			}
+			else{
+				new File(Settings.saveSource).createNewFile();
+			}
 			for(String s:log){
 				out.append(s+"\n");
 			}
