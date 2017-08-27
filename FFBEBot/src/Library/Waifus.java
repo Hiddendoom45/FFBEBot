@@ -117,7 +117,9 @@ public enum Waifus {
 	Fryevia("Fryevia","3/32/Unit-Fryevia-6.png"),
 	N2B("2B","4/4f/Unit-2B-6.png"),
 	A2("A2","6/62/Unit-A2-6.png"),
-	N21O("21O","c/c9/Unit-21O-5.png");
+	N21O("21O","c/c9/Unit-21O-5.png"),
+	LV("Veritas of the Light","c/cd/Unit-Veritas_of_the_Light-6.png"),
+	WV("Veritas of the Waters","3/32/Unit-Veritas_of_the_Waters-6.png");
 	
 	
 	public String name;

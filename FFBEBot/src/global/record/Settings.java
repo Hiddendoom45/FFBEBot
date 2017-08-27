@@ -36,7 +36,7 @@ public class Settings {
 	public static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(30);//used for various threaded activities
 	public static long dailyTime;
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access	
-	public static Banner DefaultBanner=Banner.Nier;//default banner used by summon simulators
+	public static Banner DefaultBanner=Banner.Memories;//default banner used by summon simulators
 	
 	//guild settings
 	public String guildPrefix="";

@@ -184,6 +184,9 @@ public enum Unit {
 	EV("Veritas of the Earth",new String[]{"e/e1/Unit-Veritas_of_the_Earth-4.png","c/c9/Unit-Veritas_of_the_Earth-5.png","e/e0/Unit-Veritas_of_the_Earth-6.png"},4),
 	Victoria("Victoria",new String[]{"7/7a/Unit-Victoria-4.png","8/80/Unit-Victoria-5.png","8/85/Unit-Victoria-6.png"},4),
 	Tim("Timothy",new String[]{"6/6c/Unit-Timothy-3.png","5/5d/Unit-Timothy-4.png","1/16/Unit-Timothy-5.png"},3),
+	LV("Vertias of the Light",new String[]{"7/7c/Unit-Veritas_of_the_Light-5.png","c/cd/Unit-Veritas_of_the_Light-6.png"},5),
+	HV("Vertias of the Heavens",new String[]{"3/38/Unit-Veritas_of_the_Heavens-4.png","2/29/Unit-Veritas_of_the_Heavens-5.png","d/d4/Unit-Veritas_of_the_Heavens-6.png"},4),
+	WV("Vertias of the Waters",new String[]{"9/91/Unit-Veritas_of_the_Waters-4.png","0/04/Unit-Veritas_of_the_Waters-5.png","3/32/Unit-Veritas_of_the_Waters-6.png"},4),
 	
 	
 	//Limited Units
@@ -456,7 +459,10 @@ public enum Unit {
 				FV,
 				EV,
 				Victoria,
-				Tim
+				Tim,
+				LV,
+				HV,
+				WV
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool

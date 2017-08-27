@@ -105,7 +105,8 @@ public enum Husbandos {
 	DV("Veritas of the Dark","1/19/Unit-Veritas_of_the_Dark-6.png"),
 	FV("Veritas of the Flame","2/25/Unit-Veritas_of_the_Flame-6.png"),
 	EV("Veritas of the Earth","e/e0/Unit-Veritas_of_the_Earth-6.png"),
-	Time("Timothy", "1/16/Unit-Timothy-5.png"),
+	Tim("Timothy", "1/16/Unit-Timothy-5.png"),
+	HV("Veritas of the Heavenes","d/d4/Unit-Veritas_of_the_Heavens-6.png"),
 	
 	//Limited ones//for organization
 	Thief("Thief","d/de/Unit-Thief-5.png"),
