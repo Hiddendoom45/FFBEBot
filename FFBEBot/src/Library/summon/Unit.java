@@ -187,7 +187,10 @@ public enum Unit {
 	LV("Vertias of the Light",new String[]{"7/7c/Unit-Veritas_of_the_Light-5.png","c/cd/Unit-Veritas_of_the_Light-6.png"},5),
 	HV("Vertias of the Heavens",new String[]{"3/38/Unit-Veritas_of_the_Heavens-4.png","2/29/Unit-Veritas_of_the_Heavens-5.png","d/d4/Unit-Veritas_of_the_Heavens-6.png"},4),
 	WV("Vertias of the Waters",new String[]{"9/91/Unit-Veritas_of_the_Waters-4.png","0/04/Unit-Veritas_of_the_Waters-5.png","3/32/Unit-Veritas_of_the_Waters-6.png"},4),
-	
+	OK("Onion Knight",new String[]{"0/0f/Unit-Onion_Knight-5.png","6/62/Unit-Onion_Knight-6.png"},5),
+	Desch("Desch",new String[]{"5/5e/Unit-Desch-4.png","1/18/Unit-Desch-5.png","5/5c/Unit-Desch-6.png"},4),
+	Aria("Aria", new String[]{"f/f2/Unit-Aria-4.png","b/b4/Unit-Aria-5.png","4/4b/Unit-Aria-6.png"},4),
+	Sara("Sara",new String[]{"8/82/Unit-Sara-3.png","8/80/Unit-Sara-4.png","8/85/Unit-Sara-5.png"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),

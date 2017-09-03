@@ -55,7 +55,7 @@ public enum Banner {
 	Nier("Nier",new Unit[]{Unit.N2B,Unit.A2,Unit.Eve,Unit.N9S,Unit.N21O},BannerRates.D4D5.rate(),Lib.concat(Revenge.pool, Revenge.featured),Revenge.include,BannerType.BaseRare),
 	Malboro("Malboro Killers",new Unit[]{Unit.TTerra,Unit.WoL,Unit.Soleil,Unit.Kefka,Unit.CoD},BannerRates.D3D4.rate(),Nier.pool,Nier.include,BannerType.BaseRare),
 	Memories("Memories from the Battlefield",new Unit[]{Unit.LV,Unit.HV,Unit.WV,Unit.Hayate,Unit.Charlotte},BannerRates.D3D4.rate(),Malboro.pool,Malboro.include,BannerType.BaseRare),
-	
+	FFIII("FFIII",new Unit[]{Unit.OK,Unit.Desch,Unit.Aria,Unit.Sara},BannerRates.D4.rate(),Lib.concat(Memories.pool, new Unit[]{Unit.LV,Unit.HV,Unit.WV}),Memories.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
