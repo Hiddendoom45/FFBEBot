@@ -142,7 +142,7 @@
     		<dependency>
     			<groupId>net.dv8tion</groupId>
     			<artifactId>JDA</artifactId>
-    			<version>3.0.0_157</version>
+    			<version>3.3.0_261</version>
     		</dependency>
     		<dependency>
     <groupId>com.google.apis</groupId>

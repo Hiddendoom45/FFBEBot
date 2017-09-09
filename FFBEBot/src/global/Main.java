@@ -3,8 +3,7 @@ package global;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.entities.Game.GameType;
-import net.dv8tion.jda.core.entities.impl.GameImpl;
+import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import util.CmdControl;
 import util.CounterPool;
@@ -55,7 +54,7 @@ public class Main {
 	}
 	public static void startup() throws LoginException, IllegalArgumentException, InterruptedException{
 		try{
-		jda = new JDABuilder(AccountType.BOT).addListener(new BotListener()).setToken(Settings.token).buildBlocking();
+		jda = new JDABuilder(AccountType.BOT).addEventListener(new BotListener()).setToken(Settings.token).buildBlocking();
 		}catch(LoginException | RateLimitedException e){
 			Log.log("System", "error on login, retrying in 5 minutes");
 			TimeUnit.MINUTES.sleep(5);
@@ -66,11 +65,12 @@ public class Main {
 		System.out.println(states.randomReady());
 	}
 	public static void shutdown(){
-		jda.shutdown(false);
-		Log.log("status", "bot shutdown");
+		//Do nothing, no option to shutdown temporarily
+		//jda.shutdown(false);
+		//Log.log("status", "bot shutdown");
 	}
 	public static void quit(){
-		jda.shutdown(true);
+		jda.shutdown();
 		Log.log("status", "Bot Quit");
 		Log.save();
 		System.exit(1);
@@ -195,7 +195,7 @@ public class Main {
 		case Ready6:game=" in the salt mines|-!help";
 		break;
 		}
-		jda.getPresence().setGame(new GameImpl(game,"null",GameType.DEFAULT));
+		jda.getPresence().setGame(Game.of(game));
 	}	
 	public static void log(String type,String msg){
 		Log.log(type, msg);
