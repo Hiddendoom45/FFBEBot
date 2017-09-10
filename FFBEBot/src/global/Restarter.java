@@ -46,7 +46,7 @@ public class Restarter {
 				try {
 					Restarter.SleepActivity();
 					TimeUnit.SECONDS.sleep(sleep);
-					Main.startup();
+					//Main.startup();
 				} catch (Exception e) {
 					Log.logError(e);
 				}
