@@ -109,7 +109,7 @@ public enum Husbandos {
 	HV("Veritas of the Heavens","d/d4/Unit-Veritas_of_the_Heavens-6.png"),
 	OK("Onion Knight","6/62/Unit-Onion_Knight-6.png"),
 	Desch("Desch","5/5c/Unit-Desch-6.png"),
-	
+	Werei("Werei","8/87/Unit-Werei-6.png"),
 	//Limited ones//for organization
 	Thief("Thief","d/de/Unit-Thief-5.png"),
 	DRain("Demon Rain","3/30/Unit-Demon_Rain-6.png"),

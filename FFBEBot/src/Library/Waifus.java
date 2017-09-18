@@ -82,6 +82,7 @@ public enum Waifus {
 	Lunera("Lunera","f/f5/Unit-Lunera-6.png"),
 	Helena("Helena","5/51/Unit-Helena-6.png"),
 	Prishe("Prishe","a/a2/Unit-Prishe-6.png"),
+	Kupipi("Kupipi","9/9f/Unit-Kupipi-5.png"),
 	Meliadoul("Meliadoul","d/df/Unit-Meliadoul-6.png"),
 	Victoria("Victoria","8/85/Unit-Victoria-6.png"),
 	Aria("Aria","4/4b/Unit-Aria-6.png"),
