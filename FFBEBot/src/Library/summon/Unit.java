@@ -191,6 +191,9 @@ public enum Unit {
 	Desch("Desch",new String[]{"5/5e/Unit-Desch-4.png","1/18/Unit-Desch-5.png","5/5c/Unit-Desch-6.png"},4),
 	Aria("Aria", new String[]{"f/f2/Unit-Aria-4.png","b/b4/Unit-Aria-5.png","4/4b/Unit-Aria-6.png"},4),
 	Sara("Sara",new String[]{"8/82/Unit-Sara-3.png","8/80/Unit-Sara-4.png","8/85/Unit-Sara-5.png"},3),
+	Prishe("Prishe",new String[]{"2/2b/Unit-Prishe-5.png","a/a2/Unit-Prishe-6.png"},5),
+	Werei("Werei",new String[]{"6/6e/Unit-Werei-4.png","9/99/Unit-Werei-5.png","8/87/Unit-Werei-6.png"},4),
+	Kupipi("Kupipi",new String[]{"6/6b/Unit-Kupipi-3.png","5/56/Unit-Kupipi-4.png","9/9f/Unit-Kupipi-5.png"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
