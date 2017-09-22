@@ -113,6 +113,7 @@ public class Main {
 		CmdControl.addCommand("husbando", new Husbando(), Module);
 		CmdControl.addCommand("maintenance", new Maintenance(), Module);
 		CmdControl.addCommand("nier", new Nier(), Module);
+		CmdControl.addCommand("gumi.sg", new Hax(), Module);
 		
 		Module=ModuleEnum.Simulation.toString();
 		CmdControl.addCommand("dailies", new Dailies(), Module);
