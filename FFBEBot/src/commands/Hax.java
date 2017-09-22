@@ -16,7 +16,7 @@ public class Hax extends CommandGenerics implements Command {
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		try {
-			Files.copy(getClass().getResourceAsStream("/Library/Hax.jpg"), new File("tempHax.jpg").toPath(),StandardCopyOption.REPLACE_EXISTING);
+			Files.copy(getClass().getResourceAsStream("/Library/hax.jpg"), new File("tempHax.jpg").toPath(),StandardCopyOption.REPLACE_EXISTING);
 			try {
 				Settings.upload.acquire();
 			} catch (InterruptedException e) {}
