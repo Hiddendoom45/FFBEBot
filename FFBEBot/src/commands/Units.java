@@ -27,7 +27,7 @@ public class Units extends UnitSelection implements Command,Selection {
 			out+="**SPR**:"+Lib.pad(info.stats.stats[i].SPR, 6)+Lib.pad("("+info.statIncrease.stats[i].SPR+")", 6);
 		}
 		out+="\nlink to wiki::link:";
-		out+=info.URL+"\n:art:";
+		//out+=info.URL+"\n:art:";//discord now grabs the unit image from the link
 		out+=info.imgOverviewURL;
 		Lib.sendMessage(event, out);
 	}
