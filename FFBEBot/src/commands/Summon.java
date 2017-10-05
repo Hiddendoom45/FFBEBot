@@ -102,14 +102,12 @@ public class Summon extends CommandGenerics implements Command {
 		}catch(Exception e){
 			Log.logError(e);
 		}
-		finally{
-			count.terminate();
-			Settings.upload.release();
-		}
 		try {
 			Files.delete(new File("summons.png").toPath());
 		} catch (IOException e) {
 			Log.logShortError(e, 5);
 		}
+		count.terminate();
+		Settings.upload.release();
 	}
 }

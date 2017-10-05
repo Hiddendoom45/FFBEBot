@@ -544,6 +544,7 @@ public class SaveSystem {
 		}
 	}
 	public static boolean hasPermission(MessageReceivedEvent event,Permission permission){
+		if(event.getChannelType().equals(ChannelType.PRIVATE))return true;//fix issue unable to emote in private message
 		return hasPermission(event.getGuild(),(Channel)event.getChannel(),permission);
 	}
 	public static boolean hasPermission(Guild guild,Channel channel,Permission permission){
