@@ -194,6 +194,11 @@ public enum Unit {
 	Prishe("Prishe",new String[]{"2/2b/Unit-Prishe-5.png","a/a2/Unit-Prishe-6.png"},5),
 	Werei("Werei",new String[]{"6/6e/Unit-Werei-4.png","9/99/Unit-Werei-5.png","8/87/Unit-Werei-6.png"},4),
 	Kupipi("Kupipi",new String[]{"6/6b/Unit-Kupipi-3.png","5/56/Unit-Kupipi-4.png","9/9f/Unit-Kupipi-5.png"},3),
+	Ayaka("Ayaka",new String[]{"4/47/Unit-Ayaka-5.png","f/f1/Unit-Ayaka-6.png"},5),
+	Goken("Goken",new String[]{"5/50/Unit-Goken-4.png","e/e1/Unit-Goken-5.png","d/da/Unit-Goken-6.png"},4),
+	Silvia("Silvia",new String[]{"3/37/Unit-Silvia-4.png","3/30/Unit-Silvia-5.png","d/df/Unit-Silvia-6.png"},4),
+	Kamui("Kamui",new String[]{"d/d6/Unit-Kamui-3.png","c/cc/Unit-Kamui-4.png","6/6f/Unit-Kamui-5.png"},3),
+	Yuri("Yuri",new String[]{"2/2b/Unit-Yuri-3.png","0/0e/Unit-Yuri-4.png","4/4e/Unit-Yuri-5.png"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
