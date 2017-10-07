@@ -28,7 +28,7 @@ public class Units extends UnitSelection implements Command,Selection {
 		}
 		out+="\nlink to wiki::link:";
 		out+=info.URL+"";//discord now grabs the unit image from the link
-		//out+="\n:art:"+info.imgOverviewURL;
+		out+="\n:art:"+info.imgOverviewURL;
 		Lib.sendMessage(event, out);
 	}
 	public String addStars(String s){
