@@ -306,6 +306,14 @@ public class Lib {
 		}
 		return null;
 	}
+	/**
+	 * General debug to know what user/guild they're from
+	 * @param event
+	 * @return
+	 */
+	public static String debugGuildUser(MessageReceivedEvent event){
+		return event.getAuthor().getName()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild());
+	}
 	//stuff for handling elements in a web page
 	/**
 	 * Gets elements within an element based on tag name

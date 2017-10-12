@@ -82,11 +82,16 @@ public abstract class UnitPaging extends CommandGenerics implements Selection,Co
 			unitsSelected(event,selected);
 		}
 		else{
-			numSelect.put(chosen.ID, selected);
+			numSelect.put(chosen.ID, selected);//put to list for next call
 			if(paging==-1){
 				if(set==0){
 					//not sure if error message but will just proceed with action
-					unitsSelected(event,selected);
+					if(selected.size()>0){
+						unitsSelected(event,selected);
+					}
+					else{
+						Lib.sendMessage(event, "No units selected, no previous page found, EXITING");
+					}
 				}
 				else{
 					renderAndSend(event,set-1,chosen.ID);
@@ -94,7 +99,7 @@ public abstract class UnitPaging extends CommandGenerics implements Selection,Co
 			}
 			else if(paging==1){
 				Data user=SaveSystem.getUser(event.getAuthor().getId());
-				if(user.units.size()>(set*10)+1){
+				if(user.units.size()>(set*10)){
 					renderAndSend(event,set+1,chosen.ID);
 				}
 				else{
@@ -112,6 +117,11 @@ public abstract class UnitPaging extends CommandGenerics implements Selection,Co
 		try{
 			Data user=SaveSystem.getUser(event.getAuthor().getId());
 			ArrayList<String> names=new ArrayList<String>(1);
+			if(names.size()<=0){
+				Lib.sendMessage(event, "An error has occured wherein 0 units were found, EXITING");
+				Log.log("ERROR", "built 0 size unit image "+Lib.debugGuildUser(event));
+				return;
+			}
 			Counter count=new Counter("Finding Units %count%/"+(user.units.size()>=(set*10)+10?10:user.units.size()%10), event);
 			CounterPool.getPool().add(count);
 			BufferedImage units=new SummonImageBuilder(1).addUnit(getUnitSet(set,user.units)).buildColumnsDynamically().buildWithNumbers().build(event, count);
