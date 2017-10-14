@@ -199,7 +199,10 @@ public enum Unit {
 	Silvia("Silvia",new String[]{"3/37/Unit-Silvia-4.png","3/30/Unit-Silvia-5.png","d/df/Unit-Silvia-6.png"},4),
 	Kamui("Kamui",new String[]{"d/d6/Unit-Kamui-3.png","c/cc/Unit-Kamui-4.png","6/6f/Unit-Kamui-5.png"},3),
 	Yuri("Yuri",new String[]{"2/2b/Unit-Yuri-3.png","0/0e/Unit-Yuri-4.png","4/4e/Unit-Yuri-5.png"},3),
-	
+	Nyx("Nyx",new String[]{"f/f6/Unit-Nyx-5.png","c/c6/Unit-Nyx-6.png"},5),
+	Crowe("Crowe",new String[]{"0/00/Unit-Crowe-4.png","e/e8/Unit-Crowe-5.png","4/44/Unit-Crowe-6.png"},4),
+	Glauca("Glauca",new String[]{"7/7e/Unit-Glauca-4.png","c/c5/Unit-Glauca-5.png","6/68/Unit-Glauca-6.png"},4),
+	Libertus("Libertus",new String[]{"9/9e/Unit-Libertus-3.png","e/e0/Unit-Libertus-4.png","0/0f/Unit-Libertus-5.png"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
@@ -473,7 +476,19 @@ public enum Unit {
 				Tim,
 				LV,
 				HV,
-				WV
+				WV,
+				OK,
+				Desch,
+				Aria,
+				Sara,
+				Prishe,
+				Werei,
+				Kupipi,
+				Ayaka,
+				Goken,
+				Silvia,
+				Kamui,
+				Yuri
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool

@@ -110,6 +110,9 @@ public enum Husbandos {
 	OK("Onion Knight","6/62/Unit-Onion_Knight-6.png"),
 	Desch("Desch","5/5c/Unit-Desch-6.png"),
 	Werei("Werei","8/87/Unit-Werei-6.png"),
+	Nyx("Nyx","c/c6/Unit-Nyx-6.png"),
+	Glauca("Glauca","6/68/Unit-Glauca-6.png"),
+	Libertus("Libertus :blue_car:","0/0f/Unit-Libertus-5.png"),
 	//Limited ones//for organization
 	Thief("Thief","d/de/Unit-Thief-5.png"),
 	DRain("Demon Rain","3/30/Unit-Demon_Rain-6.png"),
