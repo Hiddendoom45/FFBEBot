@@ -59,6 +59,7 @@ public enum Banner {
 	DevChoice("Developer's Choice",new Unit[]{Unit.Greg,Unit.Chizuru,Unit.Abel},BannerRates.EvenSplit.rate(),Lib.concat(FFIII.pool, FFIII.featured),FFIII.include,BannerType.BaseRare),
 	FFXI("FFXI",new Unit[]{Unit.Prishe,Unit.Werei,Unit.Kupipi,Unit.Shantotto},BannerRates.D3.rate(),DevChoice.pool,DevChoice.include,BannerType.BaseRare),
 	Ayaka("Ayaka",new Unit[]{Unit.Ayaka,Unit.Goken,Unit.Silvia,Unit.Kamui,Unit.Yuri},BannerRates.D3D4.rate(),Lib.concat(FFXI.pool, FFXI.featured),FFXI.include,BannerType.BaseRare),
+	FFXV("FFXV",new Unit[]{Unit.Nyx,Unit.Crowe,Unit.Glauca,Unit.Libertus},BannerRates.D4.rate(),Lib.concat(Ayaka.pool,Ayaka.featured),Ayaka.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
