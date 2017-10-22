@@ -12,10 +12,6 @@ public class RandomLibs {
 		Random rand=new Random();
 		return options.get(rand.nextInt(options.size()));
 	}
-	public static String SelectRandom(String[] options){
-		Random rand=new Random();
-		return options[rand.nextInt(options.length)];
-	}
 	public static <T> T SelectRandom(T[] options){
 		Random rand=new Random();
 		return options[rand.nextInt(options.length)];

@@ -113,6 +113,8 @@ public enum Husbandos {
 	Nyx("Nyx","c/c6/Unit-Nyx-6.png"),
 	Glauca("Glauca","6/68/Unit-Glauca-6.png"),
 	Libertus("Libertus :blue_car:","0/0f/Unit-Libertus-5.png"),
+	PJake("Pirate Jake","b/b1/Unit-Pirate_Jake-6.png"),
+	INichol("Illusionist Nichol","6/6d/Unit-Illusionist_Nichol-6.png"),
 	//Limited ones//for organization
 	Thief("Thief","d/de/Unit-Thief-5.png"),
 	DRain("Demon Rain","3/30/Unit-Demon_Rain-6.png"),

@@ -229,7 +229,10 @@ public enum Unit {
 	N9S("9S",new String[]{"6/6f/Unit-9S-4.png","a/a3/Unit-9S-5.png","8/8a/Unit-9S-6.png"},4),
 	N21O("21O",new String[]{"6/6a/Unit-21O-3.png","f/f6/Unit-21O-4.png","c/c9/Unit-21O-5.png"},3),
 	A2("A2",new String[]{"6/6c/Unit-A2-5.png","6/62/Unit-A2-6.png"},5),
-	Eve("Eve",new String[]{"9/96/Unit-Eve-4.png","3/34/Unit-Eve-5.png","3/39/Unit-Eve-6.png"},4);
+	Eve("Eve",new String[]{"9/96/Unit-Eve-4.png","3/34/Unit-Eve-5.png","3/39/Unit-Eve-6.png"},4),
+	GLSakura("Grim Lord Sakura",new String[]{"f/fd/Unit-Grim_Lord_Sakura-5.png","1/13/Unit-Grim_Lord_Sakura-6.png"},5),
+	INichol("Illusionist Nichol",new String[]{"a/ac/Unit-Illusionist_Nichol-4.png","b/b6/Unit-Illusionist_Nichol-5.png","6/6d/Unit-Illusionist_Nichol-6.png"},4),
+	PJake("Pirate Jake",new String[]{"f/f7/Unit-Pirate_Jake-4.png","8/82/Unit-Pirate_Jake-5.png","b/b1/Unit-Pirate_Jake-6.png"},4);
 	
 	
 	
@@ -488,7 +491,11 @@ public enum Unit {
 				Goken,
 				Silvia,
 				Kamui,
-				Yuri
+				Yuri,
+				Nyx,
+				Crowe,
+				Glauca,
+				Libertus
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool
