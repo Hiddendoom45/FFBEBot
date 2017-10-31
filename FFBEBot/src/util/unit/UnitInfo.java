@@ -92,11 +92,11 @@ public class UnitInfo {
 					}
 				}
 				trustName=Lib.getCell(12, 0, unitInfo).text();
-				if(unitInfo.getElementsByTag("tr").size()>=12&&Lib.getCell(12, 0, unitInfo).children().size()>0)
-					trustLink=Lib.getCell(12, 0, unitInfo).child(0).absUrl("href");
-
-				Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
-				parseTrust(doc2.getElementById("mw-content-text").children());
+				if(!trustName.equalsIgnoreCase("-")){
+					trustLink=Lib.getCell(12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
+					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
+					parseTrust(doc2.getElementById("mw-content-text").children());
+				}
 			}catch(Exception e){
 				Log.log("ERROR", "Error parsing overview box for page:" +page);
 				Log.logShortError(e, 5);
