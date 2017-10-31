@@ -92,7 +92,7 @@ public class UnitInfo {
 					}
 				}
 				trustName=Lib.getCell(12, 0, unitInfo).text();
-				if(Lib.getCell(12, 0, unitInfo).childNodeSize()>0)
+				if(unitInfo.getElementsByTag("tr").size()>=12&&Lib.getCell(12, 0, unitInfo).children().size()>0)
 					trustLink=Lib.getCell(12, 0, unitInfo).child(0).absUrl("href");
 
 				Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();

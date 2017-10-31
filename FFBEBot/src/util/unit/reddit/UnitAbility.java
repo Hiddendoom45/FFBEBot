@@ -20,14 +20,14 @@ public class UnitAbility{
 		jpDecscription=row.child(5).text();
 		MP=Lib.isNumber(row.child(3).text())?Integer.parseInt(row.child(3).text()):0;
 		level=Integer.parseInt(row.child(6).text());
-		minRare=Integer.parseInt(row.child(7).text());
+		minRare=Lib.extractNumber(row.child(7).text());
 		}else{
 			jpName=row.child(1).text();
 			enName=row.child(2).text();
 			MP=Lib.isNumber(row.child(3).text())?Integer.parseInt(row.child(3).text()):0;
 			effect=row.child(4).text();
 			level=Integer.parseInt(row.child(5).text());
-			minRare=Integer.parseInt(row.child(6).text());
+			minRare=Lib.extractNumber(row.child(6).text());
 		}
 	}
 }
