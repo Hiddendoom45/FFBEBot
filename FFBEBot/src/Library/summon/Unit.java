@@ -203,6 +203,9 @@ public enum Unit {
 	Crowe("Crowe",new String[]{"0/00/Unit-Crowe-4.png","e/e8/Unit-Crowe-5.png","4/44/Unit-Crowe-6.png"},4),
 	Glauca("Glauca",new String[]{"7/7e/Unit-Glauca-4.png","c/c5/Unit-Glauca-5.png","6/68/Unit-Glauca-6.png"},4),
 	Libertus("Libertus",new String[]{"9/9e/Unit-Libertus-3.png","e/e0/Unit-Libertus-4.png","0/0f/Unit-Libertus-5.png"},3),
+	Lorraine("Loren",new String[]{"9/93/Unit-Loren-5.png","8/8a/Unit-Loren-6.png"},5),
+	Chloe("Chloe",new String[]{"a/a0/Unit-Chloe-4.png","c/c0/Unit-Chloe-5.png","4/4e/Unit-Chloe-6.png"},4),
+	Amy("Amy",new String[]{"e/e3/Unit-Amy-3.png","7/73/Unit-Amy-4.png","a/a2/Unit-Amy-5.png"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),

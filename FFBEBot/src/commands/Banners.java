@@ -1,7 +1,10 @@
 package commands;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 import Library.summon.banner.Banner;
 import commands.sub.DoSummon;
@@ -89,7 +92,9 @@ public class Banners extends CommandGenerics implements Command, Selection {
 	public void listBanners(MessageReceivedEvent event, int page){
 		ArrayList<String> names=new ArrayList<String>();
 		int i=0;
-		for(Banner b:Banner.values()){
+		List<Banner> banners=Arrays.asList(Banner.values());
+		Collections.reverse(banners);
+		for(Banner b:banners){
 			i++;
 			if(i>page*10&&i<=(page+1)*10){//only if within 10 page range
 				names.add(b.toString());

@@ -61,6 +61,7 @@ public enum Banner {
 	Ayaka("Ayaka",new Unit[]{Unit.Ayaka,Unit.Goken,Unit.Silvia,Unit.Kamui,Unit.Yuri},BannerRates.D3D4.rate(),Lib.concat(FFXI.pool, FFXI.featured),FFXI.include,BannerType.BaseRare),
 	FFXV("FFXV",new Unit[]{Unit.Nyx,Unit.Crowe,Unit.Glauca,Unit.Libertus},BannerRates.D4.rate(),Lib.concat(Ayaka.pool,Ayaka.featured),Ayaka.include,BannerType.BaseRare),
 	HalloweenP2_1("Halloween 2 Part 1",new Unit[]{Unit.GLSakura,Unit.INichol,Unit.PJake,Unit.BCLid},BannerRates.D4.rate(),Lib.concat(FFXV.pool, FFXV.featured),FFXV.include,BannerType.BaseRare),
+	Loren("Loren",new Unit[]{Unit.Lorraine,Unit.Chloe,Unit.Amy},BannerRates.EvenSplit.rate(),HalloweenP2_1.pool,HalloweenP2_1.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
