@@ -47,6 +47,12 @@ public class CmdControl {
 		commands.put(commandName, command);
 		modules.put(commandName, Module);
 	}
+	public static void addCommand(String[] commandNames,Command command,String Module){
+		for(String name:commandNames){
+			commands.put(name, command);
+			modules.put(name, Module);
+		}
+	}
 	public static void addModCommand(String commandName,Command command){
 		modCommands.put(commandName, command);
 	}

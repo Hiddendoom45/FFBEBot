@@ -86,6 +86,7 @@ public class Main {
 		CmdControl.addCommand("info", new Info(),Module);
 		CmdControl.addCommand("servers", new Servers(), Module);
 		CmdControl.addCommand("invite", new Invite(), Module);
+		CmdControl.addCommand(new String[]{"bugreport","bug"}, new BugReport(), Module);
 		
 		Module=ModuleEnum.Exvius.toString();
 		CmdControl.addCommand("units", new Units(), Module);
@@ -158,6 +159,7 @@ public class Main {
 		Overrider.addOverrideCommand("push", new DrivePush());
 		Overrider.addOverrideCommand("pull", new commands.overide.Pull());
 		Overrider.addOverrideCommand("dbanner", new DefaultBanner());
+		Overrider.addOverrideCommand("blacklist", new Blacklist());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
 			Overrider.addOverrideCommand("test", new Test());
 		}

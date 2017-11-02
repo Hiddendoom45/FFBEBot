@@ -35,7 +35,7 @@ public class Lib {
 		String msg="__***Help List***__\n"
 				+ "Use "+SaveSystem.getPrefix(event)+"help [command] to get more info on a specific command, i.e.: "+SaveSystem.getPrefix(event)+"help ping\n\n"
 				+ "__**Modules**__\n"
-				+ "**Core** - `ping` `invite` `info` `servers`\n"
+				+ "**Core** - `ping` `invite` `info` `servers` `bugreport`\n"
 				+ "Core commands for bot\n\n"
 				+ "**Exvius** - `awaken` `equipment` `lore` `skill` `unitart` `unit`\n"
 				+ "Commands to extract info from Exvicus wiki(best for GL players)\n\n"
@@ -312,7 +312,7 @@ public class Lib {
 	 * @return
 	 */
 	public static String debugGuildUser(MessageReceivedEvent event){
-		return event.getAuthor().getName()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild());
+		return event.getAuthor()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild());
 	}
 	//stuff for handling elements in a web page
 	/**

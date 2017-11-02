@@ -322,11 +322,36 @@ public class SaveSystem {
 		if(!file.writeElement(doc))Log.log("XMLERR", "something went wrong wtih writing the document");		
 		if(!file.endWriter())Log.log("XMLERR", "something went wrong with closing the XML writer");
 	}
+	public static void addBlackList(String id){
+		Settings.blacklist.add(id);
+		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
+		file.readXMLFile();
+		Elements doc=file.parseDocToElements();
+		file.endReader();
+		for(int i=0;i<doc.getChilds().size();i++){
+			if(doc.getChilds().get(i).getTagName().equals("blacklist")){
+				doc.getChilds().remove(i);
+				i--;
+			}
+		}
+		String black="";
+		for(String s:Settings.blacklist){
+			black+=s+",";
+		}
+		black=black.substring(0, black.length()-1);
+		Elements blacklister=new Elements("blacklist",black);
+		doc.add(blacklister);
+		file.writeXMLFile();
+		file.startWriter();
+		file.writeElement(doc);
+		file.endWriter();
+	}
 	/**
 	 * Loads saved data from file
 	 */
 	public static void load(){
 		loadGuilds();//load guilds
+		loadBlackList();
 		//load users
 		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
 		file.readXMLFile();
@@ -367,6 +392,21 @@ public class SaveSystem {
 		}
 		}catch(Exception e){
 			Log.log("ERROR", "error loading guilds");
+		}
+		file.endReader();
+	}
+	public static void loadBlackList(){
+		Settings.blacklist.clear();
+		XMLStAXFile file=new XMLStAXFile(new File(Settings.dataSource));
+		file.readXMLFile();
+		try{
+		Elements blacklist=file.parseToElements("blacklist").get(0);
+		String[] list=blacklist.getText().split(",");
+		for(String s:list){
+			Settings.blacklist.add(s);
+		}
+		}catch(Exception e){
+			Log.log("ERROR", "error loading blacklist");
 		}
 		file.endReader();
 	}
