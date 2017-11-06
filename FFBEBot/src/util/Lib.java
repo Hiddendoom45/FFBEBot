@@ -576,7 +576,7 @@ public class Lib {
 	/**
 	 * gets only number chars from a string
 	 * @param s string to extract number from
-	 * @return number with non digit characters removed
+	 * @return number with non digit characters removed, -1 if no number found
 	 */
 	public static int extractNumber(String s){
 		String i="";

@@ -5,12 +5,14 @@ import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
+import org.jsoup.nodes.Node;
+import org.jsoup.nodes.TextNode;
 
 import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
+import util.unit.exvius.TrustInfo;
 import util.unit.exvius.unitAbilities;
 import util.unit.exvius.unitQuotes;
 import util.unit.exvius.unitStatIncrease;
@@ -31,7 +33,7 @@ public class UnitInfo {
 	public int[] No=new int[]{};
 	public String trustName="";
 	public String trustLink="";
-	public String trustDetail="";
+	public TrustInfo trustDetails;
 	public unitStats stats;
 	public unitStatIncrease statIncrease;
 	public String[] weapons=new String[]{};
@@ -91,11 +93,11 @@ public class UnitInfo {
 						No[i]=0;
 					}
 				}
-				trustName=Lib.getCell(12, 0, unitInfo).text();
+				trustName=parseRaw(Lib.getCell(12, 0, unitInfo));
 				if(!trustName.equalsIgnoreCase("-")){
 					trustLink=Lib.getCell(12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
-					parseTrust(doc2.getElementById("mw-content-text").children());
+					trustDetails=new TrustInfo(doc2.getElementById("mw-content-text").children());
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "Error parsing overview box for page:" +page);
@@ -178,22 +180,31 @@ public class UnitInfo {
 			Log.logError(e);
 		}
 	}
-	public void parseTrust(Elements trustStuff){
-		boolean h2Trig=false;
-		for(Element e:trustStuff){
-			if(h2Trig){
-				if(e.tagName().equals("h2")||e.tagName().equals("h3")){
-					if(trustDetail.endsWith(", "))trustDetail=trustDetail.substring(0, trustDetail.length()-2);
-					return;
+	public static void main(String[] args) throws IOException{
+		new UnitInfo("https://exvius.gamepedia.com/Grim_Lord_Sakura");
+	}
+	public String parseRaw(Element ele){
+		String s="";
+		for(Node n:ele.childNodes()){
+			if(n instanceof Element){
+				Element e= (Element)n;
+				if(e.tagName().equals("span")){
+					try{
+						s+= ele.getElementsByAttributeValue("class", "nomobile").text();
+					}catch(Exception e1){
+						e1.printStackTrace();
+					}
 				}
 				else{
-					trustDetail+=e.text()+", ";
+					s+=e.text();
 				}
+				
 			}
-			if(e.tagName().equals("h2")&&(e.text().equals("Statistics[edit | edit source]")||e.text().equals("Statistics"))){
-				h2Trig=true;
+			else if(n instanceof TextNode){
+				s+=n.toString();
 			}
 		}
+		return s;
 	}
 	public void parseRarities(String text){
 		int[] rarity=Lib.extractNumbers(text) ;
