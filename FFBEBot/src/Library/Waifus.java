@@ -112,6 +112,7 @@ public enum Waifus {
 	Fryevia("Fryevia","3/32/Unit-Fryevia-6.png"),
 	LV("Veritas of the Light","c/cd/Unit-Veritas_of_the_Light-6.png"),
 	WV("Veritas of the Waters","3/32/Unit-Veritas_of_the_Waters-6.png"),
+	Barbariccia("Barbariccia","7/7a/Unit-Barbariccia-6.png"),
 	//Limited
 	Samantha("Samantha","9/9a/Unit-Samatha-4.png"),
 	Primm("Primm","d/d9/Unit-Primm-6.png"),

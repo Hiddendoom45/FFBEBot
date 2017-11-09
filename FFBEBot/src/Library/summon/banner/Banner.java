@@ -62,6 +62,7 @@ public enum Banner {
 	FFXV("FFXV",new Unit[]{Unit.Nyx,Unit.Crowe,Unit.Glauca,Unit.Libertus},BannerRates.D4.rate(),Lib.concat(Ayaka.pool,Ayaka.featured),Ayaka.include,BannerType.BaseRare),
 	HalloweenP2_1("Halloween 2 Part 1",new Unit[]{Unit.GLSakura,Unit.INichol,Unit.PJake,Unit.BCLid},BannerRates.D4.rate(),Lib.concat(FFXV.pool, FFXV.featured),FFXV.include,BannerType.BaseRare),
 	Loren("Loren",new Unit[]{Unit.Lorraine,Unit.Chloe,Unit.Amy},BannerRates.EvenSplit.rate(),HalloweenP2_1.pool,HalloweenP2_1.include,BannerType.BaseRare),
+	FFIVFiend("FFIV Fiends", new Unit[]{Unit.Barbariccia,Unit.Cagnazzo,Unit.Rubicante,Unit.Scarmiglione},BannerRates.D4.rate(),Lib.concat(Loren.pool, Loren.featured),Loren.include,BannerType.BaseRare),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
@@ -111,7 +112,8 @@ public enum Banner {
 				Banner.SoM,
 				Banner.Valentine,
 				Banner.BF2,
-				Banner.Nier
+				Banner.Nier,
+				Banner.HalloweenP2_1
 				};
 	}
 	public static boolean LEBanner(Banner banner){

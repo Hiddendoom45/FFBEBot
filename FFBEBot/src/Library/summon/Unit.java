@@ -206,6 +206,10 @@ public enum Unit {
 	Lorraine("Loren",new String[]{"9/93/Unit-Loren-5.png","8/8a/Unit-Loren-6.png"},5),
 	Chloe("Chloe",new String[]{"a/a0/Unit-Chloe-4.png","c/c0/Unit-Chloe-5.png","4/4e/Unit-Chloe-6.png"},4),
 	Amy("Amy",new String[]{"e/e3/Unit-Amy-3.png","7/73/Unit-Amy-4.png","a/a2/Unit-Amy-5.png"},3),
+	Barbariccia("Barbariccia",new String[]{"b/b6/Unit-Barbariccia-5.png","7/7a/Unit-Barbariccia-6.png"},5),
+	Cagnazzo("Cagnazzo",new String[]{"e/ef/Unit-Cagnazzo-4.png","4/42/Unit-Cagnazzo-5.png","2/29/Unit-Cagnazzo-6.png"},4),
+	Rubicante("Rubicante",new String[]{"3/3f/Unit-Rubicante-4.png","1/16/Unit-Rubicante-5.png","d/d4/Unit-Rubicante-6.png"},4),
+	Scarmiglione("Scarmiglione",new String[]{"1/1a/Unit-Scarmiglione-3.png","1/11/Unit-Scarmiglione-4.png","5/53/Unit-Scarmiglione-5.png"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"c/c2/Unit-Juggler-4.png","1/1d/Unit-Juggler-5.png"},4),
 	Thief("Thief",new String[]{"8/8e/Unit-Thief-4.png","d/de/Unit-Thief-5.png"},4),
