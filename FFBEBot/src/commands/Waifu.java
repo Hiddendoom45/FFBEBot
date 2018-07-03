@@ -1,8 +1,13 @@
 package commands;
 
+import java.util.ArrayList;
+
 import Library.Waifus;
 import global.record.Log;
 import global.record.SaveSystem;
+import net.dv8tion.jda.core.entities.MessageEmbed.Field;
+import net.dv8tion.jda.core.entities.MessageEmbed.ImageInfo;
+import net.dv8tion.jda.core.entities.impl.MessageEmbedImpl;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.rng.RandomLibs;
@@ -14,7 +19,11 @@ public class Waifu extends CommandGenerics implements Command{
 		Object w=RandomLibs.SelectRandom(Waifus.values());
 		if(w instanceof Waifus){
 			Waifus select=(Waifus)w;
-			Lib.sendMessageFormated(event, "%userMention% Happy Waifu Happy Laifu! Your Waifu is "+select.name+"\n"+select.url);
+			Lib.sendMessageFormated(event, "%userMention% Happy Waifu Happy Laifu! Your Waifu is "+select.name);
+			MessageEmbedImpl embed=new MessageEmbedImpl();
+			embed.setImage(new ImageInfo(select.url, select.url, 500, 500));
+			embed.setFields(new ArrayList<Field>());
+			event.getChannel().sendMessage(embed).complete();
 			Log.log("status", "Waifu found "+select.name);
 		}
 	}
