@@ -1,6 +1,6 @@
 package Library;
 
-import global.record.Settings;
+import Library.summon.Unit;
 
 public enum Husbandos {
 	Rain("Rain","6/6b/Unit-Rain-6.png"),
@@ -138,6 +138,11 @@ public enum Husbandos {
 	public String url;
 	Husbandos(String name, String url){
 		this.name=name;
-		this.url=Settings.ExvicusIMGURL+url;
+		for(Unit u:Unit.values()){
+			if(u.name.equals(name)){
+				this.url=u.url[u.url.length-1];
+				break;
+			}
+		}
 	}
 }

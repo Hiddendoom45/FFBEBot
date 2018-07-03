@@ -18,6 +18,17 @@ import util.Lib;
 public class UnitOverview {
 	public ArrayList<String> possible=new ArrayList<String>();
 	public ArrayList<unitData> possibleData=new ArrayList<unitData>();
+	//internal caller to create list of all units
+	public UnitOverview(){
+		try{
+			for(unitData u:new Gson().fromJson(Data.exvicusO,unitData[].class)){
+				this.possible.add(u.name);
+				this.possibleData.add(u);
+			}
+		}catch(Exception e){
+			Log.logError(e);
+		}
+	}
 	public UnitOverview(String unitName){
 		try{
 			for(unitData u:new Gson().fromJson(Data.exvicusO,unitData[].class)){
@@ -25,7 +36,7 @@ public class UnitOverview {
 					this.possible.add(u.name);
 					this.possibleData.add(u);
 				}
-				}
+			}
 		}catch(Exception e){
 			Log.logError(e);
 		}

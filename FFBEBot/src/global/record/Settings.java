@@ -23,7 +23,7 @@ public class Settings {
 	public static final String modPrefix="~!";
 	public static final String UA="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36";
 	public static final String ExvicusURL="http://exvius.gamepedia.com/";
-	public static final String ExvicusIMGURL="https://hydra-media.cursecdn.com/exvius.gamepedia.com/";
+	public static final String ExvicusIMGURL="https://d1u5p3l4wpay3k.cloudfront.net/exvius_gamepedia_en";
 	public static final String saveSource="FFBEBotLog";//for the log
 	public static final String dataSource="FFBEBotData";//for the guild based data
 	public static final String preloadData="FFBEBotPreload";//for preloaded data
@@ -38,7 +38,7 @@ public class Settings {
 	public static HashSet<String> blacklist=new HashSet<String>();
 	public static long dailyTime;
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access	
-	public static Banner DefaultBanner=Banner.Loren;//default banner used by summon simulators
+	public static Banner DefaultBanner=Banner.FFIVFiend;//default banner used by summon simulators
 	
 	//guild settings
 	public String guildPrefix="";

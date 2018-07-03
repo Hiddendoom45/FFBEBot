@@ -1,6 +1,6 @@
 package Library;
 
-import global.record.Settings;
+import Library.summon.Unit;
 /**
  * A list of all the URL images for female units in the game AKA waifus, based off of ~mywaifu command for Serabot
  * Using a enum instead of extracting from preloaded data due to difficulty of getting unit gender data for future units
@@ -129,6 +129,12 @@ public enum Waifus {
 	public String url;
 	Waifus(String name, String url){
 		this.name=name;
-		this.url=Settings.ExvicusIMGURL+url;
+		for(Unit u:Unit.values()){
+			if(u.name.equals(name)){
+				System.out.println("match"+name);
+				this.url=u.url[u.url.length-1];
+				break;
+			}
+		}
 	}
 }
