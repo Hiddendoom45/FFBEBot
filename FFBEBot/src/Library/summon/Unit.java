@@ -563,7 +563,14 @@ public enum Unit {
 				Nyx,
 				Crowe,
 				Glauca,
-				Libertus
+				Libertus,
+				Lorraine,
+				Chloe,
+				Amy,
+				Barbariccia,
+				Rubicante,
+				Cagnazzo,
+				Scarmiglione
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool
