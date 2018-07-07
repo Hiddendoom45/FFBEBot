@@ -15,7 +15,7 @@ The bot is currently being fixed after a few months of hiatus in the development
 Current Status:
 
 - all commands in core module
-- summon/pull command (banner currently not updated)
+- summon/pull command updated to current
 - unitinventory command
 - most commands in salty module
 - most unit commands for reddit wiki
@@ -26,7 +26,6 @@ TODO:
 
 - update parsing for exvius wiki and reddit wiki commands (parse STMR etc)
 - fix husbando/waifu commands fully
-- update banners
 - new features
 
 
