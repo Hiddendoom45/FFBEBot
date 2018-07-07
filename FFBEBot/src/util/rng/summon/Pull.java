@@ -1,6 +1,7 @@
 package util.rng.summon;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -20,21 +21,21 @@ public class Pull {
 		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
 		for(int i=0;i<times;i++){
 			try{
-			int rarity=rand.nextInt(99);
+			int rarity=rand.nextInt(Arrays.stream(banner.type.raritySplit).sum());
 			//5*
-			if(rarity==0){
-				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+			if(rarity<=banner.type.raritySplit[0]){
+				Unit u=pull(banner,5,banner.type.raritySplit[0]*100,banner.type.baseRareChances[2]);
 				units.add(new UnitSpecific(u,5));
 			}
-			//3*
-			else if(rarity>19){
-				Unit u=pull(banner,3,pool3,banner.type.baseRareChances[0]);
-				units.add(new UnitSpecific(u,3));
-			}
 			//4*
-			else{
-				Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
+			else if (rarity <= banner.type.raritySplit[1]+banner.type.raritySplit[0]) {
+				Unit u=pull(banner,4,banner.type.raritySplit[1]*100,banner.type.baseRareChances[1]);
 				units.add(new UnitSpecific(u,4));
+			}
+			//3*
+			else{
+				Unit u=pull(banner,3,banner.type.raritySplit[2]*100,banner.type.baseRareChances[0]);
+				units.add(new UnitSpecific(u,3));
 			}
 			}catch(Exception e){
 				Log.logError(e);
@@ -52,7 +53,7 @@ public class Pull {
 	public static List<UnitSpecific> pull11(Banner banner){
 		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>(11);
 		Random rand=new Random();
-		int rarity=rand.nextInt(99);
+		int rarity=rand.nextInt(100);
 		try{
 			if(rarity<94){
 				Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
@@ -108,7 +109,7 @@ public class Pull {
 	private static Unit pull(Banner banner,int rarity,int poolSize,int baseChance){
 		Unit[] pool;//used to construct pool
 		Random rand=new Random();
-		int select=rand.nextInt(99);//determine if base rarity or not and pull from that pool
+		int select=rand.nextInt(100);//determine if base rarity or not and pull from that pool
 		if(select<baseChance){
 			pool=baseRarity(banner,rarity);
 		}
