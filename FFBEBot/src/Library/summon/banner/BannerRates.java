@@ -5,7 +5,7 @@ public enum BannerRates {
 	//L= limit one or more rarities missing
 	EvenSplit(new int[]{50,475,2000},new int[]{100,475,1950}),
 	D3(new int[]{50,475,1000,1000}, new int[]{100,475,975,975}),
-	D4(new int[]{50,238,238,2000}, new int[]{100,238,238,975,975}),
+	D4(new int[]{50,238,238,2000}, new int[]{100,238,238,1950}),
 	D5(new int[]{25,25,475,2000}, new int[]{50,50,475,1950}),
 	D3D4(new int[]{50,238,238,1000,1000}, new int[]{100,238,238,975,975}),
 	D3D5(new int[]{25,25,475,1000,1000}, new int[]{50,50,475,975,975}),
