@@ -89,7 +89,7 @@ public enum Banner {
 	DQ("Dragon Quest",new Unit[]{Unit.Dragonlord,Unit.Orochi,Unit.LMSlime,Unit.KillingMachine,Unit.Golem,Unit.RobbinOod},BannerRates.D3T4.fiveRate(),Lib.concat(new Unit[]{Unit.CGJake,Unit.EShera,Unit.Ozetta,Unit.Riley}, CGJake.pool),CGJake.include,BannerType.ThreePercent),
 	Sephiroth("Sephiroth Arrives",new Unit[]{Unit.Sephiroth,Unit.Lila,Unit.Shylt,Unit.Mim},BannerRates.D5.fiveRate(),DQ.pool,DQ.include,BannerType.ThreePercent),
 	CGLid("CG Lid",new Unit[]{Unit.CGLid,Unit.Killian,Unit.Ulrica,Unit.Heretic},BannerRates.D3.fiveRate(),Lib.concat(Sephiroth.featured, Sephiroth.pool),Sephiroth.include,BannerType.ThreePercent),
-	Cloud2("Cloud Special",new Unit[]{Unit.Cloud,Unit.Elfreeda,Unit.William,Unit.Conrad},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.CGLid,Unit.Killian}, CGLid.featured),CGLid.include,BannerType.ThreePercent),
+	Cloud2("Cloud Special",new Unit[]{Unit.Cloud,Unit.Elfreeda,Unit.William,Unit.Conrad},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.CGLid,Unit.Killian}, CGLid.pool),CGLid.include,BannerType.ThreePercent),
 	FFIV2("FFIV 2",new Unit[]{Unit.KRydia,Unit.HKain,Unit.Yang,Unit.Edward},BannerRates.D5.fiveRate(),Cloud2.pool,Cloud2.include,BannerType.ThreePercent),
 	KingKnight2("King's Knight 2",new Unit[]{Unit.RayJack,Unit.Kaliva,Unit.Barusa,Unit.Toby},BannerRates.D4.fiveRate(),Lib.concat(FFIV2.featured, FFIV2.pool),FFIV2.include,BannerType.ThreePercent),
 	JC3("Just Cause 3",new Unit[]{Unit.RicoRodriguez,Unit.MarioFrigo,Unit.AnnikaSvennson},BannerRates.EvenSplit.fiveRate(),KingKnight2.pool,KingKnight2.include,BannerType.ThreePercent),
