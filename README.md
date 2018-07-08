@@ -12,6 +12,11 @@ Optionally you can allow the bot to delete messages to cleanup certain commands 
 
 The bot is currently being fixed after a few months of hiatus in the development.
 
+Recent Updates:
+
+- Fixed broken images in husbando/waifu commands
+- Added new banners
+
 Current Status:
 
 - all commands in core module
@@ -20,7 +25,7 @@ Current Status:
 - most commands in salty module
 - most unit commands for reddit wiki
 - most unit commands for exvius wiki
-- husbando/waifu(partially, still many broken images)
+- husbando/waifu
 
 TODO:
 
