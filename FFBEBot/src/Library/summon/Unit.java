@@ -384,7 +384,9 @@ public enum Unit {
 	Kupolkan("Kupolkan",new String[]{"/e/e6/Unit-Kupolkan-4.png?version=70e5a19f35e4854d82880c582006fa46","/3/30/Unit-Kupolkan-5.png?version=2267771b8501196a16fb2468d5fe8829","/e/e9/Unit-Kupolkan-6.png?version=3228d67a8f88ca263772912a4eb7d5ff"},4),
 	Sandee("Sandee",new String[]{"/0/0b/Unit-Sandee-4.png?version=d08f17d52f00f1ae3524d7cc4b705307","/b/b1/Unit-Sandee-5.png?version=98223f77f76b0ff7c70f0f358dc5f64a","/a/a6/Unit-Sandee-6.png?version=48483d3a0c1af170aef480e49e333945"},4),
 	CJake("Cowboy Jake",new String[]{"/e/e6/Unit-Cowboy_Jake-4.png?version=53a31bf1e94eb03eea992d6f0ed531f0","/c/c1/Unit-Cowboy_Jake-5.png?version=1f37ca272e2aa7b2c17ec30cb403ab68"},4),
+	LaraCroft("Lara Croft",new String[]{"/7/78/Unit-Lara_Croft-5.png?version=c74464d8f3d671688bf2a76931a00a0a","/8/8e/Unit-Lara_Croft-6.png?version=109fde35f77e88d85176f0b7f956bcf0"},5),
 	Emilia("Emilia",new String[]{"/b/b4/Unit-Emilia-4.png?version=32ae4d818fc9ca8192c17c23235ebcc9","/a/ac/Unit-Emilia-5.png?version=abff369f1b4bd28439c43ea1fd653112","/d/d5/Unit-Emilia-6.png?version=7e79d24f70c3eefcfd480d8634365fdd"},4),
+	Ukiyo("Ukiyo",new String[]{"/9/9b/Unit-Ukiyo-5.png?version=50a485c4a99b32eac31e7a1f905f08eb","/4/49/Unit-Ukiyo-6.png?version=fb0abcec53d036dea602e9c122341d2a"},5),
 	Teo("Teo",new String[]{"/f/fa/Unit-Teo-3.png?version=5d389ee1d779ff9f63fa5cc0f14d381b","/5/57/Unit-Teo-4.png?version=17b5576e68f276f82404294cc535a63f","/d/d3/Unit-Teo-5.png?version=ef82f9e007cd767636214187b69e07ff"},3);
 	
 	public String name;
