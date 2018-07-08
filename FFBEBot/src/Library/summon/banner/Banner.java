@@ -93,7 +93,9 @@ public enum Banner {
 	FFIV2("FFIV 2",new Unit[]{Unit.KRydia,Unit.HKain,Unit.Yang,Unit.Edward},BannerRates.D5.fiveRate(),Cloud2.pool,Cloud2.include,BannerType.ThreePercent),
 	KingKnight2("King's Knight 2",new Unit[]{Unit.RayJack,Unit.Kaliva,Unit.Barusa,Unit.Toby},BannerRates.D4.fiveRate(),Lib.concat(FFIV2.featured, FFIV2.pool),FFIV2.include,BannerType.ThreePercent),
 	JC3("Just Cause 3",new Unit[]{Unit.RicoRodriguez,Unit.MarioFrigo,Unit.AnnikaSvennson},BannerRates.EvenSplit.fiveRate(),KingKnight2.pool,KingKnight2.include,BannerType.ThreePercent),
-	FFBEHero1("FFBE Heroes part 1",new Unit[]{Unit.CGLasswell,Unit.CGFina,Unit.Chizuru,Unit.Erwin},BannerRates.D5.fiveRate(),JC3.pool,JC3.include,BannerType.ThreePercent),
+	FFBEHero1("FFBE Heroes part 1",new Unit[]{Unit.CGLasswell,Unit.CGFina,Unit.Chizuru,Unit.Erwin},BannerRates.D5x2.fiveRate(),JC3.pool,JC3.include,BannerType.ThreePercent),
+	FFBEHero2("FFBE Heroes part 2",new Unit[]{Unit.CGJake,Unit.CGSakura,Unit.Vanille,Unit.Tim},BannerRates.D5x2.fiveRate(),FFBEHero1.pool,FFBEHero1.include,BannerType.ThreePercent),
+	FFBEHero3("FFBE Heroes part 3",new Unit[]{Unit.CGNichol,Unit.CGLid,Unit.Rikku,Unit.Jack},BannerRates.D5x2.fiveRate(),FFBEHero2.pool,FFBEHero2.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
