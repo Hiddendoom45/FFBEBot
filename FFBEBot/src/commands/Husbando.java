@@ -16,17 +16,14 @@ public class Husbando extends CommandGenerics implements Command{
 
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		Object h=RandomLibs.SelectRandom(Husbandos.values());
-		if(h instanceof Husbandos){
-			Husbandos select=(Husbandos)h;
-			Lib.sendMessageFormated(event, "%userMention% A Husbando? Your Husbando is "+select.name);
-			MessageEmbedImpl embed=new MessageEmbedImpl();
-			embed.setImage(new ImageInfo(select.url, select.url, 500, 500));
-			embed.setFields(new ArrayList<Field>());
-			event.getChannel().sendMessage(embed).complete();
-			Log.log("status", "Husbando found "+select.name);
-		}
-		
+		Husbandos select=RandomLibs.SelectRandom(Husbandos.values());
+		MessageEmbedImpl embed=new MessageEmbedImpl();
+		embed.setImage(new ImageInfo(select.url, select.url, 500, 500));
+		ArrayList<Field> fields = new ArrayList<Field>();
+		fields.add(new Field(select.name, Lib.FormatMessage(event, "%userMention% A Husbando? Your Husbando is "+select.name), false));
+		embed.setFields(fields);
+		event.getChannel().sendMessage(embed).complete();
+		Log.log("status", "Husbando found "+select.name);
 	}
 
 	@Override

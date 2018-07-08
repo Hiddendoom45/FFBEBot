@@ -16,16 +16,14 @@ public class Waifu extends CommandGenerics implements Command{
 	
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		Object w=RandomLibs.SelectRandom(Waifus.values());
-		if(w instanceof Waifus){
-			Waifus select=(Waifus)w;
-			Lib.sendMessageFormated(event, "%userMention% Happy Waifu Happy Laifu! Your Waifu is "+select.name);
-			MessageEmbedImpl embed=new MessageEmbedImpl();
-			embed.setImage(new ImageInfo(select.url, select.url, 500, 500));
-			embed.setFields(new ArrayList<Field>());
-			event.getChannel().sendMessage(embed).complete();
-			Log.log("status", "Waifu found "+select.name);
-		}
+		Waifus select=RandomLibs.SelectRandom(Waifus.values());
+		MessageEmbedImpl embed=new MessageEmbedImpl();
+		embed.setImage(new ImageInfo(select.url, select.url, 500, 500));
+		ArrayList<Field> fields = new ArrayList<Field>();
+		fields.add(new Field(select.name, Lib.FormatMessage(event, "%userMention% Happy Waifu Happy Laifu! Your Waifu is "+select.name), false));
+		embed.setFields(fields);
+		event.getChannel().sendMessage(embed).complete();
+		Log.log("status", "Waifu found "+select.name);
 	}
 
 	@Override

@@ -56,7 +56,7 @@ public enum Waifus {
 	ArmTerra("Majitek Armour Terra",Unit.MATerra),
 	Fencer("Fencer",Unit.Fencer),
 	TM("Trust Moogle :stuck_out_tongue:",Unit.TM),
-	Sakura("Sakura","3/3f/Unit-Sakura-5.png"),
+	Sakura("Sakura",Unit.Sakura),
 	Vanille("Vanille",Unit.Vanille),
 	Fang("Fang",Unit.Fang),
 	Seven("Seven",Unit.Seven),
@@ -127,16 +127,6 @@ public enum Waifus {
 	
 	public String name;
 	public String url;
-	Waifus(String name, String url){
-		this.name=name;
-		for(Unit u:Unit.values()){
-			if(u.name.equals(name)){
-				System.out.println("match"+name);
-				this.url=u.url[u.url.length-1];
-				break;
-			}
-		}
-	}
 	Waifus(String name,Unit unit){
 		this.name=name;
 		this.url = unit.url[unit.url.length-1];

@@ -126,9 +126,9 @@ public enum Husbandos {
 	Popoi("Popoi",Unit.Popoi),
 	Randi("Randi",Unit.Randi),
 	CArtemios("Cupid Artemios",Unit.CArtemois),
-	Thancred("Thancred","8/86/Unit-Thancred-5.png"),
+	Thancred("Thancred",Unit.Thancred),
 	Vargas("Vargs",Unit.Vargas),
-	TM("Trust Moogle:stuck_out_tongue:","f/f5/Unit-Trust_Moogle-5.png"),
+	TM("Trust Moogle:stuck_out_tongue:",Unit.TM),
 	N9S("9S",Unit.N9S),
 	Eve("Eve",Unit.Eve),
 	PJake("Pirate Jake",Unit.PJake),
@@ -136,15 +136,6 @@ public enum Husbandos {
 
 	public String name;
 	public String url;
-	Husbandos(String name, String url){
-		this.name=name;
-		for(Unit u:Unit.values()){
-			if(u.name.equals(name)){
-				this.url=u.url[u.url.length-1];
-				break;
-			}
-		}
-	}
 	Husbandos(String name,Unit unit){
 		this.name=name;
 		this.url = unit.url[unit.url.length-1];
