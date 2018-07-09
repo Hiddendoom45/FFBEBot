@@ -12,28 +12,25 @@ Optionally you can allow the bot to delete messages to cleanup certain commands 
 
 The bot is currently being fixed after a few months of hiatus in the development.
 
-Recent Updates:
+#### Recent Updates:
 
+- STMR parsing, unit/runit command update
 - Update husbando/waifu commands for new units
 - Fixed broken images in husbando/waifu commands
 - Added new banners
 
-Current Status:
+#### Current Status:
 
-- all commands in core module
-- summon/pull command updated to current
-- unitinventory command
-- most commands in salty module
-- most unit commands for reddit wiki
-- most unit commands for exvius wiki
-- husbando/waifu
+- most commands should work now
 
-TODO:
+#### TODO:
 
-- update parsing for exvius wiki and reddit wiki commands (parse STMR etc)
-- fix husbando/waifu commands fully
+- update parsing for exvius wiki and reddit wiki commands
 - new features
 
+### Bugs/Suggestings
+
+- use the `bugreport [bug/suggestion]` command or open a new issue on this repository
 
 ##### Other
 
