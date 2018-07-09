@@ -126,7 +126,7 @@ public enum Husbandos {
 	Cloud(Unit.Cloud),
 	William(Unit.William),
 	Conrad(Unit.Conrad),
-	CGLasswell(Unit.CGLasswell),
+	CGLasswell("Lassworm",Unit.CGLasswell),
 	Jiraiya(Unit.Jiraiya),
 	Ouga(Unit.Ohga),
 	Basch(Unit.Basch),
