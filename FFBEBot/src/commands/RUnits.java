@@ -12,8 +12,9 @@ public class RUnits extends RedditSelection {
 	public void sendUnitData(RedditUnit info,MessageReceivedEvent event){
 		String out="";
 		out+="__**"+info.title+"**__\t";
-		out+="Rarity:"+info.baseR+"-"+info.maxR+"\t";
+		out+="Rarity:"+info.baseR+"-"+info.maxR+"\n";
 		out+=info.TrustDetails+"\n";
+		if(!info.STrustDetails.equals(""))out+=info.STrustDetails+"\n";
 		for(int i=0;i<info.stats.length;i++){
 			out+="\n"+info.stats[i].rarity+"★";
 			out+="**HP**:"+Lib.pad(info.stats[i].HP.substring(info.stats[i].HP.indexOf("/")+2), 8);

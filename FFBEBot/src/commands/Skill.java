@@ -49,7 +49,7 @@ public class Skill extends UnitSelection {
 				+" *"+info.Special.abilities[i].name+"* | "+info.Special.abilities[i].effect+" MP:**"+info.Special.abilities[i].MP+"**";
 			}
 		}
-		if(!(info.Special.conditionals==null)){
+		if(info.Special.conditionals.length>0){
 			s+="\n\n__Conditional__: [**Condition**] *name* | effect MP";
 			for(int i=0;i<info.Special.conditionals.length;i++){
 				s+="\n[**"+info.Special.conditionals[i].condition+"**] *"+info.Special.conditionals[i].name+"* | "

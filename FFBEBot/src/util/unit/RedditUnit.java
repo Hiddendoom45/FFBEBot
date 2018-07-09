@@ -19,6 +19,7 @@ public class RedditUnit {
 	public String title="";
 	public String JobTribe="";
 	public String TrustDetails="";
+	public String STrustDetails="";
 	public String[] growth=new String[]{};
 	public int baseR=0;
 	public int maxR=0;
@@ -46,11 +47,18 @@ public class RedditUnit {
 			Element content=doc.getElementsByClass("wiki-page-content").first().getElementsByClass("wiki").first();
 			try{
 				title=content.getElementsByTag("h2").first().text();
-				JobTribe=content.getElementsByTag("ul").get(2).child(0).text();
-				TrustDetails=content.getElementsByTag("ul").get(2).child(1).text();
+				Element headerBox = content.getElementsByTag("ul").get(2);
+				JobTribe=headerBox.child(0).text();
+				TrustDetails=headerBox.child(1).text();
+				if(headerBox.children().size()>2){
+					STrustDetails=headerBox.child(2).text();
+				}
 				if(TrustDetails.contains("Tribe")){
-					JobTribe+=content.getElementsByTag("ul").get(2).child(1).text();
-					TrustDetails=content.getElementsByTag("ul").get(2).child(2).text();
+					JobTribe+=headerBox.child(1).text();
+					TrustDetails=headerBox.child(2).text();
+					if(headerBox.children().size()>3){
+						STrustDetails=headerBox.child(3).text();
+					}
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing basic info for page "+page);
