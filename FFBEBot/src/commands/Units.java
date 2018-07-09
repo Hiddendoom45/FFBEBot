@@ -37,9 +37,9 @@ public class Units extends UnitSelection implements Command,Selection {
 		//out+="\n:art:"+info.imgOverviewURL;
 		MessageEmbedImpl embed=new MessageEmbedImpl();
 		embed.setAuthor(new AuthorInfo(info.unitName, "", null,null));
-		embed.setDescription("[link]("+info.URL+")");
+		embed.setDescription("[unit link]("+info.URL+")");
 		List<Field> fields=new Vector<Field>();
-		fields.add(new Field("TM - "+info.trustName,"[link]("+info.trustLink+")\n"+info.trustDetails.toString(),false));
+		fields.add(new Field("TM - "+info.trustName,"[TM link]("+info.trustLink+")\n"+info.trustDetails.toString(),false));
 		embed.setFields(fields);
 		embed.setUrl(info.URL);
 		//embed.setDescription("link");

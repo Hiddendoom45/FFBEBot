@@ -31,6 +31,7 @@ public class Info extends CommandGenerics implements Command{
 		fields.add(new Field("User","Serving "+Main.jda.getUsers().size()+" users",false));
 		fields.add(new Field("Last Launch",""+new SimpleDateFormat("[yyyy-MM-dd-HH:mm]").format(new Date(Settings.ID)),true));
 		fields.add(new Field("Memory",(Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory())/1048576+"MB/"+Runtime.getRuntime().totalMemory()/1048576+"MB",true));
+		fields.add(new Field("Credits","All data on the game taken from [the exvius wiki](https://exvius.gamepedia.com/) and [the reddit wiki](https://reddit.com/r/FFBraveExvius/)",true));
 		embed.setFields(fields);
 		embed.setColor(Color.GREEN);
 		embed.setDescription("general info");
