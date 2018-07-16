@@ -150,7 +150,8 @@ public enum Husbandos {
 	Yang(Unit.Yang),
 	Edward(Unit.Edward),
 	CGNichol(Unit.CGNichol),
-	
+	CGReagen(Unit.CGRaegen),
+	Zile(Unit.Zile),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),
