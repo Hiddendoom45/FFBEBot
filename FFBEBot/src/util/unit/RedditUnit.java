@@ -275,6 +275,7 @@ public class RedditUnit {
 		refImg.put("#B/Icons/290060200/", "Calamity Gem");
 		refImg.put("#B/Icons/290060300/", "Prismaric Horn");
 		refImg.put("#B/Icons/290060400/", "Calamity Writ");
+		refImg.put("#B/Icons/300000080/", "Unit Awakening Cryst/No Img");
 	}
 	
 	
