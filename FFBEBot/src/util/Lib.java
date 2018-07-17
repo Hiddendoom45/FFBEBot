@@ -579,6 +579,15 @@ public class Lib {
 	 * @return number with non digit characters removed, -1 if no number found
 	 */
 	public static int extractNumber(String s){
+		return extractNumber(s,-1);
+	}
+	/**
+	 * gets only number chars from a string
+	 * @param s string to extract number from
+	 * @param defaultNum number to use if NaN
+	 * @return number with non digit characters removed, -1 if no number found
+	 */
+	public static int extractNumber(String s,int defaultNum){
 		String i="";
 		for(char c:s.trim().toCharArray()){
 			if(Character.isDigit(c)){
@@ -586,7 +595,7 @@ public class Lib {
 			}
 		}
 		if(i.equals("")){
-			i="-1";
+			i=""+defaultNum;
 		}
 		return Integer.parseInt(i);
 	}
