@@ -14,10 +14,10 @@ The bot is currently being fixed after a few months of hiatus in the development
 
 #### Recent Updates:
 
+- Fix some issues with runit/requipment
 - STMR parsing, unit/runit command update
 - Update husbando/waifu commands for new units
 - Fixed broken images in husbando/waifu commands
-- Added new banners
 
 #### Current Status:
 
