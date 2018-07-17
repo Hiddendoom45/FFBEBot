@@ -61,6 +61,12 @@ public class Overrider {
 			commands.get(args.command).executed(safe, event);
 			return true;
 		}
+		else if(args.command.equalsIgnoreCase("help")){
+			if(args.args.containsKey("")&&commands.containsKey(args.args.get("")[0])){
+				commands.get(args.args.get("")[0]).help(event);
+			}
+		}
+		System.out.println(args.args);
 		return false;
 	}
 	
