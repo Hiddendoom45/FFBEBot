@@ -228,7 +228,7 @@ public class RedditUnit {
 		refImg.put("#Z/Icons/e9/", "Hammer");
 		refImg.put("#Z/Icons/e10/", "Spear");
 		refImg.put("#Z/Icons/e11/", "Harp");
-		refImg.put("#Z/Icons/e11/", "Whip");
+		refImg.put("#Z/Icons/e12/", "Whip");
 		refImg.put("#Z/Icons/e13/", "Throwing");
 		refImg.put("#Z/Icons/e14/", "Gun");
 		refImg.put("#Z/Icons/e15/", "Mace");
