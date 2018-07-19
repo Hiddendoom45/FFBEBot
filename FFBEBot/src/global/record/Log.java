@@ -38,13 +38,13 @@ public class Log {
 	public static void save(){
 		try{
 			lock.acquire();
-			BufferedWriter out=new BufferedWriter(new FileWriter(new File(Settings.saveSource+"write"),true));
+			BufferedWriter out=new BufferedWriter(new FileWriter(new File(Settings.saveSource+"write")));
 			if(new File(Settings.saveSource).exists()){
-//				BufferedReader in=new BufferedReader(new FileReader(new File(Settings.saveSource)));
-//				while(in.ready()){
-//					out.append(in.readLine()+"\n");
-//				}
-//				in.close();
+				BufferedReader in=new BufferedReader(new FileReader(new File(Settings.saveSource)));
+				while(in.ready()){
+					out.append(in.readLine()+"\n");
+				}
+				in.close();
 			}
 			else{
 				new File(Settings.saveSource).createNewFile();
