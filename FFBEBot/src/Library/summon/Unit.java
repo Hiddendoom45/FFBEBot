@@ -306,10 +306,13 @@ public enum Unit {
 	Lexa("Lexa",new String[]{"/e/e8/Unit-Lexa-4.png?version=0fd0833348e203690364e84e5f0294b2","/2/25/Unit-Lexa-5.png?version=3f5c1db104939f28bfc3f5189eab0cfa","/4/42/Unit-Lexa-6.png?version=dfad200865c016735174176d824310c6"},4),
 	Elbis("Elbis",new String[]{"/f/fa/Unit-Elbis-4.png?version=c6ce6311e089734c05f0e77d109850c4","/2/2a/Unit-Elbis-5.png?version=6cf2b4868fb2e696fecb7485f606019f","/0/0f/Unit-Elbis-6.png?version=06f820a0e0269a6ca0a55c87feeb03a9"},4),
 	Merald("Merald",new String[]{"/7/7a/Unit-Merald-3.png?version=accd16d3b60328cb9d434f843d968374","/1/1c/Unit-Merald-4.png?version=8ff1bb6eac19cdf121a1e0693a85c183","/f/f3/Unit-Merald-5.png?version=8b4022cd3677787001b5167250681d1d"},3),
+	CGRaegen("Raegen",new String[]{"/f/f0/Unit-Raegen-5.png?version=157cea9f3459cf1a21f48eb82325a6c1","/b/bc/Unit-Raegen-6.png?version=2c6baeea7662e1d78784552f487816c3"},5),
 	Ryumynui("Ryumynui",new String[]{"/c/cd/Unit-Ryumynui-4.png?version=edae6ed4bbae387f2718c850ec935d07","/b/bb/Unit-Ryumynui-5.png?version=a69ebe3ae6b1970257cc3c9beb0d3208","/f/ff/Unit-Ryumynui-6.png?version=a4a64f9d7ac3e1c186e6b186486826c4"},4),
 	Zile("Zile",new String[]{"/8/82/Unit-Zile-4.png?version=5632f904a2c7597d3f1f87bfbe5ca11a","/d/df/Unit-Zile-5.png?version=135789826b8d8cebd562b8e969fb14f5","/8/82/Unit-Zile-6.png?version=4720d5d74c852b1689a50eb5b616eda6"},4),
 	Lucille("Lucille",new String[]{"/9/9c/Unit-Lucille-3.png?version=2bdb6c3a62ad20a0b18ed338a5c9c594","/1/10/Unit-Lucille-4.png?version=cbfcb541007727c306a11b994b427d8b","/d/db/Unit-Lucille-5.png?version=544c20cf94f74eca18559a0391f268f0"},3),
-
+	ARain("Awakened Rain",new String[]{"/5/58/Unit-Awakened_Rain-5.png?version=9be4e2ce9594c8588709be63721e5902","/2/2a/Unit-Awakened_Rain-6.png?version=05ae4b576682d2195a5fec6c559d204c"},5),
+	Mediena("Mediena",new String[]{"/8/8c/Unit-Mediena-5.png?version=72f71ca64e45dcc75302ff7facc1b55d","/8/8c/Unit-Mediena-6.png?version=984dee854a25e3e12b4f3be52c3ec696"},5),
+	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -365,7 +368,6 @@ public enum Unit {
 	RicoRodriguez("Rico Rodriguez",new String[]{"/f/f2/Unit-Rico_Rodriguez-5.png?version=3d5947a6ffd23de9f0d14ae7d9ae1758","/b/be/Unit-Rico_Rodriguez-6.png?version=eb67bb7a0d14d41d48a91bec40ac504d"},5),
 	MarioFrigo("Mario Frigo",new String[]{"/9/92/Unit-Mario_Frigo-4.png?version=33ee9040d17e64eedcd1ba4d8bf8db15","/d/df/Unit-Mario_Frigo-5.png?version=ee051816d2bd54521d260e389621ab6a","/a/aa/Unit-Mario_Frigo-6.png?version=8c6008238253044404435729c27d9a79"},4),
 	AnnikaSvennson("Annika Svennson",new String[]{"/b/ba/Unit-Annika_Svennson-3.png?version=7b4094f403682c031df8fea1d933504c","/b/bb/Unit-Annika_Svennson-4.png?version=5e9bf5e6d1525c5c3d134be34eac1b14","/7/7d/Unit-Annika_Svennson-5.png?version=82ab2b8009aacb03a03314deff86d046"},3),
-	CGRaegen("Raegen",new String[]{"/f/f0/Unit-Raegen-5.png?version=157cea9f3459cf1a21f48eb82325a6c1","/b/bc/Unit-Raegen-6.png?version=2c6baeea7662e1d78784552f487816c3"},5),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),

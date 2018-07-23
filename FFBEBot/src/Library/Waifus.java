@@ -118,6 +118,7 @@ public enum Waifus {
 	Merald(Unit.Merald),
 	Ryumynui(Unit.Ryumynui),
 	Lucille(Unit.Lucille),
+	Mediena(Unit.Mediena),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),

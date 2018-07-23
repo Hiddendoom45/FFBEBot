@@ -97,6 +97,7 @@ public enum Banner {
 	FFBEHero2("FFBE Heroes part 2",new Unit[]{Unit.CGJake,Unit.CGSakura,Unit.CGLasswell,Unit.CGFina,Unit.CGNichol,Unit.CGLid,Unit.Vanille,Unit.Tim},BannerRates.FFBEHeroes.fiveRate(),FFBEHero1.pool,FFBEHero1.include,BannerType.ThreePercent),
 	FFBEHero3("FFBE Heroes part 3",new Unit[]{Unit.CGNichol,Unit.CGLid,Unit.CGLasswell,Unit.CGFina,Unit.CGJake,Unit.CGSakura,Unit.Rikku,Unit.Jack},BannerRates.FFBEHeroes.fiveRate(),FFBEHero2.pool,FFBEHero2.include,BannerType.ThreePercent),
 	Raegen("CG Raegen",new Unit[]{Unit.CGRaegen,Unit.Ryumynui,Unit.Zile,Unit.Lucille},BannerRates.D4.fiveRate(),FFBEHero3.pool,FFBEHero3.include,BannerType.ThreePercent),
+	SSJRain("Awakened Rain/Mediena",new Unit[]{Unit.ARain,Unit.Mediena,Unit.Shylt,Unit.Shantotto},BannerRates.D5.fiveRate(),Lib.concat(Raegen.featured,Raegen.pool),Raegen.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
