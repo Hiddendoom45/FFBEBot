@@ -45,7 +45,7 @@ public class Lib {
 				+ "Commands that may or may not help in dealing with or evoking salt\n\n"
 				+ "**Simulation** - `dailies` `lapis` `give`  `banner` `pull` `unitinventory` `dailypull` `11pull` `gpull` `unitsell` `unitawaken`\n"
 				+ "Commands that are used to attempt to simulate FFBE to some degree\n\n"
-				+ "**WIP** - `whale` `farmtm`\n"
+				+ "**WIP** - none\n"
 				+ "Commands that are work in progress currently unimplemented\n\n"
 				+ "Don't include the example brackets when using commands!\n"
 				+ "To view mod commands, use "+SaveSystem.getModPrefix(event)+"help";
