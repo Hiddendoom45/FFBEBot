@@ -165,7 +165,9 @@ public enum Waifus {
 	EAileen(Unit.EAileen),
 	Emilia(Unit.Emilia),
 	Ukiyo(Unit.Ukiyo),
-	Annika(Unit.AnnikaSvennson);
+	Annika(Unit.AnnikaSvennson),
+	Rena(Unit.Rena),
+	Reimi(Unit.Reimi);
 	
 	
 	

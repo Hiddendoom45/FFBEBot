@@ -65,6 +65,7 @@ public enum Banner {
 	Loren("Loren",new Unit[]{Unit.Lorraine,Unit.Chloe,Unit.Amy},BannerRates.EvenSplit.rate(),HalloweenP2_2.pool,HalloweenP2_2.include,BannerType.BaseRare),
 	FFIVFiend("FFIV Fiends", new Unit[]{Unit.Barbariccia,Unit.Cagnazzo,Unit.Rubicante,Unit.Scarmiglione},BannerRates.D4.rate(),Lib.concat(Loren.pool, Loren.featured),Loren.include,BannerType.BaseRare),
 	Performer("Performer's special",new Unit[]{Unit.KittyAriana,Unit.Ling,Unit.Penelo},BannerRates.EvenSplit.rate(),Lib.concat(FFIVFiend.pool,FFIVFiend.featured),FFIVFiend.include,BannerType.BaseRare),
+	//3% rainbow rates
 	FFXV2("FFXV 2",new Unit[]{Unit.Noctis,Unit.Gladiolus,Unit.Cor,Unit.Iris},BannerRates.D5.fiveRate(),Performer.pool,Performer.include,BannerType.ThreePercent),
 	Duke("Duke",new Unit[]{Unit.Duke,Unit.Olif,Unit.Mystea,Unit.Charie,Unit.Ryunan},BannerRates.D3D4.fiveRate(),Lib.concat(new Unit[]{Unit.Gladiolus,Unit.Cor,Unit.Iris},FFXV2.pool),FFXV2.include,BannerType.ThreePercent),
 	Roy("Roy",new Unit[]{Unit.Roy,Unit.Aura,Unit.Guromu},BannerRates.EvenSplit.fiveRate(),Lib.concat(Duke.pool, Duke.featured),Duke.include,BannerType.ThreePercent),
@@ -98,6 +99,7 @@ public enum Banner {
 	FFBEHero3("FFBE Heroes part 3",new Unit[]{Unit.CGNichol,Unit.CGLid,Unit.CGLasswell,Unit.CGFina,Unit.CGJake,Unit.CGSakura,Unit.Rikku,Unit.Jack},BannerRates.FFBEHeroes.fiveRate(),FFBEHero2.pool,FFBEHero2.include,BannerType.ThreePercent),
 	Raegen("CG Raegen",new Unit[]{Unit.CGRaegen,Unit.Ryumynui,Unit.Zile,Unit.Lucille},BannerRates.D4.fiveRate(),FFBEHero3.pool,FFBEHero3.include,BannerType.ThreePercent),
 	SSJRain("Awakened Rain/Mediena",new Unit[]{Unit.ARain,Unit.Mediena,Unit.Shylt,Unit.Shantotto},BannerRates.D5.fiveRate(),Lib.concat(Raegen.featured,Raegen.pool),Raegen.include,BannerType.ThreePercent),
+	SOA("Star Ocean Anamnesis",new Unit[]{Unit.Rena,Unit.Fayt,Unit.Fidel,Unit.Roddick},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.ARain,Unit.Mediena},SSJRain.pool),SSJRain.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;

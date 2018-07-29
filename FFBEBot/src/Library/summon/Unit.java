@@ -368,6 +368,10 @@ public enum Unit {
 	RicoRodriguez("Rico Rodriguez",new String[]{"/f/f2/Unit-Rico_Rodriguez-5.png?version=3d5947a6ffd23de9f0d14ae7d9ae1758","/b/be/Unit-Rico_Rodriguez-6.png?version=eb67bb7a0d14d41d48a91bec40ac504d"},5),
 	MarioFrigo("Mario Frigo",new String[]{"/9/92/Unit-Mario_Frigo-4.png?version=33ee9040d17e64eedcd1ba4d8bf8db15","/d/df/Unit-Mario_Frigo-5.png?version=ee051816d2bd54521d260e389621ab6a","/a/aa/Unit-Mario_Frigo-6.png?version=8c6008238253044404435729c27d9a79"},4),
 	AnnikaSvennson("Annika Svennson",new String[]{"/b/ba/Unit-Annika_Svennson-3.png?version=7b4094f403682c031df8fea1d933504c","/b/bb/Unit-Annika_Svennson-4.png?version=5e9bf5e6d1525c5c3d134be34eac1b14","/7/7d/Unit-Annika_Svennson-5.png?version=82ab2b8009aacb03a03314deff86d046"},3),
+	Rena("Rena",new String[]{"/a/a3/Unit-Rena-5.png?version=b25725465cfa1041b48ee0ab7e7583dd","/b/b2/Unit-Rena-6.png?version=ca36425b8554ee6ab66093e7e652ace8"},5),
+	Fayt("Fayt",new String[]{"/1/19/Unit-Fayt-5.png?version=3747a89a63bb0f594d9128df03fda1d9","/f/f8/Unit-Fayt-6.png?version=7fa9a21a48a951e659fabff75be18c98"},5),
+	Fidel("Fidel",new String[]{"/d/dc/Unit-Fidel-4.png?version=32088cce39d043c803bccdcab55741d2","/1/1f/Unit-Fidel-5.png?version=b6cb60fba2c5080047b6224a5e2ec9f1","/6/6b/Unit-Fidel-6.png?version=83302e677e3bdfdb3d8eb796c423641d"},4),
+	Roddick("Roddick",new String[]{"/d/dd/Unit-Roddick-3.png?version=ddc511ca4bbe04a15b5f747cd7d7c41d","/4/44/Unit-Roddick-4.png?version=e0b200f13806695d92bf471121e86a83","/b/b8/Unit-Roddick-5.png?version=f3349750bc4e21bdde558520018e8ade"},3),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
@@ -394,7 +398,8 @@ public enum Unit {
 	LaraCroft("Lara Croft",new String[]{"/7/78/Unit-Lara_Croft-5.png?version=c74464d8f3d671688bf2a76931a00a0a","/8/8e/Unit-Lara_Croft-6.png?version=109fde35f77e88d85176f0b7f956bcf0"},5),
 	Emilia("Emilia",new String[]{"/b/b4/Unit-Emilia-4.png?version=32ae4d818fc9ca8192c17c23235ebcc9","/a/ac/Unit-Emilia-5.png?version=abff369f1b4bd28439c43ea1fd653112","/d/d5/Unit-Emilia-6.png?version=7e79d24f70c3eefcfd480d8634365fdd"},4),
 	Ukiyo("Ukiyo",new String[]{"/9/9b/Unit-Ukiyo-5.png?version=50a485c4a99b32eac31e7a1f905f08eb","/4/49/Unit-Ukiyo-6.png?version=fb0abcec53d036dea602e9c122341d2a"},5),
-	Teo("Teo",new String[]{"/f/fa/Unit-Teo-3.png?version=5d389ee1d779ff9f63fa5cc0f14d381b","/5/57/Unit-Teo-4.png?version=17b5576e68f276f82404294cc535a63f","/d/d3/Unit-Teo-5.png?version=ef82f9e007cd767636214187b69e07ff"},3);
+	Teo("Teo",new String[]{"/f/fa/Unit-Teo-3.png?version=5d389ee1d779ff9f63fa5cc0f14d381b","/5/57/Unit-Teo-4.png?version=17b5576e68f276f82404294cc535a63f","/d/d3/Unit-Teo-5.png?version=ef82f9e007cd767636214187b69e07ff"},3),
+	Reimi("Reimi",new String[]{"/d/d8/Unit-Reimi-4.png?version=e828aeee8706095a9218d24b3d469159","/b/b1/Unit-Reimi-5.png?version=b4d30f74748795884e13d69f209fd84e","/a/a6/Unit-Reimi-6.png?version=279b5d290c6bd9c8b77a3092c650e075"},4);
 	
 	public String name;
 	public String[] url;

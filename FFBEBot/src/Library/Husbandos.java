@@ -188,7 +188,10 @@ public enum Husbandos {
 	RobinOod(Unit.RobbinOod),//rest of DQ are other
 	RicoRodriguez(Unit.RicoRodriguez),
 	MarioFrigo(Unit.MarioFrigo),
-	Teo(Unit.Teo);
+	Teo(Unit.Teo),
+	Fayt(Unit.Fayt),
+	Fidel(Unit.Fidel),
+	Roddick(Unit.Roddick);
 	
 
 	public String name;
