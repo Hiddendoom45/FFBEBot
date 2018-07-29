@@ -160,7 +160,8 @@ public enum Banner {
 				Banner.TombRaider,
 				Banner.DQ,
 				Banner.KingKnight2,
-				Banner.JC3
+				Banner.JC3,
+				Banner.SOA
 				};
 	}
 	public static boolean LEBanner(Banner banner){

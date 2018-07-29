@@ -38,7 +38,7 @@ public class Settings {
 	public static HashSet<String> blacklist=new HashSet<String>();
 	public static long dailyTime;
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access	
-	public static Banner DefaultBanner=Banner.SSJRain;//default banner used by summon simulators
+	public static Banner DefaultBanner=Banner.SOA;//default banner used by summon simulators
 	
 	//guild settings
 	public String guildPrefix="";
