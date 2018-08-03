@@ -25,14 +25,19 @@ public class Prefix implements Command{
 		try{
 		if(args.length>0){
 			Settings guild=SaveSystem.getGuild(event.getGuild().getId());
-			guild.guildPrefix=args[0];
-			SaveSystem.setSetting(guild);
-			TimeUnit.SECONDS.sleep(1);
-			SaveSystem.loadGuilds();
-			Lib.sendMessage(event, "Prefix changed to:"+args[0]);
+			if(guild.guildModPrefix.equals(args[0])){
+				Lib.sendMessage(event, "The prefix cannot be the same as the modprefix");
+			}
+			else{
+				guild.guildPrefix=args[0];
+				SaveSystem.setSetting(guild);
+				TimeUnit.SECONDS.sleep(1);
+				SaveSystem.loadGuilds();
+				Lib.sendMessage(event, "Prefix changed to:"+args[0]);
+			}
 		}
 		else{
-			Lib.sendMessage(event, "Must include prefix ~!prefix [prefix]");
+			Lib.sendMessage(event, "Must include prefix "+SaveSystem.getModPrefix(event)+"prefix [prefix]");
 		}
 		}catch(Exception e){
 			Log.logError(e);

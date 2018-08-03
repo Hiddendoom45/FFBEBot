@@ -26,14 +26,19 @@ public class ModPrefix implements Command {
 		try{
 			if(args.length>0){
 				Settings guild=SaveSystem.getGuild(event.getGuild().getId());
+				if(guild.guildPrefix.equals(args[0])){
+					Lib.sendMessage(event, "The modprefix cannot be the same as the prefix for the bot");
+				}
+				else{
 				guild.guildModPrefix=args[0];
 				SaveSystem.setSetting(guild);
 				TimeUnit.SECONDS.sleep(1);
 				SaveSystem.loadGuilds();
 				Lib.sendMessage(event, "Mod Prefix changed to:"+args[0]);
+				}
 			}
 			else{
-				Lib.sendMessage(event, "Must include modprefix ~!modprefix [modprefix]");
+				Lib.sendMessage(event, "Must include modprefix "+SaveSystem.getModPrefix(event)+"modprefix [modprefix]");
 			}
 			}catch(Exception e){
 				Log.logError(e);

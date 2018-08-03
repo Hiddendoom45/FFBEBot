@@ -34,7 +34,7 @@ public class Disable extends ModGenerics implements Selection, Command{
 	public void help(MessageReceivedEvent event) {
 		String s=SaveSystem.getModPrefix(event)+"disable\n"
 				+ "\tdisables a module in the current channel\n"
-				+ "\tto disable a module across all channels use `"+SaveSystem.getModPrefix(event)+"disable`";
+				+ "\tto disable a module across all channels use `"+SaveSystem.getModPrefix(event)+"gldisable`";
 		Lib.sendMessage(event, s);
 	}
 
