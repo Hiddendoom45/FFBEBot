@@ -187,17 +187,17 @@ public class Main {
 		break;
 		case Update:game=" updates";
 		break;
-		case Ready1:game=" with RNG|-!help";
+		case Ready1:game=" with RNG|@FFBEBot help";
 		break;
-		case Ready2:game="*praying to RNGesus|-!help";
+		case Ready2:game="*praying to RNGesus|@FFBEBot help";
 		break;
-		case Ready3:game=" Offline?...|-!help";
+		case Ready3:game=" Offline?...|@FFBEBot help";
 		break;
-		case Ready4:game=" FFBE |-!help";
+		case Ready4:game=" FFBE |@FFBEBot help";
 		break;
-		case Ready5:game=" with a salty summoner|-!help";
+		case Ready5:game=" with a salty summoner|@FFBEBot help";
 		break;
-		case Ready6:game=" in the salt mines|-!help";
+		case Ready6:game=" in the salt mines|@FFBEBot help";
 		break;
 		}
 		jda.getPresence().setGame(Game.of(game));
