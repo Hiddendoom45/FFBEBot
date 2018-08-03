@@ -31,7 +31,7 @@ public class Selector {
 				event.getChannel().sendTyping();//notify message recieved
 				selfPrune(selections.get(key(event)),event);//delete messages in relation to selection
 				selections.remove(key(event));//remove event
-				Lib.sendMessage(event, event.getAuthor().getName()+" exited menu");//send message to update status
+				Lib.sendTempMessage(event, event.getAuthor().getName()+" exited menu",20);//send message to update status
 				return true;
 			}
 			//if typical selection event
