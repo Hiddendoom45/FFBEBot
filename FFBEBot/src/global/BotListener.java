@@ -10,6 +10,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import util.CmdControl;
+import util.Lib;
 import util.Overrider;
 import util.ReactionController;
 import util.Selector;
@@ -32,6 +33,9 @@ public class BotListener extends ListenerAdapter{
 				}
 				else if(event.getMessage().getContent().toLowerCase().contains("prefix")){
 					util.Lib.sendMessage(event, "prefix for server:"+SaveSystem.getPrefix(event));
+				}
+				else if(event.getMessage().getContent().toLowerCase().contains("help")){
+					Lib.printHelp(event);
 				}
 			}
 		}catch(Exception e){
