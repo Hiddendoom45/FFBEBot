@@ -7,7 +7,7 @@ import global.record.Settings;
 import util.Lib;
 public enum Unit {
 	//random
-	TM("Trust Moogle",new String[]{"https://d1u5p3l4wpay3k.cloudfront.net/exvius_gamepedia_en/f/f5/Unit-Trust_Moogle-5.png?version=c8b87cb7532e45a18b442c9fd03b77f0"},5),
+	TM("Trust Moogle",new String[]{"/f/f5/Unit-Trust_Moogle-5.png?version=c8b87cb7532e45a18b442c9fd03b77f0"},5),
 	//Story Units(free)
 	Rain("Rain",new String[]{"/2/2d/Unit-Rain-2.png?version=c7c52055da59da4e5c1f054bedd7ae41","/d/de/Unit-Rain-3.png?version=5cf5cc155008b5ed22304516001f8c90","/b/b1/Unit-Rain-4.png?version=f3a09472b805b80e7f2db0721923b6f3","/1/1b/Unit-Rain-5.png?version=e668b02cbe29fb9f2aa8ca4685b90082","/6/6b/Unit-Rain-6.png?version=bb27acbbddf9d42159d663c63d27a5a9"},2),
 	Lasswell("Lasswell",new String[]{"/a/a5/Unit-Lasswell-2.png?version=806ebaf5d43108f0b32ea09d0ade829c","/f/f2/Unit-Lasswell-3.png?version=7b6211ae8095eeba2e5c3e3061df9e0a","/9/98/Unit-Lasswell-4.png?version=9e0a30c00d5af4630781f61dbc1c42d8","/3/34/Unit-Lasswell-5.png?version=10f7579f4acac94608ca21d9f5ae9c8a","/a/af/Unit-Lasswell-6.png?version=54a2b6139576821e8cb1d6c03b140e25"},2),
@@ -312,7 +312,10 @@ public enum Unit {
 	Lucille("Lucille",new String[]{"/9/9c/Unit-Lucille-3.png?version=2bdb6c3a62ad20a0b18ed338a5c9c594","/1/10/Unit-Lucille-4.png?version=cbfcb541007727c306a11b994b427d8b","/d/db/Unit-Lucille-5.png?version=544c20cf94f74eca18559a0391f268f0"},3),
 	ARain("Awakened Rain",new String[]{"/5/58/Unit-Awakened_Rain-5.png?version=9be4e2ce9594c8588709be63721e5902","/2/2a/Unit-Awakened_Rain-6.png?version=05ae4b576682d2195a5fec6c559d204c"},5),
 	Mediena("Mediena",new String[]{"/8/8c/Unit-Mediena-5.png?version=72f71ca64e45dcc75302ff7facc1b55d","/8/8c/Unit-Mediena-6.png?version=984dee854a25e3e12b4f3be52c3ec696"},5),
-	
+	Squall("Squall",new String[]{"/c/c1/Unit-Squall-5.png?version=a710cbfbcff97c3ce220e836ba7e4c3a","/2/29/Unit-Squall-6.png?version=c35f855fb8280329d6387e6ac830038f","/a/a7/Unit-Squall-7.png?version=ba6a1d2ee896f7831796e0dbffc66542"},0),
+	Rinoa("Rinoa",new String[]{"/8/8e/Unit-Rinoa-5.png?version=025e3ab818a4c2f10fa53f230c7cbffb","/4/4b/Unit-Rinoa-6.png?version=57a0d0c378c296a3014a2fe4b2043c81","/5/53/Unit-Rinoa-7.png?version=73e15d21e5b69cb9d1923620d4364e01"},5),
+	Zell("Zell",new String[]{"/c/cc/Unit-Zell-4.png?version=a118a284ef42db2c2b13f1abbf1f300e","/4/4d/Unit-Zell-5.png?version=7aad15a0a6cacaa6abd4c179fe23de4e","/a/a3/Unit-Zell-6.png?version=44d7309391ef73dc89f97f20a39ccdfb"},0),
+	Ramira("Ramira",new String[]{"/1/16/Unit-Ramira-3.png?version=a0614f0c18eeb590fdbc174b8d0c9cd2","/9/9e/Unit-Ramira-4.png?version=3768e667484d0890883452f30b005e27","/c/ca/Unit-Ramira-5.png?version=8ed83f7e726de38867c83747ecac7c2b"},0),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
