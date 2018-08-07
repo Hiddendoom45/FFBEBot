@@ -19,12 +19,22 @@ public class RedditOverview {
 	public ArrayList<unitData> possibleData=new ArrayList<unitData>();
 	public RedditOverview(String unitName){
 		try{
+			int uNum=-1;
+			if(Lib.isNumber(unitName)){
+				uNum=Lib.extractNumber(unitName);
+			}
 			for(unitData u:new Gson().fromJson(Data.redditO,unitData[].class)){
-				if(u.name.toLowerCase().contains(unitName.toLowerCase())||u.JPname.toLowerCase().contains(unitName.toLowerCase())){
+				System.out.println(u.unitID);
+				if(uNum>-1&&u.unitID==uNum){
 					this.possible.add(u.name);
 					this.possibleData.add(u);
 				}
+				else if(u.name.toLowerCase().contains(unitName.toLowerCase())||u.JPname.toLowerCase().contains(unitName.toLowerCase())){
+					this.possible.add(u.name);
+					this.possibleData.add(u);
+	
 				}
+			}
 			
 		}catch(Exception e){
 			Log.logError(e);
@@ -62,6 +72,7 @@ public class RedditOverview {
 	}
 	public static class unitData{
 		public String unitUrl;
+		public int unitID;
 		public String name;
 		public String JPname;
 		public String origin;
@@ -69,6 +80,7 @@ public class RedditOverview {
 		public int maxR;
 		public unitData(Element row){
 			unitUrl=row.getElementsByAttribute("href").get(1).absUrl("href");
+			unitID = Integer.parseInt(unitUrl.substring(unitUrl.lastIndexOf("/")+1));
 			name=row.child(2).text();
 			JPname=row.child(1).text();
 			origin=row.child(3).text();

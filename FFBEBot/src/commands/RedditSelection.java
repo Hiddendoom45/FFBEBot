@@ -26,7 +26,7 @@ public abstract class RedditSelection extends CommandGenerics implements Command
 			int rarity=0;
 			String name="";
 			for(int i=0;i<args.length;i++){
-				if(i==(args.length-1)&&Lib.isNumber(args[i])){
+				if(i==(args.length-1)&&Lib.isNumber(args[i])&&i>0){
 					rarity=Integer.parseInt(args[i]);
 				}
 				else{
