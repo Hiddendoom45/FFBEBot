@@ -101,6 +101,7 @@ public enum Banner {
 	SSJRain("Awakened Rain/Mediena",new Unit[]{Unit.ARain,Unit.Mediena,Unit.Shylt,Unit.Shantotto},BannerRates.D5.fiveRate(),Lib.concat(Raegen.featured,Raegen.pool),Raegen.include,BannerType.ThreePercent),
 	SOA("Star Ocean Anamnesis",new Unit[]{Unit.Rena,Unit.Fayt,Unit.Fidel,Unit.Roddick},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.ARain,Unit.Mediena},SSJRain.pool),SSJRain.include,BannerType.ThreePercent),
 	FFVIII("FFVIII",new Unit[]{Unit.Squall,Unit.Rinoa,Unit.Zell,Unit.Ramira},BannerRates.D5.fiveRate(),SOA.pool,SOA.include,BannerType.ThreePercent),
+	Nalu("Nalu",new Unit[]{Unit.Nalu,Unit.Pecciotta,Unit.Shinju,Unit.Ryuka},BannerRates.D4.fiveRate(),Lib.concat(FFVIII.featured, FFVIII.pool),FFVIII.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;

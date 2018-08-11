@@ -316,6 +316,13 @@ public enum Unit {
 	Rinoa("Rinoa",new String[]{"/8/8e/Unit-Rinoa-5.png?version=025e3ab818a4c2f10fa53f230c7cbffb","/4/4b/Unit-Rinoa-6.png?version=57a0d0c378c296a3014a2fe4b2043c81","/5/53/Unit-Rinoa-7.png?version=73e15d21e5b69cb9d1923620d4364e01"},5),
 	Zell("Zell",new String[]{"/c/cc/Unit-Zell-4.png?version=a118a284ef42db2c2b13f1abbf1f300e","/4/4d/Unit-Zell-5.png?version=7aad15a0a6cacaa6abd4c179fe23de4e","/a/a3/Unit-Zell-6.png?version=44d7309391ef73dc89f97f20a39ccdfb"},0),
 	Ramira("Ramira",new String[]{"/1/16/Unit-Ramira-3.png?version=a0614f0c18eeb590fdbc174b8d0c9cd2","/9/9e/Unit-Ramira-4.png?version=3768e667484d0890883452f30b005e27","/c/ca/Unit-Ramira-5.png?version=8ed83f7e726de38867c83747ecac7c2b"},0),
+	Nalu("Nalu",new String[]{"/a/a9/Unit-Nalu-5.png?version=41e744ab8216b09eb18ccd795de1d5fc","/d/df/Unit-Nalu-6.png?version=ed1c6ed4df38a79346d72a23e520dad7","/6/65/Unit-Nalu-7.png?version=1c9334ceada7020cc3f0a6bf01f4d7ba"},5),
+	Pecciotta("Pecciotta",new String[]{"/4/4b/Unit-Pecciotta-4.png?version=0bded4f775497f452da6d99a7eaedab2","/b/b0/Unit-Pecciotta-5.png?version=7e9ea931fa485719a0b651137c694326","/8/8b/Unit-Pecciotta-6.png?version=ea08a36f03a8a7a6a948cd7ce8e55eba"},4),
+	Shinju("Shinju",new String[]{"/4/47/Unit-Shinju-4.png?version=9a48e73a09ccaddf52f9c7e8ca0116ce","/4/4a/Unit-Shinju-5.png?version=d9b167423edc99126a1a002b35804a8d","/d/dc/Unit-Shinju-6.png?version=803ab04789bb555bb430b7773751e2a5"},4),
+	Ryuka("Ryuka",new String[]{"/4/44/Unit-Ryuka-3.png?version=ad5a81a6ace32816c8b39eea96b638db","/3/31/Unit-Ryuka-4.png?version=87c4c6f7f552b7c2467fba8a0fb2fa48","/c/c6/Unit-Ryuka-5.png?version=c3875d153b52d146f144040f205d5c9c"},3),
+	
+	
+	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
