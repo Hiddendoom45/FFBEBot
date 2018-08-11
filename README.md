@@ -8,24 +8,21 @@ To invite this bot use : https://discordapp.com/oauth2/authorize?&client_id=2446
 The bot only needs basic message read/write permissions to be functional
 Optionally you can allow the bot to delete messages to cleanup certain commands the may cause clutter
 
-### Updates
+### Status
 
-The bot is currently being fixed after a few months of hiatus in the development.
+Currently maintained, any bugs that I find should be fixed quickly, not actively adding new features.
 
 #### Recent Updates:
 
+- `@FFBEBot help` will also bring up help menu
+- Can search for unit by ID of base rarity w/ runit
+- Minor fixes to mod commands, some annoying messages temporary
 - Fix some issues with runit/requipment
 - STMR parsing, unit/runit command update
-- Update husbando/waifu commands for new units
-- Fixed broken images in husbando/waifu commands
-
-#### Current Status:
-
-- most commands should work now
 
 #### TODO:
 
-- update parsing for exvius wiki and reddit wiki commands
+- fully update parsing for exvius wiki and reddit wiki commands
 - new features
 
 ### Bugs/Suggestings
