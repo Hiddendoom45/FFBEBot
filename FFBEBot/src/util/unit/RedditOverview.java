@@ -80,7 +80,11 @@ public class RedditOverview {
 		public int maxR;
 		public unitData(Element row){
 			unitUrl=row.getElementsByAttribute("href").get(1).absUrl("href");
+			try{
 			unitID = Integer.parseInt(unitUrl.substring(unitUrl.lastIndexOf("/")+1));
+			}catch(NumberFormatException ne){
+				unitID=-1;
+			}
 			name=row.child(2).text();
 			JPname=row.child(1).text();
 			origin=row.child(3).text();

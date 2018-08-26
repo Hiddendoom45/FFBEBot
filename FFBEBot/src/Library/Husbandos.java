@@ -195,7 +195,11 @@ public enum Husbandos {
 	Teo(Unit.Teo),
 	Fayt(Unit.Fayt),
 	Fidel(Unit.Fidel),
-	Roddick(Unit.Roddick);
+	Roddick(Unit.Roddick),
+	AJenson(Unit.AJensen),
+	VMarchenko(Unit.VMarchenko),
+	VKoller(Unit.VKoller),
+	FPritchard(Unit.FPritchard);
 	
 
 	public String name;

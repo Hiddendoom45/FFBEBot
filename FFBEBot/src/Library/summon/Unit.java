@@ -382,7 +382,10 @@ public enum Unit {
 	Fayt("Fayt",new String[]{"/1/19/Unit-Fayt-5.png?version=3747a89a63bb0f594d9128df03fda1d9","/f/f8/Unit-Fayt-6.png?version=7fa9a21a48a951e659fabff75be18c98"},5),
 	Fidel("Fidel",new String[]{"/d/dc/Unit-Fidel-4.png?version=32088cce39d043c803bccdcab55741d2","/1/1f/Unit-Fidel-5.png?version=b6cb60fba2c5080047b6224a5e2ec9f1","/6/6b/Unit-Fidel-6.png?version=83302e677e3bdfdb3d8eb796c423641d"},4),
 	Roddick("Roddick",new String[]{"/d/dd/Unit-Roddick-3.png?version=ddc511ca4bbe04a15b5f747cd7d7c41d","/4/44/Unit-Roddick-4.png?version=e0b200f13806695d92bf471121e86a83","/b/b8/Unit-Roddick-5.png?version=f3349750bc4e21bdde558520018e8ade"},3),
-	
+	AJensen("Adam Jensen",new String[]{"/0/0e/Unit-Adam_Jensen-5.png?version=21a40a8d84660fa34da42e355131a382","/0/0f/Unit-Adam_Jensen-6.png?version=fa36219757015682271cb90e8b684872","/3/30/Unit-Adam_Jensen-7.png?version=5f6c6d57dca17eb8ac0f741c60b64323"},5),
+	VMarchenko("Viktor Marchenko",new String[]{"/d/d1/Unit-Viktor_Marchenko-5.png?version=49b888019f715a1b3abe374ba203c6c9","/d/de/Unit-Viktor_Marchenko-6.png?version=1b6a1129cc0b98e9b1f837c1415ecd34","/c/c5/Unit-Viktor_Marchenko-7.png?version=f8f5dcb2efabd81a6bcf5dd063862d46"},5),
+	VKoller("Václav Koller",new String[]{"/9/9e/Unit-V%C3%A1clav_Koller-4.png?version=e0c8a67c25e06cdb5123029a70e49544","/9/90/Unit-V%C3%A1clav_Koller-5.png?version=9044c4b26dc278d346543f540dea0b29","/4/45/Unit-V%C3%A1clav_Koller-6.png?version=16d758f33539beef9826b13e87ab962e"},4),
+	FPritchard("Frank Pritchard",new String[]{"/f/f9/Unit-Frank_Pritchard-3.png?version=dcd7e273840b497000bd44a23b3fa35d","/7/79/Unit-Frank_Pritchard-4.png?version=f5876b517bf3b85c9e9141138abf263a","/6/67/Unit-Frank_Pritchard-5.png?version=8afd3f1febbf1107ee605a2d7884ea53"},3),
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),

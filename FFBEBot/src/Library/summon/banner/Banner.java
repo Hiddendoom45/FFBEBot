@@ -102,6 +102,7 @@ public enum Banner {
 	SOA("Star Ocean Anamnesis",new Unit[]{Unit.Rena,Unit.Fayt,Unit.Fidel,Unit.Roddick},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.ARain,Unit.Mediena},SSJRain.pool),SSJRain.include,BannerType.ThreePercent),
 	FFVIII("FFVIII",new Unit[]{Unit.Squall,Unit.Rinoa,Unit.Zell,Unit.Ramira},BannerRates.D5.fiveRate(),SOA.pool,SOA.include,BannerType.ThreePercent),
 	Nalu("Nalu",new Unit[]{Unit.Nalu,Unit.Pecciotta,Unit.Shinju,Unit.Ryuka},BannerRates.D4.fiveRate(),Lib.concat(FFVIII.featured, FFVIII.pool),FFVIII.include,BannerType.ThreePercent),
+	DeusEx("Deus Ex",new Unit[]{Unit.AJensen,Unit.VMarchenko,Unit.VKoller,Unit.FPritchard},BannerRates.D5.fiveRate(),Lib.concat(Nalu.featured, Nalu.pool),Nalu.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.BaseRare);
 	public String name;
 	public Unit[] featured;
@@ -163,7 +164,8 @@ public enum Banner {
 				Banner.DQ,
 				Banner.KingKnight2,
 				Banner.JC3,
-				Banner.SOA
+				Banner.SOA,
+				Banner.DeusEx
 				};
 	}
 	public static boolean LEBanner(Banner banner){
