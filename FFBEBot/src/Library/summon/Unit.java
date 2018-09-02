@@ -320,7 +320,9 @@ public enum Unit {
 	Pecciotta("Pecciotta",new String[]{"/4/4b/Unit-Pecciotta-4.png?version=0bded4f775497f452da6d99a7eaedab2","/b/b0/Unit-Pecciotta-5.png?version=7e9ea931fa485719a0b651137c694326","/8/8b/Unit-Pecciotta-6.png?version=ea08a36f03a8a7a6a948cd7ce8e55eba"},4),
 	Shinju("Shinju",new String[]{"/4/47/Unit-Shinju-4.png?version=9a48e73a09ccaddf52f9c7e8ca0116ce","/4/4a/Unit-Shinju-5.png?version=d9b167423edc99126a1a002b35804a8d","/d/dc/Unit-Shinju-6.png?version=803ab04789bb555bb430b7773751e2a5"},4),
 	Ryuka("Ryuka",new String[]{"/4/44/Unit-Ryuka-3.png?version=ad5a81a6ace32816c8b39eea96b638db","/3/31/Unit-Ryuka-4.png?version=87c4c6f7f552b7c2467fba8a0fb2fa48","/c/c6/Unit-Ryuka-5.png?version=c3875d153b52d146f144040f205d5c9c"},3),
-	
+	RageShantotto("Livid Shantotto",new String[]{"/3/32/Unit-Livid_Shantotto-5.png?version=aa33a9fd9a389ef8052a98451d4a9833","/a/a3/Unit-Livid_Shantotto-6.png?version=8a88b6c3baa6d9ba2f8336389b34086a","/e/e4/Unit-Livid_Shantotto-7.png?version=3aa2f7dd700ba6d9594b5e0100091e27"},5),
+	ShadowLord("Shadow Lord",new String[]{"/1/1e/Unit-Shadow_Lord-5.png?version=094e1e1c22355aa904f9882dc3ee4216","/5/5c/Unit-Shadow_Lord-6.png?version=a15703cb90c9ea7db672ae3784341897","/f/f2/Unit-Shadow_Lord-7.png?version=639fc4505c63611e5aaa05b554ee1f5f"},5),
+	Joachim("Joachim",new String[]{"/a/ab/Unit-Joachim-4.png?version=69f6210578b754459105c6e1c32659c7","/0/0c/Unit-Joachim-5.png?version=b5eb9b871e7a1f7ffafac7296e4a6d7f","/a/a6/Unit-Joachim-6.png?version=404525e9c3a6f82239a72834761ac3cc"},4),
 	
 	
 	//Limited Units
@@ -386,6 +388,7 @@ public enum Unit {
 	VMarchenko("Viktor Marchenko",new String[]{"/d/d1/Unit-Viktor_Marchenko-5.png?version=49b888019f715a1b3abe374ba203c6c9","/d/de/Unit-Viktor_Marchenko-6.png?version=1b6a1129cc0b98e9b1f837c1415ecd34","/c/c5/Unit-Viktor_Marchenko-7.png?version=f8f5dcb2efabd81a6bcf5dd063862d46"},5),
 	VKoller("Václav Koller",new String[]{"/9/9e/Unit-V%C3%A1clav_Koller-4.png?version=e0c8a67c25e06cdb5123029a70e49544","/9/90/Unit-V%C3%A1clav_Koller-5.png?version=9044c4b26dc278d346543f540dea0b29","/4/45/Unit-V%C3%A1clav_Koller-6.png?version=16d758f33539beef9826b13e87ab962e"},4),
 	FPritchard("Frank Pritchard",new String[]{"/f/f9/Unit-Frank_Pritchard-3.png?version=dcd7e273840b497000bd44a23b3fa35d","/7/79/Unit-Frank_Pritchard-4.png?version=f5876b517bf3b85c9e9141138abf263a","/6/67/Unit-Frank_Pritchard-5.png?version=8afd3f1febbf1107ee605a2d7884ea53"},3),
+	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),

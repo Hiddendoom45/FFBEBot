@@ -157,6 +157,8 @@ public enum Husbandos {
 	Zell(Unit.Zell),
 	Pecciotta(Unit.Pecciotta),
 	Ryuka(Unit.Ryuka),
+	ShadowLord(Unit.ShadowLord),
+	Joachim(Unit.Joachim),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),
