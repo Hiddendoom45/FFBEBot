@@ -388,6 +388,8 @@ public enum Unit {
 	VMarchenko("Viktor Marchenko",new String[]{"/d/d1/Unit-Viktor_Marchenko-5.png?version=49b888019f715a1b3abe374ba203c6c9","/d/de/Unit-Viktor_Marchenko-6.png?version=1b6a1129cc0b98e9b1f837c1415ecd34","/c/c5/Unit-Viktor_Marchenko-7.png?version=f8f5dcb2efabd81a6bcf5dd063862d46"},5),
 	VKoller("Václav Koller",new String[]{"/9/9e/Unit-V%C3%A1clav_Koller-4.png?version=e0c8a67c25e06cdb5123029a70e49544","/9/90/Unit-V%C3%A1clav_Koller-5.png?version=9044c4b26dc278d346543f540dea0b29","/4/45/Unit-V%C3%A1clav_Koller-6.png?version=16d758f33539beef9826b13e87ab962e"},4),
 	FPritchard("Frank Pritchard",new String[]{"/f/f9/Unit-Frank_Pritchard-3.png?version=dcd7e273840b497000bd44a23b3fa35d","/7/79/Unit-Frank_Pritchard-4.png?version=f5876b517bf3b85c9e9141138abf263a","/6/67/Unit-Frank_Pritchard-5.png?version=8afd3f1febbf1107ee605a2d7884ea53"},3),
+	Estark("Estark",new String[]{"/6/68/Unit-Estark-5.png?version=bde5f7769eda1d54634d240f30a25f0f","/f/f1/Unit-Estark-6.png?version=b10736dd67e4326ab84ce862a08b02bc","/9/9b/Unit-Estark-7.png?version=86e2742314d1f317b4c01b2814eb6a60"},5),
+	ÜberkillingMachine("Überkilling Machine",new String[]{"/c/c6/Unit-%C3%9Cberkilling_Machine-4.png?version=021a78bd63026ba5a2587ca9840a4722","/9/97/Unit-%C3%9Cberkilling_Machine-5.png?version=c834238706625e0e25f131e0ffb90f0a","/d/d7/Unit-%C3%9Cberkilling_Machine-6.png?version=00e377dfd730b6089007afd47f0bc4b2"},4),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
@@ -415,7 +417,10 @@ public enum Unit {
 	Emilia("Emilia",new String[]{"/b/b4/Unit-Emilia-4.png?version=32ae4d818fc9ca8192c17c23235ebcc9","/a/ac/Unit-Emilia-5.png?version=abff369f1b4bd28439c43ea1fd653112","/d/d5/Unit-Emilia-6.png?version=7e79d24f70c3eefcfd480d8634365fdd"},4),
 	Ukiyo("Ukiyo",new String[]{"/9/9b/Unit-Ukiyo-5.png?version=50a485c4a99b32eac31e7a1f905f08eb","/4/49/Unit-Ukiyo-6.png?version=fb0abcec53d036dea602e9c122341d2a"},5),
 	Teo("Teo",new String[]{"/f/fa/Unit-Teo-3.png?version=5d389ee1d779ff9f63fa5cc0f14d381b","/5/57/Unit-Teo-4.png?version=17b5576e68f276f82404294cc535a63f","/d/d3/Unit-Teo-5.png?version=ef82f9e007cd767636214187b69e07ff"},3),
-	Reimi("Reimi",new String[]{"/d/d8/Unit-Reimi-4.png?version=e828aeee8706095a9218d24b3d469159","/b/b1/Unit-Reimi-5.png?version=b4d30f74748795884e13d69f209fd84e","/a/a6/Unit-Reimi-6.png?version=279b5d290c6bd9c8b77a3092c650e075"},4);
+	Reimi("Reimi",new String[]{"/d/d8/Unit-Reimi-4.png?version=e828aeee8706095a9218d24b3d469159","/b/b1/Unit-Reimi-5.png?version=b4d30f74748795884e13d69f209fd84e","/a/a6/Unit-Reimi-6.png?version=279b5d290c6bd9c8b77a3092c650e075"},4),
+	SlimeKnight("Slime Knight",new String[]{"/b/b4/Unit-Slime_Knight-4.png?version=72b23985d1d45c0ad25b6734bd44239f","/7/7d/Unit-Slime_Knight-5.png?version=3d0f0b76df1900c276b29256c99cb4b3","/c/c1/Unit-Slime_Knight-6.png?version=82a178e18f6506b20da43838066d5611"},4),
+	MarquisdeLeon("Marquis de Léon",new String[]{"/d/d9/Unit-Marquis_de_L%C3%A9on-5.png?version=9a3b0f3ba2112ff2217ad25e019dcc70","/7/74/Unit-Marquis_de_L%C3%A9on-6.png?version=23f6bdf3b341e20eaa4f1a20663a28f4","/d/db/Unit-Marquis_de_L%C3%A9on-7.png?version=117a90dbe3facf7bf50cf7a75efbcb59"},5),
+	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3);
 	
 	public String name;
 	public String[] url;
