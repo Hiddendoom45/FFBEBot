@@ -13,6 +13,8 @@ import java.util.Date;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
+import global.Main;
+
 /**
  * Class that records and logs everything
  * @author Allen
@@ -120,6 +122,7 @@ public class Log {
 			String out="["+time+"]"+"["+type+"]"+msg;
 			System.out.println(out);
 			log.add(out);
+			if(type.equals("ERROR"))Main.jda.getTextChannelById(Secrets.logChannelID).sendMessage(out);
 			lock.release();
 		}catch(Exception e){
 			e.printStackTrace();
