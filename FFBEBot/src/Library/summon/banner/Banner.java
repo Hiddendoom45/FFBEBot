@@ -105,6 +105,7 @@ public enum Banner {
 	DeusEx("Deus Ex",new Unit[]{Unit.AJensen,Unit.VMarchenko,Unit.VKoller,Unit.FPritchard},BannerRates.D5.fiveRate(),Lib.concat(Nalu.featured, Nalu.pool),Nalu.include,BannerType.ThreePercent),
 	FFXI2("FFXI 2", new Unit[]{Unit.RageShantotto,Unit.ShadowLord,Unit.Joachim,Unit.Kupipi},BannerRates.D5.fiveRate(),DeusEx.pool,DeusEx.include,BannerType.ThreePercent),
 	DQ2("Dragon Quest 2",new Unit[]{Unit.Estark,Unit.KillingMachine,Unit.Orochi,Unit.LMSlime,Unit.Golem,Unit.RobbinOod},BannerRates.D3T4.fiveRate(),Lib.concat(new Unit[]{Unit.RageShantotto,Unit.ShadowLord,Unit.Joachim}, FFXI2.pool),FFXI2.include,BannerType.ThreePercent),
+	Hyoh("CG Hyou",new Unit[]{Unit.Hyoh,Unit.Shatal,Unit.Domino},BannerRates.EvenSplit.fiveRate(),DQ2.pool,DQ2.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;

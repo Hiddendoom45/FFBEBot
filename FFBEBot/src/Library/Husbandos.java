@@ -159,6 +159,8 @@ public enum Husbandos {
 	Ryuka(Unit.Ryuka),
 	ShadowLord(Unit.ShadowLord),
 	Joachim(Unit.Joachim),
+	Shatal(Unit.Shatal),
+	Hyoh(Unit.Hyoh),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

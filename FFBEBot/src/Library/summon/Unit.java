@@ -323,7 +323,9 @@ public enum Unit {
 	RageShantotto("Livid Shantotto",new String[]{"/3/32/Unit-Livid_Shantotto-5.png?version=aa33a9fd9a389ef8052a98451d4a9833","/a/a3/Unit-Livid_Shantotto-6.png?version=8a88b6c3baa6d9ba2f8336389b34086a","/e/e4/Unit-Livid_Shantotto-7.png?version=3aa2f7dd700ba6d9594b5e0100091e27"},5),
 	ShadowLord("Shadow Lord",new String[]{"/1/1e/Unit-Shadow_Lord-5.png?version=094e1e1c22355aa904f9882dc3ee4216","/5/5c/Unit-Shadow_Lord-6.png?version=a15703cb90c9ea7db672ae3784341897","/f/f2/Unit-Shadow_Lord-7.png?version=639fc4505c63611e5aaa05b554ee1f5f"},5),
 	Joachim("Joachim",new String[]{"/a/ab/Unit-Joachim-4.png?version=69f6210578b754459105c6e1c32659c7","/0/0c/Unit-Joachim-5.png?version=b5eb9b871e7a1f7ffafac7296e4a6d7f","/a/a6/Unit-Joachim-6.png?version=404525e9c3a6f82239a72834761ac3cc"},4),
-	
+	Hyoh("Hyoh",new String[]{"/6/67/Unit-Hyoh-5.png?version=60fc33e6585b1d207b50febe4b8f1b22","/b/b9/Unit-Hyoh-6.png?version=2b80d4c1cb0ff3dc7c7a91613a37d08f","/5/59/Unit-Hyoh-7.png?version=f19e5c2ffcfd85654796ce59158019b5"},5),
+	Shatal("Shatal",new String[]{"/0/06/Unit-Shatal-4.png?version=17dd48fe8d1b64754903d105f92d8b6d","/8/8b/Unit-Shatal-5.png?version=3bbe4fbd2793690a091fbe76c0f3a2a3","/b/ba/Unit-Shatal-6.png?version=9ab794c47cd0fe7a4f6e81bbe1ea3cae"},4),
+	Domino("Domino",new String[]{"/9/92/Unit-Domino-3.png?version=9f30c6a2fcf800421dacc576831a05a2","/1/1d/Unit-Domino-4.png?version=80fdd6fd73a71f8c8a4e3f70af4473de","/6/6e/Unit-Domino-5.png?version=5d4b1402aaa9c2ef87b5a3505bcd34da"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -746,7 +748,27 @@ public enum Unit {
 				CGNichol,
 				Lexa,
 				Elbis,
-				Merald
+				Merald,
+				CGRaegen,
+				Ryumynui,
+				Zile,
+				Lucille,
+				ARain,
+				Mediena,
+				Squall,
+				Rinoa,
+				Zell,
+				Ramira,
+				Nalu,
+				Pecciotta,
+				Shinju,
+				Ryuka,
+				RageShantotto,
+				ShadowLord,
+				Joachim,
+				Hyoh,
+				Shatal,
+				Domino
 				
 		});
 	}
