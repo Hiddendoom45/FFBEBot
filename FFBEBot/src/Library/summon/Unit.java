@@ -326,6 +326,10 @@ public enum Unit {
 	Hyoh("Hyoh",new String[]{"/6/67/Unit-Hyoh-5.png?version=60fc33e6585b1d207b50febe4b8f1b22","/b/b9/Unit-Hyoh-6.png?version=2b80d4c1cb0ff3dc7c7a91613a37d08f","/5/59/Unit-Hyoh-7.png?version=f19e5c2ffcfd85654796ce59158019b5"},5),
 	Shatal("Shatal",new String[]{"/0/06/Unit-Shatal-4.png?version=17dd48fe8d1b64754903d105f92d8b6d","/8/8b/Unit-Shatal-5.png?version=3bbe4fbd2793690a091fbe76c0f3a2a3","/b/ba/Unit-Shatal-6.png?version=9ab794c47cd0fe7a4f6e81bbe1ea3cae"},4),
 	Domino("Domino",new String[]{"/9/92/Unit-Domino-3.png?version=9f30c6a2fcf800421dacc576831a05a2","/1/1d/Unit-Domino-4.png?version=80fdd6fd73a71f8c8a4e3f70af4473de","/6/6e/Unit-Domino-5.png?version=5d4b1402aaa9c2ef87b5a3505bcd34da"},3),
+	AlohaLasswell("Aloha Lasswell",new String[]{"/5/59/Unit-Aloha_Lasswell-5.png?version=3e5739a43cc41362063bcd07392ddc98","/6/66/Unit-Aloha_Lasswell-6.png?version=29ff0a93c1e33280bccc7e19d45371e3","/2/24/Unit-Aloha_Lasswell-7.png?version=d650edddcfefd3cd8392ee247797aec1"},5),
+	SeaNichol("Seaside Nichol",new String[]{"/1/17/Unit-Seaside_Nichol-5.png?version=8064fe27f07347420e707365cb570e4c","/7/78/Unit-Seaside_Nichol-6.png?version=148f8256dd5afa454bf39b522f1d38a5","/6/6a/Unit-Seaside_Nichol-7.png?version=9844956128702cfb4aaa2f447e3ad40e"},5),
+	SummerLuka("Summertime Luka",new String[]{"/d/d9/Unit-Summertime_Luka-4.png?version=c24f310bee58f0ebb073e3d312aa81fb","/d/d9/Unit-Summertime_Luka-5.png?version=5cdd240258914f278bb3508d74450462","/0/06/Unit-Summertime_Luka-6.png?version=37cc36135a3a5d762ed9e48ce03c51bf"},4),
+	TideSkaha("Tide Rider Skaha",new String[]{"/f/fb/Unit-Tide_Rider_Skaha-3.png?version=0717e1e4c3f0caeec77a1567300d5f9f","/4/41/Unit-Tide_Rider_Skaha-4.png?version=8482e4fac24f1bd69107688879293eca","/7/78/Unit-Tide_Rider_Skaha-5.png?version=f52ea33662ad37932cdaee8b1da31a0f"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),

@@ -125,6 +125,8 @@ public enum Waifus {
 	Shinju(Unit.Shinju),
 	RageShantotto(Unit.RageShantotto),
 	Domino(Unit.Domino),
+	SummerLuka(Unit.SummerLuka),
+	TideSkaha(Unit.TideSkaha),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),
