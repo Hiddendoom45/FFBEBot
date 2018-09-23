@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- Fix minor parse issues, clean up UnitArt command to use embeds
 - `@FFBEBot help` will also bring up help menu
 - Can search for unit by ID of base rarity w/ runit
 - Minor fixes to mod commands, some annoying messages temporary
@@ -25,7 +26,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - fully update parsing for exvius wiki and reddit wiki commands
 - new features
 
-### Bugs/Suggestings
+### Bugs/Suggestions
 
 - use the `bugreport [bug/suggestion]` command or open a new issue on this repository
 
