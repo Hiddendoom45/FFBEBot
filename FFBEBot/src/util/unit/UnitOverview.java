@@ -107,6 +107,7 @@ public class UnitOverview {
 		public String baseR;
 		public String maxR;
 		public String trustName;
+		public String superTrustName;
 		public boolean isNew=false;
 		public unitData(Element row){
 			imgUrl=row.getElementsByAttribute("src").first().attr("abs:src");
@@ -114,11 +115,14 @@ public class UnitOverview {
 			name=row.child(1).text();
 			if(row.child(1).child(0).hasClass("new"))isNew=true;
 			origin=row.child(2).text();
-			if(row.childNodeSize()<5){
+			if(row.children().size()>5){
 				role=row.child(3).text();
 				baseR=row.child(4).text();
 				maxR=row.child(5).text();
 				trustName=row.child(6).text();
+				if(row.children().size()>7){
+					superTrustName=row.child(7).text();
+				}
 			}
 			else{
 				baseR=row.child(3).text();
@@ -126,7 +130,7 @@ public class UnitOverview {
 			}
 		}
 		public String toString(){
-			return "imgUrl"+imgUrl+" unitUrl"+unitUrl+" name"+name+" origin"+origin+" role"+role+" baseR"+baseR+" maxR"+maxR+" trust"+trustName;
+			return "imgUrl"+imgUrl+" unitUrl"+unitUrl+" name"+name+" origin"+origin+" role"+role+" baseR"+baseR+" maxR"+maxR+" trust"+trustName+" superTrust"+superTrustName;
 		}
 	}
 	public String toString(){
