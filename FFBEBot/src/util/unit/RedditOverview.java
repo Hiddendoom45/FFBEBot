@@ -24,7 +24,6 @@ public class RedditOverview {
 				uNum=Lib.extractNumber(unitName);
 			}
 			for(unitData u:new Gson().fromJson(Data.redditO,unitData[].class)){
-				System.out.println(u.unitID);
 				if(uNum>-1&&u.unitID==uNum){
 					this.possible.add(u.name);
 					this.possibleData.add(u);
