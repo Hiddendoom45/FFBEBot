@@ -15,7 +15,9 @@ public class UnitRelated {
 		enName=row.child(3).text();
 		MP=row.child(4).text();
 		effect=row.child(5).text();
-		description=row.child(6).text();
+		if(row.children().size()>6){
+			description=row.child(6).text();
+		}
 	}
 
 }

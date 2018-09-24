@@ -47,19 +47,22 @@ public class RedditUnit {
 			Element content=doc.getElementsByClass("wiki-page-content").first().getElementsByClass("wiki").first();
 			try{
 				title=content.getElementsByTag("h2").first().text();
-				Element headerBox = content.getElementsByTag("ul").get(2);
+				Element headerBox = content.getElementsByTag("h2").first();
+				while(!headerBox.tagName().equals("ul")){
+					headerBox = headerBox.nextElementSibling();
+				}
 				JobTribe=headerBox.child(0).text();
-				TrustDetails=headerBox.child(1).text();
+				TrustDetails=Lib.parseText(headerBox.child(1));
 				if(headerBox.children().size()>2){
-					STrustDetails=headerBox.child(2).text();
+					STrustDetails=headerBox.child(2).text().startsWith("Super Trust Reward = ")?Lib.parseText(headerBox.child(2)):"";
 				}
 				if(TrustDetails.contains("Tribe")){
 					JobTribe+=headerBox.child(1).text();
-					TrustDetails=headerBox.child(2).text();
+					TrustDetails=Lib.parseText(headerBox.child(2));
 					if(headerBox.children().size()>3){
-						STrustDetails=headerBox.child(3).text();
+						STrustDetails=headerBox.child(3).text().startsWith("Super Trust Reward = ")?Lib.parseText(headerBox.child(3)):"";
 					}
-				}
+				} 
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing basic info for page "+page);
 				Log.logShortError(e, 5);
@@ -174,7 +177,19 @@ public class RedditUnit {
 			}
 			try{
 				Element e=Lib.getEleAfter(content.children(), new ElementFilter("h3","Enhancements"));
+				int c = 0;
+				while(!(e==null)&&!e.tagName().equals("table")){
+					if(c>3){
+						e=null;
+						break;
+					}
+					c++;
+					e=e.nextElementSibling();
+				}
 				if(!(e==null)){
+					if(URL.equals("https://www.reddit.com/r/FFBraveExvius/wiki/units/1388")||URL.equals("https://www.reddit.com/r/FFBraveExvius/wiki/units/1382")){
+						System.out.println(e);
+					}
 					Elements en=e.getElementsByTag("tbody");
 					if(!(en==null)){
 						Element enhancements=en.first();

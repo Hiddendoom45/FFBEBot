@@ -6,6 +6,8 @@ import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
 import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Node;
+import org.jsoup.nodes.TextNode;
 import org.jsoup.select.Elements;
 
 import Library.ElementFilter;
@@ -447,6 +449,30 @@ public class Lib {
 			return link.attr("abs:href");
 		}
 		return "";
+	}
+	/**
+	 * Parses text to appear similar to how it would be displayed, mainly just converts <br>
+	 * to \n
+	 * @param ele Element to parse the text for
+	 * @return String representing the text, similar to .text() 
+	 */
+	public static String parseText(Element ele){
+		String s = "";
+		for(Node n:ele.childNodes()){
+			if(n instanceof TextNode){
+				s+=((TextNode) n).text();
+			}
+			else if (n instanceof Element){
+				Element e = (Element) n;
+				if(e.tagName().equals("br")){
+					s+="\n";
+				}
+				else{//parse for nestled elements
+					s+=parseText(e);
+				}
+			}
+		}
+		return s;
 	}
 	//reading stuff for custom XML class
 	/**
