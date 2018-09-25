@@ -12,8 +12,6 @@ import javax.imageio.ImageIO;
 
 import org.jsoup.Jsoup;
 
-import Library.flair.FlairCSSParser;
-
 /**
  * Parse the reddit unit flairs as images, saved locally
  * @author Allen

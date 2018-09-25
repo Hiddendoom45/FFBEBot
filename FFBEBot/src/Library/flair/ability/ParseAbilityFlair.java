@@ -12,8 +12,6 @@ import javax.imageio.ImageIO;
 
 import org.jsoup.Jsoup;
 
-import Library.flair.FlairCSSParser;
-
 public class ParseAbilityFlair {
 	public static void main(String[] args) throws IOException{
 		File flairDest = new File("src/Library/flair/ability");
