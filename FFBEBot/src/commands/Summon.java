@@ -53,6 +53,11 @@ public class Summon extends CommandGenerics implements Command {
 							sendImage(event, Pull.pull(num,pullBanner),pullBanner.name);
 						}
 					}
+					catch(NumberFormatException e){
+						//bedile
+						args[0] = "0";
+						action(args,event);
+					}
 					catch(Exception e){
 						Log.logError(e);
 					}
