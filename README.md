@@ -14,12 +14,12 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- added unit flair image in runit command
 - Fix a lot of parse issues with reddit units
 - Fix minor parse issues, clean up UnitArt command to use embeds
 - `@FFBEBot help` will also bring up help menu
 - Can search for unit by ID of base rarity w/ runit
 - Minor fixes to mod commands, some annoying messages temporary
-- Fix some issues with runit/requipment
 
 #### TODO:
 
