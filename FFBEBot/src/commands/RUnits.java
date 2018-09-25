@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import global.record.SaveSystem;
 import net.dv8tion.jda.core.entities.MessageEmbed.Field;
+import net.dv8tion.jda.core.entities.MessageEmbed.ImageInfo;
 import net.dv8tion.jda.core.entities.impl.MessageEmbedImpl;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
@@ -12,7 +13,7 @@ import util.unit.RedditOverview;
 import util.unit.RedditUnit;
 
 public class RUnits extends RedditSelection {
-	public void sendUnitData(RedditUnit info,MessageReceivedEvent event){
+	public void sendUnitData(RedditUnit info,int id,MessageReceivedEvent event){
 		MessageEmbedImpl embed=new MessageEmbedImpl();
 		embed.setTitle("__**"+info.title+"**__\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n");
 		ArrayList<Field> fields = new ArrayList<Field>();
@@ -33,17 +34,21 @@ public class RUnits extends RedditSelection {
 		fields.add(new Field("Stats",stat,false));
 		fields.add(new Field("Link","[unit link]("+info.URL+")",false));
 		embed.setFields(fields);
+		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", id);
+		if(Lib.exists(imgUrl)){
+			embed.setImage(new ImageInfo(imgUrl, "", 56, 38));
+		}
 		event.getChannel().sendMessage(embed).complete();
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(0).name),event);
+		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(0).name),Ounit.getData(0).unitID,event);
 
 	}
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(selection).name),event);
+		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(selection).name),Ounit.getData(selection).unitID,event);
 	}
 
 	@Override

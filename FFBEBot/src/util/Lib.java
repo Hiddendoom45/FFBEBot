@@ -1,6 +1,8 @@
 package util;
 
 import java.io.File;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Arrays;
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
@@ -707,6 +709,19 @@ public class Lib {
 		  T[] result = Arrays.copyOf(first, first.length + second.length);
 		  System.arraycopy(second, 0, result, first.length, second.length);
 		  return result;
+	}
+	// https://stackoverflow.com/questions/4596447/check-if-file-exists-on-remote-server-using-its-url
+	public static boolean exists(String URLName) {
+		try {
+			HttpURLConnection.setFollowRedirects(false);
+			// note : you may also need
+			// HttpURLConnection.setInstanceFollowRedirects(false)
+			HttpURLConnection con = (HttpURLConnection) new URL(URLName).openConnection();
+			con.setRequestMethod("HEAD");
+			return (con.getResponseCode() == HttpURLConnection.HTTP_OK);
+		} catch (Exception e) {
+			return false;
+		}
 	}
 	//synchronization to avoid 2 samename files trying to get newname at the same time
 	/**
