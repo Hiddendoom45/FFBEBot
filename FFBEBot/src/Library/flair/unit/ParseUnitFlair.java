@@ -12,6 +12,8 @@ import javax.imageio.ImageIO;
 
 import org.jsoup.Jsoup;
 
+import Library.flair.FlairCSSParser;
+
 /**
  * Parse the reddit unit flairs as images, saved locally
  * @author Allen
@@ -27,9 +29,8 @@ public class ParseUnitFlair {
 		//38x56 flair resolution
 		int fH = 38;
 		int fW = 56;
-
+		String unitCSSSource = FlairCSSParser.getFlairCSSURL();
 		String unitFlairSource = "https://b.thumbs.redditmedia.com/MAnjfMe3Xqw5CPT3ATJrbXa5xECM5o-yZrevtAcWwTY.png";
-		String unitCSSSource = "https://b.thumbs.redditmedia.com/GsKQ-nkhBdXNCYCYSndg1FnCgUS5CnwN_3iwSyZfr-c.css";
 		String css = Jsoup.connect(unitCSSSource).execute().body();
 		//regex to match css which indicates the unit# and the shift of the main image
 		Matcher m = Pattern.compile("a\\Q[href$=\"\\E/u(\\d*?)/\\Q\"]\\E.*?\\{background:0 -(\\d*?)em\\}").matcher(css);
@@ -44,4 +45,5 @@ public class ParseUnitFlair {
 			ImageIO.write(f, "PNG", new File(flairDest.getAbsoluteFile()+"/u"+m.group(1)+".png"));
 		}
 	}
+
 }
