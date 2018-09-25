@@ -1,8 +1,13 @@
 package commands;
 
+import java.awt.Color;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.imageio.ImageIO;
+
+import de.androidpit.colorthief.ColorThief;
 import global.record.SaveSystem;
 import net.dv8tion.jda.core.entities.MessageEmbed.Field;
 import net.dv8tion.jda.core.entities.MessageEmbed.ImageInfo;
@@ -37,6 +42,13 @@ public class RUnits extends RedditSelection {
 		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", id);
 		if(Lib.exists(imgUrl)){
 			embed.setImage(new ImageInfo(imgUrl, "", 56, 38));
+		}
+		try {
+			BufferedImage flair = ImageIO.read(getClass().getResourceAsStream(String.format("/Library/flair/unit/u%03d.png", id)));
+			int[] rgb = ColorThief.getColor(flair);
+			embed.setColor(new Color(rgb[0], rgb[1], rgb[2]));
+		} catch (Exception e) {
+			//supress exceptions from failing to set flair color stuffs
 		}
 		event.getChannel().sendMessage(embed).complete();
 	}
