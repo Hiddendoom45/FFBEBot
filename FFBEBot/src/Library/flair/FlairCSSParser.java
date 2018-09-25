@@ -6,6 +6,9 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 public class FlairCSSParser {
+	public static void main(String[] args) throws IOException{
+		System.out.println(getFlairCSSURL());
+	}
 	public static String getFlairCSSURL() throws IOException{
 		String url = "https://old.reddit.com/r/FFBraveExvius/";
 		Document doc = Jsoup.connect(url).execute().parse();

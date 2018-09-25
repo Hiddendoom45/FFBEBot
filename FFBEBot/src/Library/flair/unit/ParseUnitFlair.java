@@ -29,9 +29,9 @@ public class ParseUnitFlair {
 		//38x56 flair resolution
 		int fH = 38;
 		int fW = 56;
-		String unitCSSSource = FlairCSSParser.getFlairCSSURL();
-		String unitFlairSource = "https://b.thumbs.redditmedia.com/MAnjfMe3Xqw5CPT3ATJrbXa5xECM5o-yZrevtAcWwTY.png";
+		String unitCSSSource = "https://b.thumbs.redditmedia.com/GsKQ-nkhBdXNCYCYSndg1FnCgUS5CnwN_3iwSyZfr-c.css";
 		String css = Jsoup.connect(unitCSSSource).execute().body();
+		String unitFlairSource = extractFlairSource(css);
 		//regex to match css which indicates the unit# and the shift of the main image
 		Matcher m = Pattern.compile("a\\Q[href$=\"\\E/u(\\d*?)/\\Q\"]\\E.*?\\{background:0 -(\\d*?)em\\}").matcher(css);
 		//read image of all flairs from reddit
@@ -43,6 +43,15 @@ public class ParseUnitFlair {
 			//pretty much doing the same thing the css does, shift image draw
 			g.drawImage(flairs, 0, Integer.parseInt(m.group(2))*-fH, null);
 			ImageIO.write(f, "PNG", new File(flairDest.getAbsoluteFile()+"/u"+m.group(1)+".png"));
+		}
+	}
+	private static String extractFlairSource(String css){
+		Matcher m = Pattern.compile("\\Qa[href*=\"#I/Icons/\"]:after{background-image:url(\"\\E(.*?)\\Q\")!important}\\E").matcher(css);
+		if(m.find()){
+			return "https:"+m.group(1);
+		}
+		else{
+			return "https://b.thumbs.redditmedia.com/MAnjfMe3Xqw5CPT3ATJrbXa5xECM5o-yZrevtAcWwTY.png";
 		}
 	}
 
