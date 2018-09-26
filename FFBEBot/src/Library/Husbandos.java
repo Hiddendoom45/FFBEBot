@@ -208,14 +208,17 @@ public enum Husbandos {
 	FPritchard(Unit.FPritchard);
 	
 
-	public String name;
-	public String url;
+	public final String name;
+	public final String url;
+	public final Unit unit;
 	Husbandos(String name,Unit unit){
 		this.name=name;
 		this.url = unit.url[unit.url.length-1];
+		this.unit = unit;
 	}
 	Husbandos(Unit unit){
 		name=unit.name;
 		url=unit.url[unit.url.length-1];
+		this.unit = unit;
 	}
 }

@@ -179,14 +179,17 @@ public enum Waifus {
 	
 	
 	
-	public String name;
-	public String url;
+	public final String name;
+	public final String url;
+	public final Unit unit;
 	Waifus(String name,Unit unit){
 		this.name=name;
 		this.url = unit.url[unit.url.length-1];
+		this.unit = unit;
 	}
 	Waifus(Unit unit){
 		this.name=unit.name;
 		this.url = unit.url[unit.url.length-1];
+		this.unit = unit;
 	}
 }
