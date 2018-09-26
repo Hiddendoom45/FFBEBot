@@ -51,6 +51,8 @@ public class BotListener extends ListenerAdapter{
 		if(SaveSystem.getGuild(event.getGuild().getId())==null){
 			SaveSystem.setSetting(new Settings(event.getGuild().getId()));
 		}
+		//set game state primarily for new server
+		Main.setGame(Main.states.randomReady());
 	}
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
