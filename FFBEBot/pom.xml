@@ -4,8 +4,8 @@
     <groupId>HiddenDoom</groupId>
     <artifactId>FFBEBot</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.79</version>
-    <name>SearchBot</name>
+    <version>1.0.0</version>
+    <name>FFBEBot</name>
     <url></url>
 
     <properties>
@@ -25,14 +25,17 @@
             <url>http://dl.bintray.com/dv8fromtheworld/maven</url>
         </repository>
         <repository>
-    <id>jcenter</id>
-    <name>jcenter-bintray</name>
-    <url>http://jcenter.bintray.com</url>
-</repository>
+    		<id>jcenter</id>
+    		<name>jcenter-bintray</name>
+    		<url>http://jcenter.bintray.com</url>
+		</repository>
+		<repository>
+		    <id>jitpack.io</id>
+		    <url>https://jitpack.io</url>
+		</repository>
     </repositories>
-
     <dependencies>
-    
+    	
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
@@ -40,12 +43,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <type>jar</type>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
             <type>jar</type>
             <scope>compile</scope>
         </dependency>
@@ -67,10 +64,69 @@
             <artifactId>unirest-java</artifactId>
             <scope>compile</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>42.2.5</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-drive -->
+		<dependency>
+    		<groupId>com.google.apis</groupId>
+   		 	<artifactId>google-api-services-drive</artifactId>
+   		 	<type>jar</type>
+            <scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+    		<groupId>com.google.code.gson</groupId>
+    		<artifactId>gson</artifactId>
+    		<type>jar</type>
+            <scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+		<dependency>
+   		 	<groupId>org.jsoup</groupId>
+    		<artifactId>jsoup</artifactId>
+    		<type>jar</type>
+            <scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-java6 -->
+		<dependency>
+		    <groupId>com.google.oauth-client</groupId>
+		    <artifactId>google-oauth-client-java6</artifactId>
+		    <type>jar</type>
+            <scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.oauth-client/google-oauth-client-jetty -->
+		<dependency>
+		    <groupId>com.google.oauth-client</groupId>
+		    <artifactId>google-oauth-client-jetty</artifactId>
+		    <type>jar</type>
+            <scope>compile</scope>
+		</dependency>
+
+		<dependency>
+    		<groupId>com.github.SvenWoltmann</groupId>
+    		<artifactId>color-thief-java</artifactId>
+    		<type>jar</type>
+            <scope>compile</scope>
+		</dependency>
     </dependencies>
     <!-- Build Process -->
     <build>
-        <finalName>DiscordSelfBot-${project.version}</finalName>
+        <finalName>FFBEBot-${project.version}</finalName>
+        <sourceDirectory>src</sourceDirectory>
+        <resources>
+	        <resource>
+	            <directory>src</directory>
+	            <excludes>
+	                <exclude>**/*.java</exclude>
+	            </excludes>
+	        </resource>
+    	</resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -100,7 +156,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>net.notfab.discord.selfbot.Start</mainClass>
+                            <mainClass>global.Main</mainClass>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                         <manifestEntries>
@@ -145,11 +201,35 @@
     			<version>3.3.0_261</version>
     		</dependency>
     		<dependency>
-    <groupId>com.google.apis</groupId>
-    <artifactId>google-api-services-drive</artifactId>
-    <version>v3-rev69-1.22.0</version>
-</dependency>
-    		
+			    <groupId>com.google.apis</groupId>
+			    <artifactId>google-api-services-drive</artifactId>
+			    <version>v3-rev69-1.22.0</version>
+			</dependency>
+    		<dependency>
+    			<groupId>com.google.code.gson</groupId>
+    			<artifactId>gson</artifactId>
+    			<version>2.6.2</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>com.google.oauth-client</groupId>
+    			<artifactId>google-oauth-client</artifactId>
+    			<version>1.23.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>com.google.oauth-client</groupId>
+    			<artifactId>google-oauth-client-java6</artifactId>
+    			<version>1.22.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>com.google.oauth-client</groupId>
+    			<artifactId>google-oauth-client-jetty</artifactId>
+    			<version>1.22.0</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>com.github.SvenWoltmann</groupId>
+    			<artifactId>color-thief-java</artifactId>
+    			<version>v1.1.1</version>
+    		</dependency>
     	</dependencies>
     </dependencyManagement>
 </project>
