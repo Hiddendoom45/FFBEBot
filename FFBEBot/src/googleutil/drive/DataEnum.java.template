@@ -1,0 +1,18 @@
+package googleutil.drive;
+
+/**
+ * Stores IDs for drive files
+ * @author Allen
+ *
+ */
+public enum DataEnum {
+	//Contains the file IDs for the files in google drive in which the preload/data/logs are pushed/pulled from
+	//To create upload random text file, click on it to preview, click on ... then open in new window, id is portion of URL after /d/ before /view
+	FFBEData(""), 
+	PreloadData(""), 
+	LogSource("");
+	public String id;
+	DataEnum(String id){
+		this.id=id;
+	}
+}
