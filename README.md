@@ -27,6 +27,13 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - fully update parsing for exvius wiki and reddit wiki commands
 - new features
 
+
+### Building
+
+- The bot is setup to be built with maven. [Download.](https://maven.apache.org/download.cgi) Or use your preferred package manager. 
+- Run `mvn --version` to check that you have installed it correctly.;
+- Run `mvn clean` to clean up any previous builds and then `mvn package` to build the jar file.
+
 ### Bugs/Suggestions
 
 - use the `bugreport [bug/suggestion]` command or open a new issue on this repository
