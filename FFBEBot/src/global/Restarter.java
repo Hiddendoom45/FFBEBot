@@ -42,10 +42,9 @@ public class Restarter {
 		return new Runnable(){
 			public void run(){
 				Log.log("system", "Bot is sleeping for "+Restarter.sleep+" secounds");
-				Main.shutdown();
 				try {
 					Restarter.SleepActivity();
-					TimeUnit.SECONDS.sleep(sleep);
+					//TimeUnit.SECONDS.sleep(sleep);
 					//Main.startup();
 				} catch (Exception e) {
 					Log.logError(e);
