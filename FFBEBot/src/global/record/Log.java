@@ -122,7 +122,9 @@ public class Log {
 			String out="["+time+"]"+"["+type+"]"+msg;
 			System.out.println(out);
 			log.add(out);
-			if(type.equals("ERROR"))Main.jda.getTextChannelById(Secrets.logChannelID).sendMessage(out).complete();
+			try{
+				if(type.equals("ERROR"))Main.jda.getTextChannelById(Secrets.logChannelID).sendMessage(out).complete();
+			}catch(Exception e){}//suppress error, ignore if fail to log to channel
 			lock.release();
 		}catch(Exception e){
 			e.printStackTrace();
