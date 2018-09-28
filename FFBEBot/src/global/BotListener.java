@@ -22,6 +22,7 @@ import util.Selector;
 public class BotListener extends ListenerAdapter{
 	@Override
 	public void onMessageReceived(MessageReceivedEvent event) {
+		if(!Settings.loaded)return;
 		try{
 			if(Overrider.parseOverride(event))return;//test for override commands
 			if(Selector.parseSelection(event))return;//test for pending selections
@@ -44,6 +45,7 @@ public class BotListener extends ListenerAdapter{
 	}
 	@Override
 	public void onReady(ReadyEvent event){
+		if(!Settings.loaded) return;
 		Main.log("status","logged in as: "+event.getJDA().getSelfUser().getName());//get name of bot, for testing and other related purposes
 	}
 	@Override
@@ -56,6 +58,7 @@ public class BotListener extends ListenerAdapter{
 	}
 	@Override
 	public void onGuildMemberJoin(GuildMemberJoinEvent event) {
+		if(!Settings.loaded) return;
 		if(SaveSystem.getGuild(event.getGuild().getId()).tJoinMsg){
 			util.Lib.sendMessageFormated(event, SaveSystem.getJoin(event));
 		}

@@ -175,6 +175,7 @@ public class Main {
 		RedditUnit.buildRefImg();//builds hashmap for image icons
 		SpamControl.setSpams();//sets the data for custom spam types
 		SaveSystem.setup();//loads all the data
+		Settings.loaded=true;//mark everything as loaded, botListener will now start actually parsing stuff
 		setGame(states.randomReady());//sets the game for a random state
 		
 	}

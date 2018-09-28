@@ -37,6 +37,7 @@ public class Settings {
 	public static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(30);//used for various threaded activities
 	public static HashSet<String> blacklist=new HashSet<String>();
 	public static long dailyTime;
+	public static boolean loaded = false;
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access	
 	public static Banner DefaultBanner=Banner.SSSummer;//default banner used by summon simulators
 	
