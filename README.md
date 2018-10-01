@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- add flair command, update parsers for both wikis
 - used color-thief-java to add some colors to some embeds based on the image
 - added unit flair image in runit command
 - Fix a lot of parse issues with reddit units
