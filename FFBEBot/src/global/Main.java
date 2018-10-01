@@ -109,6 +109,7 @@ public class Main {
 		CmdControl.addCommand("rskill", new RSkill(), Module);
 		CmdControl.addCommand("requipment", new REquipment(), Module);
 		CmdControl.addCommand("rawaken", new RAwaken(), Module);
+		CmdControl.addCommand(new String[]{"flair","flairs"}, new Flair(), Module);
 		
 		Module=ModuleEnum.Salt.toString();
 		CmdControl.addCommand("summon", new Summon(), Module);
