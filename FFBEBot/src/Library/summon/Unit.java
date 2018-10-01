@@ -330,6 +330,8 @@ public enum Unit {
 	SeaNichol("Seaside Nichol",new String[]{"/1/17/Unit-Seaside_Nichol-5.png?version=8064fe27f07347420e707365cb570e4c","/7/78/Unit-Seaside_Nichol-6.png?version=148f8256dd5afa454bf39b522f1d38a5","/6/6a/Unit-Seaside_Nichol-7.png?version=9844956128702cfb4aaa2f447e3ad40e"},5),
 	SummerLuka("Summertime Luka",new String[]{"/d/d9/Unit-Summertime_Luka-4.png?version=c24f310bee58f0ebb073e3d312aa81fb","/d/d9/Unit-Summertime_Luka-5.png?version=5cdd240258914f278bb3508d74450462","/0/06/Unit-Summertime_Luka-6.png?version=37cc36135a3a5d762ed9e48ce03c51bf"},4),
 	TideSkaha("Tide Rider Skaha",new String[]{"/f/fb/Unit-Tide_Rider_Skaha-3.png?version=0717e1e4c3f0caeec77a1567300d5f9f","/4/41/Unit-Tide_Rider_Skaha-4.png?version=8482e4fac24f1bd69107688879293eca","/7/78/Unit-Tide_Rider_Skaha-5.png?version=f52ea33662ad37932cdaee8b1da31a0f"},3),
+	Malphasie("Malphasie",new String[]{"/3/3b/Unit-Malphasie-5.png?version=7987639bb479505f2ca1c4853c3ed002","/7/7b/Unit-Malphasie-6.png?version=f4c9adde0279f4be1616d6df89963984","/b/bd/Unit-Malphasie-7.png?version=0cc9e7be8879e9f5acac0e4b874c87f6"},5),
+	Circe("Circe",new String[]{"/c/ce/Unit-Circe-5.png?version=fd80b0cd90e5d2f8e9a05e7a4d78d925","/c/c8/Unit-Circe-6.png?version=05c5e4ea9b165d503422afe0ec3b6a83","/2/21/Unit-Circe-7.png?version=33daca89a870ec885a1e65c230e75035"},5),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),

@@ -67,7 +67,7 @@ public class RUnits extends RedditSelection {
 	public void help(MessageReceivedEvent event) {
 		String s=SaveSystem.getPrefix(event)+"runits [unitname]\n"
 				+ "\tdisplay general information about a unit\n"
-				+ "\t[unitname] unit to get info for(doesn't have to be the full name)";
+				+ "\t[unitname] unit to get info for(doesn't have to be the full name) or the id";
 		Lib.sendMessage(event, s);
 	}
 }
