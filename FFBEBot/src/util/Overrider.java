@@ -46,10 +46,10 @@ public class Overrider {
 		return false;
 	}
 	public static void addOverrideCommand(String name, OverrideCommand command){
-		commands.put(name, command);
+		commands.put(name.toLowerCase(), command);
 	}
 	private static boolean handleOverride(ArgContainer args,MessageReceivedEvent event){
-		if(commands.containsKey(args.command)){
+		if(commands.containsKey(args.command.toLowerCase())){
 			if(args.args.containsKey("help")){
 				commands.get(args.command).help(event);
 				return true;
