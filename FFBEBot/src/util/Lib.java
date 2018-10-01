@@ -473,6 +473,9 @@ public class Lib {
 				if(e.tagName().equals("br")){
 					s+="\n";
 				}
+				else if(e.tagName().equals("code")){
+					s+="\n"+e.text();
+				}
 				else{//parse for nestled elements
 					s+=parseText(e);
 				}

@@ -1,6 +1,8 @@
 package util.unit;
 
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -71,24 +73,43 @@ public class RedditOverview {
 	}
 	public static class unitData{
 		public String unitUrl;
+		public String dbUrl;
+		public String famitsuUrl;
 		public int unitID;
 		public String name;
 		public String JPname;
 		public String origin;
+		public String role;
 		public int baseR;
 		public int maxR;
+		public String enhanceBatch;
 		public unitData(Element row){
-			unitUrl=row.getElementsByAttribute("href").get(1).absUrl("href");
 			try{
-			unitID = Integer.parseInt(unitUrl.substring(unitUrl.lastIndexOf("/")+1));
-			}catch(NumberFormatException ne){
-				unitID=-1;
+				unitID = Integer.parseInt(row.child(0).text());
+			}catch(NumberFormatException e){
+				try{
+				Matcher m = Pattern.compile("\\Q#I/Icons/u\\E([\\d]+)\\/").matcher(row.child(1).getElementsByTag("a").attr("href"));
+				if(m.matches()){
+					unitID = Integer.parseInt(m.group(1));
+				}
+				else{
+					throw new Exception("Does not match");
+				}
+				}catch(Exception e1){
+					unitID = -1;
+				}
 			}
-			name=row.child(2).text();
-			JPname=row.child(1).text();
-			origin=row.child(3).text();
-			baseR=Lib.extractNumber(row.child(4).child(0).attr("href"));
-			maxR=Lib.extractNumber(row.child(5).child(0).attr("href"));
+			unitUrl=row.child(3).getElementsByTag("a").get(0).absUrl("href");
+			dbUrl=row.child(3).getElementsByTag("a").get(1).absUrl("href");
+			famitsuUrl=row.child(3).getElementsByTag("a").get(2).absUrl("href");
+			String[] names = Lib.parseText(row.child(2)).split("\n");
+			name=names[0].trim();
+			JPname=names[1].trim();
+			origin=row.child(4).text();
+			role=row.child(5).text();
+			baseR=(int)row.child(7).text().codePoints().filter(c -> c=='★').count();
+			maxR=baseR+(int)row.child(7).text().codePoints().filter(c -> c=='✰').count();
+			enhanceBatch = row.child(8).text();
 		}
 		
 	}
