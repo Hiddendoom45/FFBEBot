@@ -25,9 +25,9 @@ public class Selector {
 	public static boolean parseSelection(MessageReceivedEvent event){
 		//overall check for if there is an event
 		if(selections.containsKey(key(event))){
-			Log.log("status", "selectionText:" + event.getMessage().getContent()+" from "+event.getAuthor()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild()));
+			Log.log("status", "selectionText:" + event.getMessage().getContentRaw()+" from "+event.getAuthor()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild()));
 			//if user exits
-			if(event.getMessage().getContent().equals("exit")){
+			if(event.getMessage().getContentRaw().equals("exit")){
 				event.getChannel().sendTyping();//notify message recieved
 				selfPrune(selections.get(key(event)),event);//delete messages in relation to selection
 				selections.remove(key(event));//remove event
@@ -39,9 +39,9 @@ public class Selector {
 				event.getChannel().sendTyping();//notify message recieved
 				Select select=selections.get(key(event));//select representing the event
 				//check if valid
-				if(valid(select.source.getInputType(),event)&&Selection(select.source.getInputType(),event.getMessage().getContent())<select.options.size()){
-					select.selected=Selection(select.source.getInputType(),event.getMessage().getContent());//create new selected to return
-					select.selectedText=event.getMessage().getContent();//set text of selected
+				if(valid(select.source.getInputType(),event)&&Selection(select.source.getInputType(),event.getMessage().getContentRaw())<select.options.size()){
+					select.selected=Selection(select.source.getInputType(),event.getMessage().getContentRaw());//create new selected to return
+					select.selectedText=event.getMessage().getContentRaw();//set text of selected
 					selfPrune(select,event);//delete messages in relation to selection
 					selections.remove(key(event));//remove event //before triggering main command so selections can be chained
 					select.source.selectionChosen(select, event);//return to main command that selection has been chosen
@@ -93,21 +93,21 @@ public class Selector {
 	private static boolean valid(int SelectionType,MessageReceivedEvent event){
 		if(SelectionType==0){//number, just check if it's a number
 			try{
-				Integer.parseInt(event.getMessage().getContent());
+				Integer.parseInt(event.getMessage().getContentRaw());
 				return true;
 			}catch(NumberFormatException e){
-				Log.log("CMDERROR","NaN:"+event.getMessage().getContent());
+				Log.log("CMDERROR","NaN:"+event.getMessage().getContentRaw());
 				return false;
 			}
 		}
 		else if(SelectionType==1){//if message is a letter
-			return isAlpha(event.getMessage().getContent());
+			return isAlpha(event.getMessage().getContentRaw());
 		}
 		else if(SelectionType==2){//null selection
 			return true;
 		}
 		else if(SelectionType==3){//yes no selection
-			String message=event.getMessage().getContent();
+			String message=event.getMessage().getContentRaw();
 			if(message.toLowerCase().contains("y")||message.toLowerCase().contains("n")){
 				return true;
 			}
@@ -182,7 +182,7 @@ public class Selector {
 			e.getChannel().getMessageById(s.messageID).complete().delete().queue();
 			if(e.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_MANAGE)){
 				e.getMessage().delete().queue();
-				Log.log("DELETE", "deleted message "+e.getMessage().getContent());
+				Log.log("DELETE", "deleted message "+e.getMessage().getContentRaw());
 			}
 		}catch(Exception e1){
 			if(!e.isFromType(ChannelType.PRIVATE)){

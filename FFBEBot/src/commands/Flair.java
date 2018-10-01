@@ -3,15 +3,13 @@ package commands;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
 import de.androidpit.colorthief.ColorThief;
 import global.record.SaveSystem;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.MessageEmbed.Field;
-import net.dv8tion.jda.core.entities.MessageEmbed.ImageInfo;
-import net.dv8tion.jda.core.entities.impl.MessageEmbedImpl;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
@@ -20,11 +18,11 @@ import util.unit.RedditOverview.unitData;
 public class Flair extends RedditSelection {
 
 	public void sendFlair(MessageReceivedEvent event,unitData data){
-		MessageEmbedImpl embed=new MessageEmbedImpl();
+		EmbedBuilder embed=new EmbedBuilder();
 		embed.setTitle("Flair for "+data.name);
 		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", data.unitID);
 		if(Lib.exists(imgUrl)){
-			embed.setImage(new ImageInfo(imgUrl, "", 56, 38));
+			embed.setImage(imgUrl);
 		}
 		try {
 			BufferedImage flair = ImageIO.read(getClass().getResourceAsStream(String.format("/Library/flair/unit/u%03d.png", data.unitID)));
@@ -33,9 +31,7 @@ public class Flair extends RedditSelection {
 		} catch (Exception e) {
 			//supress exceptions from failing to set flair color stuffs
 		}
-		ArrayList<Field> fields = new ArrayList<Field>();
-		fields.add(new Field("CSS", "```\n["+data.name+"](#I/Icons/u"+data.unitID+")\n```", true));
-		embed.setFields(fields);
+		embed.addField(new Field("CSS", "```\n["+data.name+"](#I/Icons/u"+data.unitID+")\n```", true));
 		Lib.sendEmbed(event, embed);
 		
 	}

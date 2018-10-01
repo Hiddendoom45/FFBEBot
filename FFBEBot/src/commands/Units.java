@@ -1,14 +1,10 @@
 package commands;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Vector;
 
 import global.record.SaveSystem;
-import net.dv8tion.jda.core.entities.MessageEmbed.AuthorInfo;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.MessageEmbed.Field;
-import net.dv8tion.jda.core.entities.MessageEmbed.ImageInfo;
-import net.dv8tion.jda.core.entities.impl.MessageEmbedImpl;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.Selection;
@@ -35,15 +31,12 @@ public class Units extends UnitSelection implements Command,Selection {
 		//out+="\nlink to wiki::link:";
 		//out+=info.URL+"";//discord now grabs the unit image from the link
 		//out+="\n:art:"+info.imgOverviewURL;
-		MessageEmbedImpl embed=new MessageEmbedImpl();
-		embed.setAuthor(new AuthorInfo(info.unitName, "", null,null));
+		EmbedBuilder embed=new EmbedBuilder();
+		embed.setAuthor(info.unitName,info.URL);
 		embed.setDescription("[unit link]("+info.URL+")");
-		List<Field> fields=new Vector<Field>();
-		fields.add(new Field("TM - "+info.trustName,"[TM link]("+info.trustLink+")\n"+info.trustDetails.toString(),false));
-		embed.setFields(fields);
-		embed.setUrl(info.URL);
+		embed.addField(new Field("TM - "+info.trustName,"[TM link]("+info.trustLink+")\n"+info.trustDetails.toString(),false));
 		//embed.setDescription("link");
-		embed.setImage(new ImageInfo(info.imgOverviewURL, info.imgOverviewURL, 500, 500));
+		embed.setImage(info.imgOverviewURL);
 		Lib.sendMessage(event, out);
 		Lib.sendEmbed(event, embed);
 	}

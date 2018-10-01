@@ -26,7 +26,7 @@ public class CmdControl {
 	private static HashMap<String,String> modules=new HashMap<String,String>();//used to get which module the command is from
 	public static boolean parseCommands(MessageReceivedEvent event){
 		if(event.getAuthor().getId().equals(Main.jda.getSelfUser().getId()))return false;
-		String content=event.getMessage().getContent();
+		String content=event.getMessage().getContentRaw();
 		if(content.startsWith(SaveSystem.getPrefix(event))){
 			CommandParser.CommandContainer cmd=parser.parse(content, event);
 			if(CommandEnabled(event,cmd.invoke)){

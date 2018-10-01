@@ -22,7 +22,7 @@ public class RSkill extends RedditSelection{
 		String en=getMsgString(info,true);
 		String jp=getMsgString(info,false);
 		String messageString=jp;//whether to use english or JP version for inital print
-		CommandContainer cmd=CmdControl.parser.parse(event.getMessage().getContent(), event);
+		CommandContainer cmd=CmdControl.parser.parse(event.getMessage().getContentRaw(), event);
 		if(cmd.args.length>1?cmd.args[1].contains("en"):false){//based on secound arg, for purpose of reddit discord channel
 			messageString=en;
 		}

@@ -16,6 +16,7 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.MessageBuilder;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.ChannelType;
@@ -75,6 +76,9 @@ public class Lib {
 	}
 	public static Message editMessage(Message message,String msg){
 		return message.editMessage(msg).complete();
+	}
+	public static Message sendEmbed(MessageReceivedEvent event,EmbedBuilder embed){
+		return sendEmbed(event,embed.build());
 	}
 	public static Message sendEmbed(MessageReceivedEvent event,MessageEmbed embed){
 		return event.getChannel().sendMessage(embed).complete();

@@ -4,7 +4,7 @@
     <groupId>HiddenDoom</groupId>
     <artifactId>FFBEBot</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <name>FFBEBot</name>
     <url></url>
 
@@ -39,6 +39,8 @@
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
+            <type>jar</type>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -196,11 +198,6 @@
     			<version>1.4.9</version>
     		</dependency>
     		<dependency>
-    			<groupId>net.dv8tion</groupId>
-    			<artifactId>JDA</artifactId>
-    			<version>3.3.0_261</version>
-    		</dependency>
-    		<dependency>
 			    <groupId>com.google.apis</groupId>
 			    <artifactId>google-api-services-drive</artifactId>
 			    <version>v3-rev69-1.22.0</version>
@@ -229,6 +226,11 @@
     			<groupId>com.github.SvenWoltmann</groupId>
     			<artifactId>color-thief-java</artifactId>
     			<version>v1.1.1</version>
+    		</dependency>
+    		<dependency>
+    			<groupId>net.dv8tion</groupId>
+    			<artifactId>JDA</artifactId>
+    			<version>3.8.0_423</version>
     		</dependency>
     	</dependencies>
     </dependencyManagement>

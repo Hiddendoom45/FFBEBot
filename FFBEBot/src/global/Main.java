@@ -4,7 +4,6 @@ import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
-import net.dv8tion.jda.core.exceptions.RateLimitedException;
 import util.CmdControl;
 import util.CounterPool;
 import util.Overrider;
@@ -58,8 +57,9 @@ public class Main {
 	}
 	public static void startup() throws LoginException, IllegalArgumentException, InterruptedException{
 		try{
-		jda = new JDABuilder(AccountType.BOT).addEventListener(new BotListener()).setToken(Settings.token).buildBlocking();
-		}catch(LoginException | RateLimitedException e){
+		jda = new JDABuilder(AccountType.BOT).addEventListener(new BotListener()).setToken(Settings.token).build();
+		jda.awaitReady();
+		}catch(LoginException e){
 			Log.log("System", "error on login, retrying in 5 minutes");
 			TimeUnit.MINUTES.sleep(5);
 			startup();
@@ -206,7 +206,7 @@ public class Main {
 		case Ready6:game=" in the salt mines|@FFBEBot help";
 		break;
 		}
-		jda.getPresence().setGame(Game.of(game));
+		jda.getPresence().setGame(Game.of(Game.GameType.DEFAULT,game));
 	}	
 	public static void log(String type,String msg){
 		Log.log(type, msg);

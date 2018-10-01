@@ -31,9 +31,9 @@ public class ReactionController implements Runnable {
 			String ID=event.getMessageId();
 			if(storedReactions.containsKey(ID)){
 				//same as commands, check if valid, then execute it
-				boolean safe=storedReactions.get(ID).called(event, event.getReaction().getEmote());
+				boolean safe=storedReactions.get(ID).called(event, event.getReaction().getReactionEmote());
 				if(safe){//if reaction triggers something
-					Message msg=storedReactions.get(ID).action(event, event.getReaction().getEmote(), storedMessages.get(ID));
+					Message msg=storedReactions.get(ID).action(event, event.getReaction().getReactionEmote(), storedMessages.get(ID));
 					storedMessages.put(ID, msg);//update the stored message
 					try{
 						event.getReaction().removeReaction(event.getUser()).queue();//remove it so it can be retriggered

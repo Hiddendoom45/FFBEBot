@@ -22,7 +22,7 @@ public abstract class ReactionGenerics implements Reaction{
 
 	@Override
 	public void executed(MessageReactionAddEvent event) {
-		Log.log("REACT", "Reaction "+event.getReaction().getEmote().getName()+" by "+event.getUser().getName()+" on Message "+event.getMessageId());
+		Log.log("REACT", "Reaction "+event.getReaction().getReactionEmote().getName()+" by "+event.getUser().getName()+" on Message "+event.getMessageId());
 	}
 	protected void addTrigger(ReactionEmote trigger){
 		triggers.add(trigger);
