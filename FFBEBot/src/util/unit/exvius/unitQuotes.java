@@ -7,6 +7,10 @@ import util.Lib;
 public class unitQuotes{
 	public quote[] quotes;
 	public unitQuotes (Element quoteTable){
+		if(quoteTable==null){
+			quotes = null;
+			return;
+		}
 		quotes=new quote[quoteTable.children().size()];
 		for(int i=0;i<quoteTable.children().size();i++){
 			quotes[i]=new quote(quoteTable.child(i));

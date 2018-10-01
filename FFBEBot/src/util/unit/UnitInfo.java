@@ -75,7 +75,7 @@ public class UnitInfo {
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element unitInfo=content.getElementsByTag("tbody").first();
+				Element unitInfo=content.select(".ibox > tbody").first();
 				unitName=Lib.getHeader(0, unitInfo).text();
 				imgOverviewURL=Lib.getCell(1, 0, unitInfo).child(0).absUrl("src");
 				parseRarities(Lib.getCell(2, 0, unitInfo).text());
@@ -94,7 +94,7 @@ public class UnitInfo {
 					}
 				}
 				trustName=parseRaw(Lib.getCell(12, 0, unitInfo));
-				if(!trustName.equalsIgnoreCase("-")){
+				if(!trustName.equalsIgnoreCase(" - ")){
 					trustLink=Lib.getCell(12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
 					trustDetails=new TrustInfo(doc2.getElementById("mw-content-text").children());
@@ -120,6 +120,9 @@ public class UnitInfo {
 			}
 			try{
 				Element equipment=Lib.getEleAfter(content.children(), new ElementFilter("h3","Equipment[edit | edit source]"));
+				while(!equipment.tagName().equals("table")){
+					equipment=equipment.nextElementSibling();
+				}
 				parseWeapons(Lib.getCell(1, 0, equipment));
 				parseArmours(Lib.getCell(3, 0, equipment));
 			}catch(Exception e){
@@ -167,11 +170,11 @@ public class UnitInfo {
 			try{
 
 				Element quote=Lib.getEleAfter(content.children(), new ElementFilter("h2","Quotes[edit | edit source]"));
-				background=new unitQuotes(quote.getElementsByClass("tabbertab").get(0).getElementsByTag("table").first().getElementsByTag("tbody").first());
-				fusionQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(1).getElementsByTag("table").first().getElementsByTag("tbody").first());
-				awakeningQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(2).getElementsByTag("table").first().getElementsByTag("tbody").first());
-				summonQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(3).getElementsByTag("table").first().getElementsByTag("tbody").first());
-				TMQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(4).getElementsByTag("table").first().getElementsByTag("tbody").first());
+				background=new unitQuotes(quote.getElementsByClass("tabbertab").get(0).select("table > tbody").first());
+				fusionQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(1).select("table > tbody").first());
+				awakeningQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(2).select("table > tbody").first());
+				summonQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(3).select("table > tbody").first());
+				TMQuotes=new unitQuotes(quote.getElementsByClass("tabbertab").get(4).select("table > tbody").first());
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing unit quotes for page:"+page);
 				Log.logShortError(e, 5);

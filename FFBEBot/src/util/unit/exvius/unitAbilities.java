@@ -32,7 +32,7 @@ public class unitAbilities{
 			}
 			else if(!(abilityTable.child(i).getElementsByTag("th").size()>0)){
 				if(conditional){
-					if(abilityTable.child(i).children().size()==5)head=abilityTable.child(i).child(0);
+					if(abilityTable.child(i).children().size()==5||abilityTable.child(i).children().size()==3)head=abilityTable.child(i).child(0);
 					conditionals.add(new conditional(abilityTable.child(i),head));
 				}
 				else{
@@ -56,9 +56,14 @@ public class unitAbilities{
 		public String name;
 		public String effect;
 		public String hits;
-		public String MP;
+		public String MP = "-";
 		public conditional(Element row,Element head){
-			if(row.children().size()<4){
+			if(row.children().size()<3){
+				condition=head.text();
+				name=row.child(0).text();
+				effect=row.child(1).text();
+			}
+			else if(row.children().size()<4){
 				condition=row.child(0).text();
 				name=row.child(1).text();
 				effect=row.child(2).text();
