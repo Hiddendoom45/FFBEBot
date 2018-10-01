@@ -14,6 +14,7 @@ import net.dv8tion.jda.core.entities.MessageEmbed.AuthorInfo;
 import net.dv8tion.jda.core.entities.MessageEmbed.Field;
 import net.dv8tion.jda.core.entities.impl.MessageEmbedImpl;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import util.Lib;
 /**
  * Experimental command currently used to test embed messages
  * @author Allen
@@ -36,7 +37,7 @@ public class Info extends CommandGenerics implements Command{
 		embed.setColor(Color.GREEN);
 		embed.setDescription("general info");
 		embed.setTimestamp(OffsetDateTime.now());
-		event.getChannel().sendMessage(embed).complete();
+		Lib.sendEmbed(event, embed);
 	}
 
 	@Override

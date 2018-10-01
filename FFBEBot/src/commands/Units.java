@@ -45,7 +45,7 @@ public class Units extends UnitSelection implements Command,Selection {
 		//embed.setDescription("link");
 		embed.setImage(new ImageInfo(info.imgOverviewURL, info.imgOverviewURL, 500, 500));
 		Lib.sendMessage(event, out);
-		event.getChannel().sendMessage(embed).complete();
+		Lib.sendEmbed(event, embed);
 	}
 	public String addStars(String s){
 		char[] letter=s.toCharArray();

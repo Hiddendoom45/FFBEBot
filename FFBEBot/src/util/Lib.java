@@ -22,6 +22,7 @@ import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.MessageEmbed;
 import net.dv8tion.jda.core.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
@@ -45,7 +46,7 @@ public class Lib {
 				+ "Commands to extract info from Exvicus wiki(best for GL players)\n\n"
 				+ "**Reddit** - `rawaken` `requipment` `rskill` `runit`\n"
 				+ "Commands to extract info from Reddit wiki(best for JP players or GL players looking for future info)\n\n"
-				+ "**Salt** - `summon` `salty` `waifu` `maintenance` `gsummon`\n"
+				+ "**Salt** - `summon` `salty` `waifu` `husbando` `maintenance` `gsummon`\n"
 				+ "Commands that may or may not help in dealing with or evoking salt\n\n"
 				+ "**Simulation** - `dailies` `lapis` `give`  `banner` `pull` `unitinventory` `dailypull` `11pull` `gpull` `unitsell` `unitawaken`\n"
 				+ "Commands that are used to attempt to simulate FFBE to some degree\n\n"
@@ -74,6 +75,9 @@ public class Lib {
 	}
 	public static Message editMessage(Message message,String msg){
 		return message.editMessage(msg).complete();
+	}
+	public static Message sendEmbed(MessageReceivedEvent event,MessageEmbed embed){
+		return event.getChannel().sendMessage(embed).complete();
 	}
 	public static Message sendFile(MessageReceivedEvent event, Message msg, File file){
 			return event.getChannel().sendFile(file, msg).complete();

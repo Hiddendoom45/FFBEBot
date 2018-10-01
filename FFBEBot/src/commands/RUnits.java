@@ -50,7 +50,7 @@ public class RUnits extends RedditSelection {
 		} catch (Exception e) {
 			//supress exceptions from failing to set flair color stuffs
 		}
-		event.getChannel().sendMessage(embed).complete();
+		Lib.sendEmbed(event, embed);
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {

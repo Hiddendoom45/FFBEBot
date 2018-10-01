@@ -37,7 +37,7 @@ public class UnitArt extends UnitSelection implements Command,Selection  {
 				ArrayList<Field> fields = new ArrayList<Field>();
 				fields.add(new Field(":art:"+info.unitName+" "+rarity+"★", "[link to image]("+url+")", false));
 				embed.setFields(fields);
-				event.getChannel().sendMessage(embed).complete();
+				Lib.sendEmbed(event, embed);
 			} catch (IOException e) {
 				Log.logError(e);
 			}
