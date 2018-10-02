@@ -238,6 +238,7 @@ public class SaveSystem {
 				}
 				i++;
 			}
+			System.out.println("Downloaded "+u.name);
 			index++;
 			if(!(count==null)){count.setI(index);}
 		}
