@@ -88,14 +88,16 @@ public class Salty extends CommandGenerics implements Command, Selection {
 	    for(Unit u:Unit.values()){
 	    	if(u.upgradeurl.length==0){
 	    		if(u.url[u.url.length-1].equals(imgurl)){
-	    			small=ImageIO.read(new File("units/"+u.name+"/"+(u.baseRarity()+u.url.length)));
+	    			small=ImageIO.read(u.getImageLocation(u.maxRarity()));
 	    			found=true;
+	    			break;
 	    		}
 	    	}
 	    	else{
 	    		if(u.upgradeurl[u.upgradeurl.length-1].equals(imgurl)){
-	    			small=ImageIO.read(new File("units/"+u.name+"/"+(u.baseRarity()+u.upgradeurl.length)));
+	    			small=ImageIO.read(u.getImageLocation(u.maxRarity()));
 	    			found=true;
+	    			break;
 	    		}
 	    	}
 	    }
