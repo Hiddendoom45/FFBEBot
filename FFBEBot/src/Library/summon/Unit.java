@@ -819,7 +819,13 @@ public enum Unit {
 				Joachim,
 				Hyoh,
 				Shatal,
-				Domino
+				Domino,
+				AlohaLasswell,
+				SeaNichol,
+				SummerLuka,
+				TideSkaha,
+				Malphasie,
+				Circe
 				
 		});
 	}
