@@ -72,6 +72,7 @@ public class SaveSystem {
 			preloadExvius(null);
 			preloadReddit(null);
 			writeData();
+			DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
 		}
 		if(!new File("units").exists()){
 			preloadSummons(null);
