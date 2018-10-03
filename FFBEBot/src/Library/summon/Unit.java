@@ -2,9 +2,17 @@ package Library.summon;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 
+import XML.Elements;
+import XML.XMLStAXFile;
+import global.record.Data;
+import global.record.Log;
 import global.record.Settings;
 import util.Lib;
+import util.unit.UnitOverview;
+import util.unit.UnitOverview.unitData;
 public enum Unit {
 	//random
 	TM("Trust Moogle",new String[]{"/f/f5/Unit-Trust_Moogle-5.png?version=c8b87cb7532e45a18b442c9fd03b77f0"},5),
@@ -99,7 +107,7 @@ public enum Unit {
 		}
 	},
 	Miyuki("Miyuki",new String[]{"/5/5e/Unit-Miyuki-3.png?version=ed9aa10823a009f89ee84c55b2488dc2","/8/8b/Unit-Miyuki-4.png?version=f23b0661931d1b75af3d7a8e743f35e8","/e/ed/Unit-Miyuki-5.png?version=09a84ae46eafc9164133297587d22472"},3),
-	Russel("Russel",new String[]{"/d/d6/Unit-Russell-3.png?version=f879849b824e4818b7d42e75adfe6434","/0/01/Unit-Russell-4.png?version=3ca9c390ff68fa5adf659c347510ef59"},3),
+	Russel("Russell",new String[]{"/d/d6/Unit-Russell-3.png?version=f879849b824e4818b7d42e75adfe6434","/0/01/Unit-Russell-4.png?version=3ca9c390ff68fa5adf659c347510ef59"},3),
 	Golbez("Golbez",new String[]{"/a/a8/Unit-Golbez-3.png?version=a48ba3ada6fa3fb9031f4c6765fc632e","/3/31/Unit-Golbez-4.png?version=83a882942bab614b54922317bd6f45fe","/f/f2/Unit-Golbez-5.png?version=fb09062c1c02583e1f59cb982da5002d"},3),
 	Galuf("Galuf",new String[]{"/b/bf/Unit-Galuf-3.png?version=c4e38de87222b6da8b3a0b6fc9322fac","/8/8f/Unit-Galuf-4.png?version=42e80587e399605681c21aea100d7e1b"},3){
 		@Override
@@ -170,7 +178,7 @@ public enum Unit {
 	Shera("Shera",new String[]{"/a/ae/Unit-Shera-3.png?version=ff3f045c08286e68e5fb80e9d2f966c9","/9/9d/Unit-Shera-4.png?version=1e833b1c95162126de05372ed7fb7a4c","/5/57/Unit-Shera-5.png?version=244dadc03caae527d4485659d1d0e9f4"},3),
 	Queen("Queen",new String[]{"/0/08/Unit-Queen-5.png?version=1172e6e643fbdda3cea58b878829d1e3","/7/76/Unit-Queen-6.png?version=5402e9dbb217d6b9172df4b549e7c3da"},5),
 	Nine("Nine",new String[]{"/8/85/Unit-Nine-4.png?version=f1199c797fadeb8416e2655881f66172","/c/c9/Unit-Nine-5.png?version=736a4bccf28e95b8f135a1138b0339e0","/c/c5/Unit-Nine-6.png?version=ca3da82b972a9a4859bb00406cd2803f"},4),
-	Clinque("Clinque",new String[]{"/7/7c/Unit-Cinque-3.png?version=cb2a63c1ce951b9a19e652c13e4a7369","/c/c9/Unit-Cinque-4.png?version=b583495b70b78258295606127fbbec08","/e/e9/Unit-Cinque-5.png?version=5e58509a8c6e3b1def6797e26a360c64"},3),
+	Clinque("Cinque",new String[]{"/7/7c/Unit-Cinque-3.png?version=cb2a63c1ce951b9a19e652c13e4a7369","/c/c9/Unit-Cinque-4.png?version=b583495b70b78258295606127fbbec08","/e/e9/Unit-Cinque-5.png?version=5e58509a8c6e3b1def6797e26a360c64"},3),
 	Eight("Eight",new String[]{"/6/66/Unit-Eight-3.png?version=2b1f2ea6f26f2b3c3eca81eaea91a66c","/7/72/Unit-Eight-4.png?version=9bda9c1ae9a33ca72145898909b4401e","/6/65/Unit-Eight-5.png?version=30b32bd862c57e9f101752c59d617b4b"},3),
 	Cid("Thunder God",new String[]{"/e/e6/Unit-Orlandeau-5.png?version=54d5582edcaaf714d7f3bcad639f7850","/d/df/Unit-Orlandeau-6.png?version=fafa898324518b8ce88ee2178b9ead8c"},5),
 	Soleil("Soleil",new String[]{"/c/c0/Unit-Soleil-4.png?version=5f172cef43d574dce137600b775ae4a9","/1/1b/Unit-Soleil-5.png?version=e53a8f7588752ac6e7f7d60e4f42fb28","/3/33/Unit-Soleil-6.png?version=30edaf1c6fd963a3bb18555f95e9dc29"},4),
@@ -183,7 +191,7 @@ public enum Unit {
 	Setzer("Setzer",new String[]{"/8/82/Unit-Setzer-4.png?version=2ead8a1e0965a89a4e60d2f4d01f9509","/8/8e/Unit-Setzer-5.png?version=e2d2da84954caae0d909c76ed74c53f1","/5/58/Unit-Setzer-6.png?version=a968706d3c6747c0b853ff01cb19fdec"},4),
 	Gau("Gau",new String[]{"/a/ae/Unit-Gau-3.png?version=86a4248518d92f0f337d53e8ac01eeb2","/a/a5/Unit-Gau-4.png?version=dddcb33201be09f9e0834d39a90f34c6","/7/72/Unit-Gau-5.png?version=86f4ffd16da0c69b45c17b61b29821dd"},3),
 	Eileen("Aileen",new String[]{"/2/21/Unit-Aileen-5.png?version=9b68174017ea66b64e26e0881e955356","/4/49/Unit-Aileen-6.png?version=3420bebd48cf5e77a2d71515ab551ce3"},5),
-	Soze("Sohze",new String[]{"/e/ee/Unit-Sozhe-4.png?version=8db6e71885c7f7466053db6a98c70696","/d/d4/Unit-Sozhe-5.png?version=11ba5c7a4156cecd2fd7c76b67a0b2a7","/9/94/Unit-Sozhe-6.png?version=2ab7a096496135b2e14aabb6dce439da"},4),
+	Soze("Sozhe",new String[]{"/e/ee/Unit-Sozhe-4.png?version=8db6e71885c7f7466053db6a98c70696","/d/d4/Unit-Sozhe-5.png?version=11ba5c7a4156cecd2fd7c76b67a0b2a7","/9/94/Unit-Sozhe-6.png?version=2ab7a096496135b2e14aabb6dce439da"},4),
 	Heretic("Heltich",new String[]{"/3/36/Unit-Heltich-3.png?version=b9577d4a66090573ad7474a1beef99f1","/6/61/Unit-Heltich-4.png?version=0095dc6e203899b0c12681c1d76deaa5","/2/2b/Unit-Heltich-5.png?version=e9da98267d682e8763fd93db477118df"},3),
 	Ulrica("Ulrica",new String[]{"/7/72/Unit-Ulrica-3.png?version=a5e2cc21b6a44a67253397e1420c2777","/b/b6/Unit-Ulrica-4.png?version=5178cf886205f3100e9b7dfdbde05e27","/1/14/Unit-Ulrica-5.png?version=64271ab140d89f4380352476d5374a51"},3),
 	Zyrus("Zyrus",new String[]{"/c/cd/Unit-Zyrus-4.png?version=96375c21507153a910b399b0cd6e1106","/b/be/Unit-Zyrus-5.png?version=2b97acb9180b93df0329e56720c356cd","/5/5d/Unit-Zyrus-6.png?version=d1e4d3ca07a9996c30121fc07c12d8a9"},4),
@@ -196,7 +204,7 @@ public enum Unit {
 	Abel("Abel",new String[]{"/8/88/Unit-Abel-3.png?version=b601d10c549c3102df2c00dde3d2d18a","/0/0e/Unit-Abel-4.png?version=c0b20660e52ea56a5bc077829a2fd8a4","/3/35/Unit-Abel-5.png?version=fc406e856cd2610401fb86f254cb9512"},3),
 	Jean("Jean",new String[]{"/b/b4/Unit-Jean-3.png?version=338e9add913f87cbf72696f709eb4246","/6/67/Unit-Jean-4.png?version=09c1e48e33c8d6f5d0af07155b870b94","/9/91/Unit-Jean-5.png?version=e0c72c0e5dc193664eb13818287efcf2"},3),
 	Camille("Camille",new String[]{"/3/38/Unit-Camille-3.png?version=565d992b9d75093fe10d25413b5ef658","/1/17/Unit-Camille-4.png?version=c93c0bbeba3aa0f3413432ac10b2329b","/e/e4/Unit-Camille-5.png?version=9021a14234fd7bca288d80250b2ee6df"},3),
-	Illus("Illias",new String[]{"/4/46/Unit-Ilias-4.png?version=808ce3b0bc6a5c94f7744f2eb6a06fe6","/7/78/Unit-Ilias-5.png?version=09c4bd297a6739af367e40d5ee9688fc","/2/2b/Unit-Ilias-6.png?version=26a69ad6ed168c2fbece9f676ad559b3"},4),
+	Illus("Ilias",new String[]{"/4/46/Unit-Ilias-4.png?version=808ce3b0bc6a5c94f7744f2eb6a06fe6","/7/78/Unit-Ilias-5.png?version=09c4bd297a6739af367e40d5ee9688fc","/2/2b/Unit-Ilias-6.png?version=26a69ad6ed168c2fbece9f676ad559b3"},4),
 	Amelia("Amelia",new String[]{"/3/34/Unit-Amelia-4.png?version=56cbfa4e443cafa0866cda4b34365253","/5/5c/Unit-Amelia-5.png?version=f8e8c056ee3bf3352b712ffa727659c2","/9/9e/Unit-Amelia-6.png?version=e1ce2684e570cf1cfa1ab90cd13707fe"},4),
 	Forren("Fohlen",new String[]{"/b/b0/Unit-Fohlen-5.png?version=4d4dfdc2fa291033a931846156dde031","/f/f3/Unit-Fohlen-6.png?version=7e14ec56e7b9a2a96589020ea8d31951"},5),
 	SLid("Summer Lid",new String[]{"/3/3c/Unit-Summer_Lid-3.png?version=ba691eab63eafc28216aa7c18640281d","/d/dc/Unit-Summer_Lid-4.png?version=2c38daec84e679a22bfb7d66c413ba75","/e/e5/Unit-Summer_Lid-5.png?version=f1e200191d5aa1c0c1a3381ec92f8278"},3),
@@ -221,9 +229,9 @@ public enum Unit {
 	EV("Veritas of the Earth",new String[]{"/e/e1/Unit-Veritas_of_the_Earth-4.png?version=f7b78fbf92722dbdab4c159cec6c92d7","/c/c9/Unit-Veritas_of_the_Earth-5.png?version=e4cda1cd4935f2be5ee5f740ba3f4db0","/e/e0/Unit-Veritas_of_the_Earth-6.png?version=6bd473fde438ff45aeec41ee146b5d59"},4),
 	Victoria("Victoria",new String[]{"/7/7a/Unit-Victoria-4.png?version=7ab85a379bcdf5233a7190439d8a6400","/8/80/Unit-Victoria-5.png?version=17fb4bb81c43530db14a4f3ae719d656","/8/85/Unit-Victoria-6.png?version=a259ded545e88adecaf7987bba0994b0"},4),
 	Tim("Timothy",new String[]{"/6/6c/Unit-Timothy-3.png?version=d52a0483065a851f7e7f49fbd3dae98e","/5/5d/Unit-Timothy-4.png?version=0ab177388264222de10bc50c63951fae","/1/16/Unit-Timothy-5.png?version=d95bf1675c86748fe2539d9c20036695"},3),
-	LV("Vertias of the Light",new String[]{"/7/7c/Unit-Veritas_of_the_Light-5.png?version=a73fe8c4993066b6fbd8651d3837c37f","/c/cd/Unit-Veritas_of_the_Light-6.png?version=c1b6f63e003723b5717295230574bb1a"},5),
-	HV("Vertias of the Heavens",new String[]{"/3/38/Unit-Veritas_of_the_Heavens-4.png?version=0bc09107470f32f4fba7236a129778fc","/2/29/Unit-Veritas_of_the_Heavens-5.png?version=a777aef3b2d973f104dcf7d4c66aa49a","/d/d4/Unit-Veritas_of_the_Heavens-6.png?version=5ac94af348d9084663cb72cf0c9a47de"},4),
-	WV("Vertias of the Waters",new String[]{"/9/91/Unit-Veritas_of_the_Waters-4.png?version=6ab058473bfd730bdf74aa7354923e2e","/0/04/Unit-Veritas_of_the_Waters-5.png?version=70870a36e9d08bcfd0f4bc72b2efb018","/3/32/Unit-Veritas_of_the_Waters-6.png?version=a67ccca778195d4b438c6c20e346a14e"},4),
+	LV("Veritas of the Light",new String[]{"/7/7c/Unit-Veritas_of_the_Light-5.png?version=a73fe8c4993066b6fbd8651d3837c37f","/c/cd/Unit-Veritas_of_the_Light-6.png?version=c1b6f63e003723b5717295230574bb1a"},5),
+	HV("Veritas of the Heavens",new String[]{"/3/38/Unit-Veritas_of_the_Heavens-4.png?version=0bc09107470f32f4fba7236a129778fc","/2/29/Unit-Veritas_of_the_Heavens-5.png?version=a777aef3b2d973f104dcf7d4c66aa49a","/d/d4/Unit-Veritas_of_the_Heavens-6.png?version=5ac94af348d9084663cb72cf0c9a47de"},4),
+	WV("Veritas of the Waters",new String[]{"/9/91/Unit-Veritas_of_the_Waters-4.png?version=6ab058473bfd730bdf74aa7354923e2e","/0/04/Unit-Veritas_of_the_Waters-5.png?version=70870a36e9d08bcfd0f4bc72b2efb018","/3/32/Unit-Veritas_of_the_Waters-6.png?version=a67ccca778195d4b438c6c20e346a14e"},4),
 	OK("Onion Knight",new String[]{"/0/0f/Unit-Onion_Knight-5.png?version=92d2ad16d8dcdc0f1c9b10954b15ea4b","/6/62/Unit-Onion_Knight-6.png?version=08e7ed660eb10d4799c915e68619df0f"},5),
 	Desch("Desch",new String[]{"/5/5e/Unit-Desch-4.png?version=ca04885d2cf6443fe9d8c506c8b8226d","/1/18/Unit-Desch-5.png?version=0cf714cc19f33687f0804278dbc63a49","/5/5c/Unit-Desch-6.png?version=37e46b6a62c63ca4624f17492b3a8c2c"},4),
 	Aria("Aria",new String[]{"/f/f2/Unit-Aria-4.png?version=d62e3ef1ceccdbad0f3ae4b0a36dcf83","/b/b4/Unit-Aria-5.png?version=54ebd4199e31043f364f15275d0d023c","/4/4b/Unit-Aria-6.png?version=86001e84ea0c48563ef86d5a7d980e47"},4),
@@ -522,7 +530,41 @@ public enum Unit {
 		return new File("units/"+name+"/"+rarity+".png");
 	}
 	public static void main(String[] args){
-		System.out.println(Unit.valueOf("WoL"));
+		XMLStAXFile file = new XMLStAXFile(new File(Settings.preloadData));
+		file.readXMLFile();
+		try{
+			Elements preload=file.parseToElements("preload").get(0);
+			Data.setData(preload);
+		}catch(Exception e){
+			e.printStackTrace();
+			Log.log("ERROR", "error loading preload data");
+		}
+		file.endReader();
+		UnitOverview overview = new UnitOverview();
+		HashSet<String> checked = new HashSet<String>();
+		for(unitData data:overview.possibleData){
+			for(Unit u:values()){
+				if(u.upgradeurl.length==0){
+		    		if(u.url[u.url.length-1].equals(data.imgUrl)){
+		    			if(!u.name.equals(data.name)){
+		    				System.out.println(u.name+"!="+data.name);
+		    			}
+		    			checked.add(u.name);
+		    			break;
+		    		}
+		    	}
+		    	else{
+		    		if(u.upgradeurl[u.upgradeurl.length-1].equals(data.imgUrl)){
+		    			if(!u.name.equals(data.name)){
+		    				System.out.println(u.name+"!="+data.name);
+		    			}
+		    			checked.add(u.name);
+		    			break;
+		    		}
+		    	}
+			}
+		}
+		Arrays.stream(values()).filter(u -> !checked.contains(u.name)).map(u -> u.name).forEach(System.out::println);
 	}
 	public static Unit[] commons1(){
 		return new Unit[]{
