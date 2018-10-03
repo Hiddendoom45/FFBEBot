@@ -8,6 +8,7 @@ import java.util.List;
 
 import Library.summon.banner.Banner;
 import commands.sub.DoSummon;
+import global.record.Log;
 import global.record.SaveSystem;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
@@ -37,7 +38,13 @@ public class Banners extends CommandGenerics implements Command, Selection {
 				return;//exit option at the end
 			}
 			else{
-				sendBannerInfo(event,getBanner(chosen.options.get(chosen.selected)));
+				try{
+					sendBannerInfo(event,getBanner(chosen.options.get(chosen.selected)));
+				}catch(NullPointerException e){
+					Log.log("ERROR", chosen.options.get(chosen.selected) + " resolves into a null banner");
+				}catch(Exception e){
+					Log.logError(e);
+				}
 			}
 		}
 		else{
@@ -131,7 +138,6 @@ public class Banners extends CommandGenerics implements Command, Selection {
 	}
 	public void sendBannerInfo(MessageReceivedEvent event,Banner banner){
 		String head=banner.name+" ["+banner.toString()+"]\nFeatured units:\n";//head displays basic banner info
-		System.out.println(banner);
 		for(int i=0;i<banner.featured.length;i++){
 			head+=banner.featured[i].name+" ";
 			head+=(Lib.Summation(banner.percent[i])/100.00)+"%\n";
