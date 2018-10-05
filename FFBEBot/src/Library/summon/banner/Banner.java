@@ -108,6 +108,7 @@ public enum Banner {
 	Hyoh("CG Hyou",new Unit[]{Unit.Hyoh,Unit.Shatal,Unit.Domino},BannerRates.EvenSplit.fiveRate(),DQ2.pool,DQ2.include,BannerType.ThreePercent),
 	SSSummer("Sand Sea Summer in Fall",new Unit[]{Unit.AlohaLasswell,Unit.SeaNichol,Unit.SummerLuka,Unit.TideSkaha},BannerRates.D5.fiveRate(),Lib.concat(Hyoh.featured, Hyoh.pool),Hyoh.include,BannerType.ThreePercent),
 	GLArtP1("Fest Units part 1",new Unit[]{Unit.Malphasie,Unit.Circe},BannerRates.LD5.fiveRate(),Lib.concat(SSSummer.featured, SSSummer.pool),SSSummer.include,BannerType.ThreePercent),
+	FFXV4("FFXV 4",new Unit[]{Unit.Ignis,Unit.Ravus,Unit.Libertus},BannerRates.EvenSplit.fiveRate(),Lib.concat(GLArtP1.featured, GLArtP1.pool),GLArtP1.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;
