@@ -18,10 +18,13 @@ public class PullUnit extends UnitSpecific{
 	}
 	public PullUnit(Elements root){
 		String name=root.getAttribute("name").getValue();
-		for(Unit u:Unit.values()){
-			if(u.name.equals(name)){
-				unit=u;
-				break;
+		unit = PullRenamer.filter(name);
+		if(unit==null){
+			for(Unit u:Unit.values()){
+				if(u.name.equals(name)){
+					unit=u;
+					break;
+				}
 			}
 		}
 		rarity=Lib.getNumber(root, "rare");
