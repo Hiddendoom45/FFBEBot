@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.TreeMap;
 
 import XML.Elements;
 import XML.XMLStAXFile;
@@ -13,7 +14,8 @@ import global.record.Settings;
 import util.Lib;
 import util.unit.UnitOverview;
 import util.unit.UnitOverview.unitData;
-public enum Unit {
+public enum Unit{
+	
 	//random
 	TM("Trust Moogle",new String[]{"/f/f5/Unit-Trust_Moogle-5.png?version=c8b87cb7532e45a18b442c9fd03b77f0"},5),
 	//Story Units(free)
@@ -743,7 +745,14 @@ public enum Unit {
 	SlimeKnight("Slime Knight",new String[]{"/b/b4/Unit-Slime_Knight-4.png?version=72b23985d1d45c0ad25b6734bd44239f","/7/7d/Unit-Slime_Knight-5.png?version=3d0f0b76df1900c276b29256c99cb4b3","/c/c1/Unit-Slime_Knight-6.png?version=82a178e18f6506b20da43838066d5611"},4),
 	MarquisdeLeon("Marquis de Léon",new String[]{"/d/d9/Unit-Marquis_de_L%C3%A9on-5.png?version=9a3b0f3ba2112ff2217ad25e019dcc70","/7/74/Unit-Marquis_de_L%C3%A9on-6.png?version=23f6bdf3b341e20eaa4f1a20663a28f4","/d/db/Unit-Marquis_de_L%C3%A9on-7.png?version=117a90dbe3facf7bf50cf7a75efbcb59"},5),
 	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3);
-
+	
+	//quick access map for certain things that has unit name but not the Unit object
+	public static TreeMap<String,Unit> unitMap = new TreeMap<String,Unit>();
+	static{//build map on class load
+		for(Unit u:Unit.values()){
+			unitMap.put(u.name, u);
+		}
+	}
 	public String name;
 	public String[] url;
 	public int base;
@@ -757,6 +766,7 @@ public enum Unit {
 			this.url[i]=Settings.ExvicusIMGURL+this.url[i];
 		}
 	}
+	
 	public void setup(){
 
 	}

@@ -43,7 +43,7 @@ public class Salty extends CommandGenerics implements Command, Selection {
 					Selector.setSelection(select, event);
 				}
 				else if(possible.size()>0){
-					sendImage(event, overview.getData(0).imgUrl);
+					sendImage(event, overview.getData(0).imgUrl,overview.getData(0).name);
 				}
 				else{
 					Lib.sendMessage(event, "Unit not found");
@@ -67,10 +67,9 @@ public class Salty extends CommandGenerics implements Command, Selection {
 	}
 	@Override
 	public void selectionChosen(Select chosen, MessageReceivedEvent event) {
-		System.out.println("3");
 		try{
 			Log.log("status", "salty image of "+chosen.names.get(chosen.selected)+" sent");
-			sendImage(event, saved.get(chosen.ID).getData(chosen.selected).imgUrl);
+			sendImage(event, saved.get(chosen.ID).getData(chosen.selected).imgUrl,saved.get(chosen.ID).getData(chosen.selected).name);
 		}catch(Exception e){
 			Log.logError(e);
 		}
@@ -79,28 +78,14 @@ public class Salty extends CommandGenerics implements Command, Selection {
 	public int getInputType() {
 		return 0;
 	}
-	public static void sendImage(MessageReceivedEvent event,String imgurl)throws IOException{
+	public void sendImage(MessageReceivedEvent event,String imgurl,String name)throws IOException{
 		BufferedImage large=null;
-	    large = ImageIO.read(new URL("https://pbs.twimg.com/profile_images/671501876265803776/-M6ppcKt.jpg").openStream());
+	    large = ImageIO.read(getClass().getResourceAsStream("/Library/salty.jpg"));
 	    BufferedImage small=null;
 	    boolean found=false;
 	    try{
-	    for(Unit u:Unit.values()){
-	    	if(u.upgradeurl.length==0){
-	    		if(u.url[u.url.length-1].equals(imgurl)){
-	    			small=ImageIO.read(u.getImageLocation(u.maxRarity()));
-	    			found=true;
-	    			break;
-	    		}
-	    	}
-	    	else{
-	    		if(u.upgradeurl[u.upgradeurl.length-1].equals(imgurl)){
-	    			small=ImageIO.read(u.getImageLocation(u.maxRarity()));
-	    			found=true;
-	    			break;
-	    		}
-	    	}
-	    }
+	    	small = ImageIO.read(Unit.unitMap.get(name).getImageLocation(Unit.unitMap.get(name).maxRarity()));
+	    	found = true;
 	    }catch(Exception e){
 	    	Log.log("ERROR", "unable to read unit image from data for "+imgurl);
 	    }
