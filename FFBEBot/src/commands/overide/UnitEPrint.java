@@ -54,7 +54,7 @@ public class UnitEPrint extends OverrideGenerics implements OverrideCommand {
 		
 		s+="},"+ui.minRarity+")";//last part wth base rarity
 		if(upgrade>0){
-			s+="\n\t@Override\n\tpublic void setup(){\n\t\t\tsetUpgrades(new String[]{";
+			s+="{\n\t@Override\n\tpublic void setup(){\n\t\t\tsetUpgrades(new String[]{";
 			for(int c = upgrade-ui.minRarity;c<ui.sprites.length;c++){
 				s+="\""+ui.sprites[c].substring(Settings.ExvicusIMGURL.length())+"\"";
 				if(c!=ui.sprites.length-1){

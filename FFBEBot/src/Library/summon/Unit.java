@@ -51,9 +51,24 @@ public enum Unit {
 	Skaha("Skaha",new String[]{"/8/8e/Unit-Skaha-2.png?version=2fa3526b6f0ad13c620f2f7e99eff800","/3/32/Unit-Skaha-3.png?version=5e43c0cf423e858f2ea77e51f5fc960b"},2),
 	Montana("Montana",new String[]{"/8/8a/Unit-Montana-2.png?version=fe0b80a36bf74e2fd4a1b8687e360da9","/c/c1/Unit-Montana-3.png?version=744d8f715b1c8bb316046f0ca8f771a9"},2),
 	//standard rare summon units
-	Vivi("Vivi",new String[]{"/0/0f/Unit-Vivi-3.png?version=419e16782194e8124b2ecf9b568504b1","/d/d3/Unit-Vivi-4.png?version=14266c86c343196eab7eb0a94c0d3d8e"},3),
-	Penelo("Penelo",new String[]{"/6/6f/Unit-Penelo-3.png?version=09d9048e8715a55add6b2cad019c4d5d","/5/5a/Unit-Penelo-4.png?version=1bbdf7af4f90ebf23d7d3a5b0c241905"},3),
-	Maria("Maria",new String[]{"/f/f3/Unit-Maria-3.png?version=de674e91466c8bd8db890d0ebc3cb27b","/2/28/Unit-Maria-4.png?version=9b7198b665b50779c758f3f5488271f3"},3),
+	Vivi("Vivi",new String[]{"/0/0f/Unit-Vivi-3.png?version=419e16782194e8124b2ecf9b568504b1","/d/d3/Unit-Vivi-4.png?version=14266c86c343196eab7eb0a94c0d3d8e",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/9/97/Unit-Vivi-5.png?version=91ea7bb6eea605365f23b57781578c69","/e/e2/Unit-Vivi-6.png?version=78839cf056487da210e4fee732168c9a"});
+		}
+	},
+	Penelo("Penelo",new String[]{"/6/6f/Unit-Penelo-3.png?version=09d9048e8715a55add6b2cad019c4d5d","/5/5a/Unit-Penelo-4.png?version=1bbdf7af4f90ebf23d7d3a5b0c241905",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/f/f0/Unit-Penelo-5.png?version=94bae09170bc335bedbccdf78b7ac588"});
+		}
+	},
+	Maria("Maria",new String[]{"/f/f3/Unit-Maria-3.png?version=de674e91466c8bd8db890d0ebc3cb27b","/2/28/Unit-Maria-4.png?version=9b7198b665b50779c758f3f5488271f3",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/f/f3/Unit-Maria-5.png?version=cce7a91f7019e576d192362e5f3d3a77"});
+		}
+	},
 	Sabin("Sabin",new String[]{"/c/c0/Unit-Sabin-3.png?version=5fc10b9774aa06e1daf672202985ef9f","/e/e3/Unit-Sabin-4.png?version=a0cd46a92b92a1c3ba311389421181a5"},3),
 	Shadow("Shadow",new String[]{"/3/3b/Unit-Shadow-3.png?version=6c3201a5e5a65fe513c2e25563ac6cf8","/4/4a/Unit-Shadow-4.png?version=b5539d267f4cdf935dc7c5fdf4e6cb5d"},3),
 	Krile("Krile",new String[]{"/d/da/Unit-Krile-3.png?version=350edffb98abe53f234d1c41c4b9941e","/a/a9/Unit-Krile-4.png?version=8d87ebc2be5620f2fbb398b1c67648a3"},3){
@@ -70,7 +85,12 @@ public enum Unit {
 	},
 	Edgar("Edgar",new String[]{"/e/e6/Unit-Edgar-3.png?version=50b4ed881b53b0831ce4a2a7d8199366","/a/a8/Unit-Edgar-4.png?version=2201446a3ed9fe2d943f7bb314b48715"},3),
 	Fran("Fran",new String[]{"/5/54/Unit-Fran-3.png?version=5d2e1964e694891bcf4e70cde831b9a0","/1/1e/Unit-Fran-4.png?version=814cac1f0080ca8ed82af5d060565bcc"},3),
-	Shantotto("Shantotto",new String[]{"/9/9c/Unit-Shantotto-3.png?version=d1914e6129110b81c2b60945e312aee3","/d/d9/Unit-Shantotto-4.png?version=472d99817ea108ad9a26804cc24255eb"},3),
+	Shantotto("Shantotto",new String[]{"/9/9c/Unit-Shantotto-3.png?version=d1914e6129110b81c2b60945e312aee3","/d/d9/Unit-Shantotto-4.png?version=472d99817ea108ad9a26804cc24255eb",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/4/43/Unit-Shantotto-5.png?version=d8d3ec6e02b3741f2b565e0cd1e42100"});
+		}
+	},
 	Rydia("Rydia",new String[]{"/8/89/Unit-Rydia-3.png?version=70f0c17c7b1f490a1cc28d511ee8188f","/5/56/Unit-Rydia-4.png?version=95fbd550e9ca5c68bebf988c82631887"},3){
 		@Override
 		public void setup(){
@@ -82,16 +102,66 @@ public enum Unit {
 	Anzelm("Anzelm",new String[]{"/a/a7/Unit-Anzelm-3.png?version=69b764fd27e6beb490a437755ae9bb5a","/0/04/Unit-Anzelm-4.png?version=3d9d68d437b8242a2bbad1faee19750d"},3),
 	Luna("Luna",new String[]{"/0/0e/Unit-Luna-3.png?version=f5f88addca1363a9623378ede2a45073","/d/d4/Unit-Luna-4.png?version=160a4398bd2f2e8602e497430fb14204"},3),
 	Bedile("Bedile",new String[]{"/9/91/Unit-Bedile-3.png?version=e6e43d2c252f6c64ea98eda1bcef60ae","/f/f8/Unit-Bedile-4.png?version=add5c8b1abe3be03914fe2c1563c31c2"},3),
-	Garland("Garland",new String[]{"/d/d5/Unit-Garland-3.png?version=6e31a8405d2c89d766ae5916164f4600","/9/91/Unit-Garland-4.png?version=62b830e2576e34c3f0c0d8a494236b31","/0/08/Unit-Garland-5.png?version=e1dc44eb4c223170810de7e08e63cd82"},3),
-	Exdeath("Exdeath",new String[]{"/8/8d/Unit-Exdeath-3.png?version=e5922897344416bc550e7b9f65f11ffa","/4/4b/Unit-Exdeath-4.png?version=8456ddf8c06b7b3b41a577d9036f7852","/f/f9/Unit-Exdeath-5.png?version=f9f2cd47a3a5fbccd65f0c8023a1473b"},3),
-	Kuja("Kuja",new String[]{"/c/c3/Unit-Kuja-3.png?version=3f1ca21d2e7f8c875465ea7723f6827f","/2/2b/Unit-Kuja-4.png?version=b9f366303e30abdbd4a450b30a95ca34","/4/47/Unit-Kuja-5.png?version=6a46a4dba5e89a4b4ce6469218251d7d"},3),
-	CoD("Cloud of Darkness",new String[]{"/b/bf/Unit-Cloud_of_Darkness-3.png?version=848f35057bd6fcff43822cde8a1e8def","/8/8b/Unit-Cloud_of_Darkness-4.png?version=4b091b0d01b167acff33f852fb3c1228","/0/02/Unit-Cloud_of_Darkness-5.png?version=a8e53dc9e1d6ecc16849eac2762c2c35"},3),
-	Cecil("Cecil",new String[]{"/7/7b/Unit-Cecil-3.png?version=437c947c2db522631b228bed74fcfa01","/3/3b/Unit-Cecil-4.png?version=8275b728c1d0564569ffcfd202a58253","/e/e1/Unit-Cecil-5.png?version=ee583d5773104f251d57f5586fbd2460"},3),
-	Terra("Terra",new String[]{"/b/bd/Unit-Terra-3.png?version=111efd65dc8e86253820a988a6e3d91d","/6/66/Unit-Terra-4.png?version=84fd4cf21b204409fae4c3ce198bb0a3","/e/ec/Unit-Terra-5.png?version=931d017cf95b7084c1269dfd784109b7"},3),
-	Bartz("Bartz",new String[]{"/7/73/Unit-Bartz-3.png?version=20178907a396de7d2bdf46ad741bdcb7","/7/76/Unit-Bartz-4.png?version=2d6895f054aa9a3339a33a87208f20bc","/5/57/Unit-Bartz-5.png?version=4ef7830079568901a1d0c3aab3d39787"},3),
-	Firion("Firion",new String[]{"/4/4f/Unit-Firion-3.png?version=f8fe9ed7d587a8da58d4c83111dc0a9d","/3/3e/Unit-Firion-4.png?version=6f490a68f825c011119b1bcd53363bdb","/6/64/Unit-Firion-5.png?version=1a9fb3c1cccefcee0e305e303e32bc2d"},3),
-	Zidane("Zidane",new String[]{"/b/b0/Unit-Zidane-3.png?version=c9cbba2278b212d988fb9f77587456a8","/8/8e/Unit-Zidane-4.png?version=d0d8d6e809fd1cab0085beca7a44234c","/d/de/Unit-Zidane-5.png?version=f19236a9aca8392ba4df8eaeeac96363"},3),
-	Vaan("Vaan",new String[]{"/8/83/Unit-Vaan-3.png?version=82db594c5e1b561a09bfef77a974827f","/f/f6/Unit-Vaan-4.png?version=e379cd52a36cc4dd0bd580bd262caa92","/e/e6/Unit-Vaan-5.png?version=c3e76c21ed20e81f771617ba7dc1d7fd"},3),
+	Garland("Garland",new String[]{"/d/d5/Unit-Garland-3.png?version=6e31a8405d2c89d766ae5916164f4600","/9/91/Unit-Garland-4.png?version=62b830e2576e34c3f0c0d8a494236b31","/0/08/Unit-Garland-5.png?version=e1dc44eb4c223170810de7e08e63cd82",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/9/90/Unit-Garland-6.png?version=b4efd8f47369222794bedc0af140b81b"});
+		}
+	},
+	Exdeath("Exdeath",new String[]{"/8/8d/Unit-Exdeath-3.png?version=e5922897344416bc550e7b9f65f11ffa","/4/4b/Unit-Exdeath-4.png?version=8456ddf8c06b7b3b41a577d9036f7852","/f/f9/Unit-Exdeath-5.png?version=f9f2cd47a3a5fbccd65f0c8023a1473b",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/8/88/Unit-Exdeath-6.png?version=f5aa3e8216d9f18d0e83ec52b0547db4"});
+		}
+	},
+	Kuja("Kuja",new String[]{"/c/c3/Unit-Kuja-3.png?version=3f1ca21d2e7f8c875465ea7723f6827f","/2/2b/Unit-Kuja-4.png?version=b9f366303e30abdbd4a450b30a95ca34","/4/47/Unit-Kuja-5.png?version=6a46a4dba5e89a4b4ce6469218251d7d",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/a/a6/Unit-Kuja-6.png?version=1bfdd9c19c246ef47c6ab2fdbcbdbe85"});
+		}
+	},
+	CoD("Cloud of Darkness",new String[]{"/b/bf/Unit-Cloud_of_Darkness-3.png?version=848f35057bd6fcff43822cde8a1e8def","/8/8b/Unit-Cloud_of_Darkness-4.png?version=4b091b0d01b167acff33f852fb3c1228","/0/02/Unit-Cloud_of_Darkness-5.png?version=a8e53dc9e1d6ecc16849eac2762c2c35",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/7c/Unit-Cloud_of_Darkness-6.png?version=197c779ebb2ee5f3a5e34c6688995b39"});
+		}
+	},
+	Cecil("Cecil",new String[]{"/7/7b/Unit-Cecil-3.png?version=437c947c2db522631b228bed74fcfa01","/3/3b/Unit-Cecil-4.png?version=8275b728c1d0564569ffcfd202a58253","/e/e1/Unit-Cecil-5.png?version=ee583d5773104f251d57f5586fbd2460",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/b/b4/Unit-Cecil-6.png?version=8677055ebae4e1c40f1c79ab673912c4"});
+		}
+	},
+	Terra("Terra",new String[]{"/b/bd/Unit-Terra-3.png?version=111efd65dc8e86253820a988a6e3d91d","/6/66/Unit-Terra-4.png?version=84fd4cf21b204409fae4c3ce198bb0a3","/e/ec/Unit-Terra-5.png?version=931d017cf95b7084c1269dfd784109b7",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/a/af/Unit-Terra-6.png?version=0b8e5a7d79952f9475a629b3ce08a924"});
+		}
+	},
+	Bartz("Bartz",new String[]{"/7/73/Unit-Bartz-3.png?version=20178907a396de7d2bdf46ad741bdcb7","/7/76/Unit-Bartz-4.png?version=2d6895f054aa9a3339a33a87208f20bc","/5/57/Unit-Bartz-5.png?version=4ef7830079568901a1d0c3aab3d39787",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/0/0c/Unit-Bartz-6.png?version=238ab320294a43f664c099b3df90d51f"});
+		}
+	},
+	Firion("Firion",new String[]{"/4/4f/Unit-Firion-3.png?version=f8fe9ed7d587a8da58d4c83111dc0a9d","/3/3e/Unit-Firion-4.png?version=6f490a68f825c011119b1bcd53363bdb","/6/64/Unit-Firion-5.png?version=1a9fb3c1cccefcee0e305e303e32bc2d",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/0/06/Unit-Firion-6.png?version=012717c04454e1e86e9d6479c2615348"});
+		}
+	},
+	Zidane("Zidane",new String[]{"/b/b0/Unit-Zidane-3.png?version=c9cbba2278b212d988fb9f77587456a8","/8/8e/Unit-Zidane-4.png?version=d0d8d6e809fd1cab0085beca7a44234c","/d/de/Unit-Zidane-5.png?version=f19236a9aca8392ba4df8eaeeac96363",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/8/87/Unit-Zidane-6.png?version=bffc8367dffb6fd9d6ecdc284fc44421"});
+		}
+	},
+	Vaan("Vaan",new String[]{"/8/83/Unit-Vaan-3.png?version=82db594c5e1b561a09bfef77a974827f","/f/f6/Unit-Vaan-4.png?version=e379cd52a36cc4dd0bd580bd262caa92","/e/e6/Unit-Vaan-5.png?version=c3e76c21ed20e81f771617ba7dc1d7fd",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/1/10/Unit-Vaan-6.png?version=2932cc71ef0a052cf7b90c269973e08f"});
+		}
+	},
 	Duane("Duane",new String[]{"/6/6d/Unit-Duane-3.png?version=8a69bd78daba7afe970554f3cb26ee19","/7/77/Unit-Duane-4.png?version=5895dc08b8da75d8374940b8ab5907e4","/c/ca/Unit-Duane-5.png?version=e7ababffe9157e036a3d2a57600ffb8d"},3),
 	Cerius("Cerius",new String[]{"/8/88/Unit-Cerius-3.png?version=937604c7e1f7de1daa7d9cde84c24959","/4/47/Unit-Cerius-4.png?version=4bed78a7ccd6f4c7f5ea0ae632e771b6","/5/58/Unit-Cerius-5.png?version=07fc63961225f38a9e9829f134ec0f29"},3){
 		@Override
@@ -99,14 +169,24 @@ public enum Unit {
 			setUpgrades(new String[]{"/0/02/Unit-Cerius-6.png?version=8822b16cf2ff564a82f2d938039fe7c6"});
 		}
 	},
-	Roselia("Roselia",new String[]{"/f/fd/Unit-Roselia-3.png?version=1b634a1a183fdb008cd54ef756c02957","/9/9c/Unit-Roselia-4.png?version=852f06d45d9dd7e7a3bb964b765b7d4c","/c/cf/Unit-Roselia-5.png?version=71beeea0141be646a562d84d88cda6a8"},3),
+	Roselia("Roselia",new String[]{"/f/fd/Unit-Roselia-3.png?version=1b634a1a183fdb008cd54ef756c02957","/9/9c/Unit-Roselia-4.png?version=852f06d45d9dd7e7a3bb964b765b7d4c","/c/cf/Unit-Roselia-5.png?version=71beeea0141be646a562d84d88cda6a8",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/3/36/Unit-Roselia-6.png?version=1a6a5d026f02894af8b34fa586da1a74"});
+		}
+	},
 	Medius("Medius",new String[]{"/b/b4/Unit-Medius-3.png?version=44a4b56b58ae66de62f5731e7edd9538","/3/3e/Unit-Medius-4.png?version=618b6b35b7529c950432995d8f49eb70","/d/d5/Unit-Medius-5.png?version=0e6f9667d7937b726c0c39dd96308077"},3){
 		@Override
 		public void setup(){
 			setUpgrades(new String[]{"/8/89/Unit-Medius-6.png?version=a83fab3622d8262cdc48bf27d17dbf43"});
 		}
 	},
-	Miyuki("Miyuki",new String[]{"/5/5e/Unit-Miyuki-3.png?version=ed9aa10823a009f89ee84c55b2488dc2","/8/8b/Unit-Miyuki-4.png?version=f23b0661931d1b75af3d7a8e743f35e8","/e/ed/Unit-Miyuki-5.png?version=09a84ae46eafc9164133297587d22472"},3),
+	Miyuki("Miyuki",new String[]{"/5/5e/Unit-Miyuki-3.png?version=ed9aa10823a009f89ee84c55b2488dc2","/8/8b/Unit-Miyuki-4.png?version=f23b0661931d1b75af3d7a8e743f35e8","/e/ed/Unit-Miyuki-5.png?version=09a84ae46eafc9164133297587d22472",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/2/21/Unit-Miyuki-6.png?version=73f9b5cfda12c96d6cf8dde5437fc973"});
+		}
+	},
 	Russel("Russell",new String[]{"/d/d6/Unit-Russell-3.png?version=f879849b824e4818b7d42e75adfe6434","/0/01/Unit-Russell-4.png?version=3ca9c390ff68fa5adf659c347510ef59"},3),
 	Golbez("Golbez",new String[]{"/a/a8/Unit-Golbez-3.png?version=a48ba3ada6fa3fb9031f4c6765fc632e","/3/31/Unit-Golbez-4.png?version=83a882942bab614b54922317bd6f45fe","/f/f2/Unit-Golbez-5.png?version=fb09062c1c02583e1f59cb982da5002d"},3),
 	Galuf("Galuf",new String[]{"/b/bf/Unit-Galuf-3.png?version=c4e38de87222b6da8b3a0b6fc9322fac","/8/8f/Unit-Galuf-4.png?version=42e80587e399605681c21aea100d7e1b"},3){
@@ -115,13 +195,28 @@ public enum Unit {
 			setUpgrades(new String[]{"/0/05/Unit-Galuf-5.png?version=3f90877a3f06cd720b85d72993da337b"});
 		}
 	},
-	Xiao("Xiao",new String[]{"/b/b4/Unit-Xiao-3.png?version=eceed3930c356f795303d925e0ebd53f","/1/13/Unit-Xiao-4.png?version=d4ffb593ba32e0a7f4a7b8dd0056362e","/4/41/Unit-Xiao-5.png?version=a13ed2de278340dd74ec7dcecc39674e"},3),
+	Xiao("Xiao",new String[]{"/b/b4/Unit-Xiao-3.png?version=eceed3930c356f795303d925e0ebd53f","/1/13/Unit-Xiao-4.png?version=d4ffb593ba32e0a7f4a7b8dd0056362e","/4/41/Unit-Xiao-5.png?version=a13ed2de278340dd74ec7dcecc39674e",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/7a/Unit-Xiao-6.png?version=c144549f75c4ffe48966f6730e503375"});
+		}
+	},
 	Artemios("Artemios",new String[]{"/8/8e/Unit-Artemios-3.png?version=53a3f2772e6bf5a041c7339b47187409","/1/18/Unit-Artemios-4.png?version=90ab67be5ea9ec6fa18b5dd8d0c2a255","/0/02/Unit-Artemios-5.png?version=4de9e5a1d334c74a61adaa83b631c9fb"},3),
 	Locke("Locke",new String[]{"/7/7e/Unit-Locke-3.png?version=a5ce114388d09d56cca00d89ba77da01","/e/e8/Unit-Locke-4.png?version=e59fe6ace0e5294c97fda290b834609e","/3/3e/Unit-Locke-5.png?version=10b45340509b2cb416b03c6ecc47ffc7"},3),
 	Leo("Leo",new String[]{"/4/46/Unit-Leo-3.png?version=67c0fb1baa63da506a21eda0da0f27a7","/f/f7/Unit-Leo-4.png?version=1aa87219410caec0b639d34f4ffe1c19","/9/95/Unit-Leo-5.png?version=0dadb6623a01f9bce8d952589287ccf4"},3),
-	Gilbert("Gilbert",new String[]{"/5/52/Unit-Gilbert-3.png?version=6b4036a5a90372075cd488e55f86ea76","/b/be/Unit-Gilbert-4.png?version=6651a53727df99201827159b9f211260","/3/30/Unit-Gilbert-5.png?version=0baafc0e3ae2e8378240ae297ae1bd78"},3),
+	Gilbert("Gilbert",new String[]{"/5/52/Unit-Gilbert-3.png?version=6b4036a5a90372075cd488e55f86ea76","/b/be/Unit-Gilbert-4.png?version=6651a53727df99201827159b9f211260","/3/30/Unit-Gilbert-5.png?version=0baafc0e3ae2e8378240ae297ae1bd78",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/6/63/Unit-Gilbert-6.png?version=9a16f7e366cb2d4e093fa83c0212645d"});
+		}
+	},
 	Celes("Celes",new String[]{"/b/bf/Unit-Celes-3.png?version=2d4778a8f2047b66b6e7f2058bfe83ef","/2/2d/Unit-Celes-4.png?version=8712ac20003c040a218f709a1f0bce38","/0/08/Unit-Celes-5.png?version=f135db28ee63d37b90b61f0acba28ebd"},3),
-	Kefka("Kefka",new String[]{"/d/d2/Unit-Kefka-3.png?version=6196198582e6c70fa5bc105469b7481c","/3/31/Unit-Kefka-4.png?version=c8d590eb5d5ec0870338107bb221a349","/b/b4/Unit-Kefka-5.png?version=f0ee9c90e4067e9d3a3aaca934c62065"},3),
+	Kefka("Kefka",new String[]{"/d/d2/Unit-Kefka-3.png?version=6196198582e6c70fa5bc105469b7481c","/3/31/Unit-Kefka-4.png?version=c8d590eb5d5ec0870338107bb221a349","/b/b4/Unit-Kefka-5.png?version=f0ee9c90e4067e9d3a3aaca934c62065",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/d/d7/Unit-Kefka-6.png?version=102724eeb22c248c64e43424b26b5215"});
+		}
+	},
 	Rakshasa("Rakshasa",new String[]{"/f/f7/Unit-Rakshasa-3.png?version=997409afef91850a477e38f39265cd8c","/a/a1/Unit-Rakshasa-4.png?version=92173f438bc74915b50f2c0be6786990","/0/0b/Unit-Rakshasa-5.png?version=ae2a8a032cd8ca1a0a81e41c4384d6aa"},3),
 	Chizuru("Chizuru",new String[]{"/5/50/Unit-Chizuru-4.png?version=1603c575e9c5d247a2d3f9080c762ef3","/4/45/Unit-Chizuru-5.png?version=5c8e5ae912f2302db502f1db08cfa989"},4){
 		@Override
@@ -129,32 +224,97 @@ public enum Unit {
 			setUpgrades(new String[]{"/8/80/Unit-Chizuru-6.png?version=0ce21ec1e6ce66e25a6ad1f73761070b"});
 		}
 	},
-	Hayate("Hayate",new String[]{"/6/64/Unit-Hayate-3.png?version=5f6e6f04ae2b6f58935acdc718c74490","/e/e8/Unit-Hayate-4.png?version=03b5dc0330b58ce2b24d91cdfdd1c1ac","/4/40/Unit-Hayate-5.png?version=2441d7142c3c6f7856442bc83173b2b0"},3),
-	WoL("Warrior of Light",new String[]{"/7/70/Unit-Warrior_of_Light-4.png?version=a082f11294d562e8b1687b15deecff22","/c/c2/Unit-Warrior_of_Light-5.png?version=6eb241f6f628041e0a9f34e730c08faf"},4),
+	Hayate("Hayate",new String[]{"/6/64/Unit-Hayate-3.png?version=5f6e6f04ae2b6f58935acdc718c74490","/e/e8/Unit-Hayate-4.png?version=03b5dc0330b58ce2b24d91cdfdd1c1ac","/4/40/Unit-Hayate-5.png?version=2441d7142c3c6f7856442bc83173b2b0",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/b/bc/Unit-Hayate-6.png?version=849c3568f55f0c5c40c06d7af70ef64c"});
+		}
+	},
+	WoL("Warrior of Light",new String[]{"/7/70/Unit-Warrior_of_Light-4.png?version=a082f11294d562e8b1687b15deecff22","/c/c2/Unit-Warrior_of_Light-5.png?version=6eb241f6f628041e0a9f34e730c08faf",},4){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/5/5d/Unit-Warrior_of_Light-6.png?version=551e4316c786f1d55d9ba70068f075ca"});
+		}
+	},
 	Tellah("Tellah",new String[]{"/3/3f/Unit-Tellah-3.png?version=9b56fc089453b07ff34602ec8c8c5503","/c/c4/Unit-Tellah-4.png?version=6bb6a35f7ea92c72cccef37fb4a02e98","/c/c0/Unit-Tellah-5.png?version=78eb3b853f0fa65616138f3c6c948da8"},3),
 	Lenna("Lenna",new String[]{"/5/57/Unit-Lenna-3.png?version=5f2df9bf4548eba73a1ab31abd13f864","/7/7d/Unit-Lenna-4.png?version=a4bcd6a62ec852c6dbd8b10208c464b2","/b/ba/Unit-Lenna-5.png?version=ab784a2396211368f34b8575ec1ed5b4"},3),
 	Amarant("Amarant",new String[]{"/8/83/Unit-Amarant-3.png?version=7ffb648c9cf44102a3e381b8eb972d99","/0/06/Unit-Amarant-4.png?version=91a73f9fb0b5d2b50f5b7c6bd750b182","/1/12/Unit-Amarant-5.png?version=7dc0b2ad74a0202ae7f747d24d6b4d53"},3),
 	Lani("Lani",new String[]{"/a/a8/Unit-Lani-3.png?version=7673aeaccb0b8320fb47fefd4330d12f","/b/ba/Unit-Lani-4.png?version=e62ac0c48f767ef5eff1998509474bbf"},3),
-	Garnet("Garnet",new String[]{"/5/53/Unit-Garnet-4.png?version=2346700fe5606dee6821818c492ed133","/f/f3/Unit-Garnet-5.png?version=9becf3a4b588576d48581c5f6168e6da"},4),
+	Garnet("Garnet",new String[]{"/5/53/Unit-Garnet-4.png?version=2346700fe5606dee6821818c492ed133","/f/f3/Unit-Garnet-5.png?version=9becf3a4b588576d48581c5f6168e6da",},4){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/c/ce/Unit-Garnet-6.png?version=53e249fc17b8f770f6e341aa11da8bd9"});
+		}
+	},
 	Freya("Freya",new String[]{"/a/a6/Unit-Freya-3.png?version=5544096799a6956efcc47f97ecf7e036","/2/28/Unit-Freya-4.png?version=3473d752d09d26cd84bb17da573afa44","/f/fc/Unit-Freya-5.png?version=2b065f45a90cee4b66dc9a314b8fbd8b"},3),
-	Charlotte("Charlotte",new String[]{"/2/24/Unit-Charlotte-3.png?version=d57be6a671744810f6dbfed20dc1d635","/e/ed/Unit-Charlotte-4.png?version=79cb85d2fb2caa1f9086279fc3ee3f49","/c/c5/Unit-Charlotte-5.png?version=19b73296aba4d6debc821986776a57ef"},3),
+	Charlotte("Charlotte",new String[]{"/2/24/Unit-Charlotte-3.png?version=d57be6a671744810f6dbfed20dc1d635","/e/ed/Unit-Charlotte-4.png?version=79cb85d2fb2caa1f9086279fc3ee3f49","/c/c5/Unit-Charlotte-5.png?version=19b73296aba4d6debc821986776a57ef",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/78/Unit-Charlotte-6.png?version=2414f9b784f0d63e521619a277562c5b"});
+		}
+	},
 	Ludmille("Ludmille",new String[]{"/3/32/Unit-Ludmille-3.png?version=e4dbb2ee7047f8da68c135876e8ad821","/0/07/Unit-Ludmille-4.png?version=e1faee93d4c63c20ac4160c36d1b51a9","/0/04/Unit-Ludmille-5.png?version=06acb9be35c7c9dbc26fdbf781d3f7c7"},3),
-	Lightning("Lightning",new String[]{"/a/ab/Unit-Lightning-5.png?version=76dd27debeb3102d5f83e332ee9fad3d","/2/25/Unit-Lightning-6.png?version=aded6fbaee049aa66dee4fa2acbe278a"},5),
-	Deltia("Deltia",new String[]{"/b/ba/Unit-Delita-5.png?version=01340646bff4e81219c949623a4be807","/b/be/Unit-Delita-6.png?version=d35b6c90434337f1a00f7e7269b3432f"},5),
+	Lightning("Lightning",new String[]{"/a/ab/Unit-Lightning-5.png?version=76dd27debeb3102d5f83e332ee9fad3d","/2/25/Unit-Lightning-6.png?version=aded6fbaee049aa66dee4fa2acbe278a",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/78/Unit-Lightning-7.png?version=b90dfe2fd90b077728bd385848d60032"});
+		}
+	},
+	Deltia("Delita",new String[]{"/b/ba/Unit-Delita-5.png?version=01340646bff4e81219c949623a4be807","/b/be/Unit-Delita-6.png?version=d35b6c90434337f1a00f7e7269b3432f",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/c/c5/Unit-Delita-7.png?version=b8044ddf8aaea0f23bbe2a688f04450f"});
+		}
+	},
 	Alma("Alma",new String[]{"/1/11/Unit-Alma-3.png?version=1a3c96d4ae4e9412916c151e1f8d7057","/0/05/Unit-Alma-4.png?version=2de8696181c054604895e440de36ea52","/3/3f/Unit-Alma-5.png?version=43b078407da42f9bfce167a021b14547"},3),
-	Gaffgarion("Gaffgarion",new String[]{"/1/17/Unit-Gaffgarion-4.png?version=571e82b59004a6512495e4d1433bc339","/e/e8/Unit-Gaffgarion-5.png?version=8e2834b219e6d2a62854d2548363d108"},4),
-	Ramza("Ramza",new String[]{"/1/14/Unit-Ramza-5.png?version=e221e5191bed7c51929dfb820303ce6b","/5/5b/Unit-Ramza-6.png?version=7e077c5eea40bc4accb5a7666c75a662"},5),
-	Arigas("Arigas",new String[]{"/9/91/Unit-Agrias-4.png?version=1f4bf2300fabf967a3fc1b9efecfaf28","/b/b5/Unit-Agrias-5.png?version=7fadbaea915d40a401f4568993da8185"},4),
+	Gaffgarion("Gaffgarion",new String[]{"/1/17/Unit-Gaffgarion-4.png?version=571e82b59004a6512495e4d1433bc339","/e/e8/Unit-Gaffgarion-5.png?version=8e2834b219e6d2a62854d2548363d108",},4){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/3/31/Unit-Gaffgarion-6.png?version=a2e95b7ebf75e92f4104bada2eb5cffa"});
+		}
+	},
+	Ramza("Ramza",new String[]{"/1/14/Unit-Ramza-5.png?version=e221e5191bed7c51929dfb820303ce6b","/5/5b/Unit-Ramza-6.png?version=7e077c5eea40bc4accb5a7666c75a662",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/f/fa/Unit-Ramza-7.png?version=4eb7e6558af9248134a27c9cacb60115"});
+		}
+	},
+	Arigas("Agrias",new String[]{"/9/91/Unit-Agrias-4.png?version=1f4bf2300fabf967a3fc1b9efecfaf28","/b/b5/Unit-Agrias-5.png?version=7fadbaea915d40a401f4568993da8185",},4){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/e/ef/Unit-Agrias-6.png?version=96937e8e5fcecad2a8d74353b0758111"});
+		}
+	},
 	Mustadio("Mustadio",new String[]{"/9/94/Unit-Mustadio-3.png?version=636eeda021f8c0dd0c65e16bcf64dcee","/0/0e/Unit-Mustadio-4.png?version=9a6499dd8d3c8c6ea83468dff2affbf2","/f/fd/Unit-Mustadio-5.png?version=60126912028e1ff06fa9b01b37333db6"},3),
-	Rosa("Rosa",new String[]{"/2/27/Unit-Rosa-4.png?version=dafe38ce9c827529603bc9edb973b6d6","/b/b9/Unit-Rosa-5.png?version=4b5accd9c1e2602669485611a918c0e8"},4),
-	DKC("Dark Knight Cecil",new String[]{"/8/8e/Unit-Dark_Knight_Cecil-5.png?version=53c285a9df669c314ad1d4cb4ed619ad","/1/17/Unit-Dark_Knight_Cecil-6.png?version=e3ae26a12bc287d5e2571b197706f459"},5),
+	Rosa("Rosa",new String[]{"/2/27/Unit-Rosa-4.png?version=dafe38ce9c827529603bc9edb973b6d6","/b/b9/Unit-Rosa-5.png?version=4b5accd9c1e2602669485611a918c0e8",},4){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/3/31/Unit-Rosa-6.png?version=1e427d785d86b4a972087ece15d979e2"});
+		}
+	},
+	DKC("Dark Knight Cecil",new String[]{"/8/8e/Unit-Dark_Knight_Cecil-5.png?version=53c285a9df669c314ad1d4cb4ed619ad","/1/17/Unit-Dark_Knight_Cecil-6.png?version=e3ae26a12bc287d5e2571b197706f459",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/7e/Unit-Dark_Knight_Cecil-7.png?version=b0d9428d70b8e6c2f849447ab4a1b94b"});
+		}
+	},
 	Edge("Edge",new String[]{"/c/cd/Unit-Edge-3.png?version=1022775ffad1d0951c48bbf5313a94c4","/7/75/Unit-Edge-4.png?version=eaee8ec6e7408c600acb9d2236271d56","/a/af/Unit-Edge-5.png?version=bb356da4741db4b340b6f7d237c17398"},3),
 	Arc("Arc",new String[]{"/b/b7/Unit-Arc-3.png?version=3e6706b49b0b58767f6e10be8d45e10b","/8/83/Unit-Arc-4.png?version=977ad3afabd8b553973bb1a1f65fc89f","/c/ca/Unit-Arc-5.png?version=7f1a7e4d588f891a4d67b1c297eb3e81"},3),
 	Ingus("Ingus",new String[]{"/4/4b/Unit-Ingus-3.png?version=f2f97c828da8b8fe82c31a68f38f9acd","/1/14/Unit-Ingus-4.png?version=622643bbed45b07774c001e241ecdcd2","/7/7c/Unit-Ingus-5.png?version=731ed35bdeb64d7a07cb83cd8c777f35"},3),
 	Refia("Refia",new String[]{"/8/8b/Unit-Refia-4.png?version=68bf244267d1808c92903f8ad958fcfb","/4/42/Unit-Refia-5.png?version=18cb362f30848f1889749e7e7f0dbbce","/a/ae/Unit-Refia-6.png?version=6e330f7fb9d476368e422933e4a91dcf"},4),
-	Luneth("Luneth",new String[]{"/2/23/Unit-Luneth-5.png?version=8dcad4fd75e8effc305672192cd34096","/e/ef/Unit-Luneth-6.png?version=5ed860182433c1c383365b27ece29c1b"},5),
+	Luneth("Luneth",new String[]{"/2/23/Unit-Luneth-5.png?version=8dcad4fd75e8effc305672192cd34096","/e/ef/Unit-Luneth-6.png?version=5ed860182433c1c383365b27ece29c1b",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/2/24/Unit-Luneth-7.png?version=624f186a790dfbc39b4bf52bd7b1b63d"});
+		}
+	},
 	Faris("Faris",new String[]{"/8/8a/Unit-Faris-3.png?version=f0c435764a45bf505d0feb57cfba17b2","/5/54/Unit-Faris-4.png?version=3a8a34a4904a54ac7ec45dfd00b4a190","/2/25/Unit-Faris-5.png?version=9e4e21612897c0a574a832a5432db1c0"},3),
-	Greg("Gilgamesh",new String[]{"/b/bb/Unit-Gilgamesh-5.png?version=a0f4779d8071cbe57c0bebca63dfd617","/2/22/Unit-Gilgamesh-6.png?version=55267a2e8a8f10445f82ac8126357529"},5),
+	Greg("Gilgamesh",new String[]{"/b/bb/Unit-Gilgamesh-5.png?version=a0f4779d8071cbe57c0bebca63dfd617","/2/22/Unit-Gilgamesh-6.png?version=55267a2e8a8f10445f82ac8126357529",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/e/e3/Unit-Gilgamesh-7.png?version=ef8af2488995f43bbc279b9a6db94420"});
+		}
+	},
 	Snow("Snow",new String[]{"/8/85/Unit-Snow-4.png?version=ef27fa9364205908686305a3d5082de0","/b/bd/Unit-Snow-5.png?version=480f2ec78df6e99fc71cb53fffaef8c7","/d/d1/Unit-Snow-6.png?version=a64d464259719b9b4a76ba7769576e64"},4),
 	Vanille("Vanille",new String[]{"/3/3c/Unit-Vanille-4.png?version=c4bea2367dd2721c665c85c17a6ff975","/5/5d/Unit-Vanille-5.png?version=aa95947586ca873014f523d1ced9b5fc"},4),
 	Sazh("Sazh",new String[]{"/f/fa/Unit-Sazh-3.png?version=b18c7a4093b0885b0d63168c71ebf2f7","/0/0b/Unit-Sazh-4.png?version=e2da48b67f2e447d18d1599cdfc6a2b4","/7/7c/Unit-Sazh-5.png?version=e64619a09e3854ac16c230b8ade47c8b"},3),
@@ -164,64 +324,154 @@ public enum Unit {
 	Noctis("Noctis",new String[]{"/c/c3/Unit-Noctis-5.png?version=51fbc15713914afeb855abf73c34395e","/a/ab/Unit-Noctis-6.png?version=c5f73bf1a2d52441b1c849e3f0c635a5"},5),
 	Elle("Elle",new String[]{"/4/43/Unit-Elle-3.png?version=ba5f9f32427a3ba032b0f73dfb11ff8e","/c/c1/Unit-Elle-4.png?version=8ca9ec862b8526813c17dcf6e58ad5f0","/4/4f/Unit-Elle-5.png?version=c2a378b867af3d1c5c666761d9cd2efb"},3),
 	Luka("Luka",new String[]{"/3/3e/Unit-Luka-4.png?version=79d65988be50974d084aa40a2c6ad2cd","/7/77/Unit-Luka-5.png?version=b031f9c68e3b82b5d92e5f05a5e3db46","/7/75/Unit-Luka-6.png?version=e43c86a42c1ed05b40e1329ef9901fe1"},4),
-	DFina("Dark Fina",new String[]{"/1/1d/Unit-Dark_Fina-5.png?version=2dc04248867f101c2333093da98ea26b","/9/92/Unit-Dark_Fina-6.png?version=2d53e5945a5ff90c1e481cae190125ce"},5),
+	DFina("Dark Fina",new String[]{"/1/1d/Unit-Dark_Fina-5.png?version=2dc04248867f101c2333093da98ea26b","/9/92/Unit-Dark_Fina-6.png?version=2d53e5945a5ff90c1e481cae190125ce",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/2/21/Unit-Dark_Fina-7.png?version=86d90f277bd7d7eba2e53bb806e3eb60"});
+		}
+	},
 	Trey("Trey",new String[]{"/6/6a/Unit-Trey-3.png?version=7127c3e66c681a5385ee0c4db02ea857","/4/49/Unit-Trey-4.png?version=b1fb6c52253daafdc269319baf81cbfb","/3/3a/Unit-Trey-5.png?version=9b17fc1c970ed9182b45efcc6ae6f2c6"},3),
 	Jack("Jack",new String[]{"/1/1b/Unit-Jack-3.png?version=442cbc5e5bdefaa0d13a3215c8c3da9f","/b/ba/Unit-Jack-4.png?version=3f54538b155914b6204587bbe75f7335","/0/0e/Unit-Jack-5.png?version=4f365a86d1d0e93b6db64f3335296a5d"},3),
 	Seven("Seven",new String[]{"/9/99/Unit-Seven-4.png?version=6545af54be708d95f8f28ca87a937b26","/6/6c/Unit-Seven-5.png?version=c45c5326b879dda21d47e9d4dd103eda","/7/72/Unit-Seven-6.png?version=3b25005027cfbda21216c0029c89581e"},4),
-	Ace("Ace",new String[]{"/3/32/Unit-Ace-5.png?version=e847ec4edd7856697597e9c8cc471390","/2/2b/Unit-Ace-6.png?version=1e449b5f5d9075ba605a39c43ac7f077"},5),
-	Marie("Marie",new String[]{"/1/13/Unit-Marie-5.png?version=c3e43aa082d0fe96c3170a54051982a0","/7/79/Unit-Marie-6.png?version=5aeeff3822657f94253d55d66d5b63ec"},5),
+	Ace("Ace",new String[]{"/3/32/Unit-Ace-5.png?version=e847ec4edd7856697597e9c8cc471390","/2/2b/Unit-Ace-6.png?version=1e449b5f5d9075ba605a39c43ac7f077",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/4/4c/Unit-Ace-7.png?version=4c65e8f46d263e196097452996a0b116"});
+		}
+	},
+	Marie("Marie",new String[]{"/1/13/Unit-Marie-5.png?version=c3e43aa082d0fe96c3170a54051982a0","/7/79/Unit-Marie-6.png?version=5aeeff3822657f94253d55d66d5b63ec",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/c/c5/Unit-Marie-7.png?version=d05b750231b8c58ef0c5fcae1cadde58"});
+		}
+	},
 	Guy("Guy",new String[]{"/d/d3/Unit-Guy-3.png?version=cd8bfc62c61c50b2943a75930855e259","/d/d6/Unit-Guy-4.png?version=a73f8ca36a08a4b89a2475d6ebaea0ba","/3/3b/Unit-Guy-5.png?version=5b8cfc7adf640cfe7d90c78dea7b3edb"},3),
 	Leon("Leon",new String[]{"/2/29/Unit-Leon-4.png?version=7ff4f65694ef428eae1edf38057623a1","/a/ab/Unit-Leon-5.png?version=a8ba5fc02f0361a2686777cd1fad07c4"},4),
-	Emperor("Emperor",new String[]{"/e/e9/Unit-Emperor-5.png?version=b5c36f0f52aa20a987170aa569d8b881","/e/eb/Unit-Emperor-6.png?version=38fa32a0e4ff39ceebc9e3350b1615c7"},5),
-	Olive("Olive",new String[]{"/7/7a/Unit-Olive-5.png?version=9ae2b446b7c70df36d43565017628c26","/8/88/Unit-Olive-6.png?version=a3037af8900eced5156b91c671545017"},5),
+	Emperor("Emperor",new String[]{"/e/e9/Unit-Emperor-5.png?version=b5c36f0f52aa20a987170aa569d8b881","/e/eb/Unit-Emperor-6.png?version=38fa32a0e4ff39ceebc9e3350b1615c7",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/5/57/Unit-Emperor-7.png?version=fc4309fbec1ba4e0d4bd25be0f29d18d"});
+		}
+	},
+	Olive("Olive",new String[]{"/7/7a/Unit-Olive-5.png?version=9ae2b446b7c70df36d43565017628c26","/8/88/Unit-Olive-6.png?version=a3037af8900eced5156b91c671545017",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/5/5c/Unit-Olive-7.png?version=fffcbdbf8b7abdd87fcc7a5ffce67a3a"});
+		}
+	},
 	Shine("Shine",new String[]{"/8/80/Unit-Shine-4.png?version=d5f7c8481e9b2d6ecad508906094c77b","/b/b6/Unit-Shine-5.png?version=e77046618ab6efb84426e2ac306cabee","/3/30/Unit-Shine-6.png?version=5ad309bab23addf3cda10ed6b1851fa7"},4),
 	Shera("Shera",new String[]{"/a/ae/Unit-Shera-3.png?version=ff3f045c08286e68e5fb80e9d2f966c9","/9/9d/Unit-Shera-4.png?version=1e833b1c95162126de05372ed7fb7a4c","/5/57/Unit-Shera-5.png?version=244dadc03caae527d4485659d1d0e9f4"},3),
-	Queen("Queen",new String[]{"/0/08/Unit-Queen-5.png?version=1172e6e643fbdda3cea58b878829d1e3","/7/76/Unit-Queen-6.png?version=5402e9dbb217d6b9172df4b549e7c3da"},5),
+	Queen("Queen",new String[]{"/0/08/Unit-Queen-5.png?version=1172e6e643fbdda3cea58b878829d1e3","/7/76/Unit-Queen-6.png?version=5402e9dbb217d6b9172df4b549e7c3da",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/4/41/Unit-Queen-7.png?version=08a5d8545b59bbdf5f123e6af9688afa"});
+		}
+	},
 	Nine("Nine",new String[]{"/8/85/Unit-Nine-4.png?version=f1199c797fadeb8416e2655881f66172","/c/c9/Unit-Nine-5.png?version=736a4bccf28e95b8f135a1138b0339e0","/c/c5/Unit-Nine-6.png?version=ca3da82b972a9a4859bb00406cd2803f"},4),
 	Clinque("Cinque",new String[]{"/7/7c/Unit-Cinque-3.png?version=cb2a63c1ce951b9a19e652c13e4a7369","/c/c9/Unit-Cinque-4.png?version=b583495b70b78258295606127fbbec08","/e/e9/Unit-Cinque-5.png?version=5e58509a8c6e3b1def6797e26a360c64"},3),
 	Eight("Eight",new String[]{"/6/66/Unit-Eight-3.png?version=2b1f2ea6f26f2b3c3eca81eaea91a66c","/7/72/Unit-Eight-4.png?version=9bda9c1ae9a33ca72145898909b4401e","/6/65/Unit-Eight-5.png?version=30b32bd862c57e9f101752c59d617b4b"},3),
-	Cid("Thunder God",new String[]{"/e/e6/Unit-Orlandeau-5.png?version=54d5582edcaaf714d7f3bcad639f7850","/d/df/Unit-Orlandeau-6.png?version=fafa898324518b8ce88ee2178b9ead8c"},5),
+	Cid("Orlandeau",new String[]{"/e/e6/Unit-Orlandeau-5.png?version=54d5582edcaaf714d7f3bcad639f7850","/d/df/Unit-Orlandeau-6.png?version=fafa898324518b8ce88ee2178b9ead8c",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/2/25/Unit-Orlandeau-7.png?version=079241faeefb53d55f396f45c02b1422"});
+		}
+	},
 	Soleil("Soleil",new String[]{"/c/c0/Unit-Soleil-4.png?version=5f172cef43d574dce137600b775ae4a9","/1/1b/Unit-Soleil-5.png?version=e53a8f7588752ac6e7f7d60e4f42fb28","/3/33/Unit-Soleil-6.png?version=30edaf1c6fd963a3bb18555f95e9dc29"},4),
 	Ovelia("Ovelia",new String[]{"/a/ae/Unit-Ovelia-3.png?version=ea47aab0e6fd26b8d4439e953bba35df","/6/6f/Unit-Ovelia-4.png?version=e675329da768d85868d4d86b25656134","/b/b9/Unit-Ovelia-5.png?version=21f95a268a15b2dce9c95ebea9ce0a4d"},3),
 	Lawrence("Lawrence",new String[]{"/e/ef/Unit-Lawrence-3.png?version=7af7979f144a159a7fc736e684551488","/4/40/Unit-Lawrence-4.png?version=88dc6dcee1e052e8e8f90f43386214fb","/b/b8/Unit-Lawrence-5.png?version=c85157387fe715e3ad84393cec7b2a31"},3),
 	Fryevia("Fryevia",new String[]{"/2/25/Unit-Fryevia-5.png?version=e1ada43309badf983ef5a64332175d47","/3/32/Unit-Fryevia-6.png?version=62a168b7fbffd791f9ca8d88437a7883"},5),
 	Xon("Xon",new String[]{"/d/d0/Unit-Xon-4.png?version=ff831f717ce3246a16b88f62722fd714","/b/bf/Unit-Xon-5.png?version=6382d0946ca9981e541ba75fec595860","/8/88/Unit-Xon-6.png?version=23090d736507ee8a13f900fd29151ca5"},4),
 	Aiden("Aiden",new String[]{"/7/7f/Unit-Aiden-3.png?version=24c74341419a0d66c2a90a9e02f1898a","/5/59/Unit-Aiden-4.png?version=43b3542e5a6754e7c650c957e7ead651","/8/8f/Unit-Aiden-5.png?version=913c715cb81ff55ca348ec184bb9a52b"},3),
-	TTerra("Trance Terra",new String[]{"/f/ff/Unit-Trance_Terra-5.png?version=b7acc24edbc1280874056359a8932d23","/c/c9/Unit-Trance_Terra-6.png?version=d7db59f3069fd7f0654b167e4608abf5"},5),
+	TTerra("Trance Terra",new String[]{"/f/ff/Unit-Trance_Terra-5.png?version=b7acc24edbc1280874056359a8932d23","/c/c9/Unit-Trance_Terra-6.png?version=d7db59f3069fd7f0654b167e4608abf5",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/78/Unit-Trance_Terra-7.png?version=be1760ecbbeb1ffc2255f1a9c3595dd6"});
+		}
+	},
 	Setzer("Setzer",new String[]{"/8/82/Unit-Setzer-4.png?version=2ead8a1e0965a89a4e60d2f4d01f9509","/8/8e/Unit-Setzer-5.png?version=e2d2da84954caae0d909c76ed74c53f1","/5/58/Unit-Setzer-6.png?version=a968706d3c6747c0b853ff01cb19fdec"},4),
 	Gau("Gau",new String[]{"/a/ae/Unit-Gau-3.png?version=86a4248518d92f0f337d53e8ac01eeb2","/a/a5/Unit-Gau-4.png?version=dddcb33201be09f9e0834d39a90f34c6","/7/72/Unit-Gau-5.png?version=86f4ffd16da0c69b45c17b61b29821dd"},3),
 	Eileen("Aileen",new String[]{"/2/21/Unit-Aileen-5.png?version=9b68174017ea66b64e26e0881e955356","/4/49/Unit-Aileen-6.png?version=3420bebd48cf5e77a2d71515ab551ce3"},5),
 	Soze("Sozhe",new String[]{"/e/ee/Unit-Sozhe-4.png?version=8db6e71885c7f7466053db6a98c70696","/d/d4/Unit-Sozhe-5.png?version=11ba5c7a4156cecd2fd7c76b67a0b2a7","/9/94/Unit-Sozhe-6.png?version=2ab7a096496135b2e14aabb6dce439da"},4),
-	Heretic("Heltich",new String[]{"/3/36/Unit-Heltich-3.png?version=b9577d4a66090573ad7474a1beef99f1","/6/61/Unit-Heltich-4.png?version=0095dc6e203899b0c12681c1d76deaa5","/2/2b/Unit-Heltich-5.png?version=e9da98267d682e8763fd93db477118df"},3),
-	Ulrica("Ulrica",new String[]{"/7/72/Unit-Ulrica-3.png?version=a5e2cc21b6a44a67253397e1420c2777","/b/b6/Unit-Ulrica-4.png?version=5178cf886205f3100e9b7dfdbde05e27","/1/14/Unit-Ulrica-5.png?version=64271ab140d89f4380352476d5374a51"},3),
+	Heretic("Heltich",new String[]{"/3/36/Unit-Heltich-3.png?version=b9577d4a66090573ad7474a1beef99f1","/6/61/Unit-Heltich-4.png?version=0095dc6e203899b0c12681c1d76deaa5","/2/2b/Unit-Heltich-5.png?version=e9da98267d682e8763fd93db477118df",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/8/8c/Unit-Heltich-6.png?version=b9f14118a5fd56469e8a56c1a8350e19"});
+		}
+	},
+	Ulrica("Ulrica",new String[]{"/7/72/Unit-Ulrica-3.png?version=a5e2cc21b6a44a67253397e1420c2777","/b/b6/Unit-Ulrica-4.png?version=5178cf886205f3100e9b7dfdbde05e27","/1/14/Unit-Ulrica-5.png?version=64271ab140d89f4380352476d5374a51",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/0/0e/Unit-Ulrica-6.png?version=c53e7f43d9e880a0c4336178a51755ee"});
+		}
+	},
 	Zyrus("Zyrus",new String[]{"/c/cd/Unit-Zyrus-4.png?version=96375c21507153a910b399b0cd6e1106","/b/be/Unit-Zyrus-5.png?version=2b97acb9180b93df0329e56720c356cd","/5/5d/Unit-Zyrus-6.png?version=d1e4d3ca07a9996c30121fc07c12d8a9"},4),
-	Reberta("Reberta",new String[]{"/c/c7/Unit-Reberta-5.png?version=ad823b4deac00579f52a72c006fb5050","/b/b0/Unit-Reberta-6.png?version=9c3ad117048631838242100b8f479c9d"},5),
+	Reberta("Reberta",new String[]{"/c/c7/Unit-Reberta-5.png?version=ad823b4deac00579f52a72c006fb5050","/b/b0/Unit-Reberta-6.png?version=9c3ad117048631838242100b8f479c9d",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/8/85/Unit-Reberta-7.png?version=9867d62e3ac5095b4423738e4dd2430a"});
+		}
+	},
 	Sice("Sice",new String[]{"/4/42/Unit-Sice-3.png?version=6d528642bf94c8af9b6f3d077f10a696","/3/30/Unit-Sice-4.png?version=e003871a530bed2eeb5d6b06bc8f75e9","/6/64/Unit-Sice-5.png?version=3422c4a100dd87d801c5014e02786f90"},3),
 	King("King",new String[]{"/7/70/Unit-King-4.png?version=206a7a1fa8287ef83c37ab2386ea9454","/1/13/Unit-King-5.png?version=41f076e40dafce9150099c88da069bb5","/e/e5/Unit-King-6.png?version=030958c77b217bddf56e0492b4dd514f"},4),
 	Rem("Rem",new String[]{"/a/a5/Unit-Rem-5.png?version=1285024f32d7a0cfb3b606558eb1d5be","/b/b6/Unit-Rem-6.png?version=78b4aaa81fb7e35238607ea6b0366c5e"},5),
-	Wilhelm("Wilhelm",new String[]{"/7/76/Unit-Wilhelm-5.png?version=7b75d37764ee05753823efe779b4c0bd","/f/f0/Unit-Wilhelm-6.png?version=bcb94748f8b43efa39514cc5ad525654"},5),
+	Wilhelm("Wilhelm",new String[]{"/7/76/Unit-Wilhelm-5.png?version=7b75d37764ee05753823efe779b4c0bd","/f/f0/Unit-Wilhelm-6.png?version=bcb94748f8b43efa39514cc5ad525654",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/9/92/Unit-Wilhelm-7.png?version=0f315a47724176e61b21603de78d980f"});
+		}
+	},
 	Grace("Grace",new String[]{"/2/28/Unit-Grace-4.png?version=9ba0fcc216abfb452e8069a5dc34a991","/3/38/Unit-Grace-5.png?version=385c6d33f20a963e199857dcc2f0da87","/8/8c/Unit-Grace-6.png?version=b42e14f3e2bcedc083ccdff734e31aaa"},4),
 	Abel("Abel",new String[]{"/8/88/Unit-Abel-3.png?version=b601d10c549c3102df2c00dde3d2d18a","/0/0e/Unit-Abel-4.png?version=c0b20660e52ea56a5bc077829a2fd8a4","/3/35/Unit-Abel-5.png?version=fc406e856cd2610401fb86f254cb9512"},3),
 	Jean("Jean",new String[]{"/b/b4/Unit-Jean-3.png?version=338e9add913f87cbf72696f709eb4246","/6/67/Unit-Jean-4.png?version=09c1e48e33c8d6f5d0af07155b870b94","/9/91/Unit-Jean-5.png?version=e0c72c0e5dc193664eb13818287efcf2"},3),
-	Camille("Camille",new String[]{"/3/38/Unit-Camille-3.png?version=565d992b9d75093fe10d25413b5ef658","/1/17/Unit-Camille-4.png?version=c93c0bbeba3aa0f3413432ac10b2329b","/e/e4/Unit-Camille-5.png?version=9021a14234fd7bca288d80250b2ee6df"},3),
+	Camille("Camille",new String[]{"/3/38/Unit-Camille-3.png?version=565d992b9d75093fe10d25413b5ef658","/1/17/Unit-Camille-4.png?version=c93c0bbeba3aa0f3413432ac10b2329b","/e/e4/Unit-Camille-5.png?version=9021a14234fd7bca288d80250b2ee6df",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/4/4f/Unit-Camille-6.png?version=9c90cb283bc56e70ae61a339055f9298"});
+		}
+	},
 	Illus("Ilias",new String[]{"/4/46/Unit-Ilias-4.png?version=808ce3b0bc6a5c94f7744f2eb6a06fe6","/7/78/Unit-Ilias-5.png?version=09c4bd297a6739af367e40d5ee9688fc","/2/2b/Unit-Ilias-6.png?version=26a69ad6ed168c2fbece9f676ad559b3"},4),
 	Amelia("Amelia",new String[]{"/3/34/Unit-Amelia-4.png?version=56cbfa4e443cafa0866cda4b34365253","/5/5c/Unit-Amelia-5.png?version=f8e8c056ee3bf3352b712ffa727659c2","/9/9e/Unit-Amelia-6.png?version=e1ce2684e570cf1cfa1ab90cd13707fe"},4),
 	Forren("Fohlen",new String[]{"/b/b0/Unit-Fohlen-5.png?version=4d4dfdc2fa291033a931846156dde031","/f/f3/Unit-Fohlen-6.png?version=7e14ec56e7b9a2a96589020ea8d31951"},5),
 	SLid("Summer Lid",new String[]{"/3/3c/Unit-Summer_Lid-3.png?version=ba691eab63eafc28216aa7c18640281d","/d/dc/Unit-Summer_Lid-4.png?version=2c38daec84e679a22bfb7d66c413ba75","/e/e5/Unit-Summer_Lid-5.png?version=f1e200191d5aa1c0c1a3381ec92f8278"},3),
 	SFina("Beach Time Fina",new String[]{"/3/39/Unit-Beach_Time_Fina-4.png?version=66155dc803cca45a45af2c3b4cfcc604","/3/37/Unit-Beach_Time_Fina-5.png?version=552e7d3c3c9bbf286c000bc1bb0d29e7","/4/46/Unit-Beach_Time_Fina-6.png?version=b4dbd0d01a190987cecfcaa7ece8f769"},4),
-	SMF("Seabreeze Dark Fina",new String[]{"/1/19/Unit-Seabreeze_Dark_Fina-5.png?version=37b0ed934679b49fbdb37473ae5bc7c6","/2/28/Unit-Seabreeze_Dark_Fina-6.png?version=ed2e43f73d377d7399e14b5c5e45dabd"},5),
+	SMF("Seabreeze Dark Fina",new String[]{"/1/19/Unit-Seabreeze_Dark_Fina-5.png?version=37b0ed934679b49fbdb37473ae5bc7c6","/2/28/Unit-Seabreeze_Dark_Fina-6.png?version=ed2e43f73d377d7399e14b5c5e45dabd",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/e/e8/Unit-Seabreeze_Dark_Fina-7.png?version=82a8b0ad4e224cef2d8910f563649463"});
+		}
+	},
 	Wakka("Wakka",new String[]{"/6/6b/Unit-Wakka-3.png?version=efbf4ac7a8e7427c7dd5ab968c3e415e","/a/a2/Unit-Wakka-4.png?version=55c147cc53f7b483bd7086191ff7559a","/6/68/Unit-Wakka-5.png?version=4f3adcb5206dbd9d4f30cbd093945c53","/d/dd/Unit-Wakka-6.png?version=d7a3485812058b6128568f958e601636"},3),
 	Rikku("Rikku",new String[]{"/6/65/Unit-Rikku-4.png?version=493d126df582d79cdfd77dab26bbb81d","/b/b4/Unit-Rikku-5.png?version=ada0d1c6290ee5b3fbc5bb0948a83ddc","/e/ee/Unit-Rikku-6.png?version=f55bd1d5197ef124bfbdcc2794d53ed1"},4),
-	Tidus("Tidus",new String[]{"/a/ae/Unit-Tidus-5.png?version=ec2110ed3b54fd76e89c9f131f961995","/0/0d/Unit-Tidus-6.png?version=b8550fa5b7561cb33bca90153233f06d"},5),
+	Tidus("Tidus",new String[]{"/a/ae/Unit-Tidus-5.png?version=ec2110ed3b54fd76e89c9f131f961995","/0/0d/Unit-Tidus-6.png?version=b8550fa5b7561cb33bca90153233f06d",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/b/b9/Unit-Tidus-7.png?version=4fff1fbe4d8edbce9abae6f79148a66a"});
+		}
+	},
 	Ashe("Ashe",new String[]{"/3/37/Unit-Ashe-4.png?version=f69dfba0799de78f34e72b2fd142e1b5","/6/65/Unit-Ashe-5.png?version=2213737478b2807c0a40e76f8d3d2e34","/c/c4/Unit-Ashe-6.png?version=0652057350e5f543ecf914cc71259f1e"},4),
 	Rasler("Rasler",new String[]{"/4/43/Unit-Rasler-4.png?version=ca9e6fb6b903a82fbc23ba2da336d99b","/7/7a/Unit-Rasler-5.png?version=c3854833fcde3f9ef799ba4af686f134","/a/a2/Unit-Rasler-6.png?version=a8b6de830db15f87be52c169d4bc0ae2"},4),
 	Zargabaath("Zargabaath",new String[]{"/b/b9/Unit-Zargabaath-5.png?version=be421c73a3d136192b43f4f4052900e5","/2/2f/Unit-Zargabaath-6.png?version=06575dc66b59f6f6e410089635a97404"},5),
 	Lunera("Lunera",new String[]{"/0/0b/Unit-Lunera-5.png?version=9bf19e954174426c43795124b375ec1d","/f/f5/Unit-Lunera-6.png?version=cf1b8d9d18f75d6b2d21dbf48146c98b"},5),
 	Bran("Bran",new String[]{"/9/95/Unit-Bran-4.png?version=c98e0c89238ef1df247560d04e28296b","/c/c2/Unit-Bran-5.png?version=8e9fc764a69b4829b48cf9f9367c10d8","/0/0b/Unit-Bran-6.png?version=8b9e78478872c2bd92b57919bd532f73"},4),
 	Helena("Helena",new String[]{"/b/bd/Unit-Helena-4.png?version=286743cd201a7cf5cc46bae863dcec99","/0/0c/Unit-Helena-5.png?version=878990ef50e7bb1f40f2cd8ae35c085a","/5/51/Unit-Helena-6.png?version=e14110b62c630107a914aa41de2ac1df"},4),
-	Ruggles("Ruggles",new String[]{"/6/6e/Unit-Ruggles-3.png?version=b15b61b10eb0e36a607b5de9da51adeb","/0/0d/Unit-Ruggles-4.png?version=1732fab88eeee95acd9377bf353afdce","/9/98/Unit-Ruggles-5.png?version=7ad87f653152d34de650c8d201321474"},3),
-	MercRamza("Mercenary Ramza",new String[]{"/6/61/Unit-Mercenary_Ramza-5.png?version=88ab13a5509a966fe91a34a43c4461a7","/4/45/Unit-Mercenary_Ramza-6.png?version=454aef40268a7370adf7cd981b52d128"},5),
-	KDeltia("Knight Deltia",new String[]{"/d/df/Unit-Knight_Delita-5.png?version=29df964b631ef8f97c083697675a67d5","/e/eb/Unit-Knight_Delita-6.png?version=8ab8fe6795f00c229e2bab6c8e3bef80"},5),
+	Ruggles("Ruggles",new String[]{"/6/6e/Unit-Ruggles-3.png?version=b15b61b10eb0e36a607b5de9da51adeb","/0/0d/Unit-Ruggles-4.png?version=1732fab88eeee95acd9377bf353afdce","/9/98/Unit-Ruggles-5.png?version=7ad87f653152d34de650c8d201321474",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/e/ec/Unit-Ruggles-6.png?version=e187cf14c6125bc9daf7b9c9ea34a714"});
+		}
+	},
+	MercRamza("Mercenary Ramza",new String[]{"/6/61/Unit-Mercenary_Ramza-5.png?version=88ab13a5509a966fe91a34a43c4461a7","/4/45/Unit-Mercenary_Ramza-6.png?version=454aef40268a7370adf7cd981b52d128",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/0/0b/Unit-Mercenary_Ramza-7.png?version=8790a97decbabf72e74b40f47b0e679e"});
+		}
+	},
+	KDeltia("Knight Delita",new String[]{"/d/df/Unit-Knight_Delita-5.png?version=29df964b631ef8f97c083697675a67d5","/e/eb/Unit-Knight_Delita-6.png?version=8ab8fe6795f00c229e2bab6c8e3bef80",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/f/f1/Unit-Knight_Delita-7.png?version=3827f45f41b1216e7e5914563beb7efb"});
+		}
+	},
 	Meliadoul("Meliadoul",new String[]{"/e/e1/Unit-Meliadoul-4.png?version=06d01cc02fae36c8dcd8b13bec10ee12","/6/6b/Unit-Meliadoul-5.png?version=c9931ac259b1f7019ca9ca25f9b60ae1","/d/df/Unit-Meliadoul-6.png?version=4e84d4eeb983d14112e9d321d95c84c7"},4),
 	Orran("Orran",new String[]{"/b/bc/Unit-Orran-4.png?version=ad42bded11268de83e7a6f718bb7c5bc","/9/93/Unit-Orran-5.png?version=cde6630b3bed89b3779a163270a428cb","/3/3e/Unit-Orran-6.png?version=5875d540a5e4bd4d3eab87f2ac75e6e9"},4),
 	DV("Veritas of the Dark",new String[]{"/7/77/Unit-Veritas_of_the_Dark-5.png?version=8597061a195609b5fb6da6bfdef8bd35","/1/19/Unit-Veritas_of_the_Dark-6.png?version=b145bd8f69b1cea06c5a374c6a99ead8"},5),
@@ -232,22 +482,52 @@ public enum Unit {
 	LV("Veritas of the Light",new String[]{"/7/7c/Unit-Veritas_of_the_Light-5.png?version=a73fe8c4993066b6fbd8651d3837c37f","/c/cd/Unit-Veritas_of_the_Light-6.png?version=c1b6f63e003723b5717295230574bb1a"},5),
 	HV("Veritas of the Heavens",new String[]{"/3/38/Unit-Veritas_of_the_Heavens-4.png?version=0bc09107470f32f4fba7236a129778fc","/2/29/Unit-Veritas_of_the_Heavens-5.png?version=a777aef3b2d973f104dcf7d4c66aa49a","/d/d4/Unit-Veritas_of_the_Heavens-6.png?version=5ac94af348d9084663cb72cf0c9a47de"},4),
 	WV("Veritas of the Waters",new String[]{"/9/91/Unit-Veritas_of_the_Waters-4.png?version=6ab058473bfd730bdf74aa7354923e2e","/0/04/Unit-Veritas_of_the_Waters-5.png?version=70870a36e9d08bcfd0f4bc72b2efb018","/3/32/Unit-Veritas_of_the_Waters-6.png?version=a67ccca778195d4b438c6c20e346a14e"},4),
-	OK("Onion Knight",new String[]{"/0/0f/Unit-Onion_Knight-5.png?version=92d2ad16d8dcdc0f1c9b10954b15ea4b","/6/62/Unit-Onion_Knight-6.png?version=08e7ed660eb10d4799c915e68619df0f"},5),
+	OK("Onion Knight",new String[]{"/0/0f/Unit-Onion_Knight-5.png?version=92d2ad16d8dcdc0f1c9b10954b15ea4b","/6/62/Unit-Onion_Knight-6.png?version=08e7ed660eb10d4799c915e68619df0f",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/9/93/Unit-Onion_Knight-7.png?version=11c2ac79f0b605b52be7e5ee44f591c2"});
+		}
+	},
 	Desch("Desch",new String[]{"/5/5e/Unit-Desch-4.png?version=ca04885d2cf6443fe9d8c506c8b8226d","/1/18/Unit-Desch-5.png?version=0cf714cc19f33687f0804278dbc63a49","/5/5c/Unit-Desch-6.png?version=37e46b6a62c63ca4624f17492b3a8c2c"},4),
 	Aria("Aria",new String[]{"/f/f2/Unit-Aria-4.png?version=d62e3ef1ceccdbad0f3ae4b0a36dcf83","/b/b4/Unit-Aria-5.png?version=54ebd4199e31043f364f15275d0d023c","/4/4b/Unit-Aria-6.png?version=86001e84ea0c48563ef86d5a7d980e47"},4),
 	Sara("Sara",new String[]{"/8/82/Unit-Sara-3.png?version=99ca5d6674b69ad07cb18e26fabb1240","/8/80/Unit-Sara-4.png?version=0e08f2269873cfb27764934efb36bd91","/8/85/Unit-Sara-5.png?version=6e2512bb1a6d20ba3024cdb676d25112"},3),
 	Prishe("Prishe",new String[]{"/2/2b/Unit-Prishe-5.png?version=a937d3cae1940dcfd08bdc5fec2c06d5","/a/a2/Unit-Prishe-6.png?version=a81757cc36945fdf33485076dd0c8466"},5),
 	Werei("Werei",new String[]{"/6/6e/Unit-Werei-4.png?version=4073ca88512f21f076bb69a3660a94b2","/9/99/Unit-Werei-5.png?version=e766362f25c3bffc1b117c4397cb4591","/8/87/Unit-Werei-6.png?version=e0d7164c990dc86bdd91182d41f5cce1"},4),
-	Kupipi("Kupipi",new String[]{"/6/6b/Unit-Kupipi-3.png?version=7c30899671b26b36ed3d412e44e1cc3c","/5/56/Unit-Kupipi-4.png?version=939a06b6c273fafb0314bf33a42fbdd2","/9/9f/Unit-Kupipi-5.png?version=7ee5a75922e954fcde11cf608e00cd6b"},3),
-	Ayaka("Ayaka",new String[]{"/4/47/Unit-Ayaka-5.png?version=24b2ab33dc6743beeaa905f29adf5f1f","/f/f1/Unit-Ayaka-6.png?version=80c0ac3151fb5d52fff87c53b4764e19"},5),
+	Kupipi("Kupipi",new String[]{"/6/6b/Unit-Kupipi-3.png?version=7c30899671b26b36ed3d412e44e1cc3c","/5/56/Unit-Kupipi-4.png?version=939a06b6c273fafb0314bf33a42fbdd2","/9/9f/Unit-Kupipi-5.png?version=7ee5a75922e954fcde11cf608e00cd6b",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/7c/Unit-Kupipi-6.png?version=e15b1ceef517728c3abc7c51d424e0c0"});
+		}
+	},
+	Ayaka("Ayaka",new String[]{"/4/47/Unit-Ayaka-5.png?version=24b2ab33dc6743beeaa905f29adf5f1f","/f/f1/Unit-Ayaka-6.png?version=80c0ac3151fb5d52fff87c53b4764e19",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/2/29/Unit-Ayaka-7.png?version=d5275453c030e8e624f8221f9ba54866"});
+		}
+	},
 	Goken("Goken",new String[]{"/5/50/Unit-Goken-4.png?version=8d7c082ae78bc8376e511d438d94301f","/e/e1/Unit-Goken-5.png?version=70d9b58f94e0bab1c011907224b503db","/d/da/Unit-Goken-6.png?version=66b4ed9443ce998995cd874968ac5629"},4),
 	Silvia("Silvia",new String[]{"/3/37/Unit-Silvia-4.png?version=d5394defd1550959ce1460f56def345b","/3/30/Unit-Silvia-5.png?version=2a412969bb3bfebe5b76c4b060938f8e","/d/df/Unit-Silvia-6.png?version=49862a879ebab98e0d600a7f8cacccf6"},4),
 	Kamui("Kamui",new String[]{"/d/d6/Unit-Kamui-3.png?version=0b2b808e8212717d8b706ce0157faf96","/c/cc/Unit-Kamui-4.png?version=00881c522d0091bddb4d88670ee32f49","/6/6f/Unit-Kamui-5.png?version=3bdfc51165f992c2739b9b7e4dc7b839"},3),
-	Yuri("Yuri",new String[]{"/2/2b/Unit-Yuri-3.png?version=c792cc40f6045c0fee1ef6d472a2e139","/0/0e/Unit-Yuri-4.png?version=8e616e5356a909efbb22e17183e7d9ec","/4/4e/Unit-Yuri-5.png?version=de25657caa2b6683a8ead61781cc1249"},3),
-	Nyx("Nyx",new String[]{"/f/f6/Unit-Nyx-5.png?version=3fbfcf46cfbd474206ba9d31b237cad4","/c/c6/Unit-Nyx-6.png?version=adfa04c4422268bdabd7fdbe4ceb0764"},5),
+	Yuri("Yuri",new String[]{"/2/2b/Unit-Yuri-3.png?version=c792cc40f6045c0fee1ef6d472a2e139","/0/0e/Unit-Yuri-4.png?version=8e616e5356a909efbb22e17183e7d9ec","/4/4e/Unit-Yuri-5.png?version=de25657caa2b6683a8ead61781cc1249",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/1/1f/Unit-Yuri-6.png?version=420053f0283c02a07fee10e219f68347"});
+		}
+	},
+	Nyx("Nyx",new String[]{"/f/f6/Unit-Nyx-5.png?version=3fbfcf46cfbd474206ba9d31b237cad4","/c/c6/Unit-Nyx-6.png?version=adfa04c4422268bdabd7fdbe4ceb0764",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/1/12/Unit-Nyx-7.png?version=864c2575360b3cb4cda5a4ad0c7b8afc"});
+		}
+	},
 	Crowe("Crowe",new String[]{"/0/00/Unit-Crowe-4.png?version=bf48dac62746dfa6fa00cbc562726706","/e/e8/Unit-Crowe-5.png?version=97a6df0e8c431f33ed1cb217a7cf1a2d","/4/44/Unit-Crowe-6.png?version=bfad0dc78725d8f8b43163919394b36c"},4),
 	Glauca("Glauca",new String[]{"/7/7e/Unit-Glauca-4.png?version=2ba317024212f0c5d88f39927cb576a0","/c/c5/Unit-Glauca-5.png?version=964be36ea6a210aeb47ea2f051e4fc7a","/6/68/Unit-Glauca-6.png?version=5a1e1d2ff6b7a98e837c03e3a952685a"},4),
-	Libertus("Libertus",new String[]{"/9/9e/Unit-Libertus-3.png?version=40265bf8be03e70b1ad37b5c5f944d7f","/e/e0/Unit-Libertus-4.png?version=1e1db55425cbb8a94539570d42b6fefc","/0/0f/Unit-Libertus-5.png?version=6b671813738ca6c9ac119273ede7ac08"},3),
+	Libertus("Libertus",new String[]{"/9/9e/Unit-Libertus-3.png?version=40265bf8be03e70b1ad37b5c5f944d7f","/e/e0/Unit-Libertus-4.png?version=1e1db55425cbb8a94539570d42b6fefc","/0/0f/Unit-Libertus-5.png?version=6b671813738ca6c9ac119273ede7ac08",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/8/87/Unit-Libertus-6.png?version=d57f29272b396dc7eb5932fe0520c65a"});
+		}
+	},
 	Lorraine("Loren",new String[]{"/9/93/Unit-Loren-5.png?version=3701d0eef7b86c1d646eaad54fc6f3c4","/8/8a/Unit-Loren-6.png?version=195c33ea70d6711fd15cff53cd343f8a"},5),
 	Chloe("Chloe",new String[]{"/a/a0/Unit-Chloe-4.png?version=460c81214aef9cfd441c1943f911c090","/c/c0/Unit-Chloe-5.png?version=0274b4e4bb73cb0b3a1151592f35ce91","/4/4e/Unit-Chloe-6.png?version=0b5fb106968f1be407721323ab4a0079"},4),
 	Amy("Amy",new String[]{"/e/e3/Unit-Amy-3.png?version=c326a865c14d0f08f506a3bdc05ec530","/7/73/Unit-Amy-4.png?version=6e30a655f7c8c73e67c8352bdf199ed0","/a/a2/Unit-Amy-5.png?version=01c04ee4aa4869829d745fec89254b70"},3),
@@ -257,7 +537,12 @@ public enum Unit {
 	Scarmiglione("Scarmiglione",new String[]{"/1/1a/Unit-Scarmiglione-3.png?version=3be95c2daec707d38c0c0e91373fed26","/1/11/Unit-Scarmiglione-4.png?version=f970159ecbdd3d3c5616fb1cbbc873ab","/5/53/Unit-Scarmiglione-5.png?version=cad1351939c877c215912b2854f4d1fe"},3),
 	Gladiolus("Gladiolus",new String[]{"/6/60/Unit-Gladiolus-5.png?version=360de4e0d0089e25b12ea938fb43b85d","/6/67/Unit-Gladiolus-6.png?version=95e9c71c5931736e3cf0b3985184fadf"},5),
 	Cor("Cor",new String[]{"/a/ac/Unit-Cor-4.png?version=d8f50b348980e38193567f565cb78b2a","/f/fe/Unit-Cor-5.png?version=76dcbe1de67a7521f66e0927cfa74f4c","/6/6a/Unit-Cor-6.png?version=95b0f9c5d3205c2d3516165b651ca300"},4),
-	Iris("Iris",new String[]{"/4/4f/Unit-Iris-3.png?version=e3e4face24c2bb4b1311a8b273978c91","/1/1f/Unit-Iris-4.png?version=2c10013c95381c6c9257bb920ac0ec66","/6/6a/Unit-Iris-5.png?version=1b255f85b407d68dfc7b08d1cdfed916"},3),
+	Iris("Iris",new String[]{"/4/4f/Unit-Iris-3.png?version=e3e4face24c2bb4b1311a8b273978c91","/1/1f/Unit-Iris-4.png?version=2c10013c95381c6c9257bb920ac0ec66","/6/6a/Unit-Iris-5.png?version=1b255f85b407d68dfc7b08d1cdfed916",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/d/d4/Unit-Iris-6.png?version=34535923b783cf9013b8b2fb4a63dd66"});
+		}
+	},
 	Duke("Duke",new String[]{"/f/f5/Unit-Duke-5.png?version=f78ae3e6934154531c88be2a572f2af5","/d/d0/Unit-Duke-6.png?version=e2f94c44c6c134b7acacbbfd0f3737b5"},5),
 	Olif("Olif",new String[]{"/6/6d/Unit-Olif-4.png?version=0f8f1c63d100f62f575ea490ab9c66a4","/f/f2/Unit-Olif-5.png?version=a1717019dd0c3dc836d2cd51183a7393","/a/aa/Unit-Olif-6.png?version=ec08785c95d8d48df63d3781f424eab9"},4),
 	Mystea("Mystea",new String[]{"/1/1b/Unit-Mystea-4.png?version=f103bc5191253a62b78b57a650beadcf","/f/f8/Unit-Mystea-5.png?version=a90f906aac09e6ec433a3f16e31be853","/2/29/Unit-Mystea-6.png?version=e01e8c16dd056ecbb4ba2b02e8bd94c5"},4),
@@ -318,7 +603,12 @@ public enum Unit {
 	Ryumynui("Ryumynui",new String[]{"/c/cd/Unit-Ryumynui-4.png?version=edae6ed4bbae387f2718c850ec935d07","/b/bb/Unit-Ryumynui-5.png?version=a69ebe3ae6b1970257cc3c9beb0d3208","/f/ff/Unit-Ryumynui-6.png?version=a4a64f9d7ac3e1c186e6b186486826c4"},4),
 	Zile("Zile",new String[]{"/8/82/Unit-Zile-4.png?version=5632f904a2c7597d3f1f87bfbe5ca11a","/d/df/Unit-Zile-5.png?version=135789826b8d8cebd562b8e969fb14f5","/8/82/Unit-Zile-6.png?version=4720d5d74c852b1689a50eb5b616eda6"},4),
 	Lucille("Lucille",new String[]{"/9/9c/Unit-Lucille-3.png?version=2bdb6c3a62ad20a0b18ed338a5c9c594","/1/10/Unit-Lucille-4.png?version=cbfcb541007727c306a11b994b427d8b","/d/db/Unit-Lucille-5.png?version=544c20cf94f74eca18559a0391f268f0"},3),
-	ARain("Awakened Rain",new String[]{"/5/58/Unit-Awakened_Rain-5.png?version=9be4e2ce9594c8588709be63721e5902","/2/2a/Unit-Awakened_Rain-6.png?version=05ae4b576682d2195a5fec6c559d204c"},5),
+	ARain("Awakened Rain",new String[]{"/5/58/Unit-Awakened_Rain-5.png?version=9be4e2ce9594c8588709be63721e5902","/2/2a/Unit-Awakened_Rain-6.png?version=05ae4b576682d2195a5fec6c559d204c",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/7/78/Unit-Awakened_Rain-7.png?version=d4d18bf90b59711b52bed5cc9ee6bcb3"});
+		}
+	},
 	Mediena("Mediena",new String[]{"/8/8c/Unit-Mediena-5.png?version=72f71ca64e45dcc75302ff7facc1b55d","/8/8c/Unit-Mediena-6.png?version=984dee854a25e3e12b4f3be52c3ec696"},5),
 	Squall("Squall",new String[]{"/c/c1/Unit-Squall-5.png?version=a710cbfbcff97c3ce220e836ba7e4c3a","/2/29/Unit-Squall-6.png?version=c35f855fb8280329d6387e6ac830038f","/a/a7/Unit-Squall-7.png?version=ba6a1d2ee896f7831796e0dbffc66542"},5),
 	Rinoa("Rinoa",new String[]{"/8/8e/Unit-Rinoa-5.png?version=025e3ab818a4c2f10fa53f230c7cbffb","/4/4b/Unit-Rinoa-6.png?version=57a0d0c378c296a3014a2fe4b2043c81","/5/53/Unit-Rinoa-7.png?version=73e15d21e5b69cb9d1923620d4364e01"},5),
@@ -349,10 +639,20 @@ public enum Unit {
 	DRain("Demon Rain",new String[]{"/c/c7/Unit-Demon_Rain-5.png?version=e7d8aca36a2cc4a4cef7c5b48b9af8e3","/3/30/Unit-Demon_Rain-6.png?version=8ef21aebd449a531acc171547ae6fd0f"},5),
 	DLasswell("Dracu Lasswell",new String[]{"/a/a5/Unit-Dracu_Lasswell-5.png?version=40b4eb078e787d5f498bcc8b979a97a1","/c/c3/Unit-Dracu_Lasswell-6.png?version=d81994a6cf9357430b970e5bdfd9d9e5"},5),
 	WWF("White Witch Fina",new String[]{"/a/a2/Unit-White_Witch_Fina-4.png?version=aa9d199e9c09952626d6fc08de86c06c","/4/48/Unit-White_Witch_Fina-5.png?version=8c4a1c82b6fedb7dae28c5fd0c62744b","/0/07/Unit-White_Witch_Fina-6.png?version=29640d666b6eec84884727ced377cd73"},4),
-	BCLid("Black Cat Lid",new String[]{"/0/08/Unit-Black_Cat_Lid-3.png?version=44bb6ce33351691f6d52ed2a3e6ca0df","/4/40/Unit-Black_Cat_Lid-4.png?version=7ee8d85a278ebb0eabbc051f6b5d9c8a","/1/1c/Unit-Black_Cat_Lid-5.png?version=726eeed33388fdef994e7f27ebce139e"},3),
+	BCLid("Black Cat Lid",new String[]{"/0/08/Unit-Black_Cat_Lid-3.png?version=44bb6ce33351691f6d52ed2a3e6ca0df","/4/40/Unit-Black_Cat_Lid-4.png?version=7ee8d85a278ebb0eabbc051f6b5d9c8a","/1/1c/Unit-Black_Cat_Lid-5.png?version=726eeed33388fdef994e7f27ebce139e",},3){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/4/44/Unit-Black_Cat_Lid-6.png?version=0564fcb97b73534c73bc937237e9d781"});
+		}
+	},
 	Karl("Karl",new String[]{"/2/2b/Unit-Karl-4.png?version=d2b15d925afdd5fbdff81b84e12bff86","/5/5b/Unit-Karl-5.png?version=8ba5221adb55030068f2746f34a7406a"},4),
 	Seria("Seria",new String[]{"/f/f2/Unit-Seria-4.png?version=2d93b6612635f16369c82ad891a8b7c4","/2/2a/Unit-Seria-5.png?version=96ce1921392b62033d5854c71da47294"},4),
-	Tilith("Tilith",new String[]{"/c/cf/Unit-Tilith-4.png?version=aab39f1eb3af102b0e982a69aeb4d63b","/f/f3/Unit-Tilith-5.png?version=8e2d3d30592b49f36b9f6bf1b5e79872"},4),
+	Tilith("Tilith",new String[]{"/c/cf/Unit-Tilith-4.png?version=aab39f1eb3af102b0e982a69aeb4d63b","/f/f3/Unit-Tilith-5.png?version=8e2d3d30592b49f36b9f6bf1b5e79872",},4){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/3/37/Unit-Tilith-6.png?version=35f69894f943c672a80518f0df90c3c0"});
+		}
+	},
 	Elza("Elza",new String[]{"/3/39/Unit-Elza-5.png?version=a74a90a66643d03325a5c3d845cb2a42","/0/08/Unit-Elza-6.png?version=ca6f643b429b7fbad0078519310414cb"},5),
 	SRoselia("Santa Roselia",new String[]{"/e/e6/Unit-Santa_Roselia-4.png?version=2e794cb3a258f167f8910b2c853a3e57","/5/54/Unit-Santa_Roselia-5.png?version=89b0722a00c2f477d34745d41ca37d74","/9/98/Unit-Santa_Roselia-6.png?version=93011430284da0b21c4f253b357000d9"},4),
 	WKN("White Knight Noel",new String[]{"/1/12/Unit-White_Knight_Noel-5.png?version=d1453e13c630264a7ded5841ac542782","/0/0e/Unit-White_Knight_Noel-6.png?version=69e4eba92941d7648b59bf886a3d960a"},5),
@@ -388,7 +688,12 @@ public enum Unit {
 	PAbel("Pharaoh Abel",new String[]{"/8/8d/Unit-Pharaoh_Abel-3.png?version=7544cd23f241c949aa6563c6be6dc25e","/c/c5/Unit-Pharaoh_Abel-4.png?version=eb1a1dd7dcf4dfc1099db38d2511bfc9","/3/3f/Unit-Pharaoh_Abel-5.png?version=e5b13c70eb45df290d7560c9a6b22911"},3),
 	DSoleil("Divine Soleil",new String[]{"/e/ed/Unit-Divine_Soleil-4.png?version=31c38af3dcb0e715af346dc82fdc7b4e","/a/a2/Unit-Divine_Soleil-5.png?version=0bafa6d55235b5cac1209985c3a11be3","/0/06/Unit-Divine_Soleil-6.png?version=95f323d82041ff71eb658135e0a8861e"},4),
 	EAileen("Explorer Aileen",new String[]{"/9/93/Unit-Explorer_Aileen-5.png?version=fa7a450d5373a053d2b05190398de70d","/4/49/Unit-Explorer_Aileen-6.png?version=82e009ae5c0e2cddc7854b87801b8332"},5),
-	Dragonlord("Dragonlord",new String[]{"/6/60/Unit-Dragonlord-5.png?version=410fa00410bc4899bd33c07e2b36455b","/b/bc/Unit-Dragonlord-6.png?version=62ec8be0aa9399a34ad9da11c44d1707"},5),
+	Dragonlord("Dragonlord",new String[]{"/6/60/Unit-Dragonlord-5.png?version=410fa00410bc4899bd33c07e2b36455b","/b/bc/Unit-Dragonlord-6.png?version=62ec8be0aa9399a34ad9da11c44d1707",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/6/6a/Unit-Dragonlord-7.png?version=cea95ab5ee9f8bc20d85a932b2b52a87"});
+		}
+	},
 	Orochi("Orochi",new String[]{"/d/d2/Unit-Orochi-4.png?version=c4dfc244454fb8d6b77f92f938e5c6f4","/c/cf/Unit-Orochi-5.png?version=46df20866d7b333e912a44e3924226f7","/0/00/Unit-Orochi-6.png?version=5bde199922a4583a734cf7071c36a597"},4),
 	KillingMachine("Killing Machine",new String[]{"/f/f7/Unit-Killing_Machine-4.png?version=f9c27e6d0c32f4897e46747b2b763e50","/c/c7/Unit-Killing_Machine-5.png?version=3c53f0c4fa28fc2e40f980d4e6533aac"},4),
 	LMSlime("Liquid Metal Slime",new String[]{"/c/c0/Unit-Liquid_Metal_Slime-4.png?version=3f41d6603395789f18e195a06a67031e","/1/16/Unit-Liquid_Metal_Slime-5.png?version=80c9a9c1570c4038c3c1826c5b1fbd69"},4),
@@ -407,7 +712,7 @@ public enum Unit {
 	FPritchard("Frank Pritchard",new String[]{"/f/f9/Unit-Frank_Pritchard-3.png?version=dcd7e273840b497000bd44a23b3fa35d","/7/79/Unit-Frank_Pritchard-4.png?version=f5876b517bf3b85c9e9141138abf263a","/6/67/Unit-Frank_Pritchard-5.png?version=8afd3f1febbf1107ee605a2d7884ea53"},3),
 	Estark("Estark",new String[]{"/6/68/Unit-Estark-5.png?version=bde5f7769eda1d54634d240f30a25f0f","/f/f1/Unit-Estark-6.png?version=b10736dd67e4326ab84ce862a08b02bc","/9/9b/Unit-Estark-7.png?version=86e2742314d1f317b4c01b2814eb6a60"},5),
 	ÜberkillingMachine("Überkilling Machine",new String[]{"/c/c6/Unit-%C3%9Cberkilling_Machine-4.png?version=021a78bd63026ba5a2587ca9840a4722","/9/97/Unit-%C3%9Cberkilling_Machine-5.png?version=c834238706625e0e25f131e0ffb90f0a","/d/d7/Unit-%C3%9Cberkilling_Machine-6.png?version=00e377dfd730b6089007afd47f0bc4b2"},4),
-	
+
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),
@@ -438,7 +743,7 @@ public enum Unit {
 	SlimeKnight("Slime Knight",new String[]{"/b/b4/Unit-Slime_Knight-4.png?version=72b23985d1d45c0ad25b6734bd44239f","/7/7d/Unit-Slime_Knight-5.png?version=3d0f0b76df1900c276b29256c99cb4b3","/c/c1/Unit-Slime_Knight-6.png?version=82a178e18f6506b20da43838066d5611"},4),
 	MarquisdeLeon("Marquis de Léon",new String[]{"/d/d9/Unit-Marquis_de_L%C3%A9on-5.png?version=9a3b0f3ba2112ff2217ad25e019dcc70","/7/74/Unit-Marquis_de_L%C3%A9on-6.png?version=23f6bdf3b341e20eaa4f1a20663a28f4","/d/db/Unit-Marquis_de_L%C3%A9on-7.png?version=117a90dbe3facf7bf50cf7a75efbcb59"},5),
 	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3);
-	
+
 	public String name;
 	public String[] url;
 	public int base;
@@ -453,7 +758,7 @@ public enum Unit {
 		}
 	}
 	public void setup(){
-		
+
 	}
 	public void setUpgrades(String[] upgrades){
 		for(int i=0;i<upgrades.length;i++){
@@ -462,7 +767,7 @@ public enum Unit {
 		upgradeurl=upgrades;
 	}
 	public String unitName(){
-	 return name;
+		return name;
 	}
 	public String[] imgurl() {
 		return url;
@@ -546,23 +851,23 @@ public enum Unit {
 		for(unitData data:overview.possibleData){
 			for(Unit u:values()){
 				if(u.upgradeurl.length==0){
-		    		if(u.url[u.url.length-1].equals(data.imgUrl)){
-		    			if(!u.name.equals(data.name)){
-		    				System.out.println(u.name+"!="+data.name);
-		    			}
-		    			checked.add(u.name);
-		    			break;
-		    		}
-		    	}
-		    	else{
-		    		if(u.upgradeurl[u.upgradeurl.length-1].equals(data.imgUrl)){
-		    			if(!u.name.equals(data.name)){
-		    				System.out.println(u.name+"!="+data.name);
-		    			}
-		    			checked.add(u.name);
-		    			break;
-		    		}
-		    	}
+					if(u.url[u.url.length-1].equals(data.imgUrl)){
+						if(!u.name.equals(data.name)){
+							System.out.println(u.name+"!="+data.name);
+						}
+						checked.add(u.name);
+						break;
+					}
+				}
+				else{
+					if(u.upgradeurl[u.upgradeurl.length-1].equals(data.imgUrl)){
+						if(!u.name.equals(data.name)){
+							System.out.println(u.name+"!="+data.name);
+						}
+						checked.add(u.name);
+						break;
+					}
+				}
 			}
 		}
 		Arrays.stream(values()).filter(u -> !checked.contains(u.name)).map(u -> u.name).forEach(System.out::println);
@@ -587,12 +892,12 @@ public enum Unit {
 	}
 	public static Unit[] commons2(){
 		return Lib.concat(commons1(), new Unit[]{
-			Vivi,
-			Lani
+				Vivi,
+				Lani
 		});
 	}
 	public static Unit[] currentPool(){
-		
+
 		return Lib.concat(Unit.commons2(),new Unit[]{
 				Garland,
 				Exdeath,
@@ -827,23 +1132,23 @@ public enum Unit {
 				TideSkaha,
 				Malphasie,
 				Circe
-				
+
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool
 	public static Unit[] attackPool(){
 		return new Unit[]{
-				
+
 		};
 	}
 	public static Unit[] mageTankPool(){
 		return new Unit[]{
-				
+
 		};
 	}
 	public static Unit[] supportPool(){
 		return new Unit[]{
-				
+
 		};
 	}
 	public static Unit[] base3(Unit[] pool){
