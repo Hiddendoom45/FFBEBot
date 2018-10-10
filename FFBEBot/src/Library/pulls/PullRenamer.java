@@ -15,6 +15,10 @@ public class PullRenamer {
 		renameMap.put("Vertias of the Light", Unit.LV);
 		renameMap.put("Vertias of the Heavens", Unit.HV);
 		renameMap.put("Vertias of the Waters", Unit.WV);
+		renameMap.put("Arigas", Unit.Arigas);
+		renameMap.put("Knight Deltia", Unit.KDeltia);
+		renameMap.put("Thunder God", Unit.Cid);
+		renameMap.put("Deltia", Unit.Deltia);
 	}
 	//stopgap to rename stuff from data files
 	public static Unit filter(String name){
