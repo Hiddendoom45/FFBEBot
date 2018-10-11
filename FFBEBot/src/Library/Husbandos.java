@@ -163,6 +163,10 @@ public enum Husbandos {
 	Hyoh(Unit.Hyoh),
 	AlohaLasswell(Unit.AlohaLasswell),
 	SeaNichol(Unit.SeaNichol),
+	Ignis(Unit.Ignis),
+	Ravus(Unit.Ravus),
+	Macmedi(Unit.Macmedi),
+	
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

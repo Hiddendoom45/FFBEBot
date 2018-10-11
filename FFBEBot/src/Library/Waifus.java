@@ -129,6 +129,8 @@ public enum Waifus {
 	TideSkaha(Unit.TideSkaha),
 	Circe(Unit.Circe),
 	Malphasie(Unit.Malphasie),
+	Citra(Unit.Citra),
+	Lotti(Unit.Lotti),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),

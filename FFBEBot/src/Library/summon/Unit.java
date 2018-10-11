@@ -634,6 +634,9 @@ public enum Unit{
 	Circe("Circe",new String[]{"/c/ce/Unit-Circe-5.png?version=fd80b0cd90e5d2f8e9a05e7a4d78d925","/c/c8/Unit-Circe-6.png?version=05c5e4ea9b165d503422afe0ec3b6a83","/2/21/Unit-Circe-7.png?version=33daca89a870ec885a1e65c230e75035"},5),
 	Ignis("Ignis",new String[]{"/a/a5/Unit-Ignis-5.png?version=da3d1137be7e8e054a28a6f3918b614c","/8/8a/Unit-Ignis-6.png?version=d2bb93e04f27a0ce1ed516cf41fd943e","/d/da/Unit-Ignis-7.png?version=e5953e71f408f6deff0f03362b511eb2"},5),
 	Ravus("Ravus",new String[]{"/f/fe/Unit-Ravus-4.png?version=6eb890bfda2c36d1192ec2b691e484b5","/2/2e/Unit-Ravus-5.png?version=b3813957f1fa2c1001461d0c6590aea6","/3/37/Unit-Ravus-6.png?version=9bb6fe9777aafcd00cb4c1696960343f"},4),
+	Citra("Citra",new String[]{"/8/8c/Unit-Citra-5.png?version=7649336fa33a38793d89460a5b690b52","/a/a8/Unit-Citra-6.png?version=7945c2c3183a7999cd6ec1b22fa0c1c1","/d/d9/Unit-Citra-7.png?version=b64b0a4ad6b29af44b0690d4485ff5fd"},5),
+	Macmedi("Macmedi",new String[]{"/c/ca/Unit-Macmedi-4.png?version=a844912625f0dcdb1e3f50cff5d453a4","/a/a9/Unit-Macmedi-5.png?version=4573b02ae08b6d56d4c1d923c28baa86","/7/78/Unit-Macmedi-6.png?version=a9330039a20c572f07be4f3a1d10dca1"},4),
+	Lotti("Lotti",new String[]{"/c/ce/Unit-Lotti-3.png?version=bbc14fa5eca193b2914523771eed44fc","/0/02/Unit-Lotti-4.png?version=08b20b3f677afac4a9f2c980b96d5830","/c/c4/Unit-Lotti-5.png?version=f96e1d09761170373df66b2d4de6a83d"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
