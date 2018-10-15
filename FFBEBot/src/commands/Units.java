@@ -34,7 +34,9 @@ public class Units extends UnitSelection implements Command,Selection {
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setAuthor(info.unitName,info.URL);
 		embed.setDescription("[unit link]("+info.URL+")");
-		embed.addField(new Field("TM - "+info.trustName,"[TM link]("+info.trustLink+")\n"+info.trustDetails.toString(),false));
+		if(!(info.trustLink==null)){
+			embed.addField(new Field("TM - "+info.trustName,"[TM link]("+info.trustLink+")\n"+info.trustDetails,false));
+		}
 		//embed.setDescription("link");
 		embed.setImage(info.imgOverviewURL);
 		Lib.sendMessage(event, out);
