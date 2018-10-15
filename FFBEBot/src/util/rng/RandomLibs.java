@@ -1,6 +1,6 @@
 package util.rng;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 /**
  * collection of methods to choose things randomly
@@ -8,7 +8,7 @@ import java.util.Random;
  *
  */
 public class RandomLibs {
-	public static String SelectRandom(ArrayList<String> options){
+	public static <T> T SelectRandom(List<T> options){
 		Random rand=new Random();
 		return options.get(rand.nextInt(options.size()));
 	}

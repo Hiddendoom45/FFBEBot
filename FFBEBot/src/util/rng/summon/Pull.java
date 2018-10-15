@@ -9,6 +9,7 @@ import Library.summon.Awakening;
 import Library.summon.UnitSpecific;
 import Library.summon.Unit;
 import Library.summon.banner.Banner;
+import Library.summon.banner.BannerType;
 import global.record.Log;
 import util.rng.RandomLibs;
 
@@ -56,11 +57,11 @@ public class Pull {
 		int rarity=rand.nextInt(100);
 		try{
 			if(rarity<94){
-				Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
+				Unit u=pullPlus(banner,4,pool4,banner.type.baseRareChances[1]);
 				units.add(new UnitSpecific(u,4));
 			}
 			else{
-				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+				Unit u=pullPlus(banner,5,pool5,banner.type.baseRareChances[2]);
 				units.add(new UnitSpecific(u,5));
 			}
 			for(int i=0;i<10;i++){
@@ -86,12 +87,13 @@ public class Pull {
 		}
 		return units;
 	}
+	
 	public static List<UnitSpecific> pull5base(int times,Banner banner){
 		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>(11);
 		for(int i=0;i<times;i++){
 			try{
-			Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
-			units.add(new UnitSpecific(u,5));
+				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+				units.add(new UnitSpecific(u,5));
 			}catch(Exception e){
 				Log.logError(e);
 			}
@@ -137,6 +139,74 @@ public class Pull {
 				return banner.featured[c];
 			}
 			i+=featured[c];
+		}
+		return RandomLibs.SelectRandom(pool);//otherwise select a random unit from the pool
+	}
+	//boosted rate of featrued for banner 3.75 for 5*, 47.5% for 4*
+	private static Unit pullPlus(Banner banner,int rarity,int poolSize,int baseChance){
+		if(rarity<4){
+			throw new IllegalArgumentException("The bonus crystal must be 4* or higher");
+		}
+		Unit[] pool;//used to construct pool
+		Random rand = new Random();
+		int select = rand.nextInt(100);
+		if(select<baseChance){
+			pool=baseRarity(banner,rarity);
+		}
+		else{
+			pool=hasRarity(banner,rarity);
+		}
+		int next;
+		if((banner.type==BannerType.ThreePercent||banner.type==BannerType.FivePercent)
+			&&(rarity==4||rarity==5)){
+			//increased rate for featured update
+			next = rand.nextInt(10000);
+			if(rarity==4){
+				if(next<4750){
+					ArrayList<Unit> units = new ArrayList<Unit>();
+					for(Unit u:banner.featured){
+						if(u.baseRarity()==4){
+							units.add(u);
+						}
+					}
+					return RandomLibs.SelectRandom(units);
+				}
+			}
+			else if(rarity==5){
+				if(next<375){
+					ArrayList<Unit> units = new ArrayList<Unit>();
+					for(Unit u:banner.featured){
+						if(u.baseRarity()==5){
+							units.add(u);
+						}
+					}
+					return RandomLibs.SelectRandom(units);
+				}
+			}
+		}
+		else{
+			next =rand.nextInt(poolSize);//gets chosen int for rarity pool to determine if featured unit or not
+			int[] featured=new int[banner.featured.length];//for featured units at the rarity
+			int i=0;
+			for(Unit u:banner.featured){//determine for each if 
+				if(u.hasRarity(rarity)){//if it has rarity/upgrade featured at this rarity
+					featured[i]=banner.percent[i][u.getRarityIndex(rarity)];
+				}
+				else if(u.hasUpgrade(rarity, banner.include)){
+					featured[i]=banner.percent[i][u.getUpgradeIndex(rarity, banner.include)];
+				}
+				else{//otherwise no chance
+					featured[i]=0;
+				}
+				i++;
+			}
+			i=0;
+			for(int c=0;c<featured.length;c++){//determine if number is within range of one of the featured units
+				if(next<featured[c]+i&&next>=i){
+					return banner.featured[c];
+				}
+				i+=featured[c];
+			}
 		}
 		return RandomLibs.SelectRandom(pool);//otherwise select a random unit from the pool
 	}
