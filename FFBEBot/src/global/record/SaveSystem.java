@@ -210,7 +210,7 @@ public class SaveSystem {
 	 */
 	public static void preloadSummons(Counter count){
 		int index=0;
-		if(!(count==null)){count.setMessage("Loading Summoned Units...(%count%/"+Unit.values().length+")");}
+		if(!(count==null)) count.setMessage("Loading Summoned Units...(%count%/"+Unit.values().length+")");
 		new File("units").mkdir();
 		for(Unit u:Unit.values()){
 			int i=u.base;
@@ -241,20 +241,22 @@ public class SaveSystem {
 			}
 			System.out.println("Downloaded "+u.name);
 			index++;
-			if(!(count==null)){count.setI(index);}
+			if(!(count==null)) count.setI(index);
 		}
 		if(!(count==null)){count.terminate();}
 	}
-	public static boolean updateSummons(){
+	public static boolean updateSummons(Counter count){
+		int index = 0;
+		if(!(count==null)) count.setMessage("Updating Summoned Units...(%count%/"+Unit.values().length+")");
 		new File("units").mkdir();
 		if(new File("units").listFiles().length-Unit.values().length==0){
 			return false;
 		}
 		for(Unit u:Unit.values()){
-			if(!new File("units/"+u.name).exists()){
-				int i=u.base;
-				for(String url:u.url){
-					new File("units/"+u.name).mkdir();
+			int i=u.base;
+			new File("units/"+u.name).mkdir();
+			for(String url:u.url){
+				if(!new File("units/"+u.name+"/"+i+".png").exists()){
 					try{
 						URL input=new URL(url);
 						HttpURLConnection connection = (HttpURLConnection) input.openConnection();
@@ -264,21 +266,23 @@ public class SaveSystem {
 					}catch(Exception e){
 						Log.logError(e);
 					}
-					i++;
 				}
-
-				for(String url:u.upgradeurl){
-					try{
-						URL input=new URL(url);
-						HttpURLConnection connection = (HttpURLConnection) input.openConnection();
-						connection.setRequestProperty("User-Agent",Settings.UA);
-						ImageIO.write(ImageIO.read(connection.getInputStream()), "PNG",new File("units/"+u.name+"/"+i+".png"));
-					}catch(Exception e){
-						Log.logError(e);
-					}
-					i++;
-				}
+				i++;
 			}
+
+			for(String url:u.upgradeurl){
+				try{
+					URL input=new URL(url);
+					HttpURLConnection connection = (HttpURLConnection) input.openConnection();
+					connection.setRequestProperty("User-Agent",Settings.UA);
+					ImageIO.write(ImageIO.read(connection.getInputStream()), "PNG",new File("units/"+u.name+"/"+i+".png"));
+				}catch(Exception e){
+					Log.logError(e);
+				}
+				i++;
+			}
+			index++;
+			if(!(count==null)) count.setI(index);
 		}
 		return true;
 	}

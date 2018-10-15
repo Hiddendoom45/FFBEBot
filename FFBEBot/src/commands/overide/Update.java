@@ -21,30 +21,31 @@ public class Update extends OverrideGenerics implements OverrideCommand {
 					boolean trigger=false;
 					boolean updated=false;//if anything was updated
 					if(args.containsKey("r")){
-						Counter count=new Counter("Setting up Update...",event);
+						Counter count=new Counter("Setting up Reddit Update...",event);
 						trigger=true;
 						Main.setGame(states.Update);
 						updated=SaveSystem.updateReddit(count)==true?true:updated;
 					}
 					if(args.containsKey("e")){
-						Counter count=new Counter("Setting up Update...",event);
+						Counter count=new Counter("Setting up Exvius Update...",event);
 						trigger=true;
 						Main.setGame(states.Update);
 						updated=SaveSystem.updateExvius(count)==true?true:updated;
 					}
 					if(args.containsKey("img")){
+						Counter count = new Counter("Updating Summons...",event);
 						trigger=true;
 						Main.setGame(states.Update);
-						updated=SaveSystem.updateSummons()==true?true:updated;
+						updated=SaveSystem.updateSummons(count)==true?true:updated;
 					}
 					if(!trigger){
 						Main.setGame(states.Update);
-						Counter count=new Counter("Setting up Update...",event);
+						Counter count=new Counter("Setting up Reddit Update...",event);
 						updated=SaveSystem.updateReddit(count)==true?true:updated;
-						count=new Counter("Setting up Update...",event);
+						count=new Counter("Setting up Exvius Update...",event);
 						updated=SaveSystem.updateExvius(count)==true?true:updated;
 						count.setMessage("Updating Summons...");
-						updated=SaveSystem.updateSummons()==true?true:updated;
+						updated=SaveSystem.updateSummons(count)==true?true:updated;
 						count.terminate();
 					}
 					

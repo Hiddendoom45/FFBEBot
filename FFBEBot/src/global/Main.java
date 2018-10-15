@@ -189,7 +189,7 @@ public class Main {
 		break;
 		case Dead:game=" dead...";
 		break;
-		case Update:game=" updates";
+		case Update:game=" updating data...";
 		break;
 		case Ready1:game=" with RNG|@FFBEBot help";
 		break;
