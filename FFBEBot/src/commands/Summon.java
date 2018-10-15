@@ -44,6 +44,11 @@ public class Summon extends CommandGenerics implements Command {
 						if(num==11){
 							sendImage(event, Pull.pull11(pullBanner),pullBanner.name);
 						}
+						else if(num==666&&Unit.valueOf("Lucifer")!=null){
+							ArrayList<UnitSpecific> units = new ArrayList<UnitSpecific>();
+							units.add(new UnitSpecific(Unit.valueOf("Lucifer"),5));
+							sendImage(event,units,pullBanner.name);
+						}
 						else if(num==0){
 							ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
 							units.add(new UnitSpecific(Unit.Bedile, 3));
