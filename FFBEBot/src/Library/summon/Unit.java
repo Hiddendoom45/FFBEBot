@@ -900,7 +900,10 @@ public enum Unit{
 				Clyne,
 				Anzelm,
 				Luna,
-				Bedile
+				Bedile,
+				Russel,
+				Galuf,
+				Maria
 		};
 	}
 	public static Unit[] commons2(){
@@ -1005,12 +1008,16 @@ public enum Unit{
 				Ulrica,
 				Zyrus,
 				Reberta,
+				Sice,
+				King,
+				Rem,
 				Wilhelm,
 				Grace,
 				Abel,
 				Jean,
 				Camille,
 				Illus,
+				Amelia,
 				Forren,
 				SLid,
 				SFina,
@@ -1144,7 +1151,12 @@ public enum Unit{
 				SummerLuka,
 				TideSkaha,
 				Malphasie,
-				Circe
+				Circe,
+				Ignis,
+				Ravus,
+				Citra,
+				Macmedi,
+				Lotti
 
 		});
 	}

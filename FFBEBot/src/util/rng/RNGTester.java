@@ -1,10 +1,13 @@
 package util.rng;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
+import java.util.TreeSet;
 
+import Library.summon.Unit;
 import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
 import util.rng.summon.Pull;
@@ -92,5 +95,15 @@ public class RNGTester {
 			}
 		}
 		return s;
+	}
+	public static void currDiff(Banner banner){
+		TreeSet<Unit> cur = new TreeSet<Unit>(Arrays.asList(Unit.currentPool()));
+		Unit[] ban = banner.getPool();
+		for(Unit u:ban){
+			if(!cur.remove(u)){
+				System.out.println("current doesn't have unit "+u);
+			}
+		}
+		cur.forEach(u -> System.out.println(u));
 	}
 }
