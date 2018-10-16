@@ -14,7 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
-- Fix a bunch of stuff with regards to the summon simualtor, incorrect rates, missing units, banners etc
+- Fix a bunch of stuff with regards to the summon simulator, incorrect rates, missing units, banners etc
 - add flair command, update parsers for both wikis
 - used color-thief-java to add some colors to some embeds based on the image
 - added unit flair image in runit command
