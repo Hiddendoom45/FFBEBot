@@ -106,4 +106,22 @@ public class RNGTester {
 		}
 		cur.forEach(u -> System.out.println(u));
 	}
+	public static void currPoolCheck(){
+		TreeSet<Unit> cur = new TreeSet<Unit>(Arrays.asList(Unit.currentPool()));
+		boolean flag = false;
+		for(Unit u:Unit.values()){
+			if(flag){
+				if(u==Unit.Juggler){
+					break;
+				}
+				if(!cur.remove(u)){
+					System.out.println("current pool missing "+u);
+				}
+			}
+			else if(u==Unit.Montana){
+				flag=true;
+			}
+		}
+		cur.forEach(u -> System.out.println(u));
+	}
 }
