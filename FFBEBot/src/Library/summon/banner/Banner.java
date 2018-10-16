@@ -22,7 +22,7 @@ public enum Banner {
 	BF("Brave Frontier",new Unit[]{Unit.Tilith,Unit.Seria,Unit.Karl},new int[][]{{330,3},{330,3},{330,3}},Lib.concat(FF3.pool,FF3.featured),FF3.include,BannerType.Base5),
 	DD("Dark Destroyers",new Unit[]{Unit.DKC,Unit.Gaffgarion,Unit.CoD,Unit.Garland,Unit.Duane},new int[][]{{50},{570,3},{640,68,5},{640,68,5},{640,68,5}},BF.pool,BF.include,BannerType.Base5),
 	FFV("FFV",new Unit[]{Unit.Greg,Unit.Bartz,Unit.Exdeath,Unit.Faris},new int[][]{{50},{950,160,20},{950,160,20},{950,160,20}},DD.pool,DD.include,BannerType.Base5),
-	FFXIII1("FFXIII part 1",new Unit[]{Unit.Snow,Unit.Vanille,Unit.Sazh},new int[][]{{304,25},{304,25},{2800,19,10}},Lib.concat(FFV.pool, FFV.featured),FFV.include,BannerType.FFXIIIAjusted),
+	FFXIII1("FFXIII part 1",new Unit[]{Unit.Snow,Unit.Vanille,Unit.Sazh},new int[][]{{304,25},{304,25},{2800,19,10}},Lib.concat(new Unit[]{Unit.Greg,Unit.Faris},FFV.pool),FFV.include,BannerType.FFXIIIAjusted),
 	FFXIII2("FFXIII part 2",new Unit[]{Unit.Lightning,Unit.Hope,Unit.Fang},new int[][]{{50},{570,3},{2000,150,5}},Lib.concat(FFXIII1.pool, FFXIII1.featured),FFXIII1.include,BannerType.FFXIIIAjusted),
 	Noct("Noctis",new Unit[]{Unit.Noctis,Unit.Mercedes,Unit.Chizuru,Unit.Charlotte},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(new Unit[]{Unit.Hope,Unit.Fang},FFXIII2.pool),FFXIII2.include,BannerType.FFXIIIAjusted),
 	Christmas("Christmas Exclusive",new Unit[]{Unit.WKN,Unit.SRoselia,Unit.Cerius,Unit.Medius},new int[][]{{50},{570,3},{1000,200,5},{1000,200,5}},Lib.concat(new Unit[]{Unit.Mercedes,Unit.Noctis},Noct.pool),Noct.include,BannerType.FFXIIIAjusted),
@@ -48,7 +48,7 @@ public enum Banner {
 	Summer("Summer",new Unit[]{Unit.SMF,Unit.SFina,Unit.SLid},BannerRates.EvenSplit.rate(),BF2.pool,BF2.include, BannerType.BaseRare),
 	FFX("FFX",new Unit[]{Unit.Tidus,Unit.Rikku,Unit.Wakka},BannerRates.EvenSplit.rate(),Lib.concat(Summer.pool,Summer.featured),Summer.include, BannerType.BaseRare),
 	FFXII("FFXII",new Unit[]{Unit.Zargabaath,Unit.Rasler,Unit.Ashe,Unit.Vaan},BannerRates.D4.rate(),Lib.concat(FFX.pool, FFX.featured),FFX.include,BannerType.BaseRare),
-	Promise("A promise beyond time",new Unit[]{Unit.Lunera,Unit.Bran,Unit.Helena,Unit.Ruggles},BannerRates.D4.rate(),Lib.concat(FFXII.pool, FFXII.featured),FFXII.include,BannerType.BaseRare),
+	Promise("A promise beyond time",new Unit[]{Unit.Lunera,Unit.Bran,Unit.Helena,Unit.Ruggles},BannerRates.D4.rate(),Lib.concat(new Unit[]{Unit.Zargabaath,Unit.Rasler,Unit.Ashe},FFXII.pool),FFXII.include,BannerType.BaseRare),
 	AwkWarriorsP2("Awakened Warriors Part 2",new Unit[]{Unit.Luneth,Unit.DKC,Unit.Refia,Unit.Rosa,Unit.Cecil,Unit.Exdeath},BannerRates.D3D4D5.rate(),Lib.concat(Promise.pool, Promise.featured),Promise.include,BannerType.BaseRare),
 	FFTP3("FF Tactics part 3",new Unit[]{Unit.MercRamza,Unit.KDeltia,Unit.Orran,Unit.Meliadoul,Unit.Alma},BannerRates.D4D5.rate(),AwkWarriorsP2.pool,AwkWarriors.include,BannerType.BaseRare),
 	Revenge("Time for Revenge(DV)",new Unit[]{Unit.DV,Unit.FV,Unit.EV,Unit.Victoria,Unit.Tim},BannerRates.D4D5.rate(),Lib.concat(FFTP3.pool,new Unit[]{Unit.MercRamza,Unit.KDeltia,Unit.Orran,Unit.Meliadoul}),FFTP3.include,BannerType.BaseRare),
@@ -58,7 +58,7 @@ public enum Banner {
 	FFIII("FFIII",new Unit[]{Unit.OK,Unit.Desch,Unit.Aria,Unit.Sara},BannerRates.D4.rate(),Lib.concat(Memories.pool, new Unit[]{Unit.LV,Unit.HV,Unit.WV}),Memories.include,BannerType.BaseRare),
 	DevChoice("Developer's Choice",new Unit[]{Unit.Greg,Unit.Chizuru,Unit.Abel},BannerRates.EvenSplit.rate(),Lib.concat(FFIII.pool, FFIII.featured),FFIII.include,BannerType.BaseRare),
 	FFXI("FFXI",new Unit[]{Unit.Prishe,Unit.Werei,Unit.Kupipi,Unit.Shantotto},BannerRates.D3.rate(),DevChoice.pool,DevChoice.include,BannerType.BaseRare),
-	Ayaka("Ayaka",new Unit[]{Unit.Ayaka,Unit.Goken,Unit.Silvia,Unit.Kamui,Unit.Yuri},BannerRates.D3D4.rate(),Lib.concat(FFXI.pool, FFXI.featured),FFXI.include,BannerType.BaseRare),
+	Ayaka("Ayaka",new Unit[]{Unit.Ayaka,Unit.Goken,Unit.Silvia,Unit.Kamui,Unit.Yuri},BannerRates.D3D4.rate(),Lib.concat(new Unit[]{Unit.Prishe,Unit.Werei,Unit.Kupipi},FFXI.pool),FFXI.include,BannerType.BaseRare),
 	FFXV("FFXV",new Unit[]{Unit.Nyx,Unit.Crowe,Unit.Glauca,Unit.Libertus},BannerRates.D4.rate(),Lib.concat(Ayaka.pool,Ayaka.featured),Ayaka.include,BannerType.BaseRare),
 	HalloweenP2_1("Halloween 2 Part 1",new Unit[]{Unit.GLSakura,Unit.INichol,Unit.PJake,Unit.BCLid},BannerRates.D4.rate(),Lib.concat(FFXV.pool, FFXV.featured),FFXV.include,BannerType.BaseRare),
 	HalloweenP2_2("Halloween 2 Part 2",new Unit[]{Unit.DLasswell,Unit.DRain,Unit.WWF,Unit.BCLid},BannerRates.D5.rate(),HalloweenP2_1.pool,HalloweenP2_1.include,BannerType.BaseRare),
@@ -86,7 +86,7 @@ public enum Banner {
 	CGFina("CG Fina",new Unit[]{Unit.CGFina,Unit.Kunshira,Unit.Wadow,Unit.Erwin},BannerRates.D5.fiveRate(),TombRaider.pool,TombRaider.include,BannerType.ThreePercent),
 	FFXOld("FFX old",new Unit[]{Unit.Tidus,Unit.Rikku,Unit.Wakka},BannerRates.EvenSplit.fiveRate(),Lib.concat(CGFina.pool, CGFina.featured),CGFina.include,BannerType.ThreePercent),
 	FFX2("FFX 2",new Unit[]{Unit.Yuna,Unit.Lulu,Unit.Seymour,Unit.Wakka},BannerRates.D5.fiveRate(),FFXOld.pool,FFXOld.include,BannerType.ThreePercent),
-	CGJake("CG Jake",new Unit[]{Unit.CGJake,Unit.EShera,Unit.Ozetta,Unit.Camille,Unit.Riley},BannerRates.D3D5.fiveRate(),Lib.concat(new Unit[]{Unit.Luna,Unit.Lulu,Unit.Seymour}, FFX2.pool),FFX2.include,BannerType.ThreePercent),
+	CGJake("CG Jake",new Unit[]{Unit.CGJake,Unit.EShera,Unit.Ozetta,Unit.Camille,Unit.Riley},BannerRates.D3D5.fiveRate(),Lib.concat(new Unit[]{Unit.Yuna,Unit.Lulu,Unit.Seymour}, FFX2.pool),FFX2.include,BannerType.ThreePercent),
 	DQ("Dragon Quest",new Unit[]{Unit.Dragonlord,Unit.Orochi,Unit.LMSlime,Unit.KillingMachine,Unit.Golem,Unit.RobbinOod},BannerRates.D3T4.fiveRate(),Lib.concat(new Unit[]{Unit.CGJake,Unit.EShera,Unit.Ozetta,Unit.Riley}, CGJake.pool),CGJake.include,BannerType.ThreePercent),
 	Sephiroth("Sephiroth Arrives",new Unit[]{Unit.Sephiroth,Unit.Lila,Unit.Shylt,Unit.Mim},BannerRates.D5.fiveRate(),DQ.pool,DQ.include,BannerType.ThreePercent),
 	CGLid("CG Lid",new Unit[]{Unit.CGLid,Unit.Killian,Unit.Ulrica,Unit.Heretic},BannerRates.D3.fiveRate(),Lib.concat(Sephiroth.featured, Sephiroth.pool),Sephiroth.include,BannerType.ThreePercent),
@@ -183,5 +183,4 @@ public enum Banner {
 		}
 		return false;
 	}
-	
 }
