@@ -14,10 +14,22 @@ public class RNGTester {
 	public static List<String> testPullRates(int pulls,Banner banner){
 		HashMap<String,Integer> summonMap = new HashMap<String,Integer>();
 		int p = pulls;
+		int base5 = 0;
+		int base4 = 0;
+		int base3 = 0;
 		while(p>0){
 			if(p>maxPull){
 				p-=maxPull;
 				for(UnitSpecific u:Pull.pull(maxPull, banner)){
+					if(u.rarity==5){
+						base5++;
+					}
+					else if(u.rarity==4){
+						base4++;
+					}
+					else if(u.rarity==3){
+						base3++;
+					}
 					if(summonMap.containsKey(u.name+"-"+u.rarity)){
 						summonMap.put(u.name+"-"+u.rarity, summonMap.get(u.name+"-"+u.rarity)+1);
 					}
@@ -28,6 +40,15 @@ public class RNGTester {
 			}
 			else{
 				for(UnitSpecific u:Pull.pull(p, banner)){
+					if(u.rarity==5){
+						base5++;
+					}
+					else if(u.rarity==4){
+						base4++;
+					}
+					else if(u.rarity==3){
+						base3++;
+					}
 					if(summonMap.containsKey(u.name+"-"+u.rarity)){
 						summonMap.put(u.name+"-"+u.rarity, summonMap.get(u.name+"-"+u.rarity)+1);
 					}
@@ -53,6 +74,9 @@ public class RNGTester {
 		ArrayList<String> s = new ArrayList<String>();
 		int key=revMap.lastKey();
 		int index=0;
+		s.add(String.format("%02.2f%% = base 5" , (float)base5/pulls*100));
+		s.add(String.format("%02.2f%% = base 4" , (float)base4/pulls*100));
+		s.add(String.format("%02.2f%% = base 3" , (float)base3/pulls*100));
 		while(true){
 			s.add(String.format("%02.2f%% = ", ((float)key/pulls)*100)+revMap.get(key).get(index));
 			index++;

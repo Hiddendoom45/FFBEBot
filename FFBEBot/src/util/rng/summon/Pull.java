@@ -14,9 +14,6 @@ import global.record.Log;
 import util.rng.RandomLibs;
 
 public class Pull {
-	private static final int pool3=7999;
-	private static final int pool4=1899;
-	private static final int pool5=99;
 	public static List<UnitSpecific> pull(int times,Banner banner){
 		Random rand=new Random();
 		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
@@ -24,12 +21,12 @@ public class Pull {
 			try{
 			int rarity=rand.nextInt(Arrays.stream(banner.type.raritySplit).sum());
 			//5*
-			if(rarity<=banner.type.raritySplit[0]){
+			if(rarity<banner.type.raritySplit[0]){
 				Unit u=pull(banner,5,banner.type.raritySplit[0]*100,banner.type.baseRareChances[2]);
 				units.add(new UnitSpecific(u,5));
 			}
 			//4*
-			else if (rarity <= banner.type.raritySplit[1]+banner.type.raritySplit[0]) {
+			else if (rarity < banner.type.raritySplit[1]+banner.type.raritySplit[0]) {
 				Unit u=pull(banner,4,banner.type.raritySplit[1]*100,banner.type.baseRareChances[1]);
 				units.add(new UnitSpecific(u,4));
 			}
@@ -57,29 +54,29 @@ public class Pull {
 		int rarity=rand.nextInt(100);
 		try{
 			if(rarity<94){
-				Unit u=pullPlus(banner,4,pool4,banner.type.baseRareChances[1]);
+				Unit u=pullPlus(banner,4,banner.type.raritySplit[1]*100,banner.type.baseRareChances[1]);
 				units.add(new UnitSpecific(u,4));
 			}
 			else{
-				Unit u=pullPlus(banner,5,pool5,banner.type.baseRareChances[2]);
+				Unit u=pullPlus(banner,5,banner.type.raritySplit[0]*100,banner.type.baseRareChances[2]);
 				units.add(new UnitSpecific(u,5));
 			}
 			for(int i=0;i<10;i++){
 				rarity=rand.nextInt(99);
 				//5*
-				if(rarity==0){
-					Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+				if(rarity<=banner.type.raritySplit[0]){
+					Unit u=pull(banner,5,banner.type.raritySplit[0]*100,banner.type.baseRareChances[2]);
 					units.add(new UnitSpecific(u,5));
 				}
-				//3*
-				else if(rarity>19){
-					Unit u=pull(banner,3,pool3,banner.type.baseRareChances[0]);
-					units.add(new UnitSpecific(u,3));
-				}
 				//4*
-				else{
-					Unit u=pull(banner,4,pool4,banner.type.baseRareChances[1]);
+				else if(rarity <= banner.type.raritySplit[1]+banner.type.raritySplit[0]){
+					Unit u=pull(banner,4,banner.type.raritySplit[1]*100,banner.type.baseRareChances[1]);
 					units.add(new UnitSpecific(u,4));
+				}
+				//3*
+				else{
+					Unit u=pull(banner,3,banner.type.raritySplit[2]*100,banner.type.baseRareChances[0]);
+					units.add(new UnitSpecific(u,3));
 				}
 			}
 		}catch(Exception e){
@@ -92,7 +89,7 @@ public class Pull {
 		ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>(11);
 		for(int i=0;i<times;i++){
 			try{
-				Unit u=pull(banner,5,pool5,banner.type.baseRareChances[2]);
+				Unit u=pull(banner,5,banner.type.raritySplit[0]*100,banner.type.baseRareChances[2]);
 				units.add(new UnitSpecific(u,5));
 			}catch(Exception e){
 				Log.logError(e);
