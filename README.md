@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- Fix a bunch of stuff with regards to the summon simualtor, incorrect rates, missing units, banners etc
 - add flair command, update parsers for both wikis
 - used color-thief-java to add some colors to some embeds based on the image
 - added unit flair image in runit command
@@ -21,13 +22,12 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - Fix minor parse issues, clean up UnitArt command to use embeds
 - `@FFBEBot help` will also bring up help menu
 - Can search for unit by ID of base rarity w/ runit
-- Minor fixes to mod commands, some annoying messages temporary
 
 #### TODO:
 
-- fully update parsing for exvius wiki and reddit wiki commands
+- fully update parsing for exvius wiki
 - new features
-
+- more tests to make sure bot is running correctly
 
 ### Building
 
