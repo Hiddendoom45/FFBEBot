@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
+import java.util.function.Function;
 
 import Library.summon.Unit;
 import Library.summon.UnitSpecific;
@@ -14,7 +15,16 @@ import util.rng.summon.Pull;
 
 public class RNGTester {
 	private static final int maxPull = 5000;
-	public static List<String> testPullRates(int pulls,Banner banner){
+	public static List<String> testBase5PullRates(int pulls, Banner banner){
+		return testRates(pulls, i -> Pull.pull5base(i, banner));
+	}
+	public static List<String> test11PullRates(int pulls,Banner banner){
+		return testRates(pulls, i -> Pull.pull11(i, banner));
+	}
+	public static List<String> testPullRates(int pulls, Banner banner){
+		return testRates(pulls, i -> Pull.pull(i, banner));
+	}
+	public static List<String> testRates(int pulls, Function<Integer,List<UnitSpecific>> pull){
 		HashMap<String,Integer> summonMap = new HashMap<String,Integer>();
 		int p = pulls;
 		int base5 = 0;
@@ -23,7 +33,7 @@ public class RNGTester {
 		while(p>0){
 			if(p>maxPull){
 				p-=maxPull;
-				for(UnitSpecific u:Pull.pull(maxPull, banner)){
+				for(UnitSpecific u:pull.apply(maxPull)){
 					if(u.rarity==5){
 						base5++;
 					}
@@ -42,7 +52,7 @@ public class RNGTester {
 				}
 			}
 			else{
-				for(UnitSpecific u:Pull.pull(p, banner)){
+				for(UnitSpecific u:pull.apply(p)){
 					if(u.rarity==5){
 						base5++;
 					}
