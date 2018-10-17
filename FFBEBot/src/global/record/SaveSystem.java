@@ -158,7 +158,6 @@ public class SaveSystem {
 		JsonObject units=new JsonObject();
 		int index=0;
 		if(!(count==null)){count.setMessage("Loading Exvius Units...(%count%/"+overview.length+")");}
-		
 		for(UnitOverview.unitData u:overview){
 			if(!u.isNew){//avoid red text new entries containing nothing
 				try{
@@ -183,7 +182,7 @@ public class SaveSystem {
 		Data.exvicusO=overviews.toJson(overview);
 		JsonObject units=new JsonParser().parse(Data.exvicusUnits).getAsJsonObject();
 		if(overview.length-units.entrySet().size()==0){
-			count.terminate();
+			if(!(count==null)){count.terminate();}
 			return false;
 		}
 		int index=0;
@@ -250,6 +249,7 @@ public class SaveSystem {
 		if(!(count==null)) count.setMessage("Updating Summoned Units...(%count%/"+Unit.values().length+")");
 		new File("units").mkdir();
 		if(new File("units").listFiles().length-Unit.values().length==0){
+			if(!(count==null)){count.terminate();}
 			return false;
 		}
 		for(Unit u:Unit.values()){
@@ -284,6 +284,7 @@ public class SaveSystem {
 			index++;
 			if(!(count==null)) count.setI(index);
 		}
+		if(!(count==null)){count.terminate();}
 		return true;
 	}
 	/**
