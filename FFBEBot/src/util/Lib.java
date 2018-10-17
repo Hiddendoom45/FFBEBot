@@ -436,8 +436,14 @@ public class Lib {
 	 * @return element representing the specific cell
 	 */
 	public static Element getCell(int row, int col,Element table){
-		return table.getElementsByTag("tr").get(row).getElementsByTag("td").size()>0? 
-				table.getElementsByTag("tr").get(row).getElementsByTag("td").get(col):null;
+		if(!table.tagName().equals("tbody")){
+			table=table.getElementsByTag("tbody").first();
+		}
+		return table.select(":root > tr").size()>row?
+					(table.select(":root > tr").get(row).getElementsByTag("td").size()>0? 
+					table.select(":root > tr").get(row).getElementsByTag("td").get(col)
+					:null)
+				:null;
 	}
 	/**
 	 * get specific row

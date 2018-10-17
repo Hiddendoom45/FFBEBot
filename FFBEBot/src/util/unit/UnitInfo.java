@@ -34,6 +34,9 @@ public class UnitInfo {
 	public String trustName="";
 	public String trustLink="";
 	public TrustInfo trustDetails;
+	public String sTrustName="";
+	public String sTrustLink="";
+	public TrustInfo sTrustDetails;
 	public unitStats stats;
 	public unitStatIncrease statIncrease;
 	public String[] weapons=new String[]{};
@@ -98,6 +101,14 @@ public class UnitInfo {
 					trustLink=Lib.getCell(12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
 					trustDetails=new TrustInfo(doc2.getElementById("mw-content-text").children());
+				}
+				Element sTRaw = Lib.getCell(13, 0, unitInfo);
+				if(!(sTRaw==null)){
+					sTrustName=parseRaw(sTRaw);
+					System.out.println(sTRaw);
+					sTrustLink=Lib.getCell(13, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
+					Document doc3=Jsoup.connect(sTrustLink).userAgent(Settings.UA).get();
+					sTrustDetails=new TrustInfo(doc3.getElementById("mw-content-text").children());
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "Error parsing overview box for page:" +page);

@@ -17,7 +17,6 @@ public class Units extends UnitSelection implements Command,Selection {
 		out+="__**"+info.unitName+"**__\t";
 		out+="Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t";
 		out+="Role:"+info.role+"\t";
-		//out+="TM:"+info.trustName+"="+info.trustDetail;
 		out+="\n__Stats__";
 		for(int i=0;i<info.stats.stats.length;i++){
 			out+="\n"+addStars(info.stats.stats[i].rarity);
@@ -28,16 +27,15 @@ public class Units extends UnitSelection implements Command,Selection {
 			out+="**MAG**:"+Lib.pad(info.stats.stats[i].MAG, 6)+Lib.pad("("+info.statIncrease.stats[i].MAG+")", 6);
 			out+="**SPR**:"+Lib.pad(info.stats.stats[i].SPR, 6)+Lib.pad("("+info.statIncrease.stats[i].SPR+")", 6);
 		}
-		//out+="\nlink to wiki::link:";
-		//out+=info.URL+"";//discord now grabs the unit image from the link
-		//out+="\n:art:"+info.imgOverviewURL;
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setAuthor(info.unitName,info.URL);
 		embed.setDescription("[unit link]("+info.URL+")");
 		if(!(info.trustLink==null)){
 			embed.addField(new Field("TM - "+info.trustName,"[TM link]("+info.trustLink+")\n"+info.trustDetails,false));
 		}
-		//embed.setDescription("link");
+		if(!(info.trustLink==null)){
+			embed.addField(new Field("STM - "+info.sTrustName,"[STM link]("+info.sTrustLink+")\n"+info.sTrustDetails,false));
+		}
 		embed.setImage(info.imgOverviewURL);
 		Lib.sendMessage(event, out);
 		Lib.sendEmbed(event, embed);
