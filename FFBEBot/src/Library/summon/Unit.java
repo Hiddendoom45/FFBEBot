@@ -15,7 +15,7 @@ import util.Lib;
 import util.unit.UnitOverview;
 import util.unit.UnitOverview.unitData;
 public enum Unit{
-	
+
 	//random
 	TM("Trust Moogle",new String[]{"/f/f5/Unit-Trust_Moogle-5.png?version=c8b87cb7532e45a18b442c9fd03b77f0"},5),
 	//Story Units(free)
@@ -392,7 +392,12 @@ public enum Unit{
 	},
 	Setzer("Setzer",new String[]{"/8/82/Unit-Setzer-4.png?version=2ead8a1e0965a89a4e60d2f4d01f9509","/8/8e/Unit-Setzer-5.png?version=e2d2da84954caae0d909c76ed74c53f1","/5/58/Unit-Setzer-6.png?version=a968706d3c6747c0b853ff01cb19fdec"},4),
 	Gau("Gau",new String[]{"/a/ae/Unit-Gau-3.png?version=86a4248518d92f0f337d53e8ac01eeb2","/a/a5/Unit-Gau-4.png?version=dddcb33201be09f9e0834d39a90f34c6","/7/72/Unit-Gau-5.png?version=86f4ffd16da0c69b45c17b61b29821dd"},3),
-	Eileen("Aileen",new String[]{"/2/21/Unit-Aileen-5.png?version=9b68174017ea66b64e26e0881e955356","/4/49/Unit-Aileen-6.png?version=3420bebd48cf5e77a2d71515ab551ce3"},5),
+	Eileen("Aileen",new String[]{"/2/21/Unit-Aileen-5.png?version=9b68174017ea66b64e26e0881e955356","/4/49/Unit-Aileen-6.png?version=3420bebd48cf5e77a2d71515ab551ce3",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/8/87/Unit-Aileen-7.png?version=9f32f036125d336f9cd49bdad09322df"});
+		}
+	},
 	Soze("Sozhe",new String[]{"/e/ee/Unit-Sozhe-4.png?version=8db6e71885c7f7466053db6a98c70696","/d/d4/Unit-Sozhe-5.png?version=11ba5c7a4156cecd2fd7c76b67a0b2a7","/9/94/Unit-Sozhe-6.png?version=2ab7a096496135b2e14aabb6dce439da"},4),
 	Heretic("Heltich",new String[]{"/3/36/Unit-Heltich-3.png?version=b9577d4a66090573ad7474a1beef99f1","/6/61/Unit-Heltich-4.png?version=0095dc6e203899b0c12681c1d76deaa5","/2/2b/Unit-Heltich-5.png?version=e9da98267d682e8763fd93db477118df",},3){
 		@Override
@@ -415,7 +420,12 @@ public enum Unit{
 	},
 	Sice("Sice",new String[]{"/4/42/Unit-Sice-3.png?version=6d528642bf94c8af9b6f3d077f10a696","/3/30/Unit-Sice-4.png?version=e003871a530bed2eeb5d6b06bc8f75e9","/6/64/Unit-Sice-5.png?version=3422c4a100dd87d801c5014e02786f90"},3),
 	King("King",new String[]{"/7/70/Unit-King-4.png?version=206a7a1fa8287ef83c37ab2386ea9454","/1/13/Unit-King-5.png?version=41f076e40dafce9150099c88da069bb5","/e/e5/Unit-King-6.png?version=030958c77b217bddf56e0492b4dd514f"},4),
-	Rem("Rem",new String[]{"/a/a5/Unit-Rem-5.png?version=1285024f32d7a0cfb3b606558eb1d5be","/b/b6/Unit-Rem-6.png?version=78b4aaa81fb7e35238607ea6b0366c5e"},5),
+	Rem("Rem",new String[]{"/a/a5/Unit-Rem-5.png?version=1285024f32d7a0cfb3b606558eb1d5be","/b/b6/Unit-Rem-6.png?version=78b4aaa81fb7e35238607ea6b0366c5e",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/a/a7/Unit-Rem-7.png?version=b45824299873e6b21538928d7ea8182d"});
+		}
+	},
 	Wilhelm("Wilhelm",new String[]{"/7/76/Unit-Wilhelm-5.png?version=7b75d37764ee05753823efe779b4c0bd","/f/f0/Unit-Wilhelm-6.png?version=bcb94748f8b43efa39514cc5ad525654",},5){
 		@Override
 		public void setup(){
@@ -452,7 +462,12 @@ public enum Unit{
 	},
 	Ashe("Ashe",new String[]{"/3/37/Unit-Ashe-4.png?version=f69dfba0799de78f34e72b2fd142e1b5","/6/65/Unit-Ashe-5.png?version=2213737478b2807c0a40e76f8d3d2e34","/c/c4/Unit-Ashe-6.png?version=0652057350e5f543ecf914cc71259f1e"},4),
 	Rasler("Rasler",new String[]{"/4/43/Unit-Rasler-4.png?version=ca9e6fb6b903a82fbc23ba2da336d99b","/7/7a/Unit-Rasler-5.png?version=c3854833fcde3f9ef799ba4af686f134","/a/a2/Unit-Rasler-6.png?version=a8b6de830db15f87be52c169d4bc0ae2"},4),
-	Zargabaath("Zargabaath",new String[]{"/b/b9/Unit-Zargabaath-5.png?version=be421c73a3d136192b43f4f4052900e5","/2/2f/Unit-Zargabaath-6.png?version=06575dc66b59f6f6e410089635a97404"},5),
+	Zargabaath("Zargabaath",new String[]{"/b/b9/Unit-Zargabaath-5.png?version=be421c73a3d136192b43f4f4052900e5","/2/2f/Unit-Zargabaath-6.png?version=06575dc66b59f6f6e410089635a97404",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/f/f7/Unit-Zargabaath-7.png?version=8af68904f00829137383682e4f93bfbf"});
+		}
+	},
 	Lunera("Lunera",new String[]{"/0/0b/Unit-Lunera-5.png?version=9bf19e954174426c43795124b375ec1d","/f/f5/Unit-Lunera-6.png?version=cf1b8d9d18f75d6b2d21dbf48146c98b"},5),
 	Bran("Bran",new String[]{"/9/95/Unit-Bran-4.png?version=c98e0c89238ef1df247560d04e28296b","/c/c2/Unit-Bran-5.png?version=8e9fc764a69b4829b48cf9f9367c10d8","/0/0b/Unit-Bran-6.png?version=8b9e78478872c2bd92b57919bd532f73"},4),
 	Helena("Helena",new String[]{"/b/bd/Unit-Helena-4.png?version=286743cd201a7cf5cc46bae863dcec99","/0/0c/Unit-Helena-5.png?version=878990ef50e7bb1f40f2cd8ae35c085a","/5/51/Unit-Helena-6.png?version=e14110b62c630107a914aa41de2ac1df"},4),
@@ -476,12 +491,27 @@ public enum Unit{
 	},
 	Meliadoul("Meliadoul",new String[]{"/e/e1/Unit-Meliadoul-4.png?version=06d01cc02fae36c8dcd8b13bec10ee12","/6/6b/Unit-Meliadoul-5.png?version=c9931ac259b1f7019ca9ca25f9b60ae1","/d/df/Unit-Meliadoul-6.png?version=4e84d4eeb983d14112e9d321d95c84c7"},4),
 	Orran("Orran",new String[]{"/b/bc/Unit-Orran-4.png?version=ad42bded11268de83e7a6f718bb7c5bc","/9/93/Unit-Orran-5.png?version=cde6630b3bed89b3779a163270a428cb","/3/3e/Unit-Orran-6.png?version=5875d540a5e4bd4d3eab87f2ac75e6e9"},4),
-	DV("Veritas of the Dark",new String[]{"/7/77/Unit-Veritas_of_the_Dark-5.png?version=8597061a195609b5fb6da6bfdef8bd35","/1/19/Unit-Veritas_of_the_Dark-6.png?version=b145bd8f69b1cea06c5a374c6a99ead8"},5),
-	FV("Veritas of the Flame",new String[]{"/c/c3/Unit-Veritas_of_the_Flame-5.png?version=257b035fc9488a005363086635f6e59a","/2/25/Unit-Veritas_of_the_Flame-6.png?version=0b448a781d9ecba91b8ace2abfddbc2f"},5),
+	DV("Veritas of the Dark",new String[]{"/7/77/Unit-Veritas_of_the_Dark-5.png?version=8597061a195609b5fb6da6bfdef8bd35","/1/19/Unit-Veritas_of_the_Dark-6.png?version=b145bd8f69b1cea06c5a374c6a99ead8",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/a/a9/Unit-Veritas_of_the_Dark-7.png?version=ac6a7835b7850e6ea3ff5dafa19f944d"});
+		}
+	},
+	FV("Veritas of the Flame",new String[]{"/c/c3/Unit-Veritas_of_the_Flame-5.png?version=257b035fc9488a005363086635f6e59a","/2/25/Unit-Veritas_of_the_Flame-6.png?version=0b448a781d9ecba91b8ace2abfddbc2f",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/2/2d/Unit-Veritas_of_the_Flame-7.png?version=5d8b3102160a43a64401186d1db76bb6"});
+		}
+	},
 	EV("Veritas of the Earth",new String[]{"/e/e1/Unit-Veritas_of_the_Earth-4.png?version=f7b78fbf92722dbdab4c159cec6c92d7","/c/c9/Unit-Veritas_of_the_Earth-5.png?version=e4cda1cd4935f2be5ee5f740ba3f4db0","/e/e0/Unit-Veritas_of_the_Earth-6.png?version=6bd473fde438ff45aeec41ee146b5d59"},4),
 	Victoria("Victoria",new String[]{"/7/7a/Unit-Victoria-4.png?version=7ab85a379bcdf5233a7190439d8a6400","/8/80/Unit-Victoria-5.png?version=17fb4bb81c43530db14a4f3ae719d656","/8/85/Unit-Victoria-6.png?version=a259ded545e88adecaf7987bba0994b0"},4),
 	Tim("Timothy",new String[]{"/6/6c/Unit-Timothy-3.png?version=d52a0483065a851f7e7f49fbd3dae98e","/5/5d/Unit-Timothy-4.png?version=0ab177388264222de10bc50c63951fae","/1/16/Unit-Timothy-5.png?version=d95bf1675c86748fe2539d9c20036695"},3),
-	LV("Veritas of the Light",new String[]{"/7/7c/Unit-Veritas_of_the_Light-5.png?version=a73fe8c4993066b6fbd8651d3837c37f","/c/cd/Unit-Veritas_of_the_Light-6.png?version=c1b6f63e003723b5717295230574bb1a"},5),
+	LV("Veritas of the Light",new String[]{"/7/7c/Unit-Veritas_of_the_Light-5.png?version=a73fe8c4993066b6fbd8651d3837c37f","/c/cd/Unit-Veritas_of_the_Light-6.png?version=c1b6f63e003723b5717295230574bb1a",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/c/c5/Unit-Veritas_of_the_Light-7.png?version=4a62417204a9ebe523cdbbb9ffb07edf"});
+		}
+	},
 	HV("Veritas of the Heavens",new String[]{"/3/38/Unit-Veritas_of_the_Heavens-4.png?version=0bc09107470f32f4fba7236a129778fc","/2/29/Unit-Veritas_of_the_Heavens-5.png?version=a777aef3b2d973f104dcf7d4c66aa49a","/d/d4/Unit-Veritas_of_the_Heavens-6.png?version=5ac94af348d9084663cb72cf0c9a47de"},4),
 	WV("Veritas of the Waters",new String[]{"/9/91/Unit-Veritas_of_the_Waters-4.png?version=6ab058473bfd730bdf74aa7354923e2e","/0/04/Unit-Veritas_of_the_Waters-5.png?version=70870a36e9d08bcfd0f4bc72b2efb018","/3/32/Unit-Veritas_of_the_Waters-6.png?version=a67ccca778195d4b438c6c20e346a14e"},4),
 	OK("Onion Knight",new String[]{"/0/0f/Unit-Onion_Knight-5.png?version=92d2ad16d8dcdc0f1c9b10954b15ea4b","/6/62/Unit-Onion_Knight-6.png?version=08e7ed660eb10d4799c915e68619df0f",},5){
@@ -493,7 +523,12 @@ public enum Unit{
 	Desch("Desch",new String[]{"/5/5e/Unit-Desch-4.png?version=ca04885d2cf6443fe9d8c506c8b8226d","/1/18/Unit-Desch-5.png?version=0cf714cc19f33687f0804278dbc63a49","/5/5c/Unit-Desch-6.png?version=37e46b6a62c63ca4624f17492b3a8c2c"},4),
 	Aria("Aria",new String[]{"/f/f2/Unit-Aria-4.png?version=d62e3ef1ceccdbad0f3ae4b0a36dcf83","/b/b4/Unit-Aria-5.png?version=54ebd4199e31043f364f15275d0d023c","/4/4b/Unit-Aria-6.png?version=86001e84ea0c48563ef86d5a7d980e47"},4),
 	Sara("Sara",new String[]{"/8/82/Unit-Sara-3.png?version=99ca5d6674b69ad07cb18e26fabb1240","/8/80/Unit-Sara-4.png?version=0e08f2269873cfb27764934efb36bd91","/8/85/Unit-Sara-5.png?version=6e2512bb1a6d20ba3024cdb676d25112"},3),
-	Prishe("Prishe",new String[]{"/2/2b/Unit-Prishe-5.png?version=a937d3cae1940dcfd08bdc5fec2c06d5","/a/a2/Unit-Prishe-6.png?version=a81757cc36945fdf33485076dd0c8466"},5),
+	Prishe("Prishe",new String[]{"/2/2b/Unit-Prishe-5.png?version=a937d3cae1940dcfd08bdc5fec2c06d5","/a/a2/Unit-Prishe-6.png?version=a81757cc36945fdf33485076dd0c8466",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/8/81/Unit-Prishe-7.png?version=3dc403f1e961f76cd5c45dcf25ca86b2"});
+		}
+	},
 	Werei("Werei",new String[]{"/6/6e/Unit-Werei-4.png?version=4073ca88512f21f076bb69a3660a94b2","/9/99/Unit-Werei-5.png?version=e766362f25c3bffc1b117c4397cb4591","/8/87/Unit-Werei-6.png?version=e0d7164c990dc86bdd91182d41f5cce1"},4),
 	Kupipi("Kupipi",new String[]{"/6/6b/Unit-Kupipi-3.png?version=7c30899671b26b36ed3d412e44e1cc3c","/5/56/Unit-Kupipi-4.png?version=939a06b6c273fafb0314bf33a42fbdd2","/9/9f/Unit-Kupipi-5.png?version=7ee5a75922e954fcde11cf608e00cd6b",},3){
 		@Override
@@ -533,7 +568,12 @@ public enum Unit{
 	Lorraine("Loren",new String[]{"/9/93/Unit-Loren-5.png?version=3701d0eef7b86c1d646eaad54fc6f3c4","/8/8a/Unit-Loren-6.png?version=195c33ea70d6711fd15cff53cd343f8a"},5),
 	Chloe("Chloe",new String[]{"/a/a0/Unit-Chloe-4.png?version=460c81214aef9cfd441c1943f911c090","/c/c0/Unit-Chloe-5.png?version=0274b4e4bb73cb0b3a1151592f35ce91","/4/4e/Unit-Chloe-6.png?version=0b5fb106968f1be407721323ab4a0079"},4),
 	Amy("Amy",new String[]{"/e/e3/Unit-Amy-3.png?version=c326a865c14d0f08f506a3bdc05ec530","/7/73/Unit-Amy-4.png?version=6e30a655f7c8c73e67c8352bdf199ed0","/a/a2/Unit-Amy-5.png?version=01c04ee4aa4869829d745fec89254b70"},3),
-	Barbariccia("Barbariccia",new String[]{"/b/b6/Unit-Barbariccia-5.png?version=67b20b10f73ef0fc27814b99343f62b4","/7/7a/Unit-Barbariccia-6.png?version=d7bda5ae2de8b4459ee55d97b09506d5"},5),
+	Barbariccia("Barbariccia",new String[]{"/b/b6/Unit-Barbariccia-5.png?version=67b20b10f73ef0fc27814b99343f62b4","/7/7a/Unit-Barbariccia-6.png?version=d7bda5ae2de8b4459ee55d97b09506d5",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/b/b8/Unit-Barbariccia-7.png?version=04eb401482904b372d4bcac6969bcd0d"});
+		}
+	},
 	Cagnazzo("Cagnazzo",new String[]{"/e/ef/Unit-Cagnazzo-4.png?version=8d65967cd6375f9934384c6fef826e8b","/4/42/Unit-Cagnazzo-5.png?version=4542730da03c56845e15270c13cd4699","/2/29/Unit-Cagnazzo-6.png?version=32d5d513742c867392f3289fc38c6d4a"},4),
 	Rubicante("Rubicante",new String[]{"/3/3f/Unit-Rubicante-4.png?version=f7f5179cbef2d1fdab2a517077784fac","/1/16/Unit-Rubicante-5.png?version=8f752d62bdc768de2836f49f09018cdd","/d/d4/Unit-Rubicante-6.png?version=d137e9c176b214589859d40808e52c90"},4),
 	Scarmiglione("Scarmiglione",new String[]{"/1/1a/Unit-Scarmiglione-3.png?version=3be95c2daec707d38c0c0e91373fed26","/1/11/Unit-Scarmiglione-4.png?version=f970159ecbdd3d3c5616fb1cbbc873ab","/5/53/Unit-Scarmiglione-5.png?version=cad1351939c877c215912b2854f4d1fe"},3),
@@ -572,8 +612,18 @@ public enum Unit{
 	Cedona("Cedona",new String[]{"/c/c3/Unit-Cedona-4.png?version=7b960ebe4f9680203e625a700a9293e7","/d/d7/Unit-Cedona-5.png?version=d8f2b804adcbb1febdd0d05c487a28ad","/b/b9/Unit-Cedona-6.png?version=ce8ef55d707f6d6880c56465ea327ded"},4),
 	Aranea("Aranea",new String[]{"/f/f8/Unit-Aranea-5.png?version=d9f5c9ea69d0a6574280e5271f485356","/c/ce/Unit-Aranea-6.png?version=57409387e992e78275fb7668132d1569"},5),
 	Prompto("Prompto",new String[]{"/2/20/Unit-Prompto-5.png?version=49909a877a8f301c841e3e81924f5431","/1/1e/Unit-Prompto-6.png?version=1a9d8a096d5c4c02a3ae3569d968791a"},5),
-	Beatrix("Beatrix",new String[]{"/f/f4/Unit-Beatrix-5.png?version=06bc311da6b35c7bf61ecbe35c16fa96","/a/ac/Unit-Beatrix-6.png?version=918b2c18cda7538bc08afceb6385262b"},5),
-	Eiko("Eiko",new String[]{"/0/0a/Unit-Eiko-5.png?version=4f7ce1abe5b52150aa001ba277a620f9","/e/ec/Unit-Eiko-6.png?version=4c585f07c446ae9d0c0d97dfa6825240"},5),
+	Beatrix("Beatrix",new String[]{"/f/f4/Unit-Beatrix-5.png?version=06bc311da6b35c7bf61ecbe35c16fa96","/a/ac/Unit-Beatrix-6.png?version=918b2c18cda7538bc08afceb6385262b",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/4/4d/Unit-Beatrix-7.png?version=8822352df36da61885ef340c5232d01f"});
+		}
+	},
+	Eiko("Eiko",new String[]{"/0/0a/Unit-Eiko-5.png?version=4f7ce1abe5b52150aa001ba277a620f9","/e/ec/Unit-Eiko-6.png?version=4c585f07c446ae9d0c0d97dfa6825240",},5){
+		@Override
+		public void setup(){
+			setUpgrades(new String[]{"/f/f9/Unit-Eiko-7.png?version=a08a1580ba47c77d669cb538ff55baf8"});
+		}
+	},
 	Steiner("Steiner",new String[]{"/a/a8/Unit-Steiner-4.png?version=0f4e44ad35e2ae3158e2cb455f4b13d4","/5/58/Unit-Steiner-5.png?version=dafad977cea228187bf221b163323e6b","/e/ee/Unit-Steiner-6.png?version=11d230ab78dd7bfe18bfcf5c8b7692a8"},4),
 	BW3("Black Waltz 3",new String[]{"/6/6e/Unit-Black_Waltz_3-3.png?version=90fe6192db8cd90ecf4dee008ff98156","/3/31/Unit-Black_Waltz_3-4.png?version=842d9bbfec7a50eca5f1129d8a219f12","/7/70/Unit-Black_Waltz_3-5.png?version=96a07b1257977b1362da654a5d1bfce6"},3),
 	CGFina("Lotus Mage Fina",new String[]{"/e/e8/Unit-Lotus_Mage_Fina-5.png?version=7fc2b6d51be1a937176ac47bd2cf6816","/e/e2/Unit-Lotus_Mage_Fina-6.png?version=3e286664455a248f15678ca9a893171e"},5),
@@ -748,7 +798,7 @@ public enum Unit{
 	SlimeKnight("Slime Knight",new String[]{"/b/b4/Unit-Slime_Knight-4.png?version=72b23985d1d45c0ad25b6734bd44239f","/7/7d/Unit-Slime_Knight-5.png?version=3d0f0b76df1900c276b29256c99cb4b3","/c/c1/Unit-Slime_Knight-6.png?version=82a178e18f6506b20da43838066d5611"},4),
 	MarquisdeLeon("Marquis de Léon",new String[]{"/d/d9/Unit-Marquis_de_L%C3%A9on-5.png?version=9a3b0f3ba2112ff2217ad25e019dcc70","/7/74/Unit-Marquis_de_L%C3%A9on-6.png?version=23f6bdf3b341e20eaa4f1a20663a28f4","/d/db/Unit-Marquis_de_L%C3%A9on-7.png?version=117a90dbe3facf7bf50cf7a75efbcb59"},5),
 	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3);
-	
+
 	//quick access map for certain things that has unit name but not the Unit object
 	public static TreeMap<String,Unit> unitMap = new TreeMap<String,Unit>();
 	static{//build map on class load
@@ -769,7 +819,7 @@ public enum Unit{
 			this.url[i]=Settings.ExvicusIMGURL+this.url[i];
 		}
 	}
-	
+
 	public void setup(){
 
 	}
