@@ -165,6 +165,7 @@ public class Main {
 		Overrider.addOverrideCommand("blacklist", new Blacklist());
 		Overrider.addOverrideCommand("unitindex", new UnitIndex());
 		Overrider.addOverrideCommand("uniteprint", new UnitEPrint());
+		Overrider.addOverrideCommand("ratetest", new RateTest());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
 			Overrider.addOverrideCommand("test", new Test());
 		}
