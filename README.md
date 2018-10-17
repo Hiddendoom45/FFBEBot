@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- Updated unit/runit commands, unit is now fully embed and added STMR parsing
 - Fix a bunch of stuff with regards to the summon simulator, incorrect rates, missing units, banners etc
 - add flair command, update parsers for both wikis
 - used color-thief-java to add some colors to some embeds based on the image
@@ -25,7 +26,6 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### TODO:
 
-- fully update parsing for exvius wiki
 - new features
 - more tests to make sure bot is running correctly
 
