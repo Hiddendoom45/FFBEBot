@@ -14,11 +14,12 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
 import util.unit.RedditUnit;
+import util.unit.RedditOverview.unitData;
 
 public class RUnits extends RedditSelection {
-	public void sendUnitData(RedditUnit info,int id,MessageReceivedEvent event){
+	public void sendUnitData(RedditUnit info,unitData data,MessageReceivedEvent event){
 		EmbedBuilder embed=new EmbedBuilder();
-		embed.setTitle(""+info.title+"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n",info.URL);
+		embed.setAuthor(""+data.name+" ["+data.JPname+"]"+"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n",info.URL);
 		embed.addField(new Field("TM", info.TrustDetails.substring("Trust Reward = ".length()), false));
 		if(!info.STrustDetails.equals("")){
 			embed.addField(new Field("STM",info.STrustDetails.substring("Super Trust Reward = ".length()),false));
@@ -35,12 +36,12 @@ public class RUnits extends RedditSelection {
 		}
 		embed.addField(new Field("Stats",stat,false));
 		embed.addField(new Field("Link","[unit link]("+info.URL+")",false));
-		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", id);
+		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", data.unitID);
 		if(Lib.exists(imgUrl)){
 			embed.setImage(imgUrl);
 		}
 		try {
-			BufferedImage flair = ImageIO.read(getClass().getResourceAsStream(String.format("/Library/flair/unit/u%03d.png", id)));
+			BufferedImage flair = ImageIO.read(getClass().getResourceAsStream(String.format("/Library/flair/unit/u%03d.png", data.unitID)));
 			int[] rgb = ColorThief.getColor(flair);
 			embed.setColor(new Color(rgb[0], rgb[1], rgb[2]));
 		} catch (Exception e) {
@@ -50,13 +51,13 @@ public class RUnits extends RedditSelection {
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(0).name),Ounit.getData(0).unitID,event);
+		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(0).name),Ounit.getData(0),event);
 
 	}
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(selection).name),Ounit.getData(selection).unitID,event);
+		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(selection).name),Ounit.getData(selection),event);
 	}
 
 	@Override
