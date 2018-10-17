@@ -11,10 +11,17 @@ import java.util.function.Function;
 import Library.summon.Unit;
 import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
+import global.record.Settings;
+import util.Lib;
 import util.rng.summon.Pull;
 
 public class RNGTester {
 	private static final int maxPull = 5000;
+	public static void main(String[] args){
+		//generic test on the current banner and the current pool stuffs
+		currDiff(Settings.DefaultBanner);
+		currPoolCheck();
+	}
 	public static List<String> testBase5PullRates(int pulls, Banner banner){
 		return testRates(pulls, i -> Pull.pull5base(i, banner));
 	}
@@ -108,7 +115,7 @@ public class RNGTester {
 	}
 	public static void currDiff(Banner banner){
 		TreeSet<Unit> cur = new TreeSet<Unit>(Arrays.asList(Unit.currentPool()));
-		Unit[] ban = banner.getPool();
+		Unit[] ban = Lib.concat(banner.getPool(),banner.featured);
 		for(Unit u:ban){
 			if(!cur.remove(u)){
 				System.out.println("current doesn't have unit "+u);
