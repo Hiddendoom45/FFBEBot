@@ -166,7 +166,9 @@ public class Pull {
 							units.add(u);
 						}
 					}
-					return RandomLibs.SelectRandom(units);
+					if(units.size()>0){
+						return RandomLibs.SelectRandom(units);
+					}
 				}
 			}
 			else if(rarity==5){
@@ -177,7 +179,9 @@ public class Pull {
 							units.add(u);
 						}
 					}
-					return RandomLibs.SelectRandom(units);
+					if(units.size()>0){
+						return RandomLibs.SelectRandom(units);
+					}
 				}
 			}
 		}
