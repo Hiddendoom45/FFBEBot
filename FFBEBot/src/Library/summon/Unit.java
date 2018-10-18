@@ -687,6 +687,8 @@ public enum Unit{
 	Citra("Citra",new String[]{"/8/8c/Unit-Citra-5.png?version=7649336fa33a38793d89460a5b690b52","/a/a8/Unit-Citra-6.png?version=7945c2c3183a7999cd6ec1b22fa0c1c1","/d/d9/Unit-Citra-7.png?version=b64b0a4ad6b29af44b0690d4485ff5fd"},5),
 	Macmedi("Macmedi",new String[]{"/c/ca/Unit-Macmedi-4.png?version=a844912625f0dcdb1e3f50cff5d453a4","/a/a9/Unit-Macmedi-5.png?version=4573b02ae08b6d56d4c1d923c28baa86","/7/78/Unit-Macmedi-6.png?version=a9330039a20c572f07be4f3a1d10dca1"},4),
 	Lotti("Lotti",new String[]{"/c/ce/Unit-Lotti-3.png?version=bbc14fa5eca193b2914523771eed44fc","/0/02/Unit-Lotti-4.png?version=08b20b3f677afac4a9f2c980b96d5830","/c/c4/Unit-Lotti-5.png?version=f96e1d09761170373df66b2d4de6a83d"},3),
+	Lilith("Lilith",new String[]{"/d/df/Unit-Lilith-5.png?version=eaf8710a22dc3e2f611a1278094fbd3e","/e/e7/Unit-Lilith-6.png?version=8e97f519922f097d61fb26466b7e528b","/9/97/Unit-Lilith-7.png?version=01acd73639a4a3e110dde839ca51c786"},5),
+	Lucifer("Lucius",new String[]{"/8/81/Unit-Lucius-5.png?version=3cc0ac683814742237b69afcf2f5c163","/1/1f/Unit-Lucius-6.png?version=fe60614defc065a4c6e2dac724032438","/2/21/Unit-Lucius-7.png?version=030c49385741c46e6c26879339513149"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),

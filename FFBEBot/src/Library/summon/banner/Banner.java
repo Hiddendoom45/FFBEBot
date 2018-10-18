@@ -112,6 +112,7 @@ public enum Banner {
 	GLArtP1("Fest Units part 1",new Unit[]{Unit.Malphasie,Unit.Circe},BannerRates.LD5.fiveRate(),Lib.concat(SSSummer.featured, SSSummer.pool),SSSummer.include,BannerType.ThreePercent),
 	FFXV4("FFXV 4",new Unit[]{Unit.Ignis,Unit.Ravus,Unit.Libertus},BannerRates.EvenSplit.fiveRate(),Lib.concat(GLArtP1.featured, GLArtP1.pool),GLArtP1.include,BannerType.ThreePercent),
 	Citra("Citra",new Unit[]{Unit.Citra,Unit.Macmedi,Unit.Lotti},BannerRates.EvenSplit.fiveRate(),Lib.concat(new Unit[]{Unit.Ignis,Unit.Ravus}, FFXV4.pool),FFXV4.include,BannerType.ThreePercent),
+	HalloweenP3_1("Halloween 2018 new",new Unit[]{Unit.Lucifer,Unit.Lilith},BannerRates.LD5.fiveRate(),Lib.concat(Citra.featured, Citra.pool),Citra.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;
