@@ -22,7 +22,7 @@ public class Info extends CommandGenerics implements Command{
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		EmbedBuilder embed=new EmbedBuilder();
-		embed.setAuthor("FFBEBot","",Main.jda.getSelfUser().getAvatarUrl());
+		embed.setAuthor("FFBEBot",null,Main.jda.getSelfUser().getEffectiveAvatarUrl());
 		embed.addField(new Field("Servers", "Serving on "+Main.jda.getGuilds().size()+" servers", true));
 		embed.addField(new Field("Channels","Serving on "+Main.jda.getTextChannels().size()+" channels",true));
 		embed.addField(new Field("User","Serving "+Main.jda.getUsers().size()+" users",false));
