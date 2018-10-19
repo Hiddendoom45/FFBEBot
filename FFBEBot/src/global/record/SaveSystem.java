@@ -77,6 +77,9 @@ public class SaveSystem {
 		if(!new File("units").exists()){
 			preloadSummons(null);
 		}
+		else{
+			updateSummons(null);
+		}
 		setDailyTime();
 		Settings.executor.scheduleWithFixedDelay(new Runnable(){
 			public void run(){
