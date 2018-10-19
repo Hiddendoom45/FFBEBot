@@ -693,8 +693,18 @@ public enum Unit{
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
 	Fencer("Fencer",new String[]{"/d/d8/Unit-Fencer-4.png?version=362f99325ceef8968732a8f49374d9b3","/0/02/Unit-Fencer-5.png?version=1c2b5f69281911ce1464ea31d68ae0a5"},4),
-	DRain("Demon Rain",new String[]{"/c/c7/Unit-Demon_Rain-5.png?version=e7d8aca36a2cc4a4cef7c5b48b9af8e3","/3/30/Unit-Demon_Rain-6.png?version=8ef21aebd449a531acc171547ae6fd0f"},5),
-	DLasswell("Dracu Lasswell",new String[]{"/a/a5/Unit-Dracu_Lasswell-5.png?version=40b4eb078e787d5f498bcc8b979a97a1","/c/c3/Unit-Dracu_Lasswell-6.png?version=d81994a6cf9357430b970e5bdfd9d9e5"},5),
+	DRain("Demon Rain",new String[]{"/c/c7/Unit-Demon_Rain-5.png?version=e7d8aca36a2cc4a4cef7c5b48b9af8e3","/3/30/Unit-Demon_Rain-6.png?version=8ef21aebd449a531acc171547ae6fd0f",},5){
+	    @Override
+	    public void setup(){
+	            setUpgrades(new String[]{"/f/fb/Unit-Demon_Rain-7.png?version=3d52af881be0c7e39f2a4de0a2891cba"});
+	        }
+	    },
+	DLasswell("Dracu Lasswell",new String[]{"/a/a5/Unit-Dracu_Lasswell-5.png?version=40b4eb078e787d5f498bcc8b979a97a1","/c/c3/Unit-Dracu_Lasswell-6.png?version=d81994a6cf9357430b970e5bdfd9d9e5",},5){
+	        @Override
+	        public void setup(){
+	                setUpgrades(new String[]{"/8/82/Unit-Dracu_Lasswell-7.png?version=d55b39339b8f53d1b73150f83f9d8103"});
+	            }
+	        },
 	WWF("White Witch Fina",new String[]{"/a/a2/Unit-White_Witch_Fina-4.png?version=aa9d199e9c09952626d6fc08de86c06c","/4/48/Unit-White_Witch_Fina-5.png?version=8c4a1c82b6fedb7dae28c5fd0c62744b","/0/07/Unit-White_Witch_Fina-6.png?version=29640d666b6eec84884727ced377cd73"},4),
 	BCLid("Black Cat Lid",new String[]{"/0/08/Unit-Black_Cat_Lid-3.png?version=44bb6ce33351691f6d52ed2a3e6ca0df","/4/40/Unit-Black_Cat_Lid-4.png?version=7ee8d85a278ebb0eabbc051f6b5d9c8a","/1/1c/Unit-Black_Cat_Lid-5.png?version=726eeed33388fdef994e7f27ebce139e",},3){
 		@Override
@@ -726,7 +736,12 @@ public enum Unit{
 	N21O("21O",new String[]{"/6/6a/Unit-21O-3.png?version=773885048ee9db1d74cef32d6aa39e06","/f/f6/Unit-21O-4.png?version=b811a99059f31ba90bae63b01b488da5","/c/c9/Unit-21O-5.png?version=f8ae066d35835eb08644031243a8421a"},3),
 	A2("A2",new String[]{"/6/6c/Unit-A2-5.png?version=6cb61c32b76ac430caa67d2f8af4cd11","/6/62/Unit-A2-6.png?version=83419766bc980c3107f78f2157666a8d"},5),
 	Eve("Eve",new String[]{"/9/96/Unit-Eve-4.png?version=9d9455b0dda465d2d3a3df092160ddc9","/3/34/Unit-Eve-5.png?version=47f67d92dfee3fc27cb7d44b3b5135e3","/3/39/Unit-Eve-6.png?version=75aebc263ef4b09d6cd26ba1cebc5d55"},4),
-	GLSakura("Grim Lord Sakura",new String[]{"/f/fd/Unit-Grim_Lord_Sakura-5.png?version=fbb7c422ad8fd097a90b230281969d58","/1/13/Unit-Grim_Lord_Sakura-6.png?version=959b243630261ff64a8d4754241cfcf5"},5),
+	GLSakura("Grim Lord Sakura",new String[]{"/f/fd/Unit-Grim_Lord_Sakura-5.png?version=fbb7c422ad8fd097a90b230281969d58","/1/13/Unit-Grim_Lord_Sakura-6.png?version=959b243630261ff64a8d4754241cfcf5",},5){
+	    @Override
+	    public void setup(){
+	            setUpgrades(new String[]{"/7/78/Unit-Grim_Lord_Sakura-7.png?version=bf128c11a7b6732aa4cee738809abf8a"});
+	        }
+	    },
 	PJake("Pirate Jake",new String[]{"/f/f7/Unit-Pirate_Jake-4.png?version=eacf0b6f5bb7590b1922d80a4c1fff5f","/8/82/Unit-Pirate_Jake-5.png?version=02123503932b43551362c7a35cf12bae","/b/b1/Unit-Pirate_Jake-6.png?version=4932996c6ac0374beb0f48707a8b7afc"},4),
 	INichol("Illusionist Nichol",new String[]{"/a/ac/Unit-Illusionist_Nichol-4.png?version=8748f249142698ccc6089374770c93c4","/b/b6/Unit-Illusionist_Nichol-5.png?version=0d54ccdad52fca5f687eb1566e50ae37","/6/6d/Unit-Illusionist_Nichol-6.png?version=3c8db0ffabc8d54fc1b2ccd4a33643e8"},4),
 	MaidenSakura("Maiden Sakura",new String[]{"/b/bb/Unit-Maiden_Sakura-4.png?version=69affd1c2fed8fbe71d8be045f42b374","/6/64/Unit-Maiden_Sakura-5.png?version=eac61bc5164c96fe74aae510b4dd6ebf"},4),
