@@ -19,6 +19,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
 import util.SpamControl;
+import util.rng.RandomLibs;
 import util.rng.summon.Pull;
 import util.rng.summon.SummonImageBuilder;
 
@@ -46,7 +47,12 @@ public class Summon extends CommandGenerics implements Command {
 						}
 						else if(num==666&&Unit.valueOf("Lucifer")!=null){
 							ArrayList<UnitSpecific> units = new ArrayList<UnitSpecific>();
-							units.add(new UnitSpecific(Unit.valueOf("Lucifer"),5));
+							units.add(
+									RandomLibs.SelectRandom(new UnitSpecific[]{
+											new UnitSpecific(Unit.valueOf("Lucifer"),5),
+											new UnitSpecific(Unit.DRain,5)
+											}));
+							
 							sendImage(event,units,pullBanner.name);
 						}
 						else if(num==0){
