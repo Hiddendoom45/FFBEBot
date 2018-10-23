@@ -117,11 +117,6 @@ public abstract class UnitPaging extends CommandGenerics implements Selection,Co
 		try{
 			Data user=SaveSystem.getUser(event.getAuthor().getId());
 			ArrayList<String> names=new ArrayList<String>(1);
-			if(names.size()<=0){
-				Lib.sendMessage(event, "An error has occured wherein 0 units were found, EXITING");
-				Log.log("ERROR", "built 0 size unit image "+Lib.debugGuildUser(event));
-				return;
-			}
 			Counter count=new Counter("Finding Units %count%/"+(user.units.size()>=(set*10)+10?10:user.units.size()%10), event);
 			CounterPool.getPool().add(count);
 			BufferedImage units=new SummonImageBuilder(1).addUnit(getUnitSet(set,user.units)).buildColumnsDynamically().buildWithNumbers().build(event, count);
