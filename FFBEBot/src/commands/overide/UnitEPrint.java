@@ -15,7 +15,7 @@ public class UnitEPrint extends OverrideGenerics implements OverrideCommand {
 	@Override
 	public void action(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		UnitOverview Ounit = new UnitOverview();
-		String s="";
+		String s="```java\n";
 		int upgrade = 0;
 		if(args.containsKey("upgrade")){
 			upgrade = Integer.parseInt(args.get("upgrade")[0]);
@@ -40,6 +40,7 @@ public class UnitEPrint extends OverrideGenerics implements OverrideCommand {
 				}
 			}catch(NumberFormatException | IndexOutOfBoundsException e){}
 		}
+		s+="\n```";
 		Lib.sendMessage(event, s);
 	}
 	private static String buildString(unitData d,UnitInfo ui,int upgrade){
