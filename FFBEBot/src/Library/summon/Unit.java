@@ -784,7 +784,11 @@ public enum Unit{
 	FPritchard("Frank Pritchard",new String[]{"/f/f9/Unit-Frank_Pritchard-3.png?version=dcd7e273840b497000bd44a23b3fa35d","/7/79/Unit-Frank_Pritchard-4.png?version=f5876b517bf3b85c9e9141138abf263a","/6/67/Unit-Frank_Pritchard-5.png?version=8afd3f1febbf1107ee605a2d7884ea53"},3),
 	Estark("Estark",new String[]{"/6/68/Unit-Estark-5.png?version=bde5f7769eda1d54634d240f30a25f0f","/f/f1/Unit-Estark-6.png?version=b10736dd67e4326ab84ce862a08b02bc","/9/9b/Unit-Estark-7.png?version=86e2742314d1f317b4c01b2814eb6a60"},5),
 	ÜberkillingMachine("Überkilling Machine",new String[]{"/c/c6/Unit-%C3%9Cberkilling_Machine-4.png?version=021a78bd63026ba5a2587ca9840a4722","/9/97/Unit-%C3%9Cberkilling_Machine-5.png?version=c834238706625e0e25f131e0ffb90f0a","/d/d7/Unit-%C3%9Cberkilling_Machine-6.png?version=00e377dfd730b6089007afd47f0bc4b2"},4),
-
+	Lenneth("Lenneth",new String[]{"/d/dd/Unit-Lenneth-5.png?version=81f1e9a575136e36f4366a1909d8118b","/2/26/Unit-Lenneth-6.png?version=137d7f6bf2a60f8ebb9a5f8542a3dc4d","/c/cd/Unit-Lenneth-7.png?version=6d357b3d84956e8a04fd475e4c8e9eeb"},5),
+	VPFreya("Freya_VP",new String[]{"/9/9b/Unit-Freya_%28VP%29-5.png?version=25ef9ae759dfc4c7ce3ebcad875cd324","/c/c8/Unit-Freya_%28VP%29-6.png?version=2ddf67c4109494376c9e10af10fb158a","/9/97/Unit-Freya_%28VP%29-7.png?version=49aec6f0886f4b7c6d1c4e4abef40114"},5),
+	Arngrim("Arngrim",new String[]{"/9/97/Unit-Arngrim-5.png?version=b9e6e18e84e0f51296d0807bf9844f9f","/c/cc/Unit-Arngrim-6.png?version=3532cccee49cc7fb70c07173bb06af71","/e/e3/Unit-Arngrim-7.png?version=c3f65607b21d0be13fa478fed4baa090"},5),
+	Lucian("Lucian",new String[]{"/5/55/Unit-Lucian-4.png?version=9f193f2d836a8e9bd34dbc8dc5a8f606","/1/11/Unit-Lucian-5.png?version=8aefd0a6aef326b5ae47ee8b527a7147","/f/f4/Unit-Lucian-6.png?version=114eb894b268315d87db2d69b54a03a5"},4),
+	Jelanda("Jelanda",new String[]{"/2/2a/Unit-Jelanda-3.png?version=4359e6e447c07610d1797e978a8b9142","/3/34/Unit-Jelanda-4.png?version=e947007d984634f490bf667882ae2168","/9/9b/Unit-Jelanda-5.png?version=73cad9b74ee9a07645cc2d865369b14b"},3),
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),

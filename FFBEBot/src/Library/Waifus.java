@@ -131,7 +131,6 @@ public enum Waifus {
 	Malphasie(Unit.Malphasie),
 	Citra(Unit.Citra),
 	Lotti(Unit.Lotti),
-	Lilith(Unit.Lilith),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),
@@ -180,7 +179,11 @@ public enum Waifus {
 	Ukiyo(Unit.Ukiyo),
 	Annika(Unit.AnnikaSvennson),
 	Rena(Unit.Rena),
-	Reimi(Unit.Reimi);
+	Reimi(Unit.Reimi),
+	Lilith(Unit.Lilith),
+	Lenneth(Unit.Lenneth),
+	VPFreya(Unit.VPFreya),
+	Jelanda(Unit.Jelanda);
 	
 	
 	

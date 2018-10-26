@@ -113,6 +113,7 @@ public enum Banner {
 	FFXV4("FFXV 4",new Unit[]{Unit.Ignis,Unit.Ravus,Unit.Libertus},BannerRates.EvenSplit.fiveRate(),Lib.concat(GLArtP1.featured, GLArtP1.pool),GLArtP1.include,BannerType.ThreePercent),
 	Citra("Citra",new Unit[]{Unit.Citra,Unit.Macmedi,Unit.Lotti},BannerRates.EvenSplit.fiveRate(),Lib.concat(new Unit[]{Unit.Ignis,Unit.Ravus}, FFXV4.pool),FFXV4.include,BannerType.ThreePercent),
 	HalloweenP3_1("Halloween 2018 new",new Unit[]{Unit.Lucifer,Unit.Lilith},BannerRates.LD5.fiveRate(),Lib.concat(Citra.featured, Citra.pool),Citra.include,BannerType.ThreePercent),
+	VP("Valkyrie profile triple rainbow BS", new Unit[]{Unit.Lenneth,Unit.VPFreya,Unit.Arngrim,Unit.Lucian,Unit.Jelanda},BannerRates.T5.fiveRate(),HalloweenP3_1.pool,HalloweenP3_1.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;
@@ -175,7 +176,10 @@ public enum Banner {
 				Banner.KingKnight2,
 				Banner.JC3,
 				Banner.SOA,
-				Banner.DeusEx
+				Banner.DeusEx,
+				Banner.DQ2,
+				Banner.HalloweenP3_1,
+				Banner.VP
 				};
 	}
 	public static boolean LEBanner(Banner banner){

@@ -209,7 +209,9 @@ public enum Husbandos {
 	AJenson(Unit.AJensen),
 	VMarchenko(Unit.VMarchenko),
 	VKoller(Unit.VKoller),
-	FPritchard(Unit.FPritchard);
+	FPritchard(Unit.FPritchard),
+	Arngrim(Unit.Arngrim),
+	Lucian(Unit.Lucian);
 	
 
 	public final String name;
