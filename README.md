@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- Various bugfixes most notable the issue of unitsell not working at all
 - Updated unit/runit commands, unit is now fully embed and added STMR parsing
 - Fix a bunch of stuff with regards to the summon simulator, incorrect rates, missing units, banners etc
 - add flair command, update parsers for both wikis
