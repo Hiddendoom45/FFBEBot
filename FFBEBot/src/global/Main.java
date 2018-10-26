@@ -8,6 +8,7 @@ import util.CmdControl;
 import util.CounterPool;
 import util.Overrider;
 import util.SpamControl;
+import util.SpamGroup;
 import util.rng.RandomLibs;
 import util.unit.RedditUnit;
 
@@ -169,13 +170,17 @@ public class Main {
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
 			Overrider.addOverrideCommand("test", new Test());
 		}
+		
 		//setup/build various things
+		SpamControl.addGroup(new SpamGroup("waifuhusbando",SpamGroup.LOCAL,6,TimeUnit.MINUTES.toMillis(1)));
+		SpamControl.addGroup(new SpamGroup("summon",SpamGroup.GLOBAL,3,TimeUnit.MINUTES.toMillis(1)));
+		SpamControl.addGroup(new SpamGroup("units",SpamGroup.LOCAL,4,TimeUnit.MINUTES.toMillis(1)));
+		
 		DriveManager.setup();//loads drive files and setup the service
 		Log.setup();//start log thread that saves it every 6 hours
 		Restarter.setup();//starts the threads that queue the bot restarting
 		CounterPool.getPool().setup();//starts the thread for the counter pool
 		RedditUnit.buildRefImg();//builds hashmap for image icons
-		SpamControl.setSpams();//sets the data for custom spam types
 		SaveSystem.setup();//loads all the data
 		Settings.loaded=true;//mark everything as loaded, botListener will now start actually parsing stuff
 		setGame(states.randomReady());//sets the game for a random state

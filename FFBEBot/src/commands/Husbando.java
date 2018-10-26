@@ -13,10 +13,15 @@ import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.MessageEmbed.Field;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
+import util.SpamControl;
 import util.rng.RandomLibs;
 
 public class Husbando extends CommandGenerics implements Command{
-
+	@Override
+	public boolean called(String[] args, MessageReceivedEvent event) {
+		super.called(args,event);
+		return SpamControl.isSpam(event, "waifuhusbando");
+	}
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		Husbandos select=RandomLibs.SelectRandom(Husbandos.values());

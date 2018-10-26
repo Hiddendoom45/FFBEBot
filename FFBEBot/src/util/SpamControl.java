@@ -16,7 +16,7 @@ public class SpamControl {
 	private static HashMap<MessageReceivedEvent, Long> spamData=new HashMap<MessageReceivedEvent,Long>();//times and when spam messages have been sent
 	private static final int spamPersistance=20;
 	public static boolean isSpam(MessageReceivedEvent event,String type){
-		String key=getTypeData(type)[0]==0?key1(event):key2(event);//determine if it's global or channel locked spam controlling
+		String key=getTypeData(type)[0]==0?localKey(event):globalKey(event);//determine if it's global or channel locked spam controlling
 		int defaultSize=getTypeData(type)[1];//size of max entries before trigger
 		int timeout=getTypeData(type)[2];//timeout for each entry to exit controller
 		if(spammers.containsKey(key)){//if tracked in the current instance
@@ -36,10 +36,12 @@ public class SpamControl {
 			return spam.isSpam;
 		}
 	}
-	public static void setSpams(){
-		//type(0==local,1==global),limit, timeout
-		typeData.put("summon", new int[]{1,2,60000});
-		typeData.put("units", new int[]{0,4,60000});
+	public static boolean isSpam(MessageReceivedEvent event,SpamGroup group){
+		typeData.put(group.getName(), group.getValues());
+		return isSpam(event,group.getName());
+	}
+	public static void addGroup(SpamGroup group){
+		typeData.put(group.getName(), group.getValues());
 	}
 	private static void sendSpamMessage(MessageReceivedEvent event,String type,SpamData spam){
 		if(!spamData.containsKey(event)){
@@ -47,10 +49,10 @@ public class SpamControl {
 			Lib.sendTempMessage(event, "**%userName%** too many messages, please wait **"+(spam.tillDone/1000)+"** seconds", spamPersistance);
 		}
 	}
-	private static String key1(MessageReceivedEvent event){
+	private static String localKey(MessageReceivedEvent event){
 		return event.getAuthor().getId()+event.getChannel().getId();//based off of person and channel, as spam is going to be set in part on an event basis
 	}
-	private static String key2(MessageReceivedEvent event){
+	private static String globalKey(MessageReceivedEvent event){
 		return event.getAuthor().getId();//based off of person a universal spam control, for certain commands(aka summon simulator)
 	}
 	private static int[] getTypeData(String type){
