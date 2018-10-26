@@ -179,7 +179,9 @@ public class Selector {
 	 */
 	private static void selfPrune(Select s,MessageReceivedEvent e){
 		try{
-			e.getChannel().getMessageById(s.messageID).complete().delete().queue();
+			if(e.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_HISTORY)){
+				e.getChannel().getMessageById(s.messageID).complete().delete().queue();
+			}
 			if(e.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_MANAGE)){
 				e.getMessage().delete().queue();
 				Log.log("DELETE", "deleted message "+e.getMessage().getContentRaw());
