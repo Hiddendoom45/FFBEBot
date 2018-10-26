@@ -6,7 +6,7 @@ The source code for a discord bot created to retrieve information about the game
 To invite this bot use : https://discordapp.com/oauth2/authorize?&client_id=244615809559822338&scope=bot&permissions=null&response_type=code
 
 The bot only needs basic message read/write permissions to be functional
-Optionally you can allow the bot to delete messages to cleanup certain commands the may cause clutter
+Optionally you can allow the bot to delete messages with the manage messages permission to cleanup certain commands the may cause clutter. It also needs the read message history permission to find its own messages to delete them.
 
 ### Status
 
@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- Various bugfixes most notable the issue of unitsell not working at all
 - Updated unit/runit commands, unit is now fully embed and added STMR parsing
 - Fix a bunch of stuff with regards to the summon simulator, incorrect rates, missing units, banners etc
 - add flair command, update parsers for both wikis
@@ -41,4 +42,4 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 ##### Other
 
-See changelog.txt for the previous changes to the bot
+See `changelog.txt` for the previous changes to the bot prior tracking using git
