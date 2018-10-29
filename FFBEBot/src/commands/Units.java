@@ -59,10 +59,20 @@ public class Units extends UnitSelection implements Command,Selection {
 	}
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendUnitData(SaveSystem.getExviusUnit(Ounit.getData(0).name),event);
+		if(Ounit.getData(0).isNew){
+			Lib.sendMessage(event, "The wiki page for "+Ounit.getData(0).name+" has not been created yet");
+		}
+		else{
+			sendUnitData(SaveSystem.getExviusUnit(Ounit.getData(0).name),event);
+		}
 	}
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event) throws IOException {
-		sendUnitData(SaveSystem.getExviusUnit(Ounit.getData(selection).name),event);
+		if(Ounit.getData(selection).isNew){
+			Lib.sendMessage(event, "The wiki page for "+Ounit.getData(selection).name+" has not been created yet");
+		}
+		else{
+			sendUnitData(SaveSystem.getExviusUnit(Ounit.getData(selection).name),event);
+		}
 	}
 }

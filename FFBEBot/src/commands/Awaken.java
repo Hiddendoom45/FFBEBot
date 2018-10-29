@@ -32,14 +32,25 @@ public class Awaken extends UnitSelection {
 	}
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendAwakening(SaveSystem.getExviusUnit(Ounit.getData(0).name),rarity,event);
+		if(Ounit.getData(0).isNew){
+			Lib.sendMessage(event, "The wiki page for "+Ounit.getData(0).name+" has not been created yet");
+		}
+		else{
+			sendAwakening(SaveSystem.getExviusUnit(Ounit.getData(0).name),rarity,event);
+		}
 	}
 
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendAwakening(SaveSystem.getExviusUnit(Ounit.getData(selection).name),rarity,event);
+		if(Ounit.getData(selection).isNew){
+			Lib.sendMessage(event, "The wiki page for "+Ounit.getData(selection).name+" has not been created yet");
+		}
+		else{
+			sendAwakening(SaveSystem.getExviusUnit(Ounit.getData(selection).name),rarity,event);
+		}
+		
 	}
 
 	@Override

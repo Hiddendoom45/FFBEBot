@@ -27,11 +27,16 @@ public class UnitArt extends UnitSelection implements Command,Selection  {
 			try {
 				info = new UnitInfo(Ounits.getData(index).unitUrl);
 				EmbedBuilder embed=new EmbedBuilder();
-				String url = (rarity<=info.maxRarity&&rarity>=info.minRarity?info.sprites[rarity-info.minRarity]:"https://d1u5p3l4wpay3k.cloudfront.net/exvius_gamepedia_en/b/b9/Icon-Crimson_Gem.png?version=20c46d237943d81039478b494150c0d8");
-				System.out.println(url);
-				embed.setImage(url);
-				embed.addField(new Field(":art:"+info.unitName+" "+rarity+"★", "[link to image]("+url+")", false));
-				Lib.sendEmbed(event, embed);
+				String url = (rarity<=info.maxRarity&&rarity>=info.minRarity?info.sprites[rarity-info.minRarity]:null);
+				if(url==null){
+					//redundant, checks in unit selection avoids this
+					Lib.sendMessage(event, "Unit does not have selected rarity");
+				}
+				else{
+					embed.setImage(url);
+					embed.addField(new Field(":art:"+info.unitName+" "+rarity+"★", "[link to image]("+url+")", false));
+					Lib.sendEmbed(event, embed);
+				}
 			} catch (IOException e) {
 				Log.logError(e);
 			}
@@ -49,7 +54,6 @@ public class UnitArt extends UnitSelection implements Command,Selection  {
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
 		sendImage(Ounit,rarity,event,0);
-		
 	}
 
 

@@ -25,14 +25,23 @@ public class Lore extends UnitSelection{
 
 	@Override
 	public void onePossible(UnitOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		sendLore(SaveSystem.getExviusUnit(Ounit.getData(0).name),event,rarity);
+		if(Ounit.getData(0).isNew){
+			Lib.sendMessage(event, "The wiki page for "+Ounit.getData(0).name+" has not been created yet");
+		}
+		else{
+			sendLore(SaveSystem.getExviusUnit(Ounit.getData(0).name),event,rarity);
+		}
 	}
 
 
 	@Override
 	public void manyPossible(UnitOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		sendLore(SaveSystem.getExviusUnit(Ounit.getData(selection).name),event,rarity);
-		
+		if(Ounit.getData(selection).isNew){
+			Lib.sendMessage(event, "The wiki page for "+Ounit.getData(selection).name+" has not been created yet");
+		}
+		else{
+			sendLore(SaveSystem.getExviusUnit(Ounit.getData(selection).name),event,rarity);
+		}
 	}
 }
