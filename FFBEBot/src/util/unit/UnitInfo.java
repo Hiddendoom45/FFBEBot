@@ -105,7 +105,6 @@ public class UnitInfo {
 				Element sTRaw = Lib.getCell(13, 0, unitInfo);
 				if(!(sTRaw==null)){
 					sTrustName=parseRaw(sTRaw);
-					System.out.println(sTRaw);
 					sTrustLink=Lib.getCell(13, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc3=Jsoup.connect(sTrustLink).userAgent(Settings.UA).get();
 					sTrustDetails=new TrustInfo(doc3.getElementById("mw-content-text").children());
