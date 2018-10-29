@@ -3,6 +3,7 @@ package commands;
 import java.io.IOException;
 
 import global.record.SaveSystem;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.UnitInfo;
@@ -10,8 +11,9 @@ import util.unit.UnitOverview;
 
 public class Equipment extends UnitSelection{
 	public void sendEquipment(UnitInfo info, MessageReceivedEvent event){
-		String s=":pencil: Equipment for "+info.unitName;
-		s+="\nWeapons:";
+		EmbedBuilder embed = new EmbedBuilder();
+		embed.setTitle("Equipment for "+info.unitName);
+		String s="";
 		if(info.weapons==null){
 			s+="\n-";
 		}
@@ -20,7 +22,8 @@ public class Equipment extends UnitSelection{
 				s+="\n\t"+w;
 			}
 		}
-		s+="\nArmours:";
+		embed.addField("Weapons",s,true);
+		s = "";
 		if(info.armours==null){
 			s+="\n-";
 		}
@@ -29,7 +32,8 @@ public class Equipment extends UnitSelection{
 				s+="\n\t"+arm;
 			}
 		}
-		Lib.sendMessage(event, s);
+		embed.addField("Armor",s,true);
+		Lib.sendEmbed(event, embed);
 		
 	}
 	@Override
