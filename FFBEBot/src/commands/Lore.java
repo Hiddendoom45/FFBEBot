@@ -3,6 +3,7 @@ package commands;
 import java.io.IOException;
 
 import global.record.SaveSystem;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.UnitInfo;
@@ -19,8 +20,11 @@ public class Lore extends UnitSelection{
 		Lib.sendMessage(event, s);
 	}
 	public void sendLore(UnitInfo info,MessageReceivedEvent event,int rarity){
-		if(rarity<info.minRarity)rarity=info.maxRarity;
-		Lib.sendMessage(event, ":pencil:Lore of:"+info.unitName+" at "+rarity+":star:\n"+info.background.quotes[rarity-info.minRarity].quote);
+		if(rarity<info.minRarity||rarity>=info.maxRarity)rarity=info.maxRarity;
+		EmbedBuilder embed = new EmbedBuilder();
+		embed.addField("Lore of "+info.unitName+" at "+rarity+"★",info.background.quotes[rarity-info.minRarity].quote,false);
+		Lib.sendEmbed(event, embed);
+		//Lib.sendMessage(event, ":pencil:Lore of:"+info.unitName+" at "+rarity+":star:\n"+info.background.quotes[rarity-info.minRarity].quote);
 	}
 
 	@Override
