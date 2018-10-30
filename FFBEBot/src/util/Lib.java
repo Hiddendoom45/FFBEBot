@@ -263,7 +263,7 @@ public class Lib {
 					.replace("%sacredCrystal%", "<:Sacred_Crystal:332715887570190336>")
 					.replace("%beastMeat%", "<:Beast_Meat:506512314778910720>")
 					.replace("%pearlOfWisdom%", "<:Pearl_of_Wisdom:506512405485060112>")
-					.replace("allurePowder", "<:Allure_Powder:506512682329833487>")
+					.replace("%allurePowder%", "<:Allure_Powder:506512682329833487>")
 					.replace("%litrock%", "<:Litrock:506512815360835587>")
 					.replace("%seedOfLife%", "<:Seed_of_Life:506513333843787796>")
 					.replace("%crimsonTear%", "<:Crimson_Tear:506513700455186432>")
