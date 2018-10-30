@@ -563,6 +563,10 @@ public class Lib {
 				else if(e.tagName().equals("code")){
 					s+="\n"+e.text();
 				}
+				else if(e.tagName().equals("p")){
+					//on p start new line and parse stuff inside same as otherwise
+					s+="\n"+parseText(e);
+				}
 				else{//parse for nestled elements
 					s+=parseText(e);
 				}

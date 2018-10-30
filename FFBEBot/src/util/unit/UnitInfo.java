@@ -12,6 +12,7 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
+import util.unit.exvius.AwakenInfo;
 import util.unit.exvius.TrustInfo;
 import util.unit.exvius.unitAbilities;
 import util.unit.exvius.unitQuotes;
@@ -44,7 +45,7 @@ public class UnitInfo {
 	public unitAbilities Special;
 	public unitAbilities Magic;
 	public String[] sprites=new String[]{};
-	public String[] awakening=new String[]{};
+	public AwakenInfo[] awakening = new AwakenInfo[]{};
 	public unitQuotes background;
 	public unitQuotes fusionQuotes;
 	public unitQuotes awakeningQuotes;
@@ -169,9 +170,9 @@ public class UnitInfo {
 			}
 			try{
 				Element awaken=Lib.getEleAfter(content.children(), new ElementFilter("h2","Awakening Materials[edit | edit source]"));
-				awakening=new String[maxRarity-minRarity];
+				awakening=new AwakenInfo[maxRarity-minRarity];
 				for(int i=0;i<awakening.length;i++){
-					awakening[i]=awaken.getElementsByTag("tbody").first().getElementsByTag("tr").get(1).getElementsByTag("td").get(i).text();
+					awakening[i] =  new AwakenInfo(Lib.parseText(awaken.getElementsByTag("tbody").first().getElementsByTag("tr").get(1).getElementsByTag("td").get(i)));
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing awakening mats for page:" +page);
