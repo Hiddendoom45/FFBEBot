@@ -259,6 +259,7 @@ public class Lib {
 	public static String EmoteMessage(MessageReceivedEvent event, String msg){
 		if(SaveSystem.hasPermission(event, Permission.MESSAGE_EXT_EMOJI)){
 			return msg.replace("%lapis%","<:Lapis:506460064471842827>")
+					.replace("%gil%", "<:Gil:506939159756144641>")
 					.replace("%sacredCrystal%", "<:Sacred_Crystal:332715887570190336>")
 					.replace("%beastMeat%", "<:Beast_Meat:506512314778910720>")
 					.replace("%pearlOfWisdom%", "<:Pearl_of_Wisdom:506512405485060112>")
@@ -302,6 +303,7 @@ public class Lib {
 		}
 		else{
 			return msg.replace("%lapis%", "lapis")
+					.replace("%gil%", "Gil")
 					.replace("%sacredCrystal%", "Sacred Crystal")
 					.replace("%beastMeat%", "Beast Meat")
 					.replace("%pearlOfWisdom%", "Pearl of Wisdom")
