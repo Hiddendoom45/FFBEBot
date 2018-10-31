@@ -1,9 +1,15 @@
 package util;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class EmoteData {
 	final String tag;
 	final String strValue;
 	final String emoteValue;
+	private static Pattern valPattern = Pattern.compile("<:(.*?):(\\d{18})>");
+	//matcher for the emoteValue
+	private transient Matcher m;
 	/**
 	 * Basic data to format emotes
 	 * @param tag unique string that will be replaced by either strValue or emoteValue when formatted
@@ -13,6 +19,17 @@ public class EmoteData {
 	public EmoteData(String tag,String strValue,String emoteValue){
 		this.tag=tag;
 		this.strValue=strValue;
+		m = valPattern.matcher(emoteValue);
+		if(!m.matches()){
+			throw new IllegalArgumentException("Emote value is not in the proper format for a custom emote <:[name]:[id]>");
+		}
 		this.emoteValue=emoteValue;
+	}
+	//parses ID from the emote value
+	public String getID(){
+		return m.group(2);
+	}
+	public String getEmoteName(){
+		return m.group(1);
 	}
 }
