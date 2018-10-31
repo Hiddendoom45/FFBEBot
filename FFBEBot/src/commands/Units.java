@@ -26,10 +26,10 @@ public class Units extends UnitSelection implements Command,Selection {
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setAuthor(info.unitName+"    Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t",info.URL);
 		embed.setDescription("Role:"+info.role+"\n"+"[unit link]("+info.URL+")");
-		if(!(info.trustLink==null)){
+		if(!(info.trustDetails==null)){
 			embed.addField(new Field("TM - "+info.trustName,"[TM link]("+info.trustLink+")\n"+info.trustDetails,false));
 		}
-		if(!(info.trustLink==null)){
+		if(!(info.sTrustDetails==null)){
 			embed.addField(new Field("STM - "+info.sTrustName,"[STM link]("+info.sTrustLink+")\n"+info.sTrustDetails,false));
 		}
 		embed.setColor(2584805);
