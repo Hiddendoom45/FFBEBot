@@ -4,26 +4,58 @@ import java.io.IOException;
 
 import global.record.Log;
 import global.record.SaveSystem;
+import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
+import util.unit.exvius.AwakenInfo.AwakenMat;
 import util.Lib;
 
 public class Awaken extends UnitSelection {
 	private void sendAwakening(UnitInfo info,int rarity,MessageReceivedEvent event){
-		String s=":pencil:Awakening mats for "+info.unitName+"\n";
+		EmbedBuilder embed = new EmbedBuilder();
+		embed.setTitle("Awakening mats for "+info.unitName);
 		if(rarity==0){
 			for(int i=0;i<info.awakening.length;i++){
-				s+=(info.minRarity+i)+":star::";
-				s+=info.awakening[i]+"\n";
+				String s = "";
+				for(AwakenMat a:info.awakening[i].mats){
+					s+=(a.nonMatch()?"":formatEmote(a.isPrism()?"Unit Prism":a.name))+a.toString()+"\n";
+				}
+				s = Lib.EmoteMessage(event, s);
+				embed.addField((info.minRarity+i)+"★",s,true);
 			}
 		}
 		else{
-			s+=(rarity)+":star::";
-			s+=info.awakening[rarity-info.minRarity];
+			String s = "";
+			for(AwakenMat a:info.awakening[rarity-info.minRarity].mats){
+				s+=(a.nonMatch()?"":formatEmote(a.isPrism()?"Unit Prism":a.name))+a.toString()+"\n";
+			}
+			s = Lib.EmoteMessage(event, s);
+			embed.addField(rarity+"★", s, true);
 		}
-		Lib.sendMessage(event, s);
+		Lib.sendEmbed(event, embed);
+	}
+	private String formatEmote(String name){
+		StringBuilder b = new StringBuilder();
+		b.append('%');
+		boolean space = false;
+		for(char c:name.toLowerCase().toCharArray()){
+			if(Character.isAlphabetic(c)||c==' '){
+				if(c==' '){
+					space = true;
+				}
+				else if(space){
+					b.append(Character.toUpperCase(c));
+					space = false;
+				}
+				else{
+					b.append(c);
+				}
+			}
+		}
+		b.append('%');
+		return b.toString();
 	}
 	@Override 
 	public boolean called(String[] args, MessageReceivedEvent event) {

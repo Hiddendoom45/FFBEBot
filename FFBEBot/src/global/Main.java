@@ -47,6 +47,7 @@ public class Main {
 					}
 				}   
 			}); 
+			
 			Main.startup();
 			Main.setup();
 		}catch(Exception e){
