@@ -91,6 +91,7 @@ public class Main {
 		CmdControl.addCommand("servers", new Servers(), Module);
 		CmdControl.addCommand("invite", new Invite(), Module);
 		CmdControl.addCommand(new String[]{"bugreport","bug"}, new BugReport(), Module);
+		CmdControl.addCommand(new String[]{"emo","emote"}, new Emote(), Module);
 		
 		Module=ModuleEnum.Exvius.toString();
 		CmdControl.addCommand("units", new Units(), Module);

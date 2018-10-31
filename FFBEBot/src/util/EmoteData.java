@@ -4,9 +4,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class EmoteData {
-	final String tag;
-	final String strValue;
-	final String emoteValue;
+	public final String tag;
+	public final String strValue;
+	public final String emoteValue;
 	private static Pattern valPattern = Pattern.compile("<:(.*?):(\\d{18})>");
 	//matcher for the emoteValue
 	private transient Matcher m;
@@ -27,9 +27,17 @@ public class EmoteData {
 	}
 	//parses ID from the emote value
 	public String getID(){
+		if(m==null){
+			m = valPattern.matcher(emoteValue);
+			m.matches();
+		}
 		return m.group(2);
 	}
 	public String getEmoteName(){
+		if(m==null){
+			m = valPattern.matcher(emoteValue);
+			m.matches();
+		}
 		return m.group(1);
 	}
 }
