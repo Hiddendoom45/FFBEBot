@@ -7,7 +7,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
 
@@ -39,13 +41,19 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
  */
 public class Lib {
 	public static final List<EmoteData> emotes;
+	public static final Set<String> emoteKeys;
 	//static loading of emote data works with current system
 	static{
 		ArrayList<EmoteData> es = new ArrayList<EmoteData>();
+		Set<String> keys = new HashSet<String>();
 		EmoteData[] emote = new Gson().fromJson(new InputStreamReader(Lib.class.getResourceAsStream("/Library/emotes.json")),EmoteData[].class);
-		Arrays.stream(emote).forEach( e -> es.add(e));
+		Arrays.stream(emote).forEach( e -> {
+			es.add(e);
+			keys.add(e.tag);
+		});
 		//immutable list so that others can access emote list
 		emotes = Collections.unmodifiableList(es);
+		emoteKeys = Collections.unmodifiableSet(keys);
 	}
 	//methods sending data
 	/**

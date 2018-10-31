@@ -20,7 +20,9 @@ public class Awaken extends UnitSelection {
 			for(int i=0;i<info.awakening.length;i++){
 				String s = "";
 				for(AwakenMat a:info.awakening[i].mats){
-					s+=(a.nonMatch()?"":formatEmote(a.isPrism()?"Unit Prism":a.name))+a.toString()+"\n";
+					//parse as emote
+					String emote = formatEmote(a.isPrism()?"Unit Prism":a.name);
+					s+=(a.nonMatch()||!Lib.emoteKeys.contains(emote)?"":emote)+a.toString()+"\n";
 				}
 				s = Lib.EmoteMessage(event, s);
 				embed.addField((info.minRarity+i)+"★",s,true);
