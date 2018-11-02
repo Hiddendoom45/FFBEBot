@@ -14,6 +14,9 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- added emote command to access all of the emotes the bot uses for various things
+- large update to awaken command, uses emotes for items
+- minor update to lore/equipment commands
 - Various bugfixes most notable the issue of unitsell not working at all
 - Updated unit/runit commands, unit is now fully embed and added STMR parsing
 - Fix a bunch of stuff with regards to the summon simulator, incorrect rates, missing units, banners etc
@@ -21,9 +24,6 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - used color-thief-java to add some colors to some embeds based on the image
 - added unit flair image in runit command
 - Fix a lot of parse issues with reddit units
-- Fix minor parse issues, clean up UnitArt command to use embeds
-- `@FFBEBot help` will also bring up help menu
-- Can search for unit by ID of base rarity w/ runit
 
 #### TODO:
 
