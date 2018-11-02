@@ -128,7 +128,7 @@ public class Main {
 		CmdControl.addCommand("sc",new SacredCrystal(), Module);
 		CmdControl.addCommand("sacredcrystal", new SacredCrystal(), Module);
 		CmdControl.addCommand("lapis", new Lapis(), Module);
-		CmdControl.addCommand("give", new Give(), Module);
+		//CmdControl.addCommand("give", new Give(), Module);
 		CmdControl.addCommand("banner", new Banners(), Module);
 		CmdControl.addCommand("banners", new Banners(), Module);
 		CmdControl.addCommand("bannerlist", new Banners(), Module);
