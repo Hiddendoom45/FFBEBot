@@ -72,7 +72,7 @@ public class Lib {
 				+ "Commands to extract info from Reddit wiki(best for JP players or GL players looking for future info)\n\n"
 				+ "**Salt** - `summon` `salty` `waifu` `husbando` `banner` `maintenance` `gsummon`\n"
 				+ "Commands that may or may not help in dealing with or evoking salt\n\n"
-				+ "**Simulation** - `dailies` `lapis` `pull` `unitinventory` `dailypull` `11pull` `unitsell` `unitawaken`\n"
+				+ "**Simulation** - `dailies` `sc` `lapis` `pull` `unitinventory` `dailypull` `11pull` `unitsell` `unitawaken`\n"
 				+ "Commands that are used to attempt to simulate FFBE to some degree\n\n"
 				+ "**WIP** - none\n"
 				+ "Commands that are work in progress currently unimplemented\n\n"
