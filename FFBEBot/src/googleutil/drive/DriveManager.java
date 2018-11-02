@@ -24,6 +24,7 @@ import com.google.api.services.drive.DriveScopes;
 import com.google.api.services.drive.model.File;
 
 import global.record.Log;
+import global.record.Secrets;
 import global.record.Settings;
 
 /**
@@ -112,7 +113,8 @@ public class DriveManager {
 			service = getDriveService();
 			//Download from Drive the files for initial load as they aren't included as a part of the build files
 			DriveManager.download(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
-			DriveManager.download(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+			//disable preload download if on test bot
+			if(!Settings.token.equals(Secrets.testToken))DriveManager.download(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
 			DriveManager.download(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
 		} catch (IOException e) {
 			Log.logShortError(e, 6);

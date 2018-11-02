@@ -6,6 +6,7 @@ import global.Main;
 import global.Main.states;
 import global.record.Log;
 import global.record.SaveSystem;
+import global.record.Secrets;
 import global.record.Settings;
 import googleutil.drive.DataEnum;
 import googleutil.drive.DriveFile;
@@ -56,7 +57,7 @@ public class Reload implements OverrideCommand {
 					SaveSystem.preloadSummons(count);
 				}
 				SaveSystem.writeData();//write data to file
-				DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+				if(!Settings.token.equals(Secrets.testToken))DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
 				Main.setGame(states.randomReady());//set state to ready again
 				Lib.sendMessage(event, "Data reloaded");
 				}

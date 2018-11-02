@@ -6,7 +6,11 @@ import global.Main;
 import global.Main.states;
 import global.record.Log;
 import global.record.SaveSystem;
+import global.record.Secrets;
 import global.record.Settings;
+import googleutil.drive.DataEnum;
+import googleutil.drive.DriveFile;
+import googleutil.drive.DriveManager;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
@@ -52,6 +56,7 @@ public class Update extends OverrideGenerics implements OverrideCommand {
 					Main.setGame(states.randomReady());
 					if(updated){
 						SaveSystem.writeData();
+						if(!Settings.token.equals(Secrets.testToken))DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
 						Lib.sendMessage(event, "Data Updated");
 					}
 					else{
