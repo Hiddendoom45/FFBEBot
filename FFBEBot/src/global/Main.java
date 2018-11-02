@@ -118,6 +118,9 @@ public class Main {
 		CmdControl.addCommand("salty", new Salty(), Module);
 		CmdControl.addCommand("waifu", new Waifu(), Module);
 		CmdControl.addCommand("husbando", new Husbando(), Module);
+		CmdControl.addCommand("banner", new Banners(), Module);
+		CmdControl.addCommand("banners", new Banners(), Module);
+		CmdControl.addCommand("bannerlist", new Banners(), Module);
 		CmdControl.addCommand("maintenance", new Maintenance(), Module);
 		CmdControl.addCommand("nier", new Nier(), Module);
 		CmdControl.addCommand("gumi.sg", new Hax(), Module);
@@ -129,9 +132,6 @@ public class Main {
 		CmdControl.addCommand("sacredcrystal", new SacredCrystal(), Module);
 		CmdControl.addCommand("lapis", new Lapis(), Module);
 		//CmdControl.addCommand("give", new Give(), Module);
-		CmdControl.addCommand("banner", new Banners(), Module);
-		CmdControl.addCommand("banners", new Banners(), Module);
-		CmdControl.addCommand("bannerlist", new Banners(), Module);
 		CmdControl.addCommand("pull", new commands.Pull(),Module);
 		//CmdControl.addCommand("gpull", new GuaranteePull(), Module);
 		CmdControl.addCommand("unitinventory", new UnitInventory(), Module);
