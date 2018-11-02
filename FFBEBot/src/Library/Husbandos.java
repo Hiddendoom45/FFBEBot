@@ -166,7 +166,8 @@ public enum Husbandos {
 	Ignis(Unit.Ignis),
 	Ravus(Unit.Ravus),
 	Macmedi(Unit.Macmedi),
-	Lucifer("The Devil",Unit.Lucifer),
+	Machina(Unit.Machina),
+	Kurasame(Unit.Kurasame),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),
@@ -210,6 +211,7 @@ public enum Husbandos {
 	VMarchenko(Unit.VMarchenko),
 	VKoller(Unit.VKoller),
 	FPritchard(Unit.FPritchard),
+	Lucifer("The Devil",Unit.Lucifer),
 	Arngrim(Unit.Arngrim),
 	Lucian(Unit.Lucian);
 	

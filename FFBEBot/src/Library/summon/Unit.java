@@ -687,8 +687,10 @@ public enum Unit{
 	Citra("Citra",new String[]{"/8/8c/Unit-Citra-5.png?version=7649336fa33a38793d89460a5b690b52","/a/a8/Unit-Citra-6.png?version=7945c2c3183a7999cd6ec1b22fa0c1c1","/d/d9/Unit-Citra-7.png?version=b64b0a4ad6b29af44b0690d4485ff5fd"},5),
 	Macmedi("Macmedi",new String[]{"/c/ca/Unit-Macmedi-4.png?version=a844912625f0dcdb1e3f50cff5d453a4","/a/a9/Unit-Macmedi-5.png?version=4573b02ae08b6d56d4c1d923c28baa86","/7/78/Unit-Macmedi-6.png?version=a9330039a20c572f07be4f3a1d10dca1"},4),
 	Lotti("Lotti",new String[]{"/c/ce/Unit-Lotti-3.png?version=bbc14fa5eca193b2914523771eed44fc","/0/02/Unit-Lotti-4.png?version=08b20b3f677afac4a9f2c980b96d5830","/c/c4/Unit-Lotti-5.png?version=f96e1d09761170373df66b2d4de6a83d"},3),
-	Lilith("Lilith",new String[]{"/d/df/Unit-Lilith-5.png?version=eaf8710a22dc3e2f611a1278094fbd3e","/e/e7/Unit-Lilith-6.png?version=8e97f519922f097d61fb26466b7e528b","/9/97/Unit-Lilith-7.png?version=01acd73639a4a3e110dde839ca51c786"},5),
-	Lucifer("Lucius",new String[]{"/8/81/Unit-Lucius-5.png?version=3cc0ac683814742237b69afcf2f5c163","/1/1f/Unit-Lucius-6.png?version=fe60614defc065a4c6e2dac724032438","/2/21/Unit-Lucius-7.png?version=030c49385741c46e6c26879339513149"},5),
+	Machina("Machina",new String[]{"/0/02/Unit-Machina-5.png?version=873bcc8782c9c1e2d87f3b3be9bd123f","/5/5d/Unit-Machina-6.png?version=09420768dec5fed5d63cdaff4d35a947","/4/4f/Unit-Machina-7.png?version=7cf1ffc2e4304c2473a00ebed9f5ae0b"},5),
+	Kurasame("Kurasame",new String[]{"/d/d8/Unit-Kurasame-5.png?version=130116a55e5c8875ab9cc725fbbc00f4","/0/07/Unit-Kurasame-6.png?version=ef5158b4b16d2f979468e1c660d6f6f4","/6/60/Unit-Kurasame-7.png?version=e4027b241026ddb440063fc0e0154f3e"},5),
+	Deuce("Deuce",new String[]{"/d/d5/Unit-Deuce-4.png?version=ef4020e37fb2f592e72b0c8699248f48","/3/34/Unit-Deuce-5.png?version=74458fcc859dfe4991e3289cbf380645","/c/cf/Unit-Deuce-6.png?version=f2d63b34bfb4c365b56338f8fd5eb3e7"},4),
+	Cater("Cater",new String[]{"/b/b6/Unit-Cater-3.png?version=89b6b695c385113b1e7b063717dc088c","/f/ff/Unit-Cater-4.png?version=13f777b6ad71c6080cc8cd6190f4186a","/b/b5/Unit-Cater-5.png?version=32b7c53be0e3c73b3a87b3ce092d884b"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -784,6 +786,8 @@ public enum Unit{
 	FPritchard("Frank Pritchard",new String[]{"/f/f9/Unit-Frank_Pritchard-3.png?version=dcd7e273840b497000bd44a23b3fa35d","/7/79/Unit-Frank_Pritchard-4.png?version=f5876b517bf3b85c9e9141138abf263a","/6/67/Unit-Frank_Pritchard-5.png?version=8afd3f1febbf1107ee605a2d7884ea53"},3),
 	Estark("Estark",new String[]{"/6/68/Unit-Estark-5.png?version=bde5f7769eda1d54634d240f30a25f0f","/f/f1/Unit-Estark-6.png?version=b10736dd67e4326ab84ce862a08b02bc","/9/9b/Unit-Estark-7.png?version=86e2742314d1f317b4c01b2814eb6a60"},5),
 	ÜberkillingMachine("Überkilling Machine",new String[]{"/c/c6/Unit-%C3%9Cberkilling_Machine-4.png?version=021a78bd63026ba5a2587ca9840a4722","/9/97/Unit-%C3%9Cberkilling_Machine-5.png?version=c834238706625e0e25f131e0ffb90f0a","/d/d7/Unit-%C3%9Cberkilling_Machine-6.png?version=00e377dfd730b6089007afd47f0bc4b2"},4),
+	Lilith("Lilith",new String[]{"/d/df/Unit-Lilith-5.png?version=eaf8710a22dc3e2f611a1278094fbd3e","/e/e7/Unit-Lilith-6.png?version=8e97f519922f097d61fb26466b7e528b","/9/97/Unit-Lilith-7.png?version=01acd73639a4a3e110dde839ca51c786"},5),
+	Lucifer("Lucius",new String[]{"/8/81/Unit-Lucius-5.png?version=3cc0ac683814742237b69afcf2f5c163","/1/1f/Unit-Lucius-6.png?version=fe60614defc065a4c6e2dac724032438","/2/21/Unit-Lucius-7.png?version=030c49385741c46e6c26879339513149"},5),
 	Lenneth("Lenneth",new String[]{"/d/dd/Unit-Lenneth-5.png?version=81f1e9a575136e36f4366a1909d8118b","/2/26/Unit-Lenneth-6.png?version=137d7f6bf2a60f8ebb9a5f8542a3dc4d","/c/cd/Unit-Lenneth-7.png?version=6d357b3d84956e8a04fd475e4c8e9eeb"},5),
 	VPFreya("Freya_VP",new String[]{"/9/9b/Unit-Freya_%28VP%29-5.png?version=25ef9ae759dfc4c7ce3ebcad875cd324","/c/c8/Unit-Freya_%28VP%29-6.png?version=2ddf67c4109494376c9e10af10fb158a","/9/97/Unit-Freya_%28VP%29-7.png?version=49aec6f0886f4b7c6d1c4e4abef40114"},5),
 	Arngrim("Arngrim",new String[]{"/9/97/Unit-Arngrim-5.png?version=b9e6e18e84e0f51296d0807bf9844f9f","/c/cc/Unit-Arngrim-6.png?version=3532cccee49cc7fb70c07173bb06af71","/e/e3/Unit-Arngrim-7.png?version=c3f65607b21d0be13fa478fed4baa090"},5),
@@ -1227,7 +1231,11 @@ public enum Unit{
 				Ravus,
 				Citra,
 				Macmedi,
-				Lotti
+				Lotti,
+				Machina,
+				Kurasame,
+				Deuce,
+				Cater
 
 		});
 	}
