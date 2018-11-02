@@ -64,7 +64,7 @@ public class Lib {
 		String msg="__***Help List***__\n"
 				+ "Use "+SaveSystem.getPrefix(event)+"help [command] to get more info on a specific command, i.e.: "+SaveSystem.getPrefix(event)+"help ping\n\n"
 				+ "__**Modules**__\n"
-				+ "**Core** - `ping` `invite` `info` `servers` `bugreport`\n"
+				+ "**Core** - `ping` `invite` `info` `servers` `bugreport` `emo`\n"
 				+ "Core commands for bot\n\n"
 				+ "**Exvius** - `awaken` `equipment` `lore` `skill` `unitart` `unit`\n"
 				+ "Commands to extract info from Exvicus wiki(best for GL players)\n\n"
