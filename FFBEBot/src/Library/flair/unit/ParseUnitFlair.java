@@ -27,7 +27,7 @@ public class ParseUnitFlair {
 		//38x56 flair resolution
 		int fH = 38;
 		int fW = 56;
-		String unitCSSSource = "https://b.thumbs.redditmedia.com/GsKQ-nkhBdXNCYCYSndg1FnCgUS5CnwN_3iwSyZfr-c.css";
+		String unitCSSSource = "https://b.thumbs.redditmedia.com/mWaxEv6rxIHCYA9-4PGHVovjQ4IocDQPdOT9GNV5-qU.css";
 		String css = Jsoup.connect(unitCSSSource).execute().body();
 		String unitFlairSource = extractFlairSource(css);
 		//regex to match css which indicates the unit# and the shift of the main image
@@ -35,6 +35,7 @@ public class ParseUnitFlair {
 		//read image of all flairs from reddit
 		BufferedImage flairs = ImageIO.read(new URL(unitFlairSource).openStream());
 		while(m.find()){
+			System.out.println(m.group(1));
 			//create new tmp buffered image to draw on, size = flair size
 			BufferedImage f = new BufferedImage(fW, fH, BufferedImage.TYPE_INT_ARGB);
 			Graphics g = f.getGraphics();
