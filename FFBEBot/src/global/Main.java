@@ -114,7 +114,8 @@ public class Main {
 		
 		Module=ModuleEnum.Salt.toString();
 		CmdControl.addCommand("summon", new Summon(), Module);
-		CmdControl.addCommand("gsummon", new GuaranteeSummon(), Module);
+		//reference https://old.reddit.com/r/FFBraveExvius/comments/7x8lgx/5star_guaranteed_cash_summon/
+		CmdControl.addCommand(new String[]{"gsummon","cashsummon"}, new GuaranteeSummon(), Module);
 		CmdControl.addCommand("salty", new Salty(), Module);
 		CmdControl.addCommand("waifu", new Waifu(), Module);
 		CmdControl.addCommand("husbando", new Husbando(), Module);
