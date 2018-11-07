@@ -51,12 +51,20 @@ public class RUnits extends RedditSelection {
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
+		if(SaveSystem.getRedditUnit(Ounit.getData(0).name)==null){
+			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(0).name);
+			return;
+		}
 		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(0).name),Ounit.getData(0),event);
 
 	}
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
+		if(SaveSystem.getRedditUnit(Ounit.getData(selection).name)==null){
+			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(selection).name);
+			return;
+		}
 		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(selection).name),Ounit.getData(selection),event);
 	}
 

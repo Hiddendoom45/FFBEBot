@@ -125,14 +125,20 @@ public class RSkill extends RedditSelection{
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
+		if(SaveSystem.getRedditUnit(Ounit.getData(0).name)==null){
+			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(0).name);
+			return;
+		}
 		sendAbilities(SaveSystem.getRedditUnit(Ounit.getData(0).name),event);
-		
 	}
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
+		if(SaveSystem.getRedditUnit(Ounit.getData(selection).name)==null){
+			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(selection).name);
+			return;
+		}
 		sendAbilities(SaveSystem.getRedditUnit(Ounit.getData(selection).name),event);
-		
 	}
 	@Override
 	public void help(MessageReceivedEvent event) {

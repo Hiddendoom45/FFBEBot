@@ -23,13 +23,20 @@ public class RAwaken extends RedditSelection {
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
+		if(SaveSystem.getRedditUnit(Ounit.getData(0).name)==null){
+			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(0).name);
+			return;
+		}
 		sendAwakening(SaveSystem.getRedditUnit(Ounit.getData(0).name),rarity,event);
-
 	}
 
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
+		if(SaveSystem.getRedditUnit(Ounit.getData(selection).name)==null){
+			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(selection).name);
+			return;
+		}
 		sendAwakening(SaveSystem.getRedditUnit(Ounit.getData(selection).name),rarity,event);
 
 	}
