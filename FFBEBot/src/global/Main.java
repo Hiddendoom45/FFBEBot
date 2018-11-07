@@ -212,6 +212,12 @@ public class Main {
 		break;
 		case Ready6:game=" in the salt mines|@FFBEBot help";
 		break;
+		case Ready7:game=" in gacha hell|@FFBEBot help";
+		break;
+		case Ready8:game=" in Lapis|@FFBEBot help";
+		break;
+		case Ready9:game=" in Paladia|@FFBEBot help";
+		break;
 		}
 		jda.getPresence().setGame(Game.of(Game.GameType.DEFAULT,game));
 	}	
@@ -233,10 +239,13 @@ public class Main {
 		Ready3,
 		Ready4,
 		Ready5,
-		Ready6;
+		Ready6,
+		Ready7,
+		Ready8,
+		Ready9;
 		public static int rand;
 		public static states randomReady(){
-			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2,Ready3,Ready4,Ready5,Ready6});
+			states s=RandomLibs.SelectRandom(new states[]{Ready1,Ready2,Ready3,Ready4,Ready5,Ready6,Ready7,Ready8,Ready9});
 			return s;
 		}
 	}
