@@ -160,6 +160,7 @@ public class Main {
 		Overrider.addOverrideCommand("download", new Download());
 		Overrider.addOverrideCommand("logclear", new ClearLog());
 		Overrider.addOverrideCommand("gamechange", new ChangeGame());
+		Overrider.addOverrideCommand("changegame", new ChangeGame());
 		Overrider.addOverrideCommand("award", new Award());
 		Overrider.addOverrideCommand("update", new Update());
 		Overrider.addOverrideCommand("push", new DrivePush());
