@@ -30,11 +30,12 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - new features
 - more tests to make sure bot is running correctly
 
-### Building
+### Building / Self Hosting
 
 - The bot is setup to be built with maven. [Download.](https://maven.apache.org/download.cgi) Or use your preferred package manager. 
 - Run `mvn --version` to check that you have installed it correctly.;
 - Run `mvn clean` to clean up any previous builds and then `mvn package` to build the jar file.
+- Note: there will be portions of the code that will be broken as the bot was not initially designed to be easily portable. If a suggestion is sent then I'll devote more time to this.
 
 ### Bugs/Suggestions
 
