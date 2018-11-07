@@ -103,7 +103,13 @@ public class SaveSystem {
 		
 		for(RedditOverview.unitData u:overview){
 			try{
-			units.add(u.name, overviews.toJsonTree(new RedditUnit(u.unitUrl)));
+				if(u.unitUrl==null){
+					//add as null as the page does not exist at the moment
+					units.add(u.name, null);
+				}
+				else{
+					units.add(u.name, overviews.toJsonTree(new RedditUnit(u.unitUrl)));
+				}
 			}catch(Exception e){
 				Log.logError(e);
 				units.add(u.name,  overviews.toJsonTree(getRedditUnit(u.name)));

@@ -99,9 +99,9 @@ public class RedditOverview {
 					unitID = -1;
 				}
 			}
-			unitUrl=row.child(3).getElementsByTag("a").get(0).absUrl("href");
-			dbUrl=row.child(3).getElementsByTag("a").get(1).absUrl("href");
-			famitsuUrl=row.child(3).getElementsByTag("a").get(2).absUrl("href");
+			unitUrl=nullURLCheck(row.child(3).getElementsByTag("a").get(0).absUrl("href"));
+			dbUrl=nullURLCheck(row.child(3).getElementsByTag("a").get(1).absUrl("href"));
+			famitsuUrl=nullURLCheck(row.child(3).getElementsByTag("a").get(2).absUrl("href"));
 			String[] names = Lib.parseText(row.child(2)).split("\n");
 			name=names[0].trim();
 			JPname=names[1].trim();
@@ -110,6 +110,12 @@ public class RedditOverview {
 			baseR=(int)row.child(7).text().codePoints().filter(c -> c=='★').count();
 			maxR=baseR+(int)row.child(7).text().codePoints().filter(c -> c=='✰').count();
 			enhanceBatch = row.child(8).text();
+		}
+		private String nullURLCheck(String url){
+			if(url.endsWith("/tg")){
+				return null;
+			}
+			return url;
 		}
 		
 	}
