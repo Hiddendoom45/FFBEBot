@@ -89,21 +89,9 @@ public class UnitOverview {
 			}
 			udata=new unitData[units.size()];
 			int i=0;
-			boolean triggered = false;
 			for(Element u:units){
 				udata[i]=new unitData(u);
-				//override for Freya as same name for VP one and FFBE one
-				if(udata[i].name.equals("Freya")){
-					if(udata[i].baseR.equals("5-star")){
-						udata[i].name="Freya_VP";
-						triggered=true;
-					}
-				}
 				i++;
-			}
-			//safety check that the overrides are done
-			if(!triggered){
-				Log.log("ERROR", "Freya not changed");
 			}
 		}catch(Exception e){
 			e.printStackTrace();
