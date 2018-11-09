@@ -115,6 +115,7 @@ public enum Banner {
 	HalloweenP3_1("Halloween 2018 new",new Unit[]{Unit.Lucifer,Unit.Lilith},BannerRates.LD5.fiveRate(),Lib.concat(Citra.featured, Citra.pool),Citra.include,BannerType.ThreePercent),
 	VP("Valkyrie profile triple rainbow BS", new Unit[]{Unit.Lenneth,Unit.VPFreya,Unit.Arngrim,Unit.Lucian,Unit.Jelanda},BannerRates.T5.fiveRate(),HalloweenP3_1.pool,HalloweenP3_1.include,BannerType.ThreePercent),
 	FF04("FF type-0 part 4",new Unit[]{Unit.Machina,Unit.Kurasame,Unit.Deuce,Unit.Cater},BannerRates.D5.fiveRate(),VP.pool,VP.include,BannerType.ThreePercent),
+	Elephim("Elephim",new Unit[]{Unit.Elephim,Unit.Leopold,Unit.Magna,Unit.Forelsket},BannerRates.D4.fiveRate(),Lib.concat(FF04.featured, FF04.pool),FF04.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;

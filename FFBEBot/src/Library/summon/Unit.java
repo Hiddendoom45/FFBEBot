@@ -691,6 +691,10 @@ public enum Unit{
 	Kurasame("Kurasame",new String[]{"/d/d8/Unit-Kurasame-5.png?version=130116a55e5c8875ab9cc725fbbc00f4","/0/07/Unit-Kurasame-6.png?version=ef5158b4b16d2f979468e1c660d6f6f4","/6/60/Unit-Kurasame-7.png?version=e4027b241026ddb440063fc0e0154f3e"},5),
 	Deuce("Deuce",new String[]{"/d/d5/Unit-Deuce-4.png?version=ef4020e37fb2f592e72b0c8699248f48","/3/34/Unit-Deuce-5.png?version=74458fcc859dfe4991e3289cbf380645","/c/cf/Unit-Deuce-6.png?version=f2d63b34bfb4c365b56338f8fd5eb3e7"},4),
 	Cater("Cater",new String[]{"/b/b6/Unit-Cater-3.png?version=89b6b695c385113b1e7b063717dc088c","/f/ff/Unit-Cater-4.png?version=13f777b6ad71c6080cc8cd6190f4186a","/b/b5/Unit-Cater-5.png?version=32b7c53be0e3c73b3a87b3ce092d884b"},3),
+	Elephim("Elephim",new String[]{"/e/e6/Unit-Elephim-5.png?version=83185e54a81fd852adeb49b3cfb93214","/8/87/Unit-Elephim-6.png?version=8882d02c66c84e3720394b5ec4bc5bd1","/e/ee/Unit-Elephim-7.png?version=b3e084480549e83757afefa5f00ba037"},5),
+	Leopold("Leopold",new String[]{"/9/9e/Unit-Leopold-4.png?version=c72cbf7ae2335c00ce423d901204820b","/0/06/Unit-Leopold-5.png?version=cafc60c164eb718d681eaee9bfb1ef2a","/e/e4/Unit-Leopold-6.png?version=d2303e82af184467eb276a5c2707b51b"},4),
+	Magna("Magna",new String[]{"/5/55/Unit-Magna-4.png?version=098baf356a8c49cee82536992d7ec097","/c/ca/Unit-Magna-5.png?version=f0dcd0564792b4ab7f00a0c00f4e8b0d","/b/be/Unit-Magna-6.png?version=4e083ff3dc4e59e23c56e92396566509"},4),
+	Forelsket("Forelsket",new String[]{"/f/f4/Unit-Forelsket-3.png?version=1f7fe8757e4c97e84dcaaebaad1ec298","/a/ac/Unit-Forelsket-4.png?version=55c8cd0ca68dc9e0193708082a350006","/e/e8/Unit-Forelsket-5.png?version=111f926a193f299a1525a7edc3a13891"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1235,7 +1239,11 @@ public enum Unit{
 				Machina,
 				Kurasame,
 				Deuce,
-				Cater
+				Cater,
+				Elephim,
+				Leopold,
+				Magna,
+				Forelsket
 
 		});
 	}

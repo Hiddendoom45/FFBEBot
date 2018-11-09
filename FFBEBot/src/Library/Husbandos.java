@@ -168,6 +168,9 @@ public enum Husbandos {
 	Macmedi(Unit.Macmedi),
 	Machina(Unit.Machina),
 	Kurasame(Unit.Kurasame),
+	Leopold(Unit.Leopold),
+	Magna(Unit.Magna),
+	Forelsket(Unit.Forelsket),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),
