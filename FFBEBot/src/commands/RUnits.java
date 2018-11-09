@@ -35,7 +35,7 @@ public class RUnits extends RedditSelection {
 			stat+="**SPR**:"+Lib.pad(info.stats[i].SPR.substring(info.stats[i].SPR.indexOf("/")+2), 8);
 		}
 		embed.addField(new Field("Stats",stat,false));
-		embed.addField(new Field("Link","[unit link]("+info.URL+")",false));
+		embed.addField(new Field("Link","[unit link]("+Lib.sUrl(info.URL)+")",false));
 		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", data.unitID);
 		if(Lib.exists(imgUrl)){
 			embed.setImage(imgUrl);

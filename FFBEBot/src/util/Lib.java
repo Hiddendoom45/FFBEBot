@@ -789,5 +789,12 @@ public class Lib {
 		}
 		else return filename;
 	}
-	
+	/**
+	 * sanitize urls in [](url) bits
+	 * @param url
+	 * @return
+	 */
+	public static String sUrl(String url){
+		return url.replace(")", "\\)");
+	}
 }
