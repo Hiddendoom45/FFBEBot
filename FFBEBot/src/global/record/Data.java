@@ -11,7 +11,7 @@ import XML.Elements;
 import util.Lib;
 
 /**
- * Class for holding data variables related to preloading and it is the class used to represent te data for a user
+ * Class for holding data variables related to preloading and it is the class used to represent the data for a user
  * @author Allen
  *
  */
