@@ -23,7 +23,6 @@ import com.google.gson.Gson;
 import Library.ElementFilter;
 import global.record.Log;
 import global.record.SaveSystem;
-import global.record.Settings;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.MessageBuilder;
 import net.dv8tion.jda.core.Permission;
@@ -123,22 +122,8 @@ public class Lib {
 	 * @param timeout time in seconds after which the message will be deleted
 	 */
 	public static void sendTempMessage(MessageReceivedEvent event, String msg,long timeout){
-		final MessageReceivedEvent FEvent=event;
-		final String FMsg=msg;
-		final long FTimeout=timeout;
-		Settings.executor.execute(new Runnable(){
-			public void run(){
-				try {
-					String id=sendMessageFormated(FEvent, FMsg).getId();
-					TimeUnit.SECONDS.sleep(FTimeout);
-					FEvent.getChannel().deleteMessageById(id).complete();
-				} catch (Exception e) {
-					Log.log("ERROR", "error sending delayed message");
-					Log.logShortError(e, 5);
-				}
-				
-			}
-		});
+		Message m = sendMessageFormated(event, msg);
+		m.delete().queueAfter(timeout, TimeUnit.SECONDS);
 	}
 	/**
 	 * 
