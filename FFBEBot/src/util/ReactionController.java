@@ -38,7 +38,7 @@ public class ReactionController implements Runnable {
 					try{
 						event.getReaction().removeReaction(event.getUser()).queue();//remove it so it can be retriggered
 					}catch(net.dv8tion.jda.core.exceptions.PermissionException e){
-						Log.log("MSERR", "no permission to remove emotes");
+						Log.log("ERROR", "no permission to remove emotes");
 					}
 				}
 				storedReactions.get(ID).executed(event);
