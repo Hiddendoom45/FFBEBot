@@ -39,11 +39,8 @@ public class Main {
 					System.out.println("shutting down");
 					if(Settings.token.contentEquals(Secrets.token)){
 						SaveSystem.pushUserData();
-						Log.log("ERROR", "Data Push completed");
 						Log.save();//last as this may take a long time as is not as high of a priority to complete
 						DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
-						//debug to see how often the push fails/overlaps with load
-						Log.log("ERROR", "Push completed");
 					}
 				}   
 			}); 
