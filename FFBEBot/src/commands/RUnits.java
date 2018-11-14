@@ -13,8 +13,8 @@ import net.dv8tion.jda.core.entities.MessageEmbed.Field;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.unit.RedditOverview;
-import util.unit.RedditUnit;
 import util.unit.RedditOverview.unitData;
+import util.unit.RedditUnit;
 
 public class RUnits extends RedditSelection {
 	public void sendUnitData(RedditUnit info,unitData data,MessageReceivedEvent event){
@@ -35,7 +35,11 @@ public class RUnits extends RedditSelection {
 			stat+="**SPR**:"+Lib.pad(info.stats[i].SPR.substring(info.stats[i].SPR.indexOf("/")+2), 8);
 		}
 		embed.addField(new Field("Stats",stat,false));
-		embed.addField(new Field("Link","[unit link]("+Lib.sUrl(info.URL)+")",false));
+		embed.addField(new Field("Links",
+				"[reddit link]("+Lib.sUrl(info.URL)+")\n"
+				+ "[exviusdb link]("+Lib.sUrl(data.dbUrl)+")\n"
+				+ "[famitsu link]("+Lib.sUrl(data.famitsuUrl)+")",
+				false));
 		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", data.unitID);
 		if(Lib.exists(imgUrl)){
 			embed.setImage(imgUrl);
