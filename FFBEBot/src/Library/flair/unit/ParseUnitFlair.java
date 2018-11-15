@@ -27,7 +27,7 @@ public class ParseUnitFlair {
 		//38x56 flair resolution
 		int fH = 38;
 		int fW = 56;
-		String unitCSSSource = "https://b.thumbs.redditmedia.com/mWaxEv6rxIHCYA9-4PGHVovjQ4IocDQPdOT9GNV5-qU.css";
+		String unitCSSSource = "https://b.thumbs.redditmedia.com/T9NOFbR5j2vgW21NRzFujbOlamCklBZDYFjlzeLDnUU.css";
 		String css = Jsoup.connect(unitCSSSource).execute().body();
 		String unitFlairSource = extractFlairSource(css);
 		//regex to match css which indicates the unit# and the shift of the main image
