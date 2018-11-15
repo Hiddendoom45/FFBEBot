@@ -35,11 +35,13 @@ public class RUnits extends RedditSelection {
 			stat+="**SPR**:"+Lib.pad(info.stats[i].SPR.substring(info.stats[i].SPR.indexOf("/")+2), 8);
 		}
 		embed.addField(new Field("Stats",stat,false));
-		embed.addField(new Field("Links",
-				"[reddit link]("+Lib.sUrl(info.URL)+")\n"
-				+ "[exviusdb link]("+Lib.sUrl(data.dbUrl)+")\n"
-				+ "[famitsu link]("+Lib.sUrl(data.famitsuUrl)+")",
-				false));
+		if(!(data.unitUrl==null&&data.dbUrl==null&&data.famitsuUrl==null)){
+			embed.addField(new Field("Links",
+					(data.unitUrl==null?"":"[reddit link]("+Lib.sUrl(data.unitUrl)+")\n")
+					+ (data.dbUrl==null?"":"[exviusdb link]("+Lib.sUrl(data.dbUrl)+")\n")
+					+ (data.famitsuUrl==null?"":"[famitsu link]("+Lib.sUrl(data.famitsuUrl)+")"),
+					false));
+		}
 		String imgUrl = String.format("https://raw.githubusercontent.com/Hiddendoom45/FFBEBot/master/FFBEBot/src/Library/flair/unit/u%03d.png", data.unitID);
 		if(Lib.exists(imgUrl)){
 			embed.setImage(imgUrl);
