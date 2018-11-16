@@ -66,7 +66,7 @@ public class UnitInfo {
 				catch(Exception e){Log.logError(e);}
 			}
 			URL=page;
-			Element content=doc.getElementById("mw-content-text");
+			Element content=doc.selectFirst("#mw-content-text > .mw-parser-output");
 			try{
 				loreOverview=content.getElementsByTag("p").first().text();
 			}catch(Exception e){
@@ -93,7 +93,8 @@ public class UnitInfo {
 					}
 				}
 				trustName=parseRaw(Lib.getCell(12, 0, unitInfo));
-				if(!trustName.equalsIgnoreCase(" - ")){
+				System.out.println(trustName);
+				if(!trustName.equalsIgnoreCase("- ")){
 					trustLink=Lib.getCell(12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
 					trustDetails=new TrustInfo(doc2.getElementById("mw-content-text").children());

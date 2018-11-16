@@ -59,7 +59,8 @@ public class UnitOverview {
 				catch(Exception e){Log.logError(e);}
 			}
 			//generate the rows containing unit data
-			Elements data=doc.getElementById("mw-content-text").children();
+			Elements data=doc.select("#mw-content-text > .mw-parser-output").first().children();
+			data.first().children().stream().forEach(t -> System.out.println(t.tag()));
 			Elements first=new Elements();
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character[edit | edit source]")));
 			first.add(Lib.getEleAfter(data, new ElementFilter("h3","Friend Summon[edit | edit source]")));
@@ -72,7 +73,7 @@ public class UnitOverview {
 				}
 				catch(Exception e){Log.logError(e);}
 			}
-			data=doc.getElementById("mw-content-text").children();
+			data=doc.select("#mw-content-text > .mw-parser-output").first().children();
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character[edit | edit source]")));
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Rare Summon[edit | edit source]")));
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Limited Unit[edit | edit source]")));
