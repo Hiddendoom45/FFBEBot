@@ -13,16 +13,6 @@ import util.unit.UnitOverview;
 
 public class Units extends UnitSelection implements Command,Selection {
 	public void sendUnitData(UnitInfo info,MessageReceivedEvent event){
-		String stats="";
-		for(int i=0;i<info.stats.stats.length;i++){
-			stats+="\n"+addStars(info.stats.stats[i].rarity);
-			stats+="**HP**:"+Lib.pad(info.stats.stats[i].HP, 6)+Lib.pad("("+info.statIncrease.stats[i].HP+")", 6);
-			stats+="**MP**:"+Lib.pad(info.stats.stats[i].MP, 6)+Lib.pad("("+info.statIncrease.stats[i].MP+")", 6);
-			stats+="**ATK**:"+Lib.pad(info.stats.stats[i].ATK, 6)+Lib.pad("("+info.statIncrease.stats[i].ATK+")", 6);
-			stats+="**DEF**:"+Lib.pad(info.stats.stats[i].DEF, 6)+Lib.pad("("+info.statIncrease.stats[i].DEF+")", 6);
-			stats+="**MAG**:"+Lib.pad(info.stats.stats[i].MAG, 6)+Lib.pad("("+info.statIncrease.stats[i].MAG+")", 6);
-			stats+="**SPR**:"+Lib.pad(info.stats.stats[i].SPR, 6)+Lib.pad("("+info.statIncrease.stats[i].SPR+")", 6);
-		}
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setAuthor(info.unitName+"    Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t",info.URL);
 		embed.setDescription("Role:"+info.role+"\n"+"[unit link]("+Lib.sUrl(info.URL)+")");
@@ -33,7 +23,27 @@ public class Units extends UnitSelection implements Command,Selection {
 			embed.addField(new Field("STM - "+info.sTrustName,"[STM link]("+Lib.sUrl(info.sTrustLink)+")\n"+info.sTrustDetails,false));
 		}
 		embed.setColor(2584805);
-		embed.addField(new Field("Stats",stats,false));
+		String hp = "";
+		String mp = "";
+		String atk = "";
+		String def = "";
+		String mag = "";
+		String spr = "";
+		for(int i =0;i<info.stats.stats.length;i++){
+			hp+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].HP, 6)+Lib.pad("("+info.statIncrease.stats[i].HP+")", 6)+"\n";
+			mp+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].MP, 6)+Lib.pad("("+info.statIncrease.stats[i].MP+")", 6)+"\n";
+			atk+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].ATK, 6)+Lib.pad("("+info.statIncrease.stats[i].ATK+")", 6)+"\n";
+			def+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].DEF, 6)+Lib.pad("("+info.statIncrease.stats[i].DEF+")", 6)+"\n";
+			mag+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].MAG, 6)+Lib.pad("("+info.statIncrease.stats[i].MAG+")", 6)+"\n";
+			spr+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].SPR, 6)+Lib.pad("("+info.statIncrease.stats[i].SPR+")", 6)+"\n";
+		}
+		embed.addField(new Field("Stats","maxvalue(pot cap)",false));
+		embed.addField("HP",hp,true);
+		embed.addField("MP",mp,true);
+		embed.addField("ATK",atk,true);
+		embed.addField("DEF",def,true);
+		embed.addField("MAG",mag,true);
+		embed.addField("SPR",spr,true);
 		embed.setImage(info.imgOverviewURL);
 		Lib.sendEmbed(event, embed);
 	}
