@@ -2,8 +2,6 @@ package XML;
 
 import java.util.ArrayList;
 
-import XML.Attribute;
-
 public class Elements {
 	private String tagName;
 	private ArrayList<Attribute> attributes=new ArrayList<Attribute>();

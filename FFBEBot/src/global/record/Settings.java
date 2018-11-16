@@ -7,10 +7,10 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Semaphore;
 
 import Library.summon.banner.Banner;
-import util.Lib;
-import util.ModuleController;
 import XML.Attribute;
 import XML.Elements;
+import util.Lib;
+import util.ModuleController;
 /**
  * mixed bag of static settings for runtime and also used as the object representing a guild(not sure why I'm doing this) 
  * @author Allen

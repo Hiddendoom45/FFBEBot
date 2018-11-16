@@ -10,8 +10,8 @@ import util.Lib;
 import util.Select;
 import util.Selection;
 import util.Selector;
-import util.unit.RedditUnit;
 import util.unit.RedditOverview;
+import util.unit.RedditUnit;
 
 public abstract class RedditSelection extends CommandGenerics implements Command, Selection {
 

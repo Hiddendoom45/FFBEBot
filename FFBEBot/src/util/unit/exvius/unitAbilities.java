@@ -2,7 +2,6 @@ package util.unit.exvius;
 
 import java.util.Vector;
 
-
 import org.jsoup.nodes.Element;
 import org.jsoup.parser.Tag;
 

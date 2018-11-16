@@ -11,10 +11,9 @@ import global.record.Settings;
 import googleutil.drive.DataEnum;
 import googleutil.drive.DriveFile;
 import googleutil.drive.DriveManager;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
-
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 public class Reload implements OverrideCommand {
 

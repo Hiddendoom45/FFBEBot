@@ -12,12 +12,7 @@ import Library.ElementFilter;
 import global.record.Log;
 import global.record.Settings;
 import util.Lib;
-import util.unit.exvius.AwakenInfo;
-import util.unit.exvius.TrustInfo;
-import util.unit.exvius.unitAbilities;
-import util.unit.exvius.unitQuotes;
-import util.unit.exvius.unitStatIncrease;
-import util.unit.exvius.unitStats;
+import util.unit.exvius.*;
 
 public class UnitInfo {
 	public String URL="";

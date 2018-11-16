@@ -1,7 +1,6 @@
 package util;
 
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-import util.Lib;
 /**
  * Class used to count the progress of a command that takes a while i.e. preloading data, summoning units
  * Updates the message at a one second interval

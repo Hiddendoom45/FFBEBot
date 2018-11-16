@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 import Library.summon.Awakening;
-import Library.summon.UnitSpecific;
 import Library.summon.Unit;
+import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
 import Library.summon.banner.BannerType;
 import global.record.Log;

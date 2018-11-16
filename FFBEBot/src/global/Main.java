@@ -1,17 +1,5 @@
 package global;
 
-import net.dv8tion.jda.core.AccountType;
-import net.dv8tion.jda.core.JDA;
-import net.dv8tion.jda.core.JDABuilder;
-import net.dv8tion.jda.core.entities.Game;
-import util.CmdControl;
-import util.CounterPool;
-import util.Overrider;
-import util.SpamControl;
-import util.SpamGroup;
-import util.rng.RandomLibs;
-import util.unit.RedditUnit;
-
 import java.util.concurrent.TimeUnit;
 
 import javax.security.auth.login.LoginException;
@@ -27,6 +15,17 @@ import global.record.Settings;
 import googleutil.drive.DataEnum;
 import googleutil.drive.DriveFile;
 import googleutil.drive.DriveManager;
+import net.dv8tion.jda.core.AccountType;
+import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.JDABuilder;
+import net.dv8tion.jda.core.entities.Game;
+import util.CmdControl;
+import util.CounterPool;
+import util.Overrider;
+import util.SpamControl;
+import util.SpamGroup;
+import util.rng.RandomLibs;
+import util.unit.RedditUnit;
 
 public class Main {
 	public static JDA jda;//JDA of bot 

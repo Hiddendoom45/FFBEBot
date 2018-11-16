@@ -3,8 +3,8 @@ package commands.overide;
 import java.util.HashMap;
 
 import global.record.Log;
-import util.Lib;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import util.Lib;
 
 public class ViewLog implements OverrideCommand{
 

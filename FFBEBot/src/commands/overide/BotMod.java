@@ -7,7 +7,6 @@ import global.record.Settings;
 import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
-
 import util.Lib;
 public class BotMod implements OverrideCommand {
 
