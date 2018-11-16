@@ -39,7 +39,7 @@ public class Settings {
 	public static long dailyTime;
 	public static boolean loaded = false;
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access	
-	public static Banner DefaultBanner=Banner.Elephim;//default banner used by summon simulators
+	public static Banner DefaultBanner=Banner.GLArtP2;//default banner used by summon simulators
 	
 	//guild settings
 	public String guildPrefix="";

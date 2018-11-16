@@ -171,6 +171,7 @@ public enum Husbandos {
 	Leopold(Unit.Leopold),
 	Magna(Unit.Magna),
 	Forelsket(Unit.Forelsket),
+	Beryl("The Tonberry",Unit.Beryl),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

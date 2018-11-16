@@ -695,6 +695,8 @@ public enum Unit{
 	Leopold("Leopold",new String[]{"/9/9e/Unit-Leopold-4.png?version=c72cbf7ae2335c00ce423d901204820b","/0/06/Unit-Leopold-5.png?version=cafc60c164eb718d681eaee9bfb1ef2a","/e/e4/Unit-Leopold-6.png?version=d2303e82af184467eb276a5c2707b51b"},4),
 	Magna("Magna",new String[]{"/5/55/Unit-Magna-4.png?version=098baf356a8c49cee82536992d7ec097","/c/ca/Unit-Magna-5.png?version=f0dcd0564792b4ab7f00a0c00f4e8b0d","/b/be/Unit-Magna-6.png?version=4e083ff3dc4e59e23c56e92396566509"},4),
 	Forelsket("Forelsket",new String[]{"/f/f4/Unit-Forelsket-3.png?version=1f7fe8757e4c97e84dcaaebaad1ec298","/a/ac/Unit-Forelsket-4.png?version=55c8cd0ca68dc9e0193708082a350006","/e/e8/Unit-Forelsket-5.png?version=111f926a193f299a1525a7edc3a13891"},3),
+	Beryl("Beryl",new String[]{"/7/77/Unit-Beryl-5.png?version=9ab722f1be021af9239a314319cf1f6e","/b/b5/Unit-Beryl-6.png?version=6ac33464dda697ba1272a167f2debe90","/e/ef/Unit-Beryl-7.png?version=965c7223cc076b9f8331422a76736895"},5),
+	Ellesperis("Ellesperis",new String[]{"/7/70/Unit-Ellesperis-5.png?version=24bdeb7f03fca6bf0219a1466f75759e","/d/df/Unit-Ellesperis-6.png?version=e32f41a72ad184ef691dfea411e27c54","/9/96/Unit-Ellesperis-7.png?version=a93482ed7d0d666d9b252f610597a67e"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1243,7 +1245,9 @@ public enum Unit{
 				Elephim,
 				Leopold,
 				Magna,
-				Forelsket
+				Forelsket,
+				Beryl,
+				Ellesperis
 
 		});
 	}

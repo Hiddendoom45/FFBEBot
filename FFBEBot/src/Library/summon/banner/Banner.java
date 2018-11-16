@@ -109,13 +109,14 @@ public enum Banner {
 	DQ2("Dragon Quest 2",new Unit[]{Unit.Estark,Unit.KillingMachine,Unit.Orochi,Unit.LMSlime,Unit.Golem,Unit.RobbinOod},BannerRates.D3T4.fiveRate(),Lib.concat(new Unit[]{Unit.RageShantotto,Unit.ShadowLord,Unit.Joachim}, FFXI2.pool),FFXI2.include,BannerType.ThreePercent),
 	Hyoh("CG Hyou",new Unit[]{Unit.Hyoh,Unit.Shatal,Unit.Domino},BannerRates.EvenSplit.fiveRate(),DQ2.pool,DQ2.include,BannerType.ThreePercent),
 	SSSummer("Sand Sea Summer in Fall",new Unit[]{Unit.AlohaLasswell,Unit.SeaNichol,Unit.SummerLuka,Unit.TideSkaha},BannerRates.D5.fiveRate(),Lib.concat(Hyoh.featured, Hyoh.pool),Hyoh.include,BannerType.ThreePercent),
-	GLArtP1("Fest Units part 1",new Unit[]{Unit.Malphasie,Unit.Circe},BannerRates.LD5.fiveRate(),Lib.concat(SSSummer.featured, SSSummer.pool),SSSummer.include,BannerType.ThreePercent),
+	GLArtP1("Art Contest Units part 1",new Unit[]{Unit.Malphasie,Unit.Circe},BannerRates.LD5.fiveRate(),Lib.concat(SSSummer.featured, SSSummer.pool),SSSummer.include,BannerType.ThreePercent),
 	FFXV4("FFXV 4",new Unit[]{Unit.Ignis,Unit.Ravus,Unit.Libertus},BannerRates.EvenSplit.fiveRate(),Lib.concat(GLArtP1.featured, GLArtP1.pool),GLArtP1.include,BannerType.ThreePercent),
 	Citra("Citra",new Unit[]{Unit.Citra,Unit.Macmedi,Unit.Lotti},BannerRates.EvenSplit.fiveRate(),Lib.concat(new Unit[]{Unit.Ignis,Unit.Ravus}, FFXV4.pool),FFXV4.include,BannerType.ThreePercent),
 	HalloweenP3_1("Halloween 2018 new",new Unit[]{Unit.Lucifer,Unit.Lilith},BannerRates.LD5.fiveRate(),Lib.concat(Citra.featured, Citra.pool),Citra.include,BannerType.ThreePercent),
 	VP("Valkyrie profile triple rainbow BS", new Unit[]{Unit.Lenneth,Unit.VPFreya,Unit.Arngrim,Unit.Lucian,Unit.Jelanda},BannerRates.T5.fiveRate(),HalloweenP3_1.pool,HalloweenP3_1.include,BannerType.ThreePercent),
 	FF04("FF type-0 part 4",new Unit[]{Unit.Machina,Unit.Kurasame,Unit.Deuce,Unit.Cater},BannerRates.D5.fiveRate(),VP.pool,VP.include,BannerType.ThreePercent),
 	Elephim("Elephim",new Unit[]{Unit.Elephim,Unit.Leopold,Unit.Magna,Unit.Forelsket},BannerRates.D4.fiveRate(),Lib.concat(FF04.featured, FF04.pool),FF04.include,BannerType.ThreePercent),
+	GLArtP2("Art Contest Units part 2",new Unit[]{Unit.Beryl,Unit.Ellesperis},BannerRates.LD5.fiveRate(),Lib.concat(Elephim.featured, Elephim.pool),Elephim.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;
