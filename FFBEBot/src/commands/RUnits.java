@@ -24,17 +24,28 @@ public class RUnits extends RedditSelection {
 		if(!info.STrustDetails.equals("")){
 			embed.addField(new Field("STM",info.STrustDetails.substring("Super Trust Reward = ".length()),false));
 		}
-		String stat = "";
-		for(int i=0;i<info.stats.length;i++){
-			stat+="\n"+info.stats[i].rarity+"★";
-			stat+="**HP**:"+Lib.pad(info.stats[i].HP.substring(info.stats[i].HP.indexOf("/")+2), 8);
-			stat+="**MP**:"+Lib.pad(info.stats[i].MP.substring(info.stats[i].MP.indexOf("/")+2), 8);
-			stat+="**ATK**:"+Lib.pad(info.stats[i].ATK.substring(info.stats[i].ATK.indexOf("/")+2), 8);
-			stat+="**DEF**:"+Lib.pad(info.stats[i].DEF.substring(info.stats[i].DEF.indexOf("/")+2), 8);
-			stat+="**MAG**:"+Lib.pad(info.stats[i].MAG.substring(info.stats[i].MAG.indexOf("/")+2), 8);
-			stat+="**SPR**:"+Lib.pad(info.stats[i].SPR.substring(info.stats[i].SPR.indexOf("/")+2), 8);
+		String hp = "";
+		String mp = "";
+		String atk = "";
+		String def = "";
+		String mag = "";
+		String spr = "";
+		for(int i = 0; i < info.stats.length; i++){
+			hp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].HP, 10)+"\n";
+			mp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MP, 10)+"\n";
+			atk+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].ATK, 10)+"\n";
+			def+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].DEF, 10)+"\n";
+			mag+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MAG, 10)+"\n";
+			spr+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].SPR, 10)+"\n";
 		}
-		embed.addField(new Field("Stats",stat,false));
+		embed.addField(new Field("Stats","basevalue/maxvalue(pot cap)[doorpot cap]",false));
+		embed.addField("HP",hp,true);
+		embed.addField("MP",mp,true);
+		embed.addField("ATK",atk,true);
+		embed.addField("DEF",def,true);
+		embed.addField("MAG",mag,true);
+		embed.addField("SPR",spr,true);
+		
 		if(!(data.unitUrl==null&&data.dbUrl==null&&data.famitsuUrl==null)){
 			embed.addField(new Field("Links",
 					(data.unitUrl==null?"":"[reddit link]("+Lib.sUrl(data.unitUrl)+")\n")
