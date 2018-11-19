@@ -38,9 +38,7 @@
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
-            <type>jar</type>
-            <scope>compile</scope>
-            <version>3.8.0_431</version>
+            <version>3.8.1_437</version>
             <exclusions>
 		        <exclusion>
 		            <groupId>club.minnced</groupId>
