@@ -1,7 +1,12 @@
 package Library;
 
 import Library.summon.Unit;
-
+/**
+ * Enum to store all the male units, based on the ~myhusbando command for Serabot
+ * Primarily still an enum cause I can't be bothered to change it and I can spend the time updating it every week.
+ * @author Allen
+ *
+ */
 public enum Husbandos {
 	Rain("Rain",Unit.Rain),
 	Lasswell("Lasswell",Unit.Lasswell),

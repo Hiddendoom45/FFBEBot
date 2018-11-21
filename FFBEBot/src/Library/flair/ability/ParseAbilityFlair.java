@@ -11,7 +11,11 @@ import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
 import org.jsoup.Jsoup;
-
+/**
+ * Parser to parse all the ability icons on reddit, saved locally
+ * @author Allen
+ *
+ */
 public class ParseAbilityFlair {
 	public static void main(String[] args) throws IOException{
 		File flairDest = new File("src/Library/flair/ability");
@@ -19,6 +23,7 @@ public class ParseAbilityFlair {
 		//36x36 ability flair resolution
 		int fH = 36;
 		int fW = 36;
+		//static for now, can be liked to method of FlairCSSParser
 		String unitCSSSource = "https://b.thumbs.redditmedia.com/GsKQ-nkhBdXNCYCYSndg1FnCgUS5CnwN_3iwSyZfr-c.css";
 		String css = Jsoup.connect(unitCSSSource).execute().body();
 		String abilityFlairSource = extractFlairSource(css);
@@ -32,6 +37,7 @@ public class ParseAbilityFlair {
 		}
 	}
 	private static String extractFlairSource(String css){
+		//very specific matcher to find the image with all the abilities in the css
 		Matcher m = Pattern.compile("\\Qa[href^=\"#A/Icons/\"]:after{background-image:url(\"\\E(.*?)\\Q\")!important}\\E").matcher(css);
 		if(m.matches()){
 			return "https:"+m.group(1);

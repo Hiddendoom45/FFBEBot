@@ -4,7 +4,11 @@ import java.io.IOException;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-
+/**
+ * Very basic parser that literally just grabs the subreddit specific css stylesheet link from the FFBE reddit
+ * @author Allen
+ *
+ */
 public class FlairCSSParser {
 	public static void main(String[] args) throws IOException{
 		System.out.println(getFlairCSSURL());

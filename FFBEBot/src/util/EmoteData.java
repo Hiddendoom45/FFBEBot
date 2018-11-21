@@ -27,14 +27,14 @@ public class EmoteData {
 	}
 	//parses ID from the emote value
 	public String getID(){
-		if(m==null){
+		if(m==null){//null checks if this is deserialized from Gson
 			m = valPattern.matcher(emoteValue);
 			m.matches();
 		}
 		return m.group(2);
 	}
 	public String getEmoteName(){
-		if(m==null){
+		if(m==null){//null checks if this is deserialized from Gson
 			m = valPattern.matcher(emoteValue);
 			m.matches();
 		}

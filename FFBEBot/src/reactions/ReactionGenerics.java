@@ -24,11 +24,17 @@ public abstract class ReactionGenerics implements Reaction{
 	public void executed(MessageReactionAddEvent event) {
 		Log.log("REACT", "Reaction "+event.getReaction().getReactionEmote().getName()+" by "+event.getUser().getName()+" on Message "+event.getMessageId());
 	}
+	/**
+	 * Adds an emote that will trigger the action for the Reaction Command
+	 * @param trigger
+	 */
 	protected void addTrigger(ReactionEmote trigger){
 		triggers.add(trigger);
 	}
+	//get the triggers for self manipulation
 	protected HashSet<ReactionEmote> getTriggers(){
 		return triggers;
 	}
+	//Let subclass provide the timeout for the reaction.
 	public abstract Long getTimeout();
 }
