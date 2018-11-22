@@ -385,32 +385,42 @@ public class MultiMessage implements Message{
 
 	@Override
 	public RestAction<Void> pin(){
-		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings("unchecked")
+		RestAction<Void>[] actions = new RestAction[messages.length];
+		for(int i = 0;i<messages.length;i++){
+			actions[i] = messages[i].pin();
+		}
+		return new MultiRestAction<Void>(this.getJDA(),actions);
 	}
 
 	@Override
 	public RestAction<Void> unpin(){
-		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings("unchecked")
+		RestAction<Void>[] actions = new RestAction[messages.length];
+		for(int i = 0; i<messages.length;i++){
+			actions[i] = messages[i].unpin();
+		}
+		return new MultiRestAction<Void>(this.getJDA(),actions);
 	}
 
 	@Override
 	public RestAction<Void> addReaction(Emote emote){
-		// TODO Auto-generated method stub
-		return null;
+		return messages[messages.length-1].addReaction(emote);
 	}
 
 	@Override
 	public RestAction<Void> addReaction(String unicode){
-		// TODO Auto-generated method stub
-		return null;
+		return messages[messages.length-1].addReaction(unicode);
 	}
 
 	@Override
 	public RestAction<Void> clearReactions(){
-		// TODO Auto-generated method stub
-		return null;
+		@SuppressWarnings("unchecked")
+		RestAction<Void>[] actions = new RestAction[messages.length];
+		for(int i = 0;i<messages.length;i++){
+			actions[i] = messages[i].clearReactions();
+		}
+		return new MultiRestAction<Void>(this.getJDA(),actions);
 	}
 
 	@Override

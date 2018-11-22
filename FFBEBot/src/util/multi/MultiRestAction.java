@@ -4,7 +4,9 @@ import java.util.function.BooleanSupplier;
 import java.util.function.Consumer;
 
 import net.dv8tion.jda.core.JDA;
+import net.dv8tion.jda.core.requests.Request;
 import net.dv8tion.jda.core.requests.RequestFuture;
+import net.dv8tion.jda.core.requests.Response;
 import net.dv8tion.jda.core.requests.RestAction;
 
 /**
@@ -25,7 +27,7 @@ import net.dv8tion.jda.core.requests.RestAction;
  *
  * @param <T>
  */
-public abstract class MultiRestAction<T> extends RestAction<T>{
+public class MultiRestAction<T> extends RestAction<T>{
 	private final RestAction<T>[] actions;
 	public MultiRestAction(JDA jda, RestAction<T>[] actions){
 		super(jda, null);//pass null checks
@@ -51,6 +53,10 @@ public abstract class MultiRestAction<T> extends RestAction<T>{
 			action.submit(shouldQueue);
 		}
 		return null;//not going to use this for now so this will work
+	}
+	@Override
+	protected void handleResponse(Response response, Request<T> request){
+		//null as it's just mimicking a rest action.
 	}
 	
 
