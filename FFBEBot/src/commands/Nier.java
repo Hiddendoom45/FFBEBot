@@ -10,6 +10,7 @@ import global.record.Settings;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
 import util.SpamControl;
+import util.rng.RandomLibs;
 import util.rng.summon.Pull;
 
 public class Nier extends CommandGenerics implements Command{
@@ -26,13 +27,23 @@ public class Nier extends CommandGenerics implements Command{
 				public void run(){
 					Banner pullBanner = Banner.Nier;
 					try{
-						pullBanner=Banner.Nier;
+						pullBanner=Banner.NierP2;
 						int num=Integer.parseInt(args[0]);
 						if(num>1000){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap//adjusted to lower
 							num=1000;
 						}
 						if(num==11){
 							new Summon().sendImage(event, Pull.pull11(pullBanner),pullBanner.name);
+						}
+						else if(num==666&&Unit.valueOf("Lucifer")!=null){
+							ArrayList<UnitSpecific> units = new ArrayList<UnitSpecific>();
+							units.add(
+									RandomLibs.SelectRandom(new UnitSpecific[]{
+											new UnitSpecific(Unit.valueOf("Lucifer"),5),
+											new UnitSpecific(Unit.DRain,5)
+											}));
+							
+							new Summon().sendImage(event,units,pullBanner.name);
 						}
 						else if(num==0){
 							ArrayList<UnitSpecific> units=new ArrayList<UnitSpecific>();
@@ -42,6 +53,11 @@ public class Nier extends CommandGenerics implements Command{
 						else{
 							new Summon().sendImage(event, Pull.pull(num,pullBanner),pullBanner.name);
 						}
+					}
+					catch(NumberFormatException e){
+						//bedile
+						args[0] = "0";
+						action(args,event);
 					}
 					catch(Exception e){
 						new Summon().sendImage(event, Pull.pull11(pullBanner), pullBanner.name);
