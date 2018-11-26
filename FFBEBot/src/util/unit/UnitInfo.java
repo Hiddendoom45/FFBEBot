@@ -93,18 +93,17 @@ public class UnitInfo {
 					}
 				}
 				trustName=parseRaw(Lib.getCell(12, 0, unitInfo));
-				System.out.println(trustName);
 				if(!trustName.equalsIgnoreCase("- ")){
 					trustLink=Lib.getCell(12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
-					trustDetails=new TrustInfo(doc2.getElementById("mw-content-text").children());
+					trustDetails=new TrustInfo(doc2.selectFirst("#mw-content-text > .mw-parser-output").children());
 				}
 				Element sTRaw = Lib.getCell(13, 0, unitInfo);
 				if(!(sTRaw==null)){
 					sTrustName=parseRaw(sTRaw);
 					sTrustLink=Lib.getCell(13, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc3=Jsoup.connect(sTrustLink).userAgent(Settings.UA).get();
-					sTrustDetails=new TrustInfo(doc3.getElementById("mw-content-text").children());
+					sTrustDetails=new TrustInfo(doc3.selectFirst("#mw-content-text > .mw-parser-output").children());
 				}
 			}catch(Exception e){
 				Log.log("ERROR", "Error parsing overview box for page:" +page);
