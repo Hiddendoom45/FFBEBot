@@ -24,6 +24,7 @@ import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.requests.RestAction;
 import net.dv8tion.jda.core.requests.restaction.AuditableRestAction;
 import net.dv8tion.jda.core.requests.restaction.MessageAction;
+import util.Lib;
 
 /**
  * Message wrapper for something that spans multiple messages. Follows the
@@ -346,25 +347,44 @@ public class MultiMessage implements Message{
 
 	@Override
 	public MessageAction editMessage(CharSequence newContent){
-		// TODO Auto-generated method stub
-		return null;
+		List<String> splits = Lib.splitMessage(newContent.toString());
+		if(splits.size()>messages.length){
+			throw new IllegalArgumentException("new message too long");
+		}
+		MessageAction[] actions = new MessageAction[messages.length];
+		for(int i = 0;i<messages.length;i++){
+			if(i<splits.size()){
+				actions[i] = messages[i].editMessage(splits.get(i));
+			}
+			else{
+				actions[i] = messages[i].editMessage("");
+			}
+		}
+		return new MultiMessageAction(getJDA(),this.getChannel(),actions);
 	}
 
 	@Override
 	public MessageAction editMessage(MessageEmbed newContent){
-		throw new UnsupportedOperationException("Funciton is not implemented");
+		MessageAction[] actions = new MessageAction[messages.length];
+		for(int i = 0;i<messages.length;i++){
+			if(i==messages.length-1){
+				actions[i] = messages[i].editMessage(newContent);
+			}
+			else{
+				actions[i] = messages[i].editMessage(messages[i].getContentRaw());
+			}
+		}
+		return new MultiMessageAction(getJDA(),this.getChannel(),actions);
 	}
 
 	@Override
 	public MessageAction editMessageFormat(String format, Object... args){
-		// TODO Auto-generated method stub
-		return null;
+		return editMessage(String.format(format, args));
 	}
 
 	@Override
 	public MessageAction editMessage(Message newContent){
-		// TODO Auto-generated method stub
-		return null;
+		return editMessage(newContent.getContentRaw());
 	}
 
 	@Override
