@@ -180,7 +180,7 @@ public class Lib {
 	 */
 	public static Message sendMessage(MessageReceivedEvent event,String msg){
 		if(msg.length()>2000){
-			Vector<String> toSend=splitMessage(msg);
+			List<String> toSend=splitMessage(msg);
 			for(String s:toSend){
 				sendPrivate(event,s);
 			}
@@ -207,7 +207,7 @@ public class Lib {
 		Message message=event.getAuthor().openPrivateChannel().complete().sendMessage(msg).complete();
 		return message;
 	}
-	private static Vector<String> splitMessage(String msg){
+	public static List<String> splitMessage(String msg){
 		Vector<String> splitMsg=new Vector<String>();
 		String[] lines=msg.split("\n");
 		int length=0;
