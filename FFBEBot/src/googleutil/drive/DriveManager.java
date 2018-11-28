@@ -61,13 +61,15 @@ public class DriveManager {
     private static Drive service;
     
     static {
-        try {
-            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-            DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
-        } catch (Throwable t) {
-            t.printStackTrace();
-            System.exit(1);
-        }
+    	if(Settings.useDrive){
+    		try {
+    			HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
+    			DATA_STORE_FACTORY = new FileDataStoreFactory(DATA_STORE_DIR);
+    		} catch (Throwable t) {
+    			t.printStackTrace();
+    			System.exit(1);
+    		}
+    	}
     }
 
     /**
@@ -76,6 +78,7 @@ public class DriveManager {
      * @throws IOException
      */
     public static Credential authorize() throws IOException {
+    	if(!Settings.useDrive)return null;
         // Load client secrets.
         InputStream in =
             DriveManager.class.getResourceAsStream("/Library/client_secret.json");
@@ -102,6 +105,7 @@ public class DriveManager {
      * @throws IOException
      */
     public static Drive getDriveService() throws IOException {
+    	if(!Settings.useDrive)return null;
         Credential credential = authorize();
         return new Drive.Builder(
                 HTTP_TRANSPORT, JSON_FACTORY, credential)
@@ -109,6 +113,7 @@ public class DriveManager {
                 .build();
     }
     public static void setup(){
+    	if(!Settings.useDrive)return;
     	try {
 			service = getDriveService();
 			//Download from Drive the files for initial load as they aren't included as a part of the build files
@@ -125,6 +130,7 @@ public class DriveManager {
      * @param file
      */
     public static void update(DriveFile file){
+    	if(!Settings.useDrive)return;
     	File fileMetaData=new File();
     	fileMetaData.setName(file.getName());
     	java.io.File filePath = new java.io.File(file.getFilePath());
@@ -139,6 +145,7 @@ public class DriveManager {
         Log.log("DRIVE", "updated "+file.getName());
     }
     public static void download(DriveFile file){
+    	if(!Settings.useDrive)return;
     	try {
     	String id=file.getId();
     	OutputStream outputStream = new FileOutputStream(file.getFilePath());

@@ -32,6 +32,7 @@ public class Settings {
 	public static final String overridePrefix="!";//prefix used for override commands
 	public static final String overrideArg="-";//prefix used to denote arguments for override commands
 	public static final String ownerID="206193542693912578";//ID of owner
+	public static final boolean useDrive = true;//if to use google drive to persist files, false will silently fail all DriveManager stuff
 	public static final long ID=System.currentTimeMillis();//ID for the bot based on when it was started
 	public static final Semaphore upload=new Semaphore(1);//used to prevent bot from uploading 2 things at once, so that it won't end up deleting one of the images
 	public static final ScheduledExecutorService executor = Executors.newScheduledThreadPool(30);//used for various threaded activities
