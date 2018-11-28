@@ -1,9 +1,9 @@
 # FFBEBot
 
-The source code for a discord bot created to retrieve information about the game from the game wiki and the reddit wiki
+The source code for a discord bot created to retrieve information about the game from the exvius wiki and the reddit wiki
 
 
-To invite this bot use : https://discordapp.com/oauth2/authorize?&client_id=244615809559822338&scope=bot&permissions=null&response_type=code
+To invite this bot use the following link: https://discordapp.com/oauth2/authorize?&client_id=244615809559822338&scope=bot&permissions=null&response_type=code
 
 The bot only needs basic message read/write permissions to be functional
 Optionally you can allow the bot to delete messages with the manage messages permission to cleanup certain commands the may cause clutter. It also needs the read message history permission to find its own messages to delete them.
@@ -14,6 +14,9 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- update stat display, cleaner and different stats sorted into columns
+- update exivus wiki parsing for due to issues caused by wikimedia update
+- update to runit, displays links for exvius.gg and famitsu
 - fix various issues with unit links with runit/unit
 - remove give command, update help command
 - added emote command to access all of the emotes the bot uses for various things
@@ -22,21 +25,18 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - Various bugfixes most notable the issue of unitsell not working at all
 - Updated unit/runit commands, unit is now fully embed and added STMR parsing
 - Fix a bunch of stuff with regards to the summon simulator, incorrect rates, missing units, banners etc
-- add flair command, update parsers for both wikis
-- used color-thief-java to add some colors to some embeds based on the image
-- added unit flair image in runit command
 
 #### TODO:
 
-- new features
+- add parsing for exvius.gg
 - more tests to make sure bot is running correctly
 
 ### Building / Self Hosting
 
-- The bot is setup to be built with maven. [Download.](https://maven.apache.org/download.cgi) Or use your preferred package manager. 
+- The bot is setup to be built with maven. [Maven Download.](https://maven.apache.org/download.cgi) Or use your preferred package manager. 
 - Run `mvn --version` to check that you have installed it correctly.;
 - Run `mvn clean` to clean up any previous builds and then `mvn package` to build the jar file.
-- Note: there will be portions of the code that will be broken as the bot was not initially designed to be easily portable. If a suggestion is sent then I'll devote more time to this.
+- Note: there will be portions of the code that will be broken as the bot was not initially designed to be easily portable. If a suggestion is sent using `bugreport [bug/suggestion]` or issue opened, then I'll devote more time to this.
 
 ### Bugs/Suggestions
 
