@@ -183,7 +183,8 @@ public enum Banner {
 				Banner.DeusEx,
 				Banner.DQ2,
 				Banner.HalloweenP3_1,
-				Banner.VP
+				Banner.VP,
+				Banner.NierP2
 				};
 	}
 	public static boolean LEBanner(Banner banner){
