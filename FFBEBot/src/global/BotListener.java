@@ -65,6 +65,7 @@ public class BotListener extends ListenerAdapter{
 	}
 	@Override
 	public void onMessageReactionAdd(MessageReactionAddEvent event) {
+		if(!Settings.loaded) return;
 		if(ReactionController.parseReaction(event))return;
 	}
 }
