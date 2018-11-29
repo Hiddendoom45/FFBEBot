@@ -41,6 +41,9 @@ public class Summon extends CommandGenerics implements Command {
 						if(num>1000){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap//adjusted to lower
 							num=1000;
 						}
+						else if(num<0){
+							num = 0;
+						}
 						Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
 						if(num==11){
 							sendImage(event, Pull.pull11(pullBanner),pullBanner.name);
