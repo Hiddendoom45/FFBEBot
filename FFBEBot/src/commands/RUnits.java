@@ -19,33 +19,34 @@ import util.unit.RedditUnit;
 public class RUnits extends RedditSelection {
 	public void sendUnitData(RedditUnit info,unitData data,MessageReceivedEvent event){
 		EmbedBuilder embed=new EmbedBuilder();
-		embed.setAuthor(""+data.name+" ["+data.JPname+"]"+"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n",info.URL);
-		embed.addField(new Field("TM", info.TrustDetails.substring("Trust Reward = ".length()), false));
-		if(!info.STrustDetails.equals("")){
-			embed.addField(new Field("STM",info.STrustDetails.substring("Super Trust Reward = ".length()),false));
+		if(!(info==null)){
+			embed.setAuthor(""+data.name+" ["+data.JPname+"]"+"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n",info.URL);
+			embed.addField(new Field("TM", info.TrustDetails.substring("Trust Reward = ".length()), false));
+			if(!info.STrustDetails.equals("")){
+				embed.addField(new Field("STM",info.STrustDetails.substring("Super Trust Reward = ".length()),false));
+			}
+			String hp = "";
+			String mp = "";
+			String atk = "";
+			String def = "";
+			String mag = "";
+			String spr = "";
+			for(int i = 0; i < info.stats.length; i++){
+				hp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].HP, 10)+"\n";
+				mp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MP, 10)+"\n";
+				atk+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].ATK, 10)+"\n";
+				def+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].DEF, 10)+"\n";
+				mag+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MAG, 10)+"\n";
+				spr+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].SPR, 10)+"\n";
+			}
+			embed.addField(new Field("Stats","basevalue/maxvalue(pot cap)[doorpot cap]",false));
+			embed.addField("HP",hp,true);
+			embed.addField("MP",mp,true);
+			embed.addField("ATK",atk,true);
+			embed.addField("DEF",def,true);
+			embed.addField("MAG",mag,true);
+			embed.addField("SPR",spr,true);
 		}
-		String hp = "";
-		String mp = "";
-		String atk = "";
-		String def = "";
-		String mag = "";
-		String spr = "";
-		for(int i = 0; i < info.stats.length; i++){
-			hp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].HP, 10)+"\n";
-			mp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MP, 10)+"\n";
-			atk+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].ATK, 10)+"\n";
-			def+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].DEF, 10)+"\n";
-			mag+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MAG, 10)+"\n";
-			spr+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].SPR, 10)+"\n";
-		}
-		embed.addField(new Field("Stats","basevalue/maxvalue(pot cap)[doorpot cap]",false));
-		embed.addField("HP",hp,true);
-		embed.addField("MP",mp,true);
-		embed.addField("ATK",atk,true);
-		embed.addField("DEF",def,true);
-		embed.addField("MAG",mag,true);
-		embed.addField("SPR",spr,true);
-		
 		if(!(data.unitUrl==null&&data.dbUrl==null&&data.famitsuUrl==null)){
 			embed.addField(new Field("Links",
 					(data.unitUrl==null?"":"[reddit link]("+Lib.sUrl(data.unitUrl)+")\n")
@@ -68,20 +69,20 @@ public class RUnits extends RedditSelection {
 	}
 	@Override
 	public void onePossible(RedditOverview Ounit, int rarity, MessageReceivedEvent event) throws IOException {
-		if(SaveSystem.getRedditUnit(Ounit.getData(0).name)==null){
-			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(0).name);
-			return;
-		}
+//		if(SaveSystem.getRedditUnit(Ounit.getData(0).name)==null){
+//			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(0).name);
+//			return;
+//		}
 		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(0).name),Ounit.getData(0),event);
 
 	}
 	@Override
 	public void manyPossible(RedditOverview Ounit, int selection, int rarity, MessageReceivedEvent event)
 			throws IOException {
-		if(SaveSystem.getRedditUnit(Ounit.getData(selection).name)==null){
-			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(selection).name);
-			return;
-		}
+//		if(SaveSystem.getRedditUnit(Ounit.getData(selection).name)==null){
+//			Lib.sendMessage(event, "The reddit wiki does not have a page for " + Ounit.getData(selection).name);
+//			return;
+//		}
 		sendUnitData(SaveSystem.getRedditUnit(Ounit.getData(selection).name),Ounit.getData(selection),event);
 	}
 

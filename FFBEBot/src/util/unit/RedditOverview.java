@@ -99,9 +99,18 @@ public class RedditOverview {
 					unitID = -1;
 				}
 			}
-			unitUrl=nullURLCheck(row.child(3).getElementsByTag("a").get(0).absUrl("href"));
-			dbUrl=nullURLCheck(row.child(3).getElementsByTag("a").get(1).absUrl("href"));
-			famitsuUrl=nullURLCheck(row.child(3).getElementsByTag("a").get(2).absUrl("href"));
+			for(Element e:row.child(3).getElementsByTag("a")){
+				String url = e.absUrl("href");
+				if(url.startsWith("https://www.reddit.com/r/FFBraveExvius/")){
+					unitUrl = nullURLCheck(url);
+				}
+				else if (url.startsWith("https://exvius.gg/")||url.startsWith("https://exviusdb.com/")){
+					dbUrl = url;
+				}
+				else if(url.startsWith("https://wiki.famitsu.com/")){
+					famitsuUrl = url;
+				}
+			}
 			String[] names = Lib.parseText(row.child(2)).split("\n");
 			name=names[0].trim();
 			JPname=names[1].trim();
