@@ -697,6 +697,10 @@ public enum Unit{
 	Forelsket("Forelsket",new String[]{"/f/f4/Unit-Forelsket-3.png?version=1f7fe8757e4c97e84dcaaebaad1ec298","/a/ac/Unit-Forelsket-4.png?version=55c8cd0ca68dc9e0193708082a350006","/e/e8/Unit-Forelsket-5.png?version=111f926a193f299a1525a7edc3a13891"},3),
 	Beryl("Beryl",new String[]{"/7/77/Unit-Beryl-5.png?version=9ab722f1be021af9239a314319cf1f6e","/b/b5/Unit-Beryl-6.png?version=6ac33464dda697ba1272a167f2debe90","/e/ef/Unit-Beryl-7.png?version=965c7223cc076b9f8331422a76736895"},5),
 	Ellesperis("Ellesperis",new String[]{"/7/70/Unit-Ellesperis-5.png?version=24bdeb7f03fca6bf0219a1466f75759e","/d/df/Unit-Ellesperis-6.png?version=e32f41a72ad184ef691dfea411e27c54","/9/96/Unit-Ellesperis-7.png?version=a93482ed7d0d666d9b252f610597a67e"},5),
+	Sieghart("Sieghard",new String[]{"/c/c7/Unit-Sieghard-5.png?version=167cacbda6a819219505d91c6c60deec","/e/ee/Unit-Sieghard-6.png?version=402f1fd0f115772d7f84ca688c7386c2","/3/34/Unit-Sieghard-7.png?version=291ff8788c66f061d7b40bc81e2a2966"},5),
+	Dietlinde("Dietlinde",new String[]{"/b/be/Unit-Dietlinde-4.png?version=37821c68bdf0b332725c6d963dcccd07","/b/bf/Unit-Dietlinde-5.png?version=ab7e674ea0ce8e2c69d220e461830cbb","/5/58/Unit-Dietlinde-6.png?version=a8a34289d439fc1ce862d944168395f1"},4),
+	Theobald("Theobald",new String[]{"/0/0b/Unit-Theobald-4.png?version=d6fcbb77ca94b3944bd6dec9a32d0b6f","/7/75/Unit-Theobald-5.png?version=e714e8899bfd96879aeb10d04d89547a","/9/98/Unit-Theobald-6.png?version=7a025b7b8177ed1c38fb0c190f71d5fc"},4),
+	Cannon("Cannon",new String[]{"/7/7c/Unit-Cannon-3.png?version=1d1f5fdcdedcde76bee91016f593fd91","/5/54/Unit-Cannon-4.png?version=c6a06839e23824f5bd926678fd1085ee","/b/b1/Unit-Cannon-5.png?version=f0633bf0c179ccad6d054494700186cb"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1247,7 +1251,11 @@ public enum Unit{
 				Magna,
 				Forelsket,
 				Beryl,
-				Ellesperis
+				Ellesperis,
+				Sieghart,
+				Dietlinde,
+				Theobald,
+				Cannon
 
 		});
 	}
