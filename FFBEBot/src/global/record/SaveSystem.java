@@ -201,6 +201,7 @@ public class SaveSystem {
 			try{
 				if(units.get(u.name)==null&&u.isNew==false){//if unit is not in array and is nonNew
 					units.add(u.name, overviews.toJsonTree(new UnitInfo(u.unitUrl)));
+					index++;
 					if(!(count==null)){count.setI(index);}
 				}
 			}catch(Exception e){
