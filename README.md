@@ -14,6 +14,8 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- update banner name so that the Christine banner from last year is called Christmas2, TODO: create common naming scheme for all banners
+- update runit command to be compatible with just links
 - update stat display, cleaner and different stats sorted into columns
 - update exivus wiki parsing for due to issues caused by wikimedia update
 - update to runit, displays links for exvius.gg and famitsu
@@ -28,7 +30,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### TODO:
 
-- add parsing for exvius.gg
+- add parsing for exvius.gg and aEnigma's data dump
 - more tests to make sure bot is running correctly
 
 ### Building / Self Hosting
