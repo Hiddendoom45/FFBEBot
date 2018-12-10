@@ -24,7 +24,8 @@ public class Husbando extends CommandGenerics implements Command{
 	}
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		Husbandos select=RandomLibs.SelectRandom(Husbandos.values());
+		Husbandos select=Husbandos.Sieghart;
+		RandomLibs.SelectRandom(Husbandos.values());
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setImage(select.url);
 		embed.addField(new Field(select.name, Lib.FormatMessage(event, "%userMention% A Husbando? Your Husbando is "+select.name), false));
