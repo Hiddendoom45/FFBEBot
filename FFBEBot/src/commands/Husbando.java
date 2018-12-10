@@ -34,6 +34,7 @@ public class Husbando extends CommandGenerics implements Command{
 			int[] rgb = ColorThief.getColor(img);
 			embed.setColor(new Color(rgb[0], rgb[1], rgb[2]));
 		}catch(Exception e){}//suppress errors since color isn't necessary
+		embed.setFooter("Sieghart only Husbando during his story event", null);
 		Lib.sendEmbed(event, embed);
 		Log.log("status", "Husbando found "+select.name);
 	}
