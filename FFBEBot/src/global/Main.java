@@ -35,6 +35,7 @@ public class Main {
 			Runtime.getRuntime().addShutdownHook(new Thread() {//bot shutdown, push and upload data
 				@Override
 				public void run() {
+					Settings.loaded=false;//avoid old version from responding when shutting down
 					System.out.println("shutting down");
 					if(Settings.token.contentEquals(Secrets.token)){
 						SaveSystem.pushUserData();
