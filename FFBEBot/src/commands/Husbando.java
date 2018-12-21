@@ -24,8 +24,7 @@ public class Husbando extends CommandGenerics implements Command{
 	}
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
-		Husbandos select=Husbandos.Sieghart;
-		RandomLibs.SelectRandom(Husbandos.values());
+		Husbandos select=RandomLibs.SelectRandom(Husbandos.values());
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setImage(select.url);
 		embed.addField(new Field(select.name, Lib.FormatMessage(event, "%userMention% A Husbando? Your Husbando is "+select.name), false));
@@ -34,7 +33,6 @@ public class Husbando extends CommandGenerics implements Command{
 			int[] rgb = ColorThief.getColor(img);
 			embed.setColor(new Color(rgb[0], rgb[1], rgb[2]));
 		}catch(Exception e){}//suppress errors since color isn't necessary
-		embed.setFooter("Sieghart only Husbando during his story event", null);
 		Lib.sendEmbed(event, embed);
 		Log.log("status", "Husbando found "+select.name);
 	}
