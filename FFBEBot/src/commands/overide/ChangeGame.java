@@ -28,7 +28,7 @@ public class ChangeGame extends OverrideGenerics implements OverrideCommand{
 
 	@Override
 	public void help(MessageReceivedEvent event) {
-
+		Lib.sendMessage(event, "-[state] | -override [game]");
 	}
 
 }
