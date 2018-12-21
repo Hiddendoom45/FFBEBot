@@ -224,7 +224,8 @@ public enum Husbandos {
 	FPritchard(Unit.FPritchard),
 	Lucifer("The Devil",Unit.Lucifer),
 	Arngrim(Unit.Arngrim),
-	Lucian(Unit.Lucian);
+	Lucian(Unit.Lucian),
+	Felix(Unit.Felix);
 	
 
 	public final String name;

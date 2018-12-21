@@ -119,6 +119,7 @@ public enum Banner {
 	GLArtP2("Art Contest Units part 2",new Unit[]{Unit.Beryl,Unit.Ellesperis},BannerRates.LD5.fiveRate(),Lib.concat(Elephim.featured, Elephim.pool),Elephim.include,BannerType.ThreePercent),
 	NierP2("Nier",new Unit[]{Unit.A2,Unit.N2B,Unit.Eve,Unit.N9S,Unit.N21O},BannerRates.D4D5.fiveRate(),Lib.concat(GLArtP2.featured, GLArtP2.pool),GLArtP2.include,BannerType.ThreePercent),
 	Sieghart("Sieghard",new Unit[]{Unit.Sieghart,Unit.Dietlinde,Unit.Theobald,Unit.Cannon},BannerRates.D4.fiveRate(),NierP2.pool,NierP2.include,BannerType.ThreePercent),
+	Christmas3("Winter Mayhem",new Unit[]{Unit.Tiana,Unit.Felix},BannerRates.LD5.fiveRate(),Lib.concat(Sieghart.featured, Sieghart.pool),Sieghart.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;
