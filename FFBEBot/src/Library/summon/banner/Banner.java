@@ -120,6 +120,7 @@ public enum Banner {
 	NierP2("Nier",new Unit[]{Unit.A2,Unit.N2B,Unit.Eve,Unit.N9S,Unit.N21O},BannerRates.D4D5.fiveRate(),Lib.concat(GLArtP2.featured, GLArtP2.pool),GLArtP2.include,BannerType.ThreePercent),
 	Sieghart("Sieghard",new Unit[]{Unit.Sieghart,Unit.Dietlinde,Unit.Theobald,Unit.Cannon},BannerRates.D4.fiveRate(),NierP2.pool,NierP2.include,BannerType.ThreePercent),
 	Christmas3("Winter Mayhem",new Unit[]{Unit.Tiana,Unit.Felix},BannerRates.LD5.fiveRate(),Lib.concat(Sieghart.featured, Sieghart.pool),Sieghart.include,BannerType.ThreePercent),
+	Christmas3_old("Eternal Winter rerun",new Unit[]{Unit.Christine,Unit.Kryla,Unit.WKN,Unit.TinkCarrie,Unit.SRoselia,Unit.Gilbert},BannerRates.T5D4.featuredFive(),Christmas3.pool,Christmas3.include,BannerType.ThreePercentFeatured),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 	public String name;
 	public Unit[] featured;

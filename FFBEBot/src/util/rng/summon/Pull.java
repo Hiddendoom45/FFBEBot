@@ -172,7 +172,7 @@ public class Pull {
 				}
 			}
 			else if(rarity==5){
-				if(next<375){
+				if(next<375||banner.type.featuredOnly){
 					ArrayList<Unit> units = new ArrayList<Unit>();
 					for(Unit u:banner.featured){
 						if(u.baseRarity()==5){
