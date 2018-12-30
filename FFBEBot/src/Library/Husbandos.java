@@ -225,7 +225,9 @@ public enum Husbandos {
 	Lucifer("The Devil",Unit.Lucifer),
 	Arngrim(Unit.Arngrim),
 	Lucian(Unit.Lucian),
-	Felix(Unit.Felix);
+	Felix(Unit.Felix),
+	Sora(Unit.Sora),
+	KHCloud(Unit.KHCloud);
 	
 
 	public final String name;

@@ -820,6 +820,8 @@ public enum Unit{
 	Jelanda("Jelanda",new String[]{"/2/2a/Unit-Jelanda-3.png?version=4359e6e447c07610d1797e978a8b9142","/3/34/Unit-Jelanda-4.png?version=e947007d984634f490bf667882ae2168","/9/9b/Unit-Jelanda-5.png?version=73cad9b74ee9a07645cc2d865369b14b"},3),
 	Tiana("Tiana",new String[]{"/6/63/Unit-Tiana-5.png?version=324bb467e186a8409a8f11828b6b3755","/4/40/Unit-Tiana-6.png?version=f029f350ca81b7e4f00c13b31f8d83d6","/9/94/Unit-Tiana-7.png?version=547dcd1e03870bb6b837f980ef764d9a"},5),
 	Felix("Felix",new String[]{"/c/c2/Unit-Felix-5.png?version=cc765839c8fa7cd7ab06795729f38c11","/8/8f/Unit-Felix-6.png?version=7e4b8c417a0862825f2b44be95eba3d0","/c/cb/Unit-Felix-7.png?version=5c603062865b9effeec608918bbd7901"},5),
+	Sora("Sora",new String[]{"/1/10/Unit-Sora-5.png?version=d0f987c04346885cb875fcded5bd052b","/6/62/Unit-Sora-6.png?version=d65bd433a0c79268257404bbb351c23e","/b/b6/Unit-Sora-7.png?version=878be75fd95cb758c3126dbcbff2533f"},5),
+	KHCloud("Cloud (KH)",new String[]{"/7/71/Unit-Cloud_%28KH%29-5.png?version=7f0c6380d09fdb16fe401a8479709e63","/4/4c/Unit-Cloud_%28KH%29-6.png?version=480b587607275de1e322f537ab6ec497","/0/0c/Unit-Cloud_%28KH%29-7.png?version=ce2443d2cce35d168a429c0fbecb595b"},5),
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),
