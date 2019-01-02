@@ -1,7 +1,9 @@
 package commands;
 
 import java.io.IOException;
+import java.net.URL;
 
+import global.record.Log;
 import global.record.SaveSystem;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.entities.MessageEmbed.Field;
@@ -44,7 +46,13 @@ public class Units extends UnitSelection implements Command,Selection {
 		embed.addField("DEF",def,true);
 		embed.addField("MAG",mag,true);
 		embed.addField("SPR",spr,true);
-		embed.setImage(info.imgOverviewURL);
+		try{
+			//use URL constructor for URL checks to make sure that it is valid
+			new URL(info.imgOverviewURL);
+			embed.setImage(info.imgOverviewURL);
+		}catch(Exception e){
+			Log.log("ERROR", "Unit image broken for "+info.unitName+", url: "+info.imgOverviewURL);
+		}
 		Lib.sendEmbed(event, embed);
 	}
 	public String addStars(String s){
