@@ -692,6 +692,9 @@ public class Lib {
 				}
 			}
 		}
+		if(i.equals("")){
+			return new int[]{};
+		}
 		if(i.endsWith(",")){
 			i=i.substring(0, i.length()-1);
 		}
