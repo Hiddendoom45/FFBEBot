@@ -19,8 +19,10 @@ import util.unit.RedditUnit;
 public class RUnits extends RedditSelection {
 	public void sendUnitData(RedditUnit info,unitData data,MessageReceivedEvent event){
 		EmbedBuilder embed=new EmbedBuilder();
-		if(!(info==null)){
-			embed.setAuthor(""+data.name+" ["+data.JPname+"]"+"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n",info.URL);
+		boolean inull = info==null;
+		embed.setAuthor(""+data.name+" ["+data.JPname+"]"+(inull?"":"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n"),inull?null:info.URL);
+		if(!inull){
+			
 			embed.addField(new Field("TM", info.TrustDetails.substring("Trust Reward = ".length()), false));
 			if(!info.STrustDetails.equals("")){
 				embed.addField(new Field("STM",info.STrustDetails.substring("Super Trust Reward = ".length()),false));
