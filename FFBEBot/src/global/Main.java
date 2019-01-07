@@ -116,6 +116,7 @@ public class Main {
 		CmdControl.addCommand("salty", new Salty(), Module);
 		CmdControl.addCommand("waifu", new Waifu(), Module);
 		CmdControl.addCommand("husbando", new Husbando(), Module);
+		CmdControl.addCommand(new String[]{"sieghard","sieghart"}, new Sieghart(), Module);
 		CmdControl.addCommand("banner", new Banners(), Module);
 		CmdControl.addCommand("banners", new Banners(), Module);
 		CmdControl.addCommand("bannerlist", new Banners(), Module);
