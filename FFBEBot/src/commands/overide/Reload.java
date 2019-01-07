@@ -17,6 +17,12 @@ import util.Lib;
 
 public class Reload implements OverrideCommand {
 
+	public static void main(String[] args){
+		SaveSystem.preloadReddit(null);
+		SaveSystem.preloadExvius(null);
+		SaveSystem.preloadSummons(null);
+		SaveSystem.writeData();
+	}
 	@Override
 	public boolean called(HashMap<String, String[]> args, MessageReceivedEvent event) {
 		return true;
