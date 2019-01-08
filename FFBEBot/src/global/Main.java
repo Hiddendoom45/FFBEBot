@@ -25,6 +25,7 @@ import util.Overrider;
 import util.SpamControl;
 import util.SpamGroup;
 import util.rng.RandomLibs;
+import util.unit.RedditOverview;
 import util.unit.RedditUnit;
 
 public class Main {
@@ -183,6 +184,7 @@ public class Main {
 		Restarter.setup();//starts the threads that queue the bot restarting
 		CounterPool.getPool().setup();//starts the thread for the counter pool
 		RedditUnit.buildRefImg();//builds hashmap for image icons
+		RedditOverview.buildAlias();
 		SaveSystem.setup();//loads all the data
 		Settings.loaded=true;//mark everything as loaded, botListener will now start actually parsing stuff
 		setGame(states.randomReady());//sets the game for a random state
