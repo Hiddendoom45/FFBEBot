@@ -27,7 +27,7 @@ public class Nier extends CommandGenerics implements Command{
 				public void run(){
 					Banner pullBanner = Banner.Nier;
 					try{
-						pullBanner=Banner.NierP2;
+						pullBanner=Banner.Nier2;
 						int num=Integer.parseInt(args[0]);
 						if(num>1000){//capped to 1800 units, beyond this it is close to Discord's 8MB file upload size cap//adjusted to lower
 							num=1000;
