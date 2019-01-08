@@ -14,6 +14,8 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- using gl names with the runit command will get the right unit instead of unit not found
+- all banners follow common naming scheme
 - update banner name so that the Christine banner from last year is called Christmas2, TODO: create common naming scheme for all banners
 - update runit command to be compatible with just links
 - update stat display, cleaner and different stats sorted into columns
@@ -24,9 +26,6 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - added emote command to access all of the emotes the bot uses for various things
 - large update to awaken command, uses emotes for items
 - minor update to lore/equipment commands
-- Various bugfixes most notable the issue of unitsell not working at all
-- Updated unit/runit commands, unit is now fully embed and added STMR parsing
-- Fix a bunch of stuff with regards to the summon simulator, incorrect rates, missing units, banners etc
 
 #### TODO:
 
