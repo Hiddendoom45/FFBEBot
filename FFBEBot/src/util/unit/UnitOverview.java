@@ -60,7 +60,6 @@ public class UnitOverview {
 			}
 			//generate the rows containing unit data
 			Elements data=doc.select("#mw-content-text > .mw-parser-output").first().children();
-			data.first().children().stream().forEach(t -> System.out.println(t.tag()));
 			Elements first=new Elements();
 			first.addAll(Lib.getElesAfter(data, new ElementFilter("h3","Main Character[edit | edit source]")));
 			first.add(Lib.getEleAfter(data, new ElementFilter("h3","Friend Summon[edit | edit source]")));
