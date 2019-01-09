@@ -163,14 +163,18 @@ public class SaveSystem {
 	public static void preloadExvius(Counter count){
 		Gson overviews=new Gson();
 		UnitOverview.unitData[] overview=UnitOverview.preload();
-		Data.exvicusO=overviews.toJson(overview);
+		
 		JsonObject units=new JsonObject();
 		int index=0;
 		if(!(count==null)){count.setMessage("Loading Exvius Units...(%count%/"+overview.length+")");}
 		for(UnitOverview.unitData u:overview){
 			if(!u.isNew){//avoid red text new entries containing nothing
 				try{
-					units.add(u.name,overviews.toJsonTree(new UnitInfo(u.unitUrl)));
+					UnitInfo info = new UnitInfo(u.unitUrl);
+					if(info.No.length>0){
+						u.setID(info.No[0]);
+					}
+					units.add(u.name,overviews.toJsonTree(info));
 				}catch(Exception e){
 					Log.logError(e);
 					units.add(u.name, overviews.toJsonTree(getExviusUnit(u.name)));
@@ -181,14 +185,15 @@ public class SaveSystem {
 			if(!(count==null)){count.setI(index);}
 
 		}
-		if(!(count==null)){count.terminate();}
+		count.setMessage("Updating Internals");
 		Data.exvicusUnits=overviews.toJson(units);
+		Data.exvicusO=overviews.toJson(overview);
+		if(!(count==null)){count.terminate();}
 		Log.log("System", "Exvius Overview Loaded");
 	}
 	public static boolean updateExvius(Counter count){
 		Gson overviews=new Gson();
 		UnitOverview.unitData[] overview=UnitOverview.preload();
-		Data.exvicusO=overviews.toJson(overview);
 		JsonObject units=new JsonParser().parse(Data.exvicusUnits).getAsJsonObject();
 		if(overview.length-units.entrySet().size()==0){
 			if(!(count==null)){count.terminate();}
@@ -200,7 +205,11 @@ public class SaveSystem {
 		for(UnitOverview.unitData u:overview){
 			try{
 				if(units.get(u.name)==null&&u.isNew==false){//if unit is not in array and is nonNew
-					units.add(u.name, overviews.toJsonTree(new UnitInfo(u.unitUrl)));
+					UnitInfo info = new UnitInfo(u.unitUrl);
+					if(info.No.length>0){
+						u.setID(info.No[0]);
+					}
+					units.add(u.name, overviews.toJsonTree(info));
 					index++;
 					if(!(count==null)){count.setI(index);}
 				}
@@ -208,8 +217,10 @@ public class SaveSystem {
 				Log.logError(e);
 			}
 		}
-		if(!(count==null)){count.terminate();}
+		count.setMessage("Updating Internals");
+		Data.exvicusO=overviews.toJson(overview);
 		Data.exvicusUnits=overviews.toJson(units);
+		if(!(count==null)){count.terminate();}
 		Log.log("System", "Exvius Overview Updated");
 		return true;
 	}

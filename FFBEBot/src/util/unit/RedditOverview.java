@@ -18,7 +18,7 @@ import global.record.Settings;
 import util.Lib;
 
 public class RedditOverview {
-	private static final TreeMap<Integer,unitAlias> alias = new TreeMap<Integer,unitAlias>();
+	public static final TreeMap<Integer,unitAlias> alias = new TreeMap<Integer,unitAlias>();
 	public ArrayList<String> possible=new ArrayList<String>();
 	public ArrayList<unitData> possibleData=new ArrayList<unitData>();
 	public RedditOverview(String unitName){
@@ -131,6 +131,7 @@ public class RedditOverview {
 	}
 	public static void buildAlias(){
 		alias.put(126, new unitAlias(126,new String[]{"cod"}));
+		alias.put(222, new unitAlias(222,new String[]{"wol"}));
 		alias.put(385, new unitAlias(385,new String[]{"majin fina","dark fina"}));
 		alias.put(387, new unitAlias(387,new String[]{"eru","elle"}));
 		alias.put(390, new unitAlias(390,new String[]{"ruruka","luka"}));
@@ -192,7 +193,7 @@ public class RedditOverview {
 			this.id = id;
 			this.alias=alias;
 		}
-		private boolean check(String unit){
+		public boolean check(String unit){
 			for(String s:alias){
 				if(s.contains(unit)) return true;
 			}

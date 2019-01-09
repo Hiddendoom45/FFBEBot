@@ -30,9 +30,11 @@ public class UnitOverview {
 		}
 	}
 	public UnitOverview(String unitName){
+		unitName = unitName.toLowerCase();
 		try{
 			for(unitData u:new Gson().fromJson(Data.exvicusO,unitData[].class)){
-				if(u.name.toLowerCase().contains(unitName.toLowerCase())){
+				if(u.name.toLowerCase().contains(unitName)
+						||(u.id!=-1&&RedditOverview.alias.containsKey(u.id)&&RedditOverview.alias.get(u.id).check(unitName))){
 					this.possible.add(u.name);
 					this.possibleData.add(u);
 				}
@@ -108,6 +110,7 @@ public class UnitOverview {
 		public String maxR;
 		public String trustName;
 		public String superTrustName;
+		public int id = -1;
 		public boolean isNew=false;
 		public unitData(Element row){
 			imgUrl=row.getElementsByAttribute("src").first().attr("abs:src");
@@ -131,6 +134,11 @@ public class UnitOverview {
 		}
 		public String toString(){
 			return "imgUrl"+imgUrl+" unitUrl"+unitUrl+" name"+name+" origin"+origin+" role"+role+" baseR"+baseR+" maxR"+maxR+" trust"+trustName+" superTrust"+superTrustName;
+		}
+		public void setID(int i){
+			if(i>0){			
+				this.id = i;
+			}
 		}
 	}
 	public String toString(){
