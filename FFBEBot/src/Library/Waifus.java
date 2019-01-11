@@ -137,6 +137,7 @@ public enum Waifus {
 	Ellesperis(Unit.Ellesperis),
 	Dietlinde(Unit.Dietlinde),
 	Cannon(Unit.Cannon),
+	Tifa(Unit.Tifa),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),

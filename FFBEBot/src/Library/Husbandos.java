@@ -179,6 +179,9 @@ public enum Husbandos {
 	Beryl("The Tonberry",Unit.Beryl),
 	Sieghart("Sieghard :rose:",Unit.Sieghart),
 	Theobald(Unit.Theobald),
+	Vincent(Unit.Vincent),
+	Barret(Unit.Barret),
+	CaitSith(Unit.CaitSith),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

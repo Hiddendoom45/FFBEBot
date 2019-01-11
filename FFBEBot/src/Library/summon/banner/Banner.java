@@ -143,6 +143,7 @@ public enum Banner {
 	Christmas3("Winter Mayhem",new Unit[]{Unit.Tiana,Unit.Felix},BannerRates.LD5.fiveRate(),Lib.concat(Sieghart.featured, Sieghart.pool),Sieghart.include,BannerType.ThreePercent),
 	Christmas3_old("Eternal Winter rerun",new Unit[]{Unit.Christine,Unit.Kryla,Unit.WKN,Unit.TinkCarrie,Unit.SRoselia,Unit.Gilbert},BannerRates.T5D4.featuredFive(),Christmas3.pool,Christmas3.include,BannerType.ThreePercentFeatured),
 	KH("Kingdom Hearts",new Unit[]{Unit.Sora,Unit.KHCloud},BannerRates.LD5.fiveRate(),Christmas3_old.pool,Christmas3_old.include,BannerType.ThreePercent),
+	FF7P1("FFVII",new Unit[]{Unit.Vincent,Unit.Tifa,Unit.Barret,Unit.CaitSith},BannerRates.D5.fiveRate(),KH.pool,KH.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -151,6 +152,7 @@ public enum Banner {
 //	FF4 1,2,3
 //	FF5 1
 //	FF6 1,2
+//  FF7 1
 //	FF8 1
 //	FF9 1
 //	FF10 1,2(+old)
@@ -226,7 +228,10 @@ public enum Banner {
 				Banner.DQ2,
 				Banner.Halloween3,
 				Banner.VP,
-				Banner.Nier2
+				Banner.Nier2,
+				Banner.Christmas3,
+				Banner.Christmas3_old,
+				Banner.KH
 				};
 	}
 	public static boolean LEBanner(Banner banner){

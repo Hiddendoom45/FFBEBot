@@ -701,6 +701,10 @@ public enum Unit{
 	Dietlinde("Dietlinde",new String[]{"/b/be/Unit-Dietlinde-4.png?version=37821c68bdf0b332725c6d963dcccd07","/b/bf/Unit-Dietlinde-5.png?version=ab7e674ea0ce8e2c69d220e461830cbb","/5/58/Unit-Dietlinde-6.png?version=a8a34289d439fc1ce862d944168395f1"},4),
 	Theobald("Theobald",new String[]{"/0/0b/Unit-Theobald-4.png?version=d6fcbb77ca94b3944bd6dec9a32d0b6f","/7/75/Unit-Theobald-5.png?version=e714e8899bfd96879aeb10d04d89547a","/9/98/Unit-Theobald-6.png?version=7a025b7b8177ed1c38fb0c190f71d5fc"},4),
 	Cannon("Cannon",new String[]{"/7/7c/Unit-Cannon-3.png?version=1d1f5fdcdedcde76bee91016f593fd91","/5/54/Unit-Cannon-4.png?version=c6a06839e23824f5bd926678fd1085ee","/b/b1/Unit-Cannon-5.png?version=f0633bf0c179ccad6d054494700186cb"},3),
+	Tifa("Tifa",new String[]{"/0/0f/Unit-Tifa-5.png?version=b9706c7d53c8c9b47ea843b1d039c787","/d/d3/Unit-Tifa-6.png?version=6c86d6a990b031871d15db7cb9b5b8e4","/b/bf/Unit-Tifa-7.png?version=c75df904b6799447f39cef87fa1a7789"},5),
+	Vincent("Vincent",new String[]{"/f/f2/Unit-Vincent-5.png?version=0fcf6c3aa1bc1eb9eb9e919994ee2248","/a/af/Unit-Vincent-6.png?version=11f29be01a68a8ea9943ad6d6046850b","/7/77/Unit-Vincent-7.png?version=4957c3063b632ec05ca84153c42c7f1e"},5),
+	Barret("Barret",new String[]{"/9/9a/Unit-Barret-4.png?version=e34345fd18345f22c0f28ffd07f00e14","/5/57/Unit-Barret-5.png?version=72a3473a5dd027f4724190314bcec37b","/5/58/Unit-Barret-6.png?version=79528258de1240337f0aff0c81ed6ba4"},4),
+	CaitSith("Cait Sith",new String[]{"/c/c3/Unit-Cait_Sith-3.png?version=7634230b831c20424fc9630002dc0c91","/8/82/Unit-Cait_Sith-4.png?version=7af84085d2cad660cde60420d1138a26","/0/04/Unit-Cait_Sith-5.png?version=321caa0333ea7483eb2677b813118a0b"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1274,7 +1278,11 @@ public enum Unit{
 				Sieghart,
 				Dietlinde,
 				Theobald,
-				Cannon
+				Cannon,
+				Tifa,
+				Vincent,
+				Barret,
+				CaitSith
 
 		});
 	}
