@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- update unit command so jp names work and ids (for the base unit) also works
 - using gl names with the runit command will get the right unit instead of unit not found
 - all banners follow common naming scheme
 - update banner name so that the Christine banner from last year is called Christmas2, TODO: create common naming scheme for all banners
