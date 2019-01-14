@@ -26,6 +26,7 @@ import com.google.api.services.drive.model.File;
 import global.record.Log;
 import global.record.Secrets;
 import global.record.Settings;
+import util.unit.UnitAlias;
 
 /**
  * Used to manage files on google drive on a basic level, only uploading and downloading atm
@@ -121,6 +122,7 @@ public class DriveManager {
 			//disable preload download if on test bot
 			if(!Settings.token.equals(Secrets.testToken))DriveManager.download(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
 			DriveManager.download(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+			DriveManager.download(new DriveFile(UnitAlias.saveLoc.getName(),DataEnum.AliasJSON.id));
 		} catch (IOException e) {
 			Log.logShortError(e, 6);
 		}

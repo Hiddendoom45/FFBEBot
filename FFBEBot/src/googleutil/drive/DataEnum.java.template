@@ -11,6 +11,7 @@ public enum DataEnum {
 	FFBEData(""), 
 	PreloadData(""), 
 	LogSource("");
+	AliasJSON("");
 	public String id;
 	DataEnum(String id){
 		this.id=id;
