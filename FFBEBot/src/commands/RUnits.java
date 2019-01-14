@@ -23,9 +23,9 @@ public class RUnits extends RedditSelection {
 		embed.setAuthor(""+data.name+" ["+data.JPname+"]"+(inull?"":"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n"),inull?null:info.URL);
 		if(!inull){
 			
-			embed.addField(new Field("TM", info.TrustDetails.substring("Trust Reward = ".length()), false));
+			embed.addField(new Field("TM - "+info.TrustName, info.TrustDetails, false));
 			if(!info.STrustDetails.equals("")){
-				embed.addField(new Field("STM",info.STrustDetails.substring("Super Trust Reward = ".length()),false));
+				embed.addField(new Field("STM - "+info.STrustName,info.STrustDetails,false));
 			}
 			String hp = "";
 			String mp = "";
@@ -34,14 +34,14 @@ public class RUnits extends RedditSelection {
 			String mag = "";
 			String spr = "";
 			for(int i = 0; i < info.stats.length; i++){
-				hp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].HP, 10)+"\n";
-				mp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MP, 10)+"\n";
-				atk+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].ATK, 10)+"\n";
-				def+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].DEF, 10)+"\n";
-				mag+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MAG, 10)+"\n";
-				spr+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].SPR, 10)+"\n";
+				hp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].HP.toString(), 10)+"\n";
+				mp+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MP.toString(), 10)+"\n";
+				atk+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].ATK.toString(), 10)+"\n";
+				def+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].DEF.toString(), 10)+"\n";
+				mag+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].MAG.toString(), 10)+"\n";
+				spr+=info.stats[i].rarity+"★:"+Lib.pad(info.stats[i].SPR.toString(), 10)+"\n";
 			}
-			embed.addField(new Field("Stats","basevalue/maxvalue(pot cap)[doorpot cap]",false));
+			embed.addField(new Field("Stats","basevalue/maxvalue\n pot cap + (doorpot cap)",false));
 			embed.addField("HP",hp,true);
 			embed.addField("MP",mp,true);
 			embed.addField("ATK",atk,true);

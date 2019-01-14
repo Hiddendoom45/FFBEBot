@@ -17,8 +17,11 @@ public class RedditUnit {
 	private static HashMap<String,String> refImg=new HashMap<String,String>();
 	public String URL="";
 	public String title="";
-	public String JobTribe="";
+	public String Job = "";
+	public String Tribe="";
+	public String TrustName="";
 	public String TrustDetails="";
+	public String STrustName="";
 	public String STrustDetails="";
 	public String[] growth=new String[]{};
 	public int baseR=0;
@@ -48,21 +51,16 @@ public class RedditUnit {
 			try{
 				title=content.getElementsByTag("h2").first().text();
 				Element headerBox = content.getElementsByTag("h2").first();
-				while(!headerBox.tagName().equals("ul")){
+				while(!headerBox.tagName().equals("table")){
 					headerBox = headerBox.nextElementSibling();
 				}
-				JobTribe=headerBox.child(0).text();
-				TrustDetails=Lib.parseText(headerBox.child(1));
-				if(headerBox.children().size()>2){
-					STrustDetails=headerBox.child(2).text().startsWith("Super Trust Reward = ")?Lib.parseText(headerBox.child(2)):"";
-				}
-				if(TrustDetails.contains("Tribe")){
-					JobTribe+=headerBox.child(1).text();
-					TrustDetails=Lib.parseText(headerBox.child(2));
-					if(headerBox.children().size()>3){
-						STrustDetails=headerBox.child(3).text().startsWith("Super Trust Reward = ")?Lib.parseText(headerBox.child(3)):"";
-					}
-				} 
+				headerBox = headerBox.getElementsByTag("tbody").first().child(0);
+				Job = headerBox.child(0).text();
+				Tribe = headerBox.child(1).text();
+				TrustName = Lib.parseText(headerBox.child(2));
+				TrustDetails = Lib.parseText(headerBox.child(3));
+				STrustName = Lib.parseText(headerBox.child(4));
+				STrustDetails = Lib.parseText(headerBox.child(5));
 			}catch(Exception e){
 				Log.log("ERROR", "error parsing basic info for page "+page);
 				Log.logShortError(e, 5);

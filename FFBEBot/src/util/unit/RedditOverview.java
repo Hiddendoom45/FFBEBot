@@ -84,6 +84,7 @@ public class RedditOverview {
 		public String role;
 		public int baseR;
 		public int maxR;
+		public String family;
 		public String enhanceBatch;
 		public unitData(Element row){
 			try{
@@ -118,6 +119,7 @@ public class RedditOverview {
 			JPname=names[1].trim();
 			origin=row.child(4).text();
 			role=row.child(5).text();
+			family=row.child(6).text();
 			baseR=(int)row.child(7).text().codePoints().filter(c -> c=='★').count();
 			maxR=baseR+(int)row.child(7).text().codePoints().filter(c -> c=='✰').count();
 			enhanceBatch = row.child(8).text();
