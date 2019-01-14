@@ -39,6 +39,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.unit.RedditOverview;
 import util.unit.RedditUnit;
+import util.unit.UnitAlias;
 import util.unit.UnitInfo;
 import util.unit.UnitOverview;
 /**
@@ -118,7 +119,9 @@ public class SaveSystem {
 			index++;
 			if(!(count==null)){count.setI(index);}
 		}
-		
+		count.setMessage("Updating Aliases...");
+		UnitAlias.dumpReddit(overview);
+		UnitAlias.serialize();
 		if(!(count==null)){count.terminate();}
 		Data.redditUnits=overviews.toJson(units);
 		Log.log("System", "Reddit Overview Loaded");
@@ -149,7 +152,9 @@ public class SaveSystem {
 				Log.logError(e);
 			}
 		}
-		
+		count.setMessage("Updating Aliases...");
+		UnitAlias.dumpReddit(overview);
+		UnitAlias.serialize();
 		if(!(count==null)){count.terminate();}
 		Data.redditUnits=overviews.toJson(units);
 		Log.log("System", "Reddit Overview Updated");
@@ -188,6 +193,9 @@ public class SaveSystem {
 		count.setMessage("Updating Internals");
 		Data.exvicusUnits=overviews.toJson(units);
 		Data.exvicusO=overviews.toJson(overview);
+		count.setMessage("Updating Aliases...");
+		UnitAlias.dumpExivus(overview);
+		UnitAlias.serialize();
 		if(!(count==null)){count.terminate();}
 		Log.log("System", "Exvius Overview Loaded");
 	}
@@ -220,6 +228,9 @@ public class SaveSystem {
 		count.setMessage("Updating Internals");
 		Data.exvicusO=overviews.toJson(overview);
 		Data.exvicusUnits=overviews.toJson(units);
+		count.setMessage("Updating Aliases...");
+		UnitAlias.dumpExivus(overview);
+		UnitAlias.serialize();
 		if(!(count==null)){count.terminate();}
 		Log.log("System", "Exvius Overview Updated");
 		return true;

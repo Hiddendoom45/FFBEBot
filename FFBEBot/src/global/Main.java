@@ -27,6 +27,7 @@ import util.SpamGroup;
 import util.rng.RandomLibs;
 import util.unit.RedditOverview;
 import util.unit.RedditUnit;
+import util.unit.UnitAlias;
 
 public class Main {
 	public static JDA jda;//JDA of bot 
@@ -185,6 +186,7 @@ public class Main {
 		CounterPool.getPool().setup();//starts the thread for the counter pool
 		RedditUnit.buildRefImg();//builds hashmap for image icons
 		RedditOverview.buildAlias();
+		UnitAlias.deserialize();//load all the aliases for various units from file
 		SaveSystem.setup();//loads all the data
 		Settings.loaded=true;//mark everything as loaded, botListener will now start actually parsing stuff
 		setGame(states.randomReady());//sets the game for a random state
