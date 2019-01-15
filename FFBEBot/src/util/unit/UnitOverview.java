@@ -32,9 +32,12 @@ public class UnitOverview {
 	public UnitOverview(String unitName){
 		unitName = unitName.toLowerCase();
 		try{
+			int uNum=-1;
+			if(Lib.isNumber(unitName)){
+				uNum=Lib.extractNumber(unitName);
+			}
 			for(unitData u:new Gson().fromJson(Data.exvicusO,unitData[].class)){
-				if(u.name.toLowerCase().contains(unitName)
-						||(u.id!=-1&&RedditOverview.alias.containsKey(u.id)&&RedditOverview.alias.get(u.id).check(unitName))){
+				if(uNum>-1&&u.id==uNum||UnitAlias.testAlias(unitName, u.id)){
 					this.possible.add(u.name);
 					this.possibleData.add(u);
 				}

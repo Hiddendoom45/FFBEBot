@@ -29,10 +29,7 @@ public class RedditOverview {
 				uNum=Lib.extractNumber(unitName);
 			}
 			for(unitData u:new Gson().fromJson(Data.redditO,unitData[].class)){
-				if(uNum>-1&&u.unitID==uNum
-						||u.name.toLowerCase().contains(unitName)
-						||u.JPname.toLowerCase().contains(unitName)
-						||(alias.containsKey(u.unitID)&&alias.get(u.unitID).check(unitName))){
+				if(uNum>-1&&u.unitID==uNum||UnitAlias.testAlias(unitName, u.unitID)){
 					this.possible.add(u.name);
 					this.possibleData.add(u);
 				}

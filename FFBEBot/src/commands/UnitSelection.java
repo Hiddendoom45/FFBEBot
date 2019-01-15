@@ -30,7 +30,8 @@ public abstract class UnitSelection extends CommandGenerics implements Command, 
 			String name="";
 			//extract name, including spaces, numbers=rarity
 			for(int i=0;i<args.length;i++){
-				if(i==(args.length-1)&&Lib.isNumber(args[i])){
+				//ignore first arg for case that it's unitid
+				if(i>0&&i==(args.length-1)&&Lib.isNumber(args[i])){
 					rarity=Integer.parseInt(args[i]);
 				}
 				else{

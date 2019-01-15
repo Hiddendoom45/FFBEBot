@@ -82,6 +82,12 @@ public class UnitAlias{
 			}
 		}
 	}
+	public static boolean testAlias(String s,int id){
+		if(aliases.containsKey(id)){
+			return aliases.get(id).containsAlias(s);
+		}
+		return false;
+	}
 	//basic stuff
 	private int id;
 	private String rJPName="";
