@@ -21,6 +21,7 @@ public class RUnits extends RedditSelection {
 		EmbedBuilder embed=new EmbedBuilder();
 		boolean inull = info==null;
 		embed.setAuthor(""+data.name+" ["+data.JPname+"]"+(inull?"":"\t"+"Rarity:"+info.baseR+"-"+info.maxR+"\n"),inull?null:info.URL);
+		embed.setDescription("Job: "+info.Job+", Tribe: "+info.Tribe+" #"+data.unitID);
 		if(!inull){
 			
 			embed.addField(new Field("TM - "+info.TrustName, info.TrustDetails, false));
