@@ -25,7 +25,6 @@ import util.Overrider;
 import util.SpamControl;
 import util.SpamGroup;
 import util.rng.RandomLibs;
-import util.unit.RedditOverview;
 import util.unit.RedditUnit;
 import util.unit.UnitAlias;
 
@@ -185,7 +184,6 @@ public class Main {
 		Restarter.setup();//starts the threads that queue the bot restarting
 		CounterPool.getPool().setup();//starts the thread for the counter pool
 		RedditUnit.buildRefImg();//builds hashmap for image icons
-		RedditOverview.buildAlias();
 		UnitAlias.deserialize();//load all the aliases for various units from file
 		SaveSystem.setup();//loads all the data
 		Settings.loaded=true;//mark everything as loaded, botListener will now start actually parsing stuff
