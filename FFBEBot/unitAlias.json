@@ -685,7 +685,9 @@
     "rJPName": "ララ・クロフト",
     "rENName": "lara croft",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "lara_croft"
+    ]
   },
   {
     "id": 161,
@@ -748,7 +750,9 @@
     "rJPName": "たまねぎ剣士レフィア",
     "rENName": "onion knight refia",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "okrefia"
+    ]
   },
   {
     "id": 171,
@@ -1317,7 +1321,9 @@
     "rJPName": "漆黒の魔道士ゴルベーザ",
     "rENName": "dark mage golbez",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "swolbez"
+    ]
   },
   {
     "id": 286,
@@ -1366,7 +1372,9 @@
     "rJPName": "暗黒騎士セシル",
     "rENName": "dark knight cecil",
     "eENName": "dark knight cecil",
-    "otherAlias": []
+    "otherAlias": [
+      "dkc"
+    ]
   },
   {
     "id": 1318,
@@ -1597,14 +1605,18 @@
     "rJPName": "フィガロの王エドガー",
     "rENName": "king edgar",
     "eENName": "figaro king edgar",
-    "otherAlias": []
+    "otherAlias": [
+      "kedgar"
+    ]
   },
   {
     "id": 1382,
     "rJPName": "コルツの格闘家マッシュ",
     "rENName": "fighter sabin",
     "eENName": "kolts monk sabin",
-    "otherAlias": []
+    "otherAlias": [
+      "fsabin"
+    ]
   },
   {
     "id": 360,
@@ -1803,7 +1815,9 @@
     "rJPName": "晴れ着アヤカ",
     "rENName": "kimono ayaka",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "kayaka"
+    ]
   },
   {
     "id": 412,
@@ -1817,7 +1831,10 @@
     "rJPName": "ドレスアップアイリーン",
     "rENName": "dress up eileen",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "duaileen",
+      "dueileen"
+    ]
   },
   {
     "id": 415,
@@ -2041,7 +2058,9 @@
     "rJPName": "光の戦士レナ",
     "rENName": "light warrior lenna",
     "eENName": "warrior of light lenna",
-    "otherAlias": []
+    "otherAlias": [
+      "lwlenna"
+    ]
   },
   {
     "id": 461,
@@ -2160,7 +2179,9 @@
     "rJPName": "クラウド(キングダム ハーツ)",
     "rENName": "kh cloud",
     "eENName": "cloud (kh)",
-    "otherAlias": []
+    "otherAlias": [
+      "khcloud"
+    ]
   },
   {
     "id": 485,
@@ -2195,7 +2216,9 @@
     "rJPName": "晴れ着フィーナ",
     "rENName": "kimono fina",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "kfina"
+    ]
   },
   {
     "id": 493,
@@ -2209,7 +2232,9 @@
     "rJPName": "魔導戦士ティナ",
     "rENName": "(cg) magitek warrior terra",
     "eENName": "magitek warrior terra",
-    "otherAlias": []
+    "otherAlias": [
+      "mwterra"
+    ]
   },
   {
     "id": 496,
@@ -2223,7 +2248,9 @@
     "rJPName": "冒険者ロック",
     "rENName": "adventurer locke",
     "eENName": "treasure hunter locke",
-    "otherAlias": []
+    "otherAlias": [
+      "alocke"
+    ]
   },
   {
     "id": 498,
@@ -2384,14 +2411,19 @@
     "rJPName": "傭兵ラムザ",
     "rENName": "mercenary ramza",
     "eENName": "mercenary ramza",
-    "otherAlias": []
+    "otherAlias": [
+      "",
+      "mramza"
+    ]
   },
   {
     "id": 563,
     "rJPName": "騎士ディリータ",
     "rENName": "knight delita",
     "eENName": "knight delita",
-    "otherAlias": []
+    "otherAlias": [
+      "kdelita"
+    ]
   },
   {
     "id": 567,
@@ -2454,7 +2486,9 @@
     "rJPName": "たまねぎ剣士",
     "rENName": "onion knight",
     "eENName": "onion knight",
-    "otherAlias": []
+    "otherAlias": [
+      "ok"
+    ]
   },
   {
     "id": 591,
