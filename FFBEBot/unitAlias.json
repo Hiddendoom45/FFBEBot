@@ -536,7 +536,9 @@
     "rJPName": "くらやみのくも",
     "rENName": "cloud of darkness",
     "eENName": "cloud of darkness",
-    "otherAlias": ["cod"]
+    "otherAlias": [
+      "cod"
+    ]
   },
   {
     "id": 129,
@@ -984,7 +986,9 @@
     "rJPName": "光の戦士",
     "rENName": "warrior of light",
     "eENName": "warrior of light",
-    "otherAlias": ["wol"]
+    "otherAlias": [
+      "wol"
+    ]
   },
   {
     "id": 1246,
@@ -1642,7 +1646,10 @@
     "rJPName": "フォルカ\u0026シトラ2018夏",
     "rENName": "summer folka \u0026 citra",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "cilka",
+      "fitra"
+    ]
   },
   {
     "id": 1395,

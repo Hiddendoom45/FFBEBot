@@ -14,6 +14,7 @@ import googleutil.drive.DriveManager;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
+import util.unit.UnitAlias;
 
 public class Reload implements OverrideCommand {
 
@@ -62,7 +63,10 @@ public class Reload implements OverrideCommand {
 					SaveSystem.preloadSummons(count);
 				}
 				SaveSystem.writeData();//write data to file
-				if(!Settings.token.equals(Secrets.testToken))DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+				if(!Settings.token.equals(Secrets.testToken)){
+					DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+					DriveManager.update(new DriveFile(UnitAlias.saveLoc.getName(),DataEnum.AliasJSON.id));
+				}
 				Main.setGame(states.randomReady());//set state to ready again
 				Lib.sendMessage(event, "Data reloaded");
 				}

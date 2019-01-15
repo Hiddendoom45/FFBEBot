@@ -14,6 +14,7 @@ import googleutil.drive.DriveManager;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Counter;
 import util.Lib;
+import util.unit.UnitAlias;
 
 public class Update extends OverrideGenerics implements OverrideCommand {
 
@@ -56,7 +57,10 @@ public class Update extends OverrideGenerics implements OverrideCommand {
 					Main.setGame(states.randomReady());
 					if(updated){
 						SaveSystem.writeData();
-						if(!Settings.token.equals(Secrets.testToken))DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+						if(!Settings.token.equals(Secrets.testToken)){
+							DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
+							DriveManager.update(new DriveFile(UnitAlias.saveLoc.getName(),DataEnum.AliasJSON.id));
+						}
 						Lib.sendMessage(event, "Data Updated");
 					}
 					else{

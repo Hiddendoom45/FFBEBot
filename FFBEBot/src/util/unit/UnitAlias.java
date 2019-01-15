@@ -29,7 +29,6 @@ public class UnitAlias{
 		ArrayList<UnitAlias> alias = new ArrayList<UnitAlias>();
 		for(int i:aliases.keySet()){
 			alias.add(aliases.get(i));
-			System.out.println(gson.toJson(aliases.get(i)));
 		}
 		try(BufferedWriter out = Files.newBufferedWriter(saveLoc.toPath(),StandardOpenOption.CREATE)){
 			gson.toJson(alias.toArray(new UnitAlias[]{}), out);
@@ -115,6 +114,9 @@ public class UnitAlias{
 			if(!eENName.equals(""))otherAlias.add(eENName);
 			eENName=name.toLowerCase();
 		}
+	}
+	public void addAlias(String name){
+		otherAlias.add(name.toLowerCase());
 	}
 	public boolean containsAlias(String name){
 		if(rJPName.contains(name)) return true;

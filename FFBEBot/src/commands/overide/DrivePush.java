@@ -9,6 +9,7 @@ import googleutil.drive.DriveFile;
 import googleutil.drive.DriveManager;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
+import util.unit.UnitAlias;
 
 public class DrivePush extends OverrideGenerics implements OverrideCommand{
 
@@ -17,6 +18,7 @@ public class DrivePush extends OverrideGenerics implements OverrideCommand{
 		DriveManager.update(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
 		DriveManager.update(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
 		DriveManager.update(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+		DriveManager.update(new DriveFile(UnitAlias.saveLoc.getName(),DataEnum.AliasJSON.id));
 		Lib.sendMessage(event, "Pushed files to Google Drive");
 	}
 

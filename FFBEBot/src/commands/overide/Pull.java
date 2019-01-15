@@ -10,6 +10,7 @@ import googleutil.drive.DriveFile;
 import googleutil.drive.DriveManager;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import util.Lib;
+import util.unit.UnitAlias;
 
 public class Pull extends OverrideGenerics implements OverrideCommand{
 
@@ -18,6 +19,7 @@ public class Pull extends OverrideGenerics implements OverrideCommand{
 		DriveManager.download(new DriveFile(Settings.dataSource,DataEnum.FFBEData.id));
 		DriveManager.download(new DriveFile(Settings.preloadData,DataEnum.PreloadData.id));
 		DriveManager.download(new DriveFile(Log.LogSource,DataEnum.LogSource.id));
+		DriveManager.download(new DriveFile(UnitAlias.saveLoc.getName(),DataEnum.AliasJSON.id));
 		SaveSystem.load();
 		Lib.sendMessage(event, "Files pulled from Drive and reloaded");
 	}
