@@ -21,7 +21,7 @@ public class PostgresDB{
 			conn = Secrets.getPostgresConnection();
 			useQuery = conn.prepareStatement("SELECT * FROM analyticinfo WHERE classname = ?");
 			usePost = conn.prepareStatement("UPDATE analyticinfo SET usecount = ? WHERE classname = ?");
-			useNew = conn.prepareCall("INSERT INTO analyticinfo VALUES (?,1,?)");
+			useNew = conn.prepareStatement("INSERT INTO analyticinfo VALUES (?,1,?)");
 		}catch(SQLException e){
 			Log.log("ERROR", "Failed to connect to postgres server");
 		}
