@@ -3,6 +3,7 @@ package commands;
 import java.util.Arrays;
 
 import global.record.Log;
+import global.record.PostgresDB;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 /**
@@ -15,6 +16,7 @@ public abstract class CommandGenerics implements Command {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		Log.log("status", this.getClass()+" called by "+event.getAuthor().getName()+getGuildName(event)+" args "+Arrays.toString(args));
+		PostgresDB.logCommandUse(getClass());
 		event.getChannel().sendTyping().queue();
 		return true;
 	}

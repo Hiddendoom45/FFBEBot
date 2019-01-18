@@ -9,6 +9,7 @@ import commands.*;
 import commands.mod.*;
 import commands.overide.*;
 import global.record.Log;
+import global.record.PostgresDB;
 import global.record.SaveSystem;
 import global.record.Secrets;
 import global.record.Settings;
@@ -187,6 +188,7 @@ public class Main {
 		RedditUnit.buildRefImg();//builds hashmap for image icons
 		UnitAlias.deserialize();//load all the aliases for various units from file
 		SaveSystem.setup();//loads all the data
+		PostgresDB.setup();//connects to database server
 		Settings.loaded=true;//mark everything as loaded, botListener will now start actually parsing stuff
 		setGame(states.randomReady());//sets the game for a random state
 		

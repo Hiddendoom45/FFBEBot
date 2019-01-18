@@ -3,6 +3,7 @@ package commands;
 import java.time.OffsetDateTime;
 
 import global.Main;
+import global.record.PostgresDB;
 import global.record.SaveSystem;
 import net.dv8tion.jda.core.entities.ChannelType;
 import net.dv8tion.jda.core.entities.Message;
@@ -18,6 +19,7 @@ public class Ping extends CommandGenerics implements Command{
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		Main.log("status", "Pinged with "+event.getAuthor().getName()+(event.isFromType(ChannelType.PRIVATE)?"":" on "+event.getGuild().getName()));
+		PostgresDB.logCommandUse(getClass());
 		event.getChannel().sendTyping();
 		return SpamControl.isSpam(event, "ping");
 	}
