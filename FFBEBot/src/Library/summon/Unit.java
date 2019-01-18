@@ -705,6 +705,10 @@ public enum Unit{
 	Vincent("Vincent",new String[]{"/f/f2/Unit-Vincent-5.png?version=0fcf6c3aa1bc1eb9eb9e919994ee2248","/a/af/Unit-Vincent-6.png?version=11f29be01a68a8ea9943ad6d6046850b","/7/77/Unit-Vincent-7.png?version=4957c3063b632ec05ca84153c42c7f1e"},5),
 	Barret("Barret",new String[]{"/9/9a/Unit-Barret-4.png?version=e34345fd18345f22c0f28ffd07f00e14","/5/57/Unit-Barret-5.png?version=72a3473a5dd027f4724190314bcec37b","/5/58/Unit-Barret-6.png?version=79528258de1240337f0aff0c81ed6ba4"},4),
 	CaitSith("Cait Sith",new String[]{"/c/c3/Unit-Cait_Sith-3.png?version=7634230b831c20424fc9630002dc0c91","/8/82/Unit-Cait_Sith-4.png?version=7af84085d2cad660cde60420d1138a26","/0/04/Unit-Cait_Sith-5.png?version=321caa0333ea7483eb2677b813118a0b"},3),
+	Folka("Folka",new String[]{"/4/49/Unit-Folka-5.png?version=28e987550996a41ce4896462da0790fe","/7/72/Unit-Folka-6.png?version=22f8a1d6f09e594832cf581bf8173770","/0/08/Unit-Folka-7.png?version=1d77536c31290158255e03ccc4d69f2e"},5),
+	Yubel("Yubel",new String[]{"/6/6e/Unit-Yubel-4.png?version=5b9c77ea7cdc73abbd2357e7b3acb0b9","/9/96/Unit-Yubel-5.png?version=88dca068cc63c968437989fc717a4011","/3/38/Unit-Yubel-6.png?version=06fab050d9227c949e20ea66ab538010"},4),
+	Kihana("Kihana",new String[]{"/8/8b/Unit-Kihana-4.png?version=addca15d54f947dbb15a54d040d6fc29","/d/d3/Unit-Kihana-5.png?version=b4ff64c1f227384226d3382511838a93","/c/c5/Unit-Kihana-6.png?version=826db4243547e13a6b6109e4a7b3944f"},4),
+	Ichor("Ichor",new String[]{"/d/d3/Unit-Ichor-3.png?version=b7607f8438b7646f20df0ddd15dc481d","/8/8b/Unit-Ichor-4.png?version=2ddf206796e4f0bc960a9d5ed313c612","/a/a3/Unit-Ichor-5.png?version=8559fd0c79f4909e9f54f9330d7ec85b"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1282,7 +1286,11 @@ public enum Unit{
 				Tifa,
 				Vincent,
 				Barret,
-				CaitSith
+				CaitSith,
+				Folka,
+				Yubel,
+				Kihana,
+				Ichor
 
 		});
 	}

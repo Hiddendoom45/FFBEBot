@@ -144,6 +144,7 @@ public enum Banner {
 	Christmas3_old("Eternal Winter rerun",new Unit[]{Unit.Christine,Unit.Kryla,Unit.WKN,Unit.TinkCarrie,Unit.SRoselia,Unit.Gilbert},BannerRates.T5D4.featuredFive(),Christmas3.pool,Christmas3.include,BannerType.ThreePercentFeatured),
 	KH("Kingdom Hearts",new Unit[]{Unit.Sora,Unit.KHCloud},BannerRates.LD5.fiveRate(),Christmas3_old.pool,Christmas3_old.include,BannerType.ThreePercent),
 	FF7P1("FFVII",new Unit[]{Unit.Vincent,Unit.Tifa,Unit.Barret,Unit.CaitSith},BannerRates.D5.fiveRate(),KH.pool,KH.include,BannerType.ThreePercent),
+	Folka("Folka",new Unit[]{Unit.Folka,Unit.Yubel,Unit.Kihana,Unit.Ichor},BannerRates.D4.fiveRate(),Lib.concat(FF7P1.featured, FF7P1.pool),FF7P1.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
