@@ -14,6 +14,8 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- aliases are interchangable between the runit and unit commands, en,jp names and id can be used to search with both runit and unit (and all releated commands)
+- update to runit command and parser for new format for reddit wiki
 - update unit command so jp names work and ids (for the base unit) also works
 - using gl names with the runit command will get the right unit instead of unit not found
 - all banners follow common naming scheme
@@ -24,9 +26,6 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - update to runit, displays links for exvius.gg and famitsu
 - fix various issues with unit links with runit/unit
 - remove give command, update help command
-- added emote command to access all of the emotes the bot uses for various things
-- large update to awaken command, uses emotes for items
-- minor update to lore/equipment commands
 
 #### TODO:
 
