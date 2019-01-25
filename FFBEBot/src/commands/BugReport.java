@@ -14,7 +14,7 @@ public class BugReport extends CommandGenerics implements Command {
 		if(Settings.blacklist.contains(event.getAuthor().getId())){
 			return;
 		}
-		if(args.length>=0){
+		if(args.length>0){
 			String s="";
 			s+=Lib.debugGuildUser(event)+"\n"+Lib.extract(args);
 			Main.jda.getGuildById(Secrets.testServerID).getTextChannelById(Secrets.bugChannelID).sendMessage(s).complete();

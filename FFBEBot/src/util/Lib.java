@@ -741,7 +741,7 @@ public class Lib {
 		for(String s:args){
 			out+=" "+s;
 		}
-		return out.substring(1);
+		return out.length()>0?out.substring(1):out;
 	}
 	public static <T> T[] concat(T[] first, T[] second) {
 		  T[] result = Arrays.copyOf(first, first.length + second.length);
