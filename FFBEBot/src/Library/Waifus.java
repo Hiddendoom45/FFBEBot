@@ -193,7 +193,8 @@ public enum Waifus {
 	Lenneth(Unit.Lenneth),
 	VPFreya(Unit.VPFreya),
 	Jelanda(Unit.Jelanda),
-	Tiana(Unit.Tiana);
+	Tiana(Unit.Tiana),
+	Sophia(Unit.Sophia);
 	
 	
 	
