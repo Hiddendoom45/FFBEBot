@@ -28,7 +28,7 @@ public class UnitAlias{
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		ArrayList<UnitAlias> alias = new ArrayList<UnitAlias>();
 		for(int i:aliases.keySet()){
-			alias.add(aliases.get(i));
+			alias.add(aliases.get(i).dedupe());
 		}
 		try(BufferedWriter out = Files.newBufferedWriter(saveLoc.toPath(),StandardOpenOption.CREATE)){
 			gson.toJson(alias.toArray(new UnitAlias[]{}), out);
@@ -97,26 +97,52 @@ public class UnitAlias{
 	public UnitAlias(int id){
 		this.id=id;
 	}
-	public void setRJPName(String name){
+	public UnitAlias setRJPName(String name){
 		if(!name.equals(rJPName)){
 			if(!rJPName.equals(""))otherAlias.add(rJPName);
 			rJPName=name.toLowerCase();
 		}
+		return this;
 	}
-	public void setRENName(String name){
+	public UnitAlias setRENName(String name){
 		if(!name.equals(rENName)){
 			if(!rENName.equals(""))otherAlias.add(rENName);
 			rENName=name.toLowerCase();
 		}
+		return this;
 	}
-	public void setEENName(String name){
+	public UnitAlias setEENName(String name){
 		if(!name.equals(eENName)){
 			if(!eENName.equals(""))otherAlias.add(eENName);
 			eENName=name.toLowerCase();
 		}
+		return this;
 	}
-	public void addAlias(String name){
+	public UnitAlias addAlias(String name){
 		otherAlias.add(name.toLowerCase());
+		return this;
+	}
+	public UnitAlias dedupe(){
+		String[] remove = new String[otherAlias.size()];
+		int i = 0;
+		for(String s:otherAlias){
+			if(rJPName.equals(s)){
+				remove[i]=s;
+				i++;
+			}
+			else if(rENName.equals(s)){
+				remove[i]=s;
+				i++;
+			}
+			else if(eENName.equals(s)){
+				remove[i]=s;
+				i++;
+			}
+		}
+		for(String s:remove){
+			otherAlias.remove(s);
+		}
+		return this;
 	}
 	public boolean containsAlias(String name){
 		if(rJPName.contains(name)) return true;
