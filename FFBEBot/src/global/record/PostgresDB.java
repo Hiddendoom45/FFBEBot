@@ -27,7 +27,7 @@ public class PostgresDB{
 		}
 	}
 	public static void logCommandUse(Class<?> c){
-		if(!(conn==null)){
+		if(!(conn==null)&&!Settings.token.equals(Secrets.testToken)){
 			try{
 				useQuery.setString(1, ""+c.getSimpleName());
 				ResultSet rs = useQuery.executeQuery();
@@ -45,6 +45,33 @@ public class PostgresDB{
 				Log.logError(e);
 			}
 			
+		}
+	}
+	public static String grepClass(String classSimpleName){
+		if(!(conn==null)){
+			try{
+				PreparedStatement ps = conn.prepareStatement("SELECT * FROM analyticinfo WHERE classname = ?");
+				ps.setString(1, classSimpleName);
+				ResultSet rs = ps.executeQuery();
+				if(rs.next()){
+					return rs.getString("classname")+ " uses: "+rs.getInt("usecount")+"\n";
+				}
+				else{
+					return classSimpleName+" not found\n";
+				}
+			}catch(SQLException e){
+				Log.logError(e);
+			}
+		}
+		return "error\n";
+	}
+	public static void purgeCommandUse(){
+		if(!(conn==null)){
+			try{
+				conn.createStatement().execute("DELETE FROM analyticinfo");
+			}catch(SQLException e){
+				Log.logError(e);
+			}
 		}
 	}
 }

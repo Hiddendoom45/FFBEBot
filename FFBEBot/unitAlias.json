@@ -4,125 +4,169 @@
     "rJPName": "レイン",
     "rENName": "rain",
     "eENName": "rain",
-    "otherAlias": []
+    "otherAlias": [
+      "rain"
+    ]
   },
   {
     "id": 8193,
     "rJPName": "",
     "rENName": "",
     "eENName": "ellesperis",
-    "otherAlias": []
+    "otherAlias": [
+      "ellesperis"
+    ]
   },
   {
     "id": 8196,
     "rJPName": "",
     "rENName": "",
     "eENName": "beryl",
-    "otherAlias": []
+    "otherAlias": [
+      "beryl"
+    ]
   },
   {
     "id": 5,
     "rJPName": "ラスウェル",
     "rENName": "lasswell",
     "eENName": "lasswell",
-    "otherAlias": []
+    "otherAlias": [
+      "lasswell"
+    ]
   },
   {
     "id": 8199,
     "rJPName": "",
     "rENName": "",
     "eENName": "lilith",
-    "otherAlias": []
+    "otherAlias": [
+      "lilith"
+    ]
   },
   {
     "id": 9,
     "rJPName": "フィーナ",
     "rENName": "fina",
     "eENName": "fina",
-    "otherAlias": []
+    "otherAlias": [
+      "fina"
+    ]
   },
   {
     "id": 8202,
     "rJPName": "",
     "rENName": "",
     "eENName": "lucius",
-    "otherAlias": []
+    "otherAlias": [
+      "lucius"
+    ]
   },
   {
     "id": 13,
     "rJPName": "ライザ―",
     "rENName": "rizer",
     "eENName": "rizer",
-    "otherAlias": []
+    "otherAlias": [
+      "rizer"
+    ]
   },
   {
     "id": 8205,
     "rJPName": "",
     "rENName": "",
     "eENName": "popstar katy",
-    "otherAlias": []
+    "otherAlias": [
+      "popstar katy"
+    ]
   },
   {
     "id": 1038,
     "rJPName": "ヒョウ",
     "rENName": "cg hyoh",
     "eENName": "hyoh",
-    "otherAlias": []
+    "otherAlias": [
+      "cg hyoh",
+      "hyoh"
+    ]
   },
   {
     "id": 15,
     "rJPName": "リーア",
     "rENName": "leah",
     "eENName": "leah",
-    "otherAlias": []
+    "otherAlias": [
+      "leah"
+    ]
   },
   {
     "id": 8208,
     "rJPName": "",
     "rENName": "",
     "eENName": "tiana",
-    "otherAlias": []
+    "otherAlias": [
+      "tiana"
+    ]
   },
   {
     "id": 17,
     "rJPName": "トロン",
     "rENName": "tronn",
     "eENName": "tronn",
-    "otherAlias": []
+    "otherAlias": [
+      "tronn"
+    ]
   },
   {
     "id": 1041,
     "rJPName": "シャタル",
     "rENName": "shatal",
     "eENName": "shatal",
-    "otherAlias": []
+    "otherAlias": [
+      "shatal"
+    ]
   },
   {
     "id": 19,
     "rJPName": "エルディン",
     "rENName": "eldin",
     "eENName": "eldin",
-    "otherAlias": []
+    "otherAlias": [
+      "eldin"
+    ]
   },
   {
     "id": 8211,
     "rJPName": "",
     "rENName": "",
     "eENName": "felix",
-    "otherAlias": []
+    "otherAlias": [
+      "felix"
+    ]
   },
   {
     "id": 1044,
     "rJPName": "ドミノ",
     "rENName": "domino",
     "eENName": "domino",
-    "otherAlias": []
+    "otherAlias": [
+      "domino"
+    ]
   },
   {
     "id": 21,
     "rJPName": "ボルグ",
     "rENName": "baurg",
     "eENName": "baurg",
+    "otherAlias": [
+      "baurg"
+    ]
+  },
+  {
+    "id": 8214,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "sophia",
     "otherAlias": []
   },
   {
@@ -130,406 +174,528 @@
     "rJPName": "ギムリー",
     "rENName": "gimlee",
     "eENName": "gimlee",
-    "otherAlias": []
+    "otherAlias": [
+      "gimlee"
+    ]
   },
   {
     "id": 1047,
     "rJPName": "サンタローゼリア",
     "rENName": "santa roselia",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "santa roselia"
+    ]
   },
   {
     "id": 25,
     "rJPName": "マクセル",
     "rENName": "maxell",
     "eENName": "maxell",
-    "otherAlias": []
+    "otherAlias": [
+      "maxell"
+    ]
   },
   {
     "id": 1050,
     "rJPName": "ウキヨ",
     "rENName": "ukiyo",
     "eENName": "ukiyo",
-    "otherAlias": []
+    "otherAlias": [
+      "ukiyo"
+    ]
   },
   {
     "id": 27,
     "rJPName": "リーザ",
     "rENName": "liza",
     "eENName": "liza",
-    "otherAlias": []
+    "otherAlias": [
+      "liza"
+    ]
   },
   {
     "id": 1052,
     "rJPName": "イグニス",
     "rENName": "ignis",
     "eENName": "ignis",
-    "otherAlias": []
+    "otherAlias": [
+      "ignis"
+    ]
   },
   {
     "id": 29,
     "rJPName": "ウェッジ",
     "rENName": "wedge",
     "eENName": "wedge",
-    "otherAlias": []
+    "otherAlias": [
+      "wedge"
+    ]
   },
   {
     "id": 8221,
     "rJPName": "",
     "rENName": "",
     "eENName": "aurora fryevia",
-    "otherAlias": []
+    "otherAlias": [
+      "aurora fryevia"
+    ]
   },
   {
     "id": 31,
     "rJPName": "ビックス",
     "rENName": "biggs",
     "eENName": "biggs",
-    "otherAlias": []
+    "otherAlias": [
+      "biggs"
+    ]
   },
   {
     "id": 1055,
     "rJPName": "レイヴス",
     "rENName": "ravus",
     "eENName": "ravus",
-    "otherAlias": []
+    "otherAlias": [
+      "ravus"
+    ]
   },
   {
     "id": 33,
     "rJPName": "ポール",
     "rENName": "paul",
     "eENName": "paul",
-    "otherAlias": []
+    "otherAlias": [
+      "paul"
+    ]
   },
   {
     "id": 1059,
     "rJPName": "レイジャック",
     "rENName": "ray jack",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "ray jack"
+    ]
   },
   {
     "id": 37,
     "rJPName": "アナスタシス",
     "rENName": "anastasis",
     "eENName": "anastasis",
-    "otherAlias": []
+    "otherAlias": [
+      "anastasis"
+    ]
   },
   {
     "id": 1062,
     "rJPName": "カリバ",
     "rENName": "kaliva",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "kaliva"
+    ]
   },
   {
     "id": 1065,
     "rJPName": "トビー",
     "rENName": "toby",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "toby"
+    ]
   },
   {
     "id": 1068,
     "rJPName": "バルーサ",
     "rENName": "barusa",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "barusa"
+    ]
   },
   {
     "id": 49,
     "rJPName": "セーラ",
     "rENName": "sarah",
     "eENName": "sarah",
-    "otherAlias": []
+    "otherAlias": [
+      "sarah"
+    ]
   },
   {
     "id": 51,
     "rJPName": "ジオット王",
     "rENName": "king giott",
     "eENName": "king giott",
-    "otherAlias": []
+    "otherAlias": [
+      "king giott"
+    ]
   },
   {
     "id": 53,
     "rJPName": "シキ",
     "rENName": "shiki",
     "eENName": "shiki",
-    "otherAlias": []
+    "otherAlias": [
+      "shiki"
+    ]
   },
   {
     "id": 55,
     "rJPName": "ミゼル",
     "rENName": "mizell",
     "eENName": "mizell",
-    "otherAlias": []
+    "otherAlias": [
+      "mizell"
+    ]
   },
   {
     "id": 57,
     "rJPName": "ロナール",
     "rENName": "ronaldo",
     "eENName": "ronaldo",
-    "otherAlias": []
+    "otherAlias": [
+      "ronaldo"
+    ]
   },
   {
     "id": 59,
     "rJPName": "メル",
     "rENName": "mel",
     "eENName": "mel",
-    "otherAlias": []
+    "otherAlias": [
+      "mel"
+    ]
   },
   {
     "id": 1086,
     "rJPName": "シトラ",
     "rENName": "cg citra",
     "eENName": "citra",
-    "otherAlias": []
+    "otherAlias": [
+      "cg citra",
+      "citra"
+    ]
   },
   {
     "id": 1089,
     "rJPName": "マクメディ",
     "rENName": "makumedi",
     "eENName": "macmedi",
-    "otherAlias": []
+    "otherAlias": [
+      "macmedi",
+      "makumedi"
+    ]
   },
   {
     "id": 1092,
     "rJPName": "ロッティ",
     "rENName": "lottie",
     "eENName": "lotti",
-    "otherAlias": []
+    "otherAlias": [
+      "lotti",
+      "lottie"
+    ]
   },
   {
     "id": 1095,
     "rJPName": "レナス",
     "rENName": "lenneth",
     "eENName": "lenneth",
-    "otherAlias": []
+    "otherAlias": [
+      "lenneth"
+    ]
   },
   {
     "id": 1098,
     "rJPName": "フレイ",
     "rENName": "freya",
     "eENName": "freya (vp)",
-    "otherAlias": []
+    "otherAlias": [
+      "freya",
+      "freya (vp)"
+    ]
   },
   {
     "id": 1101,
     "rJPName": "アリューゼ",
     "rENName": "arngrim",
     "eENName": "arngrim",
-    "otherAlias": []
+    "otherAlias": [
+      "arngrim"
+    ]
   },
   {
     "id": 79,
     "rJPName": "ビビ",
     "rENName": "vivi",
     "eENName": "vivi",
-    "otherAlias": []
+    "otherAlias": [
+      "vivi"
+    ]
   },
   {
     "id": 1104,
     "rJPName": "ルシオ",
     "rENName": "lucian",
     "eENName": "lucian",
-    "otherAlias": []
+    "otherAlias": [
+      "lucian"
+    ]
   },
   {
     "id": 81,
     "rJPName": "パンネロ",
     "rENName": "penelo",
     "eENName": "penelo",
-    "otherAlias": []
+    "otherAlias": [
+      "penelo"
+    ]
   },
   {
     "id": 83,
     "rJPName": "マリア(ffii)",
     "rENName": "maria",
     "eENName": "maria",
-    "otherAlias": []
+    "otherAlias": [
+      "maria",
+      "マリア(ffii)"
+    ]
   },
   {
     "id": 1107,
     "rJPName": "ジェラード",
     "rENName": "jelanda",
     "eENName": "jelanda",
-    "otherAlias": []
+    "otherAlias": [
+      "jelanda"
+    ]
   },
   {
     "id": 85,
     "rJPName": "マッシュ",
     "rENName": "sabin",
     "eENName": "sabin",
-    "otherAlias": []
+    "otherAlias": [
+      "sabin"
+    ]
   },
   {
     "id": 1110,
     "rJPName": "ティファ",
     "rENName": "tifa",
     "eENName": "tifa",
-    "otherAlias": []
+    "otherAlias": [
+      "tifa"
+    ]
   },
   {
     "id": 87,
     "rJPName": "シャドウ",
     "rENName": "shadow",
     "eENName": "shadow",
-    "otherAlias": []
+    "otherAlias": [
+      "shadow"
+    ]
   },
   {
     "id": 89,
     "rJPName": "クルル",
     "rENName": "krile",
     "eENName": "krile",
-    "otherAlias": []
+    "otherAlias": [
+      "krile"
+    ]
   },
   {
     "id": 1113,
     "rJPName": "ヴィンセント",
     "rENName": "vincent",
     "eENName": "vincent",
-    "otherAlias": []
+    "otherAlias": [
+      "vincent"
+    ]
   },
   {
     "id": 91,
     "rJPName": "カイン",
     "rENName": "kain",
     "eENName": "kain",
-    "otherAlias": []
+    "otherAlias": [
+      "kain"
+    ]
   },
   {
     "id": 1116,
     "rJPName": "バレット",
     "rENName": "barret",
     "eENName": "barret",
-    "otherAlias": []
+    "otherAlias": [
+      "barret"
+    ]
   },
   {
     "id": 93,
     "rJPName": "エドガー",
     "rENName": "edgar",
     "eENName": "edgar",
-    "otherAlias": []
+    "otherAlias": [
+      "edgar"
+    ]
   },
   {
     "id": 95,
     "rJPName": "フラン",
     "rENName": "fran",
     "eENName": "fran",
-    "otherAlias": []
+    "otherAlias": [
+      "fran"
+    ]
   },
   {
     "id": 1119,
     "rJPName": "ケット・シー",
     "rENName": "cait sith",
     "eENName": "cait sith",
-    "otherAlias": []
+    "otherAlias": [
+      "cait sith"
+    ]
   },
   {
     "id": 97,
     "rJPName": "シャントット",
     "rENName": "shantotto",
     "eENName": "shantotto",
-    "otherAlias": []
+    "otherAlias": [
+      "shantotto"
+    ]
   },
   {
     "id": 99,
     "rJPName": "リディア",
     "rENName": "rydia",
     "eENName": "rydia",
-    "otherAlias": []
+    "otherAlias": [
+      "rydia"
+    ]
   },
   {
     "id": 101,
     "rJPName": "カイエン",
     "rENName": "cyan",
     "eENName": "cyan",
-    "otherAlias": []
+    "otherAlias": [
+      "cyan"
+    ]
   },
   {
     "id": 103,
     "rJPName": "クライン",
     "rENName": "clyne",
     "eENName": "clyne",
-    "otherAlias": []
+    "otherAlias": [
+      "clyne"
+    ]
   },
   {
     "id": 105,
     "rJPName": "アンゼルム",
     "rENName": "anzelm",
     "eENName": "anzelm",
-    "otherAlias": []
+    "otherAlias": [
+      "anzelm"
+    ]
   },
   {
     "id": 107,
     "rJPName": "ルナ",
     "rENName": "luna",
     "eENName": "luna",
-    "otherAlias": []
+    "otherAlias": [
+      "luna"
+    ]
   },
   {
     "id": 109,
     "rJPName": "ベディール",
     "rENName": "bedile",
     "eENName": "bedile",
-    "otherAlias": []
+    "otherAlias": [
+      "bedile"
+    ]
   },
   {
     "id": 111,
     "rJPName": "ガーランド",
     "rENName": "garland",
     "eENName": "garland",
-    "otherAlias": []
+    "otherAlias": [
+      "garland"
+    ]
   },
   {
     "id": 1137,
     "rJPName": "エレフィム",
     "rENName": "elfim",
     "eENName": "elephim",
-    "otherAlias": []
+    "otherAlias": [
+      "elephim",
+      "elfim"
+    ]
   },
   {
     "id": 1140,
     "rJPName": "レオポルド",
     "rENName": "leopold",
     "eENName": "leopold",
-    "otherAlias": []
+    "otherAlias": [
+      "leopold"
+    ]
   },
   {
     "id": 117,
     "rJPName": "エクスデス",
     "rENName": "exdeath",
     "eENName": "exdeath",
-    "otherAlias": []
+    "otherAlias": [
+      "exdeath"
+    ]
   },
   {
     "id": 1143,
     "rJPName": "マグナ",
     "rENName": "magna",
     "eENName": "magna",
-    "otherAlias": []
+    "otherAlias": [
+      "magna"
+    ]
   },
   {
     "id": 1146,
     "rJPName": "フォレルスケット",
     "rENName": "forelsket",
     "eENName": "forelsket",
-    "otherAlias": []
+    "otherAlias": [
+      "forelsket"
+    ]
   },
   {
     "id": 123,
     "rJPName": "クジャ",
     "rENName": "kuja",
     "eENName": "kuja",
-    "otherAlias": []
+    "otherAlias": [
+      "kuja"
+    ]
   },
   {
     "id": 1149,
     "rJPName": "フラミー",
     "rENName": "flammie",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "flammie"
+    ]
   },
   {
     "id": 126,
@@ -537,6 +703,7 @@
     "rENName": "cloud of darkness",
     "eENName": "cloud of darkness",
     "otherAlias": [
+      "cloud of darkness",
       "cod"
     ]
   },
@@ -545,140 +712,183 @@
     "rJPName": "セシル",
     "rENName": "cecil",
     "eENName": "cecil",
-    "otherAlias": []
+    "otherAlias": [
+      "cecil"
+    ]
   },
   {
     "id": 132,
     "rJPName": "ティナ",
     "rENName": "terra",
     "eENName": "terra",
-    "otherAlias": []
+    "otherAlias": [
+      "terra"
+    ]
   },
   {
     "id": 1156,
     "rJPName": "ラビ",
     "rENName": "rabbie",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "rabbie"
+    ]
   },
   {
     "id": 135,
     "rJPName": "魔導兵器ティナ",
     "rENName": "magitek armor terra",
     "eENName": "magitek armor terra",
-    "otherAlias": []
+    "otherAlias": [
+      "magitek armor terra"
+    ]
   },
   {
     "id": 1159,
     "rJPName": "マキナ",
     "rENName": "machina",
     "eENName": "machina",
-    "otherAlias": []
+    "otherAlias": [
+      "machina"
+    ]
   },
   {
     "id": 137,
     "rJPName": "バッツ",
     "rENName": "bartz",
     "eENName": "bartz",
-    "otherAlias": []
+    "otherAlias": [
+      "bartz"
+    ]
   },
   {
     "id": 1162,
     "rJPName": "クラサメ",
     "rENName": "kurasame",
     "eENName": "kurasame",
-    "otherAlias": []
+    "otherAlias": [
+      "kurasame"
+    ]
   },
   {
     "id": 140,
     "rJPName": "フリオニール",
     "rENName": "firion",
     "eENName": "firion",
-    "otherAlias": []
+    "otherAlias": [
+      "firion"
+    ]
   },
   {
     "id": 1165,
     "rJPName": "デュース",
     "rENName": "deuce",
     "eENName": "deuce",
-    "otherAlias": []
+    "otherAlias": [
+      "deuce"
+    ]
   },
   {
     "id": 143,
     "rJPName": "ジタン",
     "rENName": "zidane",
     "eENName": "zidane",
-    "otherAlias": []
+    "otherAlias": [
+      "zidane"
+    ]
   },
   {
     "id": 1168,
     "rJPName": "ケイト",
     "rENName": "cater",
     "eENName": "cater",
-    "otherAlias": []
+    "otherAlias": [
+      "cater"
+    ]
   },
   {
     "id": 146,
     "rJPName": "ヴァン",
     "rENName": "vaan",
     "eENName": "vaan",
-    "otherAlias": []
+    "otherAlias": [
+      "vaan"
+    ]
   },
   {
     "id": 1171,
     "rJPName": "ジークハルト",
     "rENName": "cg sieghart",
     "eENName": "sieghard",
-    "otherAlias": []
+    "otherAlias": [
+      "cg sieghart",
+      "sieghard"
+    ]
   },
   {
     "id": 149,
     "rJPName": "ディーン",
     "rENName": "duane",
     "eENName": "duane",
-    "otherAlias": []
+    "otherAlias": [
+      "duane"
+    ]
   },
   {
     "id": 1174,
     "rJPName": "ディートリンデ",
     "rENName": "dietlinde",
     "eENName": "dietlinde",
-    "otherAlias": []
+    "otherAlias": [
+      "dietlinde"
+    ]
   },
   {
     "id": 152,
     "rJPName": "セリアス",
     "rENName": "cerius",
     "eENName": "cerius",
-    "otherAlias": []
+    "otherAlias": [
+      "cerius"
+    ]
   },
   {
     "id": 1177,
     "rJPName": "テオバルト",
     "rENName": "theobalt",
     "eENName": "theobald",
-    "otherAlias": []
+    "otherAlias": [
+      "theobald",
+      "theobalt"
+    ]
   },
   {
     "id": 155,
     "rJPName": "ローゼリア",
     "rENName": "roselia",
     "eENName": "roselia",
-    "otherAlias": []
+    "otherAlias": [
+      "roselia"
+    ]
   },
   {
     "id": 1180,
     "rJPName": "カノン",
     "rENName": "kanon",
     "eENName": "cannon",
-    "otherAlias": []
+    "otherAlias": [
+      "cannon",
+      "kanon"
+    ]
   },
   {
     "id": 158,
     "rJPName": "メディウス",
     "rENName": "medius",
     "eENName": "medius",
-    "otherAlias": []
+    "otherAlias": [
+      "medius"
+    ]
   },
   {
     "id": 1183,
@@ -686,6 +896,7 @@
     "rENName": "lara croft",
     "eENName": "",
     "otherAlias": [
+      "lara croft",
       "lara_croft"
     ]
   },
@@ -694,56 +905,72 @@
     "rJPName": "サライ",
     "rENName": "sarai",
     "eENName": "sarai",
-    "otherAlias": []
+    "otherAlias": [
+      "sarai"
+    ]
   },
   {
     "id": 1185,
     "rJPName": "ユライシャ",
     "rENName": "yuraisha",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "yuraisha"
+    ]
   },
   {
     "id": 163,
     "rJPName": "ポーラ",
     "rENName": "paula",
     "eENName": "paula",
-    "otherAlias": []
+    "otherAlias": [
+      "paula"
+    ]
   },
   {
     "id": 1188,
     "rJPName": "フラニス",
     "rENName": "franis",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "franis"
+    ]
   },
   {
     "id": 165,
     "rJPName": "ケンユウ",
     "rENName": "kenyu",
     "eENName": "kenyu",
-    "otherAlias": []
+    "otherAlias": [
+      "kenyu"
+    ]
   },
   {
     "id": 167,
     "rJPName": "オーリ",
     "rENName": "ollie",
     "eENName": "ollie",
-    "otherAlias": []
+    "otherAlias": [
+      "ollie"
+    ]
   },
   {
     "id": 1191,
     "rJPName": "イシル",
     "rENName": "ishil",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "ishil"
+    ]
   },
   {
     "id": 169,
     "rJPName": "キャリー",
     "rENName": "carrie",
     "eENName": "carrie",
-    "otherAlias": []
+    "otherAlias": [
+      "carrie"
+    ]
   },
   {
     "id": 1194,
@@ -751,7 +978,8 @@
     "rENName": "onion knight refia",
     "eENName": "",
     "otherAlias": [
-      "okrefia"
+      "okrefia",
+      "onion knight refia"
     ]
   },
   {
@@ -759,231 +987,298 @@
     "rJPName": "スカーハ",
     "rENName": "skaha",
     "eENName": "skaha",
-    "otherAlias": []
+    "otherAlias": [
+      "skaha"
+    ]
   },
   {
     "id": 173,
     "rJPName": "モンタナ",
     "rENName": "montana",
     "eENName": "montana",
-    "otherAlias": []
+    "otherAlias": [
+      "montana"
+    ]
   },
   {
     "id": 1197,
     "rJPName": "魔剣士ルーネス",
     "rENName": "dark knight luneth",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "dark knight luneth"
+    ]
   },
   {
     "id": 175,
     "rJPName": "ラッセル",
     "rENName": "russell",
     "eENName": "russell",
-    "otherAlias": []
+    "otherAlias": [
+      "russell"
+    ]
   },
   {
     "id": 1200,
     "rJPName": "ドーガ",
     "rENName": "doga",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "doga"
+    ]
   },
   {
     "id": 177,
     "rJPName": "ミユキ",
     "rENName": "miyuki",
     "eENName": "miyuki",
-    "otherAlias": []
+    "otherAlias": [
+      "miyuki"
+    ]
   },
   {
     "id": 1203,
     "rJPName": "ウネ",
     "rENName": "unei",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "unei"
+    ]
   },
   {
     "id": 180,
     "rJPName": "ゴルベーザ",
     "rENName": "golbez",
     "eENName": "golbez",
-    "otherAlias": []
+    "otherAlias": [
+      "golbez"
+    ]
   },
   {
     "id": 183,
     "rJPName": "ガラフ",
     "rENName": "galuf",
     "eENName": "galuf",
-    "otherAlias": []
+    "otherAlias": [
+      "galuf"
+    ]
   },
   {
     "id": 1207,
     "rJPName": "フォルカ",
     "rENName": "cg folka",
-    "eENName": "",
-    "otherAlias": []
+    "eENName": "folka",
+    "otherAlias": [
+      "cg folka"
+    ]
   },
   {
     "id": 185,
     "rJPName": "シャオ",
     "rENName": "xiao",
     "eENName": "xiao",
-    "otherAlias": []
+    "otherAlias": [
+      "xiao"
+    ]
   },
   {
     "id": 1210,
     "rJPName": "ユベル",
     "rENName": "yubel",
-    "eENName": "",
-    "otherAlias": []
+    "eENName": "yubel",
+    "otherAlias": [
+      "yubel"
+    ]
   },
   {
     "id": 1213,
     "rJPName": "キハナ",
     "rENName": "kihana",
-    "eENName": "",
-    "otherAlias": []
+    "eENName": "kihana",
+    "otherAlias": [
+      "kihana"
+    ]
   },
   {
     "id": 191,
     "rJPName": "アルテミオス",
     "rENName": "artemios",
     "eENName": "artemios",
-    "otherAlias": []
+    "otherAlias": [
+      "artemios"
+    ]
   },
   {
     "id": 1216,
     "rJPName": "イコル",
     "rENName": "ekor",
-    "eENName": "",
-    "otherAlias": []
+    "eENName": "ichor",
+    "otherAlias": [
+      "ekor"
+    ]
   },
   {
     "id": 194,
     "rJPName": "ロック",
     "rENName": "locke",
     "eENName": "locke",
-    "otherAlias": []
+    "otherAlias": [
+      "locke"
+    ]
   },
   {
     "id": 1219,
     "rJPName": "フェイ",
     "rENName": "fei",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "fei"
+    ]
   },
   {
     "id": 197,
     "rJPName": "レオ",
     "rENName": "leo",
     "eENName": "leo",
-    "otherAlias": []
+    "otherAlias": [
+      "leo"
+    ]
   },
   {
     "id": 1222,
     "rJPName": "エリィ",
     "rENName": "elly",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "elly"
+    ]
   },
   {
     "id": 1225,
     "rJPName": "エメラダ",
     "rENName": "emeralda",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "emeralda"
+    ]
   },
   {
     "id": 203,
     "rJPName": "ジルベール",
     "rENName": "gilbert",
     "eENName": "gilbert",
-    "otherAlias": []
+    "otherAlias": [
+      "gilbert"
+    ]
   },
   {
     "id": 1228,
     "rJPName": "バルト",
     "rENName": "bart",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "bart"
+    ]
   },
   {
     "id": 206,
     "rJPName": "セリス",
     "rENName": "celes",
     "eENName": "celes",
-    "otherAlias": []
+    "otherAlias": [
+      "celes"
+    ]
   },
   {
     "id": 1231,
     "rJPName": "リコ",
     "rENName": "rico",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "rico"
+    ]
   },
   {
     "id": 209,
     "rJPName": "ケフカ",
     "rENName": "kefka",
     "eENName": "kefka",
-    "otherAlias": []
+    "otherAlias": [
+      "kefka"
+    ]
   },
   {
     "id": 1234,
     "rJPName": "チュチュ",
     "rENName": "chu-chu",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "chu-chu"
+    ]
   },
   {
     "id": 212,
     "rJPName": "サマサ・λ",
     "rENName": "samatha・λ",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "samatha・λ",
+      "サマサ・λ"
+    ]
   },
   {
     "id": 1237,
     "rJPName": "ジェクト",
     "rENName": "jecht",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "jecht"
+    ]
   },
   {
     "id": 214,
     "rJPName": "ラクシャーサ",
     "rENName": "rakshasa",
     "eENName": "rakshasa",
-    "otherAlias": []
+    "otherAlias": [
+      "rakshasa"
+    ]
   },
   {
     "id": 1240,
     "rJPName": "アーロン",
     "rENName": "auron",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "auron"
+    ]
   },
   {
     "id": 217,
     "rJPName": "チヅル",
     "rENName": "chizuru",
     "eENName": "chizuru",
-    "otherAlias": []
+    "otherAlias": [
+      "chizuru"
+    ]
   },
   {
     "id": 219,
     "rJPName": "ハヤテ",
     "rENName": "hayate",
     "eENName": "hayate",
-    "otherAlias": []
+    "otherAlias": [
+      "hayate"
+    ]
   },
   {
     "id": 1243,
     "rJPName": "ベルゲミーネ",
     "rENName": "belgemine",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "belgemine"
+    ]
   },
   {
     "id": 222,
@@ -991,6 +1286,7 @@
     "rENName": "warrior of light",
     "eENName": "warrior of light",
     "otherAlias": [
+      "warrior of light",
       "wol"
     ]
   },
@@ -999,322 +1295,414 @@
     "rJPName": "アニキ",
     "rENName": "brother",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "brother"
+    ]
   },
   {
     "id": 224,
     "rJPName": "テラ",
     "rENName": "tellah",
     "eENName": "tellah",
-    "otherAlias": []
+    "otherAlias": [
+      "tellah"
+    ]
   },
   {
     "id": 1249,
     "rJPName": "イグニシオ",
     "rENName": "cg ignacio",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "cg ignacio"
+    ]
   },
   {
     "id": 227,
     "rJPName": "レナ",
     "rENName": "lenna",
     "eENName": "lenna",
-    "otherAlias": []
+    "otherAlias": [
+      "lenna"
+    ]
   },
   {
     "id": 1252,
     "rJPName": "スズメ",
     "rENName": "suzume",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "suzume"
+    ]
   },
   {
     "id": 230,
     "rJPName": "ガーネット",
     "rENName": "garnet",
     "eENName": "garnet",
-    "otherAlias": []
+    "otherAlias": [
+      "garnet"
+    ]
   },
   {
     "id": 1255,
     "rJPName": "pnk-2",
     "rENName": "pnk-2",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "pnk-2"
+    ]
   },
   {
     "id": 232,
     "rJPName": "フライヤ",
     "rENName": "freya",
     "eENName": "freya",
-    "otherAlias": []
+    "otherAlias": [
+      "freya"
+    ]
   },
   {
     "id": 1258,
     "rJPName": "ウェイハム",
     "rENName": "weyham",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "weyham"
+    ]
   },
   {
     "id": 235,
     "rJPName": "サラマンダー",
     "rENName": "amarant",
     "eENName": "amarant",
-    "otherAlias": []
+    "otherAlias": [
+      "amarant"
+    ]
   },
   {
     "id": 1261,
     "rJPName": "シタン",
     "rENName": "citan",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "citan"
+    ]
   },
   {
     "id": 238,
     "rJPName": "ラニ",
     "rENName": "lani",
     "eENName": "lani",
-    "otherAlias": []
+    "otherAlias": [
+      "lani"
+    ]
   },
   {
     "id": 240,
     "rJPName": "リド",
     "rENName": "lid",
     "eENName": "lid",
-    "otherAlias": []
+    "otherAlias": [
+      "lid"
+    ]
   },
   {
     "id": 1264,
     "rJPName": "マリア",
     "rENName": "maria",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "maria"
+    ]
   },
   {
     "id": 243,
     "rJPName": "アデル",
     "rENName": "adel",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "adel"
+    ]
   },
   {
     "id": 1267,
     "rJPName": "ビリー",
     "rENName": "billy",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "billy"
+    ]
   },
   {
     "id": 245,
     "rJPName": "カル",
     "rENName": "karl",
     "eENName": "karl",
-    "otherAlias": []
+    "otherAlias": [
+      "karl"
+    ]
   },
   {
     "id": 1270,
     "rJPName": "聖天使アルテマ",
     "rENName": "ultima",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "ultima"
+    ]
   },
   {
     "id": 247,
     "rJPName": "セリア",
     "rENName": "seria",
     "eENName": "seria",
-    "otherAlias": []
+    "otherAlias": [
+      "seria"
+    ]
   },
   {
     "id": 249,
     "rJPName": "ティリス",
     "rENName": "tilith",
     "eENName": "tilith",
-    "otherAlias": []
+    "otherAlias": [
+      "tilith"
+    ]
   },
   {
     "id": 1273,
     "rJPName": "ベイオウーフ",
     "rENName": "beowulf",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "beowulf"
+    ]
   },
   {
     "id": 251,
     "rJPName": "リュドミラ",
     "rENName": "ludmille",
     "eENName": "ludmille",
-    "otherAlias": []
+    "otherAlias": [
+      "ludmille"
+    ]
   },
   {
     "id": 1276,
     "rJPName": "レーゼ",
     "rENName": "reis",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "reis"
+    ]
   },
   {
     "id": 254,
     "rJPName": "シャルロット",
     "rENName": "charlotte",
     "eENName": "charlotte",
-    "otherAlias": []
+    "otherAlias": [
+      "charlotte"
+    ]
   },
   {
     "id": 1279,
     "rJPName": "労働八号",
     "rENName": "construct 8",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "construct 8"
+    ]
   },
   {
     "id": 257,
     "rJPName": "ライトニング",
     "rENName": "lightning",
     "eENName": "lightning",
-    "otherAlias": []
+    "otherAlias": [
+      "lightning"
+    ]
   },
   {
     "id": 1282,
     "rJPName": "シド",
     "rENName": "cg cid",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "cg cid"
+    ]
   },
   {
     "id": 259,
     "rJPName": "ラムザ",
     "rENName": "ramza",
     "eENName": "ramza",
-    "otherAlias": []
+    "otherAlias": [
+      "ramza"
+    ]
   },
   {
     "id": 261,
     "rJPName": "ディリータ",
     "rENName": "delita",
     "eENName": "delita",
-    "otherAlias": []
+    "otherAlias": [
+      "delita"
+    ]
   },
   {
     "id": 1285,
     "rJPName": "メレッテ",
     "rENName": "melette",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "melette"
+    ]
   },
   {
     "id": 263,
     "rJPName": "アグリアス",
     "rENName": "agrias",
     "eENName": "agrias",
-    "otherAlias": []
+    "otherAlias": [
+      "agrias"
+    ]
   },
   {
     "id": 1288,
     "rJPName": "ナグルファ",
     "rENName": "nagulfa",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "nagulfa"
+    ]
   },
   {
     "id": 265,
     "rJPName": "アルマ",
     "rENName": "alma",
     "eENName": "alma",
-    "otherAlias": []
+    "otherAlias": [
+      "alma"
+    ]
   },
   {
     "id": 1291,
     "rJPName": "ファーマ",
     "rENName": "farma",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "farma"
+    ]
   },
   {
     "id": 268,
     "rJPName": "ガフガリオン",
     "rENName": "gaffgarion",
     "eENName": "gaffgarion",
-    "otherAlias": []
+    "otherAlias": [
+      "gaffgarion"
+    ]
   },
   {
     "id": 270,
     "rJPName": "ムスタディオ",
     "rENName": "mustadio",
     "eENName": "mustadio",
-    "otherAlias": []
+    "otherAlias": [
+      "mustadio"
+    ]
   },
   {
     "id": 1294,
     "rJPName": "カルエラート",
     "rENName": "karlotte",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "karlotte"
+    ]
   },
   {
     "id": 273,
     "rJPName": "スノウ",
     "rENName": "snow",
     "eENName": "snow",
-    "otherAlias": []
+    "otherAlias": [
+      "snow"
+    ]
   },
   {
     "id": 1297,
     "rJPName": "ナギ",
     "rENName": "nagi",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "nagi"
+    ]
   },
   {
     "id": 276,
     "rJPName": "ヴァニラ",
     "rENName": "vanille",
     "eENName": "vanille",
-    "otherAlias": []
+    "otherAlias": [
+      "vanille"
+    ]
   },
   {
     "id": 1300,
     "rJPName": "イーゴ",
     "rENName": "yego",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "yego"
+    ]
   },
   {
     "id": 278,
     "rJPName": "サッズ",
     "rENName": "sazh",
     "eENName": "sazh",
-    "otherAlias": []
+    "otherAlias": [
+      "sazh"
+    ]
   },
   {
     "id": 1303,
     "rJPName": "ゾルル＆デルル",
     "rENName": "zolulu \u0026 delulu",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "zolulu \u0026 delulu"
+    ]
   },
   {
     "id": 281,
     "rJPName": "ホープ",
     "rENName": "hope",
     "eENName": "hope",
-    "otherAlias": []
+    "otherAlias": [
+      "hope"
+    ]
   },
   {
     "id": 1306,
     "rJPName": "ガーラス",
     "rENName": "galas",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "galas"
+    ]
   },
   {
     "id": 283,
     "rJPName": "ファング",
     "rENName": "fang",
     "eENName": "fang",
-    "otherAlias": []
+    "otherAlias": [
+      "fang"
+    ]
   },
   {
     "id": 1309,
@@ -1322,6 +1710,7 @@
     "rENName": "dark mage golbez",
     "eENName": "",
     "otherAlias": [
+      "dark mage golbez",
       "swolbez"
     ]
   },
@@ -1330,42 +1719,54 @@
     "rJPName": "曲芸士",
     "rENName": "juggler",
     "eENName": "juggler",
-    "otherAlias": []
+    "otherAlias": [
+      "juggler"
+    ]
   },
   {
     "id": 288,
     "rJPName": "シーフ",
     "rENName": "thief",
     "eENName": "thief",
-    "otherAlias": []
+    "otherAlias": [
+      "thief"
+    ]
   },
   {
     "id": 1312,
     "rJPName": "ルビカンテ",
     "rENName": "rubicante",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "rubicante"
+    ]
   },
   {
     "id": 290,
     "rJPName": "フェンサー",
     "rENName": "fencer",
     "eENName": "fencer",
-    "otherAlias": []
+    "otherAlias": [
+      "fencer"
+    ]
   },
   {
     "id": 1315,
     "rJPName": "バルバリシア",
     "rENName": "barbariccia",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "barbariccia"
+    ]
   },
   {
     "id": 292,
     "rJPName": "ローザ",
     "rENName": "rosa",
     "eENName": "rosa",
-    "otherAlias": []
+    "otherAlias": [
+      "rosa"
+    ]
   },
   {
     "id": 294,
@@ -1373,6 +1774,7 @@
     "rENName": "dark knight cecil",
     "eENName": "dark knight cecil",
     "otherAlias": [
+      "dark knight cecil",
       "dkc"
     ]
   },
@@ -1381,224 +1783,291 @@
     "rJPName": "カイナッツォ",
     "rENName": "cagnazzo",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "cagnazzo"
+    ]
   },
   {
     "id": 296,
     "rJPName": "エッジ",
     "rENName": "edge",
     "eENName": "edge",
-    "otherAlias": []
+    "otherAlias": [
+      "edge"
+    ]
   },
   {
     "id": 1321,
     "rJPName": "スカルミリョーネ",
     "rENName": "scarmiglione",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "scarmiglione"
+    ]
   },
   {
     "id": 1324,
     "rJPName": "アクスター",
     "rENName": "cg akstar",
     "eENName": "akstar",
-    "otherAlias": []
+    "otherAlias": [
+      "akstar",
+      "cg akstar"
+    ]
   },
   {
     "id": 1327,
     "rJPName": "グレイビー",
     "rENName": "gravie",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "gravie"
+    ]
   },
   {
     "id": 304,
     "rJPName": "ニコル",
     "rENName": "nichol",
     "eENName": "nichol",
-    "otherAlias": []
+    "otherAlias": [
+      "nichol"
+    ]
   },
   {
     "id": 1330,
     "rJPName": "トモエ",
     "rENName": "tomoe",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "tomoe"
+    ]
   },
   {
     "id": 307,
     "rJPName": "エース",
     "rENName": "ace",
     "eENName": "ace",
-    "otherAlias": []
+    "otherAlias": [
+      "ace"
+    ]
   },
   {
     "id": 309,
     "rJPName": "トレイ",
     "rENName": "trey",
     "eENName": "trey",
-    "otherAlias": []
+    "otherAlias": [
+      "trey"
+    ]
   },
   {
     "id": 1333,
     "rJPName": "マジョラ",
     "rENName": "majora",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "majora"
+    ]
   },
   {
     "id": 312,
     "rJPName": "ジャック",
     "rENName": "jack",
     "eENName": "jack",
-    "otherAlias": []
+    "otherAlias": [
+      "jack"
+    ]
   },
   {
     "id": 1336,
     "rJPName": "プリムロゼ",
     "rENName": "primrose",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "primrose"
+    ]
   },
   {
     "id": 315,
     "rJPName": "セブン",
     "rENName": "seven",
     "eENName": "seven",
-    "otherAlias": []
+    "otherAlias": [
+      "seven"
+    ]
   },
   {
     "id": 1339,
     "rJPName": "オルベリク",
     "rENName": "olberic",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "olberic"
+    ]
   },
   {
     "id": 318,
     "rJPName": "ルーネス",
     "rENName": "luneth",
     "eENName": "luneth",
-    "otherAlias": []
+    "otherAlias": [
+      "luneth"
+    ]
   },
   {
     "id": 1342,
     "rJPName": "テリオン",
     "rENName": "therion",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "therion"
+    ]
   },
   {
     "id": 320,
     "rJPName": "アルクゥ",
     "rENName": "arc",
     "eENName": "arc",
-    "otherAlias": []
+    "otherAlias": [
+      "arc"
+    ]
   },
   {
     "id": 1345,
     "rJPName": "トレサ",
     "rENName": "tressa",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "tressa"
+    ]
   },
   {
     "id": 323,
     "rJPName": "レフィア",
     "rENName": "refia",
     "eENName": "refia",
-    "otherAlias": []
+    "otherAlias": [
+      "refia"
+    ]
   },
   {
     "id": 1348,
     "rJPName": "リコ（リコドキッ！）",
     "rENName": "riko",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "riko"
+    ]
   },
   {
     "id": 326,
     "rJPName": "イングズ",
     "rENName": "ingus",
     "eENName": "ingus",
-    "otherAlias": []
+    "otherAlias": [
+      "ingus"
+    ]
   },
   {
     "id": 330,
     "rJPName": "ランディ",
     "rENName": "randi",
     "eENName": "randi",
-    "otherAlias": []
+    "otherAlias": [
+      "randi"
+    ]
   },
   {
     "id": 1355,
     "rJPName": "エアリス",
     "rENName": "aerith",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "aerith"
+    ]
   },
   {
     "id": 332,
     "rJPName": "プリム",
     "rENName": "primm",
     "eENName": "primm",
-    "otherAlias": []
+    "otherAlias": [
+      "primm"
+    ]
   },
   {
     "id": 1358,
     "rJPName": "レッドxiii",
     "rENName": "red xiii",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "red xiii",
+      "レッドxiii"
+    ]
   },
   {
     "id": 335,
     "rJPName": "ポポイ",
     "rENName": "popoi",
     "eENName": "popoi",
-    "otherAlias": []
+    "otherAlias": [
+      "popoi"
+    ]
   },
   {
     "id": 1361,
     "rJPName": "フィーナ\u0026リド2018夏",
     "rENName": "summer fina \u0026 lid 2018",
     "eENName": "swimsuit fina \u0026 lid",
-    "otherAlias": []
+    "otherAlias": [
+      "summer fina \u0026 lid 2018",
+      "swimsuit fina \u0026 lid"
+    ]
   },
   {
     "id": 1364,
     "rJPName": "クリムゾン",
     "rENName": "crimson",
     "eENName": "crimson",
-    "otherAlias": []
+    "otherAlias": [
+      "crimson"
+    ]
   },
   {
     "id": 1367,
     "rJPName": "キュアノス",
     "rENName": "kyanos",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "kyanos"
+    ]
   },
   {
     "id": 1370,
     "rJPName": "ミルファス",
     "rENName": "milfas",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "milfas"
+    ]
   },
   {
     "id": 1373,
     "rJPName": "ザックス",
     "rENName": "zack",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "zack"
+    ]
   },
   {
     "id": 1376,
     "rJPName": "ユフィ",
     "rENName": "yuffie",
     "eENName": "yuffie",
-    "otherAlias": []
+    "otherAlias": [
+      "yuffie"
+    ]
   },
   {
     "id": 1379,
@@ -1606,7 +2075,9 @@
     "rENName": "king edgar",
     "eENName": "figaro king edgar",
     "otherAlias": [
-      "kedgar"
+      "figaro king edgar",
+      "kedgar",
+      "king edgar"
     ]
   },
   {
@@ -1615,7 +2086,9 @@
     "rENName": "fighter sabin",
     "eENName": "kolts monk sabin",
     "otherAlias": [
-      "fsabin"
+      "fighter sabin",
+      "fsabin",
+      "kolts monk sabin"
     ]
   },
   {
@@ -1623,35 +2096,45 @@
     "rJPName": "ファリス",
     "rENName": "faris",
     "eENName": "faris",
-    "otherAlias": []
+    "otherAlias": [
+      "faris"
+    ]
   },
   {
     "id": 1386,
     "rJPName": "a2",
     "rENName": "a2",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "a2"
+    ]
   },
   {
     "id": 363,
     "rJPName": "ギルガメッシュ",
     "rENName": "gilgamesh",
     "eENName": "gilgamesh",
-    "otherAlias": []
+    "otherAlias": [
+      "gilgamesh"
+    ]
   },
   {
     "id": 365,
     "rJPName": "メルセデス",
     "rENName": "mercedes",
     "eENName": "mercedes",
-    "otherAlias": []
+    "otherAlias": [
+      "mercedes"
+    ]
   },
   {
     "id": 1389,
     "rJPName": "イヴ",
     "rENName": "eve",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "eve"
+    ]
   },
   {
     "id": 1392,
@@ -1660,7 +2143,8 @@
     "eENName": "",
     "otherAlias": [
       "cilka",
-      "fitra"
+      "fitra",
+      "summer folka \u0026 citra"
     ]
   },
   {
@@ -1668,147 +2152,192 @@
     "rJPName": "レジーナ",
     "rENName": "regina",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "regina"
+    ]
   },
   {
     "id": 372,
     "rJPName": "クイーン",
     "rENName": "queen",
     "eENName": "queen",
-    "otherAlias": []
+    "otherAlias": [
+      "queen"
+    ]
   },
   {
     "id": 374,
     "rJPName": "ナイン",
     "rENName": "nine",
     "eENName": "nine",
-    "otherAlias": []
+    "otherAlias": [
+      "nine"
+    ]
   },
   {
     "id": 1398,
     "rJPName": "アンバー",
     "rENName": "amber",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "amber"
+    ]
   },
   {
     "id": 377,
     "rJPName": "シンク",
     "rENName": "cinque",
     "eENName": "cinque",
-    "otherAlias": []
+    "otherAlias": [
+      "cinque"
+    ]
   },
   {
     "id": 1401,
     "rJPName": "ベスビア",
     "rENName": "vesuvia",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "vesuvia"
+    ]
   },
   {
     "id": 380,
     "rJPName": "エイト",
     "rENName": "eight",
     "eENName": "eight",
-    "otherAlias": []
+    "otherAlias": [
+      "eight"
+    ]
   },
   {
     "id": 1404,
     "rJPName": "クローワ",
     "rENName": "chrowa",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "chrowa"
+    ]
   },
   {
     "id": 1407,
     "rJPName": "レイン\u0026チョコボ",
     "rENName": "chocobo rain",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "chocobo rain"
+    ]
   },
   {
     "id": 385,
     "rJPName": "魔人フィーナ",
     "rENName": "majin fina",
     "eENName": "dark fina",
-    "otherAlias": []
+    "otherAlias": [
+      "dark fina",
+      "majin fina"
+    ]
   },
   {
     "id": 387,
     "rJPName": "エル",
     "rENName": "eru",
     "eENName": "elle",
-    "otherAlias": []
+    "otherAlias": [
+      "elle",
+      "eru"
+    ]
   },
   {
     "id": 390,
     "rJPName": "ルルカ",
     "rENName": "luka",
     "eENName": "luka",
-    "otherAlias": []
+    "otherAlias": [
+      "luka"
+    ]
   },
   {
     "id": 393,
     "rJPName": "ジェイク",
     "rENName": "jake",
     "eENName": "jake",
-    "otherAlias": []
+    "otherAlias": [
+      "jake"
+    ]
   },
   {
     "id": 396,
     "rJPName": "オルランドゥ",
     "rENName": "orlandu",
     "eENName": "orlandeau",
-    "otherAlias": []
+    "otherAlias": [
+      "orlandeau",
+      "orlandu"
+    ]
   },
   {
     "id": 398,
     "rJPName": "オヴェリア",
     "rENName": "ovelia",
     "eENName": "ovelia",
-    "otherAlias": []
+    "otherAlias": [
+      "ovelia"
+    ]
   },
   {
     "id": 1422,
     "rJPName": "聖盾の騎士シャルロット",
     "rENName": "cg charlotte",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "cg charlotte"
+    ]
   },
   {
     "id": 401,
     "rJPName": "ソレイユ",
     "rENName": "soleil",
     "eENName": "soleil",
-    "otherAlias": []
+    "otherAlias": [
+      "soleil"
+    ]
   },
   {
     "id": 1425,
     "rJPName": "フリーゼ",
     "rENName": "friese",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "friese"
+    ]
   },
   {
     "id": 404,
     "rJPName": "ローレンス",
     "rENName": "lawrence",
     "eENName": "lawrence",
-    "otherAlias": []
+    "otherAlias": [
+      "lawrence"
+    ]
   },
   {
     "id": 1428,
     "rJPName": "シェパード",
     "rENName": "shepard",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "shepard"
+    ]
   },
   {
     "id": 409,
     "rJPName": "シャイン",
     "rENName": "shine",
     "eENName": "shine",
-    "otherAlias": []
+    "otherAlias": [
+      "shine"
+    ]
   },
   {
     "id": 1434,
@@ -1816,7 +2345,8 @@
     "rENName": "kimono ayaka",
     "eENName": "",
     "otherAlias": [
-      "kayaka"
+      "kayaka",
+      "kimono ayaka"
     ]
   },
   {
@@ -1824,7 +2354,9 @@
     "rJPName": "シエラ",
     "rENName": "shera",
     "eENName": "shera",
-    "otherAlias": []
+    "otherAlias": [
+      "shera"
+    ]
   },
   {
     "id": 1437,
@@ -1832,6 +2364,7 @@
     "rENName": "dress up eileen",
     "eENName": "",
     "otherAlias": [
+      "dress up eileen",
       "duaileen",
       "dueileen"
     ]
@@ -1841,217 +2374,290 @@
     "rJPName": "マリー",
     "rENName": "marie",
     "eENName": "marie",
-    "otherAlias": []
+    "otherAlias": [
+      "marie"
+    ]
   },
   {
     "id": 1440,
     "rJPName": "皇帝アデル",
     "rENName": "emperor adel",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "emperor adel"
+    ]
   },
   {
     "id": 417,
     "rJPName": "ガイ",
     "rENName": "guy",
     "eENName": "guy",
-    "otherAlias": []
+    "otherAlias": [
+      "guy"
+    ]
   },
   {
     "id": 420,
     "rJPName": "レオンハルト",
     "rENName": "leonhart",
     "eENName": "leon",
-    "otherAlias": []
+    "otherAlias": [
+      "leon",
+      "leonhart"
+    ]
   },
   {
     "id": 1445,
     "rJPName": "閃光のライトニング",
     "rENName": "cg lightning",
     "eENName": "aurora lightning",
-    "otherAlias": []
+    "otherAlias": [
+      "aurora lightning",
+      "cg lightning"
+    ]
   },
   {
     "id": 422,
     "rJPName": "皇帝",
     "rENName": "emperor",
     "eENName": "emperor",
-    "otherAlias": []
+    "otherAlias": [
+      "emperor"
+    ]
   },
   {
     "id": 1448,
     "rJPName": "未来へのホープ",
     "rENName": "future hope",
     "eENName": "future hope",
-    "otherAlias": []
+    "otherAlias": [
+      "future hope"
+    ]
   },
   {
     "id": 425,
     "rJPName": "りゅうおう",
     "rENName": "dragonlord",
     "eENName": "dragonlord",
-    "otherAlias": []
+    "otherAlias": [
+      "dragonlord"
+    ]
   },
   {
     "id": 427,
     "rJPName": "キラーマシン",
     "rENName": "killing machine",
     "eENName": "killing machine",
-    "otherAlias": []
+    "otherAlias": [
+      "killing machine"
+    ]
   },
   {
     "id": 1451,
     "rJPName": "ラァン\u0026レェン",
     "rENName": "lilikin reynn \u0026 lann",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "lilikin reynn \u0026 lann"
+    ]
   },
   {
     "id": 429,
     "rJPName": "スライム",
     "rENName": "slime",
     "eENName": "slime",
-    "otherAlias": []
+    "otherAlias": [
+      "slime"
+    ]
   },
   {
     "id": 1454,
     "rJPName": "ユウナ(woff)",
     "rENName": "lilikin yuna",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "lilikin yuna",
+      "ユウナ(woff)"
+    ]
   },
   {
     "id": 432,
     "rJPName": "ゴーレム",
     "rENName": "golem",
     "eENName": "golem",
-    "otherAlias": []
+    "otherAlias": [
+      "golem"
+    ]
   },
   {
     "id": 1457,
     "rJPName": "スコール(woff)",
     "rENName": "lilikin squall",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "lilikin squall",
+      "スコール(woff)"
+    ]
   },
   {
     "id": 435,
     "rJPName": "やまたのおろち",
     "rENName": "orochi",
     "eENName": "orochi",
-    "otherAlias": []
+    "otherAlias": [
+      "orochi"
+    ]
   },
   {
     "id": 1460,
     "rJPName": "ソル",
     "rENName": "sol",
     "eENName": "sol",
-    "otherAlias": []
+    "otherAlias": [
+      "sol"
+    ]
   },
   {
     "id": 438,
     "rJPName": "はぐれメタル",
     "rENName": "liquid metal slime",
     "eENName": "liquid metal slime",
-    "otherAlias": []
+    "otherAlias": [
+      "liquid metal slime"
+    ]
   },
   {
     "id": 1463,
     "rJPName": "ヘリアーク",
     "rENName": "heliak",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "heliak"
+    ]
   },
   {
     "id": 440,
     "rJPName": "カンダタ",
     "rENName": "robbin\u0027 \u0027ood",
     "eENName": "robbin\u0027 \u0027ood",
-    "otherAlias": []
+    "otherAlias": [
+      "robbin\u0027 \u0027ood"
+    ]
   },
   {
     "id": 1466,
     "rJPName": "イクリプサ",
     "rENName": "eclipsa",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "eclipsa"
+    ]
   },
   {
     "id": 445,
     "rJPName": "ソゼ",
     "rENName": "soze",
     "eENName": "sozhe",
-    "otherAlias": []
+    "otherAlias": [
+      "soze",
+      "sozhe"
+    ]
   },
   {
     "id": 1469,
     "rJPName": "ペルテイラ",
     "rENName": "pelteira",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "pelteira"
+    ]
   },
   {
     "id": 448,
     "rJPName": "ヘレティック",
     "rENName": "heretic",
     "eENName": "heltich",
-    "otherAlias": []
+    "otherAlias": [
+      "heltich",
+      "heretic"
+    ]
   },
   {
     "id": 1472,
     "rJPName": "光の戦士クルル",
     "rENName": "light warrior krile",
     "eENName": "warrior of light krile",
-    "otherAlias": []
+    "otherAlias": [
+      "light warrior krile",
+      "warrior of light krile"
+    ]
   },
   {
     "id": 451,
     "rJPName": "アイリーン",
     "rENName": "eileen",
     "eENName": "aileen",
-    "otherAlias": []
+    "otherAlias": [
+      "aileen",
+      "eileen"
+    ]
   },
   {
     "id": 1475,
     "rJPName": "暗黒魔道士エクスデス",
     "rENName": "dark mage exdeath",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "dark mage exdeath"
+    ]
   },
   {
     "id": 453,
     "rJPName": "ウルリカ",
     "rENName": "ulrika",
     "eENName": "ulrica",
-    "otherAlias": []
+    "otherAlias": [
+      "ulrica",
+      "ulrika"
+    ]
   },
   {
     "id": 1478,
     "rJPName": "暁の四戦士ガラフ",
     "rENName": "dawn warrior galuf",
     "eENName": "warrior of dawn galuf",
-    "otherAlias": []
+    "otherAlias": [
+      "dawn warrior galuf",
+      "warrior of dawn galuf"
+    ]
   },
   {
     "id": 456,
     "rJPName": "レム",
     "rENName": "rem",
     "eENName": "rem",
-    "otherAlias": []
+    "otherAlias": [
+      "rem"
+    ]
   },
   {
     "id": 1481,
     "rJPName": "光の戦士バッツ",
     "rENName": "(cg) light warrior bartz",
     "eENName": "warrior of light bartz",
-    "otherAlias": []
+    "otherAlias": [
+      "(cg) light warrior bartz",
+      "warrior of light bartz"
+    ]
   },
   {
     "id": 458,
     "rJPName": "キング",
     "rENName": "king",
     "eENName": "king",
-    "otherAlias": []
+    "otherAlias": [
+      "king"
+    ]
   },
   {
     "id": 1484,
@@ -2059,7 +2665,9 @@
     "rENName": "light warrior lenna",
     "eENName": "warrior of light lenna",
     "otherAlias": [
-      "lwlenna"
+      "light warrior lenna",
+      "lwlenna",
+      "warrior of light lenna"
     ]
   },
   {
@@ -2067,112 +2675,144 @@
     "rJPName": "サイス",
     "rENName": "sice",
     "eENName": "sice",
-    "otherAlias": []
+    "otherAlias": [
+      "sice"
+    ]
   },
   {
     "id": 1487,
     "rJPName": "アトリ",
     "rENName": "atri",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "atri"
+    ]
   },
   {
     "id": 464,
     "rJPName": "サクラ",
     "rENName": "sakura",
     "eENName": "sakura",
-    "otherAlias": []
+    "otherAlias": [
+      "sakura"
+    ]
   },
   {
     "id": 1490,
     "rJPName": "テッセン",
     "rENName": "tessen",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "tessen"
+    ]
   },
   {
     "id": 467,
     "rJPName": "ティーダ",
     "rENName": "tidus",
     "eENName": "tidus",
-    "otherAlias": []
+    "otherAlias": [
+      "tidus"
+    ]
   },
   {
     "id": 469,
     "rJPName": "ヴィルヘルム",
     "rENName": "wilhelm",
     "eENName": "wilhelm",
-    "otherAlias": []
+    "otherAlias": [
+      "wilhelm"
+    ]
   },
   {
     "id": 1493,
     "rJPName": "フィーナ\u0026チョコボ",
     "rENName": "chocobo fina",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "chocobo fina"
+    ]
   },
   {
     "id": 471,
     "rJPName": "グレイス",
     "rENName": "grace",
     "eENName": "grace",
-    "otherAlias": []
+    "otherAlias": [
+      "grace"
+    ]
   },
   {
     "id": 1496,
     "rJPName": "ファイサリス",
     "rENName": "faisalith",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "faisalith"
+    ]
   },
   {
     "id": 474,
     "rJPName": "アーベル",
     "rENName": "abel",
     "eENName": "abel",
-    "otherAlias": []
+    "otherAlias": [
+      "abel"
+    ]
   },
   {
     "id": 1499,
     "rJPName": "十三闘星のジュラガ",
     "rENName": "juraga",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "juraga"
+    ]
   },
   {
     "id": 477,
     "rJPName": "ジーン",
     "rENName": "jean",
     "eENName": "jean",
-    "otherAlias": []
+    "otherAlias": [
+      "jean"
+    ]
   },
   {
     "id": 1502,
     "rJPName": "十四闘星のグドン",
     "rENName": "gudon",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "gudon"
+    ]
   },
   {
     "id": 481,
     "rJPName": "ヴァルガス",
     "rENName": "vargas",
     "eENName": "vargas",
-    "otherAlias": []
+    "otherAlias": [
+      "vargas"
+    ]
   },
   {
     "id": 1505,
     "rJPName": "ソラ",
     "rENName": "sora",
     "eENName": "sora",
-    "otherAlias": []
+    "otherAlias": [
+      "sora"
+    ]
   },
   {
     "id": 483,
     "rJPName": "マクスウェル",
     "rENName": "maxwell",
     "eENName": "maxwell",
-    "otherAlias": []
+    "otherAlias": [
+      "maxwell"
+    ]
   },
   {
     "id": 1508,
@@ -2180,6 +2820,8 @@
     "rENName": "kh cloud",
     "eENName": "cloud (kh)",
     "otherAlias": [
+      "cloud (kh)",
+      "kh cloud",
       "khcloud"
     ]
   },
@@ -2188,28 +2830,36 @@
     "rJPName": "ヤ・シュトラ",
     "rENName": "y\u0027shtola",
     "eENName": "y\u0027shtola",
-    "otherAlias": []
+    "otherAlias": [
+      "y\u0027shtola"
+    ]
   },
   {
     "id": 487,
     "rJPName": "サンクレッド",
     "rENName": "thancred",
     "eENName": "thancred",
-    "otherAlias": []
+    "otherAlias": [
+      "thancred"
+    ]
   },
   {
     "id": 1511,
     "rJPName": "聖夜のアメリア\u0026エミリア",
     "rENName": "holy night amelia \u0026 emilia",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "holy night amelia \u0026 emilia"
+    ]
   },
   {
     "id": 490,
     "rJPName": "ミンフィリア",
     "rENName": "minfilia",
     "eENName": "minfilia",
-    "otherAlias": []
+    "otherAlias": [
+      "minfilia"
+    ]
   },
   {
     "id": 1514,
@@ -2217,7 +2867,8 @@
     "rENName": "kimono fina",
     "eENName": "",
     "otherAlias": [
-      "kfina"
+      "kfina",
+      "kimono fina"
     ]
   },
   {
@@ -2225,7 +2876,10 @@
     "rJPName": "渚のフィーナ",
     "rENName": "summer fina",
     "eENName": "beach time fina",
-    "otherAlias": []
+    "otherAlias": [
+      "beach time fina",
+      "summer fina"
+    ]
   },
   {
     "id": 1517,
@@ -2233,6 +2887,8 @@
     "rENName": "(cg) magitek warrior terra",
     "eENName": "magitek warrior terra",
     "otherAlias": [
+      "(cg) magitek warrior terra",
+      "magitek warrior terra",
       "mwterra"
     ]
   },
@@ -2241,7 +2897,10 @@
     "rJPName": "爽涼の魔人フィーナ",
     "rENName": "summer majin fina",
     "eENName": "seabreeze dark fina",
-    "otherAlias": []
+    "otherAlias": [
+      "seabreeze dark fina",
+      "summer majin fina"
+    ]
   },
   {
     "id": 1520,
@@ -2249,7 +2908,9 @@
     "rENName": "adventurer locke",
     "eENName": "treasure hunter locke",
     "otherAlias": [
-      "alocke"
+      "adventurer locke",
+      "alocke",
+      "treasure hunter locke"
     ]
   },
   {
@@ -2257,34 +2918,51 @@
     "rJPName": "常夏のリド",
     "rENName": "summer lid",
     "eENName": "summer lid",
-    "otherAlias": []
+    "otherAlias": [
+      "summer lid"
+    ]
   },
   {
     "id": 1523,
     "rJPName": "ネイシャ",
     "rENName": "neisha",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "neisha"
+    ]
   },
   {
     "id": 1526,
     "rJPName": "ラテール",
     "rENName": "latale",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "latale"
+    ]
   },
   {
     "id": 503,
     "rJPName": "トランスティナ",
     "rENName": "trance terra",
     "eENName": "trance terra",
-    "otherAlias": []
+    "otherAlias": [
+      "trance terra"
+    ]
   },
   {
     "id": 505,
     "rJPName": "セッツァー",
     "rENName": "setzer",
     "eENName": "setzer",
+    "otherAlias": [
+      "setzer"
+    ]
+  },
+  {
+    "id": 1529,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "assassin shadow",
     "otherAlias": []
   },
   {
@@ -2292,6 +2970,15 @@
     "rJPName": "ガウ",
     "rENName": "gau",
     "eENName": "gau",
+    "otherAlias": [
+      "gau"
+    ]
+  },
+  {
+    "id": 1532,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "great mage kefka",
     "otherAlias": []
   },
   {
@@ -2299,112 +2986,148 @@
     "rJPName": "フォーレン",
     "rENName": "forren",
     "eENName": "fohlen",
-    "otherAlias": []
+    "otherAlias": [
+      "fohlen",
+      "forren"
+    ]
   },
   {
     "id": 515,
     "rJPName": "アメリア",
     "rENName": "amelia",
     "eENName": "amelia",
-    "otherAlias": []
+    "otherAlias": [
+      "amelia"
+    ]
   },
   {
     "id": 518,
     "rJPName": "イルズ",
     "rENName": "illus",
     "eENName": "ilias",
-    "otherAlias": []
+    "otherAlias": [
+      "ilias",
+      "illus"
+    ]
   },
   {
     "id": 521,
     "rJPName": "カーミル",
     "rENName": "camille",
     "eENName": "camille",
-    "otherAlias": []
+    "otherAlias": [
+      "camille"
+    ]
   },
   {
     "id": 524,
     "rJPName": "リュック",
     "rENName": "rikku",
     "eENName": "rikku",
-    "otherAlias": []
+    "otherAlias": [
+      "rikku"
+    ]
   },
   {
     "id": 527,
     "rJPName": "ワッカ",
     "rENName": "wakka",
     "eENName": "wakka",
-    "otherAlias": []
+    "otherAlias": [
+      "wakka"
+    ]
   },
   {
     "id": 530,
     "rJPName": "バルフレア",
     "rENName": "balthier",
     "eENName": "balthier",
-    "otherAlias": []
+    "otherAlias": [
+      "balthier"
+    ]
   },
   {
     "id": 532,
     "rJPName": "アーシェ",
     "rENName": "ashe",
     "eENName": "ashe",
-    "otherAlias": []
+    "otherAlias": [
+      "ashe"
+    ]
   },
   {
     "id": 535,
     "rJPName": "ラスラ",
     "rENName": "rasler",
     "eENName": "rasler",
-    "otherAlias": []
+    "otherAlias": [
+      "rasler"
+    ]
   },
   {
     "id": 540,
     "rJPName": "ルネラ",
     "rENName": "runera",
     "eENName": "lunera",
-    "otherAlias": []
+    "otherAlias": [
+      "lunera",
+      "runera"
+    ]
   },
   {
     "id": 542,
     "rJPName": "ブラン",
     "rENName": "blanc",
     "eENName": "bran",
-    "otherAlias": []
+    "otherAlias": [
+      "blanc",
+      "bran"
+    ]
   },
   {
     "id": 545,
     "rJPName": "ヘレナ",
     "rENName": "helena",
     "eENName": "helena",
-    "otherAlias": []
+    "otherAlias": [
+      "helena"
+    ]
   },
   {
     "id": 548,
     "rJPName": "ラグルス",
     "rENName": "ruggles",
     "eENName": "ruggles",
-    "otherAlias": []
+    "otherAlias": [
+      "ruggles"
+    ]
   },
   {
     "id": 552,
     "rJPName": "ウェライ",
     "rENName": "werei",
     "eENName": "werei",
-    "otherAlias": []
+    "otherAlias": [
+      "werei"
+    ]
   },
   {
     "id": 555,
     "rJPName": "クピピ",
     "rENName": "kupipi",
     "eENName": "kupipi",
-    "otherAlias": []
+    "otherAlias": [
+      "kupipi"
+    ]
   },
   {
     "id": 558,
     "rJPName": "プリッシュ",
     "rENName": "prishe",
     "eENName": "prishe",
-    "otherAlias": []
+    "otherAlias": [
+      "prishe"
+    ]
   },
   {
     "id": 561,
@@ -2413,6 +3136,7 @@
     "eENName": "mercenary ramza",
     "otherAlias": [
       "",
+      "mercenary ramza",
       "mramza"
     ]
   },
@@ -2422,7 +3146,8 @@
     "rENName": "knight delita",
     "eENName": "knight delita",
     "otherAlias": [
-      "kdelita"
+      "kdelita",
+      "knight delita"
     ]
   },
   {
@@ -2430,56 +3155,76 @@
     "rJPName": "メリアドール",
     "rENName": "meliadoul",
     "eENName": "meliadoul",
-    "otherAlias": []
+    "otherAlias": [
+      "meliadoul"
+    ]
   },
   {
     "id": 570,
     "rJPName": "オーラン",
     "rENName": "orran",
     "eENName": "orran",
-    "otherAlias": []
+    "otherAlias": [
+      "orran"
+    ]
   },
   {
     "id": 573,
     "rJPName": "常闇のヴェリアス",
     "rENName": "dark veritas",
     "eENName": "veritas of the dark",
-    "otherAlias": []
+    "otherAlias": [
+      "dark veritas",
+      "veritas of the dark"
+    ]
   },
   {
     "id": 575,
     "rJPName": "劫火のヴェリアス",
     "rENName": "fire veritas",
     "eENName": "veritas of the flame",
-    "otherAlias": []
+    "otherAlias": [
+      "fire veritas",
+      "veritas of the flame"
+    ]
   },
   {
     "id": 577,
     "rJPName": "王土のヴェリアス",
     "rENName": "earth veritas",
     "eENName": "veritas of the earth",
-    "otherAlias": []
+    "otherAlias": [
+      "earth veritas",
+      "veritas of the earth"
+    ]
   },
   {
     "id": 580,
     "rJPName": "ビクトリア",
     "rENName": "victoria",
     "eENName": "victoria",
-    "otherAlias": []
+    "otherAlias": [
+      "victoria"
+    ]
   },
   {
     "id": 583,
     "rJPName": "ティム",
     "rENName": "tim",
     "eENName": "timothy",
-    "otherAlias": []
+    "otherAlias": [
+      "tim",
+      "timothy"
+    ]
   },
   {
     "id": 586,
     "rJPName": "モーグリ",
     "rENName": "moogle",
     "eENName": "moogle",
-    "otherAlias": []
+    "otherAlias": [
+      "moogle"
+    ]
   },
   {
     "id": 589,
@@ -2487,7 +3232,8 @@
     "rENName": "onion knight",
     "eENName": "onion knight",
     "otherAlias": [
-      "ok"
+      "ok",
+      "onion knight"
     ]
   },
   {
@@ -2495,435 +3241,571 @@
     "rJPName": "エリア",
     "rENName": "aria",
     "eENName": "aria",
-    "otherAlias": []
+    "otherAlias": [
+      "aria"
+    ]
   },
   {
     "id": 594,
     "rJPName": "デッシュ",
     "rENName": "desch",
     "eENName": "desch",
-    "otherAlias": []
+    "otherAlias": [
+      "desch"
+    ]
   },
   {
     "id": 597,
     "rJPName": "サラ",
     "rENName": "sara",
     "eENName": "sara",
-    "otherAlias": []
+    "otherAlias": [
+      "sara"
+    ]
   },
   {
     "id": 600,
     "rJPName": "光輝のヴェリアス",
     "rENName": "light veritas",
     "eENName": "veritas of the light",
-    "otherAlias": []
+    "otherAlias": [
+      "light veritas",
+      "veritas of the light"
+    ]
   },
   {
     "id": 602,
     "rJPName": "天風のヴェリアス",
     "rENName": "wind veritas",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "wind veritas"
+    ]
   },
   {
     "id": 605,
     "rJPName": "水華のヴェリアス",
     "rENName": "water veritas",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "water veritas"
+    ]
   },
   {
     "id": 610,
     "rJPName": "グロム",
     "rENName": "grom",
     "eENName": "guromu",
-    "otherAlias": []
+    "otherAlias": [
+      "grom",
+      "guromu"
+    ]
   },
   {
     "id": 613,
     "rJPName": "アウラ",
     "rENName": "aura",
     "eENName": "aura",
-    "otherAlias": []
+    "otherAlias": [
+      "aura"
+    ]
   },
   {
     "id": 616,
     "rJPName": "ノクティス",
     "rENName": "noctis",
     "eENName": "noctis",
-    "otherAlias": []
+    "otherAlias": [
+      "noctis"
+    ]
   },
   {
     "id": 618,
     "rJPName": "ハンターレイン",
     "rENName": "hunter rain",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hunter rain"
+    ]
   },
   {
     "id": 620,
     "rJPName": "ハンターフィーナ",
     "rENName": "hunter fina",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hunter fina"
+    ]
   },
   {
     "id": 623,
     "rJPName": "ハンターリド",
     "rENName": "hunter lid",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hunter lid"
+    ]
   },
   {
     "id": 624,
     "rJPName": "",
     "rENName": "",
     "eENName": "veritas of the heavens",
-    "otherAlias": []
+    "otherAlias": [
+      "veritas of the heavens"
+    ]
   },
   {
     "id": 626,
     "rJPName": "ハンターニコル",
     "rENName": "hunter nichol",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hunter nichol"
+    ]
   },
   {
     "id": 627,
     "rJPName": "",
     "rENName": "",
     "eENName": "veritas of the waters",
-    "otherAlias": []
+    "otherAlias": [
+      "veritas of the waters"
+    ]
   },
   {
     "id": 629,
     "rJPName": "ハンターラスウェル",
     "rENName": "hunter lasswell",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hunter lasswell"
+    ]
   },
   {
     "id": 631,
     "rJPName": "ハンターサクラ",
     "rENName": "hunter sakura",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hunter sakura"
+    ]
   },
   {
     "id": 634,
     "rJPName": "ハンタージェイク",
     "rENName": "hunter jake",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hunter jake"
+    ]
   },
   {
     "id": 638,
     "rJPName": "ニックス",
     "rENName": "nyx",
     "eENName": "nyx",
-    "otherAlias": []
+    "otherAlias": [
+      "nyx"
+    ]
   },
   {
     "id": 640,
     "rJPName": "グラウカ",
     "rENName": "glauca",
     "eENName": "glauca",
-    "otherAlias": []
+    "otherAlias": [
+      "glauca"
+    ]
   },
   {
     "id": 643,
     "rJPName": "クロウ",
     "rENName": "crowe",
     "eENName": "crowe",
-    "otherAlias": []
+    "otherAlias": [
+      "crowe"
+    ]
   },
   {
     "id": 646,
     "rJPName": "リベルト",
     "rENName": "libertus",
     "eENName": "libertus",
-    "otherAlias": []
+    "otherAlias": [
+      "libertus"
+    ]
   },
   {
     "id": 649,
     "rJPName": "ロレーヌ",
     "rENName": "lorraine",
     "eENName": "loren",
-    "otherAlias": []
+    "otherAlias": [
+      "loren",
+      "lorraine"
+    ]
   },
   {
     "id": 651,
     "rJPName": "アヤカ",
     "rENName": "ayaka",
     "eENName": "ayaka",
-    "otherAlias": []
+    "otherAlias": [
+      "ayaka"
+    ]
   },
   {
     "id": 653,
     "rJPName": "ゴウケン",
     "rENName": "goken",
     "eENName": "goken",
-    "otherAlias": []
+    "otherAlias": [
+      "goken"
+    ]
   },
   {
     "id": 656,
     "rJPName": "シルヴィア",
     "rENName": "sylvia",
     "eENName": "silvia",
-    "otherAlias": []
+    "otherAlias": [
+      "silvia",
+      "sylvia"
+    ]
   },
   {
     "id": 659,
     "rJPName": "カムイ",
     "rENName": "kamui",
     "eENName": "kamui",
-    "otherAlias": []
+    "otherAlias": [
+      "kamui"
+    ]
   },
   {
     "id": 662,
     "rJPName": "ユリ",
     "rENName": "yuri",
     "eENName": "yuri",
-    "otherAlias": []
+    "otherAlias": [
+      "yuri"
+    ]
   },
   {
     "id": 665,
     "rJPName": "ユリアン",
     "rENName": "julian",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "julian"
+    ]
   },
   {
     "id": 667,
     "rJPName": "カタリナ",
     "rENName": "katarina",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "katarina"
+    ]
   },
   {
     "id": 669,
     "rJPName": "ハリード",
     "rENName": "harid",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "harid"
+    ]
   },
   {
     "id": 672,
     "rJPName": "ロビン",
     "rENName": "robin",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "robin"
+    ]
   },
   {
     "id": 675,
     "rJPName": "半神アデル",
     "rENName": "demigod adel",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "demigod adel"
+    ]
   },
   {
     "id": 678,
     "rJPName": "デンジャラス・アリアナ",
     "rENName": "dangerous ariana",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "dangerous ariana"
+    ]
   },
   {
     "id": 681,
     "rJPName": "クラウド",
     "rENName": "cloud",
     "eENName": "cloud",
-    "otherAlias": []
+    "otherAlias": [
+      "cloud"
+    ]
   },
   {
     "id": 683,
     "rJPName": "エルフリーデ",
     "rENName": "elfried",
     "eENName": "elfreeda",
-    "otherAlias": []
+    "otherAlias": [
+      "elfreeda",
+      "elfried"
+    ]
   },
   {
     "id": 685,
     "rJPName": "コンラッド",
     "rENName": "conrad",
     "eENName": "conrad",
-    "otherAlias": []
+    "otherAlias": [
+      "conrad"
+    ]
   },
   {
     "id": 688,
     "rJPName": "ウィリアム",
     "rENName": "william",
     "eENName": "william",
-    "otherAlias": []
+    "otherAlias": [
+      "william"
+    ]
   },
   {
     "id": 691,
     "rJPName": "ロイ",
     "rENName": "roy",
     "eENName": "roy",
-    "otherAlias": []
+    "otherAlias": [
+      "roy"
+    ]
   },
   {
     "id": 693,
     "rJPName": "クロエ",
     "rENName": "chloe",
     "eENName": "chloe",
-    "otherAlias": []
+    "otherAlias": [
+      "chloe"
+    ]
   },
   {
     "id": 696,
     "rJPName": "エイミ",
     "rENName": "amy",
     "eENName": "amy",
-    "otherAlias": []
+    "otherAlias": [
+      "amy"
+    ]
   },
   {
     "id": 699,
     "rJPName": "ケルスス",
     "rENName": "kelsus",
     "eENName": "kelsus",
-    "otherAlias": []
+    "otherAlias": [
+      "kelsus"
+    ]
   },
   {
     "id": 701,
     "rJPName": "アシュテローゼ",
     "rENName": "ashterose",
     "eENName": "ashteroze",
-    "otherAlias": []
+    "otherAlias": [
+      "ashterose",
+      "ashteroze"
+    ]
   },
   {
     "id": 704,
     "rJPName": "ニャルル",
     "rENName": "nyarl",
     "eENName": "nyalu",
-    "otherAlias": []
+    "otherAlias": [
+      "nyalu",
+      "nyarl"
+    ]
   },
   {
     "id": 707,
     "rJPName": "クポルカン",
     "rENName": "kupolukan",
     "eENName": "kupolkan",
-    "otherAlias": []
+    "otherAlias": [
+      "kupolkan",
+      "kupolukan"
+    ]
   },
   {
     "id": 710,
     "rJPName": "サンディ",
     "rENName": "sandy",
     "eENName": "sandee",
-    "otherAlias": []
+    "otherAlias": [
+      "sandee",
+      "sandy"
+    ]
   },
   {
     "id": 713,
     "rJPName": "グリンフィルド",
     "rENName": "grinfield",
     "eENName": "grinfield",
-    "otherAlias": []
+    "otherAlias": [
+      "grinfield"
+    ]
   },
   {
     "id": 716,
     "rJPName": "グラディオラス",
     "rENName": "gladio",
     "eENName": "gladiolus",
-    "otherAlias": []
+    "otherAlias": [
+      "gladio",
+      "gladiolus"
+    ]
   },
   {
     "id": 718,
     "rJPName": "コル",
     "rENName": "cor",
     "eENName": "cor",
-    "otherAlias": []
+    "otherAlias": [
+      "cor"
+    ]
   },
   {
     "id": 721,
     "rJPName": "イリス",
     "rENName": "iris",
     "eENName": "iris",
-    "otherAlias": []
+    "otherAlias": [
+      "iris"
+    ]
   },
   {
     "id": 724,
     "rJPName": "デューク",
     "rENName": "duke",
     "eENName": "duke",
-    "otherAlias": []
+    "otherAlias": [
+      "duke"
+    ]
   },
   {
     "id": 726,
     "rJPName": "オリーフ",
     "rENName": "orif",
     "eENName": "olif",
-    "otherAlias": []
+    "otherAlias": [
+      "olif",
+      "orif"
+    ]
   },
   {
     "id": 729,
     "rJPName": "ミステア",
     "rENName": "mistair",
     "eENName": "mystea",
-    "otherAlias": []
+    "otherAlias": [
+      "mistair",
+      "mystea"
+    ]
   },
   {
     "id": 732,
     "rJPName": "シャリー",
     "rENName": "shaly",
     "eENName": "charie",
-    "otherAlias": []
+    "otherAlias": [
+      "charie",
+      "shaly"
+    ]
   },
   {
     "id": 735,
     "rJPName": "リュナン",
     "rENName": "ryunan",
     "eENName": "ryunan",
-    "otherAlias": []
+    "otherAlias": [
+      "ryunan"
+    ]
   },
   {
     "id": 738,
     "rJPName": "イダ",
     "rENName": "yda",
     "eENName": "yda",
-    "otherAlias": []
+    "otherAlias": [
+      "yda"
+    ]
   },
   {
     "id": 741,
     "rJPName": "パパリモ",
     "rENName": "papalymo",
     "eENName": "papalymo",
-    "otherAlias": []
+    "otherAlias": [
+      "papalymo"
+    ]
   },
   {
     "id": 749,
     "rJPName": "ベアトリクス",
     "rENName": "beatrix",
     "eENName": "beatrix",
-    "otherAlias": []
+    "otherAlias": [
+      "beatrix"
+    ]
   },
   {
     "id": 751,
     "rJPName": "スタイナー",
     "rENName": "steiner",
     "eENName": "steiner",
-    "otherAlias": []
+    "otherAlias": [
+      "steiner"
+    ]
   },
   {
     "id": 754,
     "rJPName": "エーコ",
     "rENName": "eiko",
     "eENName": "eiko",
-    "otherAlias": []
+    "otherAlias": [
+      "eiko"
+    ]
   },
   {
     "id": 756,
     "rJPName": "黒のワルツ3号",
     "rENName": "black waltz 3",
     "eENName": "black waltz 3",
-    "otherAlias": []
+    "otherAlias": [
+      "black waltz 3"
+    ]
   },
   {
     "id": 761,
     "rJPName": "ジライヤ",
     "rENName": "jiraiya",
-    "eENName": "jiraiya (awakening)",
+    "eENName": "jiraiya",
     "otherAlias": [
-      "jiraiya"
+      "jiraiya",
+      "jiraiya (awakening)"
     ]
   },
   {
@@ -2931,246 +3813,323 @@
     "rJPName": "カエデ",
     "rENName": "kaede",
     "eENName": "kaede",
-    "otherAlias": []
+    "otherAlias": [
+      "kaede"
+    ]
   },
   {
     "id": 766,
     "rJPName": "オウガ",
     "rENName": "ouga",
     "eENName": "ohga",
-    "otherAlias": []
+    "otherAlias": [
+      "ohga",
+      "ouga"
+    ]
   },
   {
     "id": 769,
     "rJPName": "オトギリ",
     "rENName": "otogiri",
     "eENName": "otogiri",
-    "otherAlias": []
+    "otherAlias": [
+      "otogiri"
+    ]
   },
   {
     "id": 772,
     "rJPName": "氷炎の騎士ラスウェル",
     "rENName": "cg lasswell",
     "eENName": "pyro glacial lasswell",
-    "otherAlias": []
+    "otherAlias": [
+      "cg lasswell",
+      "pyro glacial lasswell"
+    ]
   },
   {
     "id": 774,
     "rJPName": "2b",
     "rENName": "2b",
     "eENName": "2b",
-    "otherAlias": []
+    "otherAlias": [
+      "2b"
+    ]
   },
   {
     "id": 776,
     "rJPName": "9s",
     "rENName": "9s",
     "eENName": "9s",
-    "otherAlias": []
+    "otherAlias": [
+      "9s"
+    ]
   },
   {
     "id": 779,
     "rJPName": "アダム",
     "rENName": "adam",
     "eENName": "adam",
-    "otherAlias": []
+    "otherAlias": [
+      "adam"
+    ]
   },
   {
     "id": 782,
     "rJPName": "21o",
     "rENName": "21o",
     "eENName": "21o",
-    "otherAlias": []
+    "otherAlias": [
+      "21o"
+    ]
   },
   {
     "id": 785,
     "rJPName": "ユウナ",
     "rENName": "yuna",
     "eENName": "yuna",
-    "otherAlias": []
+    "otherAlias": [
+      "yuna"
+    ]
   },
   {
     "id": 787,
     "rJPName": "ルールー",
     "rENName": "lulu",
     "eENName": "lulu",
-    "otherAlias": []
+    "otherAlias": [
+      "lulu"
+    ]
   },
   {
     "id": 789,
     "rJPName": "シーモア",
     "rENName": "seymour",
     "eENName": "seymour",
-    "otherAlias": []
+    "otherAlias": [
+      "seymour"
+    ]
   },
   {
     "id": 793,
     "rJPName": "桜雲の賢者サクラ",
     "rENName": "cg sakura",
     "eENName": "blossom sage sakura",
-    "otherAlias": []
+    "otherAlias": [
+      "blossom sage sakura",
+      "cg sakura"
+    ]
   },
   {
     "id": 795,
     "rJPName": "ヴェルン",
     "rENName": "vern",
     "eENName": "verun",
-    "otherAlias": []
+    "otherAlias": [
+      "vern",
+      "verun"
+    ]
   },
   {
     "id": 798,
     "rJPName": "セドナ",
     "rENName": "sedona",
     "eENName": "cedona",
-    "otherAlias": []
+    "otherAlias": [
+      "cedona",
+      "sedona"
+    ]
   },
   {
     "id": 804,
     "rJPName": "リース",
     "rENName": "riesz",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "riesz"
+    ]
   },
   {
     "id": 806,
     "rJPName": "ホークアイ",
     "rENName": "hawkeye",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hawkeye"
+    ]
   },
   {
     "id": 808,
     "rJPName": "ケヴィン",
     "rENName": "kevin",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "kevin"
+    ]
   },
   {
     "id": 810,
     "rJPName": "シャルロット",
     "rENName": "carlie",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "carlie"
+    ]
   },
   {
     "id": 813,
     "rJPName": "ヒーロー",
     "rENName": "hero",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "hero"
+    ]
   },
   {
     "id": 815,
     "rJPName": "白蓮の魔道士フィーナ",
     "rENName": "cg fina",
     "eENName": "lotus mage fina",
-    "otherAlias": []
+    "otherAlias": [
+      "cg fina",
+      "lotus mage fina"
+    ]
   },
   {
     "id": 817,
     "rJPName": "クンシラ",
     "rENName": "kunshira",
     "eENName": "kunshira",
-    "otherAlias": []
+    "otherAlias": [
+      "kunshira"
+    ]
   },
   {
     "id": 819,
     "rJPName": "ワドウ",
     "rENName": "wado",
     "eENName": "wadow",
-    "otherAlias": []
+    "otherAlias": [
+      "wado",
+      "wadow"
+    ]
   },
   {
     "id": 822,
     "rJPName": "アウィン",
     "rENName": "erwin",
     "eENName": "erwin",
-    "otherAlias": []
+    "otherAlias": [
+      "erwin"
+    ]
   },
   {
     "id": 825,
     "rJPName": "アラネア",
     "rENName": "aranea",
     "eENName": "aranea",
-    "otherAlias": []
+    "otherAlias": [
+      "aranea"
+    ]
   },
   {
     "id": 827,
     "rJPName": "プロンプト",
     "rENName": "prompto",
     "eENName": "prompto",
-    "otherAlias": []
+    "otherAlias": [
+      "prompto"
+    ]
   },
   {
     "id": 830,
     "rJPName": "バッシュ",
     "rENName": "basch",
     "eENName": "basch",
-    "otherAlias": []
+    "otherAlias": [
+      "basch"
+    ]
   },
   {
     "id": 832,
     "rJPName": "ガブラス",
     "rENName": "gabranth",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "gabranth"
+    ]
   },
   {
     "id": 8000,
     "rJPName": "",
     "rENName": "",
     "eENName": "demon rain",
-    "otherAlias": []
+    "otherAlias": [
+      "demon rain"
+    ]
   },
   {
     "id": 834,
     "rJPName": "ヴェイン",
     "rENName": "vayne",
     "eENName": "vayne",
-    "otherAlias": []
+    "otherAlias": [
+      "vayne"
+    ]
   },
   {
     "id": 8003,
     "rJPName": "",
     "rENName": "",
     "eENName": "dracu lasswell",
-    "otherAlias": []
+    "otherAlias": [
+      "dracu lasswell"
+    ]
   },
   {
     "id": 837,
     "rJPName": "ドレイス",
     "rENName": "drace",
     "eENName": "drace",
-    "otherAlias": []
+    "otherAlias": [
+      "drace"
+    ]
   },
   {
     "id": 8006,
     "rJPName": "",
     "rENName": "",
     "eENName": "white witch fina",
-    "otherAlias": []
+    "otherAlias": [
+      "white witch fina"
+    ]
   },
   {
     "id": 840,
     "rJPName": "ラーサー",
     "rENName": "larsa",
     "eENName": "larsa",
-    "otherAlias": []
+    "otherAlias": [
+      "larsa"
+    ]
   },
   {
     "id": 8009,
     "rJPName": "",
     "rENName": "",
     "eENName": "black cat lid",
-    "otherAlias": []
+    "otherAlias": [
+      "black cat lid"
+    ]
   },
   {
     "id": 843,
     "rJPName": "無銘の銃士ジェイク",
     "rENName": "cg jake",
-    "eENName": "nameless gunner jake (awakening)",
+    "eENName": "nameless gunner jake",
     "otherAlias": [
-      "nameless gunner jake"
+      "cg jake",
+      "nameless gunner jake",
+      "nameless gunner jake (awakening)"
     ]
   },
   {
@@ -3178,15 +4137,18 @@
     "rJPName": "",
     "rENName": "",
     "eENName": "elza",
-    "otherAlias": []
+    "otherAlias": [
+      "elza"
+    ]
   },
   {
     "id": 845,
     "rJPName": "シエラ皇帝",
     "rENName": "emperor shera",
-    "eENName": "emperor shera (awakening)",
+    "eENName": "emperor shera",
     "otherAlias": [
-      "emperor shera"
+      "emperor shera",
+      "emperor shera (awakening)"
     ]
   },
   {
@@ -3194,150 +4156,192 @@
     "rJPName": "エミリア",
     "rENName": "emilia",
     "eENName": "emilia",
-    "otherAlias": []
+    "otherAlias": [
+      "emilia"
+    ]
   },
   {
     "id": 8015,
     "rJPName": "",
     "rENName": "",
     "eENName": "white knight noel",
-    "otherAlias": []
+    "otherAlias": [
+      "white knight noel"
+    ]
   },
   {
     "id": 850,
     "rJPName": "オゼッタ",
     "rENName": "ozetta",
     "eENName": "ozetta",
-    "otherAlias": []
+    "otherAlias": [
+      "ozetta"
+    ]
   },
   {
     "id": 8018,
     "rJPName": "",
     "rENName": "",
     "eENName": "santa roselia",
-    "otherAlias": []
+    "otherAlias": [
+      "santa roselia"
+    ]
   },
   {
     "id": 853,
     "rJPName": "ライリー",
     "rENName": "riley",
     "eENName": "riley",
-    "otherAlias": []
+    "otherAlias": [
+      "riley"
+    ]
   },
   {
     "id": 8023,
     "rJPName": "",
     "rENName": "",
     "eENName": "dangerous ariana",
-    "otherAlias": []
+    "otherAlias": [
+      "dangerous ariana"
+    ]
   },
   {
     "id": 857,
     "rJPName": "ティズ",
     "rENName": "tiz",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "tiz"
+    ]
   },
   {
     "id": 8026,
     "rJPName": "",
     "rENName": "",
     "eENName": "yun",
-    "otherAlias": []
+    "otherAlias": [
+      "yun"
+    ]
   },
   {
     "id": 859,
     "rJPName": "アニエス",
     "rENName": "agnes",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "agnes"
+    ]
   },
   {
     "id": 861,
     "rJPName": "アニエスブラボーバニー",
     "rENName": "bravo bunny agnes",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "bravo bunny agnes"
+    ]
   },
   {
     "id": 8029,
     "rJPName": "",
     "rENName": "",
     "eENName": "ling",
-    "otherAlias": []
+    "otherAlias": [
+      "ling"
+    ]
   },
   {
     "id": 863,
     "rJPName": "イデア",
     "rENName": "edea",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "edea"
+    ]
   },
   {
     "id": 8033,
     "rJPName": "",
     "rENName": "",
     "eENName": "cupid artemios",
-    "otherAlias": []
+    "otherAlias": [
+      "cupid artemios"
+    ]
   },
   {
     "id": 866,
     "rJPName": "ユウ",
     "rENName": "yew",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "yew"
+    ]
   },
   {
     "id": 8036,
     "rJPName": "",
     "rENName": "",
     "eENName": "cupid luna",
-    "otherAlias": []
+    "otherAlias": [
+      "cupid luna"
+    ]
   },
   {
     "id": 869,
     "rJPName": "マグノリア",
     "rENName": "magnolia",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "magnolia"
+    ]
   },
   {
     "id": 8039,
     "rJPName": "",
     "rENName": "",
     "eENName": "olive",
-    "otherAlias": []
+    "otherAlias": [
+      "olive"
+    ]
   },
   {
     "id": 872,
     "rJPName": "リンネ",
     "rENName": "rinne",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "rinne"
+    ]
   },
   {
     "id": 8042,
     "rJPName": "",
     "rENName": "",
     "eENName": "fryevia",
-    "otherAlias": []
+    "otherAlias": [
+      "fryevia"
+    ]
   },
   {
     "id": 875,
     "rJPName": "無垢なる召喚士リディア",
     "rENName": "kid rydia",
-    "eENName": "pure summoner rydia (awakening)",
+    "eENName": "pure summoner rydia",
     "otherAlias": [
-      "pure summoner rydia"
+      "kid rydia",
+      "pure summoner rydia",
+      "pure summoner rydia (awakening)"
     ]
   },
   {
     "id": 877,
     "rJPName": "究道の竜騎士カイン",
     "rENName": "helmless kain",
-    "eENName": "atoning dragoon kain (awakening)",
+    "eENName": "atoning dragoon kain",
     "otherAlias": [
-      "atoning dragoon kain"
+      "atoning dragoon kain",
+      "atoning dragoon kain (awakening)",
+      "helmless kain"
     ]
   },
   {
@@ -3345,43 +4349,55 @@
     "rJPName": "",
     "rENName": "",
     "eENName": "xon",
-    "otherAlias": []
+    "otherAlias": [
+      "xon"
+    ]
   },
   {
     "id": 879,
     "rJPName": "ヤン",
     "rENName": "yang",
     "eENName": "yang",
-    "otherAlias": []
+    "otherAlias": [
+      "yang"
+    ]
   },
   {
     "id": 8048,
     "rJPName": "",
     "rENName": "",
     "eENName": "aiden",
-    "otherAlias": []
+    "otherAlias": [
+      "aiden"
+    ]
   },
   {
     "id": 882,
     "rJPName": "ギルバート",
     "rENName": "edward",
     "eENName": "edward",
-    "otherAlias": []
+    "otherAlias": [
+      "edward"
+    ]
   },
   {
     "id": 8051,
     "rJPName": "",
     "rENName": "",
     "eENName": "reberta",
-    "otherAlias": []
+    "otherAlias": [
+      "reberta"
+    ]
   },
   {
     "id": 886,
     "rJPName": "星虹の技師リド",
     "rENName": "cg lid",
-    "eENName": "heavenly technician lid (awakening)",
+    "eENName": "heavenly technician lid",
     "otherAlias": [
-      "heavenly technician lid"
+      "cg lid",
+      "heavenly technician lid",
+      "heavenly technician lid (awakening)"
     ]
   },
   {
@@ -3389,92 +4405,118 @@
     "rJPName": "",
     "rENName": "",
     "eENName": "zyrus",
-    "otherAlias": []
+    "otherAlias": [
+      "zyrus"
+    ]
   },
   {
     "id": 888,
     "rJPName": "キリアン",
     "rENName": "killian",
     "eENName": "killian",
-    "otherAlias": []
+    "otherAlias": [
+      "killian"
+    ]
   },
   {
     "id": 8057,
     "rJPName": "",
     "rENName": "",
     "eENName": "artisan lid",
-    "otherAlias": []
+    "otherAlias": [
+      "artisan lid"
+    ]
   },
   {
     "id": 8059,
     "rJPName": "",
     "rENName": "",
     "eENName": "zargabaath",
-    "otherAlias": []
+    "otherAlias": [
+      "zargabaath"
+    ]
   },
   {
     "id": 893,
     "rJPName": "レベルタ",
     "rENName": "reberta",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "reberta"
+    ]
   },
   {
     "id": 8062,
     "rJPName": "",
     "rENName": "",
     "eENName": "a2",
-    "otherAlias": []
+    "otherAlias": [
+      "a2"
+    ]
   },
   {
     "id": 895,
     "rJPName": "リン",
     "rENName": "ling",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "ling"
+    ]
   },
   {
     "id": 8065,
     "rJPName": "",
     "rENName": "",
     "eENName": "eve",
-    "otherAlias": []
+    "otherAlias": [
+      "eve"
+    ]
   },
   {
     "id": 898,
     "rJPName": "ゾン",
     "rENName": "xon",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "xon"
+    ]
   },
   {
     "id": 8068,
     "rJPName": "",
     "rENName": "",
     "eENName": "chic ariana",
-    "otherAlias": []
+    "otherAlias": [
+      "chic ariana"
+    ]
   },
   {
     "id": 901,
     "rJPName": "エイデン",
     "rENName": "aiden",
     "eENName": "",
-    "otherAlias": []
+    "otherAlias": [
+      "aiden"
+    ]
   },
   {
     "id": 8071,
     "rJPName": "",
     "rENName": "",
     "eENName": "swordsman lasswell",
-    "otherAlias": []
+    "otherAlias": [
+      "swordsman lasswell"
+    ]
   },
   {
     "id": 904,
     "rJPName": "メディエナ",
     "rENName": "medina",
-    "eENName": "mediena (awakening)",
+    "eENName": "mediena",
     "otherAlias": [
-      "mediena"
+      "mediena",
+      "mediena (awakening)",
+      "medina"
     ]
   },
   {
@@ -3482,22 +4524,27 @@
     "rJPName": "",
     "rENName": "",
     "eENName": "scarmiglione",
-    "otherAlias": []
+    "otherAlias": [
+      "scarmiglione"
+    ]
   },
   {
     "id": 906,
     "rJPName": "セフィロス",
     "rENName": "sephiroth",
     "eENName": "sephiroth",
-    "otherAlias": []
+    "otherAlias": [
+      "sephiroth"
+    ]
   },
   {
     "id": 908,
     "rJPName": "リーラ",
     "rENName": "lila",
-    "eENName": "lila (awakening)",
+    "eENName": "lila",
     "otherAlias": [
-      "lila"
+      "lila",
+      "lila (awakening)"
     ]
   },
   {
@@ -3505,43 +4552,56 @@
     "rJPName": "",
     "rENName": "",
     "eENName": "cagnazzo",
-    "otherAlias": []
+    "otherAlias": [
+      "cagnazzo"
+    ]
   },
   {
     "id": 910,
     "rJPName": "シルト",
     "rENName": "silt",
     "eENName": "shylt",
-    "otherAlias": []
+    "otherAlias": [
+      "shylt",
+      "silt"
+    ]
   },
   {
     "id": 8079,
     "rJPName": "",
     "rENName": "",
     "eENName": "cheerleader fina",
-    "otherAlias": []
+    "otherAlias": [
+      "cheerleader fina"
+    ]
   },
   {
     "id": 913,
     "rJPName": "ミィム",
     "rENName": "mim",
     "eENName": "mim",
-    "otherAlias": []
+    "otherAlias": [
+      "mim"
+    ]
   },
   {
     "id": 8082,
     "rJPName": "",
     "rENName": "",
     "eENName": "grim lord sakura",
-    "otherAlias": []
+    "otherAlias": [
+      "grim lord sakura"
+    ]
   },
   {
     "id": 916,
     "rJPName": "洸洋の軍師ニコル",
     "rENName": "cg nichol",
-    "eENName": "maritime strategist nichol (awakening)",
+    "eENName": "maritime strategist nichol",
     "otherAlias": [
-      "maritime strategist nichol"
+      "cg nichol",
+      "maritime strategist nichol",
+      "maritime strategist nichol (awakening)"
     ]
   },
   {
@@ -3549,127 +4609,165 @@
     "rJPName": "",
     "rENName": "",
     "eENName": "illusionist nichol",
-    "otherAlias": []
+    "otherAlias": [
+      "illusionist nichol"
+    ]
   },
   {
     "id": 918,
     "rJPName": "レキサ",
     "rENName": "lekisa",
     "eENName": "lexa",
-    "otherAlias": []
+    "otherAlias": [
+      "lekisa",
+      "lexa"
+    ]
   },
   {
     "id": 8088,
     "rJPName": "",
     "rENName": "",
     "eENName": "pirate jake",
-    "otherAlias": []
+    "otherAlias": [
+      "pirate jake"
+    ]
   },
   {
     "id": 921,
     "rJPName": "エルビス",
     "rENName": "elvis",
     "eENName": "elbis",
-    "otherAlias": []
+    "otherAlias": [
+      "elbis",
+      "elvis"
+    ]
   },
   {
     "id": 8091,
     "rJPName": "",
     "rENName": "",
     "eENName": "barbariccia",
-    "otherAlias": []
+    "otherAlias": [
+      "barbariccia"
+    ]
   },
   {
     "id": 924,
     "rJPName": "メラルド",
     "rENName": "merald",
     "eENName": "merald",
-    "otherAlias": []
+    "otherAlias": [
+      "merald"
+    ]
   },
   {
     "id": 8094,
     "rJPName": "",
     "rENName": "",
     "eENName": "rubicante",
-    "otherAlias": []
+    "otherAlias": [
+      "rubicante"
+    ]
   },
   {
     "id": 928,
     "rJPName": "フェイト",
     "rENName": "fayt",
     "eENName": "fayt",
-    "otherAlias": []
+    "otherAlias": [
+      "fayt"
+    ]
   },
   {
     "id": 8097,
     "rJPName": "",
     "rENName": "",
     "eENName": "sportive ariana",
-    "otherAlias": []
+    "otherAlias": [
+      "sportive ariana"
+    ]
   },
   {
     "id": 930,
     "rJPName": "レナ",
     "rENName": "rena",
     "eENName": "rena",
-    "otherAlias": []
+    "otherAlias": [
+      "rena"
+    ]
   },
   {
     "id": 932,
     "rJPName": "フィデル",
     "rENName": "fidel",
     "eENName": "fidel",
-    "otherAlias": []
+    "otherAlias": [
+      "fidel"
+    ]
   },
   {
     "id": 8100,
     "rJPName": "",
     "rENName": "",
     "eENName": "charming kitty ariana",
-    "otherAlias": []
+    "otherAlias": [
+      "charming kitty ariana"
+    ]
   },
   {
     "id": 8102,
     "rJPName": "",
     "rENName": "",
     "eENName": "maiden sakura",
-    "otherAlias": []
+    "otherAlias": [
+      "maiden sakura"
+    ]
   },
   {
     "id": 935,
     "rJPName": "レイミ",
     "rENName": "reimi",
     "eENName": "reimi",
-    "otherAlias": []
+    "otherAlias": [
+      "reimi"
+    ]
   },
   {
     "id": 8104,
     "rJPName": "",
     "rENName": "",
     "eENName": "cowboy jake",
-    "otherAlias": []
+    "otherAlias": [
+      "cowboy jake"
+    ]
   },
   {
     "id": 938,
     "rJPName": "ラティクス",
     "rENName": "roddick",
     "eENName": "roddick",
-    "otherAlias": []
+    "otherAlias": [
+      "roddick"
+    ]
   },
   {
     "id": 8106,
     "rJPName": "",
     "rENName": "",
     "eENName": "christine",
-    "otherAlias": []
+    "otherAlias": [
+      "christine"
+    ]
   },
   {
     "id": 941,
     "rJPName": "レーゲン",
     "rENName": "cg reagan",
-    "eENName": "raegen (awakening)",
+    "eENName": "raegen",
     "otherAlias": [
-      "raegen"
+      "cg reagan",
+      "raegen",
+      "raegen (awakening)"
     ]
   },
   {
@@ -3677,335 +4775,441 @@
     "rJPName": "",
     "rENName": "",
     "eENName": "kryla",
-    "otherAlias": []
+    "otherAlias": [
+      "kryla"
+    ]
   },
   {
     "id": 943,
     "rJPName": "リュミヌイ",
     "rENName": "luminui",
     "eENName": "ryumynui",
-    "otherAlias": []
+    "otherAlias": [
+      "luminui",
+      "ryumynui"
+    ]
   },
   {
     "id": 8112,
     "rJPName": "",
     "rENName": "",
     "eENName": "tinkerer carrie",
-    "otherAlias": []
+    "otherAlias": [
+      "tinkerer carrie"
+    ]
   },
   {
     "id": 946,
     "rJPName": "ザイル",
     "rENName": "xyle",
     "eENName": "zile",
-    "otherAlias": []
+    "otherAlias": [
+      "xyle",
+      "zile"
+    ]
   },
   {
     "id": 8116,
     "rJPName": "",
     "rENName": "",
     "eENName": "toby",
-    "otherAlias": []
+    "otherAlias": [
+      "toby"
+    ]
   },
   {
     "id": 949,
     "rJPName": "ルシール",
     "rENName": "lucille",
     "eENName": "lucille",
-    "otherAlias": []
+    "otherAlias": [
+      "lucille"
+    ]
   },
   {
     "id": 8119,
     "rJPName": "",
     "rENName": "",
     "eENName": "kaliva",
-    "otherAlias": []
+    "otherAlias": [
+      "kaliva"
+    ]
   },
   {
     "id": 952,
     "rJPName": "彷徨の騎士レイン",
     "rENName": "wandering rain",
     "eENName": "vagrant knight rain",
-    "otherAlias": []
+    "otherAlias": [
+      "vagrant knight rain",
+      "wandering rain"
+    ]
   },
   {
     "id": 954,
     "rJPName": "レイン(覚醒せし力)",
     "rENName": "awakened rain",
     "eENName": "awakened rain",
-    "otherAlias": []
+    "otherAlias": [
+      "awakened rain"
+    ]
   },
   {
     "id": 8122,
     "rJPName": "",
     "rENName": "",
     "eENName": "barusa",
-    "otherAlias": []
+    "otherAlias": [
+      "barusa"
+    ]
   },
   {
     "id": 956,
     "rJPName": "スコール",
     "rENName": "squall",
     "eENName": "squall",
-    "otherAlias": []
+    "otherAlias": [
+      "squall"
+    ]
   },
   {
     "id": 8125,
     "rJPName": "",
     "rENName": "",
     "eENName": "ray jack",
-    "otherAlias": []
+    "otherAlias": [
+      "ray jack"
+    ]
   },
   {
     "id": 959,
     "rJPName": "リノア",
     "rENName": "rinoa",
     "eENName": "rinoa",
-    "otherAlias": []
+    "otherAlias": [
+      "rinoa"
+    ]
   },
   {
     "id": 8128,
     "rJPName": "",
     "rENName": "",
     "eENName": "ang",
-    "otherAlias": []
+    "otherAlias": [
+      "ang"
+    ]
   },
   {
     "id": 962,
     "rJPName": "ゼル",
     "rENName": "zell",
     "eENName": "zell",
-    "otherAlias": []
+    "otherAlias": [
+      "zell"
+    ]
   },
   {
     "id": 8131,
     "rJPName": "",
     "rENName": "",
     "eENName": "chow",
-    "otherAlias": []
+    "otherAlias": [
+      "chow"
+    ]
   },
   {
     "id": 965,
     "rJPName": "ラミラ",
     "rENName": "lamira",
     "eENName": "ramira",
-    "otherAlias": []
+    "otherAlias": [
+      "lamira",
+      "ramira"
+    ]
   },
   {
     "id": 8134,
     "rJPName": "",
     "rENName": "",
     "eENName": "yan",
-    "otherAlias": []
+    "otherAlias": [
+      "yan"
+    ]
   },
   {
     "id": 8137,
     "rJPName": "",
     "rENName": "",
     "eENName": "explorer aileen",
-    "otherAlias": []
+    "otherAlias": [
+      "explorer aileen"
+    ]
   },
   {
     "id": 8140,
     "rJPName": "",
     "rENName": "",
     "eENName": "divine soleil",
-    "otherAlias": []
+    "otherAlias": [
+      "divine soleil"
+    ]
   },
   {
     "id": 8143,
     "rJPName": "",
     "rENName": "",
     "eENName": "lara croft",
-    "otherAlias": []
+    "otherAlias": [
+      "lara croft"
+    ]
   },
   {
     "id": 8146,
     "rJPName": "",
     "rENName": "",
     "eENName": "pharaoh abel",
-    "otherAlias": []
+    "otherAlias": [
+      "pharaoh abel"
+    ]
   },
   {
     "id": 8149,
     "rJPName": "",
     "rENName": "",
     "eENName": "teo",
-    "otherAlias": []
+    "otherAlias": [
+      "teo"
+    ]
   },
   {
     "id": 8152,
     "rJPName": "",
     "rENName": "",
     "eENName": "mario frigo",
-    "otherAlias": []
+    "otherAlias": [
+      "mario frigo"
+    ]
   },
   {
     "id": 8155,
     "rJPName": "",
     "rENName": "",
     "eENName": "annika svennson",
-    "otherAlias": []
+    "otherAlias": [
+      "annika svennson"
+    ]
   },
   {
     "id": 989,
     "rJPName": "ナル",
     "rENName": "nal",
     "eENName": "nalu",
-    "otherAlias": []
+    "otherAlias": [
+      "nal",
+      "nalu"
+    ]
   },
   {
     "id": 8158,
     "rJPName": "",
     "rENName": "",
     "eENName": "rico rodriguez",
-    "otherAlias": []
+    "otherAlias": [
+      "rico rodriguez"
+    ]
   },
   {
     "id": 992,
     "rJPName": "ペツォッタ",
     "rENName": "pezzotta",
     "eENName": "pecciotta",
-    "otherAlias": []
+    "otherAlias": [
+      "pecciotta",
+      "pezzotta"
+    ]
   },
   {
     "id": 8160,
     "rJPName": "",
     "rENName": "",
     "eENName": "václav koller",
-    "otherAlias": []
+    "otherAlias": [
+      "václav koller"
+    ]
   },
   {
     "id": 995,
     "rJPName": "シンジュ",
     "rENName": "shinju",
     "eENName": "shinju",
-    "otherAlias": []
+    "otherAlias": [
+      "shinju"
+    ]
   },
   {
     "id": 8163,
     "rJPName": "",
     "rENName": "",
     "eENName": "frank pritchard",
-    "otherAlias": []
+    "otherAlias": [
+      "frank pritchard"
+    ]
   },
   {
     "id": 998,
     "rJPName": "リュカ",
     "rENName": "ryuka",
     "eENName": "ryuka",
-    "otherAlias": []
+    "otherAlias": [
+      "ryuka"
+    ]
   },
   {
     "id": 8166,
     "rJPName": "",
     "rENName": "",
     "eENName": "adam jensen",
-    "otherAlias": []
+    "otherAlias": [
+      "adam jensen"
+    ]
   },
   {
     "id": 8169,
     "rJPName": "",
     "rENName": "",
     "eENName": "viktor marchenko",
-    "otherAlias": []
+    "otherAlias": [
+      "viktor marchenko"
+    ]
   },
   {
     "id": 1002,
     "rJPName": "エスターク",
     "rENName": "estark",
     "eENName": "estark",
-    "otherAlias": []
+    "otherAlias": [
+      "estark"
+    ]
   },
   {
     "id": 8172,
     "rJPName": "",
     "rENName": "",
     "eENName": "aloha lasswell",
-    "otherAlias": []
+    "otherAlias": [
+      "aloha lasswell"
+    ]
   },
   {
     "id": 1005,
     "rJPName": "キングレオ",
     "rENName": "marquis de leon",
     "eENName": "marquis de léon",
-    "otherAlias": []
+    "otherAlias": [
+      "marquis de leon",
+      "marquis de léon"
+    ]
   },
   {
     "id": 8175,
     "rJPName": "",
     "rENName": "",
     "eENName": "seaside nichol",
-    "otherAlias": []
+    "otherAlias": [
+      "seaside nichol"
+    ]
   },
   {
     "id": 1008,
     "rJPName": "キラーマジンガ",
     "rENName": "uberkilling machine",
     "eENName": "überkilling machine",
-    "otherAlias": []
+    "otherAlias": [
+      "uberkilling machine",
+      "überkilling machine"
+    ]
   },
   {
     "id": 8178,
     "rJPName": "",
     "rENName": "",
     "eENName": "summertime luka",
-    "otherAlias": []
+    "otherAlias": [
+      "summertime luka"
+    ]
   },
   {
     "id": 1011,
     "rJPName": "スライムナイト",
     "rENName": "slime knight",
     "eENName": "slime knight",
-    "otherAlias": []
+    "otherAlias": [
+      "slime knight"
+    ]
   },
   {
     "id": 8181,
     "rJPName": "",
     "rENName": "",
     "eENName": "tide rider skaha",
-    "otherAlias": []
+    "otherAlias": [
+      "tide rider skaha"
+    ]
   },
   {
     "id": 1014,
     "rJPName": "ドラキー",
     "rENName": "dracky",
     "eENName": "dracky",
-    "otherAlias": []
+    "otherAlias": [
+      "dracky"
+    ]
   },
   {
     "id": 8184,
     "rJPName": "",
     "rENName": "",
     "eENName": "malphasie",
-    "otherAlias": []
+    "otherAlias": [
+      "malphasie"
+    ]
   },
   {
     "id": 1017,
     "rJPName": "ブチ切れシャントット",
     "rENName": "shantotto ii",
     "eENName": "livid shantotto",
-    "otherAlias": []
+    "otherAlias": [
+      "livid shantotto",
+      "shantotto ii"
+    ]
   },
   {
     "id": 8187,
     "rJPName": "",
     "rENName": "",
     "eENName": "circe",
-    "otherAlias": []
+    "otherAlias": [
+      "circe"
+    ]
   },
   {
     "id": 1020,
     "rJPName": "闇の王",
     "rENName": "shadowlord",
     "eENName": "shadow lord",
-    "otherAlias": []
+    "otherAlias": [
+      "shadow lord",
+      "shadowlord"
+    ]
   },
   {
     "id": 1023,
     "rJPName": "ヨアヒム",
     "rENName": "joachim",
     "eENName": "joachim",
-    "otherAlias": []
+    "otherAlias": [
+      "joachim"
+    ]
   }
 ]
