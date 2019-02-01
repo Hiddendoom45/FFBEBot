@@ -94,6 +94,10 @@ public class UnitAlias{
 	private String eENName="";
 	//everextending list of additional aliases
 	private TreeSet<String> otherAlias = new TreeSet<String>();
+	//hack to make sure it's not null when deserializing from gson
+	{
+		
+	}
 	public UnitAlias(int id){
 		this.id=id;
 	}
@@ -122,6 +126,12 @@ public class UnitAlias{
 		otherAlias.add(name.toLowerCase());
 		return this;
 	}
+	public UnitAlias removeAlias(String name){
+		if(!(name==null)){
+			otherAlias.remove(name.toLowerCase());
+		}
+		return this;
+	}
 	public UnitAlias dedupe(){
 		String[] remove = new String[otherAlias.size()];
 		int i = 0;
@@ -140,7 +150,7 @@ public class UnitAlias{
 			}
 		}
 		for(String s:remove){
-			otherAlias.remove(s);
+			removeAlias(s);
 		}
 		return this;
 	}

@@ -27,7 +27,7 @@ public class AddAlias extends OverrideGenerics{
 						Lib.sendMessage(event, "Alias added");
 					}
 					else if(args.containsKey("remove")){
-						UnitAlias.aliases.get(id).addAlias(name);
+						UnitAlias.aliases.get(id).removeAlias(name);
 						Lib.sendMessage(event, "Alias removed");
 					}
 					if(!args.containsKey("noserialize")){
