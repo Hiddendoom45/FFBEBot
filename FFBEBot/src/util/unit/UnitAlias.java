@@ -32,6 +32,7 @@ public class UnitAlias{
 		}
 		try(BufferedWriter out = Files.newBufferedWriter(saveLoc.toPath(),StandardOpenOption.CREATE)){
 			gson.toJson(alias.toArray(new UnitAlias[]{}), out);
+			out.flush();
 		}catch(IOException e){
 			Log.logError(e);
 		}
