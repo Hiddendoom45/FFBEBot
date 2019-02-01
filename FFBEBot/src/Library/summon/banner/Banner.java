@@ -146,6 +146,7 @@ public enum Banner {
 	FF7P1("FFVII",new Unit[]{Unit.Vincent,Unit.Tifa,Unit.Barret,Unit.CaitSith},BannerRates.D5.fiveRate(),KH.pool,KH.include,BannerType.ThreePercent),
 	Folka("Folka",new Unit[]{Unit.Folka,Unit.Yubel,Unit.Kihana,Unit.Ichor},BannerRates.D4.fiveRate(),Lib.concat(FF7P1.featured, FF7P1.pool),FF7P1.include,BannerType.ThreePercent),
 	SOA2("Star Ocean Collab 2",new Unit[]{Unit.Sophia,Unit.Fayt,Unit.Rena,Unit.Fidel,Unit.Roddick},BannerRates.T5.fiveRate(),Lib.concat(Folka.featured, Folka.pool),Folka.include,BannerType.ThreePercent),
+	FF10P3("FFX (3)",new Unit[]{Unit.Auron,Unit.Jecht,Unit.Belgemine,Unit.Brother},BannerRates.D5.fiveRate(),SOA2.pool,SOA2.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -157,7 +158,7 @@ public enum Banner {
 //  FF7 1
 //	FF8 1
 //	FF9 1
-//	FF10 1,2(+old)
+//	FF10 1,2(+old),3
 //	FF11 1,2
 //	FF12 1,2
 //	FF13 1(1,2)

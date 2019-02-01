@@ -184,6 +184,9 @@ public enum Husbandos {
 	CaitSith(Unit.CaitSith),
 	Yubel(Unit.Yubel),
 	Icho(Unit.Ichor),
+	Auron(Unit.Auron),
+	Jecht(Unit.Jecht),
+	Brother(Unit.Brother),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

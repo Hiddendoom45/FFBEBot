@@ -709,6 +709,10 @@ public enum Unit{
 	Yubel("Yubel",new String[]{"/6/6e/Unit-Yubel-4.png?version=5b9c77ea7cdc73abbd2357e7b3acb0b9","/9/96/Unit-Yubel-5.png?version=88dca068cc63c968437989fc717a4011","/3/38/Unit-Yubel-6.png?version=06fab050d9227c949e20ea66ab538010"},4),
 	Kihana("Kihana",new String[]{"/8/8b/Unit-Kihana-4.png?version=addca15d54f947dbb15a54d040d6fc29","/d/d3/Unit-Kihana-5.png?version=b4ff64c1f227384226d3382511838a93","/c/c5/Unit-Kihana-6.png?version=826db4243547e13a6b6109e4a7b3944f"},4),
 	Ichor("Ichor",new String[]{"/d/d3/Unit-Ichor-3.png?version=b7607f8438b7646f20df0ddd15dc481d","/8/8b/Unit-Ichor-4.png?version=2ddf206796e4f0bc960a9d5ed313c612","/a/a3/Unit-Ichor-5.png?version=8559fd0c79f4909e9f54f9330d7ec85b"},3),
+	Auron("Auron",new String[]{"/e/e5/Unit-Auron-5.png?version=7c0eb229f9f2e65ee4aebbd85216cf05","/9/94/Unit-Auron-6.png?version=f6f66790bcd24f8a8ac27bbfdbb63d74","/8/8e/Unit-Auron-7.png?version=49fb8663cc01a770c4851cb7dfcf5fb8"},5),
+	Jecht("Jecht",new String[]{"/6/6c/Unit-Jecht-5.png?version=27ccc33bb4bf2918920695da0bed2a5b","/7/7e/Unit-Jecht-6.png?version=4fabd3075f7371e36fcd13e86c07f683","/5/53/Unit-Jecht-7.png?version=b15bda0601a4ba211848d0157ff0aee8"},5),
+	Belgemine("Belgemine",new String[]{"/4/42/Unit-Belgemine-4.png?version=acc63ca0fe8ad64b5068cb37dbd37172","/1/1a/Unit-Belgemine-5.png?version=528370c0ac1d9f2e7f29e86d79e5a14c","/1/13/Unit-Belgemine-6.png?version=493a88d8af155f12cc9e449fd5e43ca6"},4),
+	Brother("Brother",new String[]{"/d/df/Unit-Brother-3.png?version=aa918172c8ae865253d5e460b4293884","/9/95/Unit-Brother-4.png?version=34c242197ae656c0e4b670608a2d9ee0","/e/e2/Unit-Brother-5.png?version=8297efc1ea9e308c68355f360492636b"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
