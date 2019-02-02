@@ -30,9 +30,8 @@ public class UnitAlias{
 		for(int i:aliases.keySet()){
 			alias.add(aliases.get(i).dedupe());
 		}
-		try(BufferedWriter out = Files.newBufferedWriter(saveLoc.toPath(),StandardOpenOption.CREATE)){
+		try(BufferedWriter out = Files.newBufferedWriter(saveLoc.toPath(),StandardOpenOption.CREATE,StandardOpenOption.WRITE)){
 			gson.toJson(alias.toArray(new UnitAlias[]{}), out);
-			out.flush();
 		}catch(IOException e){
 			Log.logError(e);
 		}
