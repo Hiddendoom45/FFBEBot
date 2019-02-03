@@ -125,6 +125,7 @@ public class Main {
 		CmdControl.addCommand("maintenance", new Maintenance(), Module);
 		CmdControl.addCommand("nier", new Nier(), Module);
 		CmdControl.addCommand("gumi.sg", new Hax(), Module);
+		CmdControl.addCommand(new String[]{"workhard","workharder","workhardest"}, new WorkHard(), Module);
 		
 		Module=ModuleEnum.Simulation.toString();
 		CmdControl.addCommand("dailies", new Dailies(), Module);
