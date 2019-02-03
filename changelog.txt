@@ -1,3 +1,5 @@
+This is a txt copy of the notes I made for the various changes to the bot prior to tracking with github which I was posting to the discord server I originally created the bot for. See the git commit history for any recent changes.
+
 11/08/2016
 Bot updated [Changes]:
 -ADDED salt command so far it only shows image of tilith who will cause me a lot of salt if I don't get her
