@@ -10,6 +10,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.events.message.react.MessageReactionAddEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import util.CmdControl;
+import util.CmdHistory;
 import util.Lib;
 import util.Overrider;
 import util.ReactionController;
@@ -39,6 +40,7 @@ public class BotListener extends ListenerAdapter{
 					Lib.printHelp(event);
 				}
 			}
+			CmdHistory.incMsg(event);
 		}catch(Exception e){
 			Log.logError(e);
 		}

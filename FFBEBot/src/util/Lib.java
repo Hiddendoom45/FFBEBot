@@ -21,6 +21,7 @@ import org.jsoup.select.Elements;
 import com.google.gson.Gson;
 
 import Library.ElementFilter;
+import commands.Command;
 import global.record.Log;
 import global.record.SaveSystem;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -730,6 +731,9 @@ public class Lib {
 			sum+=i;
 		}
 		return sum;
+	}
+	public static String extractCmdName(Command command){
+		return command.getClass().getSimpleName();
 	}
 	/**
 	 * converts a string array to 
