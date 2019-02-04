@@ -44,12 +44,12 @@ public class RedditOverview {
 		try{
 			for(int i=0;i<10;i++){
 				try{
-					doc = Jsoup.connect("https://www.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(60000).get();
+					doc = Jsoup.connect("https://old.reddit.com/r/FFBraveExvius/wiki/units").userAgent(Settings.UA).timeout(60000).get();
 					if(!(doc==null))break;
 				}
 				catch(Exception e){Log.logError(e);}
 			}
-			Element data=doc.getElementsByClass("wiki").get(0);
+			Element data=doc.getElementsByClass("wiki-page-content").first().getElementsByClass("wiki").get(0);
 			Elements units=data.getElementsByTag("tbody").get(0).getElementsByTag("tr");
 			udata=new unitData[units.size()];
 			int i=0;
@@ -99,7 +99,7 @@ public class RedditOverview {
 			}
 			for(Element e:row.child(3).getElementsByTag("a")){
 				String url = e.absUrl("href");
-				if(url.startsWith("https://www.reddit.com/r/FFBraveExvius/")){
+				if(url.startsWith("https://old.reddit.com/r/FFBraveExvius/")){
 					unitUrl = nullURLCheck(url);
 				}
 				else if (url.startsWith("https://exvius.gg/")||url.startsWith("https://exviusdb.com/")){
