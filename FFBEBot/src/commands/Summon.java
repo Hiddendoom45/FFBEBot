@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.imageio.ImageIO;
 
@@ -16,7 +17,9 @@ import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
+import util.CmdHistory;
 import util.Counter;
+import util.HistoryLLNode;
 import util.Lib;
 import util.SpamControl;
 import util.rng.RandomLibs;
@@ -26,9 +29,7 @@ import util.rng.summon.SummonImageBuilder;
 public class Summon extends CommandGenerics implements Command {
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
-		if(super.called(args, event)){
-			
-		}
+		super.called(args, event);
 		return SpamControl.isSpam(event, "summon");
 	}
 	@Override
@@ -46,7 +47,9 @@ public class Summon extends CommandGenerics implements Command {
 						}
 						Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
 						if(num==11){
-							sendImage(event, Pull.pull11(pullBanner),pullBanner.name);
+							List<UnitSpecific> units = Pull.pull11(pullBanner); 
+							logMeta(event, units);
+							sendImage(event, units, pullBanner.name);
 						}
 						else if(num==666&&Unit.valueOf("Lucifer")!=null){
 							ArrayList<UnitSpecific> units = new ArrayList<UnitSpecific>();
@@ -55,7 +58,6 @@ public class Summon extends CommandGenerics implements Command {
 											new UnitSpecific(Unit.valueOf("Lucifer"),5),
 											new UnitSpecific(Unit.DRain,5)
 											}));
-							
 							sendImage(event,units,pullBanner.name);
 						}
 						else if(num==0){
@@ -64,7 +66,9 @@ public class Summon extends CommandGenerics implements Command {
 							sendImage(event,units,pullBanner.name);
 						}
 						else{
-							sendImage(event, Pull.pull(num,pullBanner),pullBanner.name);
+							List<UnitSpecific> units = Pull.pull(num,pullBanner);
+							logMeta(event, units);
+							sendImage(event, units, pullBanner.name);
 						}
 					}
 					catch(NumberFormatException e){
@@ -89,7 +93,18 @@ public class Summon extends CommandGenerics implements Command {
 				+ "\n\tsummons [amount] units from the rare summon pool");
 		
 	}
-
+	private void logMeta(MessageReceivedEvent event, List<UnitSpecific> units){
+		int num5 = 0;
+		for(UnitSpecific u:units){
+			if(u.base==5){
+				num5++;
+			}
+		}
+		CmdHistory.getHist(event).append(
+				new HistoryLLNode(Lib.extractCmdName(this),
+							new String[]{"5star",""+num5,"totalCount",""+units.size(),"author",event.getAuthor().getId()},
+							System.currentTimeMillis()+TimeUnit.MINUTES.toMillis(5)));
+	}
 	private Banner getBanner(String s){
 		for(Banner b:Banner.values()){
 			if(s.toLowerCase().equals(b.name.toLowerCase())||s.toLowerCase().equals(b.toString().toLowerCase())){
