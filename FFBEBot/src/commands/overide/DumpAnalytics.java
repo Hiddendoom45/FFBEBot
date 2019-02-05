@@ -59,6 +59,7 @@ public class DumpAnalytics extends OverrideGenerics{
 			s+=PostgresDB.grepClass(Units.class.getSimpleName());
 			s+=PostgresDB.grepClass(UnitSell.class.getSimpleName());
 			s+=PostgresDB.grepClass(Waifu.class.getSimpleName());
+			s+=PostgresDB.grepClass(WorkHard.class.getSimpleName());
 		}
 		Lib.sendMessage(event, s);
 	}
