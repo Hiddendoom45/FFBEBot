@@ -14,6 +14,7 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 
 #### Recent Updates:
 
+- we all work hard for our rainbows
 - aliases are interchangable between the runit and unit commands, en,jp names and id can be used to search with both runit and unit (and all releated commands)
 - update to runit command and parser for new format for reddit wiki
 - update unit command so jp names work and ids (for the base unit) also works
@@ -24,8 +25,6 @@ Currently maintained, any bugs that I find should be fixed quickly, not actively
 - update stat display, cleaner and different stats sorted into columns
 - update exivus wiki parsing for due to issues caused by wikimedia update
 - update to runit, displays links for exvius.gg and famitsu
-- fix various issues with unit links with runit/unit
-- remove give command, update help command
 
 #### TODO:
 
