@@ -47,10 +47,13 @@ public class HistoryLLNode{
 	}
 	public HistoryLLNode getNext(){
 		//lazy prune
-		while(!(next==null)&&expires!=-1&&next.expires<System.currentTimeMillis()){
+		while(!(next==null)&&next.isExpired()){
 			removeNext();
 		}
 		return next;
+	}
+	public boolean isExpired(){
+		return expires!=-1&&expires<System.currentTimeMillis();
 	}
 	public void remove(HistoryLLNode previous){
 		previous.next = next;

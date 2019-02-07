@@ -11,11 +11,14 @@ public class HistoryLL{
 		this.tip = tip;
 	}
 	public HistoryLLNode get(){
+		if(tip.isExpired()){
+			tip = null;
+		}
 		return tip;
 	}
 	
 	public int msgSince(Command command){
-		HistoryLLNode next = tip;
+		HistoryLLNode next = get();
 		int since = 0;
 		while(!(next==null)){
 			since+=next.getMessagesSince();
@@ -29,7 +32,7 @@ public class HistoryLL{
 	}
 	
 	public HistoryLLNode lastInstance(Command command){
-		HistoryLLNode next = tip;
+		HistoryLLNode next = get();
 		while(!(next==null)){
 			if(next.getCommandName().equals(Lib.extractCmdName(command))){
 				return next;
