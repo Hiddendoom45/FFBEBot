@@ -235,7 +235,8 @@ public enum Husbandos {
 	Lucian(Unit.Lucian),
 	Felix(Unit.Felix),
 	Sora(Unit.Sora),
-	KHCloud(Unit.KHCloud);
+	KHCloud(Unit.KHCloud),
+	Qin(Unit.Qin);
 	
 
 	public final String name;
