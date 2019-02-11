@@ -11,6 +11,7 @@ public class HistoryLL{
 		this.tip = tip;
 	}
 	public HistoryLLNode get(){
+		if(tip==null)return tip;
 		if(tip.isExpired()){
 			tip = null;
 		}

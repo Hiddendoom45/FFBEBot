@@ -15,7 +15,14 @@ public class CmdHistory{
 	public static void incMsg(MessageReceivedEvent event){
 		long channel = event.getChannel().getIdLong();
 		if(historyMap.containsKey(channel)){
-			historyMap.get(channel).get().msgRec();
+			HistoryLLNode  n = historyMap.get(channel).get();
+			if(!(n==null)){
+				n.msgRec();
+			}
+			else{
+				//remove empty list
+				historyMap.remove(channel);
+			}
 		}
 	}
 	
