@@ -149,6 +149,7 @@ public enum Banner {
 	FF10P3("FFX (3)",new Unit[]{Unit.Auron,Unit.Jecht,Unit.Belgemine,Unit.Brother},BannerRates.D5.fiveRate(),SOA2.pool,SOA2.include,BannerType.ThreePercent),
 	CNY2("Lunar New Year (2)",new Unit[]{Unit.Qin,Unit.BaiHuZhuQue},BannerRates.LD5.fiveRate(),Lib.concat(FF10P3.featured, FF10P3.pool),FF10P3.include,BannerType.ThreePercent),
 	CNY2_old("Lunar New Year Old Units",new Unit[]{Unit.Yun,Unit.Chow,Unit.Ang,Unit.Ling,Unit.Yan,Unit.CArtemois,Unit.CLuna,Unit.Yuri},BannerRates.T5T4D3.featuredFive(),CNY2.pool,CNY2.include,BannerType.ThreePercentFeatured),
+	Ignacio("Ignatio",new Unit[]{Unit.Ignacio,Unit.Suzume,Unit.PNK2,Unit.Wayhem},BannerRates.D4.fiveRate(),CNY2.pool,CNY2.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

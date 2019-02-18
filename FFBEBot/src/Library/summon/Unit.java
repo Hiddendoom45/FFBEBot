@@ -713,6 +713,10 @@ public enum Unit{
 	Jecht("Jecht",new String[]{"/6/6c/Unit-Jecht-5.png?version=27ccc33bb4bf2918920695da0bed2a5b","/7/7e/Unit-Jecht-6.png?version=4fabd3075f7371e36fcd13e86c07f683","/5/53/Unit-Jecht-7.png?version=b15bda0601a4ba211848d0157ff0aee8"},5),
 	Belgemine("Belgemine",new String[]{"/4/42/Unit-Belgemine-4.png?version=acc63ca0fe8ad64b5068cb37dbd37172","/1/1a/Unit-Belgemine-5.png?version=528370c0ac1d9f2e7f29e86d79e5a14c","/1/13/Unit-Belgemine-6.png?version=493a88d8af155f12cc9e449fd5e43ca6"},4),
 	Brother("Brother",new String[]{"/d/df/Unit-Brother-3.png?version=aa918172c8ae865253d5e460b4293884","/9/95/Unit-Brother-4.png?version=34c242197ae656c0e4b670608a2d9ee0","/e/e2/Unit-Brother-5.png?version=8297efc1ea9e308c68355f360492636b"},3),
+	Ignacio("Ignacio",new String[]{"/b/b4/Unit-Ignacio-5.png?version=9453cba14a635e127d336f3fa23f86bc","/6/69/Unit-Ignacio-6.png?version=f9d7c284ceda4c7e3246c746015d65ce","/2/26/Unit-Ignacio-7.png?version=78c6784d152a3549d370ee621cf33309"},5),
+	Suzume("Suzume",new String[]{"/7/79/Unit-Suzume-4.png?version=6a99e493ea34c0ddd3560a638608e55f","/d/da/Unit-Suzume-5.png?version=a931cc62123b1024e2537b7efd6ceb7f","/3/38/Unit-Suzume-6.png?version=699421be63cce2675299aa2b658a0255"},4),
+	PNK2("PNK-2",new String[]{"/a/a4/Unit-PNK-2-4.png?version=b1357cb2bd9b7ac900b8e59141ffae61","/b/b6/Unit-PNK-2-5.png?version=f647eb82e4deb631351d8a5fb84b9dce","/5/5a/Unit-PNK-2-6.png?version=a19e3a6ba64c9e61f9d3baa01c3b821c"},4),
+	Wayhem("Wayhem",new String[]{"/a/a4/Unit-Wayhem-3.png?version=833d679f3da106d9964742169584adf0","/0/0b/Unit-Wayhem-4.png?version=47eb524312718a79d388176657a31d54","/9/96/Unit-Wayhem-5.png?version=1bed063e43e6f27b03ede45589e0e3e7"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1312,7 +1316,15 @@ public enum Unit{
 				Folka,
 				Yubel,
 				Kihana,
-				Ichor
+				Ichor,
+				Auron,
+				Jecht,
+				Belgemine,
+				Brother,
+				Ignacio,
+				Suzume,
+				PNK2,
+				Wayhem
 
 		});
 	}
