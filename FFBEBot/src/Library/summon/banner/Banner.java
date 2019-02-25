@@ -130,14 +130,14 @@ public enum Banner {
 	DQ2("Dragon Quest 2",new Unit[]{Unit.Estark,Unit.KillingMachine,Unit.Orochi,Unit.LMSlime,Unit.Golem,Unit.RobbinOod},BannerRates.D3T4.fiveRate(),Lib.concat(new Unit[]{Unit.RageShantotto,Unit.ShadowLord,Unit.Joachim}, FF11P2.pool),FF11P2.include,BannerType.ThreePercent),
 	Hyoh("CG Hyou",new Unit[]{Unit.Hyoh,Unit.Shatal,Unit.Domino},BannerRates.EvenSplit.fiveRate(),DQ2.pool,DQ2.include,BannerType.ThreePercent),
 	Summer2("Sand Sea Summer in Fall",new Unit[]{Unit.AlohaLasswell,Unit.SeaNichol,Unit.SummerLuka,Unit.TideSkaha},BannerRates.D5.fiveRate(),Lib.concat(Hyoh.featured, Hyoh.pool),Hyoh.include,BannerType.ThreePercent),
-	GLArtP1("Art Contest Units part 1",new Unit[]{Unit.Malphasie,Unit.Circe},BannerRates.LD5.fiveRate(),Lib.concat(Summer2.featured, Summer2.pool),Summer2.include,BannerType.ThreePercent),
+	GLArtP1("Fan Festa Units (2)",new Unit[]{Unit.Malphasie,Unit.Circe},BannerRates.LD5.fiveRate(),Lib.concat(Summer2.featured, Summer2.pool),Summer2.include,BannerType.ThreePercent),
 	FF15P4("FFXV (4)",new Unit[]{Unit.Ignis,Unit.Ravus,Unit.Libertus},BannerRates.EvenSplit.fiveRate(),Lib.concat(GLArtP1.featured, GLArtP1.pool),GLArtP1.include,BannerType.ThreePercent),
 	Citra("Citra",new Unit[]{Unit.Citra,Unit.Macmedi,Unit.Lotti},BannerRates.EvenSplit.fiveRate(),Lib.concat(new Unit[]{Unit.Ignis,Unit.Ravus}, FF15P4.pool),FF15P4.include,BannerType.ThreePercent),
 	Halloween3("Halloween 2018 new",new Unit[]{Unit.Lucifer,Unit.Lilith},BannerRates.LD5.fiveRate(),Lib.concat(Citra.featured, Citra.pool),Citra.include,BannerType.ThreePercent),
 	VP("Valkyrie profile triple rainbow BS", new Unit[]{Unit.Lenneth,Unit.VPFreya,Unit.Arngrim,Unit.Lucian,Unit.Jelanda},BannerRates.T5.fiveRate(),Halloween3.pool,Halloween3.include,BannerType.ThreePercent),
 	FF0P4("FF type-0 (4)",new Unit[]{Unit.Machina,Unit.Kurasame,Unit.Deuce,Unit.Cater},BannerRates.D5.fiveRate(),VP.pool,VP.include,BannerType.ThreePercent),
 	Elephim("Elephim",new Unit[]{Unit.Elephim,Unit.Leopold,Unit.Magna,Unit.Forelsket},BannerRates.D4.fiveRate(),Lib.concat(FF0P4.featured, FF0P4.pool),FF0P4.include,BannerType.ThreePercent),
-	GLArtP2("Art Contest Units part 2",new Unit[]{Unit.Beryl,Unit.Ellesperis},BannerRates.LD5.fiveRate(),Lib.concat(Elephim.featured, Elephim.pool),Elephim.include,BannerType.ThreePercent),
+	GLArtP2("Fan Festa Units (2)",new Unit[]{Unit.Beryl,Unit.Ellesperis},BannerRates.LD5.fiveRate(),Lib.concat(Elephim.featured, Elephim.pool),Elephim.include,BannerType.ThreePercent),
 	Nier2("Nier Rerun",new Unit[]{Unit.A2,Unit.N2B,Unit.Eve,Unit.N9S,Unit.N21O},BannerRates.D4D5.fiveRate(),Lib.concat(GLArtP2.featured, GLArtP2.pool),GLArtP2.include,BannerType.ThreePercent),
 	Sieghart("Sieghard",new Unit[]{Unit.Sieghart,Unit.Dietlinde,Unit.Theobald,Unit.Cannon},BannerRates.D4.fiveRate(),Nier2.pool,Nier2.include,BannerType.ThreePercent),
 	Christmas3("Winter Mayhem",new Unit[]{Unit.Tiana,Unit.Felix},BannerRates.LD5.fiveRate(),Lib.concat(Sieghart.featured, Sieghart.pool),Sieghart.include,BannerType.ThreePercent),
@@ -150,6 +150,7 @@ public enum Banner {
 	CNY2("Lunar New Year (2)",new Unit[]{Unit.Qin,Unit.BaiHuZhuQue},BannerRates.LD5.fiveRate(),Lib.concat(FF10P3.featured, FF10P3.pool),FF10P3.include,BannerType.ThreePercent),
 	CNY2_old("Lunar New Year Old Units",new Unit[]{Unit.Yun,Unit.Chow,Unit.Ang,Unit.Ling,Unit.Yan,Unit.CArtemois,Unit.CLuna,Unit.Yuri},BannerRates.T5T4D3.featuredFive(),CNY2.pool,CNY2.include,BannerType.ThreePercentFeatured),
 	Ignacio("Ignatio",new Unit[]{Unit.Ignacio,Unit.Suzume,Unit.PNK2,Unit.Wayhem},BannerRates.D4.fiveRate(),CNY2.pool,CNY2.include,BannerType.ThreePercent),
+	GLArtP3("Fan Festa Units (3)",new Unit[]{Unit.Myra,Unit.AFryevia},BannerRates.LD5.fiveRate(),Lib.concat(Ignacio.featured, Ignacio.pool),Ignacio.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

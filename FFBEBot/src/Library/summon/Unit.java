@@ -717,6 +717,8 @@ public enum Unit{
 	Suzume("Suzume",new String[]{"/7/79/Unit-Suzume-4.png?version=6a99e493ea34c0ddd3560a638608e55f","/d/da/Unit-Suzume-5.png?version=a931cc62123b1024e2537b7efd6ceb7f","/3/38/Unit-Suzume-6.png?version=699421be63cce2675299aa2b658a0255"},4),
 	PNK2("PNK-2",new String[]{"/a/a4/Unit-PNK-2-4.png?version=b1357cb2bd9b7ac900b8e59141ffae61","/b/b6/Unit-PNK-2-5.png?version=f647eb82e4deb631351d8a5fb84b9dce","/5/5a/Unit-PNK-2-6.png?version=a19e3a6ba64c9e61f9d3baa01c3b821c"},4),
 	Wayhem("Wayhem",new String[]{"/a/a4/Unit-Wayhem-3.png?version=833d679f3da106d9964742169584adf0","/0/0b/Unit-Wayhem-4.png?version=47eb524312718a79d388176657a31d54","/9/96/Unit-Wayhem-5.png?version=1bed063e43e6f27b03ede45589e0e3e7"},3),
+	Myra("Myra",new String[]{"/d/d7/Unit-Myra-5.png?version=a7634a3ef1b43b092c91b1a8d69e01fb","/a/a9/Unit-Myra-6.png?version=c5d440d8545e4aee357f7cae72f9eaf7","/6/65/Unit-Myra-7.png?version=f6127828cb5cca6f3d28a9744404a519"},5),
+	AFryevia("Aurora Fryevia",new String[]{"/0/0f/Unit-Aurora_Fryevia-5.png?version=c60ddd340885021b8d4cf83f7c57e41d","/b/b7/Unit-Aurora_Fryevia-6.png?version=e29795158c31f976acd69e71c52d123d","/e/ea/Unit-Aurora_Fryevia-7.png?version=4729805f3d71684190f78658e5ffda25"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1324,7 +1326,9 @@ public enum Unit{
 				Ignacio,
 				Suzume,
 				PNK2,
-				Wayhem
+				Wayhem,
+				Myra,
+				AFryevia
 
 		});
 	}
