@@ -719,6 +719,10 @@ public enum Unit{
 	Wayhem("Wayhem",new String[]{"/a/a4/Unit-Wayhem-3.png?version=833d679f3da106d9964742169584adf0","/0/0b/Unit-Wayhem-4.png?version=47eb524312718a79d388176657a31d54","/9/96/Unit-Wayhem-5.png?version=1bed063e43e6f27b03ede45589e0e3e7"},3),
 	Myra("Myra",new String[]{"/d/d7/Unit-Myra-5.png?version=a7634a3ef1b43b092c91b1a8d69e01fb","/a/a9/Unit-Myra-6.png?version=c5d440d8545e4aee357f7cae72f9eaf7","/6/65/Unit-Myra-7.png?version=f6127828cb5cca6f3d28a9744404a519"},5),
 	AFryevia("Aurora Fryevia",new String[]{"/0/0f/Unit-Aurora_Fryevia-5.png?version=c60ddd340885021b8d4cf83f7c57e41d","/b/b7/Unit-Aurora_Fryevia-6.png?version=e29795158c31f976acd69e71c52d123d","/e/ea/Unit-Aurora_Fryevia-7.png?version=4729805f3d71684190f78658e5ffda25"},5),
+	OKRefia("Onion Knight Refia",new String[]{"/e/e2/Unit-Onion_Knight_Refia-5.png?version=0765937ef481cc9bc8860f2e89e65b64","/1/17/Unit-Onion_Knight_Refia-6.png?version=42c91b9f9fbe67e51775f1cc950721ec","/9/9a/Unit-Onion_Knight_Refia-7.png?version=f0b848c96e6572087eeff72faa1b70e1"},5),
+	DKLuneth("Dark Knight Luneth",new String[]{"/a/ab/Unit-Dark_Knight_Luneth-5.png?version=954fa33a61e9322709fd09ccfe9f1d4c","/2/20/Unit-Dark_Knight_Luneth-6.png?version=9ede4c21c7cc36b91c205e792b0c4d23","/1/1e/Unit-Dark_Knight_Luneth-7.png?version=5c6c1987779c9acf2540cd2138c7fc17"},5),
+	Doga("Doga",new String[]{"/3/3c/Unit-Doga-4.png?version=a25aa2f8da7a35bad3cbaeca12286938","/a/a9/Unit-Doga-5.png?version=44cbb955c73b8af8732855af29fc2d72","/4/4d/Unit-Doga-6.png?version=5b44dfbbb046e5581884a8f8d391d206"},4),
+	Unei("Unei",new String[]{"/3/3c/Unit-Unei-3.png?version=45f7cf3e40cd2398c8302ec507e42551","/5/50/Unit-Unei-4.png?version=13b45bb15ea86d273062570af73de970","/f/f5/Unit-Unei-5.png?version=fba23d04f072176406576146bd25522e"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1328,7 +1332,11 @@ public enum Unit{
 				PNK2,
 				Wayhem,
 				Myra,
-				AFryevia
+				AFryevia,
+				OKRefia,
+				DKLuneth,
+				Doga,
+				Unei
 
 		});
 	}

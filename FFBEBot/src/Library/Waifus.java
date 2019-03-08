@@ -144,6 +144,8 @@ public enum Waifus {
 	Suzume(Unit.Suzume),
 	Myra(Unit.Myra),
 	AFryevia(Unit.AFryevia),
+	OKRefia(Unit.OKRefia),
+	Unei(Unit.Unei),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),
