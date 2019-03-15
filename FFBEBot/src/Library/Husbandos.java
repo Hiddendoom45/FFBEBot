@@ -191,6 +191,8 @@ public enum Husbandos {
 	Wayhem(Unit.Wayhem),
 	DKLuneth(Unit.Luneth),
 	Doga(Unit.Doga),
+	CGCid(Unit.CGCid),
+	Nagflar(Unit.Nagflar),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

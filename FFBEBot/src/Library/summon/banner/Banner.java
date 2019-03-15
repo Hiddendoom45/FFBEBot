@@ -152,6 +152,7 @@ public enum Banner {
 	Ignacio("Ignatio",new Unit[]{Unit.Ignacio,Unit.Suzume,Unit.PNK2,Unit.Wayhem},BannerRates.D4.fiveRate(),CNY2.pool,CNY2.include,BannerType.ThreePercent),
 	GLArtP3("Fan Festa Units (3)",new Unit[]{Unit.Myra,Unit.AFryevia},BannerRates.LD5.fiveRate(),Lib.concat(Ignacio.featured, Ignacio.pool),Ignacio.include,BannerType.ThreePercent),
 	FF3P3("FFIII (3)",new Unit[]{Unit.OKRefia,Unit.DKLuneth,Unit.Doga,Unit.Unei},BannerRates.D5.fiveRate(),Lib.concat(GLArtP3.featured, GLArtP3.pool),GLArtP3.include,BannerType.ThreePercent),
+	Cid("Cid",new Unit[]{Unit.CGCid,Unit.Melete,Unit.Nagflar,Unit.Falma},BannerRates.D4.fiveRate(),Lib.concat(FF3P3.featured, FF3P3.pool),FF3P3.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

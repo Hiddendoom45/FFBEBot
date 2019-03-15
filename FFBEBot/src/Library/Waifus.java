@@ -146,6 +146,8 @@ public enum Waifus {
 	AFryevia(Unit.AFryevia),
 	OKRefia(Unit.OKRefia),
 	Unei(Unit.Unei),
+	Melete(Unit.Melete),
+	Falma(Unit.Falma),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),

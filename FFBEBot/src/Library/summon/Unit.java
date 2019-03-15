@@ -723,6 +723,10 @@ public enum Unit{
 	DKLuneth("Dark Knight Luneth",new String[]{"/a/ab/Unit-Dark_Knight_Luneth-5.png?version=954fa33a61e9322709fd09ccfe9f1d4c","/2/20/Unit-Dark_Knight_Luneth-6.png?version=9ede4c21c7cc36b91c205e792b0c4d23","/1/1e/Unit-Dark_Knight_Luneth-7.png?version=5c6c1987779c9acf2540cd2138c7fc17"},5),
 	Doga("Doga",new String[]{"/3/3c/Unit-Doga-4.png?version=a25aa2f8da7a35bad3cbaeca12286938","/a/a9/Unit-Doga-5.png?version=44cbb955c73b8af8732855af29fc2d72","/4/4d/Unit-Doga-6.png?version=5b44dfbbb046e5581884a8f8d391d206"},4),
 	Unei("Unei",new String[]{"/3/3c/Unit-Unei-3.png?version=45f7cf3e40cd2398c8302ec507e42551","/5/50/Unit-Unei-4.png?version=13b45bb15ea86d273062570af73de970","/f/f5/Unit-Unei-5.png?version=fba23d04f072176406576146bd25522e"},3),
+	CGCid("Cid",new String[]{"/5/59/Unit-Cid-5.png?version=cb311e423ff656184254adbda586ba54","/f/fe/Unit-Cid-6.png?version=5ad80f30e9f05e64cc651efc30f4fbf2","/2/27/Unit-Cid-7.png?version=1983f104b9177694ea4edeae306c2ede"},5),
+	Melete("Melete",new String[]{"/3/31/Unit-Melete-4.png?version=1331f945ff9adb1a8801490e19e9ad0b","/6/63/Unit-Melete-5.png?version=968b3538acb65caac3453513ff641d5e","/2/24/Unit-Melete-6.png?version=dfc5d26e7de6e1970da6ebdf00503f8d"},4),
+	Nagflar("Nagflar",new String[]{"/0/0b/Unit-Nagflar-4.png?version=1cf34a52c4f10ae52f87ff63af68ca9f","/a/af/Unit-Nagflar-5.png?version=5528329e32a702124f1337efcc3fcbe8","/f/f5/Unit-Nagflar-6.png?version=62265a5c887f861ef7039d7e6f6fc232"},4),
+	Falma("Falma",new String[]{"/3/30/Unit-Falma-3.png?version=4fc2041565007b38ac81daf8468a2c95","/9/9c/Unit-Falma-4.png?version=384517f63387eccae7ed7c7ccf86746d","/3/31/Unit-Falma-5.png?version=1d4764d0f50d5c67de79fd3d96ea3fe3"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1336,7 +1340,11 @@ public enum Unit{
 				OKRefia,
 				DKLuneth,
 				Doga,
-				Unei
+				Unei,
+				CGCid,
+				Melete,
+				Nagflar,
+				Falma
 
 		});
 	}
