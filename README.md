@@ -10,7 +10,7 @@ Optionally you can allow the bot to delete messages with the manage messages per
 
 ### Status
 
-Currently maintained, any bugs that I find should be fixed quickly, not actively adding new features.
+Somewhat maintained, summon simulator will continue to be updated but fixes may be slow. 
 
 #### Recent Updates:
 
