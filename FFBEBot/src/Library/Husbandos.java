@@ -193,6 +193,8 @@ public enum Husbandos {
 	Doga(Unit.Doga),
 	CGCid(Unit.CGCid),
 	Nagflar(Unit.Nagflar),
+	Franis(Unit.Franis),
+	Ishil(Unit.Ishil),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

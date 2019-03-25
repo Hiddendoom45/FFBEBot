@@ -727,6 +727,10 @@ public enum Unit{
 	Melete("Melete",new String[]{"/3/31/Unit-Melete-4.png?version=1331f945ff9adb1a8801490e19e9ad0b","/6/63/Unit-Melete-5.png?version=968b3538acb65caac3453513ff641d5e","/2/24/Unit-Melete-6.png?version=dfc5d26e7de6e1970da6ebdf00503f8d"},4),
 	Nagflar("Nagflar",new String[]{"/0/0b/Unit-Nagflar-4.png?version=1cf34a52c4f10ae52f87ff63af68ca9f","/a/af/Unit-Nagflar-5.png?version=5528329e32a702124f1337efcc3fcbe8","/f/f5/Unit-Nagflar-6.png?version=62265a5c887f861ef7039d7e6f6fc232"},4),
 	Falma("Falma",new String[]{"/3/30/Unit-Falma-3.png?version=4fc2041565007b38ac81daf8468a2c95","/9/9c/Unit-Falma-4.png?version=384517f63387eccae7ed7c7ccf86746d","/3/31/Unit-Falma-5.png?version=1d4764d0f50d5c67de79fd3d96ea3fe3"},3),
+	Yuraisha("Yuraisha",new String[]{"/5/5d/Unit-Yuraisha-5.png?version=c60a24cb788c885b687bde44d2156c46","/6/64/Unit-Yuraisha-6.png?version=1b4b97abdba7fbdf1087689063acd7b0","/9/96/Unit-Yuraisha-7.png?version=235a47f7cbaaa19dc1d599212a9cac28"},5),
+	Karlette("Karlette",new String[]{"/b/b4/Unit-Karlette-5.png?version=09d0cc318e0b4992ee675f10f84e3e27","/6/6a/Unit-Karlette-6.png?version=0809e4fdb616db7a3bc448890802441b","/1/14/Unit-Karlette-7.png?version=af0c73e713b4aaa6dfbe47dfd14572a6"},5),
+	Franis("Franis",new String[]{"/4/4f/Unit-Franis-4.png?version=8c802af139b94cd6ffe7db43a6a857ef","/c/c8/Unit-Franis-5.png?version=82396473775e8ab86737cb6a12564f9f","/a/a1/Unit-Franis-6.png?version=a2a07b8e0ef15d85e6f28c9f4b763cae"},4),
+	Ishil("Ishil",new String[]{"/b/b4/Unit-Ishil-3.png?version=b55ecdf961e443fe2845f72b94744784","/f/ff/Unit-Ishil-4.png?version=7225689ecf4e9529c8cd1353b9f688e2","/5/5b/Unit-Ishil-5.png?version=26e8dc8c728444625e355b8463b95d94"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1344,7 +1348,11 @@ public enum Unit{
 				CGCid,
 				Melete,
 				Nagflar,
-				Falma
+				Falma,
+				Yuraisha,
+				Karlette,
+				Franis,
+				Ishil
 
 		});
 	}
