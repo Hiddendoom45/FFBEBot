@@ -244,7 +244,13 @@ public enum Husbandos {
 	Felix(Unit.Felix),
 	Sora(Unit.Sora),
 	KHCloud(Unit.KHCloud),
-	Qin(Unit.Qin);
+	Qin(Unit.Qin),
+	Fei(Unit.Fei),
+	Bart(Unit.Bart),
+	Rico(Unit.Rico),
+	
+	Salt3("Ordinary Salt",Unit.Salt3),
+	Salt4("Golden Salt",Unit.Salt4);
 	
 
 	public final String name;

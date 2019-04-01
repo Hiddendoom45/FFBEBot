@@ -161,6 +161,13 @@
     "otherAlias": []
   },
   {
+    "id": 8218,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "qin",
+    "otherAlias": []
+  },
+  {
     "id": 27,
     "rJPName": "リーザ",
     "rENName": "liza",
@@ -207,6 +214,13 @@
     "rJPName": "ポール",
     "rENName": "paul",
     "eENName": "paul",
+    "otherAlias": []
+  },
+  {
+    "id": 8226,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "bai hu \u0026 zhu que",
     "otherAlias": []
   },
   {
@@ -707,7 +721,7 @@
     "id": 1185,
     "rJPName": "ユライシャ",
     "rENName": "yuraisha",
-    "eENName": "",
+    "eENName": "yuraisha",
     "otherAlias": []
   },
   {
@@ -721,7 +735,7 @@
     "id": 1188,
     "rJPName": "フラニス",
     "rENName": "franis",
-    "eENName": "",
+    "eENName": "franis",
     "otherAlias": []
   },
   {
@@ -742,7 +756,7 @@
     "id": 1191,
     "rJPName": "イシル",
     "rENName": "ishil",
-    "eENName": "",
+    "eENName": "ishil",
     "otherAlias": []
   },
   {
@@ -756,7 +770,7 @@
     "id": 1194,
     "rJPName": "たまねぎ剣士レフィア",
     "rENName": "onion knight refia",
-    "eENName": "",
+    "eENName": "onion knight refia",
     "otherAlias": [
       "okrefia"
     ]
@@ -779,7 +793,7 @@
     "id": 1197,
     "rJPName": "魔剣士ルーネス",
     "rENName": "dark knight luneth",
-    "eENName": "",
+    "eENName": "dark knight luneth",
     "otherAlias": []
   },
   {
@@ -793,7 +807,7 @@
     "id": 1200,
     "rJPName": "ドーガ",
     "rENName": "doga",
-    "eENName": "",
+    "eENName": "doga",
     "otherAlias": []
   },
   {
@@ -807,7 +821,7 @@
     "id": 1203,
     "rJPName": "ウネ",
     "rENName": "unei",
-    "eENName": "",
+    "eENName": "unei",
     "otherAlias": []
   },
   {
@@ -877,7 +891,7 @@
     "id": 1219,
     "rJPName": "フェイ",
     "rENName": "fei",
-    "eENName": "",
+    "eENName": "fei",
     "otherAlias": []
   },
   {
@@ -891,14 +905,14 @@
     "id": 1222,
     "rJPName": "エリィ",
     "rENName": "elly",
-    "eENName": "",
+    "eENName": "elly",
     "otherAlias": []
   },
   {
     "id": 1225,
     "rJPName": "エメラダ",
     "rENName": "emeralda",
-    "eENName": "",
+    "eENName": "emeralda",
     "otherAlias": []
   },
   {
@@ -912,7 +926,7 @@
     "id": 1228,
     "rJPName": "バルト",
     "rENName": "bart",
-    "eENName": "",
+    "eENName": "bart",
     "otherAlias": []
   },
   {
@@ -926,7 +940,7 @@
     "id": 1231,
     "rJPName": "リコ",
     "rENName": "rico",
-    "eENName": "",
+    "eENName": "rico",
     "otherAlias": []
   },
   {
@@ -940,7 +954,7 @@
     "id": 1234,
     "rJPName": "チュチュ",
     "rENName": "chu-chu",
-    "eENName": "",
+    "eENName": "chu-chu",
     "otherAlias": []
   },
   {
@@ -1019,7 +1033,7 @@
     "id": 1249,
     "rJPName": "イグニシオ",
     "rENName": "cg ignacio",
-    "eENName": "",
+    "eENName": "ignacio",
     "otherAlias": []
   },
   {
@@ -1033,7 +1047,7 @@
     "id": 1252,
     "rJPName": "スズメ",
     "rENName": "suzume",
-    "eENName": "",
+    "eENName": "suzume",
     "otherAlias": []
   },
   {
@@ -1047,7 +1061,7 @@
     "id": 1255,
     "rJPName": "pnk-2",
     "rENName": "pnk-2",
-    "eENName": "",
+    "eENName": "pnk-2",
     "otherAlias": []
   },
   {
@@ -1061,7 +1075,7 @@
     "id": 1258,
     "rJPName": "ウェイハム",
     "rENName": "weyham",
-    "eENName": "",
+    "eENName": "wayhem",
     "otherAlias": []
   },
   {
@@ -1187,7 +1201,7 @@
     "id": 1282,
     "rJPName": "シド",
     "rENName": "cg cid",
-    "eENName": "",
+    "eENName": "cid",
     "otherAlias": []
   },
   {
@@ -1208,7 +1222,7 @@
     "id": 1285,
     "rJPName": "メレッテ",
     "rENName": "melette",
-    "eENName": "",
+    "eENName": "melete",
     "otherAlias": []
   },
   {
@@ -1222,7 +1236,7 @@
     "id": 1288,
     "rJPName": "ナグルファ",
     "rENName": "nagulfa",
-    "eENName": "",
+    "eENName": "nagflar",
     "otherAlias": []
   },
   {
@@ -1236,7 +1250,7 @@
     "id": 1291,
     "rJPName": "ファーマ",
     "rENName": "farma",
-    "eENName": "",
+    "eENName": "falma",
     "otherAlias": []
   },
   {
@@ -1257,7 +1271,7 @@
     "id": 1294,
     "rJPName": "カルエラート",
     "rENName": "karlotte",
-    "eENName": "",
+    "eENName": "karlette",
     "otherAlias": []
   },
   {
@@ -2344,10 +2358,24 @@
     "otherAlias": []
   },
   {
+    "id": 1541,
+    "rJPName": "白百合の魔人フィーナ",
+    "rENName": "cg majin fina",
+    "eENName": "",
+    "otherAlias": []
+  },
+  {
     "id": 518,
     "rJPName": "イルズ",
     "rENName": "illus",
     "eENName": "ilias",
+    "otherAlias": []
+  },
+  {
+    "id": 1544,
+    "rJPName": "スウィートニコル",
+    "rENName": "sweet nichol",
+    "eENName": "",
     "otherAlias": []
   },
   {
@@ -2358,6 +2386,13 @@
     "otherAlias": []
   },
   {
+    "id": 1547,
+    "rJPName": "スウィートルルカ",
+    "rENName": "sweet luka",
+    "eENName": "",
+    "otherAlias": []
+  },
+  {
     "id": 524,
     "rJPName": "リュック",
     "rENName": "rikku",
@@ -2365,10 +2400,24 @@
     "otherAlias": []
   },
   {
+    "id": 1550,
+    "rJPName": "ウォーリア オブ ライト",
+    "rENName": "cg warrior of light",
+    "eENName": "warrior of light (cg)",
+    "otherAlias": []
+  },
+  {
     "id": 527,
     "rJPName": "ワッカ",
     "rENName": "wakka",
     "eENName": "wakka",
+    "otherAlias": []
+  },
+  {
+    "id": 1553,
+    "rJPName": "輪廻の騎士ガーランド",
+    "rENName": "garland v2",
+    "eENName": "",
     "otherAlias": []
   },
   {
@@ -3769,6 +3818,7 @@
     "rENName": "awakened rain",
     "eENName": "awakened rain",
     "otherAlias": [
+      "arain",
       "ssjrain"
     ]
   },
@@ -4036,6 +4086,13 @@
     "rJPName": "闇の王",
     "rENName": "shadowlord",
     "eENName": "shadow lord",
+    "otherAlias": []
+  },
+  {
+    "id": 8190,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "myra",
     "otherAlias": []
   },
   {

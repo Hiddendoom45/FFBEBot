@@ -870,6 +870,11 @@ public enum Unit{
 	Sophia("Sophia",new String[]{"/a/a1/Unit-Sophia-5.png?version=cec35cce8b2cb901f52db019034be965","/9/94/Unit-Sophia-6.png?version=ecf149d340e2db2c6f5052f65c7a5383","/9/99/Unit-Sophia-7.png?version=f35abf78c6faa3fcc88431c7669e3fda"},5),
 	Qin("Qin",new String[]{"/0/02/Unit-Qin-5.png?version=2e3f5bc643a9c8b7770ab3b1b576119d","/8/8c/Unit-Qin-6.png?version=3046e4831067ecbd8b0494b3a88e24f0","/8/85/Unit-Qin-7.png?version=9d83cd842dce4dab83144c4b1ae93089"},5),
 	BaiHuZhuQue("Bai Hu & Zhu Que",new String[]{"/e/ed/Unit-Bai_Hu_%26_Zhu_Que-5.png?version=8ba99ce22f6e945cbcbcdcb378f1ddc9","/5/59/Unit-Bai_Hu_%26_Zhu_Que-6.png?version=6e0803a0b8c5d0c720a011e58a830cae","/0/0d/Unit-Bai_Hu_%26_Zhu_Que-7.png?version=b4fdb63f04a9b5f9186348be79a8f248"},5),
+	Fei("Fei",new String[]{"/e/e1/Unit-Fei-5.png?version=29a627e0c0aff504419096bad2fbc181","/4/49/Unit-Fei-6.png?version=5fbe5c5de40be62e3ac46b7b7d424501","/b/b3/Unit-Fei-7.png?version=27ee94bea3ac487682c36767cf3a8250"},5),
+	Elly("Elly",new String[]{"/c/cb/Unit-Elly-5.png?version=1f2f591083a0eb8802cbe54981ea6b16","/7/70/Unit-Elly-6.png?version=51744326eadd8fd0cd38ddd4254851d4","/c/cb/Unit-Elly-7.png?version=24e471525509786d508f4898cb007103"},5),
+	Bart("Bart",new String[]{"/0/04/Unit-Bart-5.png?version=9c8884c9e108f8a63f92a88d6abc45dc","/9/9b/Unit-Bart-6.png?version=df3b87dc7edf49a92f2b1905ab51ab6c","/b/b8/Unit-Bart-7.png?version=a33fbb692408b33e0994de830f63ad0f"},5),
+	Emeralda("Emeralda",new String[]{"/4/4c/Unit-Emeralda-4.png?version=f1dcc4949ffb524eeba4b56914931f1d","/8/8c/Unit-Emeralda-5.png?version=9791bec331e0bb2c55c319fc4471c5dc","/f/f8/Unit-Emeralda-6.png?version=74af850a43428a45f732b835f1c84b24"},4),
+	Rico("Rico",new String[]{"/a/ab/Unit-Rico-3.png?version=c9de32b2bb1206d7137b5ef09881213b","/3/30/Unit-Rico-4.png?version=a8b839bffed299ccd22d321a81da104f","/2/25/Unit-Rico-5.png?version=bfb77d03d20493706cb2d7404091df3b"},3),
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),
@@ -899,8 +904,11 @@ public enum Unit{
 	Reimi("Reimi",new String[]{"/d/d8/Unit-Reimi-4.png?version=e828aeee8706095a9218d24b3d469159","/b/b1/Unit-Reimi-5.png?version=b4d30f74748795884e13d69f209fd84e","/a/a6/Unit-Reimi-6.png?version=279b5d290c6bd9c8b77a3092c650e075"},4),
 	SlimeKnight("Slime Knight",new String[]{"/b/b4/Unit-Slime_Knight-4.png?version=72b23985d1d45c0ad25b6734bd44239f","/7/7d/Unit-Slime_Knight-5.png?version=3d0f0b76df1900c276b29256c99cb4b3","/c/c1/Unit-Slime_Knight-6.png?version=82a178e18f6506b20da43838066d5611"},4),
 	MarquisdeLeon("Marquis de Léon",new String[]{"/d/d9/Unit-Marquis_de_L%C3%A9on-5.png?version=9a3b0f3ba2112ff2217ad25e019dcc70","/7/74/Unit-Marquis_de_L%C3%A9on-6.png?version=23f6bdf3b341e20eaa4f1a20663a28f4","/d/db/Unit-Marquis_de_L%C3%A9on-7.png?version=117a90dbe3facf7bf50cf7a75efbcb59"},5),
-	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3);
+	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3),
+	ChuChu("Chu-Chu",new String[]{"/7/74/Unit-Chu-Chu-3.png?version=77cab345050cc3c2a0953a9323d4b013","/0/09/Unit-Chu-Chu-4.png?version=78c358711faca3fa3e98a53c6907588d","/7/76/Unit-Chu-Chu-5.png?version=c134990349b8125f10cdc581333adf5f"},3),
 
+	Salt3("Salt3",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269409545289738/3.png"},3),
+	Salt4("Salt4",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269480085094420/4.png"},4);
 	//quick access map for certain things that has unit name but not the Unit object
 	public static TreeMap<String,Unit> unitMap = new TreeMap<String,Unit>();
 	static{//build map on class load
@@ -917,8 +925,10 @@ public enum Unit{
 		this.url=url;
 		this.base=base;
 		setup();
-		for(int i=0;i<this.url.length;i++){
-			this.url[i]=Settings.ExvicusIMGURL+this.url[i];
+		if(!name.equals("Salt3")&&!name.equals("Salt4")){
+			for(int i=0;i<this.url.length;i++){
+				this.url[i]=Settings.ExvicusIMGURL+this.url[i];
+			}
 		}
 	}
 

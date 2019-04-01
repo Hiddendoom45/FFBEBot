@@ -18,6 +18,7 @@ public enum BannerRates {
 	T5T4D3(new int[]{17,17,17,158,158,158,1000,1000},new int[]{33,33,34,158,158,158,975,975},new int[]{100,100,100,238,238,238,975,975}),
 	LS5T4(new int[]{50,158,158,158}, new int[]{100,158,158,158},new int[]{300,158,158,158}),
 	LD5(new int[]{25,25},new int[]{50,50},new int[]{150,150}),
+	LT5(new int[]{17,17,17},new int[]{33,33,34},new int[]{100,100,100}),
 	FFBEHeroes(null,new int[]{100,100,25,25,25,25,475,1950},null);
 	
 	private final int[] rates;

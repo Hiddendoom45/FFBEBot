@@ -204,7 +204,13 @@ public enum Waifus {
 	VPFreya(Unit.VPFreya),
 	Jelanda(Unit.Jelanda),
 	Tiana(Unit.Tiana),
-	Sophia(Unit.Sophia);
+	Sophia(Unit.Sophia),
+	Elly(Unit.Elly),
+	Emeralda(Unit.Emeralda),
+	ChuChu(Unit.ChuChu),
+	
+	Salt3("Ordinary Salt",Unit.Salt3),
+	Salt4("Golden Salt",Unit.Salt4);
 	
 	
 	
