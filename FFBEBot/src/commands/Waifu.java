@@ -25,7 +25,6 @@ public class Waifu extends CommandGenerics implements Command{
 	@Override
 	public void action(String[] args, MessageReceivedEvent event) {
 		Waifus select=RandomLibs.SelectRandom(Waifus.values());
-		select = RandomLibs.SelectRandom(new Waifus[]{Waifus.Salt3,Waifus.Salt4});
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setImage(select.url);
 		embed.addField(new Field(select.name, Lib.FormatMessage(event, "%userMention% Happy Waifu Happy Laifu! Your Waifu is "+select.name), false));

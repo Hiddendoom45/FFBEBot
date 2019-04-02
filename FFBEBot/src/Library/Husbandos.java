@@ -247,10 +247,7 @@ public enum Husbandos {
 	Qin(Unit.Qin),
 	Fei(Unit.Fei),
 	Bart(Unit.Bart),
-	Rico(Unit.Rico),
-	
-	Salt3("Ordinary Salt",Unit.Salt3),
-	Salt4("Golden Salt",Unit.Salt4);
+	Rico(Unit.Rico);
 	
 
 	public final String name;

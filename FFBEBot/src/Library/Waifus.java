@@ -207,10 +207,7 @@ public enum Waifus {
 	Sophia(Unit.Sophia),
 	Elly(Unit.Elly),
 	Emeralda(Unit.Emeralda),
-	ChuChu(Unit.ChuChu),
-	
-	Salt3("Ordinary Salt",Unit.Salt3),
-	Salt4("Golden Salt",Unit.Salt4);
+	ChuChu(Unit.ChuChu);
 	
 	
 	
