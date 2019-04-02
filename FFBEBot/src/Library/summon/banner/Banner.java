@@ -154,7 +154,7 @@ public enum Banner {
 	FF3P3("FFIII (3)",new Unit[]{Unit.OKRefia,Unit.DKLuneth,Unit.Doga,Unit.Unei},BannerRates.D5.fiveRate(),Lib.concat(GLArtP3.featured, GLArtP3.pool),GLArtP3.include,BannerType.ThreePercent),
 	Cid("Cid",new Unit[]{Unit.CGCid,Unit.Melete,Unit.Nagflar,Unit.Falma},BannerRates.D4.fiveRate(),Lib.concat(FF3P3.featured, FF3P3.pool),FF3P3.include,BannerType.ThreePercent),
 	Yuraisha("Yuraisha",new Unit[]{Unit.Yuraisha,Unit.Karlette,Unit.Franis,Unit.Ishil},BannerRates.D5.fiveRate(),Lib.concat(Cid.featured,Cid.pool),Cid.include,BannerType.ThreePercent),
-	Xenogears("Xenogears",new Unit[]{Unit.Fei,Unit.Elly,Unit.Bart,Unit.Emeralda,Unit.Rico},BannerRates.LT5.featuredFive(),Lib.concat(Yuraisha.featured, Yuraisha.pool),Yuraisha.include,BannerType.ThreePercentFeatured),
+	Xenogears("Xenogears",new Unit[]{Unit.Fei,Unit.Elly,Unit.Bart,Unit.Emeralda,Unit.Rico},BannerRates.T5.featuredFive(),Lib.concat(Yuraisha.featured, Yuraisha.pool),Yuraisha.include,BannerType.ThreePercentFeatured),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
