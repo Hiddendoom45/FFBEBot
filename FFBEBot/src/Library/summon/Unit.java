@@ -731,6 +731,13 @@ public enum Unit{
 	Karlette("Karlette",new String[]{"/b/b4/Unit-Karlette-5.png?version=09d0cc318e0b4992ee675f10f84e3e27","/6/6a/Unit-Karlette-6.png?version=0809e4fdb616db7a3bc448890802441b","/1/14/Unit-Karlette-7.png?version=af0c73e713b4aaa6dfbe47dfd14572a6"},5),
 	Franis("Franis",new String[]{"/4/4f/Unit-Franis-4.png?version=8c802af139b94cd6ffe7db43a6a857ef","/c/c8/Unit-Franis-5.png?version=82396473775e8ab86737cb6a12564f9f","/a/a1/Unit-Franis-6.png?version=a2a07b8e0ef15d85e6f28c9f4b763cae"},4),
 	Ishil("Ishil",new String[]{"/b/b4/Unit-Ishil-3.png?version=b55ecdf961e443fe2845f72b94744784","/f/ff/Unit-Ishil-4.png?version=7225689ecf4e9529c8cd1353b9f688e2","/5/5b/Unit-Ishil-5.png?version=26e8dc8c728444625e355b8463b95d94"},3),
+	Ultima("High Seraph Ultima",new String[]{"/6/60/Unit-High_Seraph_Ultima-5.png?version=fbe93caa08788183dfe0286e8dd0c3ba","/e/ef/Unit-High_Seraph_Ultima-6.png?version=1703325149c35566a5f2d56fd75dbed0","/3/3d/Unit-High_Seraph_Ultima-7.png?version=93ac7ac5f1f76bd79a340eac88b54491"},5),
+	Beowulf("Beowulf",new String[]{"/d/d6/Unit-Beowulf-5.png?version=6b038121db69a02c510b94b85c2c6acd","/d/d3/Unit-Beowulf-6.png?version=63555ad967bfa501632f797d93a61b06","/b/be/Unit-Beowulf-7.png?version=ab1e8eaeca74b834e62563a3ef23de6b"},5),
+	Reis("Reis",new String[]{"/7/7e/Unit-Reis-4.png?version=bc4a5b9d542458bd10d3b96590250c98","/d/d4/Unit-Reis-5.png?version=9b8d6b85d59c30abccb2ce1458e79344","/f/f4/Unit-Reis-6.png?version=6d53540511f3cbae6bdbb3e319ae7a1c"},4),
+	Construct8("Construct 8",new String[]{"/c/c9/Unit-Construct_8-3.png?version=3b0e82b99907f55621f46ac7f5796a56","/0/09/Unit-Construct_8-4.png?version=4223f8ca901a5aabbf5c5ef2184c48fa","/d/d9/Unit-Construct_8-5.png?version=7ce68f9242f975a09f327060a3fb4a90"},3),
+	Crimson("Crimson",new String[]{"/a/a2/Unit-Crimson-5.png?version=384d8183e308a6213411f914e9b47269","/7/74/Unit-Crimson-6.png?version=1df01418fc5e561956341797f5bf9eb3","/6/63/Unit-Crimson-7.png?version=028547f17a163201e7b16156510848bd"},5),
+	Kyanos("Kyanos",new String[]{"/1/18/Unit-Kyanos-4.png?version=f86cfad8737f07f275b154727ae723a5","/a/ae/Unit-Kyanos-5.png?version=acca5f0124f37437d0d3b0db6741eb3b","/0/0f/Unit-Kyanos-6.png?version=f1d3ee45f064d0a4c81ca284704d3c10"},4),
+	Mirfas("Mirfas",new String[]{"/c/c2/Unit-Mirfas-3.png?version=ca358537dc83d92f41e358f58a6080e1","/b/b3/Unit-Mirfas-4.png?version=b843c4251bb704601e1a891fcc44b22b","/5/5f/Unit-Mirfas-5.png?version=5789deef15735fa886e6cc109ecbf0b3"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1362,7 +1369,14 @@ public enum Unit{
 				Yuraisha,
 				Karlette,
 				Franis,
-				Ishil
+				Ishil,
+				Ultima,
+				Beowulf,
+				Reis,
+				Construct8,
+				Crimson,
+				Kyanos,
+				Mirfas
 
 		});
 	}

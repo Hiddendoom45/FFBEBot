@@ -155,6 +155,8 @@ public enum Banner {
 	Cid("Cid",new Unit[]{Unit.CGCid,Unit.Melete,Unit.Nagflar,Unit.Falma},BannerRates.D4.fiveRate(),Lib.concat(FF3P3.featured, FF3P3.pool),FF3P3.include,BannerType.ThreePercent),
 	Yuraisha("Yuraisha",new Unit[]{Unit.Yuraisha,Unit.Karlette,Unit.Franis,Unit.Ishil},BannerRates.D5.fiveRate(),Lib.concat(Cid.featured,Cid.pool),Cid.include,BannerType.ThreePercent),
 	Xenogears("Xenogears",new Unit[]{Unit.Fei,Unit.Elly,Unit.Bart,Unit.Emeralda,Unit.Rico},BannerRates.T5.featuredFive(),Lib.concat(Yuraisha.featured, Yuraisha.pool),Yuraisha.include,BannerType.ThreePercentFeatured),
+	FFTP4("FFT (4)",new Unit[]{Unit.Ultima,Unit.Beowulf,Unit.Reis,Unit.Construct8},BannerRates.D4.fiveRate(),Xenogears.pool,Xenogears.include,BannerType.ThreePercent),
+	Crimson("Crimson",new Unit[]{Unit.Crimson,Unit.Kyanos,Unit.Mirfas},BannerRates.EvenSplit.featuredFive(),Lib.concat(FFTP4.featured, FFTP4.pool),FFTP4.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -172,7 +174,7 @@ public enum Banner {
 //	FF13 1(1,2)
 //	FF15 1,2,3,4
 //	FF-0 1,2,3,4
-//	FFT 1(1,2),2,3
+//	FFT 1(1,2),2,3,4
 	
 	public String name;
 	public Unit[] featured;
@@ -245,7 +247,8 @@ public enum Banner {
 				Banner.KH,
 				Banner.SOA2,
 				Banner.CNY2,
-				Banner.CNY2_old
+				Banner.CNY2_old,
+				Banner.Xenogears
 				};
 	}
 	public static boolean LEBanner(Banner banner){

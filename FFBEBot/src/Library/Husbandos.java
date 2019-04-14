@@ -195,6 +195,8 @@ public enum Husbandos {
 	Nagflar(Unit.Nagflar),
 	Franis(Unit.Franis),
 	Ishil(Unit.Ishil),
+	Beowulf(Unit.Beowulf),
+	Crimson(Unit.Crimson),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),
