@@ -1,7 +1,7 @@
 package Library.summon.banner;
 
 public enum BannerRates {
-	//S==single D==double T==Triple Q==Quadruple, number of said rarity units on banner
+	//S==single D==double T==Triple Q==Quadruple, Qu=Quintuplenumber of said rarity units on banner
 	//L= limit one or more rarities missing
 	//x# = that many times more for the featured pool
 	EvenSplit(new int[]{50,475,2000},new int[]{100,475,1950},new int[]{300,475,1950}),
@@ -14,8 +14,9 @@ public enum BannerRates {
 	D3D4D5(new int[]{25,25,238,238,1000,1000}, new int[]{50,50,238,238,975,975},new int[]{150,150,238,238,975,975}),
 	D3T4(new int[]{50,158,158,158,1000,1000},new int[]{100,158,158,158,975,975},new int[]{300,158,158,158,975,975}),
 	T5(new int[]{17,17,17,475,2000},new int[]{33,33,34,475,1950},new int[]{100,100,100,475,1950}),
-	T5D4(new int[]{17,17,17,238,238,200},new int[]{33,33,34,238,238,1950},new int[]{100,100,100,238,238,1950}),
+	T5D4(new int[]{17,17,17,238,238,2000},new int[]{33,33,34,238,238,1950},new int[]{100,100,100,238,238,1950}),
 	T5T4D3(new int[]{17,17,17,158,158,158,1000,1000},new int[]{33,33,34,158,158,158,975,975},new int[]{100,100,100,238,238,238,975,975}),
+	Qu5D4(new int[]{10,10,10,10,10,238,238,2000},new int[]{20,20,20,20,20,238,238,1950},new int[]{60,60,60,60,60,238,238,1950}),
 	LS5T4(new int[]{50,158,158,158}, new int[]{100,158,158,158},new int[]{300,158,158,158}),
 	LD5(new int[]{25,25},new int[]{50,50},new int[]{150,150}),
 	LT5(new int[]{17,17,17},new int[]{33,33,34},new int[]{100,100,100}),

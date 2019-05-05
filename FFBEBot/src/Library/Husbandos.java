@@ -249,7 +249,9 @@ public enum Husbandos {
 	Qin(Unit.Qin),
 	Fei(Unit.Fei),
 	Bart(Unit.Bart),
-	Rico(Unit.Rico);
+	Rico(Unit.Rico),
+	Citan(Unit.Citan),
+	Billy(Unit.Billy);
 	
 
 	public final String name;

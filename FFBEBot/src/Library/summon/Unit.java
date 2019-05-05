@@ -738,6 +738,7 @@ public enum Unit{
 	Crimson("Crimson",new String[]{"/a/a2/Unit-Crimson-5.png?version=384d8183e308a6213411f914e9b47269","/7/74/Unit-Crimson-6.png?version=1df01418fc5e561956341797f5bf9eb3","/6/63/Unit-Crimson-7.png?version=028547f17a163201e7b16156510848bd"},5),
 	Kyanos("Kyanos",new String[]{"/1/18/Unit-Kyanos-4.png?version=f86cfad8737f07f275b154727ae723a5","/a/ae/Unit-Kyanos-5.png?version=acca5f0124f37437d0d3b0db6741eb3b","/0/0f/Unit-Kyanos-6.png?version=f1d3ee45f064d0a4c81ca284704d3c10"},4),
 	Mirfas("Mirfas",new String[]{"/c/c2/Unit-Mirfas-3.png?version=ca358537dc83d92f41e358f58a6080e1","/b/b3/Unit-Mirfas-4.png?version=b843c4251bb704601e1a891fcc44b22b","/5/5f/Unit-Mirfas-5.png?version=5789deef15735fa886e6cc109ecbf0b3"},3),
+	BMGolbez("Black Mage Golbez",new String[]{"/9/9c/Unit-Black_Mage_Golbez-5.png?version=6cab278409d61ce40f748d6a9db33322","/2/2c/Unit-Black_Mage_Golbez-6.png?version=b62b164705cbd2844a9a0b3d742c0402","/3/3f/Unit-Black_Mage_Golbez-7.png?version=c9ed366df58baa817df9964e4db86a9d"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -882,6 +883,11 @@ public enum Unit{
 	Bart("Bart",new String[]{"/0/04/Unit-Bart-5.png?version=9c8884c9e108f8a63f92a88d6abc45dc","/9/9b/Unit-Bart-6.png?version=df3b87dc7edf49a92f2b1905ab51ab6c","/b/b8/Unit-Bart-7.png?version=a33fbb692408b33e0994de830f63ad0f"},5),
 	Emeralda("Emeralda",new String[]{"/4/4c/Unit-Emeralda-4.png?version=f1dcc4949ffb524eeba4b56914931f1d","/8/8c/Unit-Emeralda-5.png?version=9791bec331e0bb2c55c319fc4471c5dc","/f/f8/Unit-Emeralda-6.png?version=74af850a43428a45f732b835f1c84b24"},4),
 	Rico("Rico",new String[]{"/a/ab/Unit-Rico-3.png?version=c9de32b2bb1206d7137b5ef09881213b","/3/30/Unit-Rico-4.png?version=a8b839bffed299ccd22d321a81da104f","/2/25/Unit-Rico-5.png?version=bfb77d03d20493706cb2d7404091df3b"},3),
+	Esther("Esther",new String[]{"/6/65/Unit-Esther-5.png?version=fa7eaffb497855f4d7f8dad70d42bc8c","/8/82/Unit-Esther-6.png?version=8355711cc7fe46808163c294fbcff3d3","/3/39/Unit-Esther-7.png?version=11785a3a98d669b203a4b387bcdccad1"},5),
+	Sylvie("Sylvie",new String[]{"/8/89/Unit-Sylvie-5.png?version=a74be0d3ea58e4bc11d8a48b4d393790","/e/e2/Unit-Sylvie-6.png?version=da13ed77ef063923228fcdcc38fdd78b","/1/15/Unit-Sylvie-7.png?version=9284ba03f17baa91989bbbbf772dabf8"},5),
+	Citan("Citan",new String[]{"/2/2f/Unit-Citan-5.png?version=b1043dc11af7d979a1b22984ad33a5aa","/e/e2/Unit-Citan-6.png?version=47fde8d48f41613db28557b29196f219","/d/d1/Unit-Citan-7.png?version=6e216ef349171d9e8b955a729079858b"},5),
+	XenoMaria("Maria (Xenogears)",new String[]{"/d/d5/Unit-Maria_%28Xenogears%29-5.png?version=fbbb88f83e69507c446f152c7a90b33c","/6/6b/Unit-Maria_%28Xenogears%29-6.png?version=df3fd1324284197603096bf3a2615a08","/0/04/Unit-Maria_%28Xenogears%29-7.png?version=7deac8928f65bc67a5f730c7cfe34089"},5),
+	Billy("Billy",new String[]{"/7/7c/Unit-Billy-4.png?version=8fa694d461a13d8b6f03e2e87c8ced88","/a/ac/Unit-Billy-5.png?version=2f0326f6a5329344f19eefd989a7140e","/3/32/Unit-Billy-6.png?version=8c4e238a62631dec16df3e2f952fcf8a"},4),
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),
@@ -1376,7 +1382,8 @@ public enum Unit{
 				Construct8,
 				Crimson,
 				Kyanos,
-				Mirfas
+				Mirfas,
+				BMGolbez
 
 		});
 	}

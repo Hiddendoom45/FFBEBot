@@ -211,7 +211,10 @@ public enum Waifus {
 	Sophia(Unit.Sophia),
 	Elly(Unit.Elly),
 	Emeralda(Unit.Emeralda),
-	ChuChu(Unit.ChuChu);
+	ChuChu(Unit.ChuChu),
+	Esther(Unit.Esther),
+	Sylvie(Unit.Sylvie),
+	XenoMaria(Unit.XenoMaria);
 	
 	
 	
