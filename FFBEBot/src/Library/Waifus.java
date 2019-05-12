@@ -154,6 +154,8 @@ public enum Waifus {
 	Reis(Unit.Reis),
 	Kyanos(Unit.Kyanos),
 	Mirfas(Unit.Mirfas),
+	Tomoe(Unit.Tomoe),
+	Majora(Unit.Majora),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),

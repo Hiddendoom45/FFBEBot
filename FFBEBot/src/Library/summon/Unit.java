@@ -739,6 +739,11 @@ public enum Unit{
 	Kyanos("Kyanos",new String[]{"/1/18/Unit-Kyanos-4.png?version=f86cfad8737f07f275b154727ae723a5","/a/ae/Unit-Kyanos-5.png?version=acca5f0124f37437d0d3b0db6741eb3b","/0/0f/Unit-Kyanos-6.png?version=f1d3ee45f064d0a4c81ca284704d3c10"},4),
 	Mirfas("Mirfas",new String[]{"/c/c2/Unit-Mirfas-3.png?version=ca358537dc83d92f41e358f58a6080e1","/b/b3/Unit-Mirfas-4.png?version=b843c4251bb704601e1a891fcc44b22b","/5/5f/Unit-Mirfas-5.png?version=5789deef15735fa886e6cc109ecbf0b3"},3),
 	BMGolbez("Black Mage Golbez",new String[]{"/9/9c/Unit-Black_Mage_Golbez-5.png?version=6cab278409d61ce40f748d6a9db33322","/2/2c/Unit-Black_Mage_Golbez-6.png?version=b62b164705cbd2844a9a0b3d742c0402","/3/3f/Unit-Black_Mage_Golbez-7.png?version=c9ed366df58baa817df9964e4db86a9d"},5),
+	Akstar("Akstar",new String[]{"/2/26/Unit-Akstar-5.png?version=2cff133df029311b3fb741aa0c3b7371","/5/5b/Unit-Akstar-6.png?version=f8c7026abbadc35a2c6992bb112fd42a","/5/58/Unit-Akstar-7.png?version=c19dc02904f20f6a6f8b8e8b730d7481"},5),
+	ZenoAkstar("Zeno of the Beta Star",new String[]{"/f/fd/Unit-Zeno_of_the_Beta_Star-5.png?version=7ea0ed11968f655bbf52c7a5def81ef7","/8/82/Unit-Zeno_of_the_Beta_Star-6.png?version=ac3e8543b4cf483c9b25abfe303b848f","/5/55/Unit-Zeno_of_the_Beta_Star-7.png?version=1e8d5dd339994b4a7ac6c396fa31f27b"},5),
+	Tomoe("Tomoe",new String[]{"/8/8f/Unit-Tomoe-4.png?version=0154bfa5a837582e799daa0e51cb4950","/6/6f/Unit-Tomoe-5.png?version=26acecd0671f4930bdfef84c5be52ea8","/7/7e/Unit-Tomoe-6.png?version=90fd836f086283f8b386c126d9e8b4ad"},4),
+	Gravey("Gravey",new String[]{"/c/cb/Unit-Gravey-4.png?version=d43ff0a76488ed89c0843e098d988f0f","/1/13/Unit-Gravey-5.png?version=55ba41f4053a8d5950d3475af2ab9a8d","/8/81/Unit-Gravey-6.png?version=ca00651be5eaf67ec13929d0a7b58163"},4),
+	Majora("Majora",new String[]{"/9/93/Unit-Majora-3.png?version=537f7f0c295d89d69b6d723fd4bf790a","/2/26/Unit-Majora-4.png?version=ac8ebc3044e21a93933cb622b05083a4","/a/af/Unit-Majora-5.png?version=7b68a542045a46a60dfb12f9ae5cd5ef"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1383,7 +1388,12 @@ public enum Unit{
 				Crimson,
 				Kyanos,
 				Mirfas,
-				BMGolbez
+				BMGolbez,
+				Akstar,
+				ZenoAkstar,
+				Tomoe,
+				Gravey,
+				Majora
 
 		});
 	}
