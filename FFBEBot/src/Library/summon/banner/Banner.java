@@ -253,7 +253,6 @@ public enum Banner {
 				Banner.CNY2,
 				Banner.CNY2_old,
 				Banner.Xenogears,
-				Banner.Easter2,
 				Banner.Xenogears2
 				};
 	}

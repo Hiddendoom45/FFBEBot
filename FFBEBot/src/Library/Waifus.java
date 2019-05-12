@@ -154,6 +154,8 @@ public enum Waifus {
 	Reis(Unit.Reis),
 	Kyanos(Unit.Kyanos),
 	Mirfas(Unit.Mirfas),
+	Esther(Unit.Esther),
+	Sylvie(Unit.Sylvie),
 	Tomoe(Unit.Tomoe),
 	Majora(Unit.Majora),
 	//Limited
@@ -214,8 +216,6 @@ public enum Waifus {
 	Elly(Unit.Elly),
 	Emeralda(Unit.Emeralda),
 	ChuChu(Unit.ChuChu),
-	Esther(Unit.Esther),
-	Sylvie(Unit.Sylvie),
 	XenoMaria(Unit.XenoMaria);
 	
 	
