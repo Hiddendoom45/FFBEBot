@@ -200,6 +200,8 @@ public enum Husbandos {
 	Akstar(Unit.Akstar),
 	ZenoAkstar(Unit.ZenoAkstar),
 	Gravey(Unit.Gravey),
+	ZoluluDelulu(Unit.ZoluluDelulu),
+	Galas(Unit.Galas),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

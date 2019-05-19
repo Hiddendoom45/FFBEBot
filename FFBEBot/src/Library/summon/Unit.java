@@ -746,6 +746,10 @@ public enum Unit{
 	Tomoe("Tomoe",new String[]{"/8/8f/Unit-Tomoe-4.png?version=0154bfa5a837582e799daa0e51cb4950","/6/6f/Unit-Tomoe-5.png?version=26acecd0671f4930bdfef84c5be52ea8","/7/7e/Unit-Tomoe-6.png?version=90fd836f086283f8b386c126d9e8b4ad"},4),
 	Gravey("Gravey",new String[]{"/c/cb/Unit-Gravey-4.png?version=d43ff0a76488ed89c0843e098d988f0f","/1/13/Unit-Gravey-5.png?version=55ba41f4053a8d5950d3475af2ab9a8d","/8/81/Unit-Gravey-6.png?version=ca00651be5eaf67ec13929d0a7b58163"},4),
 	Majora("Majora",new String[]{"/9/93/Unit-Majora-3.png?version=537f7f0c295d89d69b6d723fd4bf790a","/2/26/Unit-Majora-4.png?version=ac8ebc3044e21a93933cb622b05083a4","/a/af/Unit-Majora-5.png?version=7b68a542045a46a60dfb12f9ae5cd5ef"},3),
+	Nagi("Nagi",new String[]{"/3/32/Unit-Nagi-5.png?version=ed5a4b34f4560c3000e45f3466e73c20","/2/25/Unit-Nagi-6.png?version=722e854e70970731d4ca0d6f8b403a44","/7/72/Unit-Nagi-7.png?version=07f57ef013ffa70d1db990a6d56ee1a4"},5),
+	Yego("Yego",new String[]{"/0/03/Unit-Yego-5.png?version=f6292e1dc7917accf35e9dd6d8ad7bc9","/6/64/Unit-Yego-6.png?version=eff4e0f0b4fbde3fe82865d4da5bc307","/6/6f/Unit-Yego-7.png?version=c492aee0813b84525a75e0de488e11ee"},5),
+	ZoluluDelulu("Zolulu & Delulu",new String[]{"/5/57/Unit-Zolulu_%26_Delulu-4.png?version=b34f357dee2d38413ba9191cdc87ddef","/1/1b/Unit-Zolulu_%26_Delulu-5.png?version=de8f3f9510e2c2656473cd3563b5a5b8","/7/7e/Unit-Zolulu_%26_Delulu-6.png?version=66389c1469eb1863cba6e11fc31891d4"},4),
+	Galas("Galas",new String[]{"/8/8a/Unit-Galas-3.png?version=05e23e5fb40d09dc6dcfb0951148bdca","/a/a9/Unit-Galas-4.png?version=0eea84b4b249be288656614f15891506","/e/ee/Unit-Galas-5.png?version=3a597c96a348ca238dc2e6829f2889ac"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1395,7 +1399,11 @@ public enum Unit{
 				ZenoAkstar,
 				Tomoe,
 				Gravey,
-				Majora
+				Majora,
+				Nagi,
+				Yego,
+				ZoluluDelulu,
+				Galas
 
 		});
 	}
