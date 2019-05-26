@@ -202,6 +202,8 @@ public enum Husbandos {
 	Gravey(Unit.Gravey),
 	ZoluluDelulu(Unit.ZoluluDelulu),
 	Galas(Unit.Galas),
+	KingEdgar(Unit.KingEdgar),
+	FighterSabin(Unit.FighterSabin),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

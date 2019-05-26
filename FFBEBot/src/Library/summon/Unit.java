@@ -750,6 +750,8 @@ public enum Unit{
 	Yego("Yego",new String[]{"/0/03/Unit-Yego-5.png?version=f6292e1dc7917accf35e9dd6d8ad7bc9","/6/64/Unit-Yego-6.png?version=eff4e0f0b4fbde3fe82865d4da5bc307","/6/6f/Unit-Yego-7.png?version=c492aee0813b84525a75e0de488e11ee"},5),
 	ZoluluDelulu("Zolulu & Delulu",new String[]{"/5/57/Unit-Zolulu_%26_Delulu-4.png?version=b34f357dee2d38413ba9191cdc87ddef","/1/1b/Unit-Zolulu_%26_Delulu-5.png?version=de8f3f9510e2c2656473cd3563b5a5b8","/7/7e/Unit-Zolulu_%26_Delulu-6.png?version=66389c1469eb1863cba6e11fc31891d4"},4),
 	Galas("Galas",new String[]{"/8/8a/Unit-Galas-3.png?version=05e23e5fb40d09dc6dcfb0951148bdca","/a/a9/Unit-Galas-4.png?version=0eea84b4b249be288656614f15891506","/e/ee/Unit-Galas-5.png?version=3a597c96a348ca238dc2e6829f2889ac"},3),
+	KingEdgar("King Edgar of Figaro",new String[]{"/8/82/Unit-King_Edgar_of_Figaro-5.png?version=de7b08b327d012618fd559d625cd65da","/2/27/Unit-King_Edgar_of_Figaro-6.png?version=b3328893be7b9f1e7747019974706f56","/2/20/Unit-King_Edgar_of_Figaro-7.png?version=0db4282da516ae69048d5788d870dddd"},5),
+	FighterSabin("Monk Sabin of Kolts",new String[]{"/5/52/Unit-Monk_Sabin_of_Kolts-5.png?version=196e77810da7e6fd61508d59fe318485","/8/8c/Unit-Monk_Sabin_of_Kolts-6.png?version=9c38ebf9fffedafd6a897e875b7f53e8","/0/0a/Unit-Monk_Sabin_of_Kolts-7.png?version=c6e84a21d52200d975ae2d30a5a81aa6"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1403,7 +1405,9 @@ public enum Unit{
 				Nagi,
 				Yego,
 				ZoluluDelulu,
-				Galas
+				Galas,
+				KingEdgar,
+				FighterSabin
 
 		});
 	}
