@@ -163,6 +163,7 @@ public enum Banner {
 	ZenoAkstar("Zeno Akstar aka RIP Akstar (original)",new Unit[]{Unit.Akstar,Unit.ZenoAkstar,Unit.Tomoe,Unit.Gravey,Unit.Majora},BannerRates.D4D5.fiveRate(),Lib.concat(FF4P4.featured,FF4P4.pool),FF4P4.include,BannerType.ThreePercent),
 	Orders("Orders", new Unit[]{Unit.Nagi,Unit.Yego,Unit.ZoluluDelulu,Unit.Galas},BannerRates.D5.fiveRate(),Lib.concat(ZenoAkstar.featured,ZenoAkstar.pool),ZenoAkstar.include,BannerType.ThreePercent),
 	FF6P3("FFVI (3)", new Unit[]{Unit.KingEdgar,Unit.FighterSabin,Unit.Setzer,Unit.Celes},BannerRates.D5.fiveRate(),Lib.concat(Orders.featured,Orders.pool),Orders.include,BannerType.ThreePercent),
+	SummerFan("Summer Fan Service", new Unit[]{Unit.Fid, Unit.Fitra}, BannerRates.LD5.fiveRate(),Lib.concat(new Unit[]{Unit.KingEdgar, Unit.FighterSabin},FF6P3.pool), FF6P3.include, BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

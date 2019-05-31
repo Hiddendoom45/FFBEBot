@@ -160,6 +160,8 @@ public enum Waifus {
 	Majora(Unit.Majora),
 	Nagi(Unit.Nagi),
 	Yego(Unit.Yego),
+	Fid(Unit.Fid),
+	Fitra(Unit.Fitra),
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
