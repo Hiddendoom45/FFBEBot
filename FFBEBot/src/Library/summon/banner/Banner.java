@@ -164,6 +164,7 @@ public enum Banner {
 	Orders("Orders", new Unit[]{Unit.Nagi,Unit.Yego,Unit.ZoluluDelulu,Unit.Galas},BannerRates.D5.fiveRate(),Lib.concat(ZenoAkstar.featured,ZenoAkstar.pool),ZenoAkstar.include,BannerType.ThreePercent),
 	FF6P3("FFVI (3)", new Unit[]{Unit.KingEdgar,Unit.FighterSabin,Unit.Setzer,Unit.Celes},BannerRates.D5.fiveRate(),Lib.concat(Orders.featured,Orders.pool),Orders.include,BannerType.ThreePercent),
 	SummerFan("Summer Fan Service", new Unit[]{Unit.Fid, Unit.Fitra}, BannerRates.LD5.fiveRate(),Lib.concat(new Unit[]{Unit.KingEdgar, Unit.FighterSabin},FF6P3.pool), FF6P3.include, BannerType.ThreePercent),
+	Regina("Regina", new Unit[]{Unit.Regina,Unit.Vesvia,Unit.Amber,Unit.Krowa}, BannerRates.D4.fiveRate(), Lib.concat(SummerFan.featured, SummerFan.pool), SummerFan.include, BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

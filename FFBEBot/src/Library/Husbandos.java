@@ -204,6 +204,7 @@ public enum Husbandos {
 	Galas(Unit.Galas),
 	KingEdgar(Unit.KingEdgar),
 	FighterSabin(Unit.FighterSabin),
+	Krowa(Unit.Krowa),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

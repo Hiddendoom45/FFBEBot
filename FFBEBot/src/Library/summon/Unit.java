@@ -754,6 +754,10 @@ public enum Unit{
 	FighterSabin("Monk Sabin of Kolts",new String[]{"/5/52/Unit-Monk_Sabin_of_Kolts-5.png?version=196e77810da7e6fd61508d59fe318485","/8/8c/Unit-Monk_Sabin_of_Kolts-6.png?version=9c38ebf9fffedafd6a897e875b7f53e8","/0/0a/Unit-Monk_Sabin_of_Kolts-7.png?version=c6e84a21d52200d975ae2d30a5a81aa6"},5),
 	Fid("Summer Fina & Lid",new String[]{"/d/db/Unit-Summer_Fina_%26_Lid-5.png?version=037848ff41d2e498c4daff1c152823da","/0/08/Unit-Summer_Fina_%26_Lid-6.png?version=40fc30d41adbe8e067cbdf459f4400ca","/7/7f/Unit-Summer_Fina_%26_Lid-7.png?version=ef92b24255d848dc5a9da320336a58f5"},5),
 	Fitra("Summer Folka & Citra",new String[]{"/e/e5/Unit-Summer_Folka_%26_Citra-5.png?version=ca0bca3ee5f543fe97392ddbce778238","/0/08/Unit-Summer_Folka_%26_Citra-6.png?version=a672c37c8a56d5a3faab163d536a537a","/0/02/Unit-Summer_Folka_%26_Citra-7.png?version=7d46b6d6d28f8eeb7c93b3e7c2fbee57"},5),
+	Regina("Regina",new String[]{"/3/38/Unit-Regina-5.png?version=a8baf1aceafe96e82db35c54facc60d1","/0/03/Unit-Regina-6.png?version=72be515cf80f021e551e65f6de82d6f8","/a/a5/Unit-Regina-7.png?version=44da921e2e441bd8430f270253599481"},5),
+	Vesvia("Vesvia",new String[]{"/4/4b/Unit-Vesvia-4.png?version=478f12bdfff8035745a3d2cf599e0abb","/3/3a/Unit-Vesvia-5.png?version=7c31d0150e9e150d5c05f232a8102af8","/3/39/Unit-Vesvia-6.png?version=711e26ac50d4af4f15ed81fe530023e1"},4),
+	Amber("Amber",new String[]{"/6/6d/Unit-Amber-4.png?version=7bdd47b2bc2ce9e91eaf95a9f131832c","/7/71/Unit-Amber-5.png?version=93f77c5847159f0ced0d832500dad8b7","/d/d9/Unit-Amber-6.png?version=b9b1ce83a69ef7850939e8aab21e7445"},4),
+	Krowa("Krowa",new String[]{"/3/38/Unit-Krowa-3.png?version=b3b7642f721c7a1ef0e09bfbb84a0cd4","/c/ce/Unit-Krowa-4.png?version=9bcc2ca68ae979506304ce6bc508b451","/5/51/Unit-Krowa-5.png?version=cbc4cab0a4a9cb7e64cd8ddfaec7c41a"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1411,7 +1415,11 @@ public enum Unit{
 				KingEdgar,
 				FighterSabin,
 				Fid,
-				Fitra
+				Fitra,
+				Regina,
+				Vesvia,
+				Amber,
+				Krowa
 
 		});
 	}

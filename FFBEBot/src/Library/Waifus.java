@@ -162,6 +162,9 @@ public enum Waifus {
 	Yego(Unit.Yego),
 	Fid(Unit.Fid),
 	Fitra(Unit.Fitra),
+	Regina(Unit.Regina),
+	Vesvia(Unit.Vesvia),
+	Amber(Unit.Amber),
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
