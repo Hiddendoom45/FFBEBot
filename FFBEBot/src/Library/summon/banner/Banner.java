@@ -165,6 +165,7 @@ public enum Banner {
 	FF6P3("FFVI (3)", new Unit[]{Unit.KingEdgar,Unit.FighterSabin,Unit.Setzer,Unit.Celes},BannerRates.D5.fiveRate(),Lib.concat(Orders.featured,Orders.pool),Orders.include,BannerType.ThreePercent),
 	SummerFan("Summer Fan Service", new Unit[]{Unit.Fid, Unit.Fitra}, BannerRates.LD5.fiveRate(),Lib.concat(new Unit[]{Unit.KingEdgar, Unit.FighterSabin},FF6P3.pool), FF6P3.include, BannerType.ThreePercent),
 	Regina("Regina", new Unit[]{Unit.Regina,Unit.Vesvia,Unit.Amber,Unit.Krowa}, BannerRates.D4.fiveRate(), Lib.concat(SummerFan.featured, SummerFan.pool), SummerFan.include, BannerType.ThreePercent),
+	FF7P2("FFVII (2)", new Unit[]{Unit.Aerith,Unit.RedXIII,Unit.Barret,Unit.CaitSith}, BannerRates.D5.fiveRate(), Lib.concat(Regina.featured,Regina.pool),Regina.include, BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -173,7 +174,7 @@ public enum Banner {
 //	FF4 1,2,3,4
 //	FF5 1
 //	FF6 1,2, 3
-//  FF7 1
+//  FF7 1,2
 //	FF8 1
 //	FF9 1
 //	FF10 1,2(+old),3

@@ -758,6 +758,8 @@ public enum Unit{
 	Vesvia("Vesvia",new String[]{"/4/4b/Unit-Vesvia-4.png?version=478f12bdfff8035745a3d2cf599e0abb","/3/3a/Unit-Vesvia-5.png?version=7c31d0150e9e150d5c05f232a8102af8","/3/39/Unit-Vesvia-6.png?version=711e26ac50d4af4f15ed81fe530023e1"},4),
 	Amber("Amber",new String[]{"/6/6d/Unit-Amber-4.png?version=7bdd47b2bc2ce9e91eaf95a9f131832c","/7/71/Unit-Amber-5.png?version=93f77c5847159f0ced0d832500dad8b7","/d/d9/Unit-Amber-6.png?version=b9b1ce83a69ef7850939e8aab21e7445"},4),
 	Krowa("Krowa",new String[]{"/3/38/Unit-Krowa-3.png?version=b3b7642f721c7a1ef0e09bfbb84a0cd4","/c/ce/Unit-Krowa-4.png?version=9bcc2ca68ae979506304ce6bc508b451","/5/51/Unit-Krowa-5.png?version=cbc4cab0a4a9cb7e64cd8ddfaec7c41a"},3),
+	Aerith("Aerith",new String[]{"/8/8d/Unit-Aerith-5.png?version=1ba51ea2e84002a08431b738836d9c94","/3/3f/Unit-Aerith-6.png?version=a8678595b080f53b930fd28670f9e9d6","/a/a4/Unit-Aerith-7.png?version=c1d6c9af7704dde3ac5cec6c45124a6d"},5),
+	RedXIII("Red XIII",new String[]{"/b/b6/Unit-Red_XIII-5.png?version=fba05be247e4641c553c53f3ca27ac9d","/a/af/Unit-Red_XIII-6.png?version=d7a705b7f6d63dd74c4d7de8d500cbb2","/f/fb/Unit-Red_XIII-7.png?version=195e9ec5f6cb345571caf7ec1bfda9b9"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -905,6 +907,8 @@ public enum Unit{
 	Citan("Citan",new String[]{"/2/2f/Unit-Citan-5.png?version=b1043dc11af7d979a1b22984ad33a5aa","/e/e2/Unit-Citan-6.png?version=47fde8d48f41613db28557b29196f219","/d/d1/Unit-Citan-7.png?version=6e216ef349171d9e8b955a729079858b"},5),
 	XenoMaria("Maria (Xenogears)",new String[]{"/d/d5/Unit-Maria_%28Xenogears%29-5.png?version=fbbb88f83e69507c446f152c7a90b33c","/6/6b/Unit-Maria_%28Xenogears%29-6.png?version=df3fd1324284197603096bf3a2615a08","/0/04/Unit-Maria_%28Xenogears%29-7.png?version=7deac8928f65bc67a5f730c7cfe34089"},5),
 	Billy("Billy",new String[]{"/7/7c/Unit-Billy-4.png?version=8fa694d461a13d8b6f03e2e87c8ced88","/a/ac/Unit-Billy-5.png?version=2f0326f6a5329344f19eefd989a7140e","/3/32/Unit-Billy-6.png?version=8c4e238a62631dec16df3e2f952fcf8a"},4),
+	PKaty("Popstar Katy",new String[]{"/7/7b/Unit-Popstar_Katy-5.png?version=73d15c5e39e6fb64e5f92e0eae63a167","/6/66/Unit-Popstar_Katy-6.png?version=248bde4c53c8f5462313f45f14d9f9be","/9/9e/Unit-Popstar_Katy-7.png?version=42125ff666bfd7748c46d4bfac107f25"},5),
+	IFKaty("Immortal Flame Katy",new String[]{"/e/e8/Unit-Immortal_Flame_Katy-5.png?version=04063ae94eb2a4dad74c54d3034bfbc2","/2/21/Unit-Immortal_Flame_Katy-6.png?version=33b6f413f73884131ea870e4241b1c0f","/1/13/Unit-Immortal_Flame_Katy-7.png?version=044f56e27e0ba7db626b5d01529b20e9"},5),
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),
@@ -1419,7 +1423,9 @@ public enum Unit{
 				Regina,
 				Vesvia,
 				Amber,
-				Krowa
+				Krowa,
+				Aerith,
+				RedXIII
 
 		});
 	}

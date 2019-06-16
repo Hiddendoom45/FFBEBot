@@ -165,6 +165,7 @@ public enum Waifus {
 	Regina(Unit.Regina),
 	Vesvia(Unit.Vesvia),
 	Amber(Unit.Amber),
+	Aerith(Unit.Aerith),
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
@@ -224,7 +225,9 @@ public enum Waifus {
 	Elly(Unit.Elly),
 	Emeralda(Unit.Emeralda),
 	ChuChu(Unit.ChuChu),
-	XenoMaria(Unit.XenoMaria);
+	XenoMaria(Unit.XenoMaria),
+	PKaty(Unit.PKaty),
+	IFKaty(Unit.IFKaty);
 	
 	
 	
