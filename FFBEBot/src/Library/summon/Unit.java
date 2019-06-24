@@ -808,7 +808,12 @@ public enum Unit{
 	    },
 	Popoi("Popoi",new String[]{"/6/6d/Unit-Popoi-3.png?version=aa4d1b9134000aef80fae8487ed0c5ec","/e/eb/Unit-Popoi-4.png?version=ef4ffd5748230c5ef652a8c00a3fbc1b","/8/80/Unit-Popoi-5.png?version=2b6ed30af78a9e00aeac91ca2c00b8c0","/9/9f/Unit-Popoi-6.png?version=23d07e77c7c57a4f3b883b405f9e9737"},3),
 	Primm("Primm",new String[]{"/4/42/Unit-Primm-4.png?version=43be8e04f63f03996855ab9535e0d442","/9/99/Unit-Primm-5.png?version=a9fcb36b56eb896166f21f579530ed53","/d/d9/Unit-Primm-6.png?version=af047f2e5a86f34ac5af0fa6893d66e2"},4),
-	Randi("Randi",new String[]{"/9/9a/Unit-Randi-5.png?version=2a7b32f9840253a4c872b104ff1e4e8a","/3/33/Unit-Randi-6.png?version=43023da35f257c58e7d0cf7f6a2cc7df"},5),
+	Randi("Randi",new String[]{"/9/9a/Unit-Randi-5.png?version=36733fb40cf30494c458a867225313fc","/3/33/Unit-Randi-6.png?version=3d07ab50d1790ec233a20b82d9b6dea3",},5){
+	    	@Override
+	    	public void setup(){
+	    		setUpgrades(new String[]{"/0/00/Unit-Randi-7.png?version=fc1b8c7091567a52506bb418b1c5c8a3"});
+	    	}
+	    },
 	CLuna("Cupid Luna",new String[]{"/8/81/Unit-Cupid_Luna-3.png?version=cffd0176f752079d7cf501e68ef7db8f","/c/c9/Unit-Cupid_Luna-4.png?version=2f3f2d87279c98f560ee51a6c7758729","/f/f8/Unit-Cupid_Luna-5.png?version=ed357c1166677164410746f68794f867"},3),
 	CArtemois("Cupid Artemios",new String[]{"/9/98/Unit-Cupid_Artemios-4.png?version=7eec6b4e956cb7cd7ffc4b7a3e4f5736","/5/5b/Unit-Cupid_Artemios-5.png?version=59d4ba9606ef3629a2700768f7b8ebdf","/f/f0/Unit-Cupid_Artemios-6.png?version=78521b15b2d1454a4ebc271599f004bd"},4),
 	Vargas("Vargas",new String[]{"/f/f6/Unit-Vargas-5.png?version=c992c9e3e45fc51ba4f988bfd43ad36a","/4/49/Unit-Vargas-6.png?version=75436c9535280ae940f9a95fd92202c3"},5),
@@ -909,6 +914,9 @@ public enum Unit{
 	Billy("Billy",new String[]{"/7/7c/Unit-Billy-4.png?version=8fa694d461a13d8b6f03e2e87c8ced88","/a/ac/Unit-Billy-5.png?version=2f0326f6a5329344f19eefd989a7140e","/3/32/Unit-Billy-6.png?version=8c4e238a62631dec16df3e2f952fcf8a"},4),
 	PKaty("Popstar Katy",new String[]{"/7/7b/Unit-Popstar_Katy-5.png?version=73d15c5e39e6fb64e5f92e0eae63a167","/6/66/Unit-Popstar_Katy-6.png?version=248bde4c53c8f5462313f45f14d9f9be","/9/9e/Unit-Popstar_Katy-7.png?version=42125ff666bfd7748c46d4bfac107f25"},5),
 	IFKaty("Immortal Flame Katy",new String[]{"/e/e8/Unit-Immortal_Flame_Katy-5.png?version=04063ae94eb2a4dad74c54d3034bfbc2","/2/21/Unit-Immortal_Flame_Katy-6.png?version=33b6f413f73884131ea870e4241b1c0f","/1/13/Unit-Immortal_Flame_Katy-7.png?version=044f56e27e0ba7db626b5d01529b20e9"},5),
+	Flammie("Flammie",new String[]{"/6/6e/Unit-Flammie-5.png?version=3fedd28ebd66f6b0b05f2016e1a3bc5b","/e/eb/Unit-Flammie-6.png?version=347ed35a82ecaa9a7bb1467125ad8309","/e/ec/Unit-Flammie-7.png?version=bb875a9842483738e358e681405191ba"},5),
+	Rabite("Rabite",new String[]{"/0/05/Unit-Rabite-3.png?version=990ac57e0431712ed207c22a4274be24","/b/b5/Unit-Rabite-4.png?version=4567987edacb71a58290660ddbec2d20","/f/fa/Unit-Rabite-5.png?version=efd30006fe5de3959c9d55220f1bea98"},3),
+	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
 	Maxwell("Maxwell",new String[]{"/d/d9/Unit-Maxwell-5.png?version=bfe93ec29bc641c661fdf49989b6965c","/7/7f/Unit-Maxwell-6.png?version=43b99a51e0221c9051c70fb7933ec5fe"},5),
@@ -940,7 +948,7 @@ public enum Unit{
 	MarquisdeLeon("Marquis de Léon",new String[]{"/d/d9/Unit-Marquis_de_L%C3%A9on-5.png?version=9a3b0f3ba2112ff2217ad25e019dcc70","/7/74/Unit-Marquis_de_L%C3%A9on-6.png?version=23f6bdf3b341e20eaa4f1a20663a28f4","/d/db/Unit-Marquis_de_L%C3%A9on-7.png?version=117a90dbe3facf7bf50cf7a75efbcb59"},5),
 	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3),
 	ChuChu("Chu-Chu",new String[]{"/7/74/Unit-Chu-Chu-3.png?version=77cab345050cc3c2a0953a9323d4b013","/0/09/Unit-Chu-Chu-4.png?version=78c358711faca3fa3e98a53c6907588d","/7/76/Unit-Chu-Chu-5.png?version=c134990349b8125f10cdc581333adf5f"},3),
-
+	
 	Salt3("Salt3",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269409545289738/3.png"},3),
 	Salt4("Salt4",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269480085094420/4.png"},4);
 	//quick access map for certain things that has unit name but not the Unit object
