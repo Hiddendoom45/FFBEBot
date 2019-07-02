@@ -34,7 +34,7 @@ public class CmdControl {
 			}
 		}
 		if(content.startsWith(SaveSystem.getModPrefix(event))){
-			if(event.getChannelType()==ChannelType.TEXT){
+			if(event.getChannelType()==ChannelType.PRIVATE){
 				Lib.sendMessage(event, "Mod commands can only be used in server text channels");
 				return false;
 			}
