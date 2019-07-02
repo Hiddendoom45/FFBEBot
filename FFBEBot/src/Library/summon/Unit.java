@@ -760,6 +760,8 @@ public enum Unit{
 	Krowa("Krowa",new String[]{"/3/38/Unit-Krowa-3.png?version=b3b7642f721c7a1ef0e09bfbb84a0cd4","/c/ce/Unit-Krowa-4.png?version=9bcc2ca68ae979506304ce6bc508b451","/5/51/Unit-Krowa-5.png?version=cbc4cab0a4a9cb7e64cd8ddfaec7c41a"},3),
 	Aerith("Aerith",new String[]{"/8/8d/Unit-Aerith-5.png?version=1ba51ea2e84002a08431b738836d9c94","/3/3f/Unit-Aerith-6.png?version=a8678595b080f53b930fd28670f9e9d6","/a/a4/Unit-Aerith-7.png?version=c1d6c9af7704dde3ac5cec6c45124a6d"},5),
 	RedXIII("Red XIII",new String[]{"/b/b6/Unit-Red_XIII-5.png?version=fba05be247e4641c553c53f3ca27ac9d","/a/af/Unit-Red_XIII-6.png?version=d7a705b7f6d63dd74c4d7de8d500cbb2","/f/fb/Unit-Red_XIII-7.png?version=195e9ec5f6cb345571caf7ec1bfda9b9"},5),
+	KAyaka("Kimono Ayaka",new String[]{"/e/e1/Unit-Kimono_Ayaka-5.png?version=4b63d1e176b959062eaa3b87dd4ce455","/b/b5/Unit-Kimono_Ayaka-6.png?version=fd46b3c621484ee8c3c78523f521d5df","/e/e1/Unit-Kimono_Ayaka-7.png?version=164c56c2d8c05810c9f75203efc8105b"},5),
+	DAileen("Dressy Aileen",new String[]{"/e/ea/Unit-Dressy_Aileen-5.png?version=f4a93a46fb9a8d13e6bf16ccd204764e","/9/9f/Unit-Dressy_Aileen-6.png?version=8758aeb3cec6b363e0a1e2029e74dbc1","/2/2e/Unit-Dressy_Aileen-7.png?version=00dd8caa325f17e26e3349915f6d935b"},5),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1433,7 +1435,9 @@ public enum Unit{
 				Amber,
 				Krowa,
 				Aerith,
-				RedXIII
+				RedXIII,
+				KAyaka,
+				DAileen
 
 		});
 	}

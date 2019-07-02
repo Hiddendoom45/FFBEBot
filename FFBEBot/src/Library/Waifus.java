@@ -166,6 +166,8 @@ public enum Waifus {
 	Vesvia(Unit.Vesvia),
 	Amber(Unit.Amber),
 	Aerith(Unit.Aerith),
+	KAyaka(Unit.KAyaka),
+	DAileen(Unit.DAileen),
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
