@@ -762,6 +762,9 @@ public enum Unit{
 	RedXIII("Red XIII",new String[]{"/b/b6/Unit-Red_XIII-5.png?version=fba05be247e4641c553c53f3ca27ac9d","/a/af/Unit-Red_XIII-6.png?version=d7a705b7f6d63dd74c4d7de8d500cbb2","/f/fb/Unit-Red_XIII-7.png?version=195e9ec5f6cb345571caf7ec1bfda9b9"},5),
 	KAyaka("Kimono Ayaka",new String[]{"/e/e1/Unit-Kimono_Ayaka-5.png?version=4b63d1e176b959062eaa3b87dd4ce455","/b/b5/Unit-Kimono_Ayaka-6.png?version=fd46b3c621484ee8c3c78523f521d5df","/e/e1/Unit-Kimono_Ayaka-7.png?version=164c56c2d8c05810c9f75203efc8105b"},5),
 	DAileen("Dressy Aileen",new String[]{"/e/ea/Unit-Dressy_Aileen-5.png?version=f4a93a46fb9a8d13e6bf16ccd204764e","/9/9f/Unit-Dressy_Aileen-6.png?version=8758aeb3cec6b363e0a1e2029e74dbc1","/2/2e/Unit-Dressy_Aileen-7.png?version=00dd8caa325f17e26e3349915f6d935b"},5),
+	SSCharlotte("Sacred Shield Charlotte",new String[]{"/7/78/Unit-Sacred_Shield_Charlotte-5.png?version=fee58b5844304f0738ac2109004a7a8a","/6/63/Unit-Sacred_Shield_Charlotte-6.png?version=ff5d646fea3544e664f058d200455c65","/a/a6/Unit-Sacred_Shield_Charlotte-7.png?version=9c728a7b620bfc5cf0681af3627b2c1e"},5),
+	Friese("Friese",new String[]{"/8/8b/Unit-Friese-4.png?version=a2a7a4e03da26def40174e8aafac45c9","/5/58/Unit-Friese-5.png?version=531138aa1c69e9afdde0347ade904f81","/b/b3/Unit-Friese-6.png?version=8120b9000b377248255199b24305f67d"},4),
+	Shepard("Shepard",new String[]{"/2/2d/Unit-Shepard-3.png?version=23e6b21f5149f181b4e7e15b2b39102f","/8/84/Unit-Shepard-4.png?version=d7985aa14560d3222bc3aecb9f3bd585","/3/3e/Unit-Shepard-5.png?version=c81c1af4bd77b317653cf496a3b39ef6"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1437,7 +1440,10 @@ public enum Unit{
 				Aerith,
 				RedXIII,
 				KAyaka,
-				DAileen
+				DAileen,
+				SSCharlotte,
+				Friese,
+				Shepard
 
 		});
 	}

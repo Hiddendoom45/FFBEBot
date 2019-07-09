@@ -168,6 +168,7 @@ public enum Banner {
 	FF7P2("FFVII (2)", new Unit[]{Unit.Aerith,Unit.RedXIII,Unit.Barret,Unit.CaitSith}, BannerRates.D5.fiveRate(), Lib.concat(Regina.featured,Regina.pool),Regina.include, BannerType.ThreePercent),
 	SoM2("Secret of Mana (2)", new Unit[]{Unit.Randi,Unit.Flammie,Unit.Primm,Unit.Popoi}, BannerRates.D5.fiveRate(), Lib.concat(new Unit[]{Unit.RedXIII,Unit.Aerith}, FF7P2.pool), FF7P2.include, BannerType.ThreePercent),
 	KADA("Kimono Ayaka and Dressy Aileen", new Unit[]{Unit.KAyaka, Unit.DAileen}, BannerRates.LD5.fiveRate(), SoM2.pool, SoM2.include, BannerType.ThreePercent),
+	Charlotte("CG Charlotte", new Unit[]{Unit.SSCharlotte, Unit.Friese, Unit.Shepard}, BannerRates.EvenSplit.fiveRate(), Lib.concat(KADA.featured, KADA.pool), KADA.include, BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
