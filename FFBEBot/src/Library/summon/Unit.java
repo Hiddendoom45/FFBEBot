@@ -765,6 +765,11 @@ public enum Unit{
 	SSCharlotte("Sacred Shield Charlotte",new String[]{"/7/78/Unit-Sacred_Shield_Charlotte-5.png?version=fee58b5844304f0738ac2109004a7a8a","/6/63/Unit-Sacred_Shield_Charlotte-6.png?version=ff5d646fea3544e664f058d200455c65","/a/a6/Unit-Sacred_Shield_Charlotte-7.png?version=9c728a7b620bfc5cf0681af3627b2c1e"},5),
 	Friese("Friese",new String[]{"/8/8b/Unit-Friese-4.png?version=a2a7a4e03da26def40174e8aafac45c9","/5/58/Unit-Friese-5.png?version=531138aa1c69e9afdde0347ade904f81","/b/b3/Unit-Friese-6.png?version=8120b9000b377248255199b24305f67d"},4),
 	Shepard("Shepard",new String[]{"/2/2d/Unit-Shepard-3.png?version=23e6b21f5149f181b4e7e15b2b39102f","/8/84/Unit-Shepard-4.png?version=d7985aa14560d3222bc3aecb9f3bd585","/3/3e/Unit-Shepard-5.png?version=c81c1af4bd77b317653cf496a3b39ef6"},3),
+	Zack("Zack",new String[]{"/d/db/Unit-Zack-5.png?version=a255a56421e8330c727cbb1c5f8889e6","/8/85/Unit-Zack-6.png?version=ba7e439fd7f8a0491d5908b7211c04f1","/7/7c/Unit-Zack-7.png?version=35d21910c5f0fa985b00abba1f18839f"},5),
+	Yuffie("Yuffie",new String[]{"/f/ff/Unit-Yuffie-5.png?version=7c9ad43dd369bbc438789e63ab29b5d2","/b/b6/Unit-Yuffie-6.png?version=c6f8955e1439c94b20f4c526fe2a195d","/9/90/Unit-Yuffie-7.png?version=67b5742b44e73bd771030223c4f5242d"},5),
+	
+	
+	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1443,7 +1448,9 @@ public enum Unit{
 				DAileen,
 				SSCharlotte,
 				Friese,
-				Shepard
+				Shepard,
+				Zack,
+				Yuffie
 
 		});
 	}

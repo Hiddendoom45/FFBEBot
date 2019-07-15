@@ -207,6 +207,7 @@ public enum Husbandos {
 	Krowa(Unit.Krowa),
 	RedXIII(Unit.RedXIII),
 	Shepard(Unit.Shepard),
+	Zack(Unit.Zack),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

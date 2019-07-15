@@ -169,6 +169,7 @@ public enum Banner {
 	SoM2("Secret of Mana (2)", new Unit[]{Unit.Randi,Unit.Flammie,Unit.Primm,Unit.Popoi}, BannerRates.D5.fiveRate(), Lib.concat(new Unit[]{Unit.RedXIII,Unit.Aerith}, FF7P2.pool), FF7P2.include, BannerType.ThreePercent),
 	KADA("Kimono Ayaka and Dressy Aileen", new Unit[]{Unit.KAyaka, Unit.DAileen}, BannerRates.LD5.fiveRate(), SoM2.pool, SoM2.include, BannerType.ThreePercent),
 	Charlotte("CG Charlotte", new Unit[]{Unit.SSCharlotte, Unit.Friese, Unit.Shepard}, BannerRates.EvenSplit.fiveRate(), Lib.concat(KADA.featured, KADA.pool), KADA.include, BannerType.ThreePercent),
+	FF7P3("FFVII (3)", new Unit[]{Unit.Zack,Unit.Yuffie,Unit.Barret,Unit.CaitSith}, BannerRates.D5.fiveRate(),Lib.concat(Charlotte.featured, Charlotte.pool), Charlotte.include, BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -176,8 +177,8 @@ public enum Banner {
 //	FF3 1,2,3
 //	FF4 1,2,3,4
 //	FF5 1
-//	FF6 1,2, 3
-//  FF7 1,2
+//	FF6 1,2,3
+//  FF7 1,2,3
 //	FF8 1
 //	FF9 1
 //	FF10 1,2(+old),3
