@@ -210,7 +210,7 @@ public class Main {
 		break;
 		case Ready2:game="*praying to RNGesus|@FFBEBot help";
 		break;
-		case Ready3:game=" Offline?...|@FFBEBot help";
+		case Ready3:game=" a dead game|@FFBEBot help";
 		break;
 		case Ready4:game=" FFBE |@FFBEBot help";
 		break;
