@@ -18,7 +18,7 @@ import util.ModuleController;
  */
 public class Settings {
 	//general static settings, stored here to change easily
-	public static final String token=Secrets.token;
+	public static final String token=Secrets.testToken;
 	public static final String prefix="-!";
 	public static final String modPrefix="~!";
 	public static final String UA="Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36";
@@ -40,7 +40,7 @@ public class Settings {
 	public static long dailyTime;
 	public static boolean loaded = false;
 	public static HashMap<String,Settings> guilds=new HashMap<String,Settings>();//map of guilds and settings stored locally for easy access	
-	public static Banner DefaultBanner=Banner.FF7P3;//default banner used by summon simulators
+	public static Banner DefaultBanner=Banner.Elena;//default banner used by summon simulators
 	
 	//guild settings
 	public String guildPrefix="";

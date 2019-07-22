@@ -171,6 +171,8 @@ public enum Waifus {
 	SSCharlotte(Unit.SSCharlotte),
 	Friese(Unit.Friese),
 	Yuffie(Unit.Yuffie),
+	Elena(Unit.Elena),
+	Morgana(Unit.Morgana),
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),

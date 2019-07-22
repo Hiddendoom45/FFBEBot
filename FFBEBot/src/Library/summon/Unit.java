@@ -767,6 +767,9 @@ public enum Unit{
 	Shepard("Shepard",new String[]{"/2/2d/Unit-Shepard-3.png?version=23e6b21f5149f181b4e7e15b2b39102f","/8/84/Unit-Shepard-4.png?version=d7985aa14560d3222bc3aecb9f3bd585","/3/3e/Unit-Shepard-5.png?version=c81c1af4bd77b317653cf496a3b39ef6"},3),
 	Zack("Zack",new String[]{"/d/db/Unit-Zack-5.png?version=a255a56421e8330c727cbb1c5f8889e6","/8/85/Unit-Zack-6.png?version=ba7e439fd7f8a0491d5908b7211c04f1","/7/7c/Unit-Zack-7.png?version=35d21910c5f0fa985b00abba1f18839f"},5),
 	Yuffie("Yuffie",new String[]{"/f/ff/Unit-Yuffie-5.png?version=7c9ad43dd369bbc438789e63ab29b5d2","/b/b6/Unit-Yuffie-6.png?version=c6f8955e1439c94b20f4c526fe2a195d","/9/90/Unit-Yuffie-7.png?version=67b5742b44e73bd771030223c4f5242d"},5),
+	Elena("Elena",new String[]{"/b/b4/Unit-Elena-5.png?version=ea5667f263ff14ad68655d6c5ae22de1","/8/81/Unit-Elena-6.png?version=dfa9e1080d0d6160391cf3356901ff92","/1/15/Unit-Elena-7.png?version=7fe48b8f7700527de2558693c6de0a15"},5),
+	Morgana("Morgana",new String[]{"/f/fe/Unit-Morgana-5.png?version=09cc22e09302eaa0d3c2e32db808c6fa","/7/76/Unit-Morgana-6.png?version=f77c76a9279f4386eef3b60a470c00c6","/2/27/Unit-Morgana-7.png?version=bfc7ea69c8791f4e3639fd67d610fc4c"},5),
+	
 	
 	
 	
@@ -1450,7 +1453,9 @@ public enum Unit{
 				Friese,
 				Shepard,
 				Zack,
-				Yuffie
+				Yuffie,
+				Elena,
+				Morgana
 
 		});
 	}
