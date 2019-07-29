@@ -8,6 +8,7 @@ public enum BannerType {
 	BaseRare(false,true,new int[]{100,100,100}),//JP adjustment where base crystals=base rarity, no troll rainbow
 	ThreePercent(false,true,new int[]{100,100,100},new int[]{3,19,78}),//3% base rainbow rate
 	ThreePercentFeatured(false,true,true,new int[]{100,100,100},new int[]{3,19,78}),
+	
 	FivePercent(false,true,new int[]{100,100,100},new int[]{5,19,76});//the currently few experimental 5% banners
 	
 	public boolean common;

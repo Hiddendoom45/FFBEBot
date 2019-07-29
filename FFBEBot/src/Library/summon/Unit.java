@@ -769,6 +769,9 @@ public enum Unit{
 	Yuffie("Yuffie",new String[]{"/f/ff/Unit-Yuffie-5.png?version=7c9ad43dd369bbc438789e63ab29b5d2","/b/b6/Unit-Yuffie-6.png?version=c6f8955e1439c94b20f4c526fe2a195d","/9/90/Unit-Yuffie-7.png?version=67b5742b44e73bd771030223c4f5242d"},5),
 	Elena("Elena",new String[]{"/b/b4/Unit-Elena-5.png?version=ea5667f263ff14ad68655d6c5ae22de1","/8/81/Unit-Elena-6.png?version=dfa9e1080d0d6160391cf3356901ff92","/1/15/Unit-Elena-7.png?version=7fe48b8f7700527de2558693c6de0a15"},5),
 	Morgana("Morgana",new String[]{"/f/fe/Unit-Morgana-5.png?version=09cc22e09302eaa0d3c2e32db808c6fa","/7/76/Unit-Morgana-6.png?version=f77c76a9279f4386eef3b60a470c00c6","/2/27/Unit-Morgana-7.png?version=bfc7ea69c8791f4e3639fd67d610fc4c"},5),
+	Rivera("Rivera",new String[]{"/e/e2/Unit-Rivera-5.png?version=4a9f854a07698f6a387b9a5fb1b6fb00","/7/78/Unit-Rivera-6.png?version=f1bc5c5259283751c6bf4ed4ddc110b0","/2/28/Unit-Rivera-7.png?version=693d185e4a585dad56c25c38743b0cb0"},5),
+	
+	
 	
 	
 	
@@ -1455,7 +1458,8 @@ public enum Unit{
 				Zack,
 				Yuffie,
 				Elena,
-				Morgana
+				Morgana,
+				Rivera
 
 		});
 	}

@@ -1,7 +1,7 @@
 package Library.summon.banner;
 
 public enum BannerRates {
-	//S==single D==double T==Triple Q==Quadruple, Qu=Quintuplenumber of said rarity units on banner
+	//S==single D==double T==Triple Q==Quadruple, Qu=Quintuple number of said rarity units on banner
 	//L= limit one or more rarities missing
 	//x# = that many times more for the featured pool
 	EvenSplit(new int[]{50,475,2000},new int[]{100,475,1950},new int[]{300,475,1950}),
@@ -20,6 +20,7 @@ public enum BannerRates {
 	LS5T4(new int[]{50,158,158,158}, new int[]{100,158,158,158},new int[]{300,158,158,158}),
 	LD5(new int[]{25,25},new int[]{50,50},new int[]{150,150}),
 	LT5(new int[]{17,17,17},new int[]{33,33,34},new int[]{100,100,100}),
+	Rivera(new int[]{50}, new int[]{150}, new int[]{300}),//temporary name may change if more banners like this appear
 	FFBEHeroes(null,new int[]{100,100,25,25,25,25,475,1950},null);
 	
 	private final int[] rates;
