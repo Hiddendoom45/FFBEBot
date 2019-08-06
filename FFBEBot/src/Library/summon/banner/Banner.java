@@ -172,6 +172,7 @@ public enum Banner {
 	FF7P3("FFVII (3)", new Unit[]{Unit.Zack,Unit.Yuffie,Unit.Barret,Unit.CaitSith}, BannerRates.D5.fiveRate(),Lib.concat(Charlotte.featured, Charlotte.pool), Charlotte.include, BannerType.ThreePercent),
 	Elena("Elena/Morgana", new Unit[]{Unit.Elena, Unit.Morgana}, BannerRates.LD5.fiveRate(), Lib.concat(new Unit[]{Unit.Zack,Unit.Yuffie}, FF7P3.pool),FF7P3.include, BannerType.ThreePercent),
 	Rivera("Rivera", new Unit[]{Unit.Rivera}, BannerRates.Rivera.fiveRate(), Lib.concat(Elena.featured, Elena.pool), Elena.include, BannerType.ThreePercent),
+	FF13P2("FFXIII (2)", new Unit[]{Unit.CGLightning,Unit.NeverendingHope,Unit.Snow,Unit.Sazh}, BannerRates.D5.fiveRate(), Lib.concat(Rivera.featured, Rivera.pool), Rivera.include, BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -186,7 +187,7 @@ public enum Banner {
 //	FF10 1,2(+old),3
 //	FF11 1,2
 //	FF12 1,2
-//	FF13 1(1,2)
+//	FF13 1(1,2), 2
 //	FF15 1,2,3,4
 //	FF-0 1,2,3,4
 //	FFT 1(1,2),2,3,4

@@ -208,6 +208,7 @@ public enum Husbandos {
 	RedXIII(Unit.RedXIII),
 	Shepard(Unit.Shepard),
 	Zack(Unit.Zack),
+	NeverendingHope(Unit.NeverendingHope),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),
