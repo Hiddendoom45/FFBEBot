@@ -174,6 +174,7 @@ public class Main {
 		Overrider.addOverrideCommand("ratetest", new RateTest());
 		Overrider.addOverrideCommand("addalias", new AddAlias());
 		Overrider.addOverrideCommand("analytics", new DumpAnalytics());
+		Overrider.addOverrideCommand("rainbows", new Rainbows());
 		if(Settings.token==Secrets.testToken){//only active on the test token, override command only used for testing purposes
 			Overrider.addOverrideCommand("test", new Test());
 		}

@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -13,6 +14,7 @@ import javax.imageio.ImageIO;
 import Library.summon.Unit;
 import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
+import commands.sub.SummonGeneric;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
@@ -27,6 +29,9 @@ import util.rng.summon.Pull;
 import util.rng.summon.SummonImageBuilder;
 
 public class Summon extends CommandGenerics implements Command {
+	
+	public static HashMap<Long,SummonGeneric> customMap = new HashMap<Long,SummonGeneric>();
+	
 	@Override
 	public boolean called(String[] args, MessageReceivedEvent event) {
 		super.called(args, event);
@@ -46,7 +51,12 @@ public class Summon extends CommandGenerics implements Command {
 							num = 0;
 						}
 						Banner pullBanner=getBanner(args.length>1?(args[1]==null?"null":args[1]):"null");
-						if(num==11){
+						if(customMap.containsKey(event.getAuthor().getIdLong())){
+							List<UnitSpecific> units = customMap.get(event.getAuthor().getIdLong()).doSummon(num, pullBanner);
+							logMeta(event, units);
+							sendImage(event, units, pullBanner.name);
+						}
+						else if(num==11){
 							List<UnitSpecific> units = Pull.pull11(pullBanner); 
 							logMeta(event, units);
 							sendImage(event, units, pullBanner.name);
