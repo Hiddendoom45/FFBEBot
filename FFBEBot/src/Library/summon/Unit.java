@@ -772,7 +772,8 @@ public enum Unit{
 	Rivera("Rivera",new String[]{"/e/e2/Unit-Rivera-5.png?version=4a9f854a07698f6a387b9a5fb1b6fb00","/7/78/Unit-Rivera-6.png?version=f1bc5c5259283751c6bf4ed4ddc110b0","/2/28/Unit-Rivera-7.png?version=693d185e4a585dad56c25c38743b0cb0"},5),
 	CGLightning("Radiant Lightning",new String[]{"/d/de/Unit-Radiant_Lightning-5.png?version=f9ce152249a7b27ae28e8cf4412afb51","/5/5d/Unit-Radiant_Lightning-6.png?version=eac498a7457d47ba9d5bd93334ebfa09","/e/e1/Unit-Radiant_Lightning-7.png?version=ac6295852d4f58d84c044d1412b640b5"},5),
 	NeverendingHope("Neverending Hope",new String[]{"/9/9f/Unit-Neverending_Hope-5.png?version=249c890285ef459390ed379c92a0f546","/7/73/Unit-Neverending_Hope-6.png?version=6a0756fbbf778ceffd9a71179ece987f","/4/4f/Unit-Neverending_Hope-7.png?version=c2861e7a46b9543e51cc7ecda365335a"},5),
-	
+	Kaito("Kaito", new String[]{"/2/2d/Unit-Kaito-5.png?version=d04216b1cfb8a849966cf44a44489929","/c/c0/Unit-Kaito-6.png?version=7b9266ec265ec44ce3f99bbbde187307","/1/1c/Unit-Kaito-7.png?version=318df4d9c51e68d780fcb980ab097232"},5),
+	Tsukiko("Tsukiko", new String[]{"/a/ad/Unit-Tsukiko-5.png?version=6bc643b8a54757d5198efe1c8de9bae2","/9/90/Unit-Tsukiko-6.png?version=f90b86186f1165290c5bd408a1206b01","/b/b0/Unit-Tsukiko-7.png?version=9d406c2413f61f05ea9be1fae4e1883d"},5),
 	
 	
 	
@@ -1461,7 +1462,9 @@ public enum Unit{
 				Morgana,
 				Rivera,
 				CGLightning,
-				NeverendingHope
+				NeverendingHope,
+				Kaito,
+				Tsukiko
 
 		});
 	}

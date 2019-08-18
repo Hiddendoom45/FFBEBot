@@ -173,6 +173,7 @@ public enum Banner {
 	Elena("Elena/Morgana", new Unit[]{Unit.Elena, Unit.Morgana}, BannerRates.LD5.fiveRate(), Lib.concat(new Unit[]{Unit.Zack,Unit.Yuffie}, FF7P3.pool),FF7P3.include, BannerType.ThreePercent),
 	Rivera("Rivera", new Unit[]{Unit.Rivera}, BannerRates.Rivera.fiveRate(), Lib.concat(Elena.featured, Elena.pool), Elena.include, BannerType.ThreePercent),
 	FF13P2("FFXIII (2)", new Unit[]{Unit.CGLightning,Unit.NeverendingHope,Unit.Snow,Unit.Sazh}, BannerRates.D5.fiveRate(), Lib.concat(Rivera.featured, Rivera.pool), Rivera.include, BannerType.ThreePercent),
+	DemonParade("Demon Parade", new Unit[]{Unit.Kaito, Unit.Tsukiko, Unit.SummerLuka, Unit.TideSkaha}, BannerRates.D5.fiveRate(), Lib.concat(new Unit[]{Unit.CGLightning, Unit.NeverendingHope}, FF13P2.pool),FF13P2.include, BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

@@ -14,7 +14,6 @@ public class WorkHard extends CommandGenerics{
 	@Override
 	public void action(String[] args, MessageReceivedEvent event){
 		int since = CmdHistory.getHist(event).msgSince(new Summon());
-		System.out.println(since);
 		if(since>10||since==-1){
 			EmbedBuilder embed = new EmbedBuilder();
 			embed.setTitle("We work hard for our rainbows", "https://old.reddit.com/r/FFBraveExvius/comments/aldcab/gumis_message_explaining_the_lack_of_prisms_in/");
