@@ -17,7 +17,8 @@ public class Units extends UnitSelection implements Command,Selection {
 	public void sendUnitData(UnitInfo info,MessageReceivedEvent event){
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setAuthor(info.unitName+"    Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t",info.URL);
-		embed.setDescription("Role:"+info.role+(info.No.length>0?" #"+info.No[0]:"")+"\n"+"[unit link]("+Lib.sUrl(info.URL)+")");
+		embed.setDescription("Role:"+info.role+(info.No.length>0?" #"+info.No[0]:"")+(info.chains.length>0?"Chains: "+Lib.joinBy(info.chains, ","):"")
+				+"\n"+"[unit link]("+Lib.sUrl(info.URL)+")");
 		if(!(info.trustDetails==null)){
 			embed.addField(new Field("TM - "+info.trustName,"[TM link]("+Lib.sUrl(info.trustLink)+")\n"+info.trustDetails,false));
 		}
@@ -32,14 +33,14 @@ public class Units extends UnitSelection implements Command,Selection {
 		String mag = "";
 		String spr = "";
 		for(int i =0;i<info.stats.stats.length;i++){
-			hp+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].HP, 6)+Lib.pad("("+info.statIncrease.stats[i].HP+")", 6)+"\n";
-			mp+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].MP, 6)+Lib.pad("("+info.statIncrease.stats[i].MP+")", 6)+"\n";
-			atk+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].ATK, 6)+Lib.pad("("+info.statIncrease.stats[i].ATK+")", 6)+"\n";
-			def+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].DEF, 6)+Lib.pad("("+info.statIncrease.stats[i].DEF+")", 6)+"\n";
-			mag+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].MAG, 6)+Lib.pad("("+info.statIncrease.stats[i].MAG+")", 6)+"\n";
-			spr+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].SPR, 6)+Lib.pad("("+info.statIncrease.stats[i].SPR+")", 6)+"\n";
+			hp+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].HP, 6)+Lib.pad("("+info.stats.increases[i].HP+")", 6)+"\n";
+			mp+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].MP, 6)+Lib.pad("("+info.stats.increases[i].MP+")", 6)+"\n";
+			atk+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].ATK, 6)+Lib.pad("("+info.stats.increases[i].ATK+")", 6)+"\n";
+			def+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].DEF, 6)+Lib.pad("("+info.stats.increases[i].DEF+")", 6)+"\n";
+			mag+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].MAG, 6)+Lib.pad("("+info.stats.increases[i].MAG+")", 6)+"\n";
+			spr+=info.stats.stats[i].rarity+"★:"+Lib.pad(info.stats.stats[i].SPR, 6)+Lib.pad("("+info.stats.increases[i].SPR+")", 6)+"\n";
 		}
-		embed.addField(new Field("Stats","maxvalue(pot cap)",false));
+		embed.addField(new Field("Stats","maxvalue(pot cap), doorpot cap is half of pot cap, round down",false));
 		embed.addField("HP",hp,true);
 		embed.addField("MP",mp,true);
 		embed.addField("ATK",atk,true);

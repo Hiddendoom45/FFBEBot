@@ -767,6 +767,23 @@ public class Lib {
 		}
 		return out.length()>0?out.substring(1):out;
 	}
+	/**
+	 * Join an array of strings by the specified delimiter
+	 * @param args array of strings
+	 * @param delimiter delimiter to join by
+	 * @return a new string whose elements are joined by the delimiter
+	 */
+	public static String joinBy(String[] args, String delimiter){
+		String out = "";
+		boolean flag = false;
+		StringBuilder b = new StringBuilder();
+		for(String s:args){
+			if(flag)b.append(delimiter);
+			b.append(s);
+			flag = true;
+		}
+		return b.toString();
+	}
 	public static <T> T[] concat(T[] first, T[] second) {
 		  T[] result = Arrays.copyOf(first, first.length + second.length);
 		  System.arraycopy(second, 0, result, first.length, second.length);
