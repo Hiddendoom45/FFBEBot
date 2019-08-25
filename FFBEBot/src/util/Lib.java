@@ -451,14 +451,34 @@ public class Lib {
 	 * @return element representing the specific cell
 	 */
 	public static Element getCell(int row, int col,Element table){
+		return getCell(row,col,table,true);
+	}
+	/**
+	 * gets a specific cell in a table
+	 * @param row row #
+	 * @param col column #
+	 * @param table table element &lt;tbody&gt;
+	 * @param td if to get the data element or header element
+	 * @return element representing the specific cell
+	 */
+	public static Element getCell(int row, int col, Element table, boolean td){
 		if(!table.tagName().equals("tbody")){
 			table=table.getElementsByTag("tbody").first();
 		}
-		return table.select(":root > tr").size()>row?
-					(table.select(":root > tr").get(row).getElementsByTag("td").size()>0? 
-					table.select(":root > tr").get(row).getElementsByTag("td").get(col)
+		if(td){
+			return table.select(":root > tr").size()>row?
+						(table.select(":root > tr").get(row).getElementsByTag("td").size()>0? 
+						table.select(":root > tr").get(row).getElementsByTag("td").get(col)
+						:null)
+					:null;
+		}
+		else{
+			return table.select(":root > tr").size()>row?
+					(table.select(":root > tr").get(row).getElementsByTag("th").size()>0? 
+					table.select(":root > tr").get(row).getElementsByTag("th").get(col)
 					:null)
 				:null;
+		}
 	}
 	/**
 	 * get specific row

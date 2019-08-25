@@ -1,12 +1,17 @@
 package util.unit;
 
 import java.io.IOException;
+import java.util.stream.Collectors;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.nodes.Node;
 import org.jsoup.nodes.TextNode;
+import org.jsoup.select.Elements;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import Library.ElementFilter;
 import global.record.Log;
@@ -23,6 +28,7 @@ public class UnitInfo {
 	public int maxRarity=0;
 	public String job="";
 	public String role="";
+	public String[] chains= new String[]{};
 	public String origin="";
 	public String gender="";
 	public String race;
@@ -34,7 +40,7 @@ public class UnitInfo {
 	public String sTrustLink="";
 	public TrustInfo sTrustDetails;
 	public unitStats stats;
-	public unitStatIncrease statIncrease;
+	public unitStatIncrease statIncrease;//TODO delete once preload files are updated
 	public String[] weapons=new String[]{};
 	public String[] armours=new String[]{};
 	public unitAbilities Special;
@@ -75,15 +81,18 @@ public class UnitInfo {
 			}
 			try{
 				Element unitInfo=content.select(".ibox > tbody").first();
+				int rows = unitInfo.select(":root > tr").size();
 				unitName=Lib.getHeader(0, unitInfo).text();
 				imgOverviewURL=Lib.getCell(1, 0, unitInfo).child(0).absUrl("src");
 				parseRarities(Lib.getCell(2, 0, unitInfo).text());
 				job=Lib.getCell(3, 0, unitInfo).text();
-				role=Lib.getCell(4, 0, unitInfo).text();
-				origin=Lib.getCell(8, 0, unitInfo).text();
-				gender=Lib.getCell(9, 0, unitInfo).text();
-				race=Lib.getCell(10, 0, unitInfo).text();
-				String[] no=Lib.getCell(11, 0, unitInfo).text().split(",");
+				Elements roles = Lib.getCell(4, 0, unitInfo).select("a[title]");
+				role=roles.stream().map(e -> e.attr("title")).collect(Collectors.joining(", "));
+				if(rows>14)chains=Lib.parseText(Lib.getCell(5, 0, unitInfo)).split("\n");
+				origin=Lib.getCell(rows>14?9:8, 0, unitInfo).text();
+				gender=Lib.getCell(rows>14?10:9, 0, unitInfo).text();
+				race=Lib.getCell(rows>14?11:10, 0, unitInfo).text();
+				String[] no=Lib.getCell(rows>14?12:11, 0, unitInfo).text().split(",");
 				No=new int[no.length];
 				for(int i=0;i<no.length;i++){
 					try{
@@ -92,16 +101,16 @@ public class UnitInfo {
 						No[i]=0;
 					}
 				}
-				trustName=parseRaw(Lib.getCell(12, 0, unitInfo));
+				trustName=parseRaw(Lib.getCell(rows>14?13:12, 0, unitInfo));
 				if(!trustName.equalsIgnoreCase("- ")){
-					trustLink=Lib.getCell(12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
+					trustLink=Lib.getCell(rows>14?13:12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
 					trustDetails=new TrustInfo(doc2.selectFirst("#mw-content-text > .mw-parser-output").children());
 				}
-				Element sTRaw = Lib.getCell(13, 0, unitInfo);
+				Element sTRaw = Lib.getCell(14, 0, unitInfo);
 				if(!(sTRaw==null)){
 					sTrustName=parseRaw(sTRaw);
-					sTrustLink=Lib.getCell(13, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
+					sTrustLink=Lib.getCell(14, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc3=Jsoup.connect(sTrustLink).userAgent(Settings.UA).get();
 					sTrustDetails=new TrustInfo(doc3.selectFirst("#mw-content-text > .mw-parser-output").children());
 				}
@@ -117,8 +126,11 @@ public class UnitInfo {
 				Log.logShortError(e, 5);
 			}
 			try{
-				Element statIncrease=Lib.getEleAfter(content.children(),new ElementFilter("h3","Maximum Stats Increase [edit | edit source]")).getElementsByTag("tbody").first();
-				this.statIncrease=new unitStatIncrease(statIncrease);
+				Element statIncreaseSec=Lib.getEleAfter(content.children(),new ElementFilter("h3","Maximum Stats Increase [edit | edit source]"));
+				if(statIncreaseSec!=null){
+					Element statIncrease=statIncreaseSec.getElementsByTag("tbody").first();
+					this.stats.setIncreases(statIncrease);
+				}
 			}
 			catch(Exception e){
 				Log.log("ERROR", "error parsing stat increases for page:"+page);
@@ -190,7 +202,9 @@ public class UnitInfo {
 		}
 	}
 	public static void main(String[] args) throws IOException{
-		new UnitInfo("https://exvius.gamepedia.com/Grim_Lord_Sakura");
+		UnitInfo u = new UnitInfo("https://exvius.gamepedia.com/Refia");
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		System.out.println(gson.toJson(u));
 	}
 	public String parseRaw(Element ele){
 		String s="";
