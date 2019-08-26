@@ -14,17 +14,10 @@ Somewhat maintained, summon simulator will continue to be updated but fixes may 
 
 #### Recent Updates:
 
+- Fixes to parsing unit info from exvius wiki
 - we all work hard for our rainbows
 - aliases are interchangable between the runit and unit commands, en,jp names and id can be used to search with both runit and unit (and all releated commands)
-- update to runit command and parser for new format for reddit wiki
-- update unit command so jp names work and ids (for the base unit) also works
-- using gl names with the runit command will get the right unit instead of unit not found
-- all banners follow common naming scheme
-- update banner name so that the Christine banner from last year is called Christmas2, TODO: create common naming scheme for all banners
-- update runit command to be compatible with just links
-- update stat display, cleaner and different stats sorted into columns
-- update exivus wiki parsing for due to issues caused by wikimedia update
-- update to runit, displays links for exvius.gg and famitsu
+
 
 #### TODO:
 
