@@ -81,18 +81,18 @@ public class UnitInfo {
 			}
 			try{
 				Element unitInfo=content.select(".ibox > tbody").first();
-				int rows = unitInfo.select(":root > tr").size();
+				boolean hasChains = Lib.getCell(5, 0, unitInfo, false).text().equals("Chain Family");
 				unitName=Lib.getHeader(0, unitInfo).text();
 				imgOverviewURL=Lib.getCell(1, 0, unitInfo).child(0).absUrl("src");
 				parseRarities(Lib.getCell(2, 0, unitInfo).text());
 				job=Lib.getCell(3, 0, unitInfo).text();
 				Elements roles = Lib.getCell(4, 0, unitInfo).select("a[title]");
 				role=roles.stream().map(e -> e.attr("title")).collect(Collectors.joining(", "));
-				if(rows>14)chains=Lib.parseText(Lib.getCell(5, 0, unitInfo)).split("\n");
-				origin=Lib.getCell(rows>14?9:8, 0, unitInfo).text();
-				gender=Lib.getCell(rows>14?10:9, 0, unitInfo).text();
-				race=Lib.getCell(rows>14?11:10, 0, unitInfo).text();
-				String[] no=Lib.getCell(rows>14?12:11, 0, unitInfo).text().split(",");
+				if(hasChains)chains=Lib.parseText(Lib.getCell(5, 0, unitInfo)).split("\n");
+				origin=Lib.getCell(hasChains?9:8, 0, unitInfo).text();
+				gender=Lib.getCell(hasChains?10:9, 0, unitInfo).text();
+				race=Lib.getCell(hasChains?11:10, 0, unitInfo).text();
+				String[] no=Lib.getCell(hasChains?12:11, 0, unitInfo).text().split(",");
 				No=new int[no.length];
 				for(int i=0;i<no.length;i++){
 					try{
@@ -101,16 +101,16 @@ public class UnitInfo {
 						No[i]=0;
 					}
 				}
-				trustName=parseRaw(Lib.getCell(rows>14?13:12, 0, unitInfo));
+				trustName=parseRaw(Lib.getCell(hasChains?13:12, 0, unitInfo));
 				if(!trustName.equalsIgnoreCase("- ")){
-					trustLink=Lib.getCell(rows>14?13:12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
+					trustLink=Lib.getCell(hasChains?13:12, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc2=Jsoup.connect(trustLink).userAgent(Settings.UA).get();
 					trustDetails=new TrustInfo(doc2.selectFirst("#mw-content-text > .mw-parser-output").children());
 				}
-				Element sTRaw = Lib.getCell(14, 0, unitInfo);
+				Element sTRaw = Lib.getCell(hasChains?14:13, 0, unitInfo);
 				if(!(sTRaw==null)){
 					sTrustName=parseRaw(sTRaw);
-					sTrustLink=Lib.getCell(14, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
+					sTrustLink=Lib.getCell(hasChains?14:13, 0, unitInfo).child(0).getElementsByTag("a").first().absUrl("href");
 					Document doc3=Jsoup.connect(sTrustLink).userAgent(Settings.UA).get();
 					sTrustDetails=new TrustInfo(doc3.selectFirst("#mw-content-text > .mw-parser-output").children());
 				}
@@ -202,7 +202,7 @@ public class UnitInfo {
 		}
 	}
 	public static void main(String[] args) throws IOException{
-		UnitInfo u = new UnitInfo("https://exvius.gamepedia.com/Refia");
+		UnitInfo u = new UnitInfo("https://exvius.gamepedia.com/Summertime_Luka");
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		System.out.println(gson.toJson(u));
 	}
