@@ -17,7 +17,7 @@ public class Units extends UnitSelection implements Command,Selection {
 	public void sendUnitData(UnitInfo info,MessageReceivedEvent event){
 		EmbedBuilder embed=new EmbedBuilder();
 		embed.setAuthor(info.unitName+"    Rarity:"+info.minRarity+"★ - "+info.maxRarity+"★\t",info.URL);
-		embed.setDescription("Role:"+info.role+(info.No.length>0?" #"+info.No[0]:"")+(info.chains.length>0?"Chains: "+Lib.joinBy(info.chains, ","):"")
+		embed.setDescription("Role:"+info.role+(info.No.length>0?" #"+info.No[0]:"")+(info.chains.length>0?" Chains: "+Lib.joinBy(info.chains, ","):"")
 				+"\n"+"[unit link]("+Lib.sUrl(info.URL)+")");
 		if(!(info.trustDetails==null)){
 			embed.addField(new Field("TM - "+info.trustName,"[TM link]("+Lib.sUrl(info.trustLink)+")\n"+info.trustDetails,false));

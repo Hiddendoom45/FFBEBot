@@ -266,10 +266,24 @@
     "otherAlias": []
   },
   {
+    "id": 8235,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "morgana",
+    "otherAlias": []
+  },
+  {
     "id": 1068,
     "rJPName": "バルーサ",
     "rENName": "barusa",
     "eENName": "",
+    "otherAlias": []
+  },
+  {
+    "id": 8238,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "tsukiko",
     "otherAlias": []
   },
   {
@@ -338,6 +352,13 @@
     "otherAlias": []
   },
   {
+    "id": 8256,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "elena",
+    "otherAlias": []
+  },
+  {
     "id": 1089,
     "rJPName": "マクメディ",
     "rENName": "makumedi",
@@ -345,10 +366,24 @@
     "otherAlias": []
   },
   {
+    "id": 8259,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "rivera",
+    "otherAlias": []
+  },
+  {
     "id": 1092,
     "rJPName": "ロッティ",
     "rENName": "lottie",
     "eENName": "lotti",
+    "otherAlias": []
+  },
+  {
+    "id": 8262,
+    "rJPName": "",
+    "rENName": "",
+    "eENName": "kaito",
     "otherAlias": []
   },
   {
@@ -1508,7 +1543,7 @@
     "id": 1336,
     "rJPName": "プリムロゼ",
     "rENName": "primrose",
-    "eENName": "",
+    "eENName": "primrose",
     "otherAlias": []
   },
   {
@@ -1522,7 +1557,7 @@
     "id": 1339,
     "rJPName": "オルベリク",
     "rENName": "olberic",
-    "eENName": "",
+    "eENName": "olberic",
     "otherAlias": []
   },
   {
@@ -1536,7 +1571,7 @@
     "id": 1342,
     "rJPName": "テリオン",
     "rENName": "therion",
-    "eENName": "",
+    "eENName": "therion",
     "otherAlias": []
   },
   {
@@ -1550,7 +1585,7 @@
     "id": 1345,
     "rJPName": "トレサ",
     "rENName": "tressa",
-    "eENName": "",
+    "eENName": "tressa",
     "otherAlias": []
   },
   {
@@ -1926,8 +1961,10 @@
     "id": 1445,
     "rJPName": "閃光のライトニング",
     "rENName": "cg lightning",
-    "eENName": "aurora lightning",
-    "otherAlias": []
+    "eENName": "radiant lightning",
+    "otherAlias": [
+      "aurora lightning"
+    ]
   },
   {
     "id": 422,
@@ -1940,7 +1977,7 @@
     "id": 1448,
     "rJPName": "未来へのホープ",
     "rENName": "future hope",
-    "eENName": "future hope",
+    "eENName": "neverending hope",
     "otherAlias": []
   },
   {
@@ -2275,7 +2312,7 @@
     "id": 1514,
     "rJPName": "晴れ着フィーナ",
     "rENName": "kimono fina",
-    "eENName": "",
+    "eENName": "kimono fina",
     "otherAlias": [
       "kfina"
     ]
@@ -2813,7 +2850,7 @@
     "id": 605,
     "rJPName": "水華のヴェリアス",
     "rENName": "water veritas",
-    "eENName": "",
+    "eENName": "veritas of the waters",
     "otherAlias": []
   },
   {
