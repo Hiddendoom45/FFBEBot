@@ -174,6 +174,7 @@ public enum Banner {
 	Rivera("Rivera", new Unit[]{Unit.Rivera}, BannerRates.Rivera.fiveRate(), Lib.concat(Elena.featured, Elena.pool), Elena.include, BannerType.ThreePercent),
 	FF13P2("FFXIII (2)", new Unit[]{Unit.CGLightning,Unit.NeverendingHope,Unit.Snow,Unit.Sazh}, BannerRates.D5.fiveRate(), Lib.concat(Rivera.featured, Rivera.pool), Rivera.include, BannerType.ThreePercent),
 	DemonParade("Demon Parade", new Unit[]{Unit.Kaito, Unit.Tsukiko, Unit.SummerLuka, Unit.TideSkaha}, BannerRates.D5.fiveRate(), Lib.concat(new Unit[]{Unit.CGLightning, Unit.NeverendingHope}, FF13P2.pool),FF13P2.include, BannerType.ThreePercent),
+	Octopath("Octopath Traveler", new Unit[]{Unit.Olberic,Unit.Primrose,Unit.Therion,Unit.Tressa},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.Kaito,Unit.Tsukiko},DemonParade.pool),DemonParade.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -267,7 +268,8 @@ public enum Banner {
 				Banner.CNY2_old,
 				Banner.Xenogears,
 				Banner.Xenogears2,
-				Banner.SoM2
+				Banner.SoM2,
+				Banner.Octopath
 				};
 	}
 	public static boolean LEBanner(Banner banner){

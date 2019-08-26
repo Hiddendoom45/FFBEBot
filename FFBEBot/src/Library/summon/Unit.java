@@ -933,6 +933,10 @@ public enum Unit{
 	IFKaty("Immortal Flame Katy",new String[]{"/e/e8/Unit-Immortal_Flame_Katy-5.png?version=04063ae94eb2a4dad74c54d3034bfbc2","/2/21/Unit-Immortal_Flame_Katy-6.png?version=33b6f413f73884131ea870e4241b1c0f","/1/13/Unit-Immortal_Flame_Katy-7.png?version=044f56e27e0ba7db626b5d01529b20e9"},5),
 	Flammie("Flammie",new String[]{"/6/6e/Unit-Flammie-5.png?version=3fedd28ebd66f6b0b05f2016e1a3bc5b","/e/eb/Unit-Flammie-6.png?version=347ed35a82ecaa9a7bb1467125ad8309","/e/ec/Unit-Flammie-7.png?version=bb875a9842483738e358e681405191ba"},5),
 	Rabite("Rabite",new String[]{"/0/05/Unit-Rabite-3.png?version=990ac57e0431712ed207c22a4274be24","/b/b5/Unit-Rabite-4.png?version=4567987edacb71a58290660ddbec2d20","/f/fa/Unit-Rabite-5.png?version=efd30006fe5de3959c9d55220f1bea98"},3),
+	Olberic("Olberic",new String[]{"/7/77/Unit-Olberic-5.png?version=46906ff57b594137a9247cf602d7a89e","/7/7d/Unit-Olberic-6.png?version=48b98442bc9cd4d63827e4dad49dd300","/4/40/Unit-Olberic-7.png?version=edf37b7335413e77ef73138f6b6a4809"},5),
+	Primrose("Primrose",new String[]{"/a/a7/Unit-Primrose-5.png?version=b7238d20b7a9c351a28ba0999b4047c5","/5/56/Unit-Primrose-6.png?version=9adb47296fc178ce6b1cc73f13320502","/b/b5/Unit-Primrose-7.png?version=57a5d8140ca9f19a3750328035850613"},5),
+	Therion("Therion",new String[]{"/0/0f/Unit-Therion-4.png?version=8e610389c5f93dc60498dc2691709b94","/e/e6/Unit-Therion-5.png?version=d16eb3fd5409c4c43d459d8c2ef09445","/8/88/Unit-Therion-6.png?version=228d44268b477994eac3c565bf171308"},4),
+	Tressa("Tressa",new String[]{"/a/a3/Unit-Tressa-3.png?version=20293bd0381ffd506c0ed4e3b46d2b24","/a/a3/Unit-Tressa-4.png?version=08a4a44c2f36ec3b99d2d18877f0f3a5","/8/8b/Unit-Tressa-5.png?version=9f4dbf8faf6e8739e05a0af3d153a8d3"},3),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),

@@ -236,7 +236,9 @@ public enum Waifus {
 	ChuChu(Unit.ChuChu),
 	XenoMaria(Unit.XenoMaria),
 	PKaty(Unit.PKaty),
-	IFKaty(Unit.IFKaty);
+	IFKaty(Unit.IFKaty),
+	Primrose(Unit.Primrose),
+	Tressa(Unit.Tressa);
 	
 	
 	

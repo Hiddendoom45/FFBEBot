@@ -264,7 +264,9 @@ public enum Husbandos {
 	Bart(Unit.Bart),
 	Rico(Unit.Rico),
 	Citan(Unit.Citan),
-	Billy(Unit.Billy);
+	Billy(Unit.Billy),
+	Olberic(Unit.Olberic),
+	Therion(Unit.Therion);
 	
 
 	public final String name;

@@ -774,7 +774,6 @@ public class Lib {
 	 * @return a new string whose elements are joined by the delimiter
 	 */
 	public static String joinBy(String[] args, String delimiter){
-		String out = "";
 		boolean flag = false;
 		StringBuilder b = new StringBuilder();
 		for(String s:args){
