@@ -13,6 +13,7 @@ import net.dv8tion.jda.core.entities.Guild;
 import net.dv8tion.jda.core.entities.IMentionable;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.entities.Message;
+import net.dv8tion.jda.core.entities.MessageActivity;
 import net.dv8tion.jda.core.entities.MessageChannel;
 import net.dv8tion.jda.core.entities.MessageEmbed;
 import net.dv8tion.jda.core.entities.MessageReaction;
@@ -446,6 +447,12 @@ public class MultiMessage implements Message{
 	@Override
 	public MessageType getType(){
 		return messages[messages.length-1].getType();
+	}
+
+	@Override
+	public MessageActivity getActivity(){
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

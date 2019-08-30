@@ -27,6 +27,7 @@ public class HistoryLLNode{
 			meta[i*2+1] = ent.getValue();
 			i++;
 		}
+		this.time = System.currentTimeMillis();
 	}
 	public HistoryLLNode(String command, Map<String,String> metadata, long expire){
 		this(command, metadata);
