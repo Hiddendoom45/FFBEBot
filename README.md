@@ -14,6 +14,7 @@ Somewhat maintained, summon simulator will continue to be updated but fixes may 
 
 #### Recent Updates:
 
+- Summon duels with $duel and $duelend
 - Fixes to parsing unit info from exvius wiki
 - we all work hard for our rainbows
 - aliases are interchangable between the runit and unit commands, en,jp names and id can be used to search with both runit and unit (and all releated commands)
