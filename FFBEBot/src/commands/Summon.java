@@ -15,6 +15,7 @@ import Library.summon.Unit;
 import Library.summon.UnitSpecific;
 import Library.summon.banner.Banner;
 import commands.sub.SummonGeneric;
+import global.Main;
 import global.record.Log;
 import global.record.SaveSystem;
 import global.record.Settings;
@@ -96,7 +97,21 @@ public class Summon extends CommandGenerics implements Command {
 			help(event);
 		}
 	}
-
+	
+	public void botSummon(MessageReceivedEvent event, int num, Banner banner){
+		String id = Main.jda.getSelfUser().getId();
+		if(num==11){
+			List<UnitSpecific> units = Pull.pull11(banner); 
+			logMeta(event, units, id);
+			Lib.sendMessage(event, Main.jda.getSelfUser().getAsMention()+" summoned 11 units from "+banner.name+" rare summon banner");
+		}
+		else{
+			List<UnitSpecific> units = Pull.pull(num,banner);
+			logMeta(event, units, id);
+			Lib.sendMessage(event, Main.jda.getSelfUser().getAsMention()+" summoned "+num+" units from "+banner.name+" rare summon banner");
+		}
+	}
+	
 	@Override
 	public void help(MessageReceivedEvent event) {
 		Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
@@ -104,16 +119,33 @@ public class Summon extends CommandGenerics implements Command {
 		
 	}
 	private void logMeta(MessageReceivedEvent event, List<UnitSpecific> units){
+		logMeta(event,units,event.getAuthor().getId());
+	}
+	private void logMeta(MessageReceivedEvent event, List<UnitSpecific> units, String authorID){
 		int num5 = 0;
+		int num4 = 0;
+		int num3 = 0;
 		for(UnitSpecific u:units){
 			if(u.base==5){
 				num5++;
 			}
+			else if(u.base==4){
+				num4++;
+			}
+			else if(u.base==3){
+				num3++;
+			}
 		}
+		long t = System.currentTimeMillis();
 		CmdHistory.getHist(event).append(
 				new HistoryLLNode(Lib.extractCmdName(this),
-							new String[]{"5star",""+num5,"totalCount",""+units.size(),"author",event.getAuthor().getId()},
-							System.currentTimeMillis()+TimeUnit.MINUTES.toMillis(5)));
+							new String[]{"5star",""+num5,
+									"4star",""+num4,
+									"3star",""+num3,
+									"totalCount",""+units.size(),
+									"author",authorID},
+							t,
+							t+TimeUnit.MINUTES.toMillis(6)));
 	}
 	private Banner getBanner(String s){
 		for(Banner b:Banner.values()){

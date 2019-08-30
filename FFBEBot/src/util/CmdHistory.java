@@ -28,6 +28,10 @@ public class CmdHistory{
 	
 	public static HistoryLL getHist(MessageReceivedEvent event){
 		long channel = event.getChannel().getIdLong();
+		return getHist(channel);
+	}
+	
+	public static HistoryLL getHist(long channel){
 		if(!historyMap.containsKey(channel)){
 			historyMap.put(channel, new HistoryLL());
 		}

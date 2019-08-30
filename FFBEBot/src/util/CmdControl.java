@@ -57,6 +57,9 @@ public class CmdControl {
 			modules.put(name, Module);
 		}
 	}
+	public static Command getInstance(String name){
+		return commands.get(name);
+	}
 	public static void addModCommand(String commandName,Command command){
 		modCommands.put(commandName, command);
 	}

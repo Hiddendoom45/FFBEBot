@@ -43,6 +43,17 @@ public class HistoryLL{
 		return null;
 	}
 	
+	public HistoryLLNode previousInstance(HistoryLLNode node){
+		HistoryLLNode next = node.getNext();
+		while(!(next==null)){
+			if(next.getCommandName().equals(node.getCommandName())){
+				return next;
+			}
+			next = next.getNext();
+		}
+		return null;
+	}
+	
 	public void append(HistoryLLNode node){
 		if(tip==null){
 			tip = node;

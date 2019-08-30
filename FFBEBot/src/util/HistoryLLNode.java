@@ -15,6 +15,7 @@ public class HistoryLLNode{
 	private String command;
 	private String[] meta;
 	private int messagesSince=0;
+	private long time;
 	private long expires = -1;//-1 = default ignore
 	
 	public HistoryLLNode(String command, Map<String,String> metadata){
@@ -37,10 +38,12 @@ public class HistoryLLNode{
 			throw new IllegalArgumentException("Meta data array incorrect");
 		}
 		this.meta = metadata;
+		this.time = System.currentTimeMillis();
 	}
-	public HistoryLLNode(String command, String[] metadata, long expire){
+	public HistoryLLNode(String command, String[] metadata, long time, long expire){
 		this(command,metadata);
 		this.expires = expire;
+		this.time = time;
 	}
 	public String getCommandName(){
 		return command;
@@ -54,6 +57,9 @@ public class HistoryLLNode{
 	}
 	public boolean isExpired(){
 		return expires!=-1&&expires<System.currentTimeMillis();
+	}
+	public long getTimeRecorded(){
+		return time;
 	}
 	public void remove(HistoryLLNode previous){
 		previous.next = next;

@@ -65,7 +65,6 @@ public class Main {
 		}
 		jda.setAutoReconnect(true);
 		setGame(states.randomReady());
-		System.out.println(states.randomReady());
 	}
 	public static void shutdown(){
 		//Do nothing, no option to shutdown temporarily
@@ -141,6 +140,8 @@ public class Main {
 		CmdControl.addCommand("11pull", new ElevenPull(), Module);
 		CmdControl.addCommand("unitsell", new UnitSell(), Module);
 		CmdControl.addCommand("unitawaken", new UnitAwaken(), Module);
+		CmdControl.addCommand("duel", new Duel(), Module);
+		CmdControl.addCommand("duelend", new DuelEnd(), Module);
 		
 		//ditto with mod commands(separate maps due to special checks)
 		CmdControl.addModCommand("prefix", new Prefix());
