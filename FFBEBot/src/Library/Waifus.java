@@ -176,6 +176,9 @@ public enum Waifus {
 	Rivera(Unit.Rivera),
 	CGLightning(Unit.CGLightning),
 	Tsukiko(Unit.Tsukiko),
+	WoLLenna(Unit.WoLLenna),
+	Atlie(Unit.Atlie),
+	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),

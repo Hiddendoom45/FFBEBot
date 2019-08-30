@@ -774,8 +774,10 @@ public enum Unit{
 	NeverendingHope("Neverending Hope",new String[]{"/9/9f/Unit-Neverending_Hope-5.png?version=249c890285ef459390ed379c92a0f546","/7/73/Unit-Neverending_Hope-6.png?version=6a0756fbbf778ceffd9a71179ece987f","/4/4f/Unit-Neverending_Hope-7.png?version=c2861e7a46b9543e51cc7ecda365335a"},5),
 	Kaito("Kaito", new String[]{"/2/2d/Unit-Kaito-5.png?version=d04216b1cfb8a849966cf44a44489929","/c/c0/Unit-Kaito-6.png?version=7b9266ec265ec44ce3f99bbbde187307","/1/1c/Unit-Kaito-7.png?version=318df4d9c51e68d780fcb980ab097232"},5),
 	Tsukiko("Tsukiko", new String[]{"/a/ad/Unit-Tsukiko-5.png?version=6bc643b8a54757d5198efe1c8de9bae2","/9/90/Unit-Tsukiko-6.png?version=f90b86186f1165290c5bd408a1206b01","/b/b0/Unit-Tsukiko-7.png?version=9d406c2413f61f05ea9be1fae4e1883d"},5),
-	
-	
+	WoLBartz("Warrior of Light Bartz", new String[]{"/3/3b/Unit-Warrior_of_Light_Bartz-5.png?version=5e7b7201a5853ca527517fa5a3c63196","/9/96/Unit-Warrior_of_Light_Bartz-6.png?version=62bb6d35c6fe28bd2e8d6f196f641900","/b/bf/Unit-Warrior_of_Light_Bartz-7.png?version=0159e4745e31908075dc564f093e4fa5"},5),
+	WoLLenna("Warrior of Light Lenna", new String[]{"n/d/df/Unit-Warrior_of_Light_Lenna-5.png?version=37cc63592ed45351f824f5bbab33c9dd","/d/db/Unit-Warrior_of_Light_Lenna-6.png?version=67b7a1f81d6a070fb884849a8b691df8","/8/8e/Unit-Warrior_of_Light_Lenna-7.png?version=be09275c16ad938ff95708f2889de8a8"},5),
+	Atlie("Atlie", new String[]{"/d/df/Unit-Atlie-4.png?version=ae06fa1672d96fa5afc95b7bfd263382","/e/ea/Unit-Atlie-5.png?version=5c65a5df5026b51d6e1ae4fd8bfb36ad","/6/67/Unit-Atlie-6.png?version=8dbde3eee707139d9e564e75540fe475"},4),
+	Tessen("Tessen",new String[]{"/3/34/Unit-Tessen-3.png?version=f50335a4e93342fee8b1268014cfabf2","/a/a9/Unit-Tessen-4.png?version=f505b129dd6a3b65f3d00d5d4c7fecad","/a/ae/Unit-Tessen-5.png?version=2e15aca1ca2d4adfd27cd1c33aeb77c6"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1468,7 +1470,11 @@ public enum Unit{
 				CGLightning,
 				NeverendingHope,
 				Kaito,
-				Tsukiko
+				Tsukiko,
+				WoLBartz,
+				WoLLenna,
+				Atlie,
+				Tessen
 
 		});
 	}

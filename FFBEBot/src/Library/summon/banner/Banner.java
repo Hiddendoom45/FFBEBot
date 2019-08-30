@@ -175,13 +175,14 @@ public enum Banner {
 	FF13P2("FFXIII (2)", new Unit[]{Unit.CGLightning,Unit.NeverendingHope,Unit.Snow,Unit.Sazh}, BannerRates.D5.fiveRate(), Lib.concat(Rivera.featured, Rivera.pool), Rivera.include, BannerType.ThreePercent),
 	DemonParade("Demon Parade", new Unit[]{Unit.Kaito, Unit.Tsukiko, Unit.SummerLuka, Unit.TideSkaha}, BannerRates.D5.fiveRate(), Lib.concat(new Unit[]{Unit.CGLightning, Unit.NeverendingHope}, FF13P2.pool),FF13P2.include, BannerType.ThreePercent),
 	Octopath("Octopath Traveler", new Unit[]{Unit.Olberic,Unit.Primrose,Unit.Therion,Unit.Tressa},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.Kaito,Unit.Tsukiko},DemonParade.pool),DemonParade.include,BannerType.ThreePercent),
+	FF5P2("FFV (2)", new Unit[]{Unit.WoLBartz,Unit.WoLLenna,Unit.Atlie,Unit.Tessen},BannerRates.D5.fiveRate(),Octopath.pool,Octopath.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
 //	FF2 1
 //	FF3 1,2,3
 //	FF4 1,2,3,4
-//	FF5 1
+//	FF5 1,2
 //	FF6 1,2,3
 //  FF7 1,2,3
 //	FF8 1
