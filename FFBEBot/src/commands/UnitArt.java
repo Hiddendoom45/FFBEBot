@@ -19,7 +19,6 @@ public class UnitArt extends UnitSelection implements Command,Selection  {
 			String url = Ounits.getData(index).imgUrl;
 			embed.setImage(url);
 			embed.addField(new Field(":art:"+Ounits.getNames().get(index)+" "+Lib.extractNumber(Ounits.getData(index).maxR)+"★", "[link to image]("+url+")", false));
-			System.out.println(Ounits.getData(index).maxR+" "+Ounits.getData(index).baseR);
 			Lib.sendEmbed(event, embed);
 		}
 		else{

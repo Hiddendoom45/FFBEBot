@@ -22,7 +22,6 @@ public class TrustInfo {
 				}
 				else if(e.tagName().equals("ul")){
 					for(Element l:e.children()){
-						//System.out.println("l"+l.text());
 						if(l.text().startsWith("Type:")){
 							type=extractStringRepresentation(l);
 						}

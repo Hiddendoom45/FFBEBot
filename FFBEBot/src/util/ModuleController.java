@@ -41,7 +41,6 @@ public class ModuleController {
 		return this;
 	}
 	public boolean enabled(String channel){
-		System.out.println(globalDisable);
 		if(channels.contains(channel)){
 			return globalDisable;
 		}else{

@@ -23,7 +23,6 @@ public class HistoryLL{
 		int since = 0;
 		while(!(next==null)){
 			since+=next.getMessagesSince();
-			System.out.println(next.getCommandName());
 			if(next.getCommandName().equals(Lib.extractCmdName(command))){
 				return since;
 			}

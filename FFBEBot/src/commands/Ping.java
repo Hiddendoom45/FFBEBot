@@ -40,7 +40,6 @@ public class Ping extends CommandGenerics implements Command{
 			responseS=responseS*-1;
 		}
 		int response;
-		//System.out.println(nH+" "+mH+" "+currentS+" "+messageS+" "+currentTime+" "+messageTime);
 		if(responseS==0){
 			response=currentTime-messageTime;
 		}

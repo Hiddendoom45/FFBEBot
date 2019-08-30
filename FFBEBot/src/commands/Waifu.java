@@ -29,7 +29,6 @@ public class Waifu extends CommandGenerics implements Command{
 		embed.setImage(select.url);
 		embed.addField(new Field(select.name, Lib.FormatMessage(event, "%userMention% Happy Waifu Happy Laifu! Your Waifu is "+select.name), false));
 		try{
-			System.out.println(select.unit.maxRarity());
 			BufferedImage img = ImageIO.read(select.unit.getImageLocation(select.unit.maxRarity()));
 			int[] rgb = ColorThief.getColor(img);
 			embed.setColor(new Color(rgb[0], rgb[1], rgb[2]));
