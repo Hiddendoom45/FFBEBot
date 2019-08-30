@@ -40,7 +40,6 @@ public class UnitInfo {
 	public String sTrustLink="";
 	public TrustInfo sTrustDetails;
 	public unitStats stats;
-	public unitStatIncrease statIncrease;//TODO delete once preload files are updated
 	public String[] weapons=new String[]{};
 	public String[] armours=new String[]{};
 	public unitAbilities Special;
