@@ -16,7 +16,13 @@ public class DuelEnd extends CommandGenerics{
 	@Override
 	public void action(String[] args, MessageReceivedEvent event){
 		if(Duel.duels.containsKey(event.getAuthor().getId())){
-			Lib.sendEmbed(event, endDuel(Duel.duels.get(event.getAuthor().getId())));
+			DuelInfo duel = Duel.duels.get(event.getAuthor().getId());
+			if(duel.channel!=event.getChannel().getIdLong()){
+				Lib.sendMessage(event, "You are currently in a duel in another channel, use duelend there to end the duel");
+			}
+			else{
+				Lib.sendEmbed(event, endDuel(duel));
+			}
 		}
 		else{
 			Lib.sendMessage(event, "You are currently not in a summon duel with anyone");
@@ -28,6 +34,8 @@ public class DuelEnd extends CommandGenerics{
 			if(Main.jda.getSelfUser().getId().equals(duel.duelist.getId())){
 				Summon.customMap.remove(duel.challenger.getIdLong());
 			}
+			Duel.duels.remove(duel.challenger.getId());
+			Duel.duels.remove(duel.duelist.getId());
 			HistoryLL hist = CmdHistory.getHist(duel.channel);
 			HistoryLLNode info = hist.lastInstance(new Summon());
 			int chScore = 0;
