@@ -141,7 +141,7 @@ public class Main {
 		CmdControl.addCommand("unitsell", new UnitSell(), Module);
 		CmdControl.addCommand("unitawaken", new UnitAwaken(), Module);
 		CmdControl.addCommand("duel", new Duel(), Module);
-		CmdControl.addCommand("duelend", new DuelEnd(), Module);
+		CmdControl.addCommand(new String[]{"duelend","endduel","enduel"}, new DuelEnd(), Module);
 		
 		//ditto with mod commands(separate maps due to special checks)
 		CmdControl.addModCommand("prefix", new Prefix());
