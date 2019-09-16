@@ -178,6 +178,9 @@ public enum Waifus {
 	Tsukiko(Unit.Tsukiko),
 	WoLLenna(Unit.WoLLenna),
 	Atlie(Unit.Atlie),
+	Eclipsa(Unit.Eclipsa),
+	Pertira(Unit.Pertira),
+	
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),

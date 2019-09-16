@@ -212,6 +212,8 @@ public enum Husbandos {
 	Kaito(Unit.Kaito),
 	WoLBartz(Unit.WoLBartz),
 	Tessen(Unit.Tessen),
+	Sol(Unit.Sol),
+	Heliarc(Unit.Heliarc),
 	
 	
 	//Limited ones//for organization

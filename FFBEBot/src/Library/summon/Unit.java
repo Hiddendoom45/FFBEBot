@@ -778,6 +778,10 @@ public enum Unit{
 	WoLLenna("Warrior of Light Lenna", new String[]{"/d/df/Unit-Warrior_of_Light_Lenna-5.png?version=37cc63592ed45351f824f5bbab33c9dd","/d/db/Unit-Warrior_of_Light_Lenna-6.png?version=67b7a1f81d6a070fb884849a8b691df8","/8/8e/Unit-Warrior_of_Light_Lenna-7.png?version=be09275c16ad938ff95708f2889de8a8"},5),
 	Atlie("Atlie", new String[]{"/d/df/Unit-Atlie-4.png?version=ae06fa1672d96fa5afc95b7bfd263382","/e/ea/Unit-Atlie-5.png?version=5c65a5df5026b51d6e1ae4fd8bfb36ad","/6/67/Unit-Atlie-6.png?version=8dbde3eee707139d9e564e75540fe475"},4),
 	Tessen("Tessen",new String[]{"/3/34/Unit-Tessen-3.png?version=f50335a4e93342fee8b1268014cfabf2","/a/a9/Unit-Tessen-4.png?version=f505b129dd6a3b65f3d00d5d4c7fecad","/a/ae/Unit-Tessen-5.png?version=2e15aca1ca2d4adfd27cd1c33aeb77c6"},3),
+	Sol("Sol",new String[]{"/e/e1/Unit-Sol-5.png?version=0ed67eb79aba3da126970f766e3b2a10","/2/2e/Unit-Sol-6.png?version=374b6cdc73637dc6088963c19e3ef58e","/e/e3/Unit-Sol-7.png?version=664615e5aac88b6cad064ff5d965d7d0"},5),
+	Heliarc("Heliarc",new String[]{"/8/8b/Unit-Heliarc-4.png?version=14c438b2d7deff816189497d3f487bc5","/7/7c/Unit-Heliarc-5.png?version=331327fa4d331fa4b06296b1b95ef8d8","/0/0d/Unit-Heliarc-6.png?version=81a03775186f5f3fa6070671a306da6e"},4),
+	Eclipsa("Eclipsa",new String[]{"/e/ee/Unit-Eclipsa-4.png?version=f98cbefa47864e9da8bd84c279602cdf","/0/0a/Unit-Eclipsa-5.png?version=b0cba547f2a3c3a824644402542cfdad","/a/ae/Unit-Eclipsa-6.png?version=8e0179fdcb0a4440e67b72aea2600eb7"},4),
+	Pertira("Pertira",new String[]{"/5/53/Unit-Pertira-3.png?version=63dcde6a9d4e029e753dd9193918d1c1","/0/0b/Unit-Pertira-4.png?version=003452be41bb28c9310834978c811b92","/d/db/Unit-Pertira-5.png?version=f3a8588438d8525725099da86146719f"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1474,7 +1478,11 @@ public enum Unit{
 				WoLBartz,
 				WoLLenna,
 				Atlie,
-				Tessen
+				Tessen,
+				Sol,
+				Heliarc,
+				Eclipsa,
+				Pertira
 
 		});
 	}
