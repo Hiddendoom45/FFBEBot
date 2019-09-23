@@ -783,6 +783,9 @@ public enum Unit{
 	Eclipsa("Eclipsa",new String[]{"/e/ee/Unit-Eclipsa-4.png?version=f98cbefa47864e9da8bd84c279602cdf","/0/0a/Unit-Eclipsa-5.png?version=b0cba547f2a3c3a824644402542cfdad","/a/ae/Unit-Eclipsa-6.png?version=8e0179fdcb0a4440e67b72aea2600eb7"},4),
 	Pertira("Pertira",new String[]{"/5/53/Unit-Pertira-3.png?version=63dcde6a9d4e029e753dd9193918d1c1","/0/0b/Unit-Pertira-4.png?version=003452be41bb28c9310834978c811b92","/d/db/Unit-Pertira-5.png?version=f3a8588438d8525725099da86146719f"},3),
 	
+	
+	
+	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -943,6 +946,8 @@ public enum Unit{
 	Primrose("Primrose",new String[]{"/a/a7/Unit-Primrose-5.png?version=b7238d20b7a9c351a28ba0999b4047c5","/5/56/Unit-Primrose-6.png?version=9adb47296fc178ce6b1cc73f13320502","/b/b5/Unit-Primrose-7.png?version=57a5d8140ca9f19a3750328035850613"},5),
 	Therion("Therion",new String[]{"/0/0f/Unit-Therion-4.png?version=8e610389c5f93dc60498dc2691709b94","/e/e6/Unit-Therion-5.png?version=d16eb3fd5409c4c43d459d8c2ef09445","/8/88/Unit-Therion-6.png?version=228d44268b477994eac3c565bf171308"},4),
 	Tressa("Tressa",new String[]{"/a/a3/Unit-Tressa-3.png?version=20293bd0381ffd506c0ed4e3b46d2b24","/a/a3/Unit-Tressa-4.png?version=08a4a44c2f36ec3b99d2d18877f0f3a5","/8/8b/Unit-Tressa-5.png?version=9f4dbf8faf6e8739e05a0af3d153a8d3"},3),
+	AIKaty("A.I. Katy",new String[]{"/3/34/Unit-A.I._Katy-5.png?version=7ece34dfe49f375d0d35407734c3d707","/a/ae/Unit-A.I._Katy-6.png?version=a90bcaf069514855163b33b22c474b1c","/a/ae/Unit-A.I._Katy-7.png?version=46c7a56754dc8496b3bdeccc7dfa5d4e"},5),
+	LKaty("Lovely Katy",new String[]{"/6/66/Unit-Lovely_Katy-5.png?version=dc03dabde90e037f9d310a02ff717203","/0/08/Unit-Lovely_Katy-6.png?version=8fd8c42df65c7d48fcec26abc1bd129e","/f/fb/Unit-Lovely_Katy-7.png?version=cfaf36fdc4b8e38ea410b1435f0a1f56"},5),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),

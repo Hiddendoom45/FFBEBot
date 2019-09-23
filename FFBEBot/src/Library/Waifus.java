@@ -244,7 +244,9 @@ public enum Waifus {
 	PKaty(Unit.PKaty),
 	IFKaty(Unit.IFKaty),
 	Primrose(Unit.Primrose),
-	Tressa(Unit.Tressa);
+	Tressa(Unit.Tressa),
+	AIKaty(Unit.AIKaty),
+	LKaty(Unit.LKaty);
 	
 	
 	
