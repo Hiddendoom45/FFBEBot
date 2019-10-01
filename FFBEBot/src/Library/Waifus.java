@@ -246,7 +246,9 @@ public enum Waifus {
 	Primrose(Unit.Primrose),
 	Tressa(Unit.Tressa),
 	AIKaty(Unit.AIKaty),
-	LKaty(Unit.LKaty);
+	LKaty(Unit.LKaty),
+	Veronica(Unit.Veronica),
+	Serena(Unit.Serena);
 	
 	
 	

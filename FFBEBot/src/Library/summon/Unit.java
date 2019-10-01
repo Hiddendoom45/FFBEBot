@@ -948,6 +948,11 @@ public enum Unit{
 	Tressa("Tressa",new String[]{"/a/a3/Unit-Tressa-3.png?version=20293bd0381ffd506c0ed4e3b46d2b24","/a/a3/Unit-Tressa-4.png?version=08a4a44c2f36ec3b99d2d18877f0f3a5","/8/8b/Unit-Tressa-5.png?version=9f4dbf8faf6e8739e05a0af3d153a8d3"},3),
 	AIKaty("A.I. Katy",new String[]{"/3/34/Unit-A.I._Katy-5.png?version=7ece34dfe49f375d0d35407734c3d707","/a/ae/Unit-A.I._Katy-6.png?version=a90bcaf069514855163b33b22c474b1c","/a/ae/Unit-A.I._Katy-7.png?version=46c7a56754dc8496b3bdeccc7dfa5d4e"},5),
 	LKaty("Lovely Katy",new String[]{"/6/66/Unit-Lovely_Katy-5.png?version=dc03dabde90e037f9d310a02ff717203","/0/08/Unit-Lovely_Katy-6.png?version=8fd8c42df65c7d48fcec26abc1bd129e","/f/fb/Unit-Lovely_Katy-7.png?version=cfaf36fdc4b8e38ea410b1435f0a1f56"},5),
+	Mordegon("Mordegon",new String[]{"/5/5a/Unit-Mordegon-5.png?version=9936ea41148c371b9190a4925bcaa7aa","/f/fe/Unit-Mordegon-6.png?version=c7397611eaeea3d4a55c08ded9c68079","/e/ef/Unit-Mordegon-7.png?version=6442e82e58d02d1ff2d663a497a60912"},5),
+	GreatDragon("Great Dragon",new String[]{"/1/1b/Unit-Great_Dragon-4.png?version=e0f0fee00f92c9e4c19406635a16daad","/9/98/Unit-Great_Dragon-5.png?version=9e77c6d96bfe35ddfe7284c34e92cf01","/e/e0/Unit-Great_Dragon-6.png?version=035be6efa6fc5834c13b134f48242762"},4),
+	Eleven("Eleven",new String[]{"/9/97/Unit-Eleven-5.png?version=71b7aaf51ec1aaeab0679f2c97e3825e","/b/be/Unit-Eleven-6.png?version=4fad11c7dfc2ab9d3e804500b592cea4","/d/dc/Unit-Eleven-7.png?version=3609fe12a17e3196a88138f7a0b72966"},5),
+	Serena("Serena",new String[]{"/2/2e/Unit-Serena-5.png?version=0803cf7f033b8a61622bd2c1ec7b9b57","/4/46/Unit-Serena-6.png?version=624a6423ddb4fea781589eb7e7a2b59c","/8/87/Unit-Serena-7.png?version=6b560070666f7ad2cf8a6243600e25c9"},5),
+	Veronica("Veronica",new String[]{"/5/58/Unit-Veronica-5.png?version=1f4a87be78888571aaa486df1bbc4203","/a/af/Unit-Veronica-6.png?version=9bb41f6e4364a8d8cc7db996d684f0ef","/b/bf/Unit-Veronica-7.png?version=bd242e47097dbfa4c2e4bd62bf6c64ef"},5),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),

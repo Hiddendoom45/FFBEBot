@@ -18,6 +18,7 @@ public enum BannerRates {
 	T5T4D3(new int[]{17,17,17,158,158,158,1000,1000},new int[]{33,33,34,158,158,158,975,975},new int[]{100,100,100,238,238,238,975,975}),
 	Qu5D4(new int[]{10,10,10,10,10,238,238,2000},new int[]{20,20,20,20,20,238,238,1950},new int[]{60,60,60,60,60,238,238,1950}),
 	LS5T4(new int[]{50,158,158,158}, new int[]{100,158,158,158},new int[]{300,158,158,158}),
+	LS5S4(new int[]{50,475}, new int[]{100,475}, new int[]{300, 475}),
 	LD5(new int[]{25,25},new int[]{50,50},new int[]{150,150}),
 	LT5(new int[]{17,17,17},new int[]{33,33,34},new int[]{100,100,100}),
 	Rivera(new int[]{50}, new int[]{150}, new int[]{300}),//temporary name may change if more banners like this appear

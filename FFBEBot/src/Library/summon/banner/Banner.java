@@ -177,6 +177,7 @@ public enum Banner {
 	Octopath("Octopath Traveler", new Unit[]{Unit.Olberic,Unit.Primrose,Unit.Therion,Unit.Tressa},BannerRates.D5.fiveRate(),Lib.concat(new Unit[]{Unit.Kaito,Unit.Tsukiko},DemonParade.pool),DemonParade.include,BannerType.ThreePercent),
 	FF5P2("FFV (2)", new Unit[]{Unit.WoLBartz,Unit.WoLLenna,Unit.Atlie,Unit.Tessen},BannerRates.D5.fiveRate(),Octopath.pool,Octopath.include,BannerType.ThreePercent),
 	Sol("Sol", new Unit[]{Unit.Sol,Unit.Heliarc,Unit.Eclipsa,Unit.Pertira},BannerRates.D4.fiveRate(),Lib.concat(FF5P2.featured, FF5P2.pool),FF5P2.include, BannerType.ThreePercent),
+	DQXIS("Dragon Quest XIS", new Unit[]{Unit.Mordegon,Unit.GreatDragon},BannerRates.LS5S4.fiveRate(), Lib.concat(Sol.featured, Sol.pool),Sol.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

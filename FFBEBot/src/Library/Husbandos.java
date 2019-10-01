@@ -272,7 +272,9 @@ public enum Husbandos {
 	Citan(Unit.Citan),
 	Billy(Unit.Billy),
 	Olberic(Unit.Olberic),
-	Therion(Unit.Therion);
+	Therion(Unit.Therion),
+	Mordegon(Unit.Mordegon),
+	Eleven(Unit.Eleven);
 	
 
 	public final String name;
