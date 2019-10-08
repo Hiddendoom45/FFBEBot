@@ -214,6 +214,8 @@ public enum Husbandos {
 	Tessen(Unit.Tessen),
 	Sol(Unit.Sol),
 	Heliarc(Unit.Heliarc),
+	WRFirion(Unit.WRFirion),
+	DKLeon(Unit.DKLeon),
 	
 	
 	//Limited ones//for organization

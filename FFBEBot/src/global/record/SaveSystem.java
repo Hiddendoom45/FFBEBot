@@ -179,6 +179,10 @@ public class SaveSystem {
 					if(info.No.length>0){
 						u.setID(info.No[0]);
 					}
+					if(units.has(u.name)){
+						//lazy hack so that JP pages stop overwriting non-JP pages
+						u.name = u.name+"(JP)";
+					}
 					units.add(u.name,overviews.toJsonTree(info));
 				}catch(Exception e){
 					Log.logError(e);

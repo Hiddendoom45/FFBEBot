@@ -782,7 +782,8 @@ public enum Unit{
 	Heliarc("Heliarc",new String[]{"/8/8b/Unit-Heliarc-4.png?version=14c438b2d7deff816189497d3f487bc5","/7/7c/Unit-Heliarc-5.png?version=331327fa4d331fa4b06296b1b95ef8d8","/0/0d/Unit-Heliarc-6.png?version=81a03775186f5f3fa6070671a306da6e"},4),
 	Eclipsa("Eclipsa",new String[]{"/e/ee/Unit-Eclipsa-4.png?version=f98cbefa47864e9da8bd84c279602cdf","/0/0a/Unit-Eclipsa-5.png?version=b0cba547f2a3c3a824644402542cfdad","/a/ae/Unit-Eclipsa-6.png?version=8e0179fdcb0a4440e67b72aea2600eb7"},4),
 	Pertira("Pertira",new String[]{"/5/53/Unit-Pertira-3.png?version=63dcde6a9d4e029e753dd9193918d1c1","/0/0b/Unit-Pertira-4.png?version=003452be41bb28c9310834978c811b92","/d/db/Unit-Pertira-5.png?version=f3a8588438d8525725099da86146719f"},3),
-	
+	WRFirion("Wild Rose Firion", new String[]{"/f/f4/Unit-Wild_Rose_Firion-5.png?version=59202385b0e0485a802de929cb91565b","/6/64/Unit-Wild_Rose_Firion-6.png?version=09e44df8336632059c1e0b03bb393195","/d/d4/Unit-Wild_Rose_Firion-7.png?version=0ee37ebc7e92f241248e42079bfa6f7a"},5),
+	DKLeon("Dark Knight Leon", new String[]{"/8/87/Unit-Dark_Knight_Leon-5.png?version=3dac02d0a916791a59faa89314dfa7a5","/4/48/Unit-Dark_Knight_Leon-6.png?version=9e7e9cc1e3e5d32d22d90d1277484807","/8/87/Unit-Dark_Knight_Leon-7.png?version=a6f57489bf06218ae621c7166baa401c"},5),
 	
 	
 	
@@ -1492,7 +1493,9 @@ public enum Unit{
 				Sol,
 				Heliarc,
 				Eclipsa,
-				Pertira
+				Pertira,
+				WRFirion,
+				DKLeon
 
 		});
 	}

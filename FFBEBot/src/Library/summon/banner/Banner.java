@@ -178,10 +178,11 @@ public enum Banner {
 	FF5P2("FFV (2)", new Unit[]{Unit.WoLBartz,Unit.WoLLenna,Unit.Atlie,Unit.Tessen},BannerRates.D5.fiveRate(),Octopath.pool,Octopath.include,BannerType.ThreePercent),
 	Sol("Sol", new Unit[]{Unit.Sol,Unit.Heliarc,Unit.Eclipsa,Unit.Pertira},BannerRates.D4.fiveRate(),Lib.concat(FF5P2.featured, FF5P2.pool),FF5P2.include, BannerType.ThreePercent),
 	DQXIS("Dragon Quest XIS", new Unit[]{Unit.Mordegon,Unit.GreatDragon},BannerRates.LS5S4.fiveRate(), Lib.concat(Sol.featured, Sol.pool),Sol.include,BannerType.ThreePercent),
+	FF2P2("FFII (2)", new Unit[]{Unit.WRFirion,Unit.DKLeon,Unit.Maria,Unit.Guy},BannerRates.LD5D3.fiveRate(),DQXIS.pool,DQXIS.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
-//	FF2 1
+//	FF2 1,2
 //	FF3 1,2,3
 //	FF4 1,2,3,4
 //	FF5 1,2
@@ -272,7 +273,8 @@ public enum Banner {
 				Banner.Xenogears,
 				Banner.Xenogears2,
 				Banner.SoM2,
-				Banner.Octopath
+				Banner.Octopath,
+				Banner.DQXIS
 				};
 	}
 	public static boolean LEBanner(Banner banner){

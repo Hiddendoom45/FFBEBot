@@ -20,6 +20,7 @@ public enum BannerRates {
 	LS5T4(new int[]{50,158,158,158}, new int[]{100,158,158,158},new int[]{300,158,158,158}),
 	LS5S4(new int[]{50,475}, new int[]{100,475}, new int[]{300, 475}),
 	LD5(new int[]{25,25},new int[]{50,50},new int[]{150,150}),
+	LD5D3(new int[]{25,25,1000,1000}, new int[]{50,50,975,975}, new int[]{150,150,975,975}),
 	LT5(new int[]{17,17,17},new int[]{33,33,34},new int[]{100,100,100}),
 	Rivera(new int[]{50}, new int[]{150}, new int[]{300}),//temporary name may change if more banners like this appear
 	FFBEHeroes(null,new int[]{100,100,25,25,25,25,475,1950},null);
