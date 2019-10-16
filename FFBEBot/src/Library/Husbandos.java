@@ -216,7 +216,8 @@ public enum Husbandos {
 	Heliarc(Unit.Heliarc),
 	WRFirion(Unit.WRFirion),
 	DKLeon(Unit.DKLeon),
-	
+	WLGaluf(Unit.WLGaluf),
+	DMExdeath(Unit.DMExdeath),
 	
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),

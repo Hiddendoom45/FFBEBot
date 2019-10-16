@@ -784,7 +784,9 @@ public enum Unit{
 	Pertira("Pertira",new String[]{"/5/53/Unit-Pertira-3.png?version=63dcde6a9d4e029e753dd9193918d1c1","/0/0b/Unit-Pertira-4.png?version=003452be41bb28c9310834978c811b92","/d/db/Unit-Pertira-5.png?version=f3a8588438d8525725099da86146719f"},3),
 	WRFirion("Wild Rose Firion", new String[]{"/f/f4/Unit-Wild_Rose_Firion-5.png?version=59202385b0e0485a802de929cb91565b","/6/64/Unit-Wild_Rose_Firion-6.png?version=09e44df8336632059c1e0b03bb393195","/d/d4/Unit-Wild_Rose_Firion-7.png?version=0ee37ebc7e92f241248e42079bfa6f7a"},5),
 	DKLeon("Dark Knight Leon", new String[]{"/8/87/Unit-Dark_Knight_Leon-5.png?version=3dac02d0a916791a59faa89314dfa7a5","/4/48/Unit-Dark_Knight_Leon-6.png?version=9e7e9cc1e3e5d32d22d90d1277484807","/8/87/Unit-Dark_Knight_Leon-7.png?version=a6f57489bf06218ae621c7166baa401c"},5),
-	
+	WLKrile("Warrior of Light Krile",new String[]{"/3/35/Unit-Warrior_of_Light_Krile-5.png?version=c2ce5dd46134c80acde1f84d285e9d4f","/e/e8/Unit-Warrior_of_Light_Krile-6.png?version=b0259c1a004205c79573213bd6a65cc6","/a/a2/Unit-Warrior_of_Light_Krile-7.png?version=76e1d2628bed418621496b41903073ef"},5),
+	WLGaluf("Warrior of Dawn Galuf",new String[]{"/e/e0/Unit-Warrior_of_Dawn_Galuf-5.png?version=9d3d425bbb3b06ff40fd0279fff6b126","/9/92/Unit-Warrior_of_Dawn_Galuf-6.png?version=724128a199730503ba93da30bc91c325","/8/8e/Unit-Warrior_of_Dawn_Galuf-7.png?version=80cc5d34808d8fed10c9f9310b88446a"},5),
+	DMExdeath("Dark Mage Exdeath",new String[]{"/4/4d/Unit-Dark_Mage_Exdeath-5.png?version=a0c6b28af16701e96963825405324fd5","/e/ea/Unit-Dark_Mage_Exdeath-6.png?version=08d97c39009d5b034f3d8bd9cbeaf9f5","/1/18/Unit-Dark_Mage_Exdeath-7.png?version=ca5250be0c06860ee124cbd83dfb0524"},5),
 	
 	
 	//Limited Units
@@ -1495,8 +1497,10 @@ public enum Unit{
 				Eclipsa,
 				Pertira,
 				WRFirion,
-				DKLeon
-
+				DKLeon,
+				WLKrile,
+				WLGaluf,
+				DMExdeath
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool

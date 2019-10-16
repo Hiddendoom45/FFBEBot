@@ -180,7 +180,7 @@ public enum Waifus {
 	Atlie(Unit.Atlie),
 	Eclipsa(Unit.Eclipsa),
 	Pertira(Unit.Pertira),
-	
+	WLKrile(Unit.WLKrile),
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
