@@ -956,6 +956,8 @@ public enum Unit{
 	Eleven("Eleven",new String[]{"/9/97/Unit-Eleven-5.png?version=71b7aaf51ec1aaeab0679f2c97e3825e","/b/be/Unit-Eleven-6.png?version=4fad11c7dfc2ab9d3e804500b592cea4","/d/dc/Unit-Eleven-7.png?version=3609fe12a17e3196a88138f7a0b72966"},5),
 	Serena("Serena",new String[]{"/2/2e/Unit-Serena-5.png?version=0803cf7f033b8a61622bd2c1ec7b9b57","/4/46/Unit-Serena-6.png?version=624a6423ddb4fea781589eb7e7a2b59c","/8/87/Unit-Serena-7.png?version=6b560070666f7ad2cf8a6243600e25c9"},5),
 	Veronica("Veronica",new String[]{"/5/58/Unit-Veronica-5.png?version=1f4a87be78888571aaa486df1bbc4203","/a/af/Unit-Veronica-6.png?version=9bb41f6e4364a8d8cc7db996d684f0ef","/b/bf/Unit-Veronica-7.png?version=bd242e47097dbfa4c2e4bd62bf6c64ef"},5),
+	Karten("Karten",new String[]{"/2/26/Unit-Karten-5.png?version=18f4188f257cad38d63dd34e507555b8","/6/65/Unit-Karten-6.png?version=7f88510143641d565c463d54dff92143","/4/44/Unit-Karten-7.png?version=778eff28fc27373e328b1293361ba726"},5),
+	Godrea("Godrea",new String[]{"/0/09/Unit-Godrea-5.png?version=6bd3cb09ae935b4542f623be7586128c","/a/a5/Unit-Godrea-6.png?version=693abf81b2ed039aaa1ba023650b276c","/0/05/Unit-Godrea-7.png?version=4716aa6e71736a2caaa7b23d17727478"},5),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),

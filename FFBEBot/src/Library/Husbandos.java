@@ -277,7 +277,8 @@ public enum Husbandos {
 	Olberic(Unit.Olberic),
 	Therion(Unit.Therion),
 	Mordegon(Unit.Mordegon),
-	Eleven(Unit.Eleven);
+	Eleven(Unit.Eleven),
+	Karten(Unit.Karten);
 	
 
 	public final String name;

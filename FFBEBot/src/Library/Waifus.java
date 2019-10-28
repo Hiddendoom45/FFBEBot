@@ -248,7 +248,8 @@ public enum Waifus {
 	AIKaty(Unit.AIKaty),
 	LKaty(Unit.LKaty),
 	Veronica(Unit.Veronica),
-	Serena(Unit.Serena);
+	Serena(Unit.Serena),
+	Godrea(Unit.Godrea);
 	
 	
 	
