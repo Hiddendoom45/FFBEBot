@@ -787,7 +787,8 @@ public enum Unit{
 	WLKrile("Warrior of Light Krile",new String[]{"/3/35/Unit-Warrior_of_Light_Krile-5.png?version=c2ce5dd46134c80acde1f84d285e9d4f","/e/e8/Unit-Warrior_of_Light_Krile-6.png?version=b0259c1a004205c79573213bd6a65cc6","/a/a2/Unit-Warrior_of_Light_Krile-7.png?version=76e1d2628bed418621496b41903073ef"},5),
 	WLGaluf("Warrior of Dawn Galuf",new String[]{"/e/e0/Unit-Warrior_of_Dawn_Galuf-5.png?version=9d3d425bbb3b06ff40fd0279fff6b126","/9/92/Unit-Warrior_of_Dawn_Galuf-6.png?version=724128a199730503ba93da30bc91c325","/8/8e/Unit-Warrior_of_Dawn_Galuf-7.png?version=80cc5d34808d8fed10c9f9310b88446a"},5),
 	DMExdeath("Dark Mage Exdeath",new String[]{"/4/4d/Unit-Dark_Mage_Exdeath-5.png?version=a0c6b28af16701e96963825405324fd5","/e/ea/Unit-Dark_Mage_Exdeath-6.png?version=08d97c39009d5b034f3d8bd9cbeaf9f5","/1/18/Unit-Dark_Mage_Exdeath-7.png?version=ca5250be0c06860ee124cbd83dfb0524"},5),
-	
+	AKefka("Archmage Kefka",new String[]{"/8/89/Unit-Archmage_Kefka-5.png?version=32b0848226a12284c372d369b855a07f","/5/5e/Unit-Archmage_Kefka-6.png?version=34e242790da85068dc2c16fbbfafc619","/d/d0/Unit-Archmage_Kefka-7.png?version=ab5f92fbf3eb8cde9aee12120fb25514"},5),
+	AShadow("Assassin Shadow",new String[]{"/e/ef/Unit-Assassin_Shadow-5.png?version=fdf67793ba4659b19f88b19c69ae252f","/a/a0/Unit-Assassin_Shadow-6.png?version=9f8e2e235103bc2d4acdaecb1d36e58b","/9/98/Unit-Assassin_Shadow-7.png?version=c6fb2a178af193815472ef4b9beb2d0b"},5),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1502,7 +1503,9 @@ public enum Unit{
 				DKLeon,
 				WLKrile,
 				WLGaluf,
-				DMExdeath
+				DMExdeath,
+				AKefka,
+				AShadow
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool

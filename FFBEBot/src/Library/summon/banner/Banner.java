@@ -181,6 +181,7 @@ public enum Banner {
 	FF2P2("FFII (2)", new Unit[]{Unit.WRFirion,Unit.DKLeon,Unit.Maria,Unit.Guy},BannerRates.LD5D3.fiveRate(),DQXIS.pool,DQXIS.include,BannerType.ThreePercent),
 	FF5P3("FFV (3)", new Unit[]{Unit.WLKrile,Unit.WLGaluf,Unit.DMExdeath},BannerRates.LT5.fiveRate(),Lib.concat(new Unit[]{Unit.WRFirion, Unit.DKLeon}, FF2P2.pool),FF2P2.include,BannerType.ThreePercent),
 	Halloween4("Halloween 2019 (new)", new Unit[]{Unit.Karten,Unit.Godrea,Unit.WWF,Unit.INichol,Unit.PJake,Unit.BCLid}, BannerRates.D5T4.fiveRate(), Lib.concat(FF5P3.featured, FF5P3.pool),FF5P3.include, BannerType.ThreePercent),
+	FF6P4("FFVI (4)", new Unit[]{Unit.AKefka,Unit.AShadow}, BannerRates.LD5.fiveRate(), Halloween4.pool,Halloween4.include,BannerType.ThreePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -188,7 +189,7 @@ public enum Banner {
 //	FF3 1,2,3
 //	FF4 1,2,3,4
 //	FF5 1,2,3
-//	FF6 1,2,3
+//	FF6 1,2,3,4
 //  FF7 1,2,3
 //	FF8 1
 //	FF9 1
@@ -276,7 +277,8 @@ public enum Banner {
 				Banner.Xenogears2,
 				Banner.SoM2,
 				Banner.Octopath,
-				Banner.DQXIS
+				Banner.DQXIS,
+				Banner.Halloween4
 				};
 	}
 	public static boolean LEBanner(Banner banner){

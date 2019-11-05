@@ -218,7 +218,8 @@ public enum Husbandos {
 	DKLeon(Unit.DKLeon),
 	WLGaluf(Unit.WLGaluf),
 	DMExdeath(Unit.DMExdeath),
-	
+	AKefka(Unit.AKefka),
+	AShadow(Unit.AShadow),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),
