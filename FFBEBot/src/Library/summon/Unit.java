@@ -789,6 +789,9 @@ public enum Unit{
 	DMExdeath("Dark Mage Exdeath",new String[]{"/4/4d/Unit-Dark_Mage_Exdeath-5.png?version=a0c6b28af16701e96963825405324fd5","/e/ea/Unit-Dark_Mage_Exdeath-6.png?version=08d97c39009d5b034f3d8bd9cbeaf9f5","/1/18/Unit-Dark_Mage_Exdeath-7.png?version=ca5250be0c06860ee124cbd83dfb0524"},5),
 	AKefka("Archmage Kefka",new String[]{"/8/89/Unit-Archmage_Kefka-5.png?version=32b0848226a12284c372d369b855a07f","/5/5e/Unit-Archmage_Kefka-6.png?version=34e242790da85068dc2c16fbbfafc619","/d/d0/Unit-Archmage_Kefka-7.png?version=ab5f92fbf3eb8cde9aee12120fb25514"},5),
 	AShadow("Assassin Shadow",new String[]{"/e/ef/Unit-Assassin_Shadow-5.png?version=fdf67793ba4659b19f88b19c69ae252f","/a/a0/Unit-Assassin_Shadow-6.png?version=9f8e2e235103bc2d4acdaecb1d36e58b","/9/98/Unit-Assassin_Shadow-7.png?version=c6fb2a178af193815472ef4b9beb2d0b"},5),
+	AKRain("Aldore King Rain",new String[]{"/b/b0/Unit-Aldore_King_Rain-5.png?version=e7068414cf28f7578c35c2259d66abc3","/a/ab/Unit-Aldore_King_Rain-6.png?version=5e1cde6fd3ab31e475ca8b6386f7469d","/5/5d/Unit-Aldore_King_Rain-7.png?version=a79a49c6dddde64a824bb0115ba30805"},5),
+	Diezell("Diezell",new String[]{"/d/dd/Unit-Diezell-4.png?version=1be9991cb724749fc328360b4150b101","/5/5a/Unit-Diezell-5.png?version=214d367896ddcfe927c4c9a105328458","/e/ed/Unit-Diezell-6.png?version=1444d40eaf7508f64c64a88d3476b207"},4),
+	Maisie("Maisie",new String[]{"/1/1f/Unit-Maisie-3.png?version=eab86e4e2df89f20344599853662a711","/c/c0/Unit-Maisie-4.png?version=1b13de85dff43922dfab633c183109a1","/0/05/Unit-Maisie-5.png?version=c5a1bcf036683cbabf090519720e6662"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1505,7 +1508,10 @@ public enum Unit{
 				WLGaluf,
 				DMExdeath,
 				AKefka,
-				AShadow
+				AShadow,
+				AKRain,
+				Diezell,
+				Maisie
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool

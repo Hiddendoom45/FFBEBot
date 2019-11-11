@@ -220,6 +220,8 @@ public enum Husbandos {
 	DMExdeath(Unit.DMExdeath),
 	AKefka(Unit.AKefka),
 	AShadow(Unit.AShadow),
+	AKRain(Unit.AKRain),
+	
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

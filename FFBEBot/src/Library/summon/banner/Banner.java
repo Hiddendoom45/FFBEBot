@@ -182,6 +182,7 @@ public enum Banner {
 	FF5P3("FFV (3)", new Unit[]{Unit.WLKrile,Unit.WLGaluf,Unit.DMExdeath},BannerRates.LT5.fiveRate(),Lib.concat(new Unit[]{Unit.WRFirion, Unit.DKLeon}, FF2P2.pool),FF2P2.include,BannerType.ThreePercent),
 	Halloween4("Halloween 2019 (new)", new Unit[]{Unit.Karten,Unit.Godrea,Unit.WWF,Unit.INichol,Unit.PJake,Unit.BCLid}, BannerRates.D5T4.fiveRate(), Lib.concat(FF5P3.featured, FF5P3.pool),FF5P3.include, BannerType.ThreePercent),
 	FF6P4("FFVI (4)", new Unit[]{Unit.AKefka,Unit.AShadow}, BannerRates.LD5.fiveRate(), Halloween4.pool,Halloween4.include,BannerType.ThreePercent),
+	ChairRain("King Rain", new Unit[]{Unit.AKRain,Unit.Diezell,Unit.Maisie}, BannerRates.EvenSplit.fivePercent(), Lib.concat(FF6P4.featured, FF6P4.pool), FF6P4.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
