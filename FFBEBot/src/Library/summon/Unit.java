@@ -792,6 +792,10 @@ public enum Unit{
 	AKRain("Aldore King Rain",new String[]{"/b/b0/Unit-Aldore_King_Rain-5.png?version=e7068414cf28f7578c35c2259d66abc3","/a/ab/Unit-Aldore_King_Rain-6.png?version=5e1cde6fd3ab31e475ca8b6386f7469d","/5/5d/Unit-Aldore_King_Rain-7.png?version=a79a49c6dddde64a824bb0115ba30805"},5),
 	Diezell("Diezell",new String[]{"/d/dd/Unit-Diezell-4.png?version=1be9991cb724749fc328360b4150b101","/5/5a/Unit-Diezell-5.png?version=214d367896ddcfe927c4c9a105328458","/e/ed/Unit-Diezell-6.png?version=1444d40eaf7508f64c64a88d3476b207"},4),
 	Maisie("Maisie",new String[]{"/1/1f/Unit-Maisie-3.png?version=eab86e4e2df89f20344599853662a711","/c/c0/Unit-Maisie-4.png?version=1b13de85dff43922dfab633c183109a1","/0/05/Unit-Maisie-5.png?version=c5a1bcf036683cbabf090519720e6662"},3),
+	MTerra("Magitek Warrior Terra",new String[]{"/a/af/Unit-Magitek_Warrior_Terra-5.png?version=197816b282d5b40cf7a7da6b452b7b43","/3/36/Unit-Magitek_Warrior_Terra-6.png?version=04ee3aa8d867a674098388cee9d1411a","/3/3c/Unit-Magitek_Warrior_Terra-7.png?version=93ae1c2186bca2fe26ddda3119b92ebe"},5),
+	ALocke("Adventurer Locke",new String[]{"/6/60/Unit-Adventurer_Locke-5.png?version=2f596b555955e5d3f596bbef88f0e9cd","/6/69/Unit-Adventurer_Locke-6.png?version=86ffeaec41aa52a3d10e1ba6e6c95308","/b/bd/Unit-Adventurer_Locke-7.png?version=ea6775de6c3a73901aec9ee6a8c7658c"},5),
+	Neisha("Neisha",new String[]{"/6/68/Unit-Neisha-4.png?version=07bee945bfcffe6ded1fe55425d65f81","/b/bf/Unit-Neisha-5.png?version=1f7b874c959008de1b82bb64e203b870","/9/94/Unit-Neisha-6.png?version=cb1cab85b30eced63516170505f3f33d"},4),
+	Latyl("Latyl",new String[]{"/a/a4/Unit-Latyl-3.png?version=0ed8f556316a8468ddaf2ca37809452a","/f/f5/Unit-Latyl-4.png?version=952557ce9996876170ce2f67f09341ab","/a/a4/Unit-Latyl-5.png?version=6f83d4ad451ddf81621fc28783752e39"},3),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1511,7 +1515,11 @@ public enum Unit{
 				AShadow,
 				AKRain,
 				Diezell,
-				Maisie
+				Maisie,
+				MTerra,
+				ALocke,
+				Neisha,
+				Latyl
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool

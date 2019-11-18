@@ -221,7 +221,8 @@ public enum Husbandos {
 	AKefka(Unit.AKefka),
 	AShadow(Unit.AShadow),
 	AKRain(Unit.AKRain),
-	
+	ALocke(Unit.ALocke),
+	Laytl(Unit.Latyl),
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

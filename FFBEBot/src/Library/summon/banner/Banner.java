@@ -183,6 +183,7 @@ public enum Banner {
 	Halloween4("Halloween 2019 (new)", new Unit[]{Unit.Karten,Unit.Godrea,Unit.WWF,Unit.INichol,Unit.PJake,Unit.BCLid}, BannerRates.D5T4.fiveRate(), Lib.concat(FF5P3.featured, FF5P3.pool),FF5P3.include, BannerType.ThreePercent),
 	FF6P4("FFVI (4)", new Unit[]{Unit.AKefka,Unit.AShadow}, BannerRates.LD5.fiveRate(), Halloween4.pool,Halloween4.include,BannerType.ThreePercent),
 	ChairRain("King Rain", new Unit[]{Unit.AKRain,Unit.Diezell,Unit.Maisie}, BannerRates.EvenSplit.fivePercent(), Lib.concat(FF6P4.featured, FF6P4.pool), FF6P4.include, BannerType.FivePercent),
+	FF6P5("FFVI (5)", new Unit[]{Unit.MTerra,Unit.ALocke,Unit.Neisha,Unit.Latyl}, BannerRates.D5.fivePercent(), Lib.concat(ChairRain.featured, ChairRain.pool), ChairRain.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -190,7 +191,7 @@ public enum Banner {
 //	FF3 1,2,3
 //	FF4 1,2,3,4
 //	FF5 1,2,3
-//	FF6 1,2,3,4
+//	FF6 1,2,3,4,5
 //  FF7 1,2,3
 //	FF8 1
 //	FF9 1

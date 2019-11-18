@@ -183,7 +183,8 @@ public enum Waifus {
 	WLKrile(Unit.WLKrile),
 	Diezell(Unit.Diezell),
 	Maisie(Unit.Maisie),
-	
+	MTerra(Unit.MTerra),
+	Neisha(Unit.Neisha),
 	
 	
 	//Limited
