@@ -254,7 +254,8 @@ public enum Waifus {
 	LKaty(Unit.LKaty),
 	Veronica(Unit.Veronica),
 	Serena(Unit.Serena),
-	Godrea(Unit.Godrea);
+	Godrea(Unit.Godrea),
+	Jade(Unit.Jade);
 	
 	
 	

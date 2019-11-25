@@ -184,6 +184,7 @@ public enum Banner {
 	FF6P4("FFVI (4)", new Unit[]{Unit.AKefka,Unit.AShadow}, BannerRates.LD5.fiveRate(), Halloween4.pool,Halloween4.include,BannerType.ThreePercent),
 	ChairRain("King Rain", new Unit[]{Unit.AKRain,Unit.Diezell,Unit.Maisie}, BannerRates.EvenSplit.fivePercent(), Lib.concat(FF6P4.featured, FF6P4.pool), FF6P4.include, BannerType.FivePercent),
 	FF6P5("FFVI (5)", new Unit[]{Unit.MTerra,Unit.ALocke,Unit.Neisha,Unit.Latyl}, BannerRates.D5.fivePercent(), Lib.concat(ChairRain.featured, ChairRain.pool), ChairRain.include, BannerType.FivePercent),
+	DQXIS2("Dragon Quest XIS (2)", new Unit[]{Unit.LoS, Unit.Jasper, Unit.Mordegon, Unit.GreatDragon}, new int[]{100,100,100,475}, Lib.concat(FF6P5.featured, FF6P5.pool), FF6P5.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run

@@ -282,7 +282,11 @@ public enum Husbandos {
 	Therion(Unit.Therion),
 	Mordegon(Unit.Mordegon),
 	Eleven(Unit.Eleven),
-	Karten(Unit.Karten);
+	Karten(Unit.Karten),
+	LoS(Unit.LoS),
+	Erik(Unit.Erik),
+	Sylvando(Unit.Sylvando),
+	Rab(Unit.Rab);
 	
 
 	public final String name;

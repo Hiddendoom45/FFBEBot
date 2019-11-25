@@ -966,6 +966,14 @@ public enum Unit{
 	Veronica("Veronica",new String[]{"/5/58/Unit-Veronica-5.png?version=1f4a87be78888571aaa486df1bbc4203","/a/af/Unit-Veronica-6.png?version=9bb41f6e4364a8d8cc7db996d684f0ef","/b/bf/Unit-Veronica-7.png?version=bd242e47097dbfa4c2e4bd62bf6c64ef"},5),
 	Karten("Karten",new String[]{"/2/26/Unit-Karten-5.png?version=18f4188f257cad38d63dd34e507555b8","/6/65/Unit-Karten-6.png?version=7f88510143641d565c463d54dff92143","/4/44/Unit-Karten-7.png?version=778eff28fc27373e328b1293361ba726"},5),
 	Godrea("Godrea",new String[]{"/0/09/Unit-Godrea-5.png?version=6bd3cb09ae935b4542f623be7586128c","/a/a5/Unit-Godrea-6.png?version=693abf81b2ed039aaa1ba023650b276c","/0/05/Unit-Godrea-7.png?version=4716aa6e71736a2caaa7b23d17727478"},5),
+	LoS("The Lord of Shadows",new String[]{"/c/ca/Unit-The_Lord_of_Shadows-5.png?version=ae9975da0a3c12b3b31fe2e7538c2864","/a/a5/Unit-The_Lord_of_Shadows-6.png?version=facdb4e31e55baca0cce9edc7974ba49","/6/6a/Unit-The_Lord_of_Shadows-7.png?version=fd106116ff179761b601ef6eae6867d6"},5),
+	Jasper("Jasper Unbound",new String[]{"/8/82/Unit-Jasper_Unbound-5.png?version=0d2d3d818dbda4b845406b4238675261","/2/2b/Unit-Jasper_Unbound-6.png?version=2c7c3cd6103f32098c42bbc687751399","/4/48/Unit-Jasper_Unbound-7.png?version=a2ce60e3798515e46069f4a867def3eb"},5),
+	Erik("Erik",new String[]{"/f/fe/Unit-Erik-5.png?version=501b65d1a2400159fb6828ee42fd105f","/1/17/Unit-Erik-6.png?version=d8e550b3988d0c24710f45de01528dfc","/b/ba/Unit-Erik-7.png?version=b6f50cfd255a256735b123bde75fb1f3"},5),
+	Sylvando("Sylvando",new String[]{"/a/ae/Unit-Sylvando-5.png?version=b58d1e81bbca2e2ff4fdf4aff73b0b70","/7/75/Unit-Sylvando-6.png?version=357d1fd7c775ebd92ddba52f0171a876","/0/09/Unit-Sylvando-7.png?version=689b9b0fca7b50081eff5353e4423727"},5),
+	Jade("Jade",new String[]{"/0/09/Unit-Jade-5.png?version=02a4f8acb677b9b0c4be5ea49184b0d6","/c/c7/Unit-Jade-6.png?version=4f7d2037293447d72c13c212b0b9c5f7","/2/20/Unit-Jade-7.png?version=84766aa12d228c152becd0591ade4a12"},5),
+	Rab("Rab",new String[]{"/5/53/Unit-Rab-5.png?version=a0ce01c670fc63560102a6a4b9a535e8","/4/44/Unit-Rab-6.png?version=fb604e7f29055161030e6d5816075a16","/9/97/Unit-Rab-7.png?version=bfefd27df58ce48f598535c3cbb6f412"},5),
+	
+	
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
