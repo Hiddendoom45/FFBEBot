@@ -185,6 +185,8 @@ public enum Banner {
 	ChairRain("King Rain", new Unit[]{Unit.AKRain,Unit.Diezell,Unit.Maisie}, BannerRates.EvenSplit.fivePercent(), Lib.concat(FF6P4.featured, FF6P4.pool), FF6P4.include, BannerType.FivePercent),
 	FF6P5("FFVI (5)", new Unit[]{Unit.MTerra,Unit.ALocke,Unit.Neisha,Unit.Latyl}, BannerRates.D5.fivePercent(), Lib.concat(ChairRain.featured, ChairRain.pool), ChairRain.include, BannerType.FivePercent),
 	DQXIS2("Dragon Quest XIS (2)", new Unit[]{Unit.LoS, Unit.Jasper, Unit.Mordegon, Unit.GreatDragon}, new int[]{100,100,100,475}, Lib.concat(FF6P5.featured, FF6P5.pool), FF6P5.include, BannerType.FivePercent),
+	BlackFriday1("Black Friday (1)", new Unit[]{Unit.AOlive,Unit.MXon}, BannerRates.LD5.fivePercent(), DQXIS2.pool, DQXIS2.include, BannerType.FivePercent),
+	BlackFriday2("Black Friday (2)", new Unit[]{Unit.DAiden,Unit.OZyrus}, BannerRates.LD5.fivePercent(), Lib.concat(BlackFriday1.featured, BlackFriday1.pool),BlackFriday1.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -281,7 +283,8 @@ public enum Banner {
 				Banner.SoM2,
 				Banner.Octopath,
 				Banner.DQXIS,
-				Banner.Halloween4
+				Banner.Halloween4,
+				Banner.DQXIS2
 				};
 	}
 	public static boolean LEBanner(Banner banner){

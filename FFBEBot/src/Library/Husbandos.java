@@ -223,6 +223,11 @@ public enum Husbandos {
 	AKRain(Unit.AKRain),
 	ALocke(Unit.ALocke),
 	Laytl(Unit.Latyl),
+	MXon(Unit.MXon),
+	DAiden(Unit.DAiden),
+	OZyrus(Unit.OZyrus),
+	
+	
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),
 	Juggler(Unit.Juggler),

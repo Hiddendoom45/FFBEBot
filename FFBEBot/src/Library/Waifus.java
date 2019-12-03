@@ -185,7 +185,7 @@ public enum Waifus {
 	Maisie(Unit.Maisie),
 	MTerra(Unit.MTerra),
 	Neisha(Unit.Neisha),
-	
+	AOlive(Unit.AOlive),
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),

@@ -796,6 +796,10 @@ public enum Unit{
 	ALocke("Adventurer Locke",new String[]{"/6/60/Unit-Adventurer_Locke-5.png?version=2f596b555955e5d3f596bbef88f0e9cd","/6/69/Unit-Adventurer_Locke-6.png?version=86ffeaec41aa52a3d10e1ba6e6c95308","/b/bd/Unit-Adventurer_Locke-7.png?version=ea6775de6c3a73901aec9ee6a8c7658c"},5),
 	Neisha("Neisha",new String[]{"/6/68/Unit-Neisha-4.png?version=07bee945bfcffe6ded1fe55425d65f81","/b/bf/Unit-Neisha-5.png?version=1f7b874c959008de1b82bb64e203b870","/9/94/Unit-Neisha-6.png?version=cb1cab85b30eced63516170505f3f33d"},4),
 	Latyl("Latyl",new String[]{"/a/a4/Unit-Latyl-3.png?version=0ed8f556316a8468ddaf2ca37809452a","/f/f5/Unit-Latyl-4.png?version=952557ce9996876170ce2f67f09341ab","/a/a4/Unit-Latyl-5.png?version=6f83d4ad451ddf81621fc28783752e39"},3),
+	AOlive("Agent Olive",new String[]{"/8/8b/Unit-Agent_Olive-5.png?version=bcf7624087e22e319f2a1c6ddd913cc9","/9/9b/Unit-Agent_Olive-6.png?version=7b9079a55871355102e11b548c391efa","/4/46/Unit-Agent_Olive-7.png?version=9f00c2dd755e718e92ae5ed4957d5495"},5),
+	MXon("Mastermind Xon",new String[]{"/8/88/Unit-Mastermind_Xon-5.png?version=92e22138c732cc96add89f92b9ba54f2","/4/4e/Unit-Mastermind_Xon-6.png?version=8d277a29c5104104bdd5f0d7b8948ee7","/f/fe/Unit-Mastermind_Xon-7.png?version=2b36c7b680c7388fd8cf7f804c2e1f86"},5),
+	DAiden("Doctor Aiden",new String[]{"/a/ab/Unit-Doctor_Aiden-5.png?version=f31e517947703b8d96fbd3d5eea31550","/1/15/Unit-Doctor_Aiden-6.png?version=17a88cc0b8afa06013824c6e40782fe2","/4/4b/Unit-Doctor_Aiden-7.png?version=39d1e196135cde78635ece36ae62ad4e"},5),
+	OZyrus("Operative Zyrus",new String[]{"/9/9f/Unit-Operative_Zyrus-5.png?version=732943efa063b74ac66f5e2b0d7e8624","/8/84/Unit-Operative_Zyrus-6.png?version=1cd5c7f4abfa9472e0f4f2c996282514","/3/3b/Unit-Operative_Zyrus-7.png?version=4f36ce68642c98de3b6775253b299673"},5),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1527,7 +1531,11 @@ public enum Unit{
 				MTerra,
 				ALocke,
 				Neisha,
-				Latyl
+				Latyl,
+				AOlive,
+				MXon,
+				DAiden,
+				OZyrus
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool
