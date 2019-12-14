@@ -800,7 +800,9 @@ public enum Unit{
 	MXon("Mastermind Xon",new String[]{"/8/88/Unit-Mastermind_Xon-5.png?version=92e22138c732cc96add89f92b9ba54f2","/4/4e/Unit-Mastermind_Xon-6.png?version=8d277a29c5104104bdd5f0d7b8948ee7","/f/fe/Unit-Mastermind_Xon-7.png?version=2b36c7b680c7388fd8cf7f804c2e1f86"},5),
 	DAiden("Doctor Aiden",new String[]{"/a/ab/Unit-Doctor_Aiden-5.png?version=f31e517947703b8d96fbd3d5eea31550","/1/15/Unit-Doctor_Aiden-6.png?version=17a88cc0b8afa06013824c6e40782fe2","/4/4b/Unit-Doctor_Aiden-7.png?version=39d1e196135cde78635ece36ae62ad4e"},5),
 	OZyrus("Operative Zyrus",new String[]{"/9/9f/Unit-Operative_Zyrus-5.png?version=732943efa063b74ac66f5e2b0d7e8624","/8/84/Unit-Operative_Zyrus-6.png?version=1cd5c7f4abfa9472e0f4f2c996282514","/3/3b/Unit-Operative_Zyrus-7.png?version=4f36ce68642c98de3b6775253b299673"},5),
-	
+	Physalis("Physalis",new String[]{"/8/86/Unit-Physalis-5.png?version=ba6cff659947b60b4a0058fc2e813b46","/1/1d/Unit-Physalis-6.png?version=c14b5d7d40e9f4161cddea1ceda02ddf","/e/ef/Unit-Physalis-7.png?version=f2e9d58e9ce84e3b200232bf0e75d1a6"},5),
+	Juraga("Juraga of the Nu Star",new String[]{"/7/76/Unit-Juraga_of_the_Nu_Star-4.png?version=0b421418ad5b9413ad23bbb9f7fd1413","/8/8d/Unit-Juraga_of_the_Nu_Star-5.png?version=ade470fb39082aac116995b5aeb21456","/7/78/Unit-Juraga_of_the_Nu_Star-6.png?version=ea87583ee8d4be8453cd35ef8892342b"},4),
+	Gudon("Gudon of the Xi Star",new String[]{"/6/69/Unit-Gudon_of_the_Xi_Star-3.png?version=a258af5c9635b78dbfd851a7ad27a96a","/e/e5/Unit-Gudon_of_the_Xi_Star-4.png?version=42334429d8569513c16995b35ba4b2ac","/e/e1/Unit-Gudon_of_the_Xi_Star-5.png?version=714e18c2d29db132833b95fa987e6f49"},3),
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1535,7 +1537,11 @@ public enum Unit{
 				AOlive,
 				MXon,
 				DAiden,
-				OZyrus
+				OZyrus,
+				Physalis,
+				Juraga,
+				Gudon
+				
 		});
 	}
 	//Placeholders for attack, mage/tank, support banners, which will be concacted to form current pool

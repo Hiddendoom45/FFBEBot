@@ -226,7 +226,8 @@ public enum Husbandos {
 	MXon(Unit.MXon),
 	DAiden(Unit.DAiden),
 	OZyrus(Unit.OZyrus),
-	
+	Juraga(Unit.Juraga),
+	Gudon(Unit.Gudon),
 	
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),

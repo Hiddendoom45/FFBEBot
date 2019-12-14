@@ -187,6 +187,7 @@ public enum Banner {
 	DQXIS2("Dragon Quest XIS (2)", new Unit[]{Unit.LoS, Unit.Jasper, Unit.Mordegon, Unit.GreatDragon}, new int[]{100,100,100,475}, Lib.concat(FF6P5.featured, FF6P5.pool), FF6P5.include, BannerType.FivePercent),
 	BlackFriday1("Black Friday (1)", new Unit[]{Unit.AOlive,Unit.MXon}, BannerRates.LD5.fivePercent(), DQXIS2.pool, DQXIS2.include, BannerType.FivePercent),
 	BlackFriday2("Black Friday (2)", new Unit[]{Unit.DAiden,Unit.OZyrus}, BannerRates.LD5.fivePercent(), Lib.concat(BlackFriday1.featured, BlackFriday1.pool),BlackFriday1.include, BannerType.FivePercent),
+	Physalis("Physalis", new Unit[]{Unit.Physalis,Unit.Juraga,Unit.Gudon},BannerRates.LD5.fivePercent(), Lib.concat(BlackFriday2.featured, BlackFriday2.pool),BlackFriday2.include,BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
