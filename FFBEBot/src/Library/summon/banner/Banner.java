@@ -188,6 +188,7 @@ public enum Banner {
 	BlackFriday1("Black Friday (1)", new Unit[]{Unit.AOlive,Unit.MXon}, BannerRates.LD5.fivePercent(), DQXIS2.pool, DQXIS2.include, BannerType.FivePercent),
 	BlackFriday2("Black Friday (2)", new Unit[]{Unit.DAiden,Unit.OZyrus}, BannerRates.LD5.fivePercent(), Lib.concat(BlackFriday1.featured, BlackFriday1.pool),BlackFriday1.include, BannerType.FivePercent),
 	Physalis("Physalis", new Unit[]{Unit.Physalis,Unit.Juraga,Unit.Gudon},BannerRates.EvenSplit.fivePercent(), Lib.concat(BlackFriday2.featured, BlackFriday2.pool),BlackFriday2.include,BannerType.FivePercent),
+	FF15P5("FFXV (5)", new Unit[]{Unit.CrownNoctis, Unit.Lunafreya, Unit.KennyCrow}, new int[]{75,75,475}, Lib.concat(Physalis.featured, Physalis.pool), Physalis.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -203,7 +204,7 @@ public enum Banner {
 //	FF11 1,2
 //	FF12 1,2
 //	FF13 1(1,2), 2
-//	FF15 1,2,3,4
+//	FF15 1,2,3,4,5
 //	FF-0 1,2,3,4
 //	FFT 1(1,2),2,3,4
 	

@@ -228,6 +228,7 @@ public enum Husbandos {
 	OZyrus(Unit.OZyrus),
 	Juraga(Unit.Juraga),
 	Gudon(Unit.Gudon),
+	CrownNoctis(Unit.CrownNoctis),
 	
 	//Limited ones//for organization
 	Thief("Thief",Unit.Thief),

@@ -187,6 +187,9 @@ public enum Waifus {
 	Neisha(Unit.Neisha),
 	AOlive(Unit.AOlive),
 	Physalis(Unit.Physalis),
+	Lunafreya(Unit.Lunafreya),
+	
+	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),
 	//Samantha("Samantha","9/9a/Unit-Samatha-4.png"),
@@ -255,7 +258,8 @@ public enum Waifus {
 	Veronica(Unit.Veronica),
 	Serena(Unit.Serena),
 	Godrea(Unit.Godrea),
-	Jade(Unit.Jade);
+	Jade(Unit.Jade),
+	Gentiana(Unit.Gentiana);
 	
 	
 	

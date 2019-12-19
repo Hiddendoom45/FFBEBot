@@ -803,6 +803,10 @@ public enum Unit{
 	Physalis("Physalis",new String[]{"/8/86/Unit-Physalis-5.png?version=ba6cff659947b60b4a0058fc2e813b46","/1/1d/Unit-Physalis-6.png?version=c14b5d7d40e9f4161cddea1ceda02ddf","/e/ef/Unit-Physalis-7.png?version=f2e9d58e9ce84e3b200232bf0e75d1a6"},5),
 	Juraga("Juraga of the Nu Star",new String[]{"/7/76/Unit-Juraga_of_the_Nu_Star-4.png?version=0b421418ad5b9413ad23bbb9f7fd1413","/8/8d/Unit-Juraga_of_the_Nu_Star-5.png?version=ade470fb39082aac116995b5aeb21456","/7/78/Unit-Juraga_of_the_Nu_Star-6.png?version=ea87583ee8d4be8453cd35ef8892342b"},4),
 	Gudon("Gudon of the Xi Star",new String[]{"/6/69/Unit-Gudon_of_the_Xi_Star-3.png?version=a258af5c9635b78dbfd851a7ad27a96a","/e/e5/Unit-Gudon_of_the_Xi_Star-4.png?version=42334429d8569513c16995b35ba4b2ac","/e/e1/Unit-Gudon_of_the_Xi_Star-5.png?version=714e18c2d29db132833b95fa987e6f49"},3),
+	CrownNoctis("Crown Prince Noctis",new String[]{"/4/43/Unit-Crown_Prince_Noctis-5.png?version=1fbc82ea18449bdb93ff6ed93b5ce10e","/a/a6/Unit-Crown_Prince_Noctis-6.png?version=fb275193c1d763e67b875624876bb87b","/b/b6/Unit-Crown_Prince_Noctis-7.png?version=5b3a3e816517a8621bf33795002a9c53"},5),
+	Lunafreya("Lunafreya",new String[]{"/7/78/Unit-Lunafreya-5.png?version=d41c573b1a87228f729f77761e01ea0a","/c/cb/Unit-Lunafreya-6.png?version=65995c1c02e11439bf1c5347c55fb3d5","/a/a5/Unit-Lunafreya-7.png?version=ae6befcfd13af5fc79a5fcab8e6280ec"},5),
+	KennyCrow("Kenny Crow",new String[]{"/8/88/Unit-Kenny_Crow-4.png?version=280fa933ee39d18d9bb1adaefaba81da","/f/f9/Unit-Kenny_Crow-5.png?version=8aa1f907ec6a2bef2c37a0e812dff3f7","/0/04/Unit-Kenny_Crow-6.png?version=645ee211e5b9dc0818d037315259358a"},4),
+	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
 	Thief("Thief",new String[]{"/8/8e/Unit-Thief-4.png?version=8ce7dae96b88c66b7bead054c9a45995","/d/de/Unit-Thief-5.png?version=fec375ed9ecead999e1d194c03891d02"},4),
@@ -1012,7 +1016,8 @@ public enum Unit{
 	MarquisdeLeon("Marquis de Léon",new String[]{"/d/d9/Unit-Marquis_de_L%C3%A9on-5.png?version=9a3b0f3ba2112ff2217ad25e019dcc70","/7/74/Unit-Marquis_de_L%C3%A9on-6.png?version=23f6bdf3b341e20eaa4f1a20663a28f4","/d/db/Unit-Marquis_de_L%C3%A9on-7.png?version=117a90dbe3facf7bf50cf7a75efbcb59"},5),
 	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3),
 	ChuChu("Chu-Chu",new String[]{"/7/74/Unit-Chu-Chu-3.png?version=77cab345050cc3c2a0953a9323d4b013","/0/09/Unit-Chu-Chu-4.png?version=78c358711faca3fa3e98a53c6907588d","/7/76/Unit-Chu-Chu-5.png?version=c134990349b8125f10cdc581333adf5f"},3),
-	
+	Gentiana("Gentiana",new String[]{"/9/99/Unit-Gentiana-5.png?version=ddb3a9678fd9772562981900e4df3b3e","/1/12/Unit-Gentiana-6.png?version=0447727db6dc8527ef057f2579004034","/4/46/Unit-Gentiana-7.png?version=9061cfb44c0818cc07c7df7611d180e5"},5),//no idea if actually limited
+
 	Salt3("Salt3",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269409545289738/3.png"},3),
 	Salt4("Salt4",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269480085094420/4.png"},4);
 	//quick access map for certain things that has unit name but not the Unit object
@@ -1540,7 +1545,10 @@ public enum Unit{
 				OZyrus,
 				Physalis,
 				Juraga,
-				Gudon
+				Gudon,
+				CrownNoctis,
+				Lunafreya,
+				KennyCrow
 				
 		});
 	}
