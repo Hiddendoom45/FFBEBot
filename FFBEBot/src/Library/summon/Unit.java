@@ -982,6 +982,9 @@ public enum Unit{
 	Sylvando("Sylvando",new String[]{"/a/ae/Unit-Sylvando-5.png?version=b58d1e81bbca2e2ff4fdf4aff73b0b70","/7/75/Unit-Sylvando-6.png?version=357d1fd7c775ebd92ddba52f0171a876","/0/09/Unit-Sylvando-7.png?version=689b9b0fca7b50081eff5353e4423727"},5),
 	Jade("Jade",new String[]{"/0/09/Unit-Jade-5.png?version=02a4f8acb677b9b0c4be5ea49184b0d6","/c/c7/Unit-Jade-6.png?version=4f7d2037293447d72c13c212b0b9c5f7","/2/20/Unit-Jade-7.png?version=84766aa12d228c152becd0591ade4a12"},5),
 	Rab("Rab",new String[]{"/5/53/Unit-Rab-5.png?version=a0ce01c670fc63560102a6a4b9a535e8","/4/44/Unit-Rab-6.png?version=fb604e7f29055161030e6d5816075a16","/9/97/Unit-Rab-7.png?version=bfefd27df58ce48f598535c3cbb6f412"},5),
+	HolyAEmilia("Holy Night Amelia & Emilia",new String[]{"/e/ee/Unit-Holy_Night_Amelia_%26_Emilia-5.png?version=7a3e02544239c733fad56d32904842da","/a/a3/Unit-Holy_Night_Amelia_%26_Emilia-6.png?version=12dcc54d6cd798a206b6cea4c6b0e390","/d/df/Unit-Holy_Night_Amelia_%26_Emilia-7.png?version=70767a8a885405ab27c20c051ed2b4ee"},5),
+	Levinson("Levinson",new String[]{"/b/b6/Unit-Levinson-5.png?version=72b067690fb5601ca907078615bdb86f","/8/8a/Unit-Levinson-6.png?version=71055a8f11c31abb2a1c5c93e70942a3","/9/98/Unit-Levinson-7.png?version=18f2da3d87867ef87e904b7645f8b06d"},5),
+	Lucas("Lucas",new String[]{"/b/b9/Unit-Lucas-5.png?version=7a24ca3dcb57a2c96d7c61020ad241a2","/b/b0/Unit-Lucas-6.png?version=3ebc11a0cc93f280813e53a1eca3da81","/f/f1/Unit-Lucas-7.png?version=74ed128a80bde682353e3083a20ee1b3"},5),
 	
 	
 	
