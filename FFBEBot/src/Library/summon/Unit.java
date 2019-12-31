@@ -806,6 +806,7 @@ public enum Unit{
 	CrownNoctis("Crown Prince Noctis",new String[]{"/4/43/Unit-Crown_Prince_Noctis-5.png?version=1fbc82ea18449bdb93ff6ed93b5ce10e","/a/a6/Unit-Crown_Prince_Noctis-6.png?version=fb275193c1d763e67b875624876bb87b","/b/b6/Unit-Crown_Prince_Noctis-7.png?version=5b3a3e816517a8621bf33795002a9c53"},5),
 	Lunafreya("Lunafreya",new String[]{"/7/78/Unit-Lunafreya-5.png?version=d41c573b1a87228f729f77761e01ea0a","/c/cb/Unit-Lunafreya-6.png?version=65995c1c02e11439bf1c5347c55fb3d5","/a/a5/Unit-Lunafreya-7.png?version=ae6befcfd13af5fc79a5fcab8e6280ec"},5),
 	KennyCrow("Kenny Crow",new String[]{"/8/88/Unit-Kenny_Crow-4.png?version=280fa933ee39d18d9bb1adaefaba81da","/f/f9/Unit-Kenny_Crow-5.png?version=8aa1f907ec6a2bef2c37a0e812dff3f7","/0/04/Unit-Kenny_Crow-6.png?version=645ee211e5b9dc0818d037315259358a"},4),
+	WLDFina("White Lily Dark Fina",new String[]{"/b/b0/Unit-White_Lily_Dark_Fina-5.png?version=e9c7359a6447a715f093122a13d13da3","/7/78/Unit-White_Lily_Dark_Fina-6.png?version=04b18271e4801f41e70b6be2ddc1d635","/1/1a/Unit-White_Lily_Dark_Fina-7.png?version=c47fc122813c1c8245630b82b015a4e4"},5),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1551,7 +1552,8 @@ public enum Unit{
 				Gudon,
 				CrownNoctis,
 				Lunafreya,
-				KennyCrow
+				KennyCrow,
+				WLDFina
 				
 		});
 	}
