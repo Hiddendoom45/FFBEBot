@@ -115,7 +115,9 @@ public class Summon extends CommandGenerics implements Command {
 	@Override
 	public void help(MessageReceivedEvent event) {
 		Lib.sendMessage(event, SaveSystem.getPrefix(event)+"summon [amount]"
-				+ "\n\tsummons [amount] units from the rare summon pool");
+				+ "\n\tsummons [amount] units from the rare summon pool\n"
+				+ "Warning: This summon simulator is not longer accurate as it has not been"
+				+ "updated for recent mechanics past 2018 (i.e: reduced 5* pool)");
 		
 	}
 	private void logMeta(MessageReceivedEvent event, List<UnitSpecific> units){
