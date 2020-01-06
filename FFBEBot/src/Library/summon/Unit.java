@@ -807,6 +807,8 @@ public enum Unit{
 	Lunafreya("Lunafreya",new String[]{"/7/78/Unit-Lunafreya-5.png?version=d41c573b1a87228f729f77761e01ea0a","/c/cb/Unit-Lunafreya-6.png?version=65995c1c02e11439bf1c5347c55fb3d5","/a/a5/Unit-Lunafreya-7.png?version=ae6befcfd13af5fc79a5fcab8e6280ec"},5),
 	KennyCrow("Kenny Crow",new String[]{"/8/88/Unit-Kenny_Crow-4.png?version=280fa933ee39d18d9bb1adaefaba81da","/f/f9/Unit-Kenny_Crow-5.png?version=8aa1f907ec6a2bef2c37a0e812dff3f7","/0/04/Unit-Kenny_Crow-6.png?version=645ee211e5b9dc0818d037315259358a"},4),
 	WLDFina("White Lily Dark Fina",new String[]{"/b/b0/Unit-White_Lily_Dark_Fina-5.png?version=e9c7359a6447a715f093122a13d13da3","/7/78/Unit-White_Lily_Dark_Fina-6.png?version=04b18271e4801f41e70b6be2ddc1d635","/1/1a/Unit-White_Lily_Dark_Fina-7.png?version=c47fc122813c1c8245630b82b015a4e4"},5),
+	AWoL("Awakened Warrior of Light",new String[]{"/c/c2/Unit-Awakened_Warrior_of_Light-5.png?version=555875369229525570775a7b5b57c926","/a/a0/Unit-Awakened_Warrior_of_Light-6.png?version=8cae32b34123058f07a11fc51890bd6d","/e/eb/Unit-Awakened_Warrior_of_Light-7.png?version=9e7b8de5283b4fd36fd543af2021ca13"},5),
+	IKGarland("Immortal Knight Garland",new String[]{"/3/36/Unit-Immortal_Knight_Garland-5.png?version=96c430a3ccef780fd6e0b802e842375d","/1/18/Unit-Immortal_Knight_Garland-6.png?version=b1f1a560cc4730e43a6548b4f6ffb4ff","/8/88/Unit-Immortal_Knight_Garland-7.png?version=9bcdea58396a4d66b08d8386301bf38e"},5),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -1553,7 +1555,9 @@ public enum Unit{
 				CrownNoctis,
 				Lunafreya,
 				KennyCrow,
-				WLDFina
+				WLDFina,
+				AWoL,
+				IKGarland
 				
 		});
 	}
