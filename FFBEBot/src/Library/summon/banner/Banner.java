@@ -192,6 +192,7 @@ public enum Banner {
 	Christmas4("Christmas 2019", new Unit[]{Unit.Levinson,Unit.Lucas}, BannerRates.LD5.fivePercent(),Lib.concat(FF15P5.featured, FF15P5.pool), FF15P5.include, BannerType.FivePercent),
 	WLDFina("White Lily Dark Fina", new Unit[]{Unit.WLDFina}, BannerRates.LS5.fivePercent(), Christmas4.pool, Christmas4.include, BannerType.FivePercent),
 	FF1P1("FFI (1)", new Unit[]{Unit.AWoL}, BannerRates.LS5.fivePercent(), Lib.concat(WLDFina.featured, WLDFina.pool), WLDFina.include, BannerType.FivePercent),
+	FF15P6("FXV (6)", new Unit[]{Unit.Regis, Unit.Ardyn}, BannerRates.LD5.fivePercent(), Lib.concat(FF1P1.featured, FF1P1.pool), FF1P1.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
@@ -208,7 +209,7 @@ public enum Banner {
 //	FF11 1,2
 //	FF12 1,2
 //	FF13 1(1,2), 2
-//	FF15 1,2,3,4,5
+//	FF15 1,2,3,4,5,6
 //	FF-0 1,2,3,4
 //	FFT 1(1,2),2,3,4
 	

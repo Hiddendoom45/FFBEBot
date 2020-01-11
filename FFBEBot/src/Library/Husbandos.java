@@ -230,6 +230,8 @@ public enum Husbandos {
 	Gudon(Unit.Gudon),
 	CrownNoctis(Unit.CrownNoctis),
 	AWoL(Unit.AWoL),
+	Regis(Unit.Regis),
+	Ardyn(Unit.Ardyn),
 	
 	
 	
