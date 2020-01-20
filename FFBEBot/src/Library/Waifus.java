@@ -189,6 +189,7 @@ public enum Waifus {
 	Physalis(Unit.Physalis),
 	Lunafreya(Unit.Lunafreya),
 	WLDFina(Unit.WLDFina),
+	Sister(Unit.Sister),
 	
 	//Limited
 	//Katarina("Katarina","a/a7/Unit-Katarina-6.png"),

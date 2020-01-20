@@ -990,7 +990,10 @@ public enum Unit{
 	HolyAEmilia("Holy Night Amelia & Emilia",new String[]{"/e/ee/Unit-Holy_Night_Amelia_%26_Emilia-5.png?version=7a3e02544239c733fad56d32904842da","/a/a3/Unit-Holy_Night_Amelia_%26_Emilia-6.png?version=12dcc54d6cd798a206b6cea4c6b0e390","/d/df/Unit-Holy_Night_Amelia_%26_Emilia-7.png?version=70767a8a885405ab27c20c051ed2b4ee"},5),
 	Levinson("Levinson",new String[]{"/b/b6/Unit-Levinson-5.png?version=72b067690fb5601ca907078615bdb86f","/8/8a/Unit-Levinson-6.png?version=71055a8f11c31abb2a1c5c93e70942a3","/9/98/Unit-Levinson-7.png?version=18f2da3d87867ef87e904b7645f8b06d"},5),
 	Lucas("Lucas",new String[]{"/b/b9/Unit-Lucas-5.png?version=7a24ca3dcb57a2c96d7c61020ad241a2","/b/b0/Unit-Lucas-6.png?version=3ebc11a0cc93f280813e53a1eca3da81","/f/f1/Unit-Lucas-7.png?version=74ed128a80bde682353e3083a20ee1b3"},5),
-	
+	KingLasswell("Hess King Lasswell",new String[]{"/f/f9/Unit-Hess_King_Lasswell-5.png?version=32fc69b30c96a0723d30f69940b75d63","/2/22/Unit-Hess_King_Lasswell-6.png?version=c0da3a868e1561dd5754ea7f5f00cc9b","/a/a2/Unit-Hess_King_Lasswell-7.png?version=f0629d36a6be1a41b13ff85e91c089e7"},5),
+	Scartio("Scartio",new String[]{"/6/67/Unit-Scartio-4.png?version=6d5b5a549a38f24899e8e61850501a9a","/b/b9/Unit-Scartio-5.png?version=b612ac46b3ea6ceb55e561489aa155a8","/9/9b/Unit-Scartio-6.png?version=3c5883f26d9775ece58847ece5553dd4"},4),
+	Sister("Sister",new String[]{"/7/75/Unit-Sister-3.png?version=b576c1b5f9ecb03269990a33067b7a26","/7/70/Unit-Sister-4.png?version=7669a447295f0102874940af54409bca","/c/cc/Unit-Sister-5.png?version=1ba32d41e52a95900a757da41235e065"},3),
+
 	
 	
 	//Limited raid units
@@ -1561,7 +1564,10 @@ public enum Unit{
 				AWoL,
 				IKGarland,
 				Regis,
-				Ardyn
+				Ardyn,
+				KingLasswell,
+				Scartio,
+				Sister
 				
 		});
 	}

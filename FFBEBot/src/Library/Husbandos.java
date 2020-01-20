@@ -232,6 +232,8 @@ public enum Husbandos {
 	AWoL(Unit.AWoL),
 	Regis(Unit.Regis),
 	Ardyn(Unit.Ardyn),
+	KingLasswell(Unit.KingLasswell),
+	Scartio(Unit.Scartio),
 	
 	
 	
