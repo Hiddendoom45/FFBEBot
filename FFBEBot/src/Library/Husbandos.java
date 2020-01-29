@@ -301,7 +301,8 @@ public enum Husbandos {
 	Erik(Unit.Erik),
 	Sylvando(Unit.Sylvando),
 	Rab(Unit.Rab),
-	Levinson(Unit.Levinson);
+	Levinson(Unit.Levinson),
+	EmperorFoo(Unit.EmperorFoo);
 	
 
 	public final String name;
