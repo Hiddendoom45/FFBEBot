@@ -26,6 +26,7 @@ public enum Unit{
 	Nichol("Nichol",new String[]{"/a/a0/Unit-Nichol-3.png?version=6d955416b50a4611f35ee79219d1384a","/9/90/Unit-Nichol-4.png?version=e163596bac0fee64a976af54ec05f390","/5/59/Unit-Nichol-5.png?version=b1980107db49af19c220dd7ab6286171"},3),
 	Jake("Jake",new String[]{"/d/d9/Unit-Jake-3.png?version=12e5d888efaa40a75816527e861d47ed","/c/c2/Unit-Jake-4.png?version=fb01bcccdaab19ac4ac9ed099c6196c6","/1/1d/Unit-Jake-5.png?version=ab35fa8c6bf995077e6ecbab23e0eb3a"},3),
 	Sakura("Sakura",new String[]{"/b/bd/Unit-Sakura-3.png?version=8c381797d26204a2106b605ba95f2bf7","/4/4b/Unit-Sakura-4.png?version=f243bc8073e9b00e3e92c3f6287ffc31","/3/3f/Unit-Sakura-5.png?version=44e805b2aa889b8842dbf3ccfc5ec664"},3),
+	BlueMageFina("Blue Mage Fina",new String[]{"/8/8b/Unit-Blue_Mage_Fina-5.png?version=3795cbfb1182d40421ae800665ea133e","/d/d7/Unit-Blue_Mage_Fina-6.png?version=81183dc64fd0e92c4e7d1aa44a4cab67"},5),
 	//FP units
 	Rizer("Rizer",new String[]{"/b/bc/Unit-Rizer-1.png?version=df8e6215528b509af92582436b0c3831","/d/d3/Unit-Rizer-2.png?version=503a012133f39a3c1fdce6312367ff57"},1),
 	Leah("Leah",new String[]{"/2/29/Unit-Leah-1.png?version=cac0baf9d1ba1ee8a68cbd50a10e9dc8","/d/de/Unit-Leah-2.png?version=4e025d0b8b59d7d8258a864dd1e1178a"},1),
