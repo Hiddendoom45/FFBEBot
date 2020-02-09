@@ -195,13 +195,14 @@ public enum Banner {
 	FF15P6("FXV (6)", new Unit[]{Unit.Regis, Unit.Ardyn}, BannerRates.LD5.fivePercent(), Lib.concat(FF1P1.featured, FF1P1.pool), FF1P1.include, BannerType.FivePercent),
 	KingLasswell("Hess King Lasswell", new Unit[]{Unit.KingLasswell, Unit.Scartio, Unit.Sister}, BannerRates.EvenSplit.fivePercent(), Lib.concat(FF15P6.featured, FF15P6.pool), FF15P6.include, BannerType.FivePercent),
 	CNY3("Lunar New Year", new Unit[]{Unit.EmperorFoo,Unit.XuanWuQingLong}, BannerRates.LD5.fivePercent(), Lib.concat(KingLasswell.featured, KingLasswell.pool), KingLasswell.include, BannerType.FivePercent),
+	FF4P5("FFIV (5)", new Unit[]{Unit.PaladinCecil,Unit.PalomPorom,Unit.FFIVCid}, BannerRates.EvenSplit.fivePercent(), CNY3.pool, CNY3.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
 //  FF1 1,
 //	FF2 1,2
 //	FF3 1,2,3
-//	FF4 1,2,3,4
+//	FF4 1,2,3,4,5
 //	FF5 1,2,3
 //	FF6 1,2,3,4,5
 //  FF7 1,2,3
@@ -294,7 +295,8 @@ public enum Banner {
 				Banner.DQXIS,
 				Banner.Halloween4,
 				Banner.DQXIS2,
-				Banner.Christmas4
+				Banner.Christmas4,
+				Banner.CNY3
 				};
 	}
 	public static boolean LEBanner(Banner banner){

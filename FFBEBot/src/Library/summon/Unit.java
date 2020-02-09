@@ -815,7 +815,9 @@ public enum Unit{
 	KingLasswell("Hess King Lasswell",new String[]{"/f/f9/Unit-Hess_King_Lasswell-5.png?version=32fc69b30c96a0723d30f69940b75d63","/2/22/Unit-Hess_King_Lasswell-6.png?version=c0da3a868e1561dd5754ea7f5f00cc9b","/a/a2/Unit-Hess_King_Lasswell-7.png?version=f0629d36a6be1a41b13ff85e91c089e7"},5),
 	Scartio("Scartio",new String[]{"/6/67/Unit-Scartio-4.png?version=6d5b5a549a38f24899e8e61850501a9a","/b/b9/Unit-Scartio-5.png?version=b612ac46b3ea6ceb55e561489aa155a8","/9/9b/Unit-Scartio-6.png?version=3c5883f26d9775ece58847ece5553dd4"},4),
 	Sister("Sister",new String[]{"/7/75/Unit-Sister-3.png?version=b576c1b5f9ecb03269990a33067b7a26","/7/70/Unit-Sister-4.png?version=7669a447295f0102874940af54409bca","/c/cc/Unit-Sister-5.png?version=1ba32d41e52a95900a757da41235e065"},3),
-
+	PaladinCecil("Paladin Cecil",new String[]{"/3/3c/Unit-Paladin_Cecil-5.png?version=3b9edad16281ddbb515bf056f46b5bfb","/8/83/Unit-Paladin_Cecil-6.png?version=bf35ee8b2bdbdc36e9ec9f92725cbeb5","/a/ac/Unit-Paladin_Cecil-7.png?version=633090554b585cb37185f376ddd1576d"},5),
+	PalomPorom("Palom & Porom",new String[]{"/d/d9/Unit-Palom_%26_Porom-5.png?version=57b459ebc03d7c27a48cc21edc88d516","/3/34/Unit-Palom_%26_Porom-6.png?version=07a1c64778a09eeb0af593f628fb5fe4","/7/7f/Unit-Palom_%26_Porom-7.png?version=5f752c4c341e912664a33d4963cb2f48"},5),
+	FFIVCid("Cid (FFIV)",new String[]{"/8/83/Unit-Cid_%28FFIV%29-4.png?version=25eb866db87d45083f2fd077f1114804","/5/53/Unit-Cid_%28FFIV%29-5.png?version=1073256479b9a1b5daf1996b1c8b6ced","/5/55/Unit-Cid_%28FFIV%29-6.png?version=57cc35d6e14e6fb93582c493d3a78724"},4),
 	
 	//Limited Units
 	Juggler("Juggler",new String[]{"/c/c2/Unit-Juggler-4.png?version=3a13b03756a5ca2541424e34fc6918fe","/1/1d/Unit-Juggler-5.png?version=b1a7e5acd4738d739069f8d6b4563932"},4),
@@ -997,7 +999,7 @@ public enum Unit{
 	Lucas("Lucas",new String[]{"/b/b9/Unit-Lucas-5.png?version=7a24ca3dcb57a2c96d7c61020ad241a2","/b/b0/Unit-Lucas-6.png?version=3ebc11a0cc93f280813e53a1eca3da81","/f/f1/Unit-Lucas-7.png?version=74ed128a80bde682353e3083a20ee1b3"},5),
 	EmperorFoo("Emperor Foo",new String[]{"/0/09/Unit-Emperor_Foo-5.png?version=7124e5e637507e449ad10fed85c81d5f","/9/94/Unit-Emperor_Foo-6.png?version=e1cc6273416bec27447fb0aad1174ef3","/3/39/Unit-Emperor_Foo-7.png?version=92585a53d90654180f15b1cd51df1628"},5),
 	XuanWuQingLong("Xuan Wu & Qing Long",new String[]{"/8/8f/Unit-Xuan_Wu_%26_Qing_Long-5.png?version=681bbf4ca54252b7e92439a4a42df3a2","/f/f8/Unit-Xuan_Wu_%26_Qing_Long-6.png?version=7ca75d2490eb9e28e640fae7688cecee","/6/66/Unit-Xuan_Wu_%26_Qing_Long-7.png?version=d23ea29d98b19051bfc8027f32a66ee1"},5),
-	
+	WMRosa("White Mage Rosa",new String[]{"/f/f7/Unit-White_Mage_Rosa-5.png?version=65993f913708f71ae9741c191b77e044","/d/d9/Unit-White_Mage_Rosa-6.png?version=4c037c463bbdab1461c7cb4a0a7866cc","/8/8b/Unit-White_Mage_Rosa-7.png?version=d8f480a1256b69b8a437eaa079b21f81"},5),
 	
 	//Limited raid units
 	MATerra("Magitek Armor Terra",new String[]{"/c/ce/Unit-Magitek_Armor_Terra-3.png?version=737faa3361d4023a571be63a4189cd63","/d/df/Unit-Magitek_Armor_Terra-4.png?version=9dffd213137f704f7ace0b67b948068d"},3),
@@ -1031,7 +1033,9 @@ public enum Unit{
 	Dracky("Dracky",new String[]{"/8/8b/Unit-Dracky-3.png?version=c7af03fa1b45df3be5d303b27e8083fb","/1/1e/Unit-Dracky-4.png?version=42e8da818b1e3d8369d5c697ef518176","/5/52/Unit-Dracky-5.png?version=966b77d108cfcde07dd59a4cece098f8"},3),
 	ChuChu("Chu-Chu",new String[]{"/7/74/Unit-Chu-Chu-3.png?version=77cab345050cc3c2a0953a9323d4b013","/0/09/Unit-Chu-Chu-4.png?version=78c358711faca3fa3e98a53c6907588d","/7/76/Unit-Chu-Chu-5.png?version=c134990349b8125f10cdc581333adf5f"},3),
 	Gentiana("Gentiana",new String[]{"/9/99/Unit-Gentiana-5.png?version=ddb3a9678fd9772562981900e4df3b3e","/1/12/Unit-Gentiana-6.png?version=0447727db6dc8527ef057f2579004034","/4/46/Unit-Gentiana-7.png?version=9061cfb44c0818cc07c7df7611d180e5"},5),//no idea if actually limited
-
+	
+	
+	
 	Salt3("Salt3",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269409545289738/3.png"},3),
 	Salt4("Salt4",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269480085094420/4.png"},4);
 	//quick access map for certain things that has unit name but not the Unit object
@@ -1570,7 +1574,10 @@ public enum Unit{
 				Ardyn,
 				KingLasswell,
 				Scartio,
-				Sister
+				Sister,
+				PaladinCecil,
+				PalomPorom,
+				FFIVCid
 				
 		});
 	}

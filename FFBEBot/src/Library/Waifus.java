@@ -262,7 +262,8 @@ public enum Waifus {
 	Godrea(Unit.Godrea),
 	Jade(Unit.Jade),
 	Gentiana(Unit.Gentiana),
-	HolyAEmelia(Unit.HolyAEmilia);
+	HolyAEmelia(Unit.HolyAEmilia),
+	WMRosa(Unit.WMRosa);
 	
 	
 	

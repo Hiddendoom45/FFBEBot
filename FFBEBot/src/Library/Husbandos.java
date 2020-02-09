@@ -234,7 +234,8 @@ public enum Husbandos {
 	Ardyn(Unit.Ardyn),
 	KingLasswell(Unit.KingLasswell),
 	Scartio(Unit.Scartio),
-	
+	PaladinCecil(Unit.PaladinCecil),
+	FFIVCid(Unit.FFIVCid),
 	
 	
 	//Limited ones//for organization
