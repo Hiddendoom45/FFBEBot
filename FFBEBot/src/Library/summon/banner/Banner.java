@@ -195,7 +195,7 @@ public enum Banner {
 	FF15P6("FXV (6)", new Unit[]{Unit.Regis, Unit.Ardyn}, BannerRates.LD5.fivePercent(), Lib.concat(FF1P1.featured, FF1P1.pool), FF1P1.include, BannerType.FivePercent),
 	KingLasswell("Hess King Lasswell", new Unit[]{Unit.KingLasswell, Unit.Scartio, Unit.Sister}, BannerRates.EvenSplit.fivePercent(), Lib.concat(FF15P6.featured, FF15P6.pool), FF15P6.include, BannerType.FivePercent),
 	CNY3("Lunar New Year", new Unit[]{Unit.EmperorFoo,Unit.XuanWuQingLong}, BannerRates.LD5.fivePercent(), Lib.concat(KingLasswell.featured, KingLasswell.pool), KingLasswell.include, BannerType.FivePercent),
-	FF4P5("FFIV (5)", new Unit[]{Unit.PaladinCecil,Unit.PalomPorom,Unit.FFIVCid}, BannerRates.EvenSplit.fivePercent(), CNY3.pool, CNY3.include, BannerType.FivePercent),
+	FF4P5("FFIV (5)", new Unit[]{Unit.PaladinCecil,Unit.PalomPorom,Unit.FFIVCid},new int[]{75,75,475}, CNY3.pool, CNY3.include, BannerType.FivePercent),
 	Current("Current",new Unit[]{},new int[][]{},Unit.currentPool(),Awakening.values(),BannerType.ThreePercent);
 
 	//to keep track of banners specific to series and the amount that have been run
