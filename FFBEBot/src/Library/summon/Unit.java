@@ -1037,7 +1037,8 @@ public enum Unit{
 	
 	
 	Salt3("Salt3",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269409545289738/3.png"},3),
-	Salt4("Salt4",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269480085094420/4.png"},4);
+	Salt4("Salt4",new String[]{"https://media.discordapp.net/attachments/304311860147126282/562269480085094420/4.png"},4),
+	Salt5("Salt5",new String[]{"https://cdn.discordapp.com/attachments/304311860147126282/694780716977750086/salt5.png"},5);
 	//quick access map for certain things that has unit name but not the Unit object
 	public static TreeMap<String,Unit> unitMap = new TreeMap<String,Unit>();
 	static{//build map on class load
@@ -1054,7 +1055,7 @@ public enum Unit{
 		this.url=url;
 		this.base=base;
 		setup();
-		if(!name.equals("Salt3")&&!name.equals("Salt4")){
+		if(!name.equals("Salt3")&&!name.equals("Salt4")&&!name.equals("Salt5")){
 			for(int i=0;i<this.url.length;i++){
 				this.url[i]=Settings.ExvicusIMGURL+this.url[i];
 			}
